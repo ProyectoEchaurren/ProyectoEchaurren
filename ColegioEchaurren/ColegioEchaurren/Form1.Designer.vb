@@ -24,19 +24,20 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.Opción1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Opción2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opción2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CabasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Opción1ToolStripMenuItem, Me.Opción2ToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Opción1ToolStripMenuItem, Me.Opción2ToolStripMenuItem, Me.CabasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(605, 24)
@@ -49,13 +50,6 @@ Partial Class Form1
         Me.Opción1ToolStripMenuItem.Name = "Opción1ToolStripMenuItem"
         Me.Opción1ToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
         Me.Opción1ToolStripMenuItem.Text = "Opción 1"
-        '
-        'Opción2ToolStripMenuItem
-        '
-        Me.Opción2ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AToolStripMenuItem1, Me.BToolStripMenuItem1, Me.CToolStripMenuItem1})
-        Me.Opción2ToolStripMenuItem.Name = "Opción2ToolStripMenuItem"
-        Me.Opción2ToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.Opción2ToolStripMenuItem.Text = "Opción 2"
         '
         'AToolStripMenuItem
         '
@@ -75,6 +69,13 @@ Partial Class Form1
         Me.CToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CToolStripMenuItem.Text = "c"
         '
+        'Opción2ToolStripMenuItem
+        '
+        Me.Opción2ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AToolStripMenuItem1, Me.BToolStripMenuItem1, Me.CToolStripMenuItem1})
+        Me.Opción2ToolStripMenuItem.Name = "Opción2ToolStripMenuItem"
+        Me.Opción2ToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.Opción2ToolStripMenuItem.Text = "Opción 2"
+        '
         'AToolStripMenuItem1
         '
         Me.AToolStripMenuItem1.Name = "AToolStripMenuItem1"
@@ -92,6 +93,12 @@ Partial Class Form1
         Me.CToolStripMenuItem1.Name = "CToolStripMenuItem1"
         Me.CToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.CToolStripMenuItem1.Text = "c"
+        '
+        'CabasToolStripMenuItem
+        '
+        Me.CabasToolStripMenuItem.Name = "CabasToolStripMenuItem"
+        Me.CabasToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
+        Me.CabasToolStripMenuItem.Text = "Cabas"
         '
         'Form1
         '
@@ -117,5 +124,6 @@ Partial Class Form1
     Friend WithEvents AToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CabasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
