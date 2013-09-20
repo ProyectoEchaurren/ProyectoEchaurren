@@ -22,83 +22,61 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.Opción1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Opción2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CabasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FinanzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MatriculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CurricularToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Opción1ToolStripMenuItem, Me.Opción2ToolStripMenuItem, Me.CabasToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FinanzasToolStripMenuItem, Me.MatriculasToolStripMenuItem, Me.CurricularToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.LoginToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(605, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'Opción1ToolStripMenuItem
+        'AcercaDeToolStripMenuItem
         '
-        Me.Opción1ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AToolStripMenuItem, Me.BToolStripMenuItem, Me.CToolStripMenuItem})
-        Me.Opción1ToolStripMenuItem.Name = "Opción1ToolStripMenuItem"
-        Me.Opción1ToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.Opción1ToolStripMenuItem.Text = "Opción 1"
+        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
         '
-        'AToolStripMenuItem
+        'AyudaToolStripMenuItem
         '
-        Me.AToolStripMenuItem.Name = "AToolStripMenuItem"
-        Me.AToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.AToolStripMenuItem.Text = "a"
+        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.AyudaToolStripMenuItem.Text = "Ayuda"
         '
-        'BToolStripMenuItem
+        'LoginToolStripMenuItem
         '
-        Me.BToolStripMenuItem.Name = "BToolStripMenuItem"
-        Me.BToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.BToolStripMenuItem.Text = "b"
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
+        Me.LoginToolStripMenuItem.Text = "Login"
         '
-        'CToolStripMenuItem
+        'FinanzasToolStripMenuItem
         '
-        Me.CToolStripMenuItem.Name = "CToolStripMenuItem"
-        Me.CToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.CToolStripMenuItem.Text = "c"
+        Me.FinanzasToolStripMenuItem.Name = "FinanzasToolStripMenuItem"
+        Me.FinanzasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.FinanzasToolStripMenuItem.Text = "Finanzas"
         '
-        'Opción2ToolStripMenuItem
+        'MatriculasToolStripMenuItem
         '
-        Me.Opción2ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AToolStripMenuItem1, Me.BToolStripMenuItem1, Me.CToolStripMenuItem1})
-        Me.Opción2ToolStripMenuItem.Name = "Opción2ToolStripMenuItem"
-        Me.Opción2ToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.Opción2ToolStripMenuItem.Text = "Opción 2"
+        Me.MatriculasToolStripMenuItem.Name = "MatriculasToolStripMenuItem"
+        Me.MatriculasToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
+        Me.MatriculasToolStripMenuItem.Text = "Matriculas"
         '
-        'AToolStripMenuItem1
+        'CurricularToolStripMenuItem
         '
-        Me.AToolStripMenuItem1.Name = "AToolStripMenuItem1"
-        Me.AToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.AToolStripMenuItem1.Text = "a"
-        '
-        'BToolStripMenuItem1
-        '
-        Me.BToolStripMenuItem1.Name = "BToolStripMenuItem1"
-        Me.BToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.BToolStripMenuItem1.Text = "b"
-        '
-        'CToolStripMenuItem1
-        '
-        Me.CToolStripMenuItem1.Name = "CToolStripMenuItem1"
-        Me.CToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.CToolStripMenuItem1.Text = "c"
-        '
-        'CabasToolStripMenuItem
-        '
-        Me.CabasToolStripMenuItem.Name = "CabasToolStripMenuItem"
-        Me.CabasToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
-        Me.CabasToolStripMenuItem.Text = "Cabas"
+        Me.CurricularToolStripMenuItem.Name = "CurricularToolStripMenuItem"
+        Me.CurricularToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.CurricularToolStripMenuItem.Text = "Curricular"
         '
         'Form1
         '
@@ -106,9 +84,13 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(605, 319)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
-        Me.Text = "sdvk.dnscsdnklc"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Colegio Echaurren"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -116,14 +98,11 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents Opción1ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Opción2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CabasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FinanzasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MatriculasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CurricularToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AyudaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AcercaDeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
