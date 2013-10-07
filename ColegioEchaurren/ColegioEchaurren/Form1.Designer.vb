@@ -24,82 +24,65 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FinanzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MatriculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CurricularToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImpresionDePlanillasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DigitalizarDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CrearMatriculaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdministrarMatriculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CancelarMatriculaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FinanzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagosRecibidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeMensualidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransferenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CrearMatriculaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CancelarMatriculaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdministrarMatriculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecursosHumanosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatriculasToolStripMenuItem, Me.CurricularToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.LoginToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatriculasToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.LoginToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(605, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'FinanzasToolStripMenuItem
-        '
-        Me.FinanzasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PagosRecibidosToolStripMenuItem, Me.RegistroDeMensualidadesToolStripMenuItem, Me.TransferenciasToolStripMenuItem})
-        Me.FinanzasToolStripMenuItem.Name = "FinanzasToolStripMenuItem"
-        Me.FinanzasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
-        Me.FinanzasToolStripMenuItem.Text = "Finanzas"
-        '
         'MatriculasToolStripMenuItem
         '
         Me.MatriculasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearMatriculaToolStripMenuItem, Me.AdministrarMatriculasToolStripMenuItem, Me.CancelarMatriculaToolStripMenuItem})
+        Me.MatriculasToolStripMenuItem.Enabled = False
         Me.MatriculasToolStripMenuItem.Name = "MatriculasToolStripMenuItem"
         Me.MatriculasToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
         Me.MatriculasToolStripMenuItem.Text = "Matriculas"
         '
-        'CurricularToolStripMenuItem
+        'CrearMatriculaToolStripMenuItem
         '
-        Me.CurricularToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImpresionDePlanillasToolStripMenuItem, Me.DigitalizarDocumentosToolStripMenuItem})
-        Me.CurricularToolStripMenuItem.Name = "CurricularToolStripMenuItem"
-        Me.CurricularToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.CurricularToolStripMenuItem.Text = "Curricular"
+        Me.CrearMatriculaToolStripMenuItem.Name = "CrearMatriculaToolStripMenuItem"
+        Me.CrearMatriculaToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.CrearMatriculaToolStripMenuItem.Text = "Crear Matricula"
         '
-        'AyudaToolStripMenuItem
+        'AdministrarMatriculasToolStripMenuItem
         '
-        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
-        Me.AyudaToolStripMenuItem.Text = "Ayuda"
+        Me.AdministrarMatriculasToolStripMenuItem.Name = "AdministrarMatriculasToolStripMenuItem"
+        Me.AdministrarMatriculasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.AdministrarMatriculasToolStripMenuItem.Text = "Administrar Matriculas"
         '
-        'AcercaDeToolStripMenuItem
+        'CancelarMatriculaToolStripMenuItem
         '
-        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
+        Me.CancelarMatriculaToolStripMenuItem.Name = "CancelarMatriculaToolStripMenuItem"
+        Me.CancelarMatriculaToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.CancelarMatriculaToolStripMenuItem.Text = "Cancelar Matricula"
         '
-        'LoginToolStripMenuItem
+        'FinanzasToolStripMenuItem
         '
-        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
-        Me.LoginToolStripMenuItem.Text = "Login"
-        '
-        'ImpresionDePlanillasToolStripMenuItem
-        '
-        Me.ImpresionDePlanillasToolStripMenuItem.Name = "ImpresionDePlanillasToolStripMenuItem"
-        Me.ImpresionDePlanillasToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.ImpresionDePlanillasToolStripMenuItem.Text = "Impresión de Planillas"
-        '
-        'DigitalizarDocumentosToolStripMenuItem
-        '
-        Me.DigitalizarDocumentosToolStripMenuItem.Name = "DigitalizarDocumentosToolStripMenuItem"
-        Me.DigitalizarDocumentosToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.DigitalizarDocumentosToolStripMenuItem.Text = "Digitalizar Documentos"
+        Me.FinanzasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PagosRecibidosToolStripMenuItem, Me.RegistroDeMensualidadesToolStripMenuItem, Me.TransferenciasToolStripMenuItem})
+        Me.FinanzasToolStripMenuItem.Enabled = False
+        Me.FinanzasToolStripMenuItem.Name = "FinanzasToolStripMenuItem"
+        Me.FinanzasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.FinanzasToolStripMenuItem.Text = "Finanzas"
         '
         'PagosRecibidosToolStripMenuItem
         '
@@ -119,23 +102,44 @@ Partial Class Form1
         Me.TransferenciasToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.TransferenciasToolStripMenuItem.Text = "Transferencias"
         '
-        'CrearMatriculaToolStripMenuItem
+        'AcercaDeToolStripMenuItem
         '
-        Me.CrearMatriculaToolStripMenuItem.Name = "CrearMatriculaToolStripMenuItem"
-        Me.CrearMatriculaToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.CrearMatriculaToolStripMenuItem.Text = "Crear Matricula"
+        Me.AcercaDeToolStripMenuItem.Enabled = False
+        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
+        Me.AcercaDeToolStripMenuItem.Text = "Administracion"
         '
-        'CancelarMatriculaToolStripMenuItem
+        'AyudaToolStripMenuItem
         '
-        Me.CancelarMatriculaToolStripMenuItem.Name = "CancelarMatriculaToolStripMenuItem"
-        Me.CancelarMatriculaToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.CancelarMatriculaToolStripMenuItem.Text = "Cancelar Matricula"
+        Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeToolStripMenuItem1, Me.AcercaDeToolStripMenuItem2})
+        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.AyudaToolStripMenuItem.Text = "Ayuda"
         '
-        'AdministrarMatriculasToolStripMenuItem
+        'AcercaDeToolStripMenuItem1
         '
-        Me.AdministrarMatriculasToolStripMenuItem.Name = "AdministrarMatriculasToolStripMenuItem"
-        Me.AdministrarMatriculasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.AdministrarMatriculasToolStripMenuItem.Text = "Administrar Matriculas"
+        Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
+        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeToolStripMenuItem1.Text = "Ver ayuda"
+        '
+        'LoginToolStripMenuItem
+        '
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
+        Me.LoginToolStripMenuItem.Text = "Login"
+        '
+        'AcercaDeToolStripMenuItem2
+        '
+        Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
+        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
+        '
+        'RecursosHumanosToolStripMenuItem
+        '
+        Me.RecursosHumanosToolStripMenuItem.Enabled = False
+        Me.RecursosHumanosToolStripMenuItem.Name = "RecursosHumanosToolStripMenuItem"
+        Me.RecursosHumanosToolStripMenuItem.Size = New System.Drawing.Size(119, 20)
+        Me.RecursosHumanosToolStripMenuItem.Text = "Recursos humanos"
         '
         'Form1
         '
@@ -159,17 +163,17 @@ Partial Class Form1
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents FinanzasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MatriculasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CurricularToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CrearMatriculaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdministrarMatriculasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CancelarMatriculaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ImpresionDePlanillasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DigitalizarDocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PagosRecibidosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroDeMensualidadesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TransferenciasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AcercaDeToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AcercaDeToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RecursosHumanosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

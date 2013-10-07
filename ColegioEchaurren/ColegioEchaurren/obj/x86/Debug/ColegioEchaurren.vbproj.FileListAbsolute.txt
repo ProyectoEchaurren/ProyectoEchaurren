@@ -11,3 +11,6 @@ C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEcha
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.exe
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.xml
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.pdb
+C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.exe
+C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.xml
+C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.pdb
