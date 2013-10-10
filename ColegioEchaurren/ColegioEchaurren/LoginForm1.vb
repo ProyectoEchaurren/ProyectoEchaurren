@@ -9,6 +9,14 @@
     ' como el nombre de usuario, nombre para mostrar, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
+        If UsernameTextBox.Text = "admin" Then
+            Form1.MatriculasToolStripMenuItem.Enabled = True
+            Form1.FinanzasToolStripMenuItem.Enabled = True
+            Form1.AdministracionToolStripMenuItem.Enabled = True
+            Form1.RecursosHumanosToolStripMenuItem.Enabled = True
+        Else
+            MessageBox.Show("Usuario y/o contraseña incorrecto(s)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
         Me.Close()
     End Sub
 

@@ -32,18 +32,18 @@ Partial Class Form1
         Me.PagosRecibidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeMensualidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransferenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdministracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecursosHumanosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecursosHumanosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatriculasToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.LoginToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatriculasToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.LoginToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(605, 24)
@@ -102,12 +102,25 @@ Partial Class Form1
         Me.TransferenciasToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.TransferenciasToolStripMenuItem.Text = "Transferencias"
         '
-        'AcercaDeToolStripMenuItem
+        'AdministracionToolStripMenuItem
         '
-        Me.AcercaDeToolStripMenuItem.Enabled = False
-        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
-        Me.AcercaDeToolStripMenuItem.Text = "Administracion"
+        Me.AdministracionToolStripMenuItem.Enabled = False
+        Me.AdministracionToolStripMenuItem.Name = "AdministracionToolStripMenuItem"
+        Me.AdministracionToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
+        Me.AdministracionToolStripMenuItem.Text = "Administracion"
+        '
+        'RecursosHumanosToolStripMenuItem
+        '
+        Me.RecursosHumanosToolStripMenuItem.Enabled = False
+        Me.RecursosHumanosToolStripMenuItem.Name = "RecursosHumanosToolStripMenuItem"
+        Me.RecursosHumanosToolStripMenuItem.Size = New System.Drawing.Size(119, 20)
+        Me.RecursosHumanosToolStripMenuItem.Text = "Recursos humanos"
+        '
+        'LoginToolStripMenuItem
+        '
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
+        Me.LoginToolStripMenuItem.Text = "Login"
         '
         'AyudaToolStripMenuItem
         '
@@ -119,27 +132,14 @@ Partial Class Form1
         'AcercaDeToolStripMenuItem1
         '
         Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
-        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Ver ayuda"
-        '
-        'LoginToolStripMenuItem
-        '
-        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
-        Me.LoginToolStripMenuItem.Text = "Login"
         '
         'AcercaDeToolStripMenuItem2
         '
         Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
-        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
-        '
-        'RecursosHumanosToolStripMenuItem
-        '
-        Me.RecursosHumanosToolStripMenuItem.Enabled = False
-        Me.RecursosHumanosToolStripMenuItem.Name = "RecursosHumanosToolStripMenuItem"
-        Me.RecursosHumanosToolStripMenuItem.Size = New System.Drawing.Size(119, 20)
-        Me.RecursosHumanosToolStripMenuItem.Text = "Recursos humanos"
         '
         'Form1
         '
@@ -164,7 +164,7 @@ Partial Class Form1
     Friend WithEvents FinanzasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MatriculasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AcercaDeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AdministracionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CrearMatriculaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdministrarMatriculasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
