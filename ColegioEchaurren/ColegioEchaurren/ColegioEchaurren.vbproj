@@ -49,10 +49,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -78,11 +83,22 @@
     <Compile Include="AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bd_echaurrenDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_echaurrenDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlumnosMatriculados.Designer.vb">
+      <DependentUpon>FormAlumnosMatriculados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlumnosMatriculados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormularioMatricula.Designer.vb">
@@ -120,6 +136,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAlumnosMatriculados.resx">
+      <DependentUpon>FormAlumnosMatriculados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioMatricula.resx">
       <DependentUpon>FormularioMatricula.vb</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +153,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bd_echaurrenDataSet.xsc">
+      <DependentUpon>bd_echaurrenDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bd_echaurrenDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bd_echaurrenDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bd_echaurrenDataSet.xss">
+      <DependentUpon>bd_echaurrenDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -33,6 +33,7 @@ Partial Class Form1
         Me.RegistroDeMensualidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransferenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlumnosMatriculadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecursosHumanosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -104,10 +105,17 @@ Partial Class Form1
         '
         'AdministracionToolStripMenuItem
         '
+        Me.AdministracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlumnosMatriculadosToolStripMenuItem})
         Me.AdministracionToolStripMenuItem.Enabled = False
         Me.AdministracionToolStripMenuItem.Name = "AdministracionToolStripMenuItem"
         Me.AdministracionToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
         Me.AdministracionToolStripMenuItem.Text = "Administracion"
+        '
+        'AlumnosMatriculadosToolStripMenuItem
+        '
+        Me.AlumnosMatriculadosToolStripMenuItem.Name = "AlumnosMatriculadosToolStripMenuItem"
+        Me.AlumnosMatriculadosToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.AlumnosMatriculadosToolStripMenuItem.Text = "Alumnos matriculados"
         '
         'RecursosHumanosToolStripMenuItem
         '
@@ -132,13 +140,13 @@ Partial Class Form1
         'AcercaDeToolStripMenuItem1
         '
         Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
-        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
+        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Ver ayuda"
         '
         'AcercaDeToolStripMenuItem2
         '
         Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
-        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
+        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
         '
         'Form1
@@ -175,5 +183,6 @@ Partial Class Form1
     Friend WithEvents AcercaDeToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RecursosHumanosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AlumnosMatriculadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
