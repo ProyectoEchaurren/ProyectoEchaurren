@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label92.Text" xml:space="preserve">
+    <value>Como contratante acuerdo con la Sociedad Educacional ECHAURREN LTDA., RUT: 76.054.723-9 el siguiente contrato de servicio Educacional: Escolaridad de mi pupilo de acuerdo a los planes de estudio que acepto. Cancelaré el servicio Educacional en los montos y fechas fijadas por el Colegio, autorizando a la Sociedad Educacional ECHAURREN LTDA. para cobrar gastos bancarios y notariales en caso de atraso y/o protesto de documento.</value>
+  </data>
+  <data name="Label81.Text" xml:space="preserve">
+    <value>Sociedad Educacional Echaurren Ltda., RUT: 76.054.723-9 y el apoderado firmante, establecen el siguiente contrato privado que se materializa en la firma de esta Ficha, en la aceptación de los Reglamentos del Colegio y en la emisión del Comprobante de Documentos en Cartera. Por este contrato, se acuerda, entre las partes que la Sociedad Educacional Echaurren Ltda entregará el Servicio Educacional establecido en los Planes y Programas del Ministerio de Educación para establecimientos declarados Cooperadores de la función Educacional del Estado y correspondiente al curso en que el Apoderado Matricula a un alumno en el establecimiento ubicado en Avda. Las Parcelas 3101.
+Por su parte, el Apoderado acepta el Reglamento Interno del Colegio y se compromete a Cancelar el Servicio Educacional en los montos y fechas fijadas por el Colegio. El incumplimiento de este Contrato procederá al cobro legal de los servicios impagos cuando ello ocurriera.
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
