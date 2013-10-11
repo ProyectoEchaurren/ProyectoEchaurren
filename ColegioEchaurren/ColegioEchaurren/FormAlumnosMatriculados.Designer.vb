@@ -327,7 +327,7 @@ Partial Class FormAlumnosMatriculados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(893, 524)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.GroupBox3)
