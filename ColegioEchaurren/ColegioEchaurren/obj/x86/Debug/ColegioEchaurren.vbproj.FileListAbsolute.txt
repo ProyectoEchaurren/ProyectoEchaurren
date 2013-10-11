@@ -33,3 +33,5 @@ C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaur
 =======
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\ColegioEchaurren.exe.config
 >>>>>>> origin/rama-de-respaldo
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\MySql.Data.dll
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.FormAlumnosMatriculados.resources
