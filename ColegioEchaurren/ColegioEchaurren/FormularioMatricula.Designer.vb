@@ -25,27 +25,27 @@ Partial Class FormularioMatricula
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormularioMatricula))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TextBox84 = New System.Windows.Forms.TextBox()
-        Me.TextBox83 = New System.Windows.Forms.TextBox()
-        Me.TextBox78 = New System.Windows.Forms.TextBox()
-        Me.TextBox77 = New System.Windows.Forms.TextBox()
+        Me.txtTelefonoTrabajo = New System.Windows.Forms.TextBox()
+        Me.txtTelefonoPart2 = New System.Windows.Forms.TextBox()
+        Me.txtTelefonoPart = New System.Windows.Forms.TextBox()
+        Me.txtRut = New System.Windows.Forms.TextBox()
         Me.Label102 = New System.Windows.Forms.Label()
-        Me.TextBox82 = New System.Windows.Forms.TextBox()
+        Me.txtProfesion = New System.Windows.Forms.TextBox()
         Me.Label101 = New System.Windows.Forms.Label()
-        Me.TextBox81 = New System.Windows.Forms.TextBox()
-        Me.TextBox80 = New System.Windows.Forms.TextBox()
-        Me.TextBox79 = New System.Windows.Forms.TextBox()
-        Me.TextBox76 = New System.Windows.Forms.TextBox()
+        Me.txtOcupacionAct = New System.Windows.Forms.TextBox()
+        Me.txtLugarDeTrabajo = New System.Windows.Forms.TextBox()
+        Me.txtDomicilio = New System.Windows.Forms.TextBox()
+        Me.txtNombreTutor = New System.Windows.Forms.TextBox()
         Me.Label100 = New System.Windows.Forms.Label()
         Me.Label99 = New System.Windows.Forms.Label()
         Me.Label98 = New System.Windows.Forms.Label()
         Me.Label97 = New System.Windows.Forms.Label()
         Me.Label96 = New System.Windows.Forms.Label()
         Me.Label95 = New System.Windows.Forms.Label()
-        Me.TextBox75 = New System.Windows.Forms.TextBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.txtOtro = New System.Windows.Forms.TextBox()
+        Me.checkboxOtro = New System.Windows.Forms.CheckBox()
+        Me.checkboxMadre = New System.Windows.Forms.CheckBox()
+        Me.checkboxPadre = New System.Windows.Forms.CheckBox()
         Me.Label94 = New System.Windows.Forms.Label()
         Me.Label93 = New System.Windows.Forms.Label()
         Me.Label92 = New System.Windows.Forms.Label()
@@ -57,17 +57,17 @@ Partial Class FormularioMatricula
         Me.Label89 = New System.Windows.Forms.Label()
         Me.Label88 = New System.Windows.Forms.Label()
         Me.Label87 = New System.Windows.Forms.Label()
-        Me.TextBox71 = New System.Windows.Forms.TextBox()
+        Me.txtCurso = New System.Windows.Forms.TextBox()
         Me.TextBox70 = New System.Windows.Forms.TextBox()
         Me.TextBox69 = New System.Windows.Forms.TextBox()
         Me.TextBox68 = New System.Windows.Forms.TextBox()
-        Me.TextBox67 = New System.Windows.Forms.TextBox()
+        Me.txtNombreAlumno = New System.Windows.Forms.TextBox()
         Me.Label86 = New System.Windows.Forms.Label()
         Me.Label85 = New System.Windows.Forms.Label()
         Me.Label84 = New System.Windows.Forms.Label()
         Me.Label83 = New System.Windows.Forms.Label()
         Me.Label82 = New System.Windows.Forms.Label()
-        Me.TextBox66 = New System.Windows.Forms.TextBox()
+        Me.txtNombreApoderado = New System.Windows.Forms.TextBox()
         Me.Label81 = New System.Windows.Forms.Label()
         Me.Label80 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -79,6 +79,11 @@ Partial Class FormularioMatricula
         Me.Label77 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.checkUniversitariaPadre = New System.Windows.Forms.CheckBox()
+        Me.checkTecnicoPadre = New System.Windows.Forms.CheckBox()
+        Me.checkMediaPadre = New System.Windows.Forms.CheckBox()
+        Me.checkBasicaPadre = New System.Windows.Forms.CheckBox()
+        Me.dateTimeFechaNac = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TextBox61 = New System.Windows.Forms.TextBox()
         Me.TextBox60 = New System.Windows.Forms.TextBox()
@@ -86,90 +91,79 @@ Partial Class FormularioMatricula
         Me.Label73 = New System.Windows.Forms.Label()
         Me.Label72 = New System.Windows.Forms.Label()
         Me.Label71 = New System.Windows.Forms.Label()
-        Me.TextBox58 = New System.Windows.Forms.TextBox()
-        Me.TextBox57 = New System.Windows.Forms.TextBox()
+        Me.txtNombreTutor2 = New System.Windows.Forms.TextBox()
+        Me.txtNombreApodSuplent = New System.Windows.Forms.TextBox()
         Me.Label70 = New System.Windows.Forms.Label()
         Me.Label69 = New System.Windows.Forms.Label()
-        Me.TextBox56 = New System.Windows.Forms.TextBox()
+        Me.txtNombreApoderado2 = New System.Windows.Forms.TextBox()
         Me.Label68 = New System.Windows.Forms.Label()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.TextBox54 = New System.Windows.Forms.TextBox()
-        Me.TextBox53 = New System.Windows.Forms.TextBox()
-        Me.TextBox52 = New System.Windows.Forms.TextBox()
+        Me.radioFonasaC = New System.Windows.Forms.RadioButton()
+        Me.radioFonasaB = New System.Windows.Forms.RadioButton()
+        Me.radioFonasaA = New System.Windows.Forms.RadioButton()
+        Me.txtOtrosServicios = New System.Windows.Forms.TextBox()
+        Me.txtSeguros = New System.Windows.Forms.TextBox()
         Me.Label65 = New System.Windows.Forms.Label()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.Label63 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
-        Me.TextBox51 = New System.Windows.Forms.TextBox()
+        Me.txtAntecedentesMed = New System.Windows.Forms.TextBox()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.GroupBoxContent = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label58 = New System.Windows.Forms.Label()
-        Me.TextBox49 = New System.Windows.Forms.TextBox()
-        Me.TextBox50 = New System.Windows.Forms.TextBox()
+        Me.txtNumContacto5 = New System.Windows.Forms.TextBox()
+        Me.txtNombreContacto5 = New System.Windows.Forms.TextBox()
         Me.Label59 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label56 = New System.Windows.Forms.Label()
-        Me.TextBox47 = New System.Windows.Forms.TextBox()
-        Me.TextBox48 = New System.Windows.Forms.TextBox()
+        Me.txtNumContacto4 = New System.Windows.Forms.TextBox()
+        Me.txtNombreContacto4 = New System.Windows.Forms.TextBox()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label54 = New System.Windows.Forms.Label()
-        Me.TextBox45 = New System.Windows.Forms.TextBox()
-        Me.TextBox46 = New System.Windows.Forms.TextBox()
+        Me.txtNumContacto3 = New System.Windows.Forms.TextBox()
+        Me.txtNombreContacto3 = New System.Windows.Forms.TextBox()
         Me.Label55 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label52 = New System.Windows.Forms.Label()
-        Me.TextBox43 = New System.Windows.Forms.TextBox()
-        Me.TextBox44 = New System.Windows.Forms.TextBox()
+        Me.txtNumContacto2 = New System.Windows.Forms.TextBox()
+        Me.txtNombreContacto2 = New System.Windows.Forms.TextBox()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.Label49 = New System.Windows.Forms.Label()
-        Me.TextBox42 = New System.Windows.Forms.TextBox()
-        Me.TextBox41 = New System.Windows.Forms.TextBox()
+        Me.txtNumContacto = New System.Windows.Forms.TextBox()
+        Me.txtNombreContacto = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox63 = New System.Windows.Forms.TextBox()
-        Me.TextBox62 = New System.Windows.Forms.TextBox()
-        Me.Label76 = New System.Windows.Forms.Label()
-        Me.Label75 = New System.Windows.Forms.Label()
-        Me.Label74 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox55 = New System.Windows.Forms.TextBox()
+        Me.txtRutAlumno = New System.Windows.Forms.TextBox()
         Me.Label67 = New System.Windows.Forms.Label()
-        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.radioFeme = New System.Windows.Forms.RadioButton()
+        Me.radioMasc = New System.Windows.Forms.RadioButton()
         Me.Label66 = New System.Windows.Forms.Label()
         Me.Label46 = New System.Windows.Forms.Label()
         Me.Label45 = New System.Windows.Forms.Label()
-        Me.TextBox40 = New System.Windows.Forms.TextBox()
-        Me.TextBox39 = New System.Windows.Forms.TextBox()
-        Me.TextBox38 = New System.Windows.Forms.TextBox()
+        Me.txtGrupoFamiliar = New System.Windows.Forms.TextBox()
+        Me.txtLugarHijos = New System.Windows.Forms.TextBox()
+        Me.txtNumHijos = New System.Windows.Forms.TextBox()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.Label43 = New System.Windows.Forms.Label()
-        Me.TextBox37 = New System.Windows.Forms.TextBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.txtViveConOtros = New System.Windows.Forms.TextBox()
+        Me.checkSoloPapa = New System.Windows.Forms.CheckBox()
+        Me.checkSoloMama = New System.Windows.Forms.CheckBox()
+        Me.checkMamayPapa = New System.Windows.Forms.CheckBox()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.txtEdadMadre = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
-        Me.TextBox30 = New System.Windows.Forms.TextBox()
-        Me.TextBox31 = New System.Windows.Forms.TextBox()
-        Me.TextBox32 = New System.Windows.Forms.TextBox()
-        Me.TextBox33 = New System.Windows.Forms.TextBox()
-        Me.TextBox34 = New System.Windows.Forms.TextBox()
-        Me.TextBox35 = New System.Windows.Forms.TextBox()
-        Me.TextBox36 = New System.Windows.Forms.TextBox()
+        Me.txtCorreoMadre = New System.Windows.Forms.TextBox()
+        Me.txtDireccionMadre = New System.Windows.Forms.TextBox()
+        Me.txtCargoMadre = New System.Windows.Forms.TextBox()
+        Me.txtTelefonoMadre = New System.Windows.Forms.TextBox()
+        Me.txtTrabajaenMadre = New System.Windows.Forms.TextBox()
+        Me.txtRutMadre = New System.Windows.Forms.TextBox()
+        Me.txtNombreMadre = New System.Windows.Forms.TextBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -182,19 +176,15 @@ Partial Class FormularioMatricula
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label41 = New System.Windows.Forms.Label()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.txtEdadPadre = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.txtCorreoPadre = New System.Windows.Forms.TextBox()
+        Me.txtDireccionPadre = New System.Windows.Forms.TextBox()
+        Me.txtCargoPadre = New System.Windows.Forms.TextBox()
+        Me.txtTelefonoPadre = New System.Windows.Forms.TextBox()
+        Me.txtTrabajaenPadre = New System.Windows.Forms.TextBox()
+        Me.txtRutPadre = New System.Windows.Forms.TextBox()
+        Me.txtNombrePadre = New System.Windows.Forms.TextBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
@@ -208,22 +198,22 @@ Partial Class FormularioMatricula
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.txtHermanosCursos = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.txtCursosRepetidos = New System.Windows.Forms.TextBox()
+        Me.txtColegioPrese = New System.Windows.Forms.TextBox()
+        Me.txtTelefonoAlumno = New System.Windows.Forms.TextBox()
+        Me.txtComunaAlumno = New System.Windows.Forms.TextBox()
+        Me.txtSectorAlumno = New System.Windows.Forms.TextBox()
+        Me.txtCalleAlumno = New System.Windows.Forms.TextBox()
+        Me.txtEdadAlumno = New System.Windows.Forms.TextBox()
+        Me.txtNombresAlumno = New System.Windows.Forms.TextBox()
+        Me.txtApeMatAlumno = New System.Windows.Forms.TextBox()
+        Me.txtApePatAlumno = New System.Windows.Forms.TextBox()
+        Me.radioHermanosNo = New System.Windows.Forms.RadioButton()
+        Me.radioHermanosSi = New System.Windows.Forms.RadioButton()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -299,6 +289,11 @@ Partial Class FormularioMatricula
         Me.CheckBox8 = New System.Windows.Forms.CheckBox()
         Me.CheckBox7 = New System.Windows.Forms.CheckBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.checkBasicaMadre = New System.Windows.Forms.CheckBox()
+        Me.checkMediaMadre = New System.Windows.Forms.CheckBox()
+        Me.checkTecnicoMadre = New System.Windows.Forms.CheckBox()
+        Me.checkUniversitariaMadre = New System.Windows.Forms.CheckBox()
+        Me.comboIsapre = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -325,33 +320,33 @@ Partial Class FormularioMatricula
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 3, 10, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(686, 766)
+        Me.TabControl1.Size = New System.Drawing.Size(686, 788)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
         Me.TabPage1.AutoScroll = True
-        Me.TabPage1.Controls.Add(Me.TextBox84)
-        Me.TabPage1.Controls.Add(Me.TextBox83)
-        Me.TabPage1.Controls.Add(Me.TextBox78)
-        Me.TabPage1.Controls.Add(Me.TextBox77)
+        Me.TabPage1.Controls.Add(Me.txtTelefonoTrabajo)
+        Me.TabPage1.Controls.Add(Me.txtTelefonoPart2)
+        Me.TabPage1.Controls.Add(Me.txtTelefonoPart)
+        Me.TabPage1.Controls.Add(Me.txtRut)
         Me.TabPage1.Controls.Add(Me.Label102)
-        Me.TabPage1.Controls.Add(Me.TextBox82)
+        Me.TabPage1.Controls.Add(Me.txtProfesion)
         Me.TabPage1.Controls.Add(Me.Label101)
-        Me.TabPage1.Controls.Add(Me.TextBox81)
-        Me.TabPage1.Controls.Add(Me.TextBox80)
-        Me.TabPage1.Controls.Add(Me.TextBox79)
-        Me.TabPage1.Controls.Add(Me.TextBox76)
+        Me.TabPage1.Controls.Add(Me.txtOcupacionAct)
+        Me.TabPage1.Controls.Add(Me.txtLugarDeTrabajo)
+        Me.TabPage1.Controls.Add(Me.txtDomicilio)
+        Me.TabPage1.Controls.Add(Me.txtNombreTutor)
         Me.TabPage1.Controls.Add(Me.Label100)
         Me.TabPage1.Controls.Add(Me.Label99)
         Me.TabPage1.Controls.Add(Me.Label98)
         Me.TabPage1.Controls.Add(Me.Label97)
         Me.TabPage1.Controls.Add(Me.Label96)
         Me.TabPage1.Controls.Add(Me.Label95)
-        Me.TabPage1.Controls.Add(Me.TextBox75)
-        Me.TabPage1.Controls.Add(Me.CheckBox6)
-        Me.TabPage1.Controls.Add(Me.CheckBox5)
-        Me.TabPage1.Controls.Add(Me.CheckBox4)
+        Me.TabPage1.Controls.Add(Me.txtOtro)
+        Me.TabPage1.Controls.Add(Me.checkboxOtro)
+        Me.TabPage1.Controls.Add(Me.checkboxMadre)
+        Me.TabPage1.Controls.Add(Me.checkboxPadre)
         Me.TabPage1.Controls.Add(Me.Label94)
         Me.TabPage1.Controls.Add(Me.Label93)
         Me.TabPage1.Controls.Add(Me.Label92)
@@ -363,17 +358,17 @@ Partial Class FormularioMatricula
         Me.TabPage1.Controls.Add(Me.Label89)
         Me.TabPage1.Controls.Add(Me.Label88)
         Me.TabPage1.Controls.Add(Me.Label87)
-        Me.TabPage1.Controls.Add(Me.TextBox71)
+        Me.TabPage1.Controls.Add(Me.txtCurso)
         Me.TabPage1.Controls.Add(Me.TextBox70)
         Me.TabPage1.Controls.Add(Me.TextBox69)
         Me.TabPage1.Controls.Add(Me.TextBox68)
-        Me.TabPage1.Controls.Add(Me.TextBox67)
+        Me.TabPage1.Controls.Add(Me.txtNombreAlumno)
         Me.TabPage1.Controls.Add(Me.Label86)
         Me.TabPage1.Controls.Add(Me.Label85)
         Me.TabPage1.Controls.Add(Me.Label84)
         Me.TabPage1.Controls.Add(Me.Label83)
         Me.TabPage1.Controls.Add(Me.Label82)
-        Me.TabPage1.Controls.Add(Me.TextBox66)
+        Me.TabPage1.Controls.Add(Me.txtNombreApoderado)
         Me.TabPage1.Controls.Add(Me.Label81)
         Me.TabPage1.Controls.Add(Me.Label80)
         Me.TabPage1.Controls.Add(Me.GroupBox6)
@@ -381,38 +376,38 @@ Partial Class FormularioMatricula
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(678, 740)
+        Me.TabPage1.Size = New System.Drawing.Size(678, 762)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Contrato de Servicio"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TextBox84
+        'txtTelefonoTrabajo
         '
-        Me.TextBox84.Location = New System.Drawing.Point(491, 810)
-        Me.TextBox84.Name = "TextBox84"
-        Me.TextBox84.Size = New System.Drawing.Size(145, 20)
-        Me.TextBox84.TabIndex = 50
+        Me.txtTelefonoTrabajo.Location = New System.Drawing.Point(491, 810)
+        Me.txtTelefonoTrabajo.Name = "txtTelefonoTrabajo"
+        Me.txtTelefonoTrabajo.Size = New System.Drawing.Size(145, 20)
+        Me.txtTelefonoTrabajo.TabIndex = 50
         '
-        'TextBox83
+        'txtTelefonoPart2
         '
-        Me.TextBox83.Location = New System.Drawing.Point(288, 810)
-        Me.TextBox83.Name = "TextBox83"
-        Me.TextBox83.Size = New System.Drawing.Size(112, 20)
-        Me.TextBox83.TabIndex = 49
+        Me.txtTelefonoPart2.Location = New System.Drawing.Point(288, 810)
+        Me.txtTelefonoPart2.Name = "txtTelefonoPart2"
+        Me.txtTelefonoPart2.Size = New System.Drawing.Size(112, 20)
+        Me.txtTelefonoPart2.TabIndex = 49
         '
-        'TextBox78
+        'txtTelefonoPart
         '
-        Me.TextBox78.Location = New System.Drawing.Point(168, 810)
-        Me.TextBox78.Name = "TextBox78"
-        Me.TextBox78.Size = New System.Drawing.Size(112, 20)
-        Me.TextBox78.TabIndex = 48
+        Me.txtTelefonoPart.Location = New System.Drawing.Point(168, 810)
+        Me.txtTelefonoPart.Name = "txtTelefonoPart"
+        Me.txtTelefonoPart.Size = New System.Drawing.Size(112, 20)
+        Me.txtTelefonoPart.TabIndex = 48
         '
-        'TextBox77
+        'txtRut
         '
-        Me.TextBox77.Location = New System.Drawing.Point(168, 779)
-        Me.TextBox77.Name = "TextBox77"
-        Me.TextBox77.Size = New System.Drawing.Size(112, 20)
-        Me.TextBox77.TabIndex = 47
+        Me.txtRut.Location = New System.Drawing.Point(168, 779)
+        Me.txtRut.Name = "txtRut"
+        Me.txtRut.Size = New System.Drawing.Size(112, 20)
+        Me.txtRut.TabIndex = 47
         '
         'Label102
         '
@@ -423,12 +418,12 @@ Partial Class FormularioMatricula
         Me.Label102.TabIndex = 46
         Me.Label102.Text = "Fono Trabajo"
         '
-        'TextBox82
+        'txtProfesion
         '
-        Me.TextBox82.Location = New System.Drawing.Point(461, 897)
-        Me.TextBox82.Name = "TextBox82"
-        Me.TextBox82.Size = New System.Drawing.Size(175, 20)
-        Me.TextBox82.TabIndex = 44
+        Me.txtProfesion.Location = New System.Drawing.Point(461, 897)
+        Me.txtProfesion.Name = "txtProfesion"
+        Me.txtProfesion.Size = New System.Drawing.Size(175, 20)
+        Me.txtProfesion.TabIndex = 44
         '
         'Label101
         '
@@ -439,33 +434,33 @@ Partial Class FormularioMatricula
         Me.Label101.TabIndex = 43
         Me.Label101.Text = "Profesión"
         '
-        'TextBox81
+        'txtOcupacionAct
         '
-        Me.TextBox81.Location = New System.Drawing.Point(168, 897)
-        Me.TextBox81.Name = "TextBox81"
-        Me.TextBox81.Size = New System.Drawing.Size(232, 20)
-        Me.TextBox81.TabIndex = 42
+        Me.txtOcupacionAct.Location = New System.Drawing.Point(168, 897)
+        Me.txtOcupacionAct.Name = "txtOcupacionAct"
+        Me.txtOcupacionAct.Size = New System.Drawing.Size(232, 20)
+        Me.txtOcupacionAct.TabIndex = 42
         '
-        'TextBox80
+        'txtLugarDeTrabajo
         '
-        Me.TextBox80.Location = New System.Drawing.Point(168, 868)
-        Me.TextBox80.Name = "TextBox80"
-        Me.TextBox80.Size = New System.Drawing.Size(468, 20)
-        Me.TextBox80.TabIndex = 41
+        Me.txtLugarDeTrabajo.Location = New System.Drawing.Point(168, 868)
+        Me.txtLugarDeTrabajo.Name = "txtLugarDeTrabajo"
+        Me.txtLugarDeTrabajo.Size = New System.Drawing.Size(468, 20)
+        Me.txtLugarDeTrabajo.TabIndex = 41
         '
-        'TextBox79
+        'txtDomicilio
         '
-        Me.TextBox79.Location = New System.Drawing.Point(168, 838)
-        Me.TextBox79.Name = "TextBox79"
-        Me.TextBox79.Size = New System.Drawing.Size(468, 20)
-        Me.TextBox79.TabIndex = 40
+        Me.txtDomicilio.Location = New System.Drawing.Point(168, 838)
+        Me.txtDomicilio.Name = "txtDomicilio"
+        Me.txtDomicilio.Size = New System.Drawing.Size(468, 20)
+        Me.txtDomicilio.TabIndex = 40
         '
-        'TextBox76
+        'txtNombreTutor
         '
-        Me.TextBox76.Location = New System.Drawing.Point(168, 749)
-        Me.TextBox76.Name = "TextBox76"
-        Me.TextBox76.Size = New System.Drawing.Size(468, 20)
-        Me.TextBox76.TabIndex = 37
+        Me.txtNombreTutor.Location = New System.Drawing.Point(168, 749)
+        Me.txtNombreTutor.Name = "txtNombreTutor"
+        Me.txtNombreTutor.Size = New System.Drawing.Size(468, 20)
+        Me.txtNombreTutor.TabIndex = 37
         '
         'Label100
         '
@@ -521,42 +516,42 @@ Partial Class FormularioMatricula
         Me.Label95.TabIndex = 31
         Me.Label95.Text = "Nombre del Tutor"
         '
-        'TextBox75
+        'txtOtro
         '
-        Me.TextBox75.Location = New System.Drawing.Point(461, 718)
-        Me.TextBox75.Name = "TextBox75"
-        Me.TextBox75.Size = New System.Drawing.Size(175, 20)
-        Me.TextBox75.TabIndex = 30
+        Me.txtOtro.Location = New System.Drawing.Point(461, 718)
+        Me.txtOtro.Name = "txtOtro"
+        Me.txtOtro.Size = New System.Drawing.Size(175, 20)
+        Me.txtOtro.TabIndex = 30
         '
-        'CheckBox6
+        'checkboxOtro
         '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(380, 721)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(57, 17)
-        Me.CheckBox6.TabIndex = 29
-        Me.CheckBox6.Text = "OTRO"
-        Me.CheckBox6.UseVisualStyleBackColor = True
+        Me.checkboxOtro.AutoSize = True
+        Me.checkboxOtro.Location = New System.Drawing.Point(380, 721)
+        Me.checkboxOtro.Name = "checkboxOtro"
+        Me.checkboxOtro.Size = New System.Drawing.Size(57, 17)
+        Me.checkboxOtro.TabIndex = 29
+        Me.checkboxOtro.Text = "OTRO"
+        Me.checkboxOtro.UseVisualStyleBackColor = True
         '
-        'CheckBox5
+        'checkboxMadre
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(273, 721)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox5.TabIndex = 28
-        Me.CheckBox5.Text = "LA MADRE"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.checkboxMadre.AutoSize = True
+        Me.checkboxMadre.Location = New System.Drawing.Point(273, 721)
+        Me.checkboxMadre.Name = "checkboxMadre"
+        Me.checkboxMadre.Size = New System.Drawing.Size(81, 17)
+        Me.checkboxMadre.TabIndex = 28
+        Me.checkboxMadre.Text = "LA MADRE"
+        Me.checkboxMadre.UseVisualStyleBackColor = True
         '
-        'CheckBox4
+        'checkboxPadre
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(170, 720)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(79, 17)
-        Me.CheckBox4.TabIndex = 27
-        Me.CheckBox4.Text = "EL PADRE"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.checkboxPadre.AutoSize = True
+        Me.checkboxPadre.Location = New System.Drawing.Point(170, 720)
+        Me.checkboxPadre.Name = "checkboxPadre"
+        Me.checkboxPadre.Size = New System.Drawing.Size(79, 17)
+        Me.checkboxPadre.TabIndex = 27
+        Me.checkboxPadre.Text = "EL PADRE"
+        Me.checkboxPadre.UseVisualStyleBackColor = True
         '
         'Label94
         '
@@ -652,12 +647,12 @@ Partial Class FormularioMatricula
         Me.Label87.TabIndex = 16
         Me.Label87.Text = "curso"
         '
-        'TextBox71
+        'txtCurso
         '
-        Me.TextBox71.Location = New System.Drawing.Point(461, 427)
-        Me.TextBox71.Name = "TextBox71"
-        Me.TextBox71.Size = New System.Drawing.Size(175, 20)
-        Me.TextBox71.TabIndex = 15
+        Me.txtCurso.Location = New System.Drawing.Point(461, 427)
+        Me.txtCurso.Name = "txtCurso"
+        Me.txtCurso.Size = New System.Drawing.Size(175, 20)
+        Me.txtCurso.TabIndex = 15
         '
         'TextBox70
         '
@@ -680,12 +675,12 @@ Partial Class FormularioMatricula
         Me.TextBox68.Size = New System.Drawing.Size(367, 20)
         Me.TextBox68.TabIndex = 12
         '
-        'TextBox67
+        'txtNombreAlumno
         '
-        Me.TextBox67.Location = New System.Drawing.Point(33, 427)
-        Me.TextBox67.Name = "TextBox67"
-        Me.TextBox67.Size = New System.Drawing.Size(367, 20)
-        Me.TextBox67.TabIndex = 11
+        Me.txtNombreAlumno.Location = New System.Drawing.Point(33, 427)
+        Me.txtNombreAlumno.Name = "txtNombreAlumno"
+        Me.txtNombreAlumno.Size = New System.Drawing.Size(367, 20)
+        Me.txtNombreAlumno.TabIndex = 11
         '
         'Label86
         '
@@ -731,12 +726,12 @@ Partial Class FormularioMatricula
         Me.Label82.TabIndex = 6
         Me.Label82.Text = "Como Apoderado, solicito matricula para el (los) siguiente(s) Alumno(s)"
         '
-        'TextBox66
+        'txtNombreApoderado
         '
-        Me.TextBox66.Location = New System.Drawing.Point(17, 376)
-        Me.TextBox66.Name = "TextBox66"
-        Me.TextBox66.Size = New System.Drawing.Size(383, 20)
-        Me.TextBox66.TabIndex = 5
+        Me.txtNombreApoderado.Location = New System.Drawing.Point(17, 376)
+        Me.txtNombreApoderado.Name = "txtNombreApoderado"
+        Me.txtNombreApoderado.Size = New System.Drawing.Size(383, 20)
+        Me.txtNombreApoderado.TabIndex = 5
         '
         'Label81
         '
@@ -830,44 +825,43 @@ Partial Class FormularioMatricula
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.checkUniversitariaMadre)
+        Me.TabPage2.Controls.Add(Me.checkTecnicoMadre)
+        Me.TabPage2.Controls.Add(Me.checkMediaMadre)
+        Me.TabPage2.Controls.Add(Me.checkBasicaMadre)
+        Me.TabPage2.Controls.Add(Me.checkUniversitariaPadre)
+        Me.TabPage2.Controls.Add(Me.checkTecnicoPadre)
+        Me.TabPage2.Controls.Add(Me.checkMediaPadre)
+        Me.TabPage2.Controls.Add(Me.checkBasicaPadre)
+        Me.TabPage2.Controls.Add(Me.dateTimeFechaNac)
         Me.TabPage2.Controls.Add(Me.GroupBox1)
-        Me.TabPage2.Controls.Add(Me.TextBox63)
-        Me.TabPage2.Controls.Add(Me.TextBox62)
-        Me.TabPage2.Controls.Add(Me.Label76)
-        Me.TabPage2.Controls.Add(Me.Label75)
-        Me.TabPage2.Controls.Add(Me.Label74)
-        Me.TabPage2.Controls.Add(Me.TextBox1)
-        Me.TabPage2.Controls.Add(Me.TextBox55)
+        Me.TabPage2.Controls.Add(Me.txtRutAlumno)
         Me.TabPage2.Controls.Add(Me.Label67)
-        Me.TabPage2.Controls.Add(Me.RadioButton7)
-        Me.TabPage2.Controls.Add(Me.RadioButton6)
+        Me.TabPage2.Controls.Add(Me.radioFeme)
+        Me.TabPage2.Controls.Add(Me.radioMasc)
         Me.TabPage2.Controls.Add(Me.Label66)
         Me.TabPage2.Controls.Add(Me.Label46)
         Me.TabPage2.Controls.Add(Me.Label45)
-        Me.TabPage2.Controls.Add(Me.TextBox40)
-        Me.TabPage2.Controls.Add(Me.TextBox39)
-        Me.TabPage2.Controls.Add(Me.TextBox38)
+        Me.TabPage2.Controls.Add(Me.txtGrupoFamiliar)
+        Me.TabPage2.Controls.Add(Me.txtLugarHijos)
+        Me.TabPage2.Controls.Add(Me.txtNumHijos)
         Me.TabPage2.Controls.Add(Me.Label44)
         Me.TabPage2.Controls.Add(Me.Label43)
-        Me.TabPage2.Controls.Add(Me.TextBox37)
-        Me.TabPage2.Controls.Add(Me.CheckBox3)
-        Me.TabPage2.Controls.Add(Me.CheckBox2)
-        Me.TabPage2.Controls.Add(Me.CheckBox1)
+        Me.TabPage2.Controls.Add(Me.txtViveConOtros)
+        Me.TabPage2.Controls.Add(Me.checkSoloPapa)
+        Me.TabPage2.Controls.Add(Me.checkSoloMama)
+        Me.TabPage2.Controls.Add(Me.checkMamayPapa)
         Me.TabPage2.Controls.Add(Me.Label48)
         Me.TabPage2.Controls.Add(Me.Label42)
-        Me.TabPage2.Controls.Add(Me.TextBox25)
+        Me.TabPage2.Controls.Add(Me.txtEdadMadre)
         Me.TabPage2.Controls.Add(Me.Label29)
-        Me.TabPage2.Controls.Add(Me.TextBox26)
-        Me.TabPage2.Controls.Add(Me.TextBox27)
-        Me.TabPage2.Controls.Add(Me.TextBox28)
-        Me.TabPage2.Controls.Add(Me.TextBox29)
-        Me.TabPage2.Controls.Add(Me.TextBox30)
-        Me.TabPage2.Controls.Add(Me.TextBox31)
-        Me.TabPage2.Controls.Add(Me.TextBox32)
-        Me.TabPage2.Controls.Add(Me.TextBox33)
-        Me.TabPage2.Controls.Add(Me.TextBox34)
-        Me.TabPage2.Controls.Add(Me.TextBox35)
-        Me.TabPage2.Controls.Add(Me.TextBox36)
+        Me.TabPage2.Controls.Add(Me.txtCorreoMadre)
+        Me.TabPage2.Controls.Add(Me.txtDireccionMadre)
+        Me.TabPage2.Controls.Add(Me.txtCargoMadre)
+        Me.TabPage2.Controls.Add(Me.txtTelefonoMadre)
+        Me.TabPage2.Controls.Add(Me.txtTrabajaenMadre)
+        Me.TabPage2.Controls.Add(Me.txtRutMadre)
+        Me.TabPage2.Controls.Add(Me.txtNombreMadre)
         Me.TabPage2.Controls.Add(Me.Label30)
         Me.TabPage2.Controls.Add(Me.Label31)
         Me.TabPage2.Controls.Add(Me.Label32)
@@ -880,19 +874,15 @@ Partial Class FormularioMatricula
         Me.TabPage2.Controls.Add(Me.Label39)
         Me.TabPage2.Controls.Add(Me.Label40)
         Me.TabPage2.Controls.Add(Me.Label41)
-        Me.TabPage2.Controls.Add(Me.TextBox24)
+        Me.TabPage2.Controls.Add(Me.txtEdadPadre)
         Me.TabPage2.Controls.Add(Me.Label28)
-        Me.TabPage2.Controls.Add(Me.TextBox23)
-        Me.TabPage2.Controls.Add(Me.TextBox22)
-        Me.TabPage2.Controls.Add(Me.TextBox21)
-        Me.TabPage2.Controls.Add(Me.TextBox20)
-        Me.TabPage2.Controls.Add(Me.TextBox19)
-        Me.TabPage2.Controls.Add(Me.TextBox18)
-        Me.TabPage2.Controls.Add(Me.TextBox17)
-        Me.TabPage2.Controls.Add(Me.TextBox16)
-        Me.TabPage2.Controls.Add(Me.TextBox15)
-        Me.TabPage2.Controls.Add(Me.TextBox14)
-        Me.TabPage2.Controls.Add(Me.TextBox13)
+        Me.TabPage2.Controls.Add(Me.txtCorreoPadre)
+        Me.TabPage2.Controls.Add(Me.txtDireccionPadre)
+        Me.TabPage2.Controls.Add(Me.txtCargoPadre)
+        Me.TabPage2.Controls.Add(Me.txtTelefonoPadre)
+        Me.TabPage2.Controls.Add(Me.txtTrabajaenPadre)
+        Me.TabPage2.Controls.Add(Me.txtRutPadre)
+        Me.TabPage2.Controls.Add(Me.txtNombrePadre)
         Me.TabPage2.Controls.Add(Me.Label27)
         Me.TabPage2.Controls.Add(Me.Label26)
         Me.TabPage2.Controls.Add(Me.Label25)
@@ -906,22 +896,22 @@ Partial Class FormularioMatricula
         Me.TabPage2.Controls.Add(Me.Label17)
         Me.TabPage2.Controls.Add(Me.Label16)
         Me.TabPage2.Controls.Add(Me.Label15)
-        Me.TabPage2.Controls.Add(Me.TextBox12)
+        Me.TabPage2.Controls.Add(Me.txtHermanosCursos)
         Me.TabPage2.Controls.Add(Me.Label14)
         Me.TabPage2.Controls.Add(Me.Label13)
         Me.TabPage2.Controls.Add(Me.Label12)
-        Me.TabPage2.Controls.Add(Me.TextBox11)
-        Me.TabPage2.Controls.Add(Me.TextBox10)
-        Me.TabPage2.Controls.Add(Me.TextBox9)
-        Me.TabPage2.Controls.Add(Me.TextBox8)
-        Me.TabPage2.Controls.Add(Me.TextBox7)
-        Me.TabPage2.Controls.Add(Me.TextBox6)
-        Me.TabPage2.Controls.Add(Me.TextBox5)
-        Me.TabPage2.Controls.Add(Me.TextBox4)
-        Me.TabPage2.Controls.Add(Me.TextBox3)
-        Me.TabPage2.Controls.Add(Me.TextBox2)
-        Me.TabPage2.Controls.Add(Me.RadioButton2)
-        Me.TabPage2.Controls.Add(Me.RadioButton1)
+        Me.TabPage2.Controls.Add(Me.txtCursosRepetidos)
+        Me.TabPage2.Controls.Add(Me.txtColegioPrese)
+        Me.TabPage2.Controls.Add(Me.txtTelefonoAlumno)
+        Me.TabPage2.Controls.Add(Me.txtComunaAlumno)
+        Me.TabPage2.Controls.Add(Me.txtSectorAlumno)
+        Me.TabPage2.Controls.Add(Me.txtCalleAlumno)
+        Me.TabPage2.Controls.Add(Me.txtEdadAlumno)
+        Me.TabPage2.Controls.Add(Me.txtNombresAlumno)
+        Me.TabPage2.Controls.Add(Me.txtApeMatAlumno)
+        Me.TabPage2.Controls.Add(Me.txtApePatAlumno)
+        Me.TabPage2.Controls.Add(Me.radioHermanosNo)
+        Me.TabPage2.Controls.Add(Me.radioHermanosSi)
         Me.TabPage2.Controls.Add(Me.Label11)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.Label9)
@@ -936,39 +926,82 @@ Partial Class FormularioMatricula
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(678, 626)
+        Me.TabPage2.Size = New System.Drawing.Size(678, 762)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Ficha de Matricula"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'checkUniversitariaPadre
+        '
+        Me.checkUniversitariaPadre.AutoSize = True
+        Me.checkUniversitariaPadre.Location = New System.Drawing.Point(225, 594)
+        Me.checkUniversitariaPadre.Name = "checkUniversitariaPadre"
+        Me.checkUniversitariaPadre.Size = New System.Drawing.Size(15, 14)
+        Me.checkUniversitariaPadre.TabIndex = 145
+        Me.checkUniversitariaPadre.UseVisualStyleBackColor = True
+        '
+        'checkTecnicoPadre
+        '
+        Me.checkTecnicoPadre.AutoSize = True
+        Me.checkTecnicoPadre.Location = New System.Drawing.Point(225, 565)
+        Me.checkTecnicoPadre.Name = "checkTecnicoPadre"
+        Me.checkTecnicoPadre.Size = New System.Drawing.Size(15, 14)
+        Me.checkTecnicoPadre.TabIndex = 144
+        Me.checkTecnicoPadre.UseVisualStyleBackColor = True
+        '
+        'checkMediaPadre
+        '
+        Me.checkMediaPadre.AutoSize = True
+        Me.checkMediaPadre.Location = New System.Drawing.Point(225, 535)
+        Me.checkMediaPadre.Name = "checkMediaPadre"
+        Me.checkMediaPadre.Size = New System.Drawing.Size(15, 14)
+        Me.checkMediaPadre.TabIndex = 143
+        Me.checkMediaPadre.UseVisualStyleBackColor = True
+        '
+        'checkBasicaPadre
+        '
+        Me.checkBasicaPadre.AutoSize = True
+        Me.checkBasicaPadre.Location = New System.Drawing.Point(225, 506)
+        Me.checkBasicaPadre.Name = "checkBasicaPadre"
+        Me.checkBasicaPadre.Size = New System.Drawing.Size(15, 14)
+        Me.checkBasicaPadre.TabIndex = 142
+        Me.checkBasicaPadre.UseVisualStyleBackColor = True
+        '
+        'dateTimeFechaNac
+        '
+        Me.dateTimeFechaNac.Location = New System.Drawing.Point(222, 163)
+        Me.dateTimeFechaNac.Name = "dateTimeFechaNac"
+        Me.dateTimeFechaNac.Size = New System.Drawing.Size(200, 20)
+        Me.dateTimeFechaNac.TabIndex = 141
         '
         'GroupBox1
         '
         Me.GroupBox1.AutoSize = True
         Me.GroupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.GroupBox1.Controls.Add(Me.comboIsapre)
         Me.GroupBox1.Controls.Add(Me.TextBox61)
         Me.GroupBox1.Controls.Add(Me.TextBox60)
         Me.GroupBox1.Controls.Add(Me.TextBox59)
         Me.GroupBox1.Controls.Add(Me.Label73)
         Me.GroupBox1.Controls.Add(Me.Label72)
         Me.GroupBox1.Controls.Add(Me.Label71)
-        Me.GroupBox1.Controls.Add(Me.TextBox58)
-        Me.GroupBox1.Controls.Add(Me.TextBox57)
+        Me.GroupBox1.Controls.Add(Me.txtNombreTutor2)
+        Me.GroupBox1.Controls.Add(Me.txtNombreApodSuplent)
         Me.GroupBox1.Controls.Add(Me.Label70)
         Me.GroupBox1.Controls.Add(Me.Label69)
-        Me.GroupBox1.Controls.Add(Me.TextBox56)
+        Me.GroupBox1.Controls.Add(Me.txtNombreApoderado2)
         Me.GroupBox1.Controls.Add(Me.Label68)
-        Me.GroupBox1.Controls.Add(Me.RadioButton5)
-        Me.GroupBox1.Controls.Add(Me.RadioButton4)
-        Me.GroupBox1.Controls.Add(Me.RadioButton3)
-        Me.GroupBox1.Controls.Add(Me.TextBox54)
-        Me.GroupBox1.Controls.Add(Me.TextBox53)
-        Me.GroupBox1.Controls.Add(Me.TextBox52)
+        Me.GroupBox1.Controls.Add(Me.radioFonasaC)
+        Me.GroupBox1.Controls.Add(Me.radioFonasaB)
+        Me.GroupBox1.Controls.Add(Me.radioFonasaA)
+        Me.GroupBox1.Controls.Add(Me.txtOtrosServicios)
+        Me.GroupBox1.Controls.Add(Me.txtSeguros)
         Me.GroupBox1.Controls.Add(Me.Label65)
         Me.GroupBox1.Controls.Add(Me.Label64)
         Me.GroupBox1.Controls.Add(Me.Label63)
         Me.GroupBox1.Controls.Add(Me.Label62)
         Me.GroupBox1.Controls.Add(Me.Label61)
-        Me.GroupBox1.Controls.Add(Me.TextBox51)
+        Me.GroupBox1.Controls.Add(Me.txtAntecedentesMed)
         Me.GroupBox1.Controls.Add(Me.Label60)
         Me.GroupBox1.Controls.Add(Me.GroupBoxContent)
         Me.GroupBox1.Controls.Add(Me.Label51)
@@ -1034,19 +1067,19 @@ Partial Class FormularioMatricula
         Me.Label71.TabIndex = 153
         Me.Label71.Text = "FIRMA"
         '
-        'TextBox58
+        'txtNombreTutor2
         '
-        Me.TextBox58.Location = New System.Drawing.Point(13, 1066)
-        Me.TextBox58.Name = "TextBox58"
-        Me.TextBox58.Size = New System.Drawing.Size(436, 20)
-        Me.TextBox58.TabIndex = 152
+        Me.txtNombreTutor2.Location = New System.Drawing.Point(13, 1066)
+        Me.txtNombreTutor2.Name = "txtNombreTutor2"
+        Me.txtNombreTutor2.Size = New System.Drawing.Size(436, 20)
+        Me.txtNombreTutor2.TabIndex = 152
         '
-        'TextBox57
+        'txtNombreApodSuplent
         '
-        Me.TextBox57.Location = New System.Drawing.Point(13, 1008)
-        Me.TextBox57.Name = "TextBox57"
-        Me.TextBox57.Size = New System.Drawing.Size(436, 20)
-        Me.TextBox57.TabIndex = 151
+        Me.txtNombreApodSuplent.Location = New System.Drawing.Point(13, 1008)
+        Me.txtNombreApodSuplent.Name = "txtNombreApodSuplent"
+        Me.txtNombreApodSuplent.Size = New System.Drawing.Size(436, 20)
+        Me.txtNombreApodSuplent.TabIndex = 151
         '
         'Label70
         '
@@ -1066,12 +1099,12 @@ Partial Class FormularioMatricula
         Me.Label69.TabIndex = 149
         Me.Label69.Text = "NOMBRE DEL APODERADO SUPLENTE"
         '
-        'TextBox56
+        'txtNombreApoderado2
         '
-        Me.TextBox56.Location = New System.Drawing.Point(13, 948)
-        Me.TextBox56.Name = "TextBox56"
-        Me.TextBox56.Size = New System.Drawing.Size(436, 20)
-        Me.TextBox56.TabIndex = 148
+        Me.txtNombreApoderado2.Location = New System.Drawing.Point(13, 948)
+        Me.txtNombreApoderado2.Name = "txtNombreApoderado2"
+        Me.txtNombreApoderado2.Size = New System.Drawing.Size(436, 20)
+        Me.txtNombreApoderado2.TabIndex = 148
         '
         'Label68
         '
@@ -1082,59 +1115,52 @@ Partial Class FormularioMatricula
         Me.Label68.TabIndex = 147
         Me.Label68.Text = "NOMBRE DEL APODERADO TITULAR"
         '
-        'RadioButton5
+        'radioFonasaC
         '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(520, 873)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(32, 17)
-        Me.RadioButton5.TabIndex = 146
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "C"
-        Me.RadioButton5.UseVisualStyleBackColor = True
+        Me.radioFonasaC.AutoSize = True
+        Me.radioFonasaC.Location = New System.Drawing.Point(520, 873)
+        Me.radioFonasaC.Name = "radioFonasaC"
+        Me.radioFonasaC.Size = New System.Drawing.Size(32, 17)
+        Me.radioFonasaC.TabIndex = 146
+        Me.radioFonasaC.TabStop = True
+        Me.radioFonasaC.Text = "C"
+        Me.radioFonasaC.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'radioFonasaB
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(460, 873)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(32, 17)
-        Me.RadioButton4.TabIndex = 145
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "B"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.radioFonasaB.AutoSize = True
+        Me.radioFonasaB.Location = New System.Drawing.Point(460, 873)
+        Me.radioFonasaB.Name = "radioFonasaB"
+        Me.radioFonasaB.Size = New System.Drawing.Size(32, 17)
+        Me.radioFonasaB.TabIndex = 145
+        Me.radioFonasaB.TabStop = True
+        Me.radioFonasaB.Text = "B"
+        Me.radioFonasaB.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'radioFonasaA
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(402, 873)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(32, 17)
-        Me.RadioButton3.TabIndex = 144
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "A"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.radioFonasaA.AutoSize = True
+        Me.radioFonasaA.Location = New System.Drawing.Point(402, 873)
+        Me.radioFonasaA.Name = "radioFonasaA"
+        Me.radioFonasaA.Size = New System.Drawing.Size(32, 17)
+        Me.radioFonasaA.TabIndex = 144
+        Me.radioFonasaA.TabStop = True
+        Me.radioFonasaA.Text = "A"
+        Me.radioFonasaA.UseVisualStyleBackColor = True
         '
-        'TextBox54
+        'txtOtrosServicios
         '
-        Me.TextBox54.Location = New System.Drawing.Point(402, 898)
-        Me.TextBox54.Name = "TextBox54"
-        Me.TextBox54.Size = New System.Drawing.Size(214, 20)
-        Me.TextBox54.TabIndex = 143
+        Me.txtOtrosServicios.Location = New System.Drawing.Point(402, 898)
+        Me.txtOtrosServicios.Name = "txtOtrosServicios"
+        Me.txtOtrosServicios.Size = New System.Drawing.Size(214, 20)
+        Me.txtOtrosServicios.TabIndex = 143
         '
-        'TextBox53
+        'txtSeguros
         '
-        Me.TextBox53.Location = New System.Drawing.Point(77, 898)
-        Me.TextBox53.Name = "TextBox53"
-        Me.TextBox53.Size = New System.Drawing.Size(208, 20)
-        Me.TextBox53.TabIndex = 142
-        '
-        'TextBox52
-        '
-        Me.TextBox52.Location = New System.Drawing.Point(78, 872)
-        Me.TextBox52.Name = "TextBox52"
-        Me.TextBox52.Size = New System.Drawing.Size(207, 20)
-        Me.TextBox52.TabIndex = 141
+        Me.txtSeguros.Location = New System.Drawing.Point(77, 898)
+        Me.txtSeguros.Name = "txtSeguros"
+        Me.txtSeguros.Size = New System.Drawing.Size(208, 20)
+        Me.txtSeguros.TabIndex = 142
         '
         'Label65
         '
@@ -1181,12 +1207,12 @@ Partial Class FormularioMatricula
         Me.Label61.TabIndex = 136
         Me.Label61.Text = "SEÑALAR NOMBRES DE SERVICIOS DE SALUD CON QUE CUENTA EL ALUMNO(A)"
         '
-        'TextBox51
+        'txtAntecedentesMed
         '
-        Me.TextBox51.Location = New System.Drawing.Point(253, 819)
-        Me.TextBox51.Name = "TextBox51"
-        Me.TextBox51.Size = New System.Drawing.Size(363, 20)
-        Me.TextBox51.TabIndex = 135
+        Me.txtAntecedentesMed.Location = New System.Drawing.Point(253, 819)
+        Me.txtAntecedentesMed.Name = "txtAntecedentesMed"
+        Me.txtAntecedentesMed.Size = New System.Drawing.Size(363, 20)
+        Me.txtAntecedentesMed.TabIndex = 135
         '
         'Label60
         '
@@ -1217,8 +1243,8 @@ Partial Class FormularioMatricula
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.Label58)
-        Me.GroupBox5.Controls.Add(Me.TextBox49)
-        Me.GroupBox5.Controls.Add(Me.TextBox50)
+        Me.GroupBox5.Controls.Add(Me.txtNumContacto5)
+        Me.GroupBox5.Controls.Add(Me.txtNombreContacto5)
         Me.GroupBox5.Controls.Add(Me.Label59)
         Me.GroupBox5.Location = New System.Drawing.Point(21, 578)
         Me.GroupBox5.Name = "GroupBox5"
@@ -1237,19 +1263,19 @@ Partial Class FormularioMatricula
         Me.Label58.TabIndex = 99
         Me.Label58.Text = "Nombre de Contacto"
         '
-        'TextBox49
+        'txtNumContacto5
         '
-        Me.TextBox49.Location = New System.Drawing.Point(157, 70)
-        Me.TextBox49.Name = "TextBox49"
-        Me.TextBox49.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox49.TabIndex = 104
+        Me.txtNumContacto5.Location = New System.Drawing.Point(157, 70)
+        Me.txtNumContacto5.Name = "txtNumContacto5"
+        Me.txtNumContacto5.Size = New System.Drawing.Size(310, 20)
+        Me.txtNumContacto5.TabIndex = 104
         '
-        'TextBox50
+        'txtNombreContacto5
         '
-        Me.TextBox50.Location = New System.Drawing.Point(157, 29)
-        Me.TextBox50.Name = "TextBox50"
-        Me.TextBox50.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox50.TabIndex = 103
+        Me.txtNombreContacto5.Location = New System.Drawing.Point(157, 29)
+        Me.txtNombreContacto5.Name = "txtNombreContacto5"
+        Me.txtNombreContacto5.Size = New System.Drawing.Size(310, 20)
+        Me.txtNombreContacto5.TabIndex = 103
         '
         'Label59
         '
@@ -1263,8 +1289,8 @@ Partial Class FormularioMatricula
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.Label56)
-        Me.GroupBox4.Controls.Add(Me.TextBox47)
-        Me.GroupBox4.Controls.Add(Me.TextBox48)
+        Me.GroupBox4.Controls.Add(Me.txtNumContacto4)
+        Me.GroupBox4.Controls.Add(Me.txtNombreContacto4)
         Me.GroupBox4.Controls.Add(Me.Label57)
         Me.GroupBox4.Location = New System.Drawing.Point(21, 438)
         Me.GroupBox4.Name = "GroupBox4"
@@ -1283,19 +1309,19 @@ Partial Class FormularioMatricula
         Me.Label56.TabIndex = 99
         Me.Label56.Text = "Nombre de Contacto"
         '
-        'TextBox47
+        'txtNumContacto4
         '
-        Me.TextBox47.Location = New System.Drawing.Point(157, 70)
-        Me.TextBox47.Name = "TextBox47"
-        Me.TextBox47.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox47.TabIndex = 104
+        Me.txtNumContacto4.Location = New System.Drawing.Point(157, 70)
+        Me.txtNumContacto4.Name = "txtNumContacto4"
+        Me.txtNumContacto4.Size = New System.Drawing.Size(310, 20)
+        Me.txtNumContacto4.TabIndex = 104
         '
-        'TextBox48
+        'txtNombreContacto4
         '
-        Me.TextBox48.Location = New System.Drawing.Point(157, 29)
-        Me.TextBox48.Name = "TextBox48"
-        Me.TextBox48.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox48.TabIndex = 103
+        Me.txtNombreContacto4.Location = New System.Drawing.Point(157, 29)
+        Me.txtNombreContacto4.Name = "txtNombreContacto4"
+        Me.txtNombreContacto4.Size = New System.Drawing.Size(310, 20)
+        Me.txtNombreContacto4.TabIndex = 103
         '
         'Label57
         '
@@ -1309,8 +1335,8 @@ Partial Class FormularioMatricula
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label54)
-        Me.GroupBox3.Controls.Add(Me.TextBox45)
-        Me.GroupBox3.Controls.Add(Me.TextBox46)
+        Me.GroupBox3.Controls.Add(Me.txtNumContacto3)
+        Me.GroupBox3.Controls.Add(Me.txtNombreContacto3)
         Me.GroupBox3.Controls.Add(Me.Label55)
         Me.GroupBox3.Location = New System.Drawing.Point(21, 300)
         Me.GroupBox3.Name = "GroupBox3"
@@ -1329,19 +1355,19 @@ Partial Class FormularioMatricula
         Me.Label54.TabIndex = 99
         Me.Label54.Text = "Nombre de Contacto"
         '
-        'TextBox45
+        'txtNumContacto3
         '
-        Me.TextBox45.Location = New System.Drawing.Point(157, 70)
-        Me.TextBox45.Name = "TextBox45"
-        Me.TextBox45.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox45.TabIndex = 104
+        Me.txtNumContacto3.Location = New System.Drawing.Point(157, 70)
+        Me.txtNumContacto3.Name = "txtNumContacto3"
+        Me.txtNumContacto3.Size = New System.Drawing.Size(310, 20)
+        Me.txtNumContacto3.TabIndex = 104
         '
-        'TextBox46
+        'txtNombreContacto3
         '
-        Me.TextBox46.Location = New System.Drawing.Point(157, 29)
-        Me.TextBox46.Name = "TextBox46"
-        Me.TextBox46.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox46.TabIndex = 103
+        Me.txtNombreContacto3.Location = New System.Drawing.Point(157, 29)
+        Me.txtNombreContacto3.Name = "txtNombreContacto3"
+        Me.txtNombreContacto3.Size = New System.Drawing.Size(310, 20)
+        Me.txtNombreContacto3.TabIndex = 103
         '
         'Label55
         '
@@ -1355,8 +1381,8 @@ Partial Class FormularioMatricula
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label52)
-        Me.GroupBox2.Controls.Add(Me.TextBox43)
-        Me.GroupBox2.Controls.Add(Me.TextBox44)
+        Me.GroupBox2.Controls.Add(Me.txtNumContacto2)
+        Me.GroupBox2.Controls.Add(Me.txtNombreContacto2)
         Me.GroupBox2.Controls.Add(Me.Label53)
         Me.GroupBox2.Location = New System.Drawing.Point(21, 163)
         Me.GroupBox2.Name = "GroupBox2"
@@ -1375,19 +1401,19 @@ Partial Class FormularioMatricula
         Me.Label52.TabIndex = 99
         Me.Label52.Text = "Nombre de Contacto"
         '
-        'TextBox43
+        'txtNumContacto2
         '
-        Me.TextBox43.Location = New System.Drawing.Point(157, 70)
-        Me.TextBox43.Name = "TextBox43"
-        Me.TextBox43.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox43.TabIndex = 104
+        Me.txtNumContacto2.Location = New System.Drawing.Point(157, 70)
+        Me.txtNumContacto2.Name = "txtNumContacto2"
+        Me.txtNumContacto2.Size = New System.Drawing.Size(310, 20)
+        Me.txtNumContacto2.TabIndex = 104
         '
-        'TextBox44
+        'txtNombreContacto2
         '
-        Me.TextBox44.Location = New System.Drawing.Point(157, 29)
-        Me.TextBox44.Name = "TextBox44"
-        Me.TextBox44.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox44.TabIndex = 103
+        Me.txtNombreContacto2.Location = New System.Drawing.Point(157, 29)
+        Me.txtNombreContacto2.Name = "txtNombreContacto2"
+        Me.txtNombreContacto2.Size = New System.Drawing.Size(310, 20)
+        Me.txtNombreContacto2.TabIndex = 103
         '
         'Label53
         '
@@ -1401,8 +1427,8 @@ Partial Class FormularioMatricula
         'GroupBox8
         '
         Me.GroupBox8.Controls.Add(Me.Label49)
-        Me.GroupBox8.Controls.Add(Me.TextBox42)
-        Me.GroupBox8.Controls.Add(Me.TextBox41)
+        Me.GroupBox8.Controls.Add(Me.txtNumContacto)
+        Me.GroupBox8.Controls.Add(Me.txtNombreContacto)
         Me.GroupBox8.Controls.Add(Me.Label50)
         Me.GroupBox8.Location = New System.Drawing.Point(21, 29)
         Me.GroupBox8.Name = "GroupBox8"
@@ -1420,19 +1446,19 @@ Partial Class FormularioMatricula
         Me.Label49.TabIndex = 99
         Me.Label49.Text = "Nombre de Contacto"
         '
-        'TextBox42
+        'txtNumContacto
         '
-        Me.TextBox42.Location = New System.Drawing.Point(157, 70)
-        Me.TextBox42.Name = "TextBox42"
-        Me.TextBox42.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox42.TabIndex = 104
+        Me.txtNumContacto.Location = New System.Drawing.Point(157, 70)
+        Me.txtNumContacto.Name = "txtNumContacto"
+        Me.txtNumContacto.Size = New System.Drawing.Size(310, 20)
+        Me.txtNumContacto.TabIndex = 104
         '
-        'TextBox41
+        'txtNombreContacto
         '
-        Me.TextBox41.Location = New System.Drawing.Point(157, 29)
-        Me.TextBox41.Name = "TextBox41"
-        Me.TextBox41.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox41.TabIndex = 103
+        Me.txtNombreContacto.Location = New System.Drawing.Point(157, 29)
+        Me.txtNombreContacto.Name = "txtNombreContacto"
+        Me.txtNombreContacto.Size = New System.Drawing.Size(310, 20)
+        Me.txtNombreContacto.TabIndex = 103
         '
         'Label50
         '
@@ -1462,91 +1488,43 @@ Partial Class FormularioMatricula
         Me.ComboBox1.TabIndex = 102
         Me.ComboBox1.Text = "1 Contacto"
         '
-        'TextBox63
+        'txtRutAlumno
         '
-        Me.TextBox63.Location = New System.Drawing.Point(422, 163)
-        Me.TextBox63.Name = "TextBox63"
-        Me.TextBox63.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox63.TabIndex = 139
-        '
-        'TextBox62
-        '
-        Me.TextBox62.Location = New System.Drawing.Point(339, 163)
-        Me.TextBox62.Name = "TextBox62"
-        Me.TextBox62.Size = New System.Drawing.Size(40, 20)
-        Me.TextBox62.TabIndex = 138
-        '
-        'Label76
-        '
-        Me.Label76.AutoSize = True
-        Me.Label76.Location = New System.Drawing.Point(386, 166)
-        Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(30, 13)
-        Me.Label76.TabIndex = 137
-        Me.Label76.Text = "AÑO"
-        '
-        'Label75
-        '
-        Me.Label75.AutoSize = True
-        Me.Label75.Location = New System.Drawing.Point(303, 166)
-        Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(30, 13)
-        Me.Label75.TabIndex = 136
-        Me.Label75.Text = "MES"
-        '
-        'Label74
-        '
-        Me.Label74.AutoSize = True
-        Me.Label74.Location = New System.Drawing.Point(223, 166)
-        Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(25, 13)
-        Me.Label74.TabIndex = 135
-        Me.Label74.Text = "DÍA"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(254, 163)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(40, 20)
-        Me.TextBox1.TabIndex = 134
-        '
-        'TextBox55
-        '
-        Me.TextBox55.Location = New System.Drawing.Point(226, 136)
-        Me.TextBox55.Name = "TextBox55"
-        Me.TextBox55.Size = New System.Drawing.Size(107, 20)
-        Me.TextBox55.TabIndex = 121
+        Me.txtRutAlumno.Location = New System.Drawing.Point(226, 136)
+        Me.txtRutAlumno.Name = "txtRutAlumno"
+        Me.txtRutAlumno.Size = New System.Drawing.Size(107, 20)
+        Me.txtRutAlumno.TabIndex = 121
         '
         'Label67
         '
         Me.Label67.AutoSize = True
-        Me.Label67.Location = New System.Drawing.Point(515, 166)
+        Me.Label67.Location = New System.Drawing.Point(483, 166)
         Me.Label67.Name = "Label67"
         Me.Label67.Size = New System.Drawing.Size(37, 13)
         Me.Label67.TabIndex = 120
         Me.Label67.Text = "EDAD"
         '
-        'RadioButton7
+        'radioFeme
         '
-        Me.RadioButton7.AutoSize = True
-        Me.RadioButton7.Location = New System.Drawing.Point(558, 137)
-        Me.RadioButton7.Name = "RadioButton7"
-        Me.RadioButton7.Size = New System.Drawing.Size(81, 17)
-        Me.RadioButton7.TabIndex = 119
-        Me.RadioButton7.TabStop = True
-        Me.RadioButton7.Text = "FEMENINO"
-        Me.RadioButton7.UseVisualStyleBackColor = True
+        Me.radioFeme.AutoSize = True
+        Me.radioFeme.Location = New System.Drawing.Point(558, 137)
+        Me.radioFeme.Name = "radioFeme"
+        Me.radioFeme.Size = New System.Drawing.Size(81, 17)
+        Me.radioFeme.TabIndex = 119
+        Me.radioFeme.TabStop = True
+        Me.radioFeme.Text = "FEMENINO"
+        Me.radioFeme.UseVisualStyleBackColor = True
         '
-        'RadioButton6
+        'radioMasc
         '
-        Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Location = New System.Drawing.Point(455, 137)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(88, 17)
-        Me.RadioButton6.TabIndex = 118
-        Me.RadioButton6.TabStop = True
-        Me.RadioButton6.Text = "MASCULINO"
-        Me.RadioButton6.UseVisualStyleBackColor = True
+        Me.radioMasc.AutoSize = True
+        Me.radioMasc.Location = New System.Drawing.Point(455, 137)
+        Me.radioMasc.Name = "radioMasc"
+        Me.radioMasc.Size = New System.Drawing.Size(88, 17)
+        Me.radioMasc.TabIndex = 118
+        Me.radioMasc.TabStop = True
+        Me.radioMasc.Text = "MASCULINO"
+        Me.radioMasc.UseVisualStyleBackColor = True
         '
         'Label66
         '
@@ -1575,26 +1553,26 @@ Partial Class FormularioMatricula
         Me.Label45.TabIndex = 96
         Me.Label45.Text = "Otros, especificar:"
         '
-        'TextBox40
+        'txtGrupoFamiliar
         '
-        Me.TextBox40.Location = New System.Drawing.Point(416, 1015)
-        Me.TextBox40.Name = "TextBox40"
-        Me.TextBox40.Size = New System.Drawing.Size(223, 20)
-        Me.TextBox40.TabIndex = 95
+        Me.txtGrupoFamiliar.Location = New System.Drawing.Point(416, 1015)
+        Me.txtGrupoFamiliar.Name = "txtGrupoFamiliar"
+        Me.txtGrupoFamiliar.Size = New System.Drawing.Size(223, 20)
+        Me.txtGrupoFamiliar.TabIndex = 95
         '
-        'TextBox39
+        'txtLugarHijos
         '
-        Me.TextBox39.Location = New System.Drawing.Point(416, 988)
-        Me.TextBox39.Name = "TextBox39"
-        Me.TextBox39.Size = New System.Drawing.Size(223, 20)
-        Me.TextBox39.TabIndex = 94
+        Me.txtLugarHijos.Location = New System.Drawing.Point(416, 988)
+        Me.txtLugarHijos.Name = "txtLugarHijos"
+        Me.txtLugarHijos.Size = New System.Drawing.Size(223, 20)
+        Me.txtLugarHijos.TabIndex = 94
         '
-        'TextBox38
+        'txtNumHijos
         '
-        Me.TextBox38.Location = New System.Drawing.Point(416, 961)
-        Me.TextBox38.Name = "TextBox38"
-        Me.TextBox38.Size = New System.Drawing.Size(223, 20)
-        Me.TextBox38.TabIndex = 93
+        Me.txtNumHijos.Location = New System.Drawing.Point(416, 961)
+        Me.txtNumHijos.Name = "txtNumHijos"
+        Me.txtNumHijos.Size = New System.Drawing.Size(223, 20)
+        Me.txtNumHijos.TabIndex = 93
         '
         'Label44
         '
@@ -1614,42 +1592,42 @@ Partial Class FormularioMatricula
         Me.Label43.TabIndex = 91
         Me.Label43.Text = "Lugar que ocupa entre los hijos"
         '
-        'TextBox37
+        'txtViveConOtros
         '
-        Me.TextBox37.Location = New System.Drawing.Point(9, 1063)
-        Me.TextBox37.Name = "TextBox37"
-        Me.TextBox37.Size = New System.Drawing.Size(262, 20)
-        Me.TextBox37.TabIndex = 90
+        Me.txtViveConOtros.Location = New System.Drawing.Point(9, 1063)
+        Me.txtViveConOtros.Name = "txtViveConOtros"
+        Me.txtViveConOtros.Size = New System.Drawing.Size(262, 20)
+        Me.txtViveConOtros.TabIndex = 90
         '
-        'CheckBox3
+        'checkSoloPapa
         '
-        Me.CheckBox3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.CheckBox3.Location = New System.Drawing.Point(6, 1015)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(94, 19)
-        Me.CheckBox3.TabIndex = 88
-        Me.CheckBox3.Text = "Solo Papá"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.checkSoloPapa.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.checkSoloPapa.Location = New System.Drawing.Point(6, 1015)
+        Me.checkSoloPapa.Name = "checkSoloPapa"
+        Me.checkSoloPapa.Size = New System.Drawing.Size(94, 19)
+        Me.checkSoloPapa.TabIndex = 88
+        Me.checkSoloPapa.Text = "Solo Papá"
+        Me.checkSoloPapa.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'checkSoloMama
         '
-        Me.CheckBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.CheckBox2.Location = New System.Drawing.Point(6, 990)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(94, 20)
-        Me.CheckBox2.TabIndex = 87
-        Me.CheckBox2.Text = "Solo Mamá"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.checkSoloMama.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.checkSoloMama.Location = New System.Drawing.Point(6, 990)
+        Me.checkSoloMama.Name = "checkSoloMama"
+        Me.checkSoloMama.Size = New System.Drawing.Size(94, 20)
+        Me.checkSoloMama.TabIndex = 87
+        Me.checkSoloMama.Text = "Solo Mamá"
+        Me.checkSoloMama.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'checkMamayPapa
         '
-        Me.CheckBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.CheckBox1.Location = New System.Drawing.Point(6, 964)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(94, 24)
-        Me.CheckBox1.TabIndex = 86
-        Me.CheckBox1.Text = "Mamá y Papá"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.checkMamayPapa.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.checkMamayPapa.Location = New System.Drawing.Point(6, 964)
+        Me.checkMamayPapa.Name = "checkMamayPapa"
+        Me.checkMamayPapa.Size = New System.Drawing.Size(94, 24)
+        Me.checkMamayPapa.TabIndex = 86
+        Me.checkMamayPapa.Text = "Mamá y Papá"
+        Me.checkMamayPapa.UseVisualStyleBackColor = True
         '
         'Label48
         '
@@ -1669,12 +1647,12 @@ Partial Class FormularioMatricula
         Me.Label42.TabIndex = 79
         Me.Label42.Text = "ALUMNO VIVE CON"
         '
-        'TextBox25
+        'txtEdadMadre
         '
-        Me.TextBox25.Location = New System.Drawing.Point(428, 693)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox25.TabIndex = 78
+        Me.txtEdadMadre.Location = New System.Drawing.Point(428, 693)
+        Me.txtEdadMadre.Name = "txtEdadMadre"
+        Me.txtEdadMadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtEdadMadre.TabIndex = 78
         '
         'Label29
         '
@@ -1685,82 +1663,54 @@ Partial Class FormularioMatricula
         Me.Label29.TabIndex = 77
         Me.Label29.Text = "EDAD"
         '
-        'TextBox26
+        'txtCorreoMadre
         '
-        Me.TextBox26.Location = New System.Drawing.Point(226, 868)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox26.TabIndex = 76
+        Me.txtCorreoMadre.Location = New System.Drawing.Point(226, 868)
+        Me.txtCorreoMadre.Name = "txtCorreoMadre"
+        Me.txtCorreoMadre.Size = New System.Drawing.Size(413, 20)
+        Me.txtCorreoMadre.TabIndex = 76
         '
-        'TextBox27
+        'txtDireccionMadre
         '
-        Me.TextBox27.Location = New System.Drawing.Point(428, 838)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox27.TabIndex = 75
+        Me.txtDireccionMadre.Location = New System.Drawing.Point(428, 838)
+        Me.txtDireccionMadre.Name = "txtDireccionMadre"
+        Me.txtDireccionMadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtDireccionMadre.TabIndex = 75
         '
-        'TextBox28
+        'txtCargoMadre
         '
-        Me.TextBox28.Location = New System.Drawing.Point(428, 809)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox28.TabIndex = 74
+        Me.txtCargoMadre.Location = New System.Drawing.Point(428, 809)
+        Me.txtCargoMadre.Name = "txtCargoMadre"
+        Me.txtCargoMadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtCargoMadre.TabIndex = 74
         '
-        'TextBox29
+        'txtTelefonoMadre
         '
-        Me.TextBox29.Location = New System.Drawing.Point(428, 779)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox29.TabIndex = 73
+        Me.txtTelefonoMadre.Location = New System.Drawing.Point(428, 779)
+        Me.txtTelefonoMadre.Name = "txtTelefonoMadre"
+        Me.txtTelefonoMadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtTelefonoMadre.TabIndex = 73
         '
-        'TextBox30
+        'txtTrabajaenMadre
         '
-        Me.TextBox30.Location = New System.Drawing.Point(428, 750)
-        Me.TextBox30.Name = "TextBox30"
-        Me.TextBox30.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox30.TabIndex = 72
+        Me.txtTrabajaenMadre.Location = New System.Drawing.Point(428, 750)
+        Me.txtTrabajaenMadre.Name = "txtTrabajaenMadre"
+        Me.txtTrabajaenMadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtTrabajaenMadre.TabIndex = 72
         '
-        'TextBox31
+        'txtRutMadre
         '
-        Me.TextBox31.Location = New System.Drawing.Point(226, 838)
-        Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox31.TabIndex = 71
+        Me.txtRutMadre.Location = New System.Drawing.Point(226, 693)
+        Me.txtRutMadre.Name = "txtRutMadre"
+        Me.txtRutMadre.Size = New System.Drawing.Size(100, 20)
+        Me.txtRutMadre.TabIndex = 67
         '
-        'TextBox32
+        'txtNombreMadre
         '
-        Me.TextBox32.Location = New System.Drawing.Point(226, 809)
-        Me.TextBox32.Name = "TextBox32"
-        Me.TextBox32.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox32.TabIndex = 70
-        '
-        'TextBox33
-        '
-        Me.TextBox33.Location = New System.Drawing.Point(226, 779)
-        Me.TextBox33.Name = "TextBox33"
-        Me.TextBox33.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox33.TabIndex = 69
-        '
-        'TextBox34
-        '
-        Me.TextBox34.Location = New System.Drawing.Point(226, 750)
-        Me.TextBox34.Name = "TextBox34"
-        Me.TextBox34.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox34.TabIndex = 68
-        '
-        'TextBox35
-        '
-        Me.TextBox35.Location = New System.Drawing.Point(226, 693)
-        Me.TextBox35.Name = "TextBox35"
-        Me.TextBox35.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox35.TabIndex = 67
-        '
-        'TextBox36
-        '
-        Me.TextBox36.Location = New System.Drawing.Point(226, 665)
-        Me.TextBox36.Name = "TextBox36"
-        Me.TextBox36.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox36.TabIndex = 66
+        Me.txtNombreMadre.Location = New System.Drawing.Point(226, 665)
+        Me.txtNombreMadre.Name = "txtNombreMadre"
+        Me.txtNombreMadre.Size = New System.Drawing.Size(413, 20)
+        Me.txtNombreMadre.TabIndex = 66
         '
         'Label30
         '
@@ -1870,12 +1820,12 @@ Partial Class FormularioMatricula
         Me.Label41.TabIndex = 54
         Me.Label41.Text = "NOMBRE DE LA MADRE"
         '
-        'TextBox24
+        'txtEdadPadre
         '
-        Me.TextBox24.Location = New System.Drawing.Point(428, 447)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox24.TabIndex = 53
+        Me.txtEdadPadre.Location = New System.Drawing.Point(428, 447)
+        Me.txtEdadPadre.Name = "txtEdadPadre"
+        Me.txtEdadPadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtEdadPadre.TabIndex = 53
         '
         'Label28
         '
@@ -1886,82 +1836,54 @@ Partial Class FormularioMatricula
         Me.Label28.TabIndex = 52
         Me.Label28.Text = "EDAD"
         '
-        'TextBox23
+        'txtCorreoPadre
         '
-        Me.TextBox23.Location = New System.Drawing.Point(226, 622)
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox23.TabIndex = 51
+        Me.txtCorreoPadre.Location = New System.Drawing.Point(226, 622)
+        Me.txtCorreoPadre.Name = "txtCorreoPadre"
+        Me.txtCorreoPadre.Size = New System.Drawing.Size(413, 20)
+        Me.txtCorreoPadre.TabIndex = 51
         '
-        'TextBox22
+        'txtDireccionPadre
         '
-        Me.TextBox22.Location = New System.Drawing.Point(428, 592)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox22.TabIndex = 50
+        Me.txtDireccionPadre.Location = New System.Drawing.Point(428, 592)
+        Me.txtDireccionPadre.Name = "txtDireccionPadre"
+        Me.txtDireccionPadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtDireccionPadre.TabIndex = 50
         '
-        'TextBox21
+        'txtCargoPadre
         '
-        Me.TextBox21.Location = New System.Drawing.Point(428, 563)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox21.TabIndex = 49
+        Me.txtCargoPadre.Location = New System.Drawing.Point(428, 563)
+        Me.txtCargoPadre.Name = "txtCargoPadre"
+        Me.txtCargoPadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtCargoPadre.TabIndex = 49
         '
-        'TextBox20
+        'txtTelefonoPadre
         '
-        Me.TextBox20.Location = New System.Drawing.Point(428, 533)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox20.TabIndex = 48
+        Me.txtTelefonoPadre.Location = New System.Drawing.Point(428, 533)
+        Me.txtTelefonoPadre.Name = "txtTelefonoPadre"
+        Me.txtTelefonoPadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtTelefonoPadre.TabIndex = 48
         '
-        'TextBox19
+        'txtTrabajaenPadre
         '
-        Me.TextBox19.Location = New System.Drawing.Point(428, 504)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox19.TabIndex = 47
+        Me.txtTrabajaenPadre.Location = New System.Drawing.Point(428, 504)
+        Me.txtTrabajaenPadre.Name = "txtTrabajaenPadre"
+        Me.txtTrabajaenPadre.Size = New System.Drawing.Size(211, 20)
+        Me.txtTrabajaenPadre.TabIndex = 47
         '
-        'TextBox18
+        'txtRutPadre
         '
-        Me.TextBox18.Location = New System.Drawing.Point(226, 592)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox18.TabIndex = 46
+        Me.txtRutPadre.Location = New System.Drawing.Point(226, 447)
+        Me.txtRutPadre.Name = "txtRutPadre"
+        Me.txtRutPadre.Size = New System.Drawing.Size(100, 20)
+        Me.txtRutPadre.TabIndex = 42
         '
-        'TextBox17
+        'txtNombrePadre
         '
-        Me.TextBox17.Location = New System.Drawing.Point(226, 563)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox17.TabIndex = 45
-        '
-        'TextBox16
-        '
-        Me.TextBox16.Location = New System.Drawing.Point(226, 533)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox16.TabIndex = 44
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Location = New System.Drawing.Point(226, 504)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox15.TabIndex = 43
-        '
-        'TextBox14
-        '
-        Me.TextBox14.Location = New System.Drawing.Point(226, 447)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox14.TabIndex = 42
-        '
-        'TextBox13
-        '
-        Me.TextBox13.Location = New System.Drawing.Point(226, 419)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox13.TabIndex = 41
+        Me.txtNombrePadre.Location = New System.Drawing.Point(226, 419)
+        Me.txtNombrePadre.Name = "txtNombrePadre"
+        Me.txtNombrePadre.Size = New System.Drawing.Size(413, 20)
+        Me.txtNombrePadre.TabIndex = 41
         '
         'Label27
         '
@@ -2080,12 +2002,12 @@ Partial Class FormularioMatricula
         Me.Label15.TabIndex = 28
         Me.Label15.Text = "2.- ANTECEDENTES FAMILIARES"
         '
-        'TextBox12
+        'txtHermanosCursos
         '
-        Me.TextBox12.Location = New System.Drawing.Point(416, 353)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(223, 20)
-        Me.TextBox12.TabIndex = 27
+        Me.txtHermanosCursos.Location = New System.Drawing.Point(416, 353)
+        Me.txtHermanosCursos.Name = "txtHermanosCursos"
+        Me.txtHermanosCursos.Size = New System.Drawing.Size(223, 20)
+        Me.txtHermanosCursos.TabIndex = 27
         '
         'Label14
         '
@@ -2114,97 +2036,97 @@ Partial Class FormularioMatricula
         Me.Label12.TabIndex = 24
         Me.Label12.Text = "FECHA DE NACIMIENTO"
         '
-        'TextBox11
+        'txtCursosRepetidos
         '
-        Me.TextBox11.Location = New System.Drawing.Point(226, 322)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox11.TabIndex = 23
+        Me.txtCursosRepetidos.Location = New System.Drawing.Point(226, 322)
+        Me.txtCursosRepetidos.Name = "txtCursosRepetidos"
+        Me.txtCursosRepetidos.Size = New System.Drawing.Size(413, 20)
+        Me.txtCursosRepetidos.TabIndex = 23
         '
-        'TextBox10
+        'txtColegioPrese
         '
-        Me.TextBox10.Location = New System.Drawing.Point(226, 289)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox10.TabIndex = 22
+        Me.txtColegioPrese.Location = New System.Drawing.Point(226, 289)
+        Me.txtColegioPrese.Name = "txtColegioPrese"
+        Me.txtColegioPrese.Size = New System.Drawing.Size(413, 20)
+        Me.txtColegioPrese.TabIndex = 22
         '
-        'TextBox9
+        'txtTelefonoAlumno
         '
-        Me.TextBox9.Location = New System.Drawing.Point(428, 257)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox9.TabIndex = 21
+        Me.txtTelefonoAlumno.Location = New System.Drawing.Point(428, 257)
+        Me.txtTelefonoAlumno.Name = "txtTelefonoAlumno"
+        Me.txtTelefonoAlumno.Size = New System.Drawing.Size(211, 20)
+        Me.txtTelefonoAlumno.TabIndex = 21
         '
-        'TextBox8
+        'txtComunaAlumno
         '
-        Me.TextBox8.Location = New System.Drawing.Point(226, 257)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(107, 20)
-        Me.TextBox8.TabIndex = 20
+        Me.txtComunaAlumno.Location = New System.Drawing.Point(226, 257)
+        Me.txtComunaAlumno.Name = "txtComunaAlumno"
+        Me.txtComunaAlumno.Size = New System.Drawing.Size(107, 20)
+        Me.txtComunaAlumno.TabIndex = 20
         '
-        'TextBox7
+        'txtSectorAlumno
         '
-        Me.TextBox7.Location = New System.Drawing.Point(226, 225)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox7.TabIndex = 19
+        Me.txtSectorAlumno.Location = New System.Drawing.Point(226, 225)
+        Me.txtSectorAlumno.Name = "txtSectorAlumno"
+        Me.txtSectorAlumno.Size = New System.Drawing.Size(413, 20)
+        Me.txtSectorAlumno.TabIndex = 19
         '
-        'TextBox6
+        'txtCalleAlumno
         '
-        Me.TextBox6.Location = New System.Drawing.Point(226, 192)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox6.TabIndex = 18
+        Me.txtCalleAlumno.Location = New System.Drawing.Point(226, 192)
+        Me.txtCalleAlumno.Name = "txtCalleAlumno"
+        Me.txtCalleAlumno.Size = New System.Drawing.Size(413, 20)
+        Me.txtCalleAlumno.TabIndex = 18
         '
-        'TextBox5
+        'txtEdadAlumno
         '
-        Me.TextBox5.Location = New System.Drawing.Point(558, 163)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(81, 20)
-        Me.TextBox5.TabIndex = 17
+        Me.txtEdadAlumno.Location = New System.Drawing.Point(558, 163)
+        Me.txtEdadAlumno.Name = "txtEdadAlumno"
+        Me.txtEdadAlumno.Size = New System.Drawing.Size(81, 20)
+        Me.txtEdadAlumno.TabIndex = 17
         '
-        'TextBox4
+        'txtNombresAlumno
         '
-        Me.TextBox4.Location = New System.Drawing.Point(226, 110)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(283, 20)
-        Me.TextBox4.TabIndex = 16
+        Me.txtNombresAlumno.Location = New System.Drawing.Point(226, 110)
+        Me.txtNombresAlumno.Name = "txtNombresAlumno"
+        Me.txtNombresAlumno.Size = New System.Drawing.Size(283, 20)
+        Me.txtNombresAlumno.TabIndex = 16
         '
-        'TextBox3
+        'txtApeMatAlumno
         '
-        Me.TextBox3.Location = New System.Drawing.Point(226, 81)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox3.TabIndex = 15
+        Me.txtApeMatAlumno.Location = New System.Drawing.Point(226, 81)
+        Me.txtApeMatAlumno.Name = "txtApeMatAlumno"
+        Me.txtApeMatAlumno.Size = New System.Drawing.Size(413, 20)
+        Me.txtApeMatAlumno.TabIndex = 15
         '
-        'TextBox2
+        'txtApePatAlumno
         '
-        Me.TextBox2.Location = New System.Drawing.Point(226, 51)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(413, 20)
-        Me.TextBox2.TabIndex = 14
+        Me.txtApePatAlumno.Location = New System.Drawing.Point(226, 51)
+        Me.txtApePatAlumno.Name = "txtApePatAlumno"
+        Me.txtApePatAlumno.Size = New System.Drawing.Size(413, 20)
+        Me.txtApePatAlumno.TabIndex = 14
         '
-        'RadioButton2
+        'radioHermanosNo
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(290, 354)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(41, 17)
-        Me.RadioButton2.TabIndex = 12
-        Me.RadioButton2.Text = "NO"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.radioHermanosNo.AutoSize = True
+        Me.radioHermanosNo.Location = New System.Drawing.Point(290, 354)
+        Me.radioHermanosNo.Name = "radioHermanosNo"
+        Me.radioHermanosNo.Size = New System.Drawing.Size(41, 17)
+        Me.radioHermanosNo.TabIndex = 12
+        Me.radioHermanosNo.Text = "NO"
+        Me.radioHermanosNo.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'radioHermanosSi
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(236, 354)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(35, 17)
-        Me.RadioButton1.TabIndex = 11
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "SI"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.radioHermanosSi.AutoSize = True
+        Me.radioHermanosSi.Checked = True
+        Me.radioHermanosSi.Location = New System.Drawing.Point(236, 354)
+        Me.radioHermanosSi.Name = "radioHermanosSi"
+        Me.radioHermanosSi.Size = New System.Drawing.Size(35, 17)
+        Me.radioHermanosSi.TabIndex = 11
+        Me.radioHermanosSi.TabStop = True
+        Me.radioHermanosSi.Text = "SI"
+        Me.radioHermanosSi.UseVisualStyleBackColor = True
         '
         'Label11
         '
@@ -2383,7 +2305,7 @@ Partial Class FormularioMatricula
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(678, 626)
+        Me.TabPage3.Size = New System.Drawing.Size(678, 762)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Documentos en Cartera"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -2925,11 +2847,56 @@ Partial Class FormularioMatricula
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
+        'checkBasicaMadre
+        '
+        Me.checkBasicaMadre.AutoSize = True
+        Me.checkBasicaMadre.Location = New System.Drawing.Point(225, 753)
+        Me.checkBasicaMadre.Name = "checkBasicaMadre"
+        Me.checkBasicaMadre.Size = New System.Drawing.Size(15, 14)
+        Me.checkBasicaMadre.TabIndex = 146
+        Me.checkBasicaMadre.UseVisualStyleBackColor = True
+        '
+        'checkMediaMadre
+        '
+        Me.checkMediaMadre.AutoSize = True
+        Me.checkMediaMadre.Location = New System.Drawing.Point(225, 782)
+        Me.checkMediaMadre.Name = "checkMediaMadre"
+        Me.checkMediaMadre.Size = New System.Drawing.Size(15, 14)
+        Me.checkMediaMadre.TabIndex = 147
+        Me.checkMediaMadre.UseVisualStyleBackColor = True
+        '
+        'checkTecnicoMadre
+        '
+        Me.checkTecnicoMadre.AutoSize = True
+        Me.checkTecnicoMadre.Location = New System.Drawing.Point(225, 812)
+        Me.checkTecnicoMadre.Name = "checkTecnicoMadre"
+        Me.checkTecnicoMadre.Size = New System.Drawing.Size(15, 14)
+        Me.checkTecnicoMadre.TabIndex = 148
+        Me.checkTecnicoMadre.UseVisualStyleBackColor = True
+        '
+        'checkUniversitariaMadre
+        '
+        Me.checkUniversitariaMadre.AutoSize = True
+        Me.checkUniversitariaMadre.Location = New System.Drawing.Point(225, 841)
+        Me.checkUniversitariaMadre.Name = "checkUniversitariaMadre"
+        Me.checkUniversitariaMadre.Size = New System.Drawing.Size(15, 14)
+        Me.checkUniversitariaMadre.TabIndex = 149
+        Me.checkUniversitariaMadre.UseVisualStyleBackColor = True
+        '
+        'comboIsapre
+        '
+        Me.comboIsapre.FormattingEnabled = True
+        Me.comboIsapre.Location = New System.Drawing.Point(77, 868)
+        Me.comboIsapre.Name = "comboIsapre"
+        Me.comboIsapre.Size = New System.Drawing.Size(136, 21)
+        Me.comboIsapre.TabIndex = 159
+        '
         'FormularioMatricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(701, 750)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(723, 750)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormularioMatricula"
@@ -2965,132 +2932,27 @@ Partial Class FormularioMatricula
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents TextBox37 As System.Windows.Forms.TextBox
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label48 As System.Windows.Forms.Label
-    Friend WithEvents Label42 As System.Windows.Forms.Label
-    Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
-    Friend WithEvents Label29 As System.Windows.Forms.Label
-    Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox27 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox28 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox30 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox31 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox32 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox33 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox34 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox35 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox36 As System.Windows.Forms.TextBox
-    Friend WithEvents Label30 As System.Windows.Forms.Label
-    Friend WithEvents Label31 As System.Windows.Forms.Label
-    Friend WithEvents Label32 As System.Windows.Forms.Label
-    Friend WithEvents Label33 As System.Windows.Forms.Label
-    Friend WithEvents Label34 As System.Windows.Forms.Label
-    Friend WithEvents Label35 As System.Windows.Forms.Label
-    Friend WithEvents Label36 As System.Windows.Forms.Label
-    Friend WithEvents Label37 As System.Windows.Forms.Label
-    Friend WithEvents Label38 As System.Windows.Forms.Label
-    Friend WithEvents Label39 As System.Windows.Forms.Label
-    Friend WithEvents Label40 As System.Windows.Forms.Label
-    Friend WithEvents Label41 As System.Windows.Forms.Label
-    Friend WithEvents TextBox24 As System.Windows.Forms.TextBox
-    Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents TextBox23 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
-    Friend WithEvents Label27 As System.Windows.Forms.Label
-    Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label51 As System.Windows.Forms.Label
-    Friend WithEvents Label46 As System.Windows.Forms.Label
-    Friend WithEvents Label45 As System.Windows.Forms.Label
-    Friend WithEvents TextBox40 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox39 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox38 As System.Windows.Forms.TextBox
-    Friend WithEvents Label44 As System.Windows.Forms.Label
-    Friend WithEvents Label43 As System.Windows.Forms.Label
-    Friend WithEvents RadioButton7 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
-    Friend WithEvents Label66 As System.Windows.Forms.Label
-    Friend WithEvents TextBox55 As System.Windows.Forms.TextBox
-    Friend WithEvents Label67 As System.Windows.Forms.Label
-    Friend WithEvents TextBox63 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox62 As System.Windows.Forms.TextBox
-    Friend WithEvents Label76 As System.Windows.Forms.Label
-    Friend WithEvents Label75 As System.Windows.Forms.Label
-    Friend WithEvents Label74 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox84 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox83 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox78 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox77 As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelefonoTrabajo As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelefonoPart2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelefonoPart As System.Windows.Forms.TextBox
+    Friend WithEvents txtRut As System.Windows.Forms.TextBox
     Friend WithEvents Label102 As System.Windows.Forms.Label
-    Friend WithEvents TextBox82 As System.Windows.Forms.TextBox
+    Friend WithEvents txtProfesion As System.Windows.Forms.TextBox
     Friend WithEvents Label101 As System.Windows.Forms.Label
-    Friend WithEvents TextBox81 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox80 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox79 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox76 As System.Windows.Forms.TextBox
+    Friend WithEvents txtOcupacionAct As System.Windows.Forms.TextBox
+    Friend WithEvents txtLugarDeTrabajo As System.Windows.Forms.TextBox
+    Friend WithEvents txtDomicilio As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreTutor As System.Windows.Forms.TextBox
     Friend WithEvents Label100 As System.Windows.Forms.Label
     Friend WithEvents Label99 As System.Windows.Forms.Label
     Friend WithEvents Label98 As System.Windows.Forms.Label
     Friend WithEvents Label97 As System.Windows.Forms.Label
     Friend WithEvents Label96 As System.Windows.Forms.Label
     Friend WithEvents Label95 As System.Windows.Forms.Label
-    Friend WithEvents TextBox75 As System.Windows.Forms.TextBox
-    Friend WithEvents CheckBox6 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
+    Friend WithEvents txtOtro As System.Windows.Forms.TextBox
+    Friend WithEvents checkboxOtro As System.Windows.Forms.CheckBox
+    Friend WithEvents checkboxMadre As System.Windows.Forms.CheckBox
+    Friend WithEvents checkboxPadre As System.Windows.Forms.CheckBox
     Friend WithEvents Label94 As System.Windows.Forms.Label
     Friend WithEvents Label93 As System.Windows.Forms.Label
     Friend WithEvents Label92 As System.Windows.Forms.Label
@@ -3102,17 +2964,17 @@ Partial Class FormularioMatricula
     Friend WithEvents Label89 As System.Windows.Forms.Label
     Friend WithEvents Label88 As System.Windows.Forms.Label
     Friend WithEvents Label87 As System.Windows.Forms.Label
-    Friend WithEvents TextBox71 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCurso As System.Windows.Forms.TextBox
     Friend WithEvents TextBox70 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox69 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox68 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox67 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreAlumno As System.Windows.Forms.TextBox
     Friend WithEvents Label86 As System.Windows.Forms.Label
     Friend WithEvents Label85 As System.Windows.Forms.Label
     Friend WithEvents Label84 As System.Windows.Forms.Label
     Friend WithEvents Label83 As System.Windows.Forms.Label
     Friend WithEvents Label82 As System.Windows.Forms.Label
-    Friend WithEvents TextBox66 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreApoderado As System.Windows.Forms.TextBox
     Friend WithEvents Label81 As System.Windows.Forms.Label
     Friend WithEvents Label80 As System.Windows.Forms.Label
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
@@ -3186,56 +3048,156 @@ Partial Class FormularioMatricula
     Friend WithEvents Label105 As System.Windows.Forms.Label
     Friend WithEvents Label104 As System.Windows.Forms.Label
     Friend WithEvents Label103 As System.Windows.Forms.Label
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents checkUniversitariaPadre As System.Windows.Forms.CheckBox
+    Friend WithEvents checkTecnicoPadre As System.Windows.Forms.CheckBox
+    Friend WithEvents checkMediaPadre As System.Windows.Forms.CheckBox
+    Friend WithEvents checkBasicaPadre As System.Windows.Forms.CheckBox
+    Friend WithEvents dateTimeFechaNac As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBoxContent As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label58 As System.Windows.Forms.Label
-    Friend WithEvents TextBox49 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox50 As System.Windows.Forms.TextBox
-    Friend WithEvents Label59 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label56 As System.Windows.Forms.Label
-    Friend WithEvents TextBox47 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox48 As System.Windows.Forms.TextBox
-    Friend WithEvents Label57 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label54 As System.Windows.Forms.Label
-    Friend WithEvents TextBox45 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox46 As System.Windows.Forms.TextBox
-    Friend WithEvents Label55 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label52 As System.Windows.Forms.Label
-    Friend WithEvents TextBox43 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox44 As System.Windows.Forms.TextBox
-    Friend WithEvents Label53 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label49 As System.Windows.Forms.Label
-    Friend WithEvents TextBox42 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox41 As System.Windows.Forms.TextBox
-    Friend WithEvents Label50 As System.Windows.Forms.Label
     Friend WithEvents TextBox61 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox60 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox59 As System.Windows.Forms.TextBox
     Friend WithEvents Label73 As System.Windows.Forms.Label
     Friend WithEvents Label72 As System.Windows.Forms.Label
     Friend WithEvents Label71 As System.Windows.Forms.Label
-    Friend WithEvents TextBox58 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox57 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreTutor2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreApodSuplent As System.Windows.Forms.TextBox
     Friend WithEvents Label70 As System.Windows.Forms.Label
     Friend WithEvents Label69 As System.Windows.Forms.Label
-    Friend WithEvents TextBox56 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreApoderado2 As System.Windows.Forms.TextBox
     Friend WithEvents Label68 As System.Windows.Forms.Label
-    Friend WithEvents RadioButton5 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
-    Friend WithEvents TextBox54 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox53 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox52 As System.Windows.Forms.TextBox
+    Friend WithEvents radioFonasaC As System.Windows.Forms.RadioButton
+    Friend WithEvents radioFonasaB As System.Windows.Forms.RadioButton
+    Friend WithEvents radioFonasaA As System.Windows.Forms.RadioButton
+    Friend WithEvents txtOtrosServicios As System.Windows.Forms.TextBox
+    Friend WithEvents txtSeguros As System.Windows.Forms.TextBox
     Friend WithEvents Label65 As System.Windows.Forms.Label
     Friend WithEvents Label64 As System.Windows.Forms.Label
     Friend WithEvents Label63 As System.Windows.Forms.Label
     Friend WithEvents Label62 As System.Windows.Forms.Label
     Friend WithEvents Label61 As System.Windows.Forms.Label
-    Friend WithEvents TextBox51 As System.Windows.Forms.TextBox
+    Friend WithEvents txtAntecedentesMed As System.Windows.Forms.TextBox
     Friend WithEvents Label60 As System.Windows.Forms.Label
+    Friend WithEvents GroupBoxContent As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label58 As System.Windows.Forms.Label
+    Friend WithEvents txtNumContacto5 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreContacto5 As System.Windows.Forms.TextBox
+    Friend WithEvents Label59 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label56 As System.Windows.Forms.Label
+    Friend WithEvents txtNumContacto4 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreContacto4 As System.Windows.Forms.TextBox
+    Friend WithEvents Label57 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label54 As System.Windows.Forms.Label
+    Friend WithEvents txtNumContacto3 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreContacto3 As System.Windows.Forms.TextBox
+    Friend WithEvents Label55 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label52 As System.Windows.Forms.Label
+    Friend WithEvents txtNumContacto2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreContacto2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label53 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label49 As System.Windows.Forms.Label
+    Friend WithEvents txtNumContacto As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreContacto As System.Windows.Forms.TextBox
+    Friend WithEvents Label50 As System.Windows.Forms.Label
+    Friend WithEvents Label51 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents txtRutAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents Label67 As System.Windows.Forms.Label
+    Friend WithEvents radioFeme As System.Windows.Forms.RadioButton
+    Friend WithEvents radioMasc As System.Windows.Forms.RadioButton
+    Friend WithEvents Label66 As System.Windows.Forms.Label
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents txtGrupoFamiliar As System.Windows.Forms.TextBox
+    Friend WithEvents txtLugarHijos As System.Windows.Forms.TextBox
+    Friend WithEvents txtNumHijos As System.Windows.Forms.TextBox
+    Friend WithEvents Label44 As System.Windows.Forms.Label
+    Friend WithEvents Label43 As System.Windows.Forms.Label
+    Friend WithEvents txtViveConOtros As System.Windows.Forms.TextBox
+    Friend WithEvents checkSoloPapa As System.Windows.Forms.CheckBox
+    Friend WithEvents checkSoloMama As System.Windows.Forms.CheckBox
+    Friend WithEvents checkMamayPapa As System.Windows.Forms.CheckBox
+    Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents Label42 As System.Windows.Forms.Label
+    Friend WithEvents txtEdadMadre As System.Windows.Forms.TextBox
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents txtCorreoMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtDireccionMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtCargoMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelefonoMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtTrabajaenMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtRutMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreMadre As System.Windows.Forms.TextBox
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents Label37 As System.Windows.Forms.Label
+    Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents Label39 As System.Windows.Forms.Label
+    Friend WithEvents Label40 As System.Windows.Forms.Label
+    Friend WithEvents Label41 As System.Windows.Forms.Label
+    Friend WithEvents txtEdadPadre As System.Windows.Forms.TextBox
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents txtCorreoPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtDireccionPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtCargoPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelefonoPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtTrabajaenPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtRutPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombrePadre As System.Windows.Forms.TextBox
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents Label25 As System.Windows.Forms.Label
+    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents txtHermanosCursos As System.Windows.Forms.TextBox
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents txtCursosRepetidos As System.Windows.Forms.TextBox
+    Friend WithEvents txtColegioPrese As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelefonoAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtComunaAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtSectorAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtCalleAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtEdadAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombresAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtApeMatAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtApePatAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents radioHermanosNo As System.Windows.Forms.RadioButton
+    Friend WithEvents radioHermanosSi As System.Windows.Forms.RadioButton
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents checkUniversitariaMadre As System.Windows.Forms.CheckBox
+    Friend WithEvents checkTecnicoMadre As System.Windows.Forms.CheckBox
+    Friend WithEvents checkMediaMadre As System.Windows.Forms.CheckBox
+    Friend WithEvents checkBasicaMadre As System.Windows.Forms.CheckBox
+    Friend WithEvents comboIsapre As System.Windows.Forms.ComboBox
 End Class
