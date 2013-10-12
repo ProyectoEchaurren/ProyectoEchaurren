@@ -13,7 +13,7 @@ Public Class FormularioMatricula
         Try
 
             varConexion = New MySqlConnection
-            varConexion.ConnectionString = "server=localhost;User Id=root;password=udclda69;database=bd_echaurren"
+            varConexion.ConnectionString = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
             varConexion.Open()
 
         Catch ex As Exception
