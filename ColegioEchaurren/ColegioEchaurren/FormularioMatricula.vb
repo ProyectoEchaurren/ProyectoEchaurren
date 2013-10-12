@@ -1,10 +1,27 @@
-﻿Public Class FormularioMatricula
+﻿Imports MySql.Data.MySqlClient
+
+Public Class FormularioMatricula
+
+    Public varConexion As MySqlConnection
 
     Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
 
     End Sub
 
     Private Sub FormularioMatricula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Try
+
+            varConexion = New MySqlConnection
+            varConexion.ConnectionString = "server=localhost;User Id=root;password=udclda69;database=bd_echaurren"
+            varConexion.Open()
+
+        Catch ex As Exception
+
+            MessageBox.Show("Error al conectar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Close()
+
+        End Try
 
     End Sub
 
