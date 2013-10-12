@@ -3,6 +3,7 @@
 Public Class FormularioMatricula
 
     Public varConexion As MySqlConnection
+    Public varConexionString As String = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
 
     Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
 
@@ -13,7 +14,7 @@ Public Class FormularioMatricula
         Try
 
             varConexion = New MySqlConnection
-            varConexion.ConnectionString = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
+            varConexion.ConnectionString = varConexionString
             varConexion.Open()
 
         Catch ex As Exception
@@ -68,6 +69,10 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub DateTimePicker1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub TabPage1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage1.Click
 
     End Sub
 End Class
