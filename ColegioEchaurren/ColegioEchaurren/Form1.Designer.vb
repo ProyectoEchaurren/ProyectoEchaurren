@@ -140,13 +140,13 @@ Partial Class Form1
         'AcercaDeToolStripMenuItem1
         '
         Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
-        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Ver ayuda"
         '
         'AcercaDeToolStripMenuItem2
         '
         Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
-        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
         '
         'Form1
@@ -159,7 +159,6 @@ Partial Class Form1
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Colegio Echaurren"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)

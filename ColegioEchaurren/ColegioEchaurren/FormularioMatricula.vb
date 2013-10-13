@@ -5,11 +5,13 @@ Public Class FormularioMatricula
     Public varConexion As MySqlConnection
     Public varConexionString As String = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
 
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
-
-    End Sub
-
     Private Sub FormularioMatricula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        txtNombreApoderado2.Text = txtNombreApoderado.Text
+        txtNombreTutor2.Text = txtNombreTutor.Text
+
+        dateTimeFechaNac.Format = DateTimePickerFormat.Custom
+        dateTimeFechaNac.CustomFormat = "dd/MM/yyyy"
+        dateTimeFechaNac.MaxDate = Now()
 
         Try
 
@@ -23,18 +25,6 @@ Public Class FormularioMatricula
             Me.Close()
 
         End Try
-
-    End Sub
-
-    Private Sub TabPage2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage2.Click
-
-    End Sub
-
-    Private Sub Label48_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label48.Click
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
@@ -67,13 +57,21 @@ Public Class FormularioMatricula
             GroupBox5.Show()
         End If
     End Sub
-
-    Private Sub DateTimePicker1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
+    Private Sub RadioButton12_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton12.CheckedChanged
+        If RadioButton12.Checked = True Then
+            txtViveConOtros.Enabled = True
+            txtViveConOtros.Focus()
+        Else
+            txtViveConOtros.Enabled = False
+        End If
     End Sub
 
-    Private Sub TabPage1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage1.Click
-
+    Private Sub RadioButton14_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton14.CheckedChanged
+        If RadioButton14.Checked = True Then
+            txtOtro.Enabled = True
+            txtOtro.Focus()
+        Else
+            txtOtro.Enabled = False
+        End If
     End Sub
-
 End Class
