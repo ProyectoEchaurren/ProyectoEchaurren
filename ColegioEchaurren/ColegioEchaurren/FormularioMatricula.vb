@@ -11,6 +11,10 @@ Public Class FormularioMatricula
         dateTimeFechaNac.CustomFormat = "dd/MM/yyyy"
         dateTimeFechaNac.MaxDate = Now()
 
+        dtpMatricula.Format = DateTimePickerFormat.Custom
+        dtpMatricula.CustomFormat = "yyyy"
+        dtpMatricula.MaxDate = Now()
+
         Try
 
             varConexion = New MySqlConnection
