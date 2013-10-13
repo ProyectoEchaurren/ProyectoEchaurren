@@ -110,25 +110,142 @@ Public Class FormularioMatricula
     Private Sub btnSalir3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir3.Click
         If MessageBox.Show("¿Está seguro(a) de salir sin guardar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.Close()
-        Else
         End If
     End Sub
 
     Private Sub btnSalir2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir2.Click
         If MessageBox.Show("¿Está seguro(a) de salir sin guardar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.Close()
-        Else
         End If
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
         If MessageBox.Show("¿Está seguro(a) de salir sin guardar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.Close()
-        Else
         End If
     End Sub
 
     Private Sub btnTerminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTerminar.Click
         Me.Close()
+    End Sub
+
+    Private Sub radioHermanosSi_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radioHermanosSi.CheckedChanged
+        If radioHermanosSi.Checked = True Then
+            txtHermanosCursos.Enabled = True
+            txtHermanosCursos.Focus()
+        Else
+            txtHermanosCursos.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbBasicaPadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbBasicaPadre.CheckedChanged
+        If rbBasicaPadre.Checked = True Then
+            txtBasicaPadre.Enabled = True
+            txtBasicaPadre.Focus()
+        Else
+            txtBasicaPadre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbMediaPadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbMediaPadre.CheckedChanged
+        If rbMediaPadre.Checked = True Then
+            txtMediaPadre.Enabled = True
+            txtMediaPadre.Focus()
+        Else
+            txtMediaPadre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbTecnicoPadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbTecnicoPadre.CheckedChanged
+        If rbTecnicoPadre.Checked = True Then
+            txtTecnicoPadre.Enabled = True
+            txtTecnicoPadre.Focus()
+        Else
+            txtTecnicoPadre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbUniverPadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbUniverPadre.CheckedChanged
+        If rbUniverPadre.Checked = True Then
+            txtUniverPadre.Enabled = True
+            txtUniverPadre.Focus()
+        Else
+            txtUniverPadre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbBasicaMadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbBasicaMadre.CheckedChanged
+        If rbBasicaMadre.Checked = True Then
+            txtBasicaMadre.Enabled = True
+            txtBasicaMadre.Focus()
+        Else
+            txtBasicaMadre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbMediaMadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbMediaMadre.CheckedChanged
+        If rbMediaMadre.Checked = True Then
+            txtMediaMadre.Enabled = True
+            txtMediaMadre.Focus()
+        Else
+            txtMediaMadre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbTecnicoMadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbTecnicoMadre.CheckedChanged
+        If rbTecnicoMadre.Checked = True Then
+            txtTecnicoMadre.Enabled = True
+            txtTecnicoMadre.Focus()
+        Else
+            txtTecnicoMadre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbUniverMadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbUniverMadre.CheckedChanged
+        If rbUniverMadre.Checked = True Then
+            txtUniverMadre.Enabled = True
+            txtUniverMadre.Focus()
+        Else
+            txtUniverMadre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub txtOtrosServicios_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtOtrosServicios.TextChanged
+        If txtOtrosServicios.Text <> "" Then
+            comboIsapre.SelectedText = ""
+            radioFonasaA.Checked = False
+            radioFonasaB.Checked = False
+            radioFonasaC.Checked = False
+        End If
+    End Sub
+
+    Private Sub comboIsapre_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles comboIsapre.SelectedIndexChanged
+        If comboIsapre.SelectedText <> "" Then
+            txtOtrosServicios.Text = ""
+            radioFonasaA.Checked = False
+            radioFonasaB.Checked = False
+            radioFonasaC.Checked = False
+        End If
+    End Sub
+
+    Private Sub radioFonasaA_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radioFonasaA.CheckedChanged
+        If radioFonasaA.Checked = True Then
+            txtOtrosServicios.Text = ""
+            comboIsapre.SelectedText = ""
+        End If
+    End Sub
+
+    Private Sub radioFonasaB_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radioFonasaB.CheckedChanged
+        If radioFonasaB.Checked = True Then
+            txtOtrosServicios.Text = ""
+            comboIsapre.SelectedText = ""
+        End If
+    End Sub
+
+    Private Sub radioFonasaC_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radioFonasaC.CheckedChanged
+        If radioFonasaC.Checked = True Then
+            txtOtrosServicios.Text = ""
+            comboIsapre.SelectedText = ""
+        End If
     End Sub
 End Class
