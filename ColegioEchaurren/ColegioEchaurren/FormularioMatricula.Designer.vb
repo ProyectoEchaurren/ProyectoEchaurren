@@ -25,6 +25,11 @@ Partial Class FormularioMatricula
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormularioMatricula))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.RadioButton14 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton13 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
         Me.txtTelefonoTrabajo = New System.Windows.Forms.TextBox()
         Me.txtTelefonoPart2 = New System.Windows.Forms.TextBox()
         Me.txtTelefonoPart = New System.Windows.Forms.TextBox()
@@ -76,6 +81,7 @@ Partial Class FormularioMatricula
         Me.Label77 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnGuardar2 = New System.Windows.Forms.Button()
         Me.RadioButton12 = New System.Windows.Forms.RadioButton()
         Me.RadioButton11 = New System.Windows.Forms.RadioButton()
         Me.RadioButton10 = New System.Windows.Forms.RadioButton()
@@ -288,12 +294,14 @@ Partial Class FormularioMatricula
         Me.Label104 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.checkSinBeca = New System.Windows.Forms.CheckBox()
+        Me.checkConBeca = New System.Windows.Forms.CheckBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton13 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton14 = New System.Windows.Forms.RadioButton()
+        Me.btnVolver2 = New System.Windows.Forms.Button()
+        Me.btnTerminar = New System.Windows.Forms.Button()
+        Me.btnSalir3 = New System.Windows.Forms.Button()
+        Me.btnSalir2 = New System.Windows.Forms.Button()
+        Me.btnVolver = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -320,11 +328,13 @@ Partial Class FormularioMatricula
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 3, 10, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(686, 980)
+        Me.TabControl1.Size = New System.Drawing.Size(686, 2777)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.btnGuardar)
+        Me.TabPage1.Controls.Add(Me.btnSalir)
         Me.TabPage1.Controls.Add(Me.RadioButton14)
         Me.TabPage1.Controls.Add(Me.RadioButton13)
         Me.TabPage1.Controls.Add(Me.RadioButton9)
@@ -375,10 +385,61 @@ Partial Class FormularioMatricula
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(678, 954)
+        Me.TabPage1.Size = New System.Drawing.Size(678, 2751)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Contrato de Servicio"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Location = New System.Drawing.Point(355, 956)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(122, 50)
+        Me.btnGuardar.TabIndex = 55
+        Me.btnGuardar.Text = "Guardar y Continuar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Location = New System.Drawing.Point(514, 956)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(122, 50)
+        Me.btnSalir.TabIndex = 54
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
+        'RadioButton14
+        '
+        Me.RadioButton14.AutoSize = True
+        Me.RadioButton14.Location = New System.Drawing.Point(387, 719)
+        Me.RadioButton14.Name = "RadioButton14"
+        Me.RadioButton14.Size = New System.Drawing.Size(56, 17)
+        Me.RadioButton14.TabIndex = 53
+        Me.RadioButton14.TabStop = True
+        Me.RadioButton14.Text = "OTRO"
+        Me.RadioButton14.UseVisualStyleBackColor = True
+        '
+        'RadioButton13
+        '
+        Me.RadioButton13.AutoSize = True
+        Me.RadioButton13.Location = New System.Drawing.Point(271, 719)
+        Me.RadioButton13.Name = "RadioButton13"
+        Me.RadioButton13.Size = New System.Drawing.Size(80, 17)
+        Me.RadioButton13.TabIndex = 52
+        Me.RadioButton13.TabStop = True
+        Me.RadioButton13.Text = "LA MADRE"
+        Me.RadioButton13.UseVisualStyleBackColor = True
+        '
+        'RadioButton9
+        '
+        Me.RadioButton9.AutoSize = True
+        Me.RadioButton9.Location = New System.Drawing.Point(170, 719)
+        Me.RadioButton9.Name = "RadioButton9"
+        Me.RadioButton9.Size = New System.Drawing.Size(78, 17)
+        Me.RadioButton9.TabIndex = 51
+        Me.RadioButton9.TabStop = True
+        Me.RadioButton9.Text = "EL PADRE"
+        Me.RadioButton9.UseVisualStyleBackColor = True
         '
         'txtTelefonoTrabajo
         '
@@ -795,6 +856,9 @@ Partial Class FormularioMatricula
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.btnVolver)
+        Me.TabPage2.Controls.Add(Me.btnSalir2)
+        Me.TabPage2.Controls.Add(Me.btnGuardar2)
         Me.TabPage2.Controls.Add(Me.RadioButton12)
         Me.TabPage2.Controls.Add(Me.RadioButton11)
         Me.TabPage2.Controls.Add(Me.RadioButton10)
@@ -896,10 +960,19 @@ Partial Class FormularioMatricula
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(678, 954)
+        Me.TabPage2.Size = New System.Drawing.Size(678, 2751)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Ficha de Matricula"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btnGuardar2
+        '
+        Me.btnGuardar2.Location = New System.Drawing.Point(363, 2250)
+        Me.btnGuardar2.Name = "btnGuardar2"
+        Me.btnGuardar2.Size = New System.Drawing.Size(122, 50)
+        Me.btnGuardar2.TabIndex = 180
+        Me.btnGuardar2.Text = "Guardar y Continuar"
+        Me.btnGuardar2.UseVisualStyleBackColor = True
         '
         'RadioButton12
         '
@@ -2242,6 +2315,9 @@ Partial Class FormularioMatricula
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.btnSalir3)
+        Me.TabPage3.Controls.Add(Me.btnTerminar)
+        Me.TabPage3.Controls.Add(Me.btnVolver2)
         Me.TabPage3.Controls.Add(Me.Label124)
         Me.TabPage3.Controls.Add(Me.ComboBox11)
         Me.TabPage3.Controls.Add(Me.TextBox107)
@@ -2306,7 +2382,7 @@ Partial Class FormularioMatricula
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(678, 954)
+        Me.TabPage3.Size = New System.Drawing.Size(678, 2751)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Documentos en Cartera"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -2812,33 +2888,33 @@ Partial Class FormularioMatricula
         '
         'GroupBox7
         '
-        Me.GroupBox7.Controls.Add(Me.CheckBox8)
-        Me.GroupBox7.Controls.Add(Me.CheckBox7)
+        Me.GroupBox7.Controls.Add(Me.checkSinBeca)
+        Me.GroupBox7.Controls.Add(Me.checkConBeca)
         Me.GroupBox7.Location = New System.Drawing.Point(464, 35)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(159, 68)
         Me.GroupBox7.TabIndex = 3
         Me.GroupBox7.TabStop = False
         '
-        'CheckBox8
+        'checkSinBeca
         '
-        Me.CheckBox8.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.CheckBox8.Location = New System.Drawing.Point(20, 36)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(104, 24)
-        Me.CheckBox8.TabIndex = 1
-        Me.CheckBox8.Text = "SIN BECA"
-        Me.CheckBox8.UseVisualStyleBackColor = True
+        Me.checkSinBeca.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.checkSinBeca.Location = New System.Drawing.Point(20, 36)
+        Me.checkSinBeca.Name = "checkSinBeca"
+        Me.checkSinBeca.Size = New System.Drawing.Size(104, 24)
+        Me.checkSinBeca.TabIndex = 1
+        Me.checkSinBeca.Text = "SIN BECA"
+        Me.checkSinBeca.UseVisualStyleBackColor = True
         '
-        'CheckBox7
+        'checkConBeca
         '
-        Me.CheckBox7.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.CheckBox7.Location = New System.Drawing.Point(20, 13)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(104, 24)
-        Me.CheckBox7.TabIndex = 0
-        Me.CheckBox7.Text = "CON BECA"
-        Me.CheckBox7.UseVisualStyleBackColor = True
+        Me.checkConBeca.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.checkConBeca.Location = New System.Drawing.Point(20, 13)
+        Me.checkConBeca.Name = "checkConBeca"
+        Me.checkConBeca.Size = New System.Drawing.Size(104, 24)
+        Me.checkConBeca.TabIndex = 0
+        Me.checkConBeca.Text = "CON BECA"
+        Me.checkConBeca.UseVisualStyleBackColor = True
         '
         'PictureBox2
         '
@@ -2848,38 +2924,50 @@ Partial Class FormularioMatricula
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
-        'RadioButton9
+        'btnVolver2
         '
-        Me.RadioButton9.AutoSize = True
-        Me.RadioButton9.Location = New System.Drawing.Point(170, 719)
-        Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(78, 17)
-        Me.RadioButton9.TabIndex = 51
-        Me.RadioButton9.TabStop = True
-        Me.RadioButton9.Text = "EL PADRE"
-        Me.RadioButton9.UseVisualStyleBackColor = True
+        Me.btnVolver2.Location = New System.Drawing.Point(197, 824)
+        Me.btnVolver2.Name = "btnVolver2"
+        Me.btnVolver2.Size = New System.Drawing.Size(122, 50)
+        Me.btnVolver2.TabIndex = 182
+        Me.btnVolver2.Text = "Volver"
+        Me.btnVolver2.UseVisualStyleBackColor = True
         '
-        'RadioButton13
+        'btnTerminar
         '
-        Me.RadioButton13.AutoSize = True
-        Me.RadioButton13.Location = New System.Drawing.Point(271, 719)
-        Me.RadioButton13.Name = "RadioButton13"
-        Me.RadioButton13.Size = New System.Drawing.Size(80, 17)
-        Me.RadioButton13.TabIndex = 52
-        Me.RadioButton13.TabStop = True
-        Me.RadioButton13.Text = "LA MADRE"
-        Me.RadioButton13.UseVisualStyleBackColor = True
+        Me.btnTerminar.Location = New System.Drawing.Point(350, 824)
+        Me.btnTerminar.Name = "btnTerminar"
+        Me.btnTerminar.Size = New System.Drawing.Size(122, 50)
+        Me.btnTerminar.TabIndex = 183
+        Me.btnTerminar.Text = "Guardar y Terminar"
+        Me.btnTerminar.UseVisualStyleBackColor = True
         '
-        'RadioButton14
+        'btnSalir3
         '
-        Me.RadioButton14.AutoSize = True
-        Me.RadioButton14.Location = New System.Drawing.Point(387, 719)
-        Me.RadioButton14.Name = "RadioButton14"
-        Me.RadioButton14.Size = New System.Drawing.Size(56, 17)
-        Me.RadioButton14.TabIndex = 53
-        Me.RadioButton14.TabStop = True
-        Me.RadioButton14.Text = "OTRO"
-        Me.RadioButton14.UseVisualStyleBackColor = True
+        Me.btnSalir3.Location = New System.Drawing.Point(501, 824)
+        Me.btnSalir3.Name = "btnSalir3"
+        Me.btnSalir3.Size = New System.Drawing.Size(122, 50)
+        Me.btnSalir3.TabIndex = 184
+        Me.btnSalir3.Text = "Salir"
+        Me.btnSalir3.UseVisualStyleBackColor = True
+        '
+        'btnSalir2
+        '
+        Me.btnSalir2.Location = New System.Drawing.Point(503, 2250)
+        Me.btnSalir2.Name = "btnSalir2"
+        Me.btnSalir2.Size = New System.Drawing.Size(122, 50)
+        Me.btnSalir2.TabIndex = 185
+        Me.btnSalir2.Text = "Salir"
+        Me.btnSalir2.UseVisualStyleBackColor = True
+        '
+        'btnVolver
+        '
+        Me.btnVolver.Location = New System.Drawing.Point(222, 2250)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(122, 50)
+        Me.btnVolver.TabIndex = 186
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.UseVisualStyleBackColor = True
         '
         'FormularioMatricula
         '
@@ -2977,8 +3065,8 @@ Partial Class FormularioMatricula
     Friend WithEvents Label77 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
-    Friend WithEvents CheckBox8 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox7 As System.Windows.Forms.CheckBox
+    Friend WithEvents checkSinBeca As System.Windows.Forms.CheckBox
+    Friend WithEvents checkConBeca As System.Windows.Forms.CheckBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label124 As System.Windows.Forms.Label
     Friend WithEvents ComboBox11 As System.Windows.Forms.ComboBox
@@ -3194,4 +3282,12 @@ Partial Class FormularioMatricula
     Friend WithEvents RadioButton14 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton13 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton9 As System.Windows.Forms.RadioButton
+    Friend WithEvents btnGuardar As System.Windows.Forms.Button
+    Friend WithEvents btnSalir As System.Windows.Forms.Button
+    Friend WithEvents btnGuardar2 As System.Windows.Forms.Button
+    Friend WithEvents btnTerminar As System.Windows.Forms.Button
+    Friend WithEvents btnVolver2 As System.Windows.Forms.Button
+    Friend WithEvents btnSalir3 As System.Windows.Forms.Button
+    Friend WithEvents btnSalir2 As System.Windows.Forms.Button
+    Friend WithEvents btnVolver As System.Windows.Forms.Button
 End Class

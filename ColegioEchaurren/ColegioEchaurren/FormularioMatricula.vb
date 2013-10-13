@@ -1,13 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class FormularioMatricula
-
+    Public indiceTab As Integer
     Public varConexion As MySqlConnection
     Public varConexionString As String = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
 
     Private Sub FormularioMatricula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        txtNombreApoderado2.Text = txtNombreApoderado.Text
-        txtNombreTutor2.Text = txtNombreTutor.Text
 
         dateTimeFechaNac.Format = DateTimePickerFormat.Custom
         dateTimeFechaNac.CustomFormat = "dd/MM/yyyy"
@@ -73,5 +71,64 @@ Public Class FormularioMatricula
         Else
             txtOtro.Enabled = False
         End If
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
+        txtNombreApoderado2.Text = txtNombreApoderado.Text
+        txtNombreTutor2.Text = txtNombreTutor.Text
+        indiceTab = TabControl1.SelectedIndex
+        TabControl1.DeselectTab(indiceTab)
+    End Sub
+
+    Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar2.Click
+        indiceTab = TabControl1.SelectedIndex
+        TabControl1.DeselectTab(indiceTab)
+    End Sub
+
+    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        indiceTab = TabControl1.SelectedIndex
+        TabControl1.SelectTab(indiceTab - 1)
+    End Sub
+
+    Private Sub btnVolver2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver2.Click
+        indiceTab = TabControl1.SelectedIndex
+        TabControl1.SelectTab(indiceTab - 1)
+    End Sub
+
+    Private Sub checkConBeca_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkConBeca.CheckedChanged
+        If checkConBeca.Checked = True Then
+            checkSinBeca.Checked = False
+        End If
+    End Sub
+
+    Private Sub checkSinBeca_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkSinBeca.CheckedChanged
+        If checkSinBeca.Checked = True Then
+            checkConBeca.Checked = False
+        End If
+    End Sub
+
+    Private Sub btnSalir3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir3.Click
+        If MessageBox.Show("¿Está seguro(a) de salir sin guardar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Me.Close()
+        Else
+        End If
+    End Sub
+
+    Private Sub btnSalir2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir2.Click
+        If MessageBox.Show("¿Está seguro(a) de salir sin guardar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Me.Close()
+        Else
+        End If
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        If MessageBox.Show("¿Está seguro(a) de salir sin guardar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Me.Close()
+        Else
+        End If
+    End Sub
+
+    Private Sub btnTerminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTerminar.Click
+        Me.Close()
     End Sub
 End Class
