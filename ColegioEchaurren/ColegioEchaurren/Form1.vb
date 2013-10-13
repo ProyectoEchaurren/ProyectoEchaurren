@@ -5,8 +5,18 @@
     End Sub
 
     Private Sub LoginToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoginToolStripMenuItem.Click
-        LoginForm1.MdiParent = Me
-        LoginForm1.Show()
+        If LoginToolStripMenuItem.Text = "Login" Then
+            LoginForm1.MdiParent = Me
+            LoginForm1.Show()
+        Else
+            If MessageBox.Show("¿Está seguro(a) de querer cerrar la sesión?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                MatriculasToolStripMenuItem.Enabled = False
+                FinanzasToolStripMenuItem.Enabled = False
+                AdministracionToolStripMenuItem.Enabled = False
+                RecursosHumanosToolStripMenuItem.Enabled = False
+                LoginToolStripMenuItem.Text = "Login"
+            End If
+        End If
     End Sub
 
     Private Sub AcercaDeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AdministracionToolStripMenuItem.Click

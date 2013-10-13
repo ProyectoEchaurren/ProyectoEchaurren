@@ -81,6 +81,14 @@ Partial Class FormularioMatricula
         Me.Label77 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.txtNumMatri2 = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.dtpMatricula = New System.Windows.Forms.DateTimePicker()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnSalir2 = New System.Windows.Forms.Button()
         Me.btnGuardar2 = New System.Windows.Forms.Button()
@@ -162,8 +170,6 @@ Partial Class FormularioMatricula
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.txtRutAlumno = New System.Windows.Forms.TextBox()
         Me.Label67 = New System.Windows.Forms.Label()
-        Me.radioFeme = New System.Windows.Forms.RadioButton()
-        Me.radioMasc = New System.Windows.Forms.RadioButton()
         Me.Label66 = New System.Windows.Forms.Label()
         Me.Label46 = New System.Windows.Forms.Label()
         Me.txtGrupoFamiliar = New System.Windows.Forms.TextBox()
@@ -302,19 +308,22 @@ Partial Class FormularioMatricula
         Me.checkSinBeca = New System.Windows.Forms.CheckBox()
         Me.checkConBeca = New System.Windows.Forms.CheckBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.dtpMatricula = New System.Windows.Forms.DateTimePicker()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.txtNumMatri2 = New System.Windows.Forms.TextBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.radioMasc = New System.Windows.Forms.RadioButton()
+        Me.radioFeme = New System.Windows.Forms.RadioButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxContent.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -325,8 +334,13 @@ Partial Class FormularioMatricula
         Me.TabPage3.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -343,11 +357,9 @@ Partial Class FormularioMatricula
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Panel7)
         Me.TabPage1.Controls.Add(Me.btnGuardar)
         Me.TabPage1.Controls.Add(Me.btnSalir)
-        Me.TabPage1.Controls.Add(Me.RadioButton14)
-        Me.TabPage1.Controls.Add(Me.RadioButton13)
-        Me.TabPage1.Controls.Add(Me.RadioButton9)
         Me.TabPage1.Controls.Add(Me.txtTelefonoTrabajo)
         Me.TabPage1.Controls.Add(Me.txtTelefonoPart2)
         Me.TabPage1.Controls.Add(Me.txtTelefonoPart)
@@ -421,7 +433,7 @@ Partial Class FormularioMatricula
         'RadioButton14
         '
         Me.RadioButton14.AutoSize = True
-        Me.RadioButton14.Location = New System.Drawing.Point(387, 719)
+        Me.RadioButton14.Location = New System.Drawing.Point(233, 14)
         Me.RadioButton14.Name = "RadioButton14"
         Me.RadioButton14.Size = New System.Drawing.Size(56, 17)
         Me.RadioButton14.TabIndex = 53
@@ -432,7 +444,7 @@ Partial Class FormularioMatricula
         'RadioButton13
         '
         Me.RadioButton13.AutoSize = True
-        Me.RadioButton13.Location = New System.Drawing.Point(271, 719)
+        Me.RadioButton13.Location = New System.Drawing.Point(117, 14)
         Me.RadioButton13.Name = "RadioButton13"
         Me.RadioButton13.Size = New System.Drawing.Size(80, 17)
         Me.RadioButton13.TabIndex = 52
@@ -443,7 +455,7 @@ Partial Class FormularioMatricula
         'RadioButton9
         '
         Me.RadioButton9.AutoSize = True
-        Me.RadioButton9.Location = New System.Drawing.Point(170, 719)
+        Me.RadioButton9.Location = New System.Drawing.Point(16, 14)
         Me.RadioButton9.Name = "RadioButton9"
         Me.RadioButton9.Size = New System.Drawing.Size(78, 17)
         Me.RadioButton9.TabIndex = 51
@@ -866,6 +878,11 @@ Partial Class FormularioMatricula
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.Panel5)
+        Me.TabPage2.Controls.Add(Me.Panel4)
+        Me.TabPage2.Controls.Add(Me.Panel3)
+        Me.TabPage2.Controls.Add(Me.Panel2)
+        Me.TabPage2.Controls.Add(Me.Panel1)
         Me.TabPage2.Controls.Add(Me.PictureBox4)
         Me.TabPage2.Controls.Add(Me.txtNumMatri2)
         Me.TabPage2.Controls.Add(Me.Label21)
@@ -877,22 +894,10 @@ Partial Class FormularioMatricula
         Me.TabPage2.Controls.Add(Me.btnVolver)
         Me.TabPage2.Controls.Add(Me.btnSalir2)
         Me.TabPage2.Controls.Add(Me.btnGuardar2)
-        Me.TabPage2.Controls.Add(Me.RadioButton12)
-        Me.TabPage2.Controls.Add(Me.RadioButton11)
-        Me.TabPage2.Controls.Add(Me.RadioButton10)
-        Me.TabPage2.Controls.Add(Me.RadioButtonpico)
-        Me.TabPage2.Controls.Add(Me.rbUniverMadre)
-        Me.TabPage2.Controls.Add(Me.rbTecnicoMadre)
-        Me.TabPage2.Controls.Add(Me.rbMediaMadre)
-        Me.TabPage2.Controls.Add(Me.rbBasicaMadre)
         Me.TabPage2.Controls.Add(Me.txtUniverMadre)
         Me.TabPage2.Controls.Add(Me.txtTecnicoMadre)
         Me.TabPage2.Controls.Add(Me.txtMediaMadre)
         Me.TabPage2.Controls.Add(Me.txtBasicaMadre)
-        Me.TabPage2.Controls.Add(Me.rbUniverPadre)
-        Me.TabPage2.Controls.Add(Me.rbTecnicoPadre)
-        Me.TabPage2.Controls.Add(Me.rbMediaPadre)
-        Me.TabPage2.Controls.Add(Me.rbBasicaPadre)
         Me.TabPage2.Controls.Add(Me.Label18)
         Me.TabPage2.Controls.Add(Me.txtUniverPadre)
         Me.TabPage2.Controls.Add(Me.txtTecnicoPadre)
@@ -902,8 +907,6 @@ Partial Class FormularioMatricula
         Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Controls.Add(Me.txtRutAlumno)
         Me.TabPage2.Controls.Add(Me.Label67)
-        Me.TabPage2.Controls.Add(Me.radioFeme)
-        Me.TabPage2.Controls.Add(Me.radioMasc)
         Me.TabPage2.Controls.Add(Me.Label66)
         Me.TabPage2.Controls.Add(Me.Label46)
         Me.TabPage2.Controls.Add(Me.txtGrupoFamiliar)
@@ -962,8 +965,6 @@ Partial Class FormularioMatricula
         Me.TabPage2.Controls.Add(Me.txtNombresAlumno)
         Me.TabPage2.Controls.Add(Me.txtApeMatAlumno)
         Me.TabPage2.Controls.Add(Me.txtApePatAlumno)
-        Me.TabPage2.Controls.Add(Me.radioHermanosNo)
-        Me.TabPage2.Controls.Add(Me.radioHermanosSi)
         Me.TabPage2.Controls.Add(Me.Label11)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.Label9)
@@ -982,6 +983,74 @@ Partial Class FormularioMatricula
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Ficha de Matricula"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Location = New System.Drawing.Point(518, 35)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(121, 126)
+        Me.PictureBox4.TabIndex = 194
+        Me.PictureBox4.TabStop = False
+        '
+        'txtNumMatri2
+        '
+        Me.txtNumMatri2.Location = New System.Drawing.Point(552, 167)
+        Me.txtNumMatri2.Name = "txtNumMatri2"
+        Me.txtNumMatri2.Size = New System.Drawing.Size(87, 20)
+        Me.txtNumMatri2.TabIndex = 193
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(515, 170)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(31, 13)
+        Me.Label21.TabIndex = 192
+        Me.Label21.Text = "N° M"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(112, 130)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 191
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Location = New System.Drawing.Point(32, 35)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(191, 68)
+        Me.PictureBox3.TabIndex = 190
+        Me.PictureBox3.TabStop = False
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(47, 133)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(45, 13)
+        Me.Label20.TabIndex = 189
+        Me.Label20.Text = "CURSO"
+        '
+        'dtpMatricula
+        '
+        Me.dtpMatricula.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpMatricula.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dtpMatricula.Location = New System.Drawing.Point(399, 26)
+        Me.dtpMatricula.Name = "dtpMatricula"
+        Me.dtpMatricula.ShowUpDown = True
+        Me.dtpMatricula.Size = New System.Drawing.Size(51, 20)
+        Me.dtpMatricula.TabIndex = 188
+        Me.dtpMatricula.TabStop = False
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(272, 29)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(121, 13)
+        Me.Label19.TabIndex = 187
+        Me.Label19.Text = "FICHA DE MATRÍCULA"
         '
         'btnVolver
         '
@@ -1013,7 +1082,7 @@ Partial Class FormularioMatricula
         'RadioButton12
         '
         Me.RadioButton12.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.RadioButton12.Location = New System.Drawing.Point(6, 1196)
+        Me.RadioButton12.Location = New System.Drawing.Point(1, 81)
         Me.RadioButton12.Name = "RadioButton12"
         Me.RadioButton12.Size = New System.Drawing.Size(113, 17)
         Me.RadioButton12.TabIndex = 179
@@ -1023,7 +1092,7 @@ Partial Class FormularioMatricula
         'RadioButton11
         '
         Me.RadioButton11.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.RadioButton11.Location = New System.Drawing.Point(6, 1172)
+        Me.RadioButton11.Location = New System.Drawing.Point(1, 57)
         Me.RadioButton11.Name = "RadioButton11"
         Me.RadioButton11.Size = New System.Drawing.Size(113, 17)
         Me.RadioButton11.TabIndex = 178
@@ -1033,7 +1102,7 @@ Partial Class FormularioMatricula
         'RadioButton10
         '
         Me.RadioButton10.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.RadioButton10.Location = New System.Drawing.Point(6, 1145)
+        Me.RadioButton10.Location = New System.Drawing.Point(1, 30)
         Me.RadioButton10.Name = "RadioButton10"
         Me.RadioButton10.Size = New System.Drawing.Size(113, 17)
         Me.RadioButton10.TabIndex = 177
@@ -1043,7 +1112,7 @@ Partial Class FormularioMatricula
         'RadioButtonpico
         '
         Me.RadioButtonpico.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.RadioButtonpico.Location = New System.Drawing.Point(6, 1118)
+        Me.RadioButtonpico.Location = New System.Drawing.Point(1, 3)
         Me.RadioButtonpico.Name = "RadioButtonpico"
         Me.RadioButtonpico.Size = New System.Drawing.Size(113, 24)
         Me.RadioButtonpico.TabIndex = 176
@@ -1053,7 +1122,7 @@ Partial Class FormularioMatricula
         'rbUniverMadre
         '
         Me.rbUniverMadre.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.rbUniverMadre.Location = New System.Drawing.Point(5, 1007)
+        Me.rbUniverMadre.Location = New System.Drawing.Point(3, 92)
         Me.rbUniverMadre.Name = "rbUniverMadre"
         Me.rbUniverMadre.Size = New System.Drawing.Size(239, 24)
         Me.rbUniverMadre.TabIndex = 175
@@ -1063,7 +1132,7 @@ Partial Class FormularioMatricula
         'rbTecnicoMadre
         '
         Me.rbTecnicoMadre.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.rbTecnicoMadre.Location = New System.Drawing.Point(5, 978)
+        Me.rbTecnicoMadre.Location = New System.Drawing.Point(3, 63)
         Me.rbTecnicoMadre.Name = "rbTecnicoMadre"
         Me.rbTecnicoMadre.Size = New System.Drawing.Size(239, 24)
         Me.rbTecnicoMadre.TabIndex = 174
@@ -1073,7 +1142,7 @@ Partial Class FormularioMatricula
         'rbMediaMadre
         '
         Me.rbMediaMadre.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.rbMediaMadre.Location = New System.Drawing.Point(5, 948)
+        Me.rbMediaMadre.Location = New System.Drawing.Point(3, 33)
         Me.rbMediaMadre.Name = "rbMediaMadre"
         Me.rbMediaMadre.Size = New System.Drawing.Size(239, 24)
         Me.rbMediaMadre.TabIndex = 173
@@ -1083,7 +1152,7 @@ Partial Class FormularioMatricula
         'rbBasicaMadre
         '
         Me.rbBasicaMadre.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.rbBasicaMadre.Location = New System.Drawing.Point(5, 919)
+        Me.rbBasicaMadre.Location = New System.Drawing.Point(3, 4)
         Me.rbBasicaMadre.Name = "rbBasicaMadre"
         Me.rbBasicaMadre.Size = New System.Drawing.Size(239, 24)
         Me.rbBasicaMadre.TabIndex = 172
@@ -1125,7 +1194,7 @@ Partial Class FormularioMatricula
         'rbUniverPadre
         '
         Me.rbUniverPadre.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.rbUniverPadre.Location = New System.Drawing.Point(2, 761)
+        Me.rbUniverPadre.Location = New System.Drawing.Point(0, 91)
         Me.rbUniverPadre.Name = "rbUniverPadre"
         Me.rbUniverPadre.Size = New System.Drawing.Size(239, 24)
         Me.rbUniverPadre.TabIndex = 167
@@ -1135,7 +1204,7 @@ Partial Class FormularioMatricula
         'rbTecnicoPadre
         '
         Me.rbTecnicoPadre.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.rbTecnicoPadre.Location = New System.Drawing.Point(2, 732)
+        Me.rbTecnicoPadre.Location = New System.Drawing.Point(0, 62)
         Me.rbTecnicoPadre.Name = "rbTecnicoPadre"
         Me.rbTecnicoPadre.Size = New System.Drawing.Size(239, 24)
         Me.rbTecnicoPadre.TabIndex = 166
@@ -1145,7 +1214,7 @@ Partial Class FormularioMatricula
         'rbMediaPadre
         '
         Me.rbMediaPadre.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.rbMediaPadre.Location = New System.Drawing.Point(2, 702)
+        Me.rbMediaPadre.Location = New System.Drawing.Point(0, 32)
         Me.rbMediaPadre.Name = "rbMediaPadre"
         Me.rbMediaPadre.Size = New System.Drawing.Size(239, 24)
         Me.rbMediaPadre.TabIndex = 165
@@ -1155,7 +1224,7 @@ Partial Class FormularioMatricula
         'rbBasicaPadre
         '
         Me.rbBasicaPadre.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.rbBasicaPadre.Location = New System.Drawing.Point(2, 673)
+        Me.rbBasicaPadre.Location = New System.Drawing.Point(0, 3)
         Me.rbBasicaPadre.Name = "rbBasicaPadre"
         Me.rbBasicaPadre.Size = New System.Drawing.Size(239, 24)
         Me.rbBasicaPadre.TabIndex = 164
@@ -1214,6 +1283,7 @@ Partial Class FormularioMatricula
         '
         Me.GroupBox1.AutoSize = True
         Me.GroupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.GroupBox1.Controls.Add(Me.Panel6)
         Me.GroupBox1.Controls.Add(Me.comboIsapre)
         Me.GroupBox1.Controls.Add(Me.TextBox61)
         Me.GroupBox1.Controls.Add(Me.TextBox60)
@@ -1227,9 +1297,6 @@ Partial Class FormularioMatricula
         Me.GroupBox1.Controls.Add(Me.Label69)
         Me.GroupBox1.Controls.Add(Me.txtNombreApoderado2)
         Me.GroupBox1.Controls.Add(Me.Label68)
-        Me.GroupBox1.Controls.Add(Me.radioFonasaC)
-        Me.GroupBox1.Controls.Add(Me.radioFonasaB)
-        Me.GroupBox1.Controls.Add(Me.radioFonasaA)
         Me.GroupBox1.Controls.Add(Me.txtOtrosServicios)
         Me.GroupBox1.Controls.Add(Me.txtSeguros)
         Me.GroupBox1.Controls.Add(Me.Label65)
@@ -1362,7 +1429,7 @@ Partial Class FormularioMatricula
         'radioFonasaC
         '
         Me.radioFonasaC.AutoSize = True
-        Me.radioFonasaC.Location = New System.Drawing.Point(520, 873)
+        Me.radioFonasaC.Location = New System.Drawing.Point(138, 6)
         Me.radioFonasaC.Name = "radioFonasaC"
         Me.radioFonasaC.Size = New System.Drawing.Size(32, 17)
         Me.radioFonasaC.TabIndex = 146
@@ -1372,7 +1439,7 @@ Partial Class FormularioMatricula
         'radioFonasaB
         '
         Me.radioFonasaB.AutoSize = True
-        Me.radioFonasaB.Location = New System.Drawing.Point(460, 873)
+        Me.radioFonasaB.Location = New System.Drawing.Point(78, 6)
         Me.radioFonasaB.Name = "radioFonasaB"
         Me.radioFonasaB.Size = New System.Drawing.Size(32, 17)
         Me.radioFonasaB.TabIndex = 145
@@ -1382,7 +1449,7 @@ Partial Class FormularioMatricula
         'radioFonasaA
         '
         Me.radioFonasaA.AutoSize = True
-        Me.radioFonasaA.Location = New System.Drawing.Point(402, 873)
+        Me.radioFonasaA.Location = New System.Drawing.Point(20, 6)
         Me.radioFonasaA.Name = "radioFonasaA"
         Me.radioFonasaA.Size = New System.Drawing.Size(32, 17)
         Me.radioFonasaA.TabIndex = 144
@@ -1744,26 +1811,6 @@ Partial Class FormularioMatricula
         Me.Label67.Size = New System.Drawing.Size(37, 13)
         Me.Label67.TabIndex = 120
         Me.Label67.Text = "EDAD"
-        '
-        'radioFeme
-        '
-        Me.radioFeme.AutoSize = True
-        Me.radioFeme.Location = New System.Drawing.Point(558, 308)
-        Me.radioFeme.Name = "radioFeme"
-        Me.radioFeme.Size = New System.Drawing.Size(81, 17)
-        Me.radioFeme.TabIndex = 119
-        Me.radioFeme.Text = "FEMENINO"
-        Me.radioFeme.UseVisualStyleBackColor = True
-        '
-        'radioMasc
-        '
-        Me.radioMasc.AutoSize = True
-        Me.radioMasc.Location = New System.Drawing.Point(455, 308)
-        Me.radioMasc.Name = "radioMasc"
-        Me.radioMasc.Size = New System.Drawing.Size(88, 17)
-        Me.radioMasc.TabIndex = 118
-        Me.radioMasc.Text = "MASCULINO"
-        Me.radioMasc.UseVisualStyleBackColor = True
         '
         'Label66
         '
@@ -2230,7 +2277,7 @@ Partial Class FormularioMatricula
         'radioHermanosNo
         '
         Me.radioHermanosNo.AutoSize = True
-        Me.radioHermanosNo.Location = New System.Drawing.Point(290, 525)
+        Me.radioHermanosNo.Location = New System.Drawing.Point(67, 6)
         Me.radioHermanosNo.Name = "radioHermanosNo"
         Me.radioHermanosNo.Size = New System.Drawing.Size(41, 17)
         Me.radioHermanosNo.TabIndex = 12
@@ -2240,7 +2287,7 @@ Partial Class FormularioMatricula
         'radioHermanosSi
         '
         Me.radioHermanosSi.AutoSize = True
-        Me.radioHermanosSi.Location = New System.Drawing.Point(236, 525)
+        Me.radioHermanosSi.Location = New System.Drawing.Point(13, 6)
         Me.radioHermanosSi.Name = "radioHermanosSi"
         Me.radioHermanosSi.Size = New System.Drawing.Size(35, 17)
         Me.radioHermanosSi.TabIndex = 11
@@ -2996,73 +3043,98 @@ Partial Class FormularioMatricula
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
-        'Label19
+        'radioMasc
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(272, 29)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(121, 13)
-        Me.Label19.TabIndex = 187
-        Me.Label19.Text = "FICHA DE MATRÍCULA"
+        Me.radioMasc.AutoSize = True
+        Me.radioMasc.Location = New System.Drawing.Point(4, 3)
+        Me.radioMasc.Name = "radioMasc"
+        Me.radioMasc.Size = New System.Drawing.Size(88, 17)
+        Me.radioMasc.TabIndex = 195
+        Me.radioMasc.Text = "MASCULINO"
+        Me.radioMasc.UseVisualStyleBackColor = True
         '
-        'dtpMatricula
+        'radioFeme
         '
-        Me.dtpMatricula.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpMatricula.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dtpMatricula.Location = New System.Drawing.Point(399, 26)
-        Me.dtpMatricula.Name = "dtpMatricula"
-        Me.dtpMatricula.ShowUpDown = True
-        Me.dtpMatricula.Size = New System.Drawing.Size(51, 20)
-        Me.dtpMatricula.TabIndex = 188
-        Me.dtpMatricula.TabStop = False
+        Me.radioFeme.AutoSize = True
+        Me.radioFeme.Location = New System.Drawing.Point(127, 3)
+        Me.radioFeme.Name = "radioFeme"
+        Me.radioFeme.Size = New System.Drawing.Size(81, 17)
+        Me.radioFeme.TabIndex = 196
+        Me.radioFeme.Text = "FEMENINO"
+        Me.radioFeme.UseVisualStyleBackColor = True
         '
-        'Label20
+        'Panel1
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(47, 133)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(45, 13)
-        Me.Label20.TabIndex = 189
-        Me.Label20.Text = "CURSO"
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Panel1.Controls.Add(Me.radioMasc)
+        Me.Panel1.Controls.Add(Me.radioFeme)
+        Me.Panel1.Location = New System.Drawing.Point(428, 306)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(211, 26)
+        Me.Panel1.TabIndex = 197
         '
-        'PictureBox3
+        'Panel2
         '
-        Me.PictureBox3.Location = New System.Drawing.Point(32, 35)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(191, 68)
-        Me.PictureBox3.TabIndex = 190
-        Me.PictureBox3.TabStop = False
+        Me.Panel2.Controls.Add(Me.radioHermanosNo)
+        Me.Panel2.Controls.Add(Me.radioHermanosSi)
+        Me.Panel2.Location = New System.Drawing.Point(222, 524)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(127, 33)
+        Me.Panel2.TabIndex = 198
         '
-        'TextBox1
+        'Panel3
         '
-        Me.TextBox1.Location = New System.Drawing.Point(112, 130)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 191
+        Me.Panel3.Controls.Add(Me.rbUniverPadre)
+        Me.Panel3.Controls.Add(Me.rbTecnicoPadre)
+        Me.Panel3.Controls.Add(Me.rbMediaPadre)
+        Me.Panel3.Controls.Add(Me.rbBasicaPadre)
+        Me.Panel3.Location = New System.Drawing.Point(2, 670)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(244, 115)
+        Me.Panel3.TabIndex = 199
         '
-        'Label21
+        'Panel4
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(515, 170)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(31, 13)
-        Me.Label21.TabIndex = 192
-        Me.Label21.Text = "N° M"
+        Me.Panel4.Controls.Add(Me.rbUniverMadre)
+        Me.Panel4.Controls.Add(Me.rbTecnicoMadre)
+        Me.Panel4.Controls.Add(Me.rbMediaMadre)
+        Me.Panel4.Controls.Add(Me.rbBasicaMadre)
+        Me.Panel4.Location = New System.Drawing.Point(2, 915)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(245, 117)
+        Me.Panel4.TabIndex = 200
         '
-        'txtNumMatri2
+        'Panel5
         '
-        Me.txtNumMatri2.Location = New System.Drawing.Point(552, 167)
-        Me.txtNumMatri2.Name = "txtNumMatri2"
-        Me.txtNumMatri2.Size = New System.Drawing.Size(87, 20)
-        Me.txtNumMatri2.TabIndex = 193
+        Me.Panel5.Controls.Add(Me.RadioButton12)
+        Me.Panel5.Controls.Add(Me.RadioButton11)
+        Me.Panel5.Controls.Add(Me.RadioButton10)
+        Me.Panel5.Controls.Add(Me.RadioButtonpico)
+        Me.Panel5.Location = New System.Drawing.Point(5, 1115)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(205, 101)
+        Me.Panel5.TabIndex = 201
         '
-        'PictureBox4
+        'Panel6
         '
-        Me.PictureBox4.Location = New System.Drawing.Point(518, 35)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(121, 126)
-        Me.PictureBox4.TabIndex = 194
-        Me.PictureBox4.TabStop = False
+        Me.Panel6.Controls.Add(Me.radioFonasaC)
+        Me.Panel6.Controls.Add(Me.radioFonasaB)
+        Me.Panel6.Controls.Add(Me.radioFonasaA)
+        Me.Panel6.Location = New System.Drawing.Point(382, 867)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(193, 27)
+        Me.Panel6.TabIndex = 160
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.RadioButton14)
+        Me.Panel7.Controls.Add(Me.RadioButton13)
+        Me.Panel7.Controls.Add(Me.RadioButton9)
+        Me.Panel7.Location = New System.Drawing.Point(154, 705)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(300, 32)
+        Me.Panel7.TabIndex = 56
         '
         'FormularioMatricula
         '
@@ -3086,6 +3158,8 @@ Partial Class FormularioMatricula
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBoxContent.ResumeLayout(False)
@@ -3103,8 +3177,17 @@ Partial Class FormularioMatricula
         Me.TabPage3.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3281,8 +3364,6 @@ Partial Class FormularioMatricula
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents txtRutAlumno As System.Windows.Forms.TextBox
     Friend WithEvents Label67 As System.Windows.Forms.Label
-    Friend WithEvents radioFeme As System.Windows.Forms.RadioButton
-    Friend WithEvents radioMasc As System.Windows.Forms.RadioButton
     Friend WithEvents Label66 As System.Windows.Forms.Label
     Friend WithEvents Label46 As System.Windows.Forms.Label
     Friend WithEvents txtGrupoFamiliar As System.Windows.Forms.TextBox
@@ -3395,4 +3476,13 @@ Partial Class FormularioMatricula
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents radioMasc As System.Windows.Forms.RadioButton
+    Friend WithEvents radioFeme As System.Windows.Forms.RadioButton
+    Friend WithEvents Panel7 As System.Windows.Forms.Panel
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Panel6 As System.Windows.Forms.Panel
 End Class

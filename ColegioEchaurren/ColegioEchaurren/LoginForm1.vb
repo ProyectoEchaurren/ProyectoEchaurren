@@ -14,6 +14,11 @@
             Form1.FinanzasToolStripMenuItem.Enabled = True
             Form1.AdministracionToolStripMenuItem.Enabled = True
             Form1.RecursosHumanosToolStripMenuItem.Enabled = True
+            Form1.LoginToolStripMenuItem.Text = "Logout"
+        ElseIf UsernameTextBox.Text = "asistente" Then
+            Form1.MatriculasToolStripMenuItem.Enabled = True
+            Form1.AdministracionToolStripMenuItem.Enabled = True
+            Form1.LoginToolStripMenuItem.Text = "Logout"
         Else
             MessageBox.Show("Usuario y/o contraseña incorrecto(s)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
