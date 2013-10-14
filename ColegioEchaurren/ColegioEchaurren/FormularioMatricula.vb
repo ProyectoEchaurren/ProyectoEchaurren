@@ -80,6 +80,7 @@ Public Class FormularioMatricula
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
         txtNombreApoderado2.Text = txtNombreApoderado.Text
         txtNombreTutor2.Text = txtNombreTutor.Text
+        TextBox1.Text = txtCurso.Text
         indiceTab = TabControl1.SelectedIndex
         TabControl1.DeselectTab(indiceTab)
     End Sub
@@ -130,7 +131,73 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub btnTerminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTerminar.Click
-        Me.Close()
+
+
+        If txtNombreAlumno.Text = "" Or txtCurso.Text = "" Or txtNombreApoderado.Text = "" Then
+
+            MessageBox.Show("Debe ingresar nombre de apoderado y/o nivel", "Matricula - Contrato de servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        If RadioButton9.Checked = False And RadioButton13.Checked = False And RadioButton14.Checked = False Then
+
+            MessageBox.Show("Debe seleccionar uno de los tipos de tutor economico", "Matricula - Contrato de servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        While RadioButton14.Checked = True
+            If txtOtro.Text = "" Then
+                MessageBox.Show("Debe ingresar otro tipo de tutor economico", "Matricula - Contrato de servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+
+        End While
+
+
+        If txtNombreTutor.Text = "" Or txtRut.Text = "" Or txtTelefonoPart.Text = "" Or txtTelefonoTrabajo.Text = "" Or txtDomicilio.Text = "" Or txtLugarDeTrabajo.Text = "" Or txtOcupacionAct.Text = "" Or txtProfesion.Text = "" Then
+
+            MessageBox.Show("Debe llenar todos los datos del tutor economico", "Matricula - Contrato de servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        If txtNumMatri2.Text = "" Or txtApePatAlumno.Text = "" Or txtApeMatAlumno.Text = "" Or txtNombresAlumno.Text = "" Or txtEdadAlumno.Text = "" Or txtCalleAlumno.Text = "" Or txtSectorAlumno.Text = "" Or txtComunaAlumno.Text = "" Or txtTelefonoAlumno.Text = "" Or txtColegioPrese.Text = "" Or txtCursosRepetidos.Text = "" Then
+            MessageBox.Show("Debe llenar todos los campos de datos del alumno", "Matricula - ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        If radioMasc.Checked = False And radioFeme.Checked = False Then
+            MessageBox.Show("Debe seleccionar uno de los dos sexos", "Matricula - Ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        If radioHermanosSi.Checked = False And radioHermanosNo.Checked = False Then
+            MessageBox.Show("Debe seleccionar hermanos en establecimiento", "Matricula - Ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        While radioHermanosSi.Checked = True
+            If txtHermanosCursos.Text = "" Then
+                MessageBox.Show("Debe indicar los cursos de hermanos", "Matricula - Ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+        End While
+
+        If RadioButtonpico.Checked = False And RadioButton10.Checked = False And RadioButton11.Checked = False And RadioButton12.Checked = False Then
+            MessageBox.Show("Debe seleccionar convivencia del alumno", "Matricula - Ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        If txtNombreApodSuplent.Text = "" Then
+            MessageBox.Show("Debe ingresar nombre de apoderado suplente", "Matricula - Ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        If checkConBeca.Enabled = False And checkSinBeca.Enabled = False Then
+            MessageBox.Show("Debe seleccionar una opcion de beca", "Matricula - Ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+
     End Sub
 
     Private Sub radioHermanosSi_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radioHermanosSi.CheckedChanged
