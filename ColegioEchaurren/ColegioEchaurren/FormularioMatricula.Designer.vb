@@ -357,6 +357,7 @@ Partial Class FormularioMatricula
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TabPage1.Controls.Add(Me.Panel7)
         Me.TabPage1.Controls.Add(Me.btnGuardar)
         Me.TabPage1.Controls.Add(Me.btnSalir)
@@ -410,7 +411,6 @@ Partial Class FormularioMatricula
         Me.TabPage1.Size = New System.Drawing.Size(678, 2751)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Contrato de Servicio"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'Panel7
         '
