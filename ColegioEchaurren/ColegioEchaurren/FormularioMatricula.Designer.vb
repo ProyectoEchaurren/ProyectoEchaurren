@@ -28,12 +28,12 @@ Partial Class FormularioMatricula
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.RadioButton14 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton13 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
+        Me.rbMadreTutor = New System.Windows.Forms.RadioButton()
+        Me.rbPadreTutor = New System.Windows.Forms.RadioButton()
         Me.txtTelefonoTrabajo = New System.Windows.Forms.TextBox()
         Me.txtTelefonoPart2 = New System.Windows.Forms.TextBox()
         Me.txtTelefonoPart = New System.Windows.Forms.TextBox()
-        Me.txtRut = New System.Windows.Forms.TextBox()
+        Me.txtRutTutor = New System.Windows.Forms.TextBox()
         Me.Label102 = New System.Windows.Forms.Label()
         Me.txtProfesion = New System.Windows.Forms.TextBox()
         Me.Label101 = New System.Windows.Forms.Label()
@@ -363,7 +363,7 @@ Partial Class FormularioMatricula
         Me.TabPage1.Controls.Add(Me.txtTelefonoTrabajo)
         Me.TabPage1.Controls.Add(Me.txtTelefonoPart2)
         Me.TabPage1.Controls.Add(Me.txtTelefonoPart)
-        Me.TabPage1.Controls.Add(Me.txtRut)
+        Me.TabPage1.Controls.Add(Me.txtRutTutor)
         Me.TabPage1.Controls.Add(Me.Label102)
         Me.TabPage1.Controls.Add(Me.txtProfesion)
         Me.TabPage1.Controls.Add(Me.Label101)
@@ -441,27 +441,27 @@ Partial Class FormularioMatricula
         Me.RadioButton14.Text = "OTRO"
         Me.RadioButton14.UseVisualStyleBackColor = True
         '
-        'RadioButton13
+        'rbMadreTutor
         '
-        Me.RadioButton13.AutoSize = True
-        Me.RadioButton13.Location = New System.Drawing.Point(117, 14)
-        Me.RadioButton13.Name = "RadioButton13"
-        Me.RadioButton13.Size = New System.Drawing.Size(80, 17)
-        Me.RadioButton13.TabIndex = 52
-        Me.RadioButton13.TabStop = True
-        Me.RadioButton13.Text = "LA MADRE"
-        Me.RadioButton13.UseVisualStyleBackColor = True
+        Me.rbMadreTutor.AutoSize = True
+        Me.rbMadreTutor.Location = New System.Drawing.Point(117, 14)
+        Me.rbMadreTutor.Name = "rbMadreTutor"
+        Me.rbMadreTutor.Size = New System.Drawing.Size(80, 17)
+        Me.rbMadreTutor.TabIndex = 52
+        Me.rbMadreTutor.TabStop = True
+        Me.rbMadreTutor.Text = "LA MADRE"
+        Me.rbMadreTutor.UseVisualStyleBackColor = True
         '
-        'RadioButton9
+        'rbPadreTutor
         '
-        Me.RadioButton9.AutoSize = True
-        Me.RadioButton9.Location = New System.Drawing.Point(16, 14)
-        Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(78, 17)
-        Me.RadioButton9.TabIndex = 51
-        Me.RadioButton9.TabStop = True
-        Me.RadioButton9.Text = "EL PADRE"
-        Me.RadioButton9.UseVisualStyleBackColor = True
+        Me.rbPadreTutor.AutoSize = True
+        Me.rbPadreTutor.Location = New System.Drawing.Point(16, 14)
+        Me.rbPadreTutor.Name = "rbPadreTutor"
+        Me.rbPadreTutor.Size = New System.Drawing.Size(78, 17)
+        Me.rbPadreTutor.TabIndex = 51
+        Me.rbPadreTutor.TabStop = True
+        Me.rbPadreTutor.Text = "EL PADRE"
+        Me.rbPadreTutor.UseVisualStyleBackColor = True
         '
         'txtTelefonoTrabajo
         '
@@ -484,12 +484,12 @@ Partial Class FormularioMatricula
         Me.txtTelefonoPart.Size = New System.Drawing.Size(112, 20)
         Me.txtTelefonoPart.TabIndex = 48
         '
-        'txtRut
+        'txtRutTutor
         '
-        Me.txtRut.Location = New System.Drawing.Point(168, 779)
-        Me.txtRut.Name = "txtRut"
-        Me.txtRut.Size = New System.Drawing.Size(112, 20)
-        Me.txtRut.TabIndex = 47
+        Me.txtRutTutor.Location = New System.Drawing.Point(168, 779)
+        Me.txtRutTutor.Name = "txtRutTutor"
+        Me.txtRutTutor.Size = New System.Drawing.Size(112, 20)
+        Me.txtRutTutor.TabIndex = 47
         '
         'Label102
         '
@@ -3129,8 +3129,8 @@ Partial Class FormularioMatricula
         'Panel7
         '
         Me.Panel7.Controls.Add(Me.RadioButton14)
-        Me.Panel7.Controls.Add(Me.RadioButton13)
-        Me.Panel7.Controls.Add(Me.RadioButton9)
+        Me.Panel7.Controls.Add(Me.rbMadreTutor)
+        Me.Panel7.Controls.Add(Me.rbPadreTutor)
         Me.Panel7.Location = New System.Drawing.Point(154, 705)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(300, 32)
@@ -3197,7 +3197,7 @@ Partial Class FormularioMatricula
     Friend WithEvents txtTelefonoTrabajo As System.Windows.Forms.TextBox
     Friend WithEvents txtTelefonoPart2 As System.Windows.Forms.TextBox
     Friend WithEvents txtTelefonoPart As System.Windows.Forms.TextBox
-    Friend WithEvents txtRut As System.Windows.Forms.TextBox
+    Friend WithEvents txtRutTutor As System.Windows.Forms.TextBox
     Friend WithEvents Label102 As System.Windows.Forms.Label
     Friend WithEvents txtProfesion As System.Windows.Forms.TextBox
     Friend WithEvents Label101 As System.Windows.Forms.Label
@@ -3458,8 +3458,8 @@ Partial Class FormularioMatricula
     Friend WithEvents txtMediaPadre As System.Windows.Forms.TextBox
     Friend WithEvents txtBasicaPadre As System.Windows.Forms.TextBox
     Friend WithEvents RadioButton14 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton13 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton9 As System.Windows.Forms.RadioButton
+    Friend WithEvents rbMadreTutor As System.Windows.Forms.RadioButton
+    Friend WithEvents rbPadreTutor As System.Windows.Forms.RadioButton
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents btnGuardar2 As System.Windows.Forms.Button

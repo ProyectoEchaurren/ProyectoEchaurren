@@ -80,6 +80,35 @@ Public Class FormularioMatricula
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
         txtNombreApoderado2.Text = txtNombreApoderado.Text
         txtNombreTutor2.Text = txtNombreTutor.Text
+
+        If rbPadreTutor.Checked = True Then
+            txtNombrePadre.Text = txtNombreTutor.Text
+            txtRutPadre.Text = txtRutTutor.Text
+            txtTelefonoPadre.Text = txtTelefonoTrabajo.Text
+            txtTrabajaenPadre.Text = txtLugarDeTrabajo.Text
+            txtCargoPadre.Text = txtOcupacionAct.Text
+            If txtNombreMadre.Text = txtNombreTutor.Text And txtRutMadre.Text = txtRutTutor.Text And txtTelefonoMadre.Text = txtTelefonoTrabajo.Text And txtTrabajaenMadre.Text = txtLugarDeTrabajo.Text And txtCargoMadre.Text = txtOcupacionAct.Text Then
+                txtNombreMadre.Text = ""
+                txtRutMadre.Text = ""
+                txtTelefonoMadre.Text = ""
+                txtTrabajaenMadre.Text = ""
+                txtCargoMadre.Text = ""
+            End If
+        ElseIf rbMadreTutor.Checked = True Then
+            txtNombreMadre.Text = txtNombreTutor.Text
+            txtRutMadre.Text = txtRutTutor.Text
+            txtTelefonoMadre.Text = txtTelefonoTrabajo.Text
+            txtTrabajaenMadre.Text = txtLugarDeTrabajo.Text
+            txtCargoMadre.Text = txtOcupacionAct.Text
+            If txtNombrePadre.Text = txtNombreTutor.Text And txtRutPadre.Text = txtRutTutor.Text And txtTelefonoPadre.Text = txtTelefonoTrabajo.Text And txtTrabajaenPadre.Text = txtLugarDeTrabajo.Text And txtCargoPadre.Text = txtOcupacionAct.Text Then
+                txtNombrePadre.Text = ""
+                txtRutPadre.Text = ""
+                txtTelefonoPadre.Text = ""
+                txtTrabajaenPadre.Text = ""
+                txtCargoPadre.Text = ""
+            End If
+        End If
+
         indiceTab = TabControl1.SelectedIndex
         TabControl1.DeselectTab(indiceTab)
     End Sub
