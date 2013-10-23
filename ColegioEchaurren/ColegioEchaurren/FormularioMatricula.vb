@@ -205,12 +205,7 @@ Public Class FormularioMatricula
         '---------------------------------------------------------------------------------------------------
         '---------------------------------------------------------------------------------------------------
 
-        Dim query1 As String = "INSERT INTO `bd_echaurren`.`telefono` (`NumFijo`, `NumCelular`, `NumTrabajo`) VALUES ('" & txtTelefonoPart.Text & "', '" & txtTelefonoPart2.Text & "', '" & txtTelefonoTrabajo.Text & "');"
-        Dim query2 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionParticular`, `DireccionTrabajo`) VALUES ('" & txtDomicilio.Text & "', '" & txtLugarDeTrabajo.Text & "');"
-        Dim query3 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Profesion`, `Cargo`, `Telefono_idTelefono`, `Direccion_idDireccion`) VALUES ('1234', 'davidmoises cabas', 'kakaroto', 'baredor', '2', '2');"
-
-
-
+       
 
     End Sub
 
@@ -332,5 +327,9 @@ Public Class FormularioMatricula
             txtOtrosServicios.Text = ""
             comboIsapre.SelectedText = ""
         End If
+    End Sub
+
+    Private Sub TabControl1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabControl1.SelectedIndexChanged
+
     End Sub
 End Class
