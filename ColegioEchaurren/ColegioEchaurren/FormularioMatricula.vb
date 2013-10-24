@@ -207,4 +207,22 @@ Public Class FormularioMatricula
             txtEstudiosPadre.Focus()
         End If
     End Sub
+
+    Private Sub ComboBox12_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbApoderado.SelectedIndexChanged
+        If cbApoderado.SelectedIndex = "3" Then
+            txtNombreApoderado.Enabled = True
+            txtNombreApoderado.Focus()
+        Else
+            txtNombreApoderado.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ComboBox13_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbApoSuplente.SelectedIndexChanged
+        If cbApoSuplente.SelectedIndex = "3" Then
+            txtNombreApodSuplent.Enabled = True
+            txtNombreApodSuplent.Focus()
+        Else
+            txtNombreApodSuplent.Enabled = False
+        End If
+    End Sub
 End Class

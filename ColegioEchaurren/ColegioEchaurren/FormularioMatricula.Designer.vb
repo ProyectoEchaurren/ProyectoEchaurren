@@ -53,13 +53,6 @@ Partial Class FormularioMatricula
         Me.txtOtro = New System.Windows.Forms.TextBox()
         Me.Label94 = New System.Windows.Forms.Label()
         Me.Label93 = New System.Windows.Forms.Label()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox65 = New System.Windows.Forms.TextBox()
-        Me.txtNumMatri = New System.Windows.Forms.TextBox()
-        Me.Label79 = New System.Windows.Forms.Label()
-        Me.Label78 = New System.Windows.Forms.Label()
-        Me.Label77 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.cbViveCon = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -256,16 +249,21 @@ Partial Class FormularioMatricula
         Me.txtAntecedentesMed = New System.Windows.Forms.TextBox()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
+        Me.cbApoderado = New System.Windows.Forms.ComboBox()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.TextBox65 = New System.Windows.Forms.TextBox()
+        Me.txtNumMatri = New System.Windows.Forms.TextBox()
+        Me.Label79 = New System.Windows.Forms.Label()
+        Me.Label78 = New System.Windows.Forms.Label()
+        Me.Label77 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.cbApoSuplente = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel7.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -278,13 +276,13 @@ Partial Class FormularioMatricula
         Me.GroupBox1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
-        Me.Panel3.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
@@ -297,9 +295,9 @@ Partial Class FormularioMatricula
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TabPage1.Controls.Add(Me.Panel3)
+        Me.TabPage1.Controls.Add(Me.cbApoSuplente)
         Me.TabPage1.Controls.Add(Me.Label21)
-        Me.TabPage1.Controls.Add(Me.ComboBox12)
+        Me.TabPage1.Controls.Add(Me.cbApoderado)
         Me.TabPage1.Controls.Add(Me.Label19)
         Me.TabPage1.Controls.Add(Me.Label22)
         Me.TabPage1.Controls.Add(Me.txtNombreApoderado)
@@ -367,17 +365,17 @@ Partial Class FormularioMatricula
         Me.TabPage1.Controls.Add(Me.txtOtro)
         Me.TabPage1.Controls.Add(Me.Label94)
         Me.TabPage1.Controls.Add(Me.Label93)
-        Me.TabPage1.Controls.Add(Me.GroupBox6)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(678, 1068)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Contrato de Servicio"
+        Me.TabPage1.Text = "Antecedentes Familiares"
         '
         'txtNombreApodSuplent
         '
-        Me.txtNombreApodSuplent.Location = New System.Drawing.Point(234, 617)
+        Me.txtNombreApodSuplent.Enabled = False
+        Me.txtNombreApodSuplent.Location = New System.Drawing.Point(234, 536)
         Me.txtNombreApodSuplent.Name = "txtNombreApodSuplent"
         Me.txtNombreApodSuplent.Size = New System.Drawing.Size(413, 20)
         Me.txtNombreApodSuplent.TabIndex = 213
@@ -385,7 +383,7 @@ Partial Class FormularioMatricula
         'Label69
         '
         Me.Label69.AutoSize = True
-        Me.Label69.Location = New System.Drawing.Point(14, 620)
+        Me.Label69.Location = New System.Drawing.Point(14, 539)
         Me.Label69.Name = "Label69"
         Me.Label69.Size = New System.Drawing.Size(209, 13)
         Me.Label69.TabIndex = 212
@@ -396,7 +394,7 @@ Partial Class FormularioMatricula
         Me.Panel7.Controls.Add(Me.RadioButton14)
         Me.Panel7.Controls.Add(Me.RadioButton13)
         Me.Panel7.Controls.Add(Me.RadioButton9)
-        Me.Panel7.Location = New System.Drawing.Point(154, 677)
+        Me.Panel7.Location = New System.Drawing.Point(154, 608)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(300, 32)
         Me.Panel7.TabIndex = 56
@@ -454,28 +452,28 @@ Partial Class FormularioMatricula
         '
         'txtTelefonoTrabajo
         '
-        Me.txtTelefonoTrabajo.Location = New System.Drawing.Point(491, 782)
+        Me.txtTelefonoTrabajo.Location = New System.Drawing.Point(491, 713)
         Me.txtTelefonoTrabajo.Name = "txtTelefonoTrabajo"
         Me.txtTelefonoTrabajo.Size = New System.Drawing.Size(156, 20)
         Me.txtTelefonoTrabajo.TabIndex = 50
         '
         'txtTelefonoPart2
         '
-        Me.txtTelefonoPart2.Location = New System.Drawing.Point(288, 782)
+        Me.txtTelefonoPart2.Location = New System.Drawing.Point(288, 713)
         Me.txtTelefonoPart2.Name = "txtTelefonoPart2"
         Me.txtTelefonoPart2.Size = New System.Drawing.Size(112, 20)
         Me.txtTelefonoPart2.TabIndex = 49
         '
         'txtTelefonoPart
         '
-        Me.txtTelefonoPart.Location = New System.Drawing.Point(168, 782)
+        Me.txtTelefonoPart.Location = New System.Drawing.Point(168, 713)
         Me.txtTelefonoPart.Name = "txtTelefonoPart"
         Me.txtTelefonoPart.Size = New System.Drawing.Size(112, 20)
         Me.txtTelefonoPart.TabIndex = 48
         '
         'txtRut
         '
-        Me.txtRut.Location = New System.Drawing.Point(168, 751)
+        Me.txtRut.Location = New System.Drawing.Point(168, 682)
         Me.txtRut.Name = "txtRut"
         Me.txtRut.Size = New System.Drawing.Size(112, 20)
         Me.txtRut.TabIndex = 47
@@ -483,7 +481,7 @@ Partial Class FormularioMatricula
         'Label102
         '
         Me.Label102.AutoSize = True
-        Me.Label102.Location = New System.Drawing.Point(410, 785)
+        Me.Label102.Location = New System.Drawing.Point(410, 716)
         Me.Label102.Name = "Label102"
         Me.Label102.Size = New System.Drawing.Size(70, 13)
         Me.Label102.TabIndex = 46
@@ -491,7 +489,7 @@ Partial Class FormularioMatricula
         '
         'txtProfesion
         '
-        Me.txtProfesion.Location = New System.Drawing.Point(461, 869)
+        Me.txtProfesion.Location = New System.Drawing.Point(461, 800)
         Me.txtProfesion.Name = "txtProfesion"
         Me.txtProfesion.Size = New System.Drawing.Size(186, 20)
         Me.txtProfesion.TabIndex = 44
@@ -499,7 +497,7 @@ Partial Class FormularioMatricula
         'Label101
         '
         Me.Label101.AutoSize = True
-        Me.Label101.Location = New System.Drawing.Point(406, 872)
+        Me.Label101.Location = New System.Drawing.Point(406, 803)
         Me.Label101.Name = "Label101"
         Me.Label101.Size = New System.Drawing.Size(51, 13)
         Me.Label101.TabIndex = 43
@@ -507,28 +505,28 @@ Partial Class FormularioMatricula
         '
         'txtOcupacionAct
         '
-        Me.txtOcupacionAct.Location = New System.Drawing.Point(168, 869)
+        Me.txtOcupacionAct.Location = New System.Drawing.Point(168, 800)
         Me.txtOcupacionAct.Name = "txtOcupacionAct"
         Me.txtOcupacionAct.Size = New System.Drawing.Size(232, 20)
         Me.txtOcupacionAct.TabIndex = 42
         '
         'txtLugarDeTrabajo
         '
-        Me.txtLugarDeTrabajo.Location = New System.Drawing.Point(168, 840)
+        Me.txtLugarDeTrabajo.Location = New System.Drawing.Point(168, 771)
         Me.txtLugarDeTrabajo.Name = "txtLugarDeTrabajo"
         Me.txtLugarDeTrabajo.Size = New System.Drawing.Size(479, 20)
         Me.txtLugarDeTrabajo.TabIndex = 41
         '
         'txtDomicilio
         '
-        Me.txtDomicilio.Location = New System.Drawing.Point(168, 810)
+        Me.txtDomicilio.Location = New System.Drawing.Point(168, 741)
         Me.txtDomicilio.Name = "txtDomicilio"
         Me.txtDomicilio.Size = New System.Drawing.Size(479, 20)
         Me.txtDomicilio.TabIndex = 40
         '
         'txtNombreTutor
         '
-        Me.txtNombreTutor.Location = New System.Drawing.Point(168, 721)
+        Me.txtNombreTutor.Location = New System.Drawing.Point(168, 652)
         Me.txtNombreTutor.Name = "txtNombreTutor"
         Me.txtNombreTutor.Size = New System.Drawing.Size(479, 20)
         Me.txtNombreTutor.TabIndex = 37
@@ -536,7 +534,7 @@ Partial Class FormularioMatricula
         'Label100
         '
         Me.Label100.AutoSize = True
-        Me.Label100.Location = New System.Drawing.Point(14, 878)
+        Me.Label100.Location = New System.Drawing.Point(14, 809)
         Me.Label100.Name = "Label100"
         Me.Label100.Size = New System.Drawing.Size(92, 13)
         Me.Label100.TabIndex = 36
@@ -545,7 +543,7 @@ Partial Class FormularioMatricula
         'Label99
         '
         Me.Label99.AutoSize = True
-        Me.Label99.Location = New System.Drawing.Point(14, 846)
+        Me.Label99.Location = New System.Drawing.Point(14, 777)
         Me.Label99.Name = "Label99"
         Me.Label99.Size = New System.Drawing.Size(88, 13)
         Me.Label99.TabIndex = 35
@@ -554,7 +552,7 @@ Partial Class FormularioMatricula
         'Label98
         '
         Me.Label98.AutoSize = True
-        Me.Label98.Location = New System.Drawing.Point(14, 814)
+        Me.Label98.Location = New System.Drawing.Point(14, 745)
         Me.Label98.Name = "Label98"
         Me.Label98.Size = New System.Drawing.Size(49, 13)
         Me.Label98.TabIndex = 34
@@ -563,7 +561,7 @@ Partial Class FormularioMatricula
         'Label97
         '
         Me.Label97.AutoSize = True
-        Me.Label97.Location = New System.Drawing.Point(14, 781)
+        Me.Label97.Location = New System.Drawing.Point(14, 712)
         Me.Label97.Name = "Label97"
         Me.Label97.Size = New System.Drawing.Size(96, 13)
         Me.Label97.TabIndex = 33
@@ -572,7 +570,7 @@ Partial Class FormularioMatricula
         'Label96
         '
         Me.Label96.AutoSize = True
-        Me.Label96.Location = New System.Drawing.Point(14, 752)
+        Me.Label96.Location = New System.Drawing.Point(14, 683)
         Me.Label96.Name = "Label96"
         Me.Label96.Size = New System.Drawing.Size(39, 13)
         Me.Label96.TabIndex = 32
@@ -581,7 +579,7 @@ Partial Class FormularioMatricula
         'Label95
         '
         Me.Label95.AutoSize = True
-        Me.Label95.Location = New System.Drawing.Point(14, 723)
+        Me.Label95.Location = New System.Drawing.Point(14, 654)
         Me.Label95.Name = "Label95"
         Me.Label95.Size = New System.Drawing.Size(89, 13)
         Me.Label95.TabIndex = 31
@@ -590,7 +588,7 @@ Partial Class FormularioMatricula
         'txtOtro
         '
         Me.txtOtro.Enabled = False
-        Me.txtOtro.Location = New System.Drawing.Point(461, 690)
+        Me.txtOtro.Location = New System.Drawing.Point(461, 621)
         Me.txtOtro.Name = "txtOtro"
         Me.txtOtro.Size = New System.Drawing.Size(186, 20)
         Me.txtOtro.TabIndex = 30
@@ -598,7 +596,7 @@ Partial Class FormularioMatricula
         'Label94
         '
         Me.Label94.AutoSize = True
-        Me.Label94.Location = New System.Drawing.Point(14, 693)
+        Me.Label94.Location = New System.Drawing.Point(14, 624)
         Me.Label94.Name = "Label94"
         Me.Label94.Size = New System.Drawing.Size(118, 13)
         Me.Label94.TabIndex = 26
@@ -608,77 +606,18 @@ Partial Class FormularioMatricula
         '
         Me.Label93.AutoSize = True
         Me.Label93.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label93.Location = New System.Drawing.Point(14, 657)
+        Me.Label93.Location = New System.Drawing.Point(14, 588)
         Me.Label93.Name = "Label93"
         Me.Label93.Size = New System.Drawing.Size(202, 13)
         Me.Label93.TabIndex = 25
         Me.Label93.Text = "DATOS DEL TUTOR ECONÓMICO"
         '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox6.Controls.Add(Me.TextBox65)
-        Me.GroupBox6.Controls.Add(Me.txtNumMatri)
-        Me.GroupBox6.Controls.Add(Me.Label79)
-        Me.GroupBox6.Controls.Add(Me.Label78)
-        Me.GroupBox6.Controls.Add(Me.Label77)
-        Me.GroupBox6.Location = New System.Drawing.Point(333, 6)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(313, 100)
-        Me.GroupBox6.TabIndex = 2
-        Me.GroupBox6.TabStop = False
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(106, 40)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 5
-        '
-        'TextBox65
-        '
-        Me.TextBox65.Location = New System.Drawing.Point(106, 68)
-        Me.TextBox65.Name = "TextBox65"
-        Me.TextBox65.Size = New System.Drawing.Size(200, 20)
-        Me.TextBox65.TabIndex = 4
-        '
-        'txtNumMatri
-        '
-        Me.txtNumMatri.Location = New System.Drawing.Point(106, 13)
-        Me.txtNumMatri.Name = "txtNumMatri"
-        Me.txtNumMatri.Size = New System.Drawing.Size(201, 20)
-        Me.txtNumMatri.TabIndex = 3
-        '
-        'Label79
-        '
-        Me.Label79.AutoSize = True
-        Me.Label79.Location = New System.Drawing.Point(6, 71)
-        Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(97, 13)
-        Me.Label79.TabIndex = 2
-        Me.Label79.Text = "N° DE COMPROB."
-        '
-        'Label78
-        '
-        Me.Label78.AutoSize = True
-        Me.Label78.Location = New System.Drawing.Point(6, 46)
-        Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(42, 13)
-        Me.Label78.TabIndex = 1
-        Me.Label78.Text = "FECHA"
-        '
-        'Label77
-        '
-        Me.Label77.AutoSize = True
-        Me.Label77.Location = New System.Drawing.Point(6, 16)
-        Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(71, 13)
-        Me.Label77.TabIndex = 0
-        Me.Label77.Text = "N° DE FOLIO"
-        '
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Controls.Add(Me.Label35)
+        Me.TabPage2.Controls.Add(Me.GroupBox6)
         Me.TabPage2.Controls.Add(Me.txtSeguros)
         Me.TabPage2.Controls.Add(Me.Label64)
         Me.TabPage2.Controls.Add(Me.comboIsapre)
@@ -736,14 +675,14 @@ Partial Class FormularioMatricula
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(678, 1068)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Ficha de Matricula"
+        Me.TabPage2.Text = "Datos de Alumno(a)"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'cbViveCon
         '
         Me.cbViveCon.FormattingEnabled = True
         Me.cbViveCon.Items.AddRange(New Object() {"", "Mamá y Papá", "Sólo Mamá", "Sólo Papá", "Otros (especificar)"})
-        Me.cbViveCon.Location = New System.Drawing.Point(132, 427)
+        Me.cbViveCon.Location = New System.Drawing.Point(131, 519)
         Me.cbViveCon.Name = "cbViveCon"
         Me.cbViveCon.Size = New System.Drawing.Size(119, 21)
         Me.cbViveCon.TabIndex = 204
@@ -752,7 +691,7 @@ Partial Class FormularioMatricula
         '
         Me.Panel2.Controls.Add(Me.radioHermanosNo)
         Me.Panel2.Controls.Add(Me.radioHermanosSi)
-        Me.Panel2.Location = New System.Drawing.Point(239, 368)
+        Me.Panel2.Location = New System.Drawing.Point(238, 460)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(127, 33)
         Me.Panel2.TabIndex = 198
@@ -783,7 +722,7 @@ Partial Class FormularioMatricula
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Panel1.Controls.Add(Me.radioMasc)
         Me.Panel1.Controls.Add(Me.radioFeme)
-        Me.Panel1.Location = New System.Drawing.Point(441, 155)
+        Me.Panel1.Location = New System.Drawing.Point(440, 247)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(211, 26)
         Me.Panel1.TabIndex = 197
@@ -837,14 +776,14 @@ Partial Class FormularioMatricula
         '
         'dateTimeFechaNac
         '
-        Me.dateTimeFechaNac.Location = New System.Drawing.Point(239, 183)
+        Me.dateTimeFechaNac.Location = New System.Drawing.Point(238, 275)
         Me.dateTimeFechaNac.Name = "dateTimeFechaNac"
-        Me.dateTimeFechaNac.Size = New System.Drawing.Size(200, 20)
+        Me.dateTimeFechaNac.Size = New System.Drawing.Size(245, 20)
         Me.dateTimeFechaNac.TabIndex = 141
         '
         'txtRutAlumno
         '
-        Me.txtRutAlumno.Location = New System.Drawing.Point(239, 156)
+        Me.txtRutAlumno.Location = New System.Drawing.Point(238, 248)
         Me.txtRutAlumno.Name = "txtRutAlumno"
         Me.txtRutAlumno.Size = New System.Drawing.Size(107, 20)
         Me.txtRutAlumno.TabIndex = 121
@@ -852,7 +791,7 @@ Partial Class FormularioMatricula
         'Label67
         '
         Me.Label67.AutoSize = True
-        Me.Label67.Location = New System.Drawing.Point(496, 186)
+        Me.Label67.Location = New System.Drawing.Point(499, 278)
         Me.Label67.Name = "Label67"
         Me.Label67.Size = New System.Drawing.Size(37, 13)
         Me.Label67.TabIndex = 120
@@ -861,7 +800,7 @@ Partial Class FormularioMatricula
         'Label66
         '
         Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(370, 159)
+        Me.Label66.Location = New System.Drawing.Point(369, 251)
         Me.Label66.Name = "Label66"
         Me.Label66.Size = New System.Drawing.Size(36, 13)
         Me.Label66.TabIndex = 117
@@ -869,21 +808,21 @@ Partial Class FormularioMatricula
         '
         'txtGrupoFamiliar
         '
-        Me.txtGrupoFamiliar.Location = New System.Drawing.Point(429, 481)
+        Me.txtGrupoFamiliar.Location = New System.Drawing.Point(428, 573)
         Me.txtGrupoFamiliar.Name = "txtGrupoFamiliar"
         Me.txtGrupoFamiliar.Size = New System.Drawing.Size(223, 20)
         Me.txtGrupoFamiliar.TabIndex = 95
         '
         'txtLugarHijos
         '
-        Me.txtLugarHijos.Location = New System.Drawing.Point(429, 454)
+        Me.txtLugarHijos.Location = New System.Drawing.Point(428, 546)
         Me.txtLugarHijos.Name = "txtLugarHijos"
         Me.txtLugarHijos.Size = New System.Drawing.Size(223, 20)
         Me.txtLugarHijos.TabIndex = 94
         '
         'txtNumHijos
         '
-        Me.txtNumHijos.Location = New System.Drawing.Point(429, 427)
+        Me.txtNumHijos.Location = New System.Drawing.Point(428, 519)
         Me.txtNumHijos.Name = "txtNumHijos"
         Me.txtNumHijos.Size = New System.Drawing.Size(223, 20)
         Me.txtNumHijos.TabIndex = 93
@@ -891,7 +830,7 @@ Partial Class FormularioMatricula
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(263, 484)
+        Me.Label44.Location = New System.Drawing.Point(262, 576)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(153, 13)
         Me.Label44.TabIndex = 92
@@ -900,7 +839,7 @@ Partial Class FormularioMatricula
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(263, 458)
+        Me.Label43.Location = New System.Drawing.Point(262, 550)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(155, 13)
         Me.Label43.TabIndex = 91
@@ -909,7 +848,7 @@ Partial Class FormularioMatricula
         'txtViveConOtros
         '
         Me.txtViveConOtros.Enabled = False
-        Me.txtViveConOtros.Location = New System.Drawing.Point(22, 455)
+        Me.txtViveConOtros.Location = New System.Drawing.Point(21, 547)
         Me.txtViveConOtros.Name = "txtViveConOtros"
         Me.txtViveConOtros.Size = New System.Drawing.Size(229, 20)
         Me.txtViveConOtros.TabIndex = 90
@@ -917,7 +856,7 @@ Partial Class FormularioMatricula
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(263, 433)
+        Me.Label48.Location = New System.Drawing.Point(262, 525)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(83, 13)
         Me.Label48.TabIndex = 85
@@ -926,7 +865,7 @@ Partial Class FormularioMatricula
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(19, 431)
+        Me.Label42.Location = New System.Drawing.Point(18, 523)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(106, 13)
         Me.Label42.TabIndex = 79
@@ -935,7 +874,7 @@ Partial Class FormularioMatricula
         'txtHermanosCursos
         '
         Me.txtHermanosCursos.Enabled = False
-        Me.txtHermanosCursos.Location = New System.Drawing.Point(429, 373)
+        Me.txtHermanosCursos.Location = New System.Drawing.Point(428, 465)
         Me.txtHermanosCursos.Name = "txtHermanosCursos"
         Me.txtHermanosCursos.Size = New System.Drawing.Size(223, 20)
         Me.txtHermanosCursos.TabIndex = 27
@@ -943,7 +882,7 @@ Partial Class FormularioMatricula
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(371, 376)
+        Me.Label14.Location = New System.Drawing.Point(370, 468)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(52, 13)
         Me.Label14.TabIndex = 26
@@ -952,7 +891,7 @@ Partial Class FormularioMatricula
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(371, 280)
+        Me.Label13.Location = New System.Drawing.Point(370, 372)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(64, 13)
         Me.Label13.TabIndex = 25
@@ -961,7 +900,7 @@ Partial Class FormularioMatricula
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(19, 186)
+        Me.Label12.Location = New System.Drawing.Point(18, 278)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(130, 13)
         Me.Label12.TabIndex = 24
@@ -969,70 +908,70 @@ Partial Class FormularioMatricula
         '
         'txtCursosRepetidos
         '
-        Me.txtCursosRepetidos.Location = New System.Drawing.Point(239, 342)
+        Me.txtCursosRepetidos.Location = New System.Drawing.Point(238, 434)
         Me.txtCursosRepetidos.Name = "txtCursosRepetidos"
         Me.txtCursosRepetidos.Size = New System.Drawing.Size(413, 20)
         Me.txtCursosRepetidos.TabIndex = 23
         '
         'txtColegioPrese
         '
-        Me.txtColegioPrese.Location = New System.Drawing.Point(239, 309)
+        Me.txtColegioPrese.Location = New System.Drawing.Point(238, 401)
         Me.txtColegioPrese.Name = "txtColegioPrese"
         Me.txtColegioPrese.Size = New System.Drawing.Size(413, 20)
         Me.txtColegioPrese.TabIndex = 22
         '
         'txtTelefonoAlumno
         '
-        Me.txtTelefonoAlumno.Location = New System.Drawing.Point(441, 277)
+        Me.txtTelefonoAlumno.Location = New System.Drawing.Point(440, 369)
         Me.txtTelefonoAlumno.Name = "txtTelefonoAlumno"
         Me.txtTelefonoAlumno.Size = New System.Drawing.Size(211, 20)
         Me.txtTelefonoAlumno.TabIndex = 21
         '
         'txtComunaAlumno
         '
-        Me.txtComunaAlumno.Location = New System.Drawing.Point(239, 277)
+        Me.txtComunaAlumno.Location = New System.Drawing.Point(238, 369)
         Me.txtComunaAlumno.Name = "txtComunaAlumno"
         Me.txtComunaAlumno.Size = New System.Drawing.Size(107, 20)
         Me.txtComunaAlumno.TabIndex = 20
         '
         'txtSectorAlumno
         '
-        Me.txtSectorAlumno.Location = New System.Drawing.Point(239, 245)
+        Me.txtSectorAlumno.Location = New System.Drawing.Point(238, 337)
         Me.txtSectorAlumno.Name = "txtSectorAlumno"
-        Me.txtSectorAlumno.Size = New System.Drawing.Size(413, 20)
+        Me.txtSectorAlumno.Size = New System.Drawing.Size(245, 20)
         Me.txtSectorAlumno.TabIndex = 19
         '
         'txtCalleAlumno
         '
-        Me.txtCalleAlumno.Location = New System.Drawing.Point(239, 212)
+        Me.txtCalleAlumno.Location = New System.Drawing.Point(238, 304)
         Me.txtCalleAlumno.Name = "txtCalleAlumno"
         Me.txtCalleAlumno.Size = New System.Drawing.Size(413, 20)
         Me.txtCalleAlumno.TabIndex = 18
         '
         'txtEdadAlumno
         '
-        Me.txtEdadAlumno.Location = New System.Drawing.Point(571, 183)
+        Me.txtEdadAlumno.Location = New System.Drawing.Point(550, 275)
         Me.txtEdadAlumno.Name = "txtEdadAlumno"
-        Me.txtEdadAlumno.Size = New System.Drawing.Size(81, 20)
+        Me.txtEdadAlumno.Size = New System.Drawing.Size(101, 20)
         Me.txtEdadAlumno.TabIndex = 17
         '
         'txtNombresAlumno
         '
-        Me.txtNombresAlumno.Location = New System.Drawing.Point(239, 130)
+        Me.txtNombresAlumno.Location = New System.Drawing.Point(238, 222)
         Me.txtNombresAlumno.Name = "txtNombresAlumno"
         Me.txtNombresAlumno.Size = New System.Drawing.Size(413, 20)
         Me.txtNombresAlumno.TabIndex = 16
         '
         'txtApeMatAlumno
         '
-        Me.txtApeMatAlumno.Location = New System.Drawing.Point(239, 101)
+        Me.txtApeMatAlumno.Location = New System.Drawing.Point(238, 193)
         Me.txtApeMatAlumno.Name = "txtApeMatAlumno"
         Me.txtApeMatAlumno.Size = New System.Drawing.Size(413, 20)
         Me.txtApeMatAlumno.TabIndex = 15
         '
         'txtApePatAlumno
         '
-        Me.txtApePatAlumno.Location = New System.Drawing.Point(239, 71)
+        Me.txtApePatAlumno.Location = New System.Drawing.Point(238, 163)
         Me.txtApePatAlumno.Name = "txtApePatAlumno"
         Me.txtApePatAlumno.Size = New System.Drawing.Size(413, 20)
         Me.txtApePatAlumno.TabIndex = 14
@@ -1041,7 +980,7 @@ Partial Class FormularioMatricula
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(19, 376)
+        Me.Label11.Location = New System.Drawing.Point(18, 468)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(206, 13)
         Me.Label11.TabIndex = 10
@@ -1051,7 +990,7 @@ Partial Class FormularioMatricula
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(19, 345)
+        Me.Label10.Location = New System.Drawing.Point(18, 437)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(154, 13)
         Me.Label10.TabIndex = 9
@@ -1061,7 +1000,7 @@ Partial Class FormularioMatricula
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(19, 248)
+        Me.Label9.Location = New System.Drawing.Point(18, 340)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(94, 13)
         Me.Label9.TabIndex = 8
@@ -1071,7 +1010,7 @@ Partial Class FormularioMatricula
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(19, 312)
+        Me.Label8.Location = New System.Drawing.Point(18, 404)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(152, 13)
         Me.Label8.TabIndex = 7
@@ -1081,7 +1020,7 @@ Partial Class FormularioMatricula
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(19, 280)
+        Me.Label7.Location = New System.Drawing.Point(18, 372)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(54, 13)
         Me.Label7.TabIndex = 6
@@ -1091,7 +1030,7 @@ Partial Class FormularioMatricula
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(19, 215)
+        Me.Label6.Location = New System.Drawing.Point(18, 307)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(104, 13)
         Me.Label6.TabIndex = 5
@@ -1101,7 +1040,7 @@ Partial Class FormularioMatricula
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(19, 159)
+        Me.Label5.Location = New System.Drawing.Point(18, 251)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(40, 13)
         Me.Label5.TabIndex = 4
@@ -1111,7 +1050,7 @@ Partial Class FormularioMatricula
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(19, 133)
+        Me.Label4.Location = New System.Drawing.Point(18, 225)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(61, 13)
         Me.Label4.TabIndex = 3
@@ -1121,7 +1060,7 @@ Partial Class FormularioMatricula
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(19, 104)
+        Me.Label3.Location = New System.Drawing.Point(18, 196)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(116, 13)
         Me.Label3.TabIndex = 2
@@ -1131,7 +1070,7 @@ Partial Class FormularioMatricula
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(19, 71)
+        Me.Label2.Location = New System.Drawing.Point(18, 163)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(114, 13)
         Me.Label2.TabIndex = 1
@@ -1141,7 +1080,7 @@ Partial Class FormularioMatricula
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(19, 29)
+        Me.Label1.Location = New System.Drawing.Point(18, 121)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(172, 13)
         Me.Label1.TabIndex = 0
@@ -1161,7 +1100,7 @@ Partial Class FormularioMatricula
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage4.Size = New System.Drawing.Size(678, 1068)
         Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Datos de Emergencia"
+        Me.TabPage4.Text = "Contactos de Emergencia"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'Label20
@@ -2078,7 +2017,7 @@ Partial Class FormularioMatricula
         '
         Me.cbEstudiosMadre.FormattingEnabled = True
         Me.cbEstudiosMadre.Items.AddRange(New Object() {"", "Básica", "Media", "Técnico Profesional", "Universitaria"})
-        Me.cbEstudiosMadre.Location = New System.Drawing.Point(368, 390)
+        Me.cbEstudiosMadre.Location = New System.Drawing.Point(368, 309)
         Me.cbEstudiosMadre.Name = "cbEstudiosMadre"
         Me.cbEstudiosMadre.Size = New System.Drawing.Size(148, 21)
         Me.cbEstudiosMadre.TabIndex = 252
@@ -2087,7 +2026,7 @@ Partial Class FormularioMatricula
         '
         Me.cbEstudiosPadre.FormattingEnabled = True
         Me.cbEstudiosPadre.Items.AddRange(New Object() {"", "Básica", "Media", "Técnico Profesional", "Universitaria"})
-        Me.cbEstudiosPadre.Location = New System.Drawing.Point(368, 204)
+        Me.cbEstudiosPadre.Location = New System.Drawing.Point(368, 123)
         Me.cbEstudiosPadre.Name = "cbEstudiosPadre"
         Me.cbEstudiosPadre.Size = New System.Drawing.Size(149, 21)
         Me.cbEstudiosPadre.TabIndex = 251
@@ -2095,7 +2034,7 @@ Partial Class FormularioMatricula
         'txtEstudiosMadre
         '
         Me.txtEstudiosMadre.Enabled = False
-        Me.txtEstudiosMadre.Location = New System.Drawing.Point(523, 390)
+        Me.txtEstudiosMadre.Location = New System.Drawing.Point(523, 309)
         Me.txtEstudiosMadre.Name = "txtEstudiosMadre"
         Me.txtEstudiosMadre.Size = New System.Drawing.Size(124, 20)
         Me.txtEstudiosMadre.TabIndex = 250
@@ -2103,7 +2042,7 @@ Partial Class FormularioMatricula
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(14, 207)
+        Me.Label18.Location = New System.Drawing.Point(14, 126)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(327, 13)
         Me.Label18.TabIndex = 249
@@ -2112,14 +2051,14 @@ Partial Class FormularioMatricula
         'txtEstudiosPadre
         '
         Me.txtEstudiosPadre.Enabled = False
-        Me.txtEstudiosPadre.Location = New System.Drawing.Point(523, 204)
+        Me.txtEstudiosPadre.Location = New System.Drawing.Point(523, 123)
         Me.txtEstudiosPadre.Name = "txtEstudiosPadre"
         Me.txtEstudiosPadre.Size = New System.Drawing.Size(123, 20)
         Me.txtEstudiosPadre.TabIndex = 248
         '
         'txtEdadMadre
         '
-        Me.txtEdadMadre.Location = New System.Drawing.Point(436, 361)
+        Me.txtEdadMadre.Location = New System.Drawing.Point(436, 280)
         Me.txtEdadMadre.Name = "txtEdadMadre"
         Me.txtEdadMadre.Size = New System.Drawing.Size(211, 20)
         Me.txtEdadMadre.TabIndex = 247
@@ -2127,7 +2066,7 @@ Partial Class FormularioMatricula
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(366, 364)
+        Me.Label29.Location = New System.Drawing.Point(366, 283)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(37, 13)
         Me.Label29.TabIndex = 246
@@ -2135,49 +2074,49 @@ Partial Class FormularioMatricula
         '
         'txtCorreoMadre
         '
-        Me.txtCorreoMadre.Location = New System.Drawing.Point(234, 481)
+        Me.txtCorreoMadre.Location = New System.Drawing.Point(234, 400)
         Me.txtCorreoMadre.Name = "txtCorreoMadre"
         Me.txtCorreoMadre.Size = New System.Drawing.Size(413, 20)
         Me.txtCorreoMadre.TabIndex = 245
         '
         'txtDireccionMadre
         '
-        Me.txtDireccionMadre.Location = New System.Drawing.Point(436, 452)
+        Me.txtDireccionMadre.Location = New System.Drawing.Point(436, 371)
         Me.txtDireccionMadre.Name = "txtDireccionMadre"
         Me.txtDireccionMadre.Size = New System.Drawing.Size(211, 20)
         Me.txtDireccionMadre.TabIndex = 244
         '
         'txtCargoMadre
         '
-        Me.txtCargoMadre.Location = New System.Drawing.Point(436, 423)
+        Me.txtCargoMadre.Location = New System.Drawing.Point(436, 342)
         Me.txtCargoMadre.Name = "txtCargoMadre"
         Me.txtCargoMadre.Size = New System.Drawing.Size(211, 20)
         Me.txtCargoMadre.TabIndex = 243
         '
         'txtTelefonoMadre
         '
-        Me.txtTelefonoMadre.Location = New System.Drawing.Point(84, 453)
+        Me.txtTelefonoMadre.Location = New System.Drawing.Point(84, 372)
         Me.txtTelefonoMadre.Name = "txtTelefonoMadre"
         Me.txtTelefonoMadre.Size = New System.Drawing.Size(211, 20)
         Me.txtTelefonoMadre.TabIndex = 242
         '
         'txtTrabajaenMadre
         '
-        Me.txtTrabajaenMadre.Location = New System.Drawing.Point(84, 424)
+        Me.txtTrabajaenMadre.Location = New System.Drawing.Point(84, 343)
         Me.txtTrabajaenMadre.Name = "txtTrabajaenMadre"
         Me.txtTrabajaenMadre.Size = New System.Drawing.Size(211, 20)
         Me.txtTrabajaenMadre.TabIndex = 241
         '
         'txtRutMadre
         '
-        Me.txtRutMadre.Location = New System.Drawing.Point(234, 361)
+        Me.txtRutMadre.Location = New System.Drawing.Point(234, 280)
         Me.txtRutMadre.Name = "txtRutMadre"
         Me.txtRutMadre.Size = New System.Drawing.Size(125, 20)
         Me.txtRutMadre.TabIndex = 240
         '
         'txtNombreMadre
         '
-        Me.txtNombreMadre.Location = New System.Drawing.Point(234, 333)
+        Me.txtNombreMadre.Location = New System.Drawing.Point(234, 252)
         Me.txtNombreMadre.Name = "txtNombreMadre"
         Me.txtNombreMadre.Size = New System.Drawing.Size(413, 20)
         Me.txtNombreMadre.TabIndex = 239
@@ -2185,7 +2124,7 @@ Partial Class FormularioMatricula
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(366, 455)
+        Me.Label30.Location = New System.Drawing.Point(366, 374)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(52, 13)
         Me.Label30.TabIndex = 238
@@ -2194,7 +2133,7 @@ Partial Class FormularioMatricula
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(366, 426)
+        Me.Label31.Location = New System.Drawing.Point(366, 345)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(35, 13)
         Me.Label31.TabIndex = 237
@@ -2203,7 +2142,7 @@ Partial Class FormularioMatricula
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(14, 456)
+        Me.Label32.Location = New System.Drawing.Point(14, 375)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(49, 13)
         Me.Label32.TabIndex = 236
@@ -2212,7 +2151,7 @@ Partial Class FormularioMatricula
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(14, 427)
+        Me.Label33.Location = New System.Drawing.Point(14, 346)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(58, 13)
         Me.Label33.TabIndex = 235
@@ -2221,7 +2160,7 @@ Partial Class FormularioMatricula
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(14, 485)
+        Me.Label34.Location = New System.Drawing.Point(14, 404)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(132, 13)
         Me.Label34.TabIndex = 234
@@ -2230,7 +2169,7 @@ Partial Class FormularioMatricula
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(14, 392)
+        Me.Label39.Location = New System.Drawing.Point(14, 311)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(327, 13)
         Me.Label39.TabIndex = 233
@@ -2239,7 +2178,7 @@ Partial Class FormularioMatricula
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(14, 364)
+        Me.Label40.Location = New System.Drawing.Point(14, 283)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(40, 13)
         Me.Label40.TabIndex = 232
@@ -2248,7 +2187,7 @@ Partial Class FormularioMatricula
         'Label41
         '
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(14, 336)
+        Me.Label41.Location = New System.Drawing.Point(14, 255)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(130, 13)
         Me.Label41.TabIndex = 231
@@ -2256,7 +2195,7 @@ Partial Class FormularioMatricula
         '
         'txtEdadPadre
         '
-        Me.txtEdadPadre.Location = New System.Drawing.Point(436, 174)
+        Me.txtEdadPadre.Location = New System.Drawing.Point(436, 93)
         Me.txtEdadPadre.Name = "txtEdadPadre"
         Me.txtEdadPadre.Size = New System.Drawing.Size(211, 20)
         Me.txtEdadPadre.TabIndex = 230
@@ -2264,7 +2203,7 @@ Partial Class FormularioMatricula
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(366, 177)
+        Me.Label28.Location = New System.Drawing.Point(366, 96)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(37, 13)
         Me.Label28.TabIndex = 229
@@ -2272,49 +2211,49 @@ Partial Class FormularioMatricula
         '
         'txtCorreoPadre
         '
-        Me.txtCorreoPadre.Location = New System.Drawing.Point(234, 290)
+        Me.txtCorreoPadre.Location = New System.Drawing.Point(234, 209)
         Me.txtCorreoPadre.Name = "txtCorreoPadre"
         Me.txtCorreoPadre.Size = New System.Drawing.Size(413, 20)
         Me.txtCorreoPadre.TabIndex = 228
         '
         'txtDireccionPadre
         '
-        Me.txtDireccionPadre.Location = New System.Drawing.Point(435, 263)
+        Me.txtDireccionPadre.Location = New System.Drawing.Point(435, 182)
         Me.txtDireccionPadre.Name = "txtDireccionPadre"
         Me.txtDireccionPadre.Size = New System.Drawing.Size(211, 20)
         Me.txtDireccionPadre.TabIndex = 227
         '
         'txtCargoPadre
         '
-        Me.txtCargoPadre.Location = New System.Drawing.Point(435, 234)
+        Me.txtCargoPadre.Location = New System.Drawing.Point(435, 153)
         Me.txtCargoPadre.Name = "txtCargoPadre"
         Me.txtCargoPadre.Size = New System.Drawing.Size(211, 20)
         Me.txtCargoPadre.TabIndex = 226
         '
         'txtTelefonoPadre
         '
-        Me.txtTelefonoPadre.Location = New System.Drawing.Point(84, 263)
+        Me.txtTelefonoPadre.Location = New System.Drawing.Point(84, 182)
         Me.txtTelefonoPadre.Name = "txtTelefonoPadre"
         Me.txtTelefonoPadre.Size = New System.Drawing.Size(211, 20)
         Me.txtTelefonoPadre.TabIndex = 225
         '
         'txtTrabajaenPadre
         '
-        Me.txtTrabajaenPadre.Location = New System.Drawing.Point(84, 234)
+        Me.txtTrabajaenPadre.Location = New System.Drawing.Point(84, 153)
         Me.txtTrabajaenPadre.Name = "txtTrabajaenPadre"
         Me.txtTrabajaenPadre.Size = New System.Drawing.Size(211, 20)
         Me.txtTrabajaenPadre.TabIndex = 224
         '
         'txtRutPadre
         '
-        Me.txtRutPadre.Location = New System.Drawing.Point(234, 174)
+        Me.txtRutPadre.Location = New System.Drawing.Point(234, 93)
         Me.txtRutPadre.Name = "txtRutPadre"
         Me.txtRutPadre.Size = New System.Drawing.Size(125, 20)
         Me.txtRutPadre.TabIndex = 223
         '
         'txtNombrePadre
         '
-        Me.txtNombrePadre.Location = New System.Drawing.Point(234, 146)
+        Me.txtNombrePadre.Location = New System.Drawing.Point(234, 65)
         Me.txtNombrePadre.Name = "txtNombrePadre"
         Me.txtNombrePadre.Size = New System.Drawing.Size(413, 20)
         Me.txtNombrePadre.TabIndex = 222
@@ -2322,7 +2261,7 @@ Partial Class FormularioMatricula
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(365, 266)
+        Me.Label27.Location = New System.Drawing.Point(365, 185)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(52, 13)
         Me.Label27.TabIndex = 221
@@ -2331,7 +2270,7 @@ Partial Class FormularioMatricula
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(365, 237)
+        Me.Label26.Location = New System.Drawing.Point(365, 156)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(35, 13)
         Me.Label26.TabIndex = 220
@@ -2340,7 +2279,7 @@ Partial Class FormularioMatricula
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(14, 266)
+        Me.Label25.Location = New System.Drawing.Point(14, 185)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(49, 13)
         Me.Label25.TabIndex = 219
@@ -2349,7 +2288,7 @@ Partial Class FormularioMatricula
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(14, 237)
+        Me.Label24.Location = New System.Drawing.Point(14, 156)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(58, 13)
         Me.Label24.TabIndex = 218
@@ -2358,7 +2297,7 @@ Partial Class FormularioMatricula
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(14, 293)
+        Me.Label23.Location = New System.Drawing.Point(14, 212)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(132, 13)
         Me.Label23.TabIndex = 217
@@ -2367,7 +2306,7 @@ Partial Class FormularioMatricula
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(14, 177)
+        Me.Label17.Location = New System.Drawing.Point(14, 96)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(40, 13)
         Me.Label17.TabIndex = 216
@@ -2376,7 +2315,7 @@ Partial Class FormularioMatricula
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(14, 149)
+        Me.Label16.Location = New System.Drawing.Point(14, 68)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(118, 13)
         Me.Label16.TabIndex = 215
@@ -2385,7 +2324,7 @@ Partial Class FormularioMatricula
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(14, 116)
+        Me.Label15.Location = New System.Drawing.Point(14, 31)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(160, 13)
         Me.Label15.TabIndex = 214
@@ -2394,7 +2333,7 @@ Partial Class FormularioMatricula
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(14, 553)
+        Me.Label22.Location = New System.Drawing.Point(14, 472)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(149, 13)
         Me.Label22.TabIndex = 256
@@ -2402,14 +2341,15 @@ Partial Class FormularioMatricula
         '
         'txtNombreApoderado
         '
-        Me.txtNombreApoderado.Location = New System.Drawing.Point(234, 550)
+        Me.txtNombreApoderado.Enabled = False
+        Me.txtNombreApoderado.Location = New System.Drawing.Point(234, 469)
         Me.txtNombreApoderado.Name = "txtNombreApoderado"
         Me.txtNombreApoderado.Size = New System.Drawing.Size(413, 20)
         Me.txtNombreApoderado.TabIndex = 255
         '
         'txtSeguros
         '
-        Me.txtSeguros.Location = New System.Drawing.Point(434, 609)
+        Me.txtSeguros.Location = New System.Drawing.Point(433, 701)
         Me.txtSeguros.Name = "txtSeguros"
         Me.txtSeguros.Size = New System.Drawing.Size(218, 20)
         Me.txtSeguros.TabIndex = 221
@@ -2417,7 +2357,7 @@ Partial Class FormularioMatricula
         'Label64
         '
         Me.Label64.AutoSize = True
-        Me.Label64.Location = New System.Drawing.Point(368, 612)
+        Me.Label64.Location = New System.Drawing.Point(367, 704)
         Me.Label64.Name = "Label64"
         Me.Label64.Size = New System.Drawing.Size(60, 13)
         Me.Label64.TabIndex = 220
@@ -2426,14 +2366,14 @@ Partial Class FormularioMatricula
         'comboIsapre
         '
         Me.comboIsapre.FormattingEnabled = True
-        Me.comboIsapre.Location = New System.Drawing.Point(140, 583)
+        Me.comboIsapre.Location = New System.Drawing.Point(139, 675)
         Me.comboIsapre.Name = "comboIsapre"
         Me.comboIsapre.Size = New System.Drawing.Size(203, 21)
         Me.comboIsapre.TabIndex = 219
         '
         'txtOtrosServicios
         '
-        Me.txtOtrosServicios.Location = New System.Drawing.Point(140, 609)
+        Me.txtOtrosServicios.Location = New System.Drawing.Point(139, 701)
         Me.txtOtrosServicios.Name = "txtOtrosServicios"
         Me.txtOtrosServicios.Size = New System.Drawing.Size(203, 20)
         Me.txtOtrosServicios.TabIndex = 218
@@ -2441,7 +2381,7 @@ Partial Class FormularioMatricula
         'Label65
         '
         Me.Label65.AutoSize = True
-        Me.Label65.Location = New System.Drawing.Point(19, 612)
+        Me.Label65.Location = New System.Drawing.Point(18, 704)
         Me.Label65.Name = "Label65"
         Me.Label65.Size = New System.Drawing.Size(105, 13)
         Me.Label65.TabIndex = 217
@@ -2450,7 +2390,7 @@ Partial Class FormularioMatricula
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(19, 586)
+        Me.Label62.Location = New System.Drawing.Point(18, 678)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(114, 13)
         Me.Label62.TabIndex = 216
@@ -2459,7 +2399,7 @@ Partial Class FormularioMatricula
         'Label61
         '
         Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(19, 557)
+        Me.Label61.Location = New System.Drawing.Point(18, 649)
         Me.Label61.Name = "Label61"
         Me.Label61.Size = New System.Drawing.Size(426, 13)
         Me.Label61.TabIndex = 215
@@ -2467,7 +2407,7 @@ Partial Class FormularioMatricula
         '
         'txtAntecedentesMed
         '
-        Me.txtAntecedentesMed.Location = New System.Drawing.Point(262, 522)
+        Me.txtAntecedentesMed.Location = New System.Drawing.Point(261, 614)
         Me.txtAntecedentesMed.Name = "txtAntecedentesMed"
         Me.txtAntecedentesMed.Size = New System.Drawing.Size(390, 20)
         Me.txtAntecedentesMed.TabIndex = 214
@@ -2475,7 +2415,7 @@ Partial Class FormularioMatricula
         'Label60
         '
         Me.Label60.AutoSize = True
-        Me.Label60.Location = New System.Drawing.Point(19, 525)
+        Me.Label60.Location = New System.Drawing.Point(18, 617)
         Me.Label60.Name = "Label60"
         Me.Label60.Size = New System.Drawing.Size(227, 13)
         Me.Label60.TabIndex = 213
@@ -2484,72 +2424,116 @@ Partial Class FormularioMatricula
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(14, 526)
+        Me.Label19.Location = New System.Drawing.Point(14, 445)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(75, 13)
         Me.Label19.TabIndex = 257
         Me.Label19.Text = "APODERADO"
         '
-        'ComboBox12
+        'cbApoderado
         '
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Items.AddRange(New Object() {"", "Madre", "Padre", "Otro"})
-        Me.ComboBox12.Location = New System.Drawing.Point(234, 523)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(202, 21)
-        Me.ComboBox12.TabIndex = 258
+        Me.cbApoderado.FormattingEnabled = True
+        Me.cbApoderado.Items.AddRange(New Object() {"", "Madre", "Padre", "Otro"})
+        Me.cbApoderado.Location = New System.Drawing.Point(234, 442)
+        Me.cbApoderado.Name = "cbApoderado"
+        Me.cbApoderado.Size = New System.Drawing.Size(125, 21)
+        Me.cbApoderado.TabIndex = 258
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(14, 594)
+        Me.Label21.Location = New System.Drawing.Point(14, 513)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(135, 13)
         Me.Label21.TabIndex = 259
         Me.Label21.Text = "APODERADO SUPLENTE"
         '
-        'Panel3
+        'GroupBox6
         '
-        Me.Panel3.Controls.Add(Me.RadioButton3)
-        Me.Panel3.Controls.Add(Me.RadioButton2)
-        Me.Panel3.Controls.Add(Me.RadioButton1)
-        Me.Panel3.Location = New System.Drawing.Point(234, 583)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(411, 32)
-        Me.Panel3.TabIndex = 260
+        Me.GroupBox6.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox6.Controls.Add(Me.TextBox65)
+        Me.GroupBox6.Controls.Add(Me.txtNumMatri)
+        Me.GroupBox6.Controls.Add(Me.Label79)
+        Me.GroupBox6.Controls.Add(Me.Label78)
+        Me.GroupBox6.Controls.Add(Me.Label77)
+        Me.GroupBox6.Location = New System.Drawing.Point(338, 6)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(313, 100)
+        Me.GroupBox6.TabIndex = 222
+        Me.GroupBox6.TabStop = False
         '
-        'RadioButton1
+        'DateTimePicker1
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(27, 9)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(55, 17)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Madre"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.DateTimePicker1.Location = New System.Drawing.Point(106, 40)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 5
         '
-        'RadioButton2
+        'TextBox65
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(153, 9)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(53, 17)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Padre"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.TextBox65.Location = New System.Drawing.Point(106, 68)
+        Me.TextBox65.Name = "TextBox65"
+        Me.TextBox65.Size = New System.Drawing.Size(200, 20)
+        Me.TextBox65.TabIndex = 4
         '
-        'RadioButton3
+        'txtNumMatri
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(289, 9)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(45, 17)
-        Me.RadioButton3.TabIndex = 2
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Otro"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.txtNumMatri.Location = New System.Drawing.Point(106, 13)
+        Me.txtNumMatri.Name = "txtNumMatri"
+        Me.txtNumMatri.Size = New System.Drawing.Size(201, 20)
+        Me.txtNumMatri.TabIndex = 3
+        '
+        'Label79
+        '
+        Me.Label79.AutoSize = True
+        Me.Label79.Location = New System.Drawing.Point(6, 71)
+        Me.Label79.Name = "Label79"
+        Me.Label79.Size = New System.Drawing.Size(97, 13)
+        Me.Label79.TabIndex = 2
+        Me.Label79.Text = "N° DE COMPROB."
+        '
+        'Label78
+        '
+        Me.Label78.AutoSize = True
+        Me.Label78.Location = New System.Drawing.Point(6, 46)
+        Me.Label78.Name = "Label78"
+        Me.Label78.Size = New System.Drawing.Size(42, 13)
+        Me.Label78.TabIndex = 1
+        Me.Label78.Text = "FECHA"
+        '
+        'Label77
+        '
+        Me.Label77.AutoSize = True
+        Me.Label77.Location = New System.Drawing.Point(6, 16)
+        Me.Label77.Name = "Label77"
+        Me.Label77.Size = New System.Drawing.Size(71, 13)
+        Me.Label77.TabIndex = 0
+        Me.Label77.Text = "N° DE FOLIO"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(499, 340)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(45, 13)
+        Me.Label35.TabIndex = 223
+        Me.Label35.Text = "CURSO"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(550, 337)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(101, 20)
+        Me.TextBox1.TabIndex = 224
+        '
+        'cbApoSuplente
+        '
+        Me.cbApoSuplente.FormattingEnabled = True
+        Me.cbApoSuplente.Items.AddRange(New Object() {"", "Madre", "Padre", "Otro"})
+        Me.cbApoSuplente.Location = New System.Drawing.Point(234, 510)
+        Me.cbApoSuplente.Name = "cbApoSuplente"
+        Me.cbApoSuplente.Size = New System.Drawing.Size(121, 21)
+        Me.cbApoSuplente.TabIndex = 260
         '
         'FormularioMatricula
         '
@@ -2570,8 +2554,6 @@ Partial Class FormularioMatricula
         Me.TabPage1.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
-        Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -2594,8 +2576,8 @@ Partial Class FormularioMatricula
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2622,13 +2604,6 @@ Partial Class FormularioMatricula
     Friend WithEvents txtOtro As System.Windows.Forms.TextBox
     Friend WithEvents Label94 As System.Windows.Forms.Label
     Friend WithEvents Label93 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents TextBox65 As System.Windows.Forms.TextBox
-    Friend WithEvents txtNumMatri As System.Windows.Forms.TextBox
-    Friend WithEvents Label79 As System.Windows.Forms.Label
-    Friend WithEvents Label78 As System.Windows.Forms.Label
-    Friend WithEvents Label77 As System.Windows.Forms.Label
     Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
     Friend WithEvents checkConBeca As System.Windows.Forms.CheckBox
     Friend WithEvents Label124 As System.Windows.Forms.Label
@@ -2831,11 +2806,17 @@ Partial Class FormularioMatricula
     Friend WithEvents Label61 As System.Windows.Forms.Label
     Friend WithEvents txtAntecedentesMed As System.Windows.Forms.TextBox
     Friend WithEvents Label60 As System.Windows.Forms.Label
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbApoderado As System.Windows.Forms.ComboBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents TextBox65 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNumMatri As System.Windows.Forms.TextBox
+    Friend WithEvents Label79 As System.Windows.Forms.Label
+    Friend WithEvents Label78 As System.Windows.Forms.Label
+    Friend WithEvents Label77 As System.Windows.Forms.Label
+    Friend WithEvents cbApoSuplente As System.Windows.Forms.ComboBox
 End Class
