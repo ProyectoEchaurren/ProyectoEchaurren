@@ -105,13 +105,6 @@ Public Class FormularioMatricula
 
     Private Sub btnTerminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTerminar.Click
 
-
-        If txtNombreAlumno.Text = "" Or txtCurso.Text = "" Or txtNombreApoderado.Text = "" Then
-
-            MessageBox.Show("Debe ingresar nombre de apoderado y/o nivel", "Matricula - Contrato de servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
-
         If RadioButton9.Checked = False And RadioButton13.Checked = False And RadioButton14.Checked = False Then
 
             MessageBox.Show("Debe seleccionar uno de los tipos de tutor economico", "Matricula - Contrato de servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -130,11 +123,6 @@ Public Class FormularioMatricula
         If txtNombreTutor.Text = "" Or txtRut.Text = "" Or txtTelefonoPart.Text = "" Or txtTelefonoTrabajo.Text = "" Or txtDomicilio.Text = "" Or txtLugarDeTrabajo.Text = "" Or txtOcupacionAct.Text = "" Or txtProfesion.Text = "" Then
 
             MessageBox.Show("Debe llenar todos los datos del tutor economico", "Matricula - Contrato de servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
-
-        If txtNumMatri2.Text = "" Or txtApePatAlumno.Text = "" Or txtApeMatAlumno.Text = "" Or txtNombresAlumno.Text = "" Or txtEdadAlumno.Text = "" Or txtCalleAlumno.Text = "" Or txtSectorAlumno.Text = "" Or txtComunaAlumno.Text = "" Or txtTelefonoAlumno.Text = "" Or txtColegioPrese.Text = "" Or txtCursosRepetidos.Text = "" Then
-            MessageBox.Show("Debe llenar todos los campos de datos del alumno", "Matricula - ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -202,7 +190,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub cbEstudiosMadre_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbEstudiosMadre.SelectedIndexChanged
+    Private Sub cbEstudiosMadre_SelectedIndexChanged(sender As System.Object, e As System.EventArgs)
         If cbEstudiosMadre.Text = "" Then
             txtEstudiosMadre.Enabled = False
         Else
@@ -211,7 +199,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub cbEstudiosPadre_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbEstudiosPadre.SelectedIndexChanged
+    Private Sub cbEstudiosPadre_SelectedIndexChanged(sender As System.Object, e As System.EventArgs)
         If cbEstudiosPadre.Text = "" Then
             txtEstudiosPadre.Enabled = False
         Else
