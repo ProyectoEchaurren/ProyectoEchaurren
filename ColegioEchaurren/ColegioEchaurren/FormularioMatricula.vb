@@ -11,10 +11,6 @@ Public Class FormularioMatricula
         dateTimeFechaNac.CustomFormat = "dd/MM/yyyy"
         dateTimeFechaNac.MaxDate = Now()
 
-        dtpMatricula.Format = DateTimePickerFormat.Custom
-        dtpMatricula.CustomFormat = "yyyy"
-        dtpMatricula.MaxDate = Now()
-
         Try
 
             varConexion = New MySqlConnection
@@ -30,7 +26,7 @@ Public Class FormularioMatricula
 
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+    Private Sub ComboBox1_SelectedIndexChanged_1(sender As System.Object, e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
         If ComboBox1.SelectedIndex = 0 Then
             GroupBox1.Show()
             GroupBox2.Hide()
@@ -59,14 +55,6 @@ Public Class FormularioMatricula
             GroupBox5.Show()
         End If
     End Sub
-    Private Sub RadioButton12_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton12.CheckedChanged
-        If RadioButton12.Checked = True Then
-            txtViveConOtros.Enabled = True
-            txtViveConOtros.Focus()
-        Else
-            txtViveConOtros.Enabled = False
-        End If
-    End Sub
 
     Private Sub RadioButton14_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton14.CheckedChanged
         If RadioButton14.Checked = True Then
@@ -78,9 +66,6 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
-        txtNombreApoderado2.Text = txtNombreApoderado.Text
-        txtNombreTutor2.Text = txtNombreTutor.Text
-        TextBox1.Text = txtCurso.Text
         indiceTab = TabControl1.SelectedIndex
         TabControl1.DeselectTab(indiceTab)
     End Sub
@@ -98,18 +83,6 @@ Public Class FormularioMatricula
     Private Sub btnVolver2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver2.Click
         indiceTab = TabControl1.SelectedIndex
         TabControl1.SelectTab(indiceTab - 1)
-    End Sub
-
-    Private Sub checkConBeca_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkConBeca.CheckedChanged
-        If checkConBeca.Checked = True Then
-            checkSinBeca.Checked = False
-        End If
-    End Sub
-
-    Private Sub checkSinBeca_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkSinBeca.CheckedChanged
-        If checkSinBeca.Checked = True Then
-            checkConBeca.Checked = False
-        End If
     End Sub
 
     Private Sub btnSalir3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir3.Click
@@ -182,18 +155,8 @@ Public Class FormularioMatricula
             End If
         End While
 
-        If RadioButtonpico.Checked = False And RadioButton10.Checked = False And RadioButton11.Checked = False And RadioButton12.Checked = False Then
-            MessageBox.Show("Debe seleccionar convivencia del alumno", "Matricula - Ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
-
         If txtNombreApodSuplent.Text = "" Then
             MessageBox.Show("Debe ingresar nombre de apoderado suplente", "Matricula - Ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
-
-        If checkConBeca.Enabled = False And checkSinBeca.Enabled = False Then
-            MessageBox.Show("Debe seleccionar una opcion de beca", "Matricula - Ficha de matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -218,118 +181,42 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub rbBasicaPadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbBasicaPadre.CheckedChanged
-        If rbBasicaPadre.Checked = True Then
-            txtBasicaPadre.Enabled = True
-            txtBasicaPadre.Focus()
-        Else
-            txtBasicaPadre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub rbMediaPadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbMediaPadre.CheckedChanged
-        If rbMediaPadre.Checked = True Then
-            txtMediaPadre.Enabled = True
-            txtMediaPadre.Focus()
-        Else
-            txtMediaPadre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub rbTecnicoPadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbTecnicoPadre.CheckedChanged
-        If rbTecnicoPadre.Checked = True Then
-            txtTecnicoPadre.Enabled = True
-            txtTecnicoPadre.Focus()
-        Else
-            txtTecnicoPadre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub rbUniverPadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbUniverPadre.CheckedChanged
-        If rbUniverPadre.Checked = True Then
-            txtUniverPadre.Enabled = True
-            txtUniverPadre.Focus()
-        Else
-            txtUniverPadre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub rbBasicaMadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbBasicaMadre.CheckedChanged
-        If rbBasicaMadre.Checked = True Then
-            txtBasicaMadre.Enabled = True
-            txtBasicaMadre.Focus()
-        Else
-            txtBasicaMadre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub rbMediaMadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbMediaMadre.CheckedChanged
-        If rbMediaMadre.Checked = True Then
-            txtMediaMadre.Enabled = True
-            txtMediaMadre.Focus()
-        Else
-            txtMediaMadre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub rbTecnicoMadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbTecnicoMadre.CheckedChanged
-        If rbTecnicoMadre.Checked = True Then
-            txtTecnicoMadre.Enabled = True
-            txtTecnicoMadre.Focus()
-        Else
-            txtTecnicoMadre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub rbUniverMadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbUniverMadre.CheckedChanged
-        If rbUniverMadre.Checked = True Then
-            txtUniverMadre.Enabled = True
-            txtUniverMadre.Focus()
-        Else
-            txtUniverMadre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub txtOtrosServicios_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtOtrosServicios.TextChanged
+    Private Sub txtOtrosServicios_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If txtOtrosServicios.Text <> "" Then
             comboIsapre.SelectedText = ""
-            radioFonasaA.Checked = False
-            radioFonasaB.Checked = False
-            radioFonasaC.Checked = False
         End If
     End Sub
 
-    Private Sub comboIsapre_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles comboIsapre.SelectedIndexChanged
+    Private Sub comboIsapre_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If comboIsapre.SelectedText <> "" Then
             txtOtrosServicios.Text = ""
-            radioFonasaA.Checked = False
-            radioFonasaB.Checked = False
-            radioFonasaC.Checked = False
         End If
     End Sub
 
-    Private Sub radioFonasaA_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radioFonasaA.CheckedChanged
-        If radioFonasaA.Checked = True Then
-            txtOtrosServicios.Text = ""
-            comboIsapre.SelectedText = ""
+    Private Sub ComboBox14_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbViveCon.SelectedIndexChanged
+        If cbViveCon.SelectedIndex = "4" Then
+            txtViveConOtros.Enabled = True
+            txtViveConOtros.Focus()
+        Else
+            txtViveConOtros.Enabled = False
         End If
     End Sub
 
-    Private Sub radioFonasaB_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radioFonasaB.CheckedChanged
-        If radioFonasaB.Checked = True Then
-            txtOtrosServicios.Text = ""
-            comboIsapre.SelectedText = ""
+    Private Sub cbEstudiosMadre_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbEstudiosMadre.SelectedIndexChanged
+        If cbEstudiosMadre.Text = "" Then
+            txtEstudiosMadre.Enabled = False
+        Else
+            txtEstudiosMadre.Enabled = True
+            txtEstudiosMadre.Focus()
         End If
     End Sub
 
-    Private Sub radioFonasaC_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radioFonasaC.CheckedChanged
-        If radioFonasaC.Checked = True Then
-            txtOtrosServicios.Text = ""
-            comboIsapre.SelectedText = ""
+    Private Sub cbEstudiosPadre_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbEstudiosPadre.SelectedIndexChanged
+        If cbEstudiosPadre.Text = "" Then
+            txtEstudiosPadre.Enabled = False
+        Else
+            txtEstudiosPadre.Enabled = True
+            txtEstudiosPadre.Focus()
         End If
-    End Sub
-
-    Private Sub TabControl1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabControl1.SelectedIndexChanged
-
     End Sub
 End Class
