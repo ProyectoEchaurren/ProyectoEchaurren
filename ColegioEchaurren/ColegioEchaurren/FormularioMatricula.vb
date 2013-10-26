@@ -225,4 +225,15 @@ Public Class FormularioMatricula
             txtNombreApodSuplent.Enabled = False
         End If
     End Sub
+
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        indiceTab = TabControl1.SelectedIndex
+        TabControl1.SelectTab(indiceTab - 1)
+    End Sub
+
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        indiceTab = TabControl1.SelectedIndex
+        TabControl1.SelectTab(indiceTab - 1)
+    End Sub
 End Class
