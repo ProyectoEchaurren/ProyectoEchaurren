@@ -2540,6 +2540,7 @@ Partial Class FormularioMatricula
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
         Me.ClientSize = New System.Drawing.Size(739, 742)
@@ -2548,6 +2549,8 @@ Partial Class FormularioMatricula
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> 7afaaacb86ba79fe3ea620d2482f6c4a85052465
         Me.ClientSize = New System.Drawing.Size(773, 742)
         Me.ControlBox = False
 >>>>>>> origin/david/cambiosQls
