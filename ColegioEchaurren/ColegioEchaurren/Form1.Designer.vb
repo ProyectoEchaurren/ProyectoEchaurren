@@ -127,8 +127,8 @@ Partial Class Form1
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
-        Me.LoginToolStripMenuItem.Text = "Login"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
+        Me.LoginToolStripMenuItem.Text = "Iniciar Sesión"
         '
         'AyudaToolStripMenuItem
         '

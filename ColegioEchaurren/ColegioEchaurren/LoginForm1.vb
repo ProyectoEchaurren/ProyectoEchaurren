@@ -14,15 +14,19 @@
             Form1.FinanzasToolStripMenuItem.Enabled = True
             Form1.AdministracionToolStripMenuItem.Enabled = True
             Form1.RecursosHumanosToolStripMenuItem.Enabled = True
-            Form1.LoginToolStripMenuItem.Text = "Logout"
+            Form1.LoginToolStripMenuItem.Text = "Cerrar Sesión"
+            Me.Close()
         ElseIf UsernameTextBox.Text = "asistente" Then
             Form1.MatriculasToolStripMenuItem.Enabled = True
             Form1.AdministracionToolStripMenuItem.Enabled = True
-            Form1.LoginToolStripMenuItem.Text = "Logout"
+            Form1.LoginToolStripMenuItem.Text = "Cerrar Sesión"
+            Me.Close()
         Else
             MessageBox.Show("Usuario y/o contraseña incorrecto(s)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            UsernameTextBox.Text = ""
+            PasswordTextBox.Text = ""
+            UsernameTextBox.Focus()
         End If
-        Me.Close()
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
