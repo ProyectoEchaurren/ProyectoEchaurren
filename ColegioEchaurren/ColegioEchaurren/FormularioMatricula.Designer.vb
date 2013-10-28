@@ -25,7 +25,7 @@ Partial Class FormularioMatricula
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormularioMatricula))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtCurso = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -36,7 +36,7 @@ Partial Class FormularioMatricula
         Me.Label77 = New System.Windows.Forms.Label()
         Me.txtSeguros = New System.Windows.Forms.TextBox()
         Me.Label64 = New System.Windows.Forms.Label()
-        Me.comboIsapre = New System.Windows.Forms.ComboBox()
+        Me.comboServSalud = New System.Windows.Forms.ComboBox()
         Me.txtOtrosServicios = New System.Windows.Forms.TextBox()
         Me.Label65 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
@@ -44,9 +44,6 @@ Partial Class FormularioMatricula
         Me.txtAntecedentesMed = New System.Windows.Forms.TextBox()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.cbViveCon = New System.Windows.Forms.ComboBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.radioHermanosNo = New System.Windows.Forms.RadioButton()
-        Me.radioHermanosSi = New System.Windows.Forms.RadioButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.radioMasc = New System.Windows.Forms.RadioButton()
         Me.radioFeme = New System.Windows.Forms.RadioButton()
@@ -261,10 +258,12 @@ Partial Class FormularioMatricula
         Me.Label103 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.checkConBeca = New System.Windows.Forms.CheckBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.radioHermanosSi = New System.Windows.Forms.RadioButton()
+        Me.radioHermanosNo = New System.Windows.Forms.RadioButton()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -277,6 +276,7 @@ Partial Class FormularioMatricula
         Me.GroupBox1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -295,12 +295,12 @@ Partial Class FormularioMatricula
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
-        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Controls.Add(Me.txtCurso)
         Me.TabPage2.Controls.Add(Me.Label35)
         Me.TabPage2.Controls.Add(Me.GroupBox6)
         Me.TabPage2.Controls.Add(Me.txtSeguros)
         Me.TabPage2.Controls.Add(Me.Label64)
-        Me.TabPage2.Controls.Add(Me.comboIsapre)
+        Me.TabPage2.Controls.Add(Me.comboServSalud)
         Me.TabPage2.Controls.Add(Me.txtOtrosServicios)
         Me.TabPage2.Controls.Add(Me.Label65)
         Me.TabPage2.Controls.Add(Me.Label62)
@@ -357,12 +357,12 @@ Partial Class FormularioMatricula
         Me.TabPage2.Text = "Datos de Alumno(a)"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtCurso
         '
-        Me.TextBox1.Location = New System.Drawing.Point(550, 337)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(101, 20)
-        Me.TextBox1.TabIndex = 224
+        Me.txtCurso.Location = New System.Drawing.Point(550, 337)
+        Me.txtCurso.Name = "txtCurso"
+        Me.txtCurso.Size = New System.Drawing.Size(101, 20)
+        Me.txtCurso.TabIndex = 224
         '
         'Label35
         '
@@ -451,13 +451,13 @@ Partial Class FormularioMatricula
         Me.Label64.TabIndex = 220
         Me.Label64.Text = "SEGUROS"
         '
-        'comboIsapre
+        'comboServSalud
         '
-        Me.comboIsapre.FormattingEnabled = True
-        Me.comboIsapre.Location = New System.Drawing.Point(139, 675)
-        Me.comboIsapre.Name = "comboIsapre"
-        Me.comboIsapre.Size = New System.Drawing.Size(203, 21)
-        Me.comboIsapre.TabIndex = 219
+        Me.comboServSalud.FormattingEnabled = True
+        Me.comboServSalud.Location = New System.Drawing.Point(139, 675)
+        Me.comboServSalud.Name = "comboServSalud"
+        Me.comboServSalud.Size = New System.Drawing.Size(203, 21)
+        Me.comboServSalud.TabIndex = 219
         '
         'txtOtrosServicios
         '
@@ -517,35 +517,6 @@ Partial Class FormularioMatricula
         Me.cbViveCon.Name = "cbViveCon"
         Me.cbViveCon.Size = New System.Drawing.Size(119, 21)
         Me.cbViveCon.TabIndex = 204
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.radioHermanosNo)
-        Me.Panel2.Controls.Add(Me.radioHermanosSi)
-        Me.Panel2.Location = New System.Drawing.Point(238, 460)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(127, 33)
-        Me.Panel2.TabIndex = 198
-        '
-        'radioHermanosNo
-        '
-        Me.radioHermanosNo.AutoSize = True
-        Me.radioHermanosNo.Location = New System.Drawing.Point(67, 6)
-        Me.radioHermanosNo.Name = "radioHermanosNo"
-        Me.radioHermanosNo.Size = New System.Drawing.Size(41, 17)
-        Me.radioHermanosNo.TabIndex = 12
-        Me.radioHermanosNo.Text = "NO"
-        Me.radioHermanosNo.UseVisualStyleBackColor = True
-        '
-        'radioHermanosSi
-        '
-        Me.radioHermanosSi.AutoSize = True
-        Me.radioHermanosSi.Location = New System.Drawing.Point(13, 6)
-        Me.radioHermanosSi.Name = "radioHermanosSi"
-        Me.radioHermanosSi.Size = New System.Drawing.Size(35, 17)
-        Me.radioHermanosSi.TabIndex = 11
-        Me.radioHermanosSi.Text = "SI"
-        Me.radioHermanosSi.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -2535,12 +2506,41 @@ Partial Class FormularioMatricula
         Me.checkConBeca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.checkConBeca.UseVisualStyleBackColor = True
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.radioHermanosNo)
+        Me.Panel2.Controls.Add(Me.radioHermanosSi)
+        Me.Panel2.Location = New System.Drawing.Point(238, 460)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(127, 33)
+        Me.Panel2.TabIndex = 198
+        '
+        'radioHermanosSi
+        '
+        Me.radioHermanosSi.AutoSize = True
+        Me.radioHermanosSi.Location = New System.Drawing.Point(13, 6)
+        Me.radioHermanosSi.Name = "radioHermanosSi"
+        Me.radioHermanosSi.Size = New System.Drawing.Size(35, 17)
+        Me.radioHermanosSi.TabIndex = 11
+        Me.radioHermanosSi.Text = "SI"
+        Me.radioHermanosSi.UseVisualStyleBackColor = True
+        '
+        'radioHermanosNo
+        '
+        Me.radioHermanosNo.AutoSize = True
+        Me.radioHermanosNo.Location = New System.Drawing.Point(67, 6)
+        Me.radioHermanosNo.Name = "radioHermanosNo"
+        Me.radioHermanosNo.Size = New System.Drawing.Size(41, 17)
+        Me.radioHermanosNo.TabIndex = 12
+        Me.radioHermanosNo.Text = "NO"
+        Me.radioHermanosNo.UseVisualStyleBackColor = True
+        '
         'FormularioMatricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(739, 742)
+        Me.ClientSize = New System.Drawing.Size(773, 742)
         Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -2554,8 +2554,6 @@ Partial Class FormularioMatricula
         Me.TabPage2.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
@@ -2578,6 +2576,8 @@ Partial Class FormularioMatricula
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2691,8 +2691,6 @@ Partial Class FormularioMatricula
     Friend WithEvents txtNombresAlumno As System.Windows.Forms.TextBox
     Friend WithEvents txtApeMatAlumno As System.Windows.Forms.TextBox
     Friend WithEvents txtApePatAlumno As System.Windows.Forms.TextBox
-    Friend WithEvents radioHermanosNo As System.Windows.Forms.RadioButton
-    Friend WithEvents radioHermanosSi As System.Windows.Forms.RadioButton
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
@@ -2718,7 +2716,6 @@ Partial Class FormularioMatricula
     Friend WithEvents radioMasc As System.Windows.Forms.RadioButton
     Friend WithEvents radioFeme As System.Windows.Forms.RadioButton
     Friend WithEvents Panel7 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents cbViveCon As System.Windows.Forms.ComboBox
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents Button1 As System.Windows.Forms.Button
@@ -2798,7 +2795,7 @@ Partial Class FormularioMatricula
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents txtSeguros As System.Windows.Forms.TextBox
     Friend WithEvents Label64 As System.Windows.Forms.Label
-    Friend WithEvents comboIsapre As System.Windows.Forms.ComboBox
+    Friend WithEvents comboServSalud As System.Windows.Forms.ComboBox
     Friend WithEvents txtOtrosServicios As System.Windows.Forms.TextBox
     Friend WithEvents Label65 As System.Windows.Forms.Label
     Friend WithEvents Label62 As System.Windows.Forms.Label
@@ -2808,7 +2805,7 @@ Partial Class FormularioMatricula
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents cbApoderado As System.Windows.Forms.ComboBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCurso As System.Windows.Forms.TextBox
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
@@ -2819,4 +2816,7 @@ Partial Class FormularioMatricula
     Friend WithEvents Label77 As System.Windows.Forms.Label
     Friend WithEvents cbApoSuplente As System.Windows.Forms.ComboBox
     Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents radioHermanosNo As System.Windows.Forms.RadioButton
+    Friend WithEvents radioHermanosSi As System.Windows.Forms.RadioButton
 End Class
