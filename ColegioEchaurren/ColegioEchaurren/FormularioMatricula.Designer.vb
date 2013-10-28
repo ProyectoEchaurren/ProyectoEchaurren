@@ -2540,15 +2540,7 @@ Partial Class FormularioMatricula
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-<<<<<<< HEAD
         Me.ClientSize = New System.Drawing.Size(739, 742)
-<<<<<<< Updated upstream
-=======
-=======
-        Me.ClientSize = New System.Drawing.Size(773, 742)
-        Me.ControlBox = False
->>>>>>> origin/david/cambiosQls
->>>>>>> Stashed changes
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
