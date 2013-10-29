@@ -80,6 +80,53 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
+
+        If cbApoderado.Text = "" Then
+            MessageBox.Show("Debe seleccionar un apoderado", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        While cbApoderado.SelectedIndex = "3"
+            If txtNombreApoderado.Text = "" Then
+                MessageBox.Show("Debe seleccionar otro apoderado", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+            Exit While
+        End While
+
+        If cbApoSuplente.Text = "" Then
+            MessageBox.Show("Debe seleccionar un apoderado suplente", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        While cbApoSuplente.SelectedIndex = "3"
+            If txtNombreApodSuplent.Text = "" Then
+                MessageBox.Show("Debe ingresar otro apoderado suplente", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+            Exit While
+        End While
+
+        If RadioButton9.Checked = False And RadioButton13.Checked = False And RadioButton14.Checked = False Then
+            MessageBox.Show("Debe elegir un tipo de tutor economico", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        While RadioButton14.Checked = True
+            If txtOtro.Text = "" Then
+                MessageBox.Show("Debe ingresar otro tipo de tutor economico", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+            Exit While
+        End While
+
+        If txtNombreTutor.Text = "" Or txtRut.Text = "" Or txtTelefonoPart.Text = "" Or txtTelefonoTrabajo.Text = "" Or txtDomicilio.Text = "" _
+            Or txtLugarDeTrabajo.Text = "" Or txtOcupacionAct.Text = "" Or txtProfesion.Text = "" Then
+            MessageBox.Show("Debe ingresar todos los datos del tutor economico", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+
         indiceTab = TabControl1.SelectedIndex
         TabControl1.DeselectTab(indiceTab)
     End Sub
@@ -237,4 +284,5 @@ Public Class FormularioMatricula
             comboServSalud.Enabled = True
         End If
     End Sub
+
 End Class
