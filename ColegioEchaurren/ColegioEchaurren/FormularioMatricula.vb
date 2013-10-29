@@ -120,13 +120,6 @@ Public Class FormularioMatricula
             Exit While
         End While
 
-        ' While txtOtrosServicios.Enabled = True
-        ' If txtOtrosServicios.Text = "" Then
-        ' MessageBox.Show("Debe seleccionar un servicio de salud", "Datos de alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        'Exit Sub
-        'End If
-        'End While
-
 
         indiceTab = TabControl1.SelectedIndex
         TabControl1.DeselectTab(indiceTab)
