@@ -27,9 +27,7 @@ Partial Class Form1
         Me.MatriculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CrearMatriculaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarMatriculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CancelarMatriculaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FinanzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PagosRecibidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeMensualidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransferenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,6 +37,7 @@ Partial Class Form1
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RealizarPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -53,7 +52,7 @@ Partial Class Form1
         '
         'MatriculasToolStripMenuItem
         '
-        Me.MatriculasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearMatriculaToolStripMenuItem, Me.AdministrarMatriculasToolStripMenuItem, Me.CancelarMatriculaToolStripMenuItem})
+        Me.MatriculasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearMatriculaToolStripMenuItem, Me.AdministrarMatriculasToolStripMenuItem})
         Me.MatriculasToolStripMenuItem.Enabled = False
         Me.MatriculasToolStripMenuItem.Name = "MatriculasToolStripMenuItem"
         Me.MatriculasToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
@@ -71,25 +70,13 @@ Partial Class Form1
         Me.AdministrarMatriculasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.AdministrarMatriculasToolStripMenuItem.Text = "Administrar Matriculas"
         '
-        'CancelarMatriculaToolStripMenuItem
-        '
-        Me.CancelarMatriculaToolStripMenuItem.Name = "CancelarMatriculaToolStripMenuItem"
-        Me.CancelarMatriculaToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.CancelarMatriculaToolStripMenuItem.Text = "Cancelar Matricula"
-        '
         'FinanzasToolStripMenuItem
         '
-        Me.FinanzasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PagosRecibidosToolStripMenuItem, Me.RegistroDeMensualidadesToolStripMenuItem, Me.TransferenciasToolStripMenuItem})
+        Me.FinanzasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarPagoToolStripMenuItem, Me.RegistroDeMensualidadesToolStripMenuItem, Me.TransferenciasToolStripMenuItem})
         Me.FinanzasToolStripMenuItem.Enabled = False
         Me.FinanzasToolStripMenuItem.Name = "FinanzasToolStripMenuItem"
         Me.FinanzasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
         Me.FinanzasToolStripMenuItem.Text = "Finanzas"
-        '
-        'PagosRecibidosToolStripMenuItem
-        '
-        Me.PagosRecibidosToolStripMenuItem.Name = "PagosRecibidosToolStripMenuItem"
-        Me.PagosRecibidosToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
-        Me.PagosRecibidosToolStripMenuItem.Text = "Pagos Recibidos"
         '
         'RegistroDeMensualidadesToolStripMenuItem
         '
@@ -149,6 +136,12 @@ Partial Class Form1
         Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
         '
+        'RealizarPagoToolStripMenuItem
+        '
+        Me.RealizarPagoToolStripMenuItem.Name = "RealizarPagoToolStripMenuItem"
+        Me.RealizarPagoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.RealizarPagoToolStripMenuItem.Text = "Realizar Pago"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -175,13 +168,12 @@ Partial Class Form1
     Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CrearMatriculaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdministrarMatriculasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CancelarMatriculaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PagosRecibidosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroDeMensualidadesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TransferenciasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RecursosHumanosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AlumnosMatriculadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RealizarPagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
