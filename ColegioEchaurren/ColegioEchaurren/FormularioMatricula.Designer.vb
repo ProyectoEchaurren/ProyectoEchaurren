@@ -26,6 +26,10 @@ Partial Class FormularioMatricula
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+<<<<<<< Updated upstream
+=======
+        Me.checkConBeca = New System.Windows.Forms.CheckBox()
+>>>>>>> Stashed changes
         Me.txtCurso = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -364,6 +368,19 @@ Partial Class FormularioMatricula
         Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
+<<<<<<< Updated upstream
+=======
+        'checkConBeca
+        '
+        Me.checkConBeca.Location = New System.Drawing.Point(274, 522)
+        Me.checkConBeca.Name = "checkConBeca"
+        Me.checkConBeca.Size = New System.Drawing.Size(130, 24)
+        Me.checkConBeca.TabIndex = 225
+        Me.checkConBeca.Text = "ALUMNO BECADO"
+        Me.checkConBeca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.checkConBeca.UseVisualStyleBackColor = True
+        '
+>>>>>>> Stashed changes
         'txtCurso
         '
         Me.txtCurso.Location = New System.Drawing.Point(550, 337)
