@@ -22,14 +22,15 @@ Partial Class RealizarPago
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RealizarPago))
+        Me.txtCampoRut = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.txtBeca = New System.Windows.Forms.TextBox()
+        Me.txtTipoPago = New System.Windows.Forms.TextBox()
+        Me.txtPorcentaje = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.txtMontoTotal = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -37,68 +38,69 @@ Partial Class RealizarPago
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtMontoMensual = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'txtCampoRut
         '
-        Me.TextBox1.Location = New System.Drawing.Point(168, 29)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(122, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.txtCampoRut.Location = New System.Drawing.Point(168, 29)
+        Me.txtCampoRut.MaxLength = 12
+        Me.txtCampoRut.Name = "txtCampoRut"
+        Me.txtCampoRut.Size = New System.Drawing.Size(122, 20)
+        Me.txtCampoRut.TabIndex = 0
         '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(330, 27)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Buscar"
+        Me.Button1.TabIndex = 19
+        Me.Button1.Text = "Limpiar"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'txtNombre
         '
-        Me.TextBox2.Location = New System.Drawing.Point(16, 95)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox2.TabIndex = 2
+        Me.txtNombre.Location = New System.Drawing.Point(16, 95)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(180, 20)
+        Me.txtNombre.TabIndex = 1
         '
-        'TextBox3
+        'txtBeca
         '
-        Me.TextBox3.Location = New System.Drawing.Point(214, 95)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 3
+        Me.txtBeca.Location = New System.Drawing.Point(214, 95)
+        Me.txtBeca.Name = "txtBeca"
+        Me.txtBeca.Size = New System.Drawing.Size(100, 20)
+        Me.txtBeca.TabIndex = 2
         '
-        'TextBox4
+        'txtTipoPago
         '
-        Me.TextBox4.Location = New System.Drawing.Point(330, 95)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 4
+        Me.txtTipoPago.Location = New System.Drawing.Point(330, 95)
+        Me.txtTipoPago.Name = "txtTipoPago"
+        Me.txtTipoPago.Size = New System.Drawing.Size(100, 20)
+        Me.txtTipoPago.TabIndex = 3
         '
-        'TextBox5
+        'txtPorcentaje
         '
-        Me.TextBox5.Location = New System.Drawing.Point(447, 95)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox5.TabIndex = 5
+        Me.txtPorcentaje.Location = New System.Drawing.Point(447, 95)
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.Size = New System.Drawing.Size(100, 20)
+        Me.txtPorcentaje.TabIndex = 4
         '
         'TextBox6
         '
@@ -107,19 +109,19 @@ Partial Class RealizarPago
         Me.TextBox6.Size = New System.Drawing.Size(180, 20)
         Me.TextBox6.TabIndex = 6
         '
-        'TextBox7
+        'txtMontoTotal
         '
-        Me.TextBox7.Location = New System.Drawing.Point(230, 54)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(165, 20)
-        Me.TextBox7.TabIndex = 8
+        Me.txtMontoTotal.Location = New System.Drawing.Point(230, 54)
+        Me.txtMontoTotal.Name = "txtMontoTotal"
+        Me.txtMontoTotal.Size = New System.Drawing.Size(165, 20)
+        Me.txtMontoTotal.TabIndex = 7
         '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(19, 125)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(124, 44)
-        Me.Button2.TabIndex = 9
+        Me.Button2.TabIndex = 24
         Me.Button2.Text = "Efectuar Pago"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -173,7 +175,7 @@ Partial Class RealizarPago
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TextBox7)
+        Me.GroupBox1.Controls.Add(Me.txtMontoTotal)
         Me.GroupBox1.Controls.Add(Me.TextBox6)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 151)
@@ -182,124 +184,6 @@ Partial Class RealizarPago
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Pago"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(16, 38)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(103, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "N° de Comprobante:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(227, 38)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(107, 13)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Monto Total a Pagar:"
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(24, 29)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(55, 17)
-        Me.CheckBox1.TabIndex = 12
-        Me.CheckBox1.Text = "Marzo"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(24, 52)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(46, 17)
-        Me.CheckBox2.TabIndex = 13
-        Me.CheckBox2.Text = "Abril"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(24, 75)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(52, 17)
-        Me.CheckBox3.TabIndex = 14
-        Me.CheckBox3.Text = "Mayo"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(24, 98)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(51, 17)
-        Me.CheckBox4.TabIndex = 15
-        Me.CheckBox4.Text = "Junio"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(24, 121)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(47, 17)
-        Me.CheckBox5.TabIndex = 16
-        Me.CheckBox5.Text = "Julio"
-        Me.CheckBox5.UseVisualStyleBackColor = True
-        '
-        'CheckBox6
-        '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(130, 29)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(59, 17)
-        Me.CheckBox6.TabIndex = 17
-        Me.CheckBox6.Text = "Agosto"
-        Me.CheckBox6.UseVisualStyleBackColor = True
-        '
-        'CheckBox7
-        '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(130, 52)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(79, 17)
-        Me.CheckBox7.TabIndex = 18
-        Me.CheckBox7.Text = "Septiembre"
-        Me.CheckBox7.UseVisualStyleBackColor = True
-        '
-        'CheckBox8
-        '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(130, 75)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(64, 17)
-        Me.CheckBox8.TabIndex = 19
-        Me.CheckBox8.Text = "Octubre"
-        Me.CheckBox8.UseVisualStyleBackColor = True
-        '
-        'CheckBox9
-        '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(130, 98)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(77, 17)
-        Me.CheckBox9.TabIndex = 20
-        Me.CheckBox9.Text = "Noviembre"
-        Me.CheckBox9.UseVisualStyleBackColor = True
-        '
-        'CheckBox10
-        '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(130, 121)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(73, 17)
-        Me.CheckBox10.TabIndex = 21
-        Me.CheckBox10.Text = "Diciembre"
-        Me.CheckBox10.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -320,12 +204,130 @@ Partial Class RealizarPago
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Seleccione Meses a Pagar"
         '
-        'TextBox8
+        'CheckBox10
         '
-        Me.TextBox8.Location = New System.Drawing.Point(562, 95)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox8.TabIndex = 16
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.Location = New System.Drawing.Point(130, 121)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(73, 17)
+        Me.CheckBox10.TabIndex = 17
+        Me.CheckBox10.Text = "Diciembre"
+        Me.CheckBox10.UseVisualStyleBackColor = True
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.Location = New System.Drawing.Point(130, 98)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(77, 17)
+        Me.CheckBox9.TabIndex = 16
+        Me.CheckBox9.Text = "Noviembre"
+        Me.CheckBox9.UseVisualStyleBackColor = True
+        '
+        'CheckBox8
+        '
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.Location = New System.Drawing.Point(130, 75)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(64, 17)
+        Me.CheckBox8.TabIndex = 15
+        Me.CheckBox8.Text = "Octubre"
+        Me.CheckBox8.UseVisualStyleBackColor = True
+        '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Location = New System.Drawing.Point(130, 52)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(79, 17)
+        Me.CheckBox7.TabIndex = 14
+        Me.CheckBox7.Text = "Septiembre"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
+        'CheckBox6
+        '
+        Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.Location = New System.Drawing.Point(130, 29)
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.Size = New System.Drawing.Size(59, 17)
+        Me.CheckBox6.TabIndex = 13
+        Me.CheckBox6.Text = "Agosto"
+        Me.CheckBox6.UseVisualStyleBackColor = True
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.Location = New System.Drawing.Point(24, 121)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(47, 17)
+        Me.CheckBox5.TabIndex = 12
+        Me.CheckBox5.Text = "Julio"
+        Me.CheckBox5.UseVisualStyleBackColor = True
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(24, 98)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(51, 17)
+        Me.CheckBox4.TabIndex = 11
+        Me.CheckBox4.Text = "Junio"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(24, 75)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(52, 17)
+        Me.CheckBox3.TabIndex = 10
+        Me.CheckBox3.Text = "Mayo"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(24, 52)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(46, 17)
+        Me.CheckBox2.TabIndex = 9
+        Me.CheckBox2.Text = "Abril"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(24, 29)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(55, 17)
+        Me.CheckBox1.TabIndex = 8
+        Me.CheckBox1.Text = "Marzo"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(227, 38)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(107, 13)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Monto Total a Pagar:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(16, 38)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(103, 13)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "N° de Comprobante:"
+        '
+        'txtMontoMensual
+        '
+        Me.txtMontoMensual.Location = New System.Drawing.Point(562, 95)
+        Me.txtMontoMensual.Name = "txtMontoMensual"
+        Me.txtMontoMensual.Size = New System.Drawing.Size(100, 20)
+        Me.txtMontoMensual.TabIndex = 5
         '
         'Label8
         '
@@ -342,19 +344,20 @@ Partial Class RealizarPago
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(685, 358)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.txtMontoMensual)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtPorcentaje)
+        Me.Controls.Add(Me.txtTipoPago)
+        Me.Controls.Add(Me.txtBeca)
+        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtCampoRut)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "RealizarPago"
         Me.Text = "Realizar Pago"
         Me.GroupBox1.ResumeLayout(False)
@@ -365,14 +368,14 @@ Partial Class RealizarPago
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCampoRut As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombre As System.Windows.Forms.TextBox
+    Friend WithEvents txtBeca As System.Windows.Forms.TextBox
+    Friend WithEvents txtTipoPago As System.Windows.Forms.TextBox
+    Friend WithEvents txtPorcentaje As System.Windows.Forms.TextBox
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents txtMontoTotal As System.Windows.Forms.TextBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -393,6 +396,6 @@ Partial Class RealizarPago
     Friend WithEvents CheckBox9 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox8 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox7 As System.Windows.Forms.CheckBox
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents txtMontoMensual As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

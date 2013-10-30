@@ -44,6 +44,9 @@ Partial Class FormularioMatricula
         Me.txtAntecedentesMed = New System.Windows.Forms.TextBox()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.cbViveCon = New System.Windows.Forms.ComboBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.radioHermanosNo = New System.Windows.Forms.RadioButton()
+        Me.radioHermanosSi = New System.Windows.Forms.RadioButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.radioMasc = New System.Windows.Forms.RadioButton()
         Me.radioFeme = New System.Windows.Forms.RadioButton()
@@ -258,12 +261,10 @@ Partial Class FormularioMatricula
         Me.Label103 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.checkConBeca = New System.Windows.Forms.CheckBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.radioHermanosSi = New System.Windows.Forms.RadioButton()
-        Me.radioHermanosNo = New System.Windows.Forms.RadioButton()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -276,7 +277,6 @@ Partial Class FormularioMatricula
         Me.GroupBox1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -517,6 +517,35 @@ Partial Class FormularioMatricula
         Me.cbViveCon.Name = "cbViveCon"
         Me.cbViveCon.Size = New System.Drawing.Size(119, 21)
         Me.cbViveCon.TabIndex = 204
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.radioHermanosNo)
+        Me.Panel2.Controls.Add(Me.radioHermanosSi)
+        Me.Panel2.Location = New System.Drawing.Point(238, 460)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(127, 33)
+        Me.Panel2.TabIndex = 198
+        '
+        'radioHermanosNo
+        '
+        Me.radioHermanosNo.AutoSize = True
+        Me.radioHermanosNo.Location = New System.Drawing.Point(67, 6)
+        Me.radioHermanosNo.Name = "radioHermanosNo"
+        Me.radioHermanosNo.Size = New System.Drawing.Size(41, 17)
+        Me.radioHermanosNo.TabIndex = 12
+        Me.radioHermanosNo.Text = "NO"
+        Me.radioHermanosNo.UseVisualStyleBackColor = True
+        '
+        'radioHermanosSi
+        '
+        Me.radioHermanosSi.AutoSize = True
+        Me.radioHermanosSi.Location = New System.Drawing.Point(13, 6)
+        Me.radioHermanosSi.Name = "radioHermanosSi"
+        Me.radioHermanosSi.Size = New System.Drawing.Size(35, 17)
+        Me.radioHermanosSi.TabIndex = 11
+        Me.radioHermanosSi.Text = "SI"
+        Me.radioHermanosSi.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -2506,53 +2535,25 @@ Partial Class FormularioMatricula
         Me.checkConBeca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.checkConBeca.UseVisualStyleBackColor = True
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.radioHermanosNo)
-        Me.Panel2.Controls.Add(Me.radioHermanosSi)
-        Me.Panel2.Location = New System.Drawing.Point(238, 460)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(127, 33)
-        Me.Panel2.TabIndex = 198
-        '
-        'radioHermanosSi
-        '
-        Me.radioHermanosSi.AutoSize = True
-        Me.radioHermanosSi.Location = New System.Drawing.Point(13, 6)
-        Me.radioHermanosSi.Name = "radioHermanosSi"
-        Me.radioHermanosSi.Size = New System.Drawing.Size(35, 17)
-        Me.radioHermanosSi.TabIndex = 11
-        Me.radioHermanosSi.Text = "SI"
-        Me.radioHermanosSi.UseVisualStyleBackColor = True
-        '
-        'radioHermanosNo
-        '
-        Me.radioHermanosNo.AutoSize = True
-        Me.radioHermanosNo.Location = New System.Drawing.Point(67, 6)
-        Me.radioHermanosNo.Name = "radioHermanosNo"
-        Me.radioHermanosNo.Size = New System.Drawing.Size(41, 17)
-        Me.radioHermanosNo.TabIndex = 12
-        Me.radioHermanosNo.Text = "NO"
-        Me.radioHermanosNo.UseVisualStyleBackColor = True
-        '
         'FormularioMatricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(739, 742)
+        Me.ClientSize = New System.Drawing.Size(773, 742)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormularioMatricula"
         Me.Text = "Formulario de Matricula"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
@@ -2575,8 +2576,6 @@ Partial Class FormularioMatricula
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

@@ -244,4 +244,80 @@ Public Class FormularioMatricula
             comboServSalud.Enabled = True
         End If
     End Sub
+
+    Private Sub txtRutAlumno_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutAlumno.KeyPress
+        If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+            e.Handled = True
+            MsgBox("Porfavor ingresar sólo dígitos y guión")
+        End If
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+
+            ComprobarRut(txtRutAlumno.Text)
+            If ComprobarRut(txtRutAlumno.Text) = False Then
+                MsgBox("El Rut ingresado no es valido")
+                txtRutAlumno.Focus()
+            Else
+                My.Computer.Keyboard.SendKeys("{tab}", True)
+            End If
+        End If
+    End Sub
+
+    Private Sub txtRutPadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutPadre.KeyPress
+        If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+            e.Handled = True
+            MsgBox("Porfavor ingresar sólo dígitos y guión")
+        End If
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+
+            ComprobarRut(txtRutPadre.Text)
+            If ComprobarRut(txtRutPadre.Text) = False Then
+                MsgBox("El Rut ingresado no es valido")
+                txtRutPadre.Focus()
+            Else
+                My.Computer.Keyboard.SendKeys("{tab}", True)
+            End If
+        End If
+    End Sub
+
+    Private Sub txtRutMadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutMadre.KeyPress
+        If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+            e.Handled = True
+            MsgBox("Porfavor ingresar sólo dígitos y guión")
+        End If
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+
+            ComprobarRut(txtRutMadre.Text)
+            If ComprobarRut(txtRutMadre.Text) = False Then
+                MsgBox("El Rut ingresado no es valido")
+                txtRutMadre.Focus()
+            Else
+                My.Computer.Keyboard.SendKeys("{tab}", True)
+            End If
+        End If
+    End Sub
+
+    Private Sub txtRut_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRut.KeyPress
+        If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+            e.Handled = True
+            MsgBox("Porfavor ingresar sólo dígitos y guión")
+        End If
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+
+            ComprobarRut(txtRut.Text)
+            If ComprobarRut(txtRut.Text) = False Then
+                MsgBox("El Rut ingresado no es valido")
+                txtRut.Focus()
+            Else
+                My.Computer.Keyboard.SendKeys("{tab}", True)
+            End If
+        End If
+    End Sub
 End Class
