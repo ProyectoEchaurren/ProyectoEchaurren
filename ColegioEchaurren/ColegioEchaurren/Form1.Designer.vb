@@ -28,7 +28,6 @@ Partial Class Form1
         Me.CrearMatriculaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarMatriculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FinanzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RealizarPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeMensualidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransferenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -38,6 +37,7 @@ Partial Class Form1
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RealizarPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -77,12 +77,6 @@ Partial Class Form1
         Me.FinanzasToolStripMenuItem.Name = "FinanzasToolStripMenuItem"
         Me.FinanzasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
         Me.FinanzasToolStripMenuItem.Text = "Finanzas"
-        '
-        'RealizarPagoToolStripMenuItem
-        '
-        Me.RealizarPagoToolStripMenuItem.Name = "RealizarPagoToolStripMenuItem"
-        Me.RealizarPagoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
-        Me.RealizarPagoToolStripMenuItem.Text = "Realizar Pago"
         '
         'RegistroDeMensualidadesToolStripMenuItem
         '
@@ -141,6 +135,12 @@ Partial Class Form1
         Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
         Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
+        '
+        'RealizarPagoToolStripMenuItem
+        '
+        Me.RealizarPagoToolStripMenuItem.Name = "RealizarPagoToolStripMenuItem"
+        Me.RealizarPagoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.RealizarPagoToolStripMenuItem.Text = "Realizar Pago"
         '
         'Form1
         '

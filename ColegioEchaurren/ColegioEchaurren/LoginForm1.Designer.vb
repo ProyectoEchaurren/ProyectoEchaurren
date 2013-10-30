@@ -71,7 +71,6 @@ Partial Class LoginForm1
         'UsernameTextBox
         '
         Me.UsernameTextBox.Location = New System.Drawing.Point(174, 44)
-        Me.UsernameTextBox.MaxLength = 12
         Me.UsernameTextBox.Name = "UsernameTextBox"
         Me.UsernameTextBox.Size = New System.Drawing.Size(220, 20)
         Me.UsernameTextBox.TabIndex = 1

@@ -341,6 +341,7 @@ Partial Class FormAlumnosMatriculados
         Me.Name = "FormAlumnosMatriculados"
         Me.ShowIcon = False
         Me.Text = "Administracion de alumnos"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -40,14 +40,4 @@
         AboutBox1.MdiParent = Me
         AboutBox1.Show()
     End Sub
-
-    Private Sub RealizarPagoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RealizarPagoToolStripMenuItem.Click
-        RealizarPago.MdiParent = Me
-        RealizarPago.Show()
-    End Sub
-
-    Private Sub RegistroDeMensualidadesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RegistroDeMensualidadesToolStripMenuItem.Click
-        AdminMensualidades.MdiParent = Me
-        AdminMensualidades.Show()
-    End Sub
 End Class
