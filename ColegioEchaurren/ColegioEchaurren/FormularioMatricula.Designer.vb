@@ -25,6 +25,7 @@ Partial Class FormularioMatricula
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormularioMatricula))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.txtCurso = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -198,6 +199,7 @@ Partial Class FormularioMatricula
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
         Me.btnSalir3 = New System.Windows.Forms.Button()
         Me.btnTerminar = New System.Windows.Forms.Button()
         Me.btnVolver2 = New System.Windows.Forms.Button()
@@ -256,9 +258,6 @@ Partial Class FormularioMatricula
         Me.Label106 = New System.Windows.Forms.Label()
         Me.Label105 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
-        Me.checkConBeca = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -293,7 +292,6 @@ Partial Class FormularioMatricula
         '
         Me.TabPage2.AutoScroll = True
         Me.TabPage2.Controls.Add(Me.CheckBox1)
-        Me.TabPage2.Controls.Add(Me.checkConBeca)
         Me.TabPage2.Controls.Add(Me.txtCurso)
         Me.TabPage2.Controls.Add(Me.Label35)
         Me.TabPage2.Controls.Add(Me.GroupBox6)
@@ -355,6 +353,16 @@ Partial Class FormularioMatricula
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Datos de Alumno(a)"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.Location = New System.Drawing.Point(238, 116)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(130, 24)
+        Me.CheckBox1.TabIndex = 226
+        Me.CheckBox1.Text = "ALUMNO BECADO"
+        Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'txtCurso
         '
@@ -1995,6 +2003,15 @@ Partial Class FormularioMatricula
         Me.TabPage3.Text = "Documentos en Cartera"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'ComboBox12
+        '
+        Me.ComboBox12.FormattingEnabled = True
+        Me.ComboBox12.Items.AddRange(New Object() {"", "Cheques", "Letras", "Contado"})
+        Me.ComboBox12.Location = New System.Drawing.Point(322, 124)
+        Me.ComboBox12.Name = "ComboBox12"
+        Me.ComboBox12.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox12.TabIndex = 185
+        '
         'btnSalir3
         '
         Me.btnSalir3.Location = New System.Drawing.Point(494, 689)
@@ -2482,35 +2499,6 @@ Partial Class FormularioMatricula
         Me.Label103.TabIndex = 4
         Me.Label103.Text = "COMPROBANTE DE DOCUMENTOS EN CARTERA"
         '
-        'checkConBeca
-        '
-        Me.checkConBeca.Location = New System.Drawing.Point(274, 522)
-        Me.checkConBeca.Name = "checkConBeca"
-        Me.checkConBeca.Size = New System.Drawing.Size(130, 24)
-        Me.checkConBeca.TabIndex = 225
-        Me.checkConBeca.Text = "ALUMNO BECADO"
-        Me.checkConBeca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.checkConBeca.UseVisualStyleBackColor = True
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.Location = New System.Drawing.Point(238, 116)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(130, 24)
-        Me.CheckBox1.TabIndex = 226
-        Me.CheckBox1.Text = "ALUMNO BECADO"
-        Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'ComboBox12
-        '
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Items.AddRange(New Object() {"", "Cheques", "Letras", "Contado"})
-        Me.ComboBox12.Location = New System.Drawing.Point(322, 124)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox12.TabIndex = 185
-        '
         'FormularioMatricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2789,6 +2777,5 @@ Partial Class FormularioMatricula
     Friend WithEvents radioHermanosNo As System.Windows.Forms.RadioButton
     Friend WithEvents radioHermanosSi As System.Windows.Forms.RadioButton
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents checkConBeca As System.Windows.Forms.CheckBox
     Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
 End Class
