@@ -254,13 +254,11 @@ Partial Class FormularioMatricula
         Me.TextBox85 = New System.Windows.Forms.TextBox()
         Me.Label107 = New System.Windows.Forms.Label()
         Me.Label106 = New System.Windows.Forms.Label()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
         Me.Label105 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.checkConBeca = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -276,7 +274,6 @@ Partial Class FormularioMatricula
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        Me.GroupBox7.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -295,6 +292,8 @@ Partial Class FormularioMatricula
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.CheckBox1)
+        Me.TabPage2.Controls.Add(Me.checkConBeca)
         Me.TabPage2.Controls.Add(Me.txtCurso)
         Me.TabPage2.Controls.Add(Me.Label35)
         Me.TabPage2.Controls.Add(Me.GroupBox6)
@@ -1929,6 +1928,7 @@ Partial Class FormularioMatricula
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.ComboBox12)
         Me.TabPage3.Controls.Add(Me.btnSalir3)
         Me.TabPage3.Controls.Add(Me.btnTerminar)
         Me.TabPage3.Controls.Add(Me.btnVolver2)
@@ -1985,12 +1985,8 @@ Partial Class FormularioMatricula
         Me.TabPage3.Controls.Add(Me.TextBox85)
         Me.TabPage3.Controls.Add(Me.Label107)
         Me.TabPage3.Controls.Add(Me.Label106)
-        Me.TabPage3.Controls.Add(Me.CheckBox11)
-        Me.TabPage3.Controls.Add(Me.CheckBox10)
-        Me.TabPage3.Controls.Add(Me.CheckBox9)
         Me.TabPage3.Controls.Add(Me.Label105)
         Me.TabPage3.Controls.Add(Me.Label103)
-        Me.TabPage3.Controls.Add(Me.GroupBox7)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
@@ -2444,7 +2440,7 @@ Partial Class FormularioMatricula
         '
         'TextBox85
         '
-        Me.TextBox85.Location = New System.Drawing.Point(188, 157)
+        Me.TextBox85.Location = New System.Drawing.Point(319, 157)
         Me.TextBox85.Name = "TextBox85"
         Me.TextBox85.Size = New System.Drawing.Size(124, 20)
         Me.TextBox85.TabIndex = 12
@@ -2452,7 +2448,7 @@ Partial Class FormularioMatricula
         'Label107
         '
         Me.Label107.AutoSize = True
-        Me.Label107.Location = New System.Drawing.Point(169, 160)
+        Me.Label107.Location = New System.Drawing.Point(275, 160)
         Me.Label107.Name = "Label107"
         Me.Label107.Size = New System.Drawing.Size(13, 13)
         Me.Label107.TabIndex = 11
@@ -2466,36 +2462,6 @@ Partial Class FormularioMatricula
         Me.Label106.Size = New System.Drawing.Size(79, 13)
         Me.Label106.TabIndex = 10
         Me.Label106.Text = "Por un total de:"
-        '
-        'CheckBox11
-        '
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(538, 126)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(66, 17)
-        Me.CheckBox11.TabIndex = 9
-        Me.CheckBox11.Text = "Contado"
-        Me.CheckBox11.UseVisualStyleBackColor = True
-        '
-        'CheckBox10
-        '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(444, 126)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(55, 17)
-        Me.CheckBox10.TabIndex = 8
-        Me.CheckBox10.Text = "Letras"
-        Me.CheckBox10.UseVisualStyleBackColor = True
-        '
-        'CheckBox9
-        '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(339, 126)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(63, 17)
-        Me.CheckBox9.TabIndex = 7
-        Me.CheckBox9.Text = "Cheque"
-        Me.CheckBox9.UseVisualStyleBackColor = True
         '
         'Label105
         '
@@ -2516,24 +2482,34 @@ Partial Class FormularioMatricula
         Me.Label103.TabIndex = 4
         Me.Label103.Text = "COMPROBANTE DE DOCUMENTOS EN CARTERA"
         '
-        'GroupBox7
-        '
-        Me.GroupBox7.Controls.Add(Me.checkConBeca)
-        Me.GroupBox7.Location = New System.Drawing.Point(496, 21)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(159, 52)
-        Me.GroupBox7.TabIndex = 3
-        Me.GroupBox7.TabStop = False
-        '
         'checkConBeca
         '
-        Me.checkConBeca.Location = New System.Drawing.Point(17, 19)
+        Me.checkConBeca.Location = New System.Drawing.Point(274, 522)
         Me.checkConBeca.Name = "checkConBeca"
         Me.checkConBeca.Size = New System.Drawing.Size(130, 24)
-        Me.checkConBeca.TabIndex = 0
+        Me.checkConBeca.TabIndex = 225
         Me.checkConBeca.Text = "ALUMNO BECADO"
         Me.checkConBeca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.checkConBeca.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.Location = New System.Drawing.Point(238, 116)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(130, 24)
+        Me.CheckBox1.TabIndex = 226
+        Me.CheckBox1.Text = "ALUMNO BECADO"
+        Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'ComboBox12
+        '
+        Me.ComboBox12.FormattingEnabled = True
+        Me.ComboBox12.Items.AddRange(New Object() {"", "Cheques", "Letras", "Contado"})
+        Me.ComboBox12.Location = New System.Drawing.Point(322, 124)
+        Me.ComboBox12.Name = "ComboBox12"
+        Me.ComboBox12.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox12.TabIndex = 185
         '
         'FormularioMatricula
         '
@@ -2576,7 +2552,6 @@ Partial Class FormularioMatricula
         Me.GroupBox1.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
-        Me.GroupBox7.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -2603,8 +2578,6 @@ Partial Class FormularioMatricula
     Friend WithEvents txtOtro As System.Windows.Forms.TextBox
     Friend WithEvents Label94 As System.Windows.Forms.Label
     Friend WithEvents Label93 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
-    Friend WithEvents checkConBeca As System.Windows.Forms.CheckBox
     Friend WithEvents Label124 As System.Windows.Forms.Label
     Friend WithEvents ComboBox11 As System.Windows.Forms.ComboBox
     Friend WithEvents TextBox107 As System.Windows.Forms.TextBox
@@ -2658,9 +2631,6 @@ Partial Class FormularioMatricula
     Friend WithEvents TextBox85 As System.Windows.Forms.TextBox
     Friend WithEvents Label107 As System.Windows.Forms.Label
     Friend WithEvents Label106 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox11 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox10 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox9 As System.Windows.Forms.CheckBox
     Friend WithEvents Label105 As System.Windows.Forms.Label
     Friend WithEvents Label103 As System.Windows.Forms.Label
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
@@ -2818,4 +2788,7 @@ Partial Class FormularioMatricula
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents radioHermanosNo As System.Windows.Forms.RadioButton
     Friend WithEvents radioHermanosSi As System.Windows.Forms.RadioButton
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents checkConBeca As System.Windows.Forms.CheckBox
+    Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
 End Class
