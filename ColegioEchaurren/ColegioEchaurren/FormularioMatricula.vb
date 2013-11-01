@@ -1,12 +1,18 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class FormularioMatricula
+
     Public indiceTab As Integer
     Public varConexion As MySqlConnection
     Public varConexionString As String = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
     Public consultaCargaCombo As String = "SELECT * FROM bd_echaurren.servicio_salud;"
 
+
     Private Sub FormularioMatricula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        DateTimePicker1.Format = DateTimePickerFormat.Custom
+        DateTimePicker1.CustomFormat = "dd/MM/yyyy"
+        DateTimePicker1.MaxDate = Now()
 
         dateTimeFechaNac.Format = DateTimePickerFormat.Custom
         dateTimeFechaNac.CustomFormat = "dd/MM/yyyy"
@@ -45,28 +51,12 @@ Public Class FormularioMatricula
             GroupBox1.Show()
             GroupBox2.Hide()
             GroupBox3.Hide()
-            GroupBox4.Hide()
-            GroupBox5.Hide()
         ElseIf ComboBox1.SelectedIndex = 1 Then
             GroupBox2.Show()
             GroupBox3.Hide()
-            GroupBox4.Hide()
-            GroupBox5.Hide()
         ElseIf ComboBox1.SelectedIndex = 2 Then
             GroupBox2.Show()
             GroupBox3.Show()
-            GroupBox4.Hide()
-            GroupBox5.Hide()
-        ElseIf ComboBox1.SelectedIndex = 3 Then
-            GroupBox2.Show()
-            GroupBox3.Show()
-            GroupBox4.Show()
-            GroupBox5.Hide()
-        ElseIf ComboBox1.SelectedIndex = 4 Then
-            GroupBox2.Show()
-            GroupBox3.Show()
-            GroupBox4.Show()
-            GroupBox5.Show()
         End If
     End Sub
 
@@ -146,6 +136,7 @@ Public Class FormularioMatricula
                 MessageBox.Show("Debe ingresar los cursos de hermanos", "Datos de alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End If
+            Exit While
         End While
 
         If txtNumHijos.Text = "" Or txtLugarHijos.Text = "" Or txtGrupoFamiliar.Text = "" Then
@@ -153,12 +144,14 @@ Public Class FormularioMatricula
             Exit Sub
         End If
 
+
+
         While cbViveCon.Text = ""
             MessageBox.Show("Debe seleccionar algun tipo de convivencia", "Datos de alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
             Exit While
         End While
-       
+
         While cbViveCon.SelectedIndex = "4"
             If txtViveConOtros.Text = "" Then
                 MessageBox.Show("Debe ingresar otro tipo de conviviente", "Datos de alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -166,6 +159,11 @@ Public Class FormularioMatricula
             End If
             Exit While
         End While
+
+        If txtOtrosServicios.Enabled = True And txtOtrosServicios.Text = "" Then
+            MessageBox.Show("Debe ingresar otro tipo de servicio de salud", "Datos alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
 
 
         indiceTab = TabControl1.SelectedIndex
@@ -228,6 +226,10 @@ Public Class FormularioMatricula
         Else
             txtViveConOtros.Enabled = False
         End If
+
+        If cbViveCon.SelectedIndex <> "4" Then
+            txtViveConOtros.Text = ""
+        End If
     End Sub
 
     Private Sub cbEstudiosMadre_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -277,15 +279,7 @@ Public Class FormularioMatricula
         TabControl1.SelectTab(indiceTab - 1)
     End Sub
 
-    Private Sub txtOtrosServicios_TextChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtOtrosServicios.TextChanged
-        If txtOtrosServicios.Text <> "" Then
-            comboServSalud.Enabled = False
-        ElseIf txtOtrosServicios.Text = "" Then
-            comboServSalud.Enabled = True
-        End If
-    End Sub
-
-    Private Sub txtRutAlumno_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutAlumno.KeyPress
+    Private Sub txtRutAlumno_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutAlumno.KeyPress
         If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
@@ -304,7 +298,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtRutPadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutPadre.KeyPress
+    Private Sub txtRutPadre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutPadre.KeyPress
         If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
@@ -323,7 +317,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtRutMadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutMadre.KeyPress
+    Private Sub txtRutMadre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutMadre.KeyPress
         If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
@@ -342,7 +336,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtRut_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRut.KeyPress
+    Private Sub txtRut_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRut.KeyPress
         If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
@@ -358,6 +352,142 @@ Public Class FormularioMatricula
             Else
                 My.Computer.Keyboard.SendKeys("{tab}", True)
             End If
+        End If
+    End Sub
+
+    Private Sub btnTerminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTerminar.Click
+
+        Dim valorSexo As String = ""
+        Dim varHermano As String = ""
+        Dim varViveCon As String = ""
+        Dim becado As Integer
+        Dim servSalud As String = ""
+        Dim otroServSalud As String = ""
+
+        If CheckBox1.Checked = False Then
+            becado = 0
+        ElseIf CheckBox1.Checked = True Then
+            becado = 1
+        End If
+
+        If radioMasc.Checked = True Then
+            valorSexo = "Masculino"
+        ElseIf radioFeme.Checked = True Then
+            valorSexo = "Femenino"
+        End If
+
+        If radioHermanosNo.Checked = True Then
+            varHermano = "Sin hermanos"
+        Else
+            varHermano = txtHermanosCursos.Text
+        End If
+
+        If cbViveCon.Text = "Otros (especificar)" Then
+            varViveCon = txtViveConOtros.Text
+        Else
+            varViveCon = cbViveCon.Text
+        End If
+
+        If ModuloContenedor.ingresarAlumno(DateTimePicker1, becado, txtApePatAlumno.Text, txtApeMatAlumno.Text, txtNombresAlumno.Text, _
+                                      txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
+                                      txtSectorAlumno.Text, txtCurso.Text, txtComunaAlumno.Text, txtTelefonoAlumno.Text, _
+                                         txtColegioPrese.Text, txtCursosRepetidos.Text, varHermano, varViveCon, txtNumHijos.Text, _
+                                          txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
+        Else
+            Exit Sub
+        End If
+
+
+        If comboServSalud.Text = "masvida" Then
+            servSalud = "ss0"
+        ElseIf comboServSalud.Text = "colmena" Then
+            servSalud = "ss1"
+        ElseIf comboServSalud.Text = "banmedica" Then
+            servSalud = "ss2"
+        ElseIf comboServSalud.Text = "consalud" Then
+            servSalud = "ss3"
+        ElseIf comboServSalud.Text = "cruz blanca" Then
+            servSalud = "ss4"
+        ElseIf comboServSalud.Text = "vida tres" Then
+            servSalud = "ss5"
+        ElseIf comboServSalud.Text = "ferrosalud" Then
+            servSalud = "ss6"
+        ElseIf comboServSalud.Text = "fonasa a" Then
+            servSalud = "ss7"
+        ElseIf comboServSalud.Text = "fonasa b" Then
+            servSalud = "ss8"
+        ElseIf comboServSalud.Text = "fonasa c" Then
+            servSalud = "ss9"
+        ElseIf comboServSalud.Text = "otro" Then
+            servSalud = "ss99"
+            otroServSalud = txtOtrosServicios.Text
+        End If
+
+
+        If ModuloContenedor.ingresarServSalud(servSalud, otroServSalud, txtSeguros.Text) = True Then
+        Else
+            Exit Sub
+        End If
+
+        If ModuloContenedor.ingresarContactEmergencia(txtNombreContacto.Text, txtNumContacto.Text, txtNombreContacto2.Text, _
+                                                      txtNumContacto2.Text, txtNombreContacto3.Text, txtNumContacto3.Text) = True Then
+        Else
+            Exit Sub
+        End If
+
+
+
+
+    End Sub
+
+    Private Sub comboServSalud_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles comboServSalud.SelectedIndexChanged
+
+        While comboServSalud.Text = "otro"
+            txtOtrosServicios.Enabled = True
+            Exit While
+        End While
+
+        While comboServSalud.Text <> "otro"
+            txtOtrosServicios.Text = ""
+            txtOtrosServicios.Enabled = False
+            Exit While
+        End While
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+
+        While ComboBox1.Text = "1 Contacto"
+            If txtNombreContacto.Text = "" Or txtNumContacto.Text = "" Then
+                MessageBox.Show("Debe ingresar el contacto de emergencia", "Datos de alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+            Exit While
+        End While
+        
+        While ComboBox1.Text = "2 Contactos"
+            If txtNombreContacto.Text = "" Or txtNumContacto.Text = "" Or txtNombreContacto2.Text = "" Or txtNumContacto2.Text = "" Then
+                MessageBox.Show("Debe ingresar los contactos de emergencia", "Datos de alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+            Exit While
+        End While
+
+        While ComboBox1.Text = "3 Contactos"
+            If txtNombreContacto.Text = "" Or txtNumContacto.Text = "" Or txtNombreContacto2.Text = "" Or txtNumContacto2.Text = "" _
+            Or txtNombreContacto3.Text = "" Or txtNumContacto3.Text = "" Then
+                MessageBox.Show("Debe ingresar los contactos de emergencia", "Datos de alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+            Exit While
+        End While
+
+        indiceTab = TabControl1.SelectedIndex
+        TabControl1.DeselectTab(indiceTab)
+    End Sub
+
+    Private Sub Button2_Click_2(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        If MessageBox.Show("¿Está seguro(a) de salir sin guardar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Me.Close()
         End If
     End Sub
 End Class
