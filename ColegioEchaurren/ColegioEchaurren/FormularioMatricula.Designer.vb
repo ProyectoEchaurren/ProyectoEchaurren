@@ -114,6 +114,8 @@ Partial Class FormularioMatricula
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.checkmadre = New System.Windows.Forms.CheckBox()
+        Me.checkpadre = New System.Windows.Forms.CheckBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.cbApoSuplente = New System.Windows.Forms.ComboBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -1131,6 +1133,8 @@ Partial Class FormularioMatricula
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TabPage1.Controls.Add(Me.checkmadre)
+        Me.TabPage1.Controls.Add(Me.checkpadre)
         Me.TabPage1.Controls.Add(Me.Button4)
         Me.TabPage1.Controls.Add(Me.cbApoSuplente)
         Me.TabPage1.Controls.Add(Me.Label21)
@@ -1209,6 +1213,26 @@ Partial Class FormularioMatricula
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Antecedentes Familiares"
         '
+        'checkmadre
+        '
+        Me.checkmadre.AutoSize = True
+        Me.checkmadre.Location = New System.Drawing.Point(565, 26)
+        Me.checkmadre.Name = "checkmadre"
+        Me.checkmadre.Size = New System.Drawing.Size(56, 17)
+        Me.checkmadre.TabIndex = 263
+        Me.checkmadre.Text = "Madre"
+        Me.checkmadre.UseVisualStyleBackColor = True
+        '
+        'checkpadre
+        '
+        Me.checkpadre.AutoSize = True
+        Me.checkpadre.Location = New System.Drawing.Point(491, 26)
+        Me.checkpadre.Name = "checkpadre"
+        Me.checkpadre.Size = New System.Drawing.Size(54, 17)
+        Me.checkpadre.TabIndex = 262
+        Me.checkpadre.Text = "Padre"
+        Me.checkpadre.UseVisualStyleBackColor = True
+        '
         'Button4
         '
         Me.Button4.Location = New System.Drawing.Point(253, 866)
@@ -1273,6 +1297,7 @@ Partial Class FormularioMatricula
         '
         'cbEstudiosMadre
         '
+        Me.cbEstudiosMadre.Enabled = False
         Me.cbEstudiosMadre.FormattingEnabled = True
         Me.cbEstudiosMadre.Items.AddRange(New Object() {"", "Básica", "Media", "Técnico Profesional", "Universitaria"})
         Me.cbEstudiosMadre.Location = New System.Drawing.Point(368, 309)
@@ -1282,6 +1307,7 @@ Partial Class FormularioMatricula
         '
         'cbEstudiosPadre
         '
+        Me.cbEstudiosPadre.Enabled = False
         Me.cbEstudiosPadre.FormattingEnabled = True
         Me.cbEstudiosPadre.Items.AddRange(New Object() {"", "Básica", "Media", "Técnico Profesional", "Universitaria"})
         Me.cbEstudiosPadre.Location = New System.Drawing.Point(368, 123)
@@ -1316,6 +1342,7 @@ Partial Class FormularioMatricula
         '
         'txtEdadMadre
         '
+        Me.txtEdadMadre.Enabled = False
         Me.txtEdadMadre.Location = New System.Drawing.Point(436, 280)
         Me.txtEdadMadre.Name = "txtEdadMadre"
         Me.txtEdadMadre.Size = New System.Drawing.Size(211, 20)
@@ -1332,6 +1359,7 @@ Partial Class FormularioMatricula
         '
         'txtCorreoMadre
         '
+        Me.txtCorreoMadre.Enabled = False
         Me.txtCorreoMadre.Location = New System.Drawing.Point(234, 400)
         Me.txtCorreoMadre.Name = "txtCorreoMadre"
         Me.txtCorreoMadre.Size = New System.Drawing.Size(413, 20)
@@ -1339,6 +1367,7 @@ Partial Class FormularioMatricula
         '
         'txtDireccionMadre
         '
+        Me.txtDireccionMadre.Enabled = False
         Me.txtDireccionMadre.Location = New System.Drawing.Point(436, 371)
         Me.txtDireccionMadre.Name = "txtDireccionMadre"
         Me.txtDireccionMadre.Size = New System.Drawing.Size(211, 20)
@@ -1346,6 +1375,7 @@ Partial Class FormularioMatricula
         '
         'txtCargoMadre
         '
+        Me.txtCargoMadre.Enabled = False
         Me.txtCargoMadre.Location = New System.Drawing.Point(436, 342)
         Me.txtCargoMadre.Name = "txtCargoMadre"
         Me.txtCargoMadre.Size = New System.Drawing.Size(211, 20)
@@ -1353,6 +1383,7 @@ Partial Class FormularioMatricula
         '
         'txtTelefonoMadre
         '
+        Me.txtTelefonoMadre.Enabled = False
         Me.txtTelefonoMadre.Location = New System.Drawing.Point(84, 372)
         Me.txtTelefonoMadre.Name = "txtTelefonoMadre"
         Me.txtTelefonoMadre.Size = New System.Drawing.Size(211, 20)
@@ -1360,6 +1391,7 @@ Partial Class FormularioMatricula
         '
         'txtTrabajaenMadre
         '
+        Me.txtTrabajaenMadre.Enabled = False
         Me.txtTrabajaenMadre.Location = New System.Drawing.Point(84, 343)
         Me.txtTrabajaenMadre.Name = "txtTrabajaenMadre"
         Me.txtTrabajaenMadre.Size = New System.Drawing.Size(211, 20)
@@ -1367,6 +1399,7 @@ Partial Class FormularioMatricula
         '
         'txtRutMadre
         '
+        Me.txtRutMadre.Enabled = False
         Me.txtRutMadre.Location = New System.Drawing.Point(234, 280)
         Me.txtRutMadre.Name = "txtRutMadre"
         Me.txtRutMadre.Size = New System.Drawing.Size(125, 20)
@@ -1374,6 +1407,7 @@ Partial Class FormularioMatricula
         '
         'txtNombreMadre
         '
+        Me.txtNombreMadre.Enabled = False
         Me.txtNombreMadre.Location = New System.Drawing.Point(234, 252)
         Me.txtNombreMadre.Name = "txtNombreMadre"
         Me.txtNombreMadre.Size = New System.Drawing.Size(413, 20)
@@ -1453,6 +1487,7 @@ Partial Class FormularioMatricula
         '
         'txtEdadPadre
         '
+        Me.txtEdadPadre.Enabled = False
         Me.txtEdadPadre.Location = New System.Drawing.Point(436, 93)
         Me.txtEdadPadre.Name = "txtEdadPadre"
         Me.txtEdadPadre.Size = New System.Drawing.Size(211, 20)
@@ -1469,6 +1504,7 @@ Partial Class FormularioMatricula
         '
         'txtCorreoPadre
         '
+        Me.txtCorreoPadre.Enabled = False
         Me.txtCorreoPadre.Location = New System.Drawing.Point(234, 209)
         Me.txtCorreoPadre.Name = "txtCorreoPadre"
         Me.txtCorreoPadre.Size = New System.Drawing.Size(413, 20)
@@ -1476,6 +1512,7 @@ Partial Class FormularioMatricula
         '
         'txtDireccionPadre
         '
+        Me.txtDireccionPadre.Enabled = False
         Me.txtDireccionPadre.Location = New System.Drawing.Point(435, 182)
         Me.txtDireccionPadre.Name = "txtDireccionPadre"
         Me.txtDireccionPadre.Size = New System.Drawing.Size(211, 20)
@@ -1483,6 +1520,7 @@ Partial Class FormularioMatricula
         '
         'txtCargoPadre
         '
+        Me.txtCargoPadre.Enabled = False
         Me.txtCargoPadre.Location = New System.Drawing.Point(435, 153)
         Me.txtCargoPadre.Name = "txtCargoPadre"
         Me.txtCargoPadre.Size = New System.Drawing.Size(211, 20)
@@ -1490,6 +1528,7 @@ Partial Class FormularioMatricula
         '
         'txtTelefonoPadre
         '
+        Me.txtTelefonoPadre.Enabled = False
         Me.txtTelefonoPadre.Location = New System.Drawing.Point(84, 182)
         Me.txtTelefonoPadre.Name = "txtTelefonoPadre"
         Me.txtTelefonoPadre.Size = New System.Drawing.Size(211, 20)
@@ -1497,6 +1536,7 @@ Partial Class FormularioMatricula
         '
         'txtTrabajaenPadre
         '
+        Me.txtTrabajaenPadre.Enabled = False
         Me.txtTrabajaenPadre.Location = New System.Drawing.Point(84, 153)
         Me.txtTrabajaenPadre.Name = "txtTrabajaenPadre"
         Me.txtTrabajaenPadre.Size = New System.Drawing.Size(211, 20)
@@ -1504,6 +1544,7 @@ Partial Class FormularioMatricula
         '
         'txtRutPadre
         '
+        Me.txtRutPadre.Enabled = False
         Me.txtRutPadre.Location = New System.Drawing.Point(234, 93)
         Me.txtRutPadre.Name = "txtRutPadre"
         Me.txtRutPadre.Size = New System.Drawing.Size(125, 20)
@@ -1511,6 +1552,7 @@ Partial Class FormularioMatricula
         '
         'txtNombrePadre
         '
+        Me.txtNombrePadre.Enabled = False
         Me.txtNombrePadre.Location = New System.Drawing.Point(234, 65)
         Me.txtNombrePadre.Name = "txtNombrePadre"
         Me.txtNombrePadre.Size = New System.Drawing.Size(413, 20)
@@ -2658,4 +2700,6 @@ Partial Class FormularioMatricula
     Friend WithEvents radioHermanosSi As System.Windows.Forms.RadioButton
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
+    Friend WithEvents checkmadre As System.Windows.Forms.CheckBox
+    Friend WithEvents checkpadre As System.Windows.Forms.CheckBox
 End Class

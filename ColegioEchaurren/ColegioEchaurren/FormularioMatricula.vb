@@ -71,6 +71,30 @@ Public Class FormularioMatricula
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
 
+        While checkpadre.Checked = True
+
+            If txtNombrePadre.Text = "" Or txtRutPadre.Text = "" Or txtEdadPadre.Text = "" Or cbEstudiosPadre.Text = "" _
+                Or txtEstudiosPadre.Text = "" Or txtTrabajaenPadre.Text = "" Or txtTelefonoPadre.Text = "" Or txtCargoPadre.Text = "" _
+                Or txtDireccionPadre.Text = "" Or txtCorreoPadre.Text = "" Then
+                MessageBox.Show("Debe ingresar todos los datos del padre", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+            Exit While
+
+        End While
+
+        While checkmadre.Checked = True
+
+            If txtNombreMadre.Text = "" Or txtRutMadre.Text = "" Or txtEdadMadre.Text = "" Or cbEstudiosMadre.Text = "" _
+                Or txtEstudiosMadre.Text = "" Or txtTrabajaenMadre.Text = "" Or txtTelefonoMadre.Text = "" Or txtCargoMadre.Text = "" _
+                Or txtDireccionMadre.Text = "" Or txtCorreoMadre.Text = "" Then
+                MessageBox.Show("Debe ingresar todos los datos de la madre", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+            Exit While
+        End While
+
+
         If cbApoderado.Text = "" Then
             MessageBox.Show("Debe seleccionar un apoderado", "Antecedentes familiares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -363,7 +387,7 @@ Public Class FormularioMatricula
         Dim becado As Integer
         Dim servSalud As String = ""
         Dim otroServSalud As String = ""
-
+        '
         If CheckBox1.Checked = False Then
             becado = 0
         ElseIf CheckBox1.Checked = True Then
@@ -390,10 +414,12 @@ Public Class FormularioMatricula
 
         If ModuloContenedor.ingresarAlumno(DateTimePicker1, becado, txtApePatAlumno.Text, txtApeMatAlumno.Text, txtNombresAlumno.Text, _
                                       txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
-                                      txtSectorAlumno.Text, txtCurso.Text, txtComunaAlumno.Text, txtTelefonoAlumno.Text, _
-                                         txtColegioPrese.Text, txtCursosRepetidos.Text, varHermano, varViveCon, txtNumHijos.Text, _
-                                          txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
+                                         txtSectorAlumno.Text, txtCurso.Text, txtComunaAlumno.Text, txtTelefonoAlumno.Text, _
+                                             txtColegioPrese.Text, txtCursosRepetidos.Text, varHermano, varViveCon, txtNumHijos.Text, _
+                                              txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
+            MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
+            MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
@@ -425,17 +451,34 @@ Public Class FormularioMatricula
 
 
         If ModuloContenedor.ingresarServSalud(servSalud, otroServSalud, txtSeguros.Text) = True Then
+            MessageBox.Show("Servicio salud ingresado")
         Else
+            MessageBox.Show("Error al ingresar servicio de salud", "Error")
             Exit Sub
         End If
 
         If ModuloContenedor.ingresarContactEmergencia(txtNombreContacto.Text, txtNumContacto.Text, txtNombreContacto2.Text, _
                                                       txtNumContacto2.Text, txtNombreContacto3.Text, txtNumContacto3.Text) = True Then
         Else
+            MessageBox.Show("Error al ingresar contactos de emergencia")
             Exit Sub
         End If
 
+        '   If ModuloContenedor.insertarPadre(txtNombrePadre.Text, txtRutPadre.Text, txtEdadPadre.Text, cbEstudiosPadre, _
+        '                                    txtTrabajaenPadre.Text, txtTelefonoPadre.Text, txtCargoPadre.Text, _
+        '                                      txtDireccionPadre.Text, txtCorreoPadre.Text) = True Then
+        'MessageBox.Show("padre agregado")
+        'Else
+        'Exit Sub
+        'End If
 
+        ' If ModuloContenedor.insertarMadre(txtNombreMadre.Text, txtRutMadre.Text, txtEdadMadre.Text, cbEstudiosMadre, _
+        '                              txtTrabajaenMadre.Text, txtTelefonoMadre.Text, txtCargoMadre.Text, _
+        '                                      txtDireccionMadre.Text, txtCorreoMadre.Text) = True Then
+        'MessageBox.Show("Madre agregada")
+        'Else
+        'Exit Sub
+        'End If
 
 
     End Sub
@@ -489,5 +532,123 @@ Public Class FormularioMatricula
         If MessageBox.Show("¿Está seguro(a) de salir sin guardar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.Close()
         End If
+    End Sub
+
+    Private Sub checkpadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkpadre.CheckedChanged
+        While checkpadre.Checked = True
+
+            txtNombrePadre.Enabled = True
+            txtRutPadre.Enabled = True
+            txtEdadPadre.Enabled = True
+            cbEstudiosPadre.Enabled = True
+            txtEstudiosPadre.Enabled = True
+            txtTrabajaenPadre.Enabled = True
+            txtTelefonoPadre.Enabled = True
+            txtCargoPadre.Enabled = True
+            txtDireccionPadre.Enabled = True
+            txtCorreoPadre.Enabled = True
+            Exit While
+
+        End While
+
+        While checkpadre.Checked = False
+
+            txtNombrePadre.Enabled = False
+            txtRutPadre.Enabled = False
+            txtEdadPadre.Enabled = False
+            cbEstudiosPadre.Enabled = False
+            txtEstudiosPadre.Enabled = False
+            txtTrabajaenPadre.Enabled = False
+            txtTelefonoPadre.Enabled = False
+            txtCargoPadre.Enabled = False
+            txtDireccionPadre.Enabled = False
+            txtCorreoPadre.Enabled = False
+
+            txtNombrePadre.Text = ""
+            txtRutPadre.Text = ""
+            txtEdadPadre.Text = ""
+            cbEstudiosPadre.Text = ""
+            txtEstudiosPadre.Text = ""
+            txtTrabajaenPadre.Text = ""
+            txtTelefonoPadre.Text = ""
+            txtCargoPadre.Text = ""
+            txtDireccionPadre.Text = ""
+            txtCorreoPadre.Text = ""
+
+            Exit While
+
+        End While
+    End Sub
+
+    Private Sub checkmadre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkmadre.CheckedChanged
+
+        While checkmadre.Checked = True
+
+            txtNombreMadre.Enabled = True
+            txtRutMadre.Enabled = True
+            txtEdadMadre.Enabled = True
+            cbEstudiosMadre.Enabled = True
+            txtEstudiosMadre.Enabled = True
+            txtTrabajaenMadre.Enabled = True
+            txtTelefonoMadre.Enabled = True
+            txtCargoMadre.Enabled = True
+            txtDireccionMadre.Enabled = True
+            txtCorreoMadre.Enabled = True
+            Exit While
+
+        End While
+
+        While checkmadre.Checked = False
+
+            txtNombreMadre.Enabled = False
+            txtRutMadre.Enabled = False
+            txtEdadMadre.Enabled = False
+            cbEstudiosMadre.Enabled = False
+            txtEstudiosMadre.Enabled = False
+            txtTrabajaenMadre.Enabled = False
+            txtTelefonoMadre.Enabled = False
+            txtCargoMadre.Enabled = False
+            txtDireccionMadre.Enabled = False
+            txtCorreoMadre.Enabled = False
+
+            txtNombreMadre.Text = ""
+            txtRutMadre.Text = ""
+            txtEdadMadre.Text = ""
+            cbEstudiosMadre.Text = ""
+            txtEstudiosMadre.Text = ""
+            txtTrabajaenMadre.Text = ""
+            txtTelefonoMadre.Text = ""
+            txtCargoMadre.Text = ""
+            txtDireccionMadre.Text = ""
+            txtCorreoMadre.Text = ""
+
+            Exit While
+        End While
+    End Sub
+
+    Private Sub RadioButton9_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton9.CheckedChanged
+
+        While RadioButton9.Checked = True
+
+            txtNombreTutor.Text = txtNombrePadre.Text
+            txtRut.Text = txtRutPadre.Text
+            txtTelefonoTrabajo.Text = txtTelefonoPadre.Text
+            txtLugarDeTrabajo.Text = txtTrabajaenPadre.Text
+            txtOcupacionAct.Text = txtCargoPadre.Text
+            Exit While
+        End While
+    End Sub
+
+    Private Sub RadioButton13_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton13.CheckedChanged
+
+        While RadioButton13.Checked = True
+
+            txtNombreTutor.Text = txtNombreMadre.Text
+            txtRut.Text = txtRutMadre.Text
+            txtTelefonoTrabajo.Text = txtTelefonoMadre.Text
+            txtLugarDeTrabajo.Text = txtTrabajaenMadre.Text
+            txtOcupacionAct.Text = txtCargoMadre.Text
+            Exit While
+        End While
     End Sub
 End Class

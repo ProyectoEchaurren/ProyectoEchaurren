@@ -52,11 +52,9 @@ Module ModuloContenedor
             Dim consultaIngresoAlumn As String = "INSERT INTO `bd_echaurren`.`alumno` (`RutAlumno`, `NombreCompleto`, `ApePaterno`, `ApeMaterno`, `Sexo`, `FechaNac`, `Edad`, `Domicilio(calle)`, `SectorVilla`, `Comuna`, `Telefono`, `ColegioPresedencia`, `Curso`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`, `NumMatricula`, `FechaMatricula`) VALUES ('" & RunAlumno & "', '" & nombresAlumno & "', '" & apellidoPatAlumno & "', '" & apellidoMatAlumno & "', '" & SexoAlumno & "', '" & fechaNacimientoAlumno.Value.ToString("dd/MM/yyyy") & "', '" & EdadAlumno & "', '" & domicilioCalleAlumn & "', '" & sectorAlumno & "', '" & comunaAlumno & "', '" & telefAlumno & "', '" & colegioPrese & "', '" & curso & "', '" & cursosRepet & "', '" & becado & "', '" & hermanosCurso & "', '" & AlumnViveCon & "', '" & numHijos & "', '" & lugarHijos & "', '" & grupoFami & "', '" & anteMedicos & "', '350', '" & fechaMatricula.Value.ToString("dd/MM/yyyy") & "');"
             Dim _comando As New MySqlCommand(consultaIngresoAlumn, FormularioMatricula.varConexion)
             _comando.ExecuteNonQuery()
-            MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Return True
 
         Catch ex As Exception
-            MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End Try
 
@@ -69,10 +67,8 @@ Module ModuloContenedor
             Dim consultaServSalud As String = "INSERT INTO `bd_echaurren`.`servicio_por_alumno` (`Alumno_RutAlumno`, `Servicio_salud_idServicio_salud`, `Seguros`, `OtrosServicios`) VALUES ('" & FormularioMatricula.txtRutAlumno.Text & "', '" & servicioSalud & "', '" & seguros & "', '" & otroServicio & "');"
             Dim _comando1 As New MySqlCommand(consultaServSalud, FormularioMatricula.varConexion)
             _comando1.ExecuteNonQuery()
-            MessageBox.Show("Servicio salud ingresado")
             Return True
         Catch ex As Exception
-            MessageBox.Show("Error al ingresar servicio de salud", "Error")
             Return False
         End Try
 
@@ -117,10 +113,62 @@ Module ModuloContenedor
                 Return True
             End If
         Catch ex As Exception
-            MessageBox.Show("Error al ingresar contactos de emergencia")
+
             Return False
         End Try
 
     End Function
 
+    Public Function insertarPadre(ByRef nombrePadre As String, ByRef rutPadre As String, ByRef edadPadre As String, _
+                                   ByRef estudiosPadre As ComboBox, ByRef trabajaEnPadre As String, ByRef telefonoPadre As String, _
+                                   ByRef CargoPadre As String, ByRef direccionPadre As String, ByRef correoPadre As String) As Boolean
+
+        Dim consultaPadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`) VALUES ('" & telefonoPadre & "');"
+        Dim consultaPadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Edad`, `EstudiosCompletados`, `Correo electronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutPadre & "', '" & nombrePadre & "', '" & edadPadre & "', '" & estudiosPadre.Text & "', '" & correoPadre & "', '" & trabajaEnPadre & "', '" & CargoPadre & "', last_insert_id());"
+        Dim consultaPadre3 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionTrabajo`) VALUES ('" & direccionPadre & "');"
+        Dim consultaPadre4 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutPadre & "';"
+
+        Try
+            Dim _comando8 As New MySqlCommand(consultaPadre, FormularioMatricula.varConexion)
+            _comando8.ExecuteNonQuery()
+            Dim _comando9 As New MySqlCommand(consultaPadre2, FormularioMatricula.varConexion)
+            _comando9.ExecuteNonQuery()
+            Dim _comando10 As New MySqlCommand(consultaPadre3, FormularioMatricula.varConexion)
+            _comando10.ExecuteNonQuery()
+            Dim _comando11 As New MySqlCommand(consultaPadre4, FormularioMatricula.varConexion)
+            _comando11.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+
+    End Function
+
+    Public Function insertarMadre(ByRef nombreMadre As String, ByRef rutMadre As String, ByRef edadMadre As String, _
+                                   ByRef estudiosMadre As ComboBox, ByRef trabajaEnMadre As String, ByRef telefonoMadre As String, _
+                                   ByRef CargoMadre As String, ByRef direccionMadre As String, ByRef correoMadre As String) As Boolean
+
+
+        Dim consultaMadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`) VALUES ('" & telefonoMadre & "');"
+        Dim consultaMadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Edad`, `EstudiosCompletados`, `Correo electronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutMadre & "', '" & nombreMadre & "', '" & edadMadre & "', '" & estudiosMadre.Text & "', '" & correoMadre & "', '" & trabajaEnMadre & "', '" & CargoMadre & "', last_insert_id());"
+        Dim consultaMadre3 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionTrabajo`) VALUES ('" & direccionMadre & "');"
+        Dim consultaMadre4 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutMadre & "';"
+
+
+        Try
+            Dim _comando12 As New MySqlCommand(consultaMadre, FormularioMatricula.varConexion)
+            _comando12.ExecuteNonQuery()
+            Dim _comando13 As New MySqlCommand(consultaMadre2, FormularioMatricula.varConexion)
+            _comando13.ExecuteNonQuery()
+            Dim _comando14 As New MySqlCommand(consultaMadre3, FormularioMatricula.varConexion)
+            _comando14.ExecuteNonQuery()
+            Dim _comando15 As New MySqlCommand(consultaMadre4, FormularioMatricula.varConexion)
+            _comando15.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
 End Module
