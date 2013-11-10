@@ -1,6 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Module ModuloContenedor
+
+    Public ColumnaRutHistorico As String
+
     Public Function ComprobarRut(ByVal ElNumero As String) As Boolean
         Dim resultado As String
         Dim Multiplicador As Integer
@@ -74,6 +77,119 @@ Module ModuloContenedor
 
     End Function
 
+    Public Function FiltrarRut(ByRef rut As String) As String
+        Dim nombre As String
+        Dim becado As Boolean
+        Dim tipopago As String
+        Dim monto As Integer
+        Dim conn As New MySqlConnection("server=localhost;User Id=root;password=123456;database=bd_echaurren")
+        Try
+            Dim consultaRut As String = "SELECT NombreCompleto, Becado FROM `bd_echaurren`.`alumno` WHERE RutAlumno = '" & rut & "';"
+            Dim _comando1 As New MySqlCommand(consultaRut, conn)
+            _comando1.ExecuteNonQuery()
+            nombre = "NombreCompleto"
+            becado = "Becado"
+            tipopago = "alo"
+            monto = "123"
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("Alumno No Encontrado", "Error")
+            Return False
+        End Try
+
+        Return nombre
+        Return becado
+        Return tipopago
+        Return monto
+
+    End Function
+
+    Public Function CargarHistorico(ByRef dgv As DataGridView, ByRef rut As String)
+        Dim conn As New MySqlConnection("server=localhost;User Id=root;password=123456;database=bd_echaurren")
+        Dim adapter As New MySqlDataAdapter()
+        Dim dataSet As New DataSet
+        adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE RutAlumno = '" & rut & "'", conn)
+        adapter.Fill(dataSet)
+        dgv.DataSource = dataSet.Tables(0)
+
+    End Function
+
+    Public Function ComprobarFiltros(ByRef dgv As DataGridView, ByRef curso As ComboBox, ByRef porcentaje As ComboBox)
+        Dim conn As New MySqlConnection("server=localhost;User Id=root;password=123456;database=bd_echaurren")
+        Dim adapter As New MySqlDataAdapter()
+        Dim dataSet As New DataSet
+
+        If AdminMensualidades.cbFiltroCurso.Text <> "" Then
+            If AdminMensualidades.CheckBecado.Checked = True Then
+                If AdminMensualidades.cbPorcentaje.Text <> "" Then
+                    If AdminMensualidades.CheckPagado.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Estado = 'Pagado' and Curso = '" & curso.Text & "' and PorcentajeBeca = '" & porcentaje.Text & "'", conn)
+                    ElseIf AdminMensualidades.CheckAtrasado.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Estado = 'Atrasado' and Curso = '" & curso.Text & "' and PorcentajeBeca = '" & porcentaje.Text & "'", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Curso = '" & curso.Text & "' and PorcentajeBeca = '" & porcentaje.Text & "'", conn)
+                    End If
+                Else
+                    If AdminMensualidades.CheckPagado.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Estado = 'Pagado' and Curso = '" & curso.Text & "'", conn)
+                    ElseIf AdminMensualidades.CheckAtrasado.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Estado = 'Atrasado' and Curso = '" & curso.Text & "'", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Curso = '" & curso.Text & "'", conn)
+                    End If
+                End If
+            ElseIf AdminMensualidades.CheckNoBecado.Checked = True Then
+                If AdminMensualidades.CheckPagado.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 1 and Estado = 'Pagado' and Curso = '" & curso.Text & "'", conn)
+                ElseIf AdminMensualidades.CheckAtrasado.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 1 and Estado = 'Atrasado' and Curso = '" & curso.Text & "'", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 1 and Curso ='" & curso.Text & "'", conn)
+                End If
+            ElseIf AdminMensualidades.CheckPagado.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Estado = 'Pagado' and Curso = '" & curso.Text & "'", conn)
+            ElseIf AdminMensualidades.CheckAtrasado.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Estado = 'Atrasado' and Curso = '" & curso.Text & "'", conn)
+            Else
+                adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Curso = '" & curso.Text & "'", conn)
+            End If
+        ElseIf AdminMensualidades.CheckBecado.Checked = True Then
+            If AdminMensualidades.cbPorcentaje.Text <> "" Then
+                If AdminMensualidades.CheckPagado.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Estado = 'Pagado' and PorcentajeBeca = '" & porcentaje.Text & "'", conn)
+                ElseIf AdminMensualidades.CheckAtrasado.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Estado = 'Atrasado' and PorcentajeBeca = '" & porcentaje.Text & "'", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and PorcentajeBeca = '" & porcentaje.Text & "'", conn)
+                End If
+            Else
+                If AdminMensualidades.CheckPagado.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Estado = 'Pagado'", conn)
+                ElseIf AdminMensualidades.CheckAtrasado.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0 and Estado = 'Atrasado'", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 0", conn)
+                End If
+            End If
+        ElseIf AdminMensualidades.CheckNoBecado.Checked = True Then
+            If AdminMensualidades.CheckPagado.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 1 and Estado = 'Pagado'", conn)
+            ElseIf AdminMensualidades.CheckAtrasado.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 1 and Estado = 'Atrasado'", conn)
+            Else
+                adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Becado = 1", conn)
+            End If
+        ElseIf AdminMensualidades.CheckPagado.Checked = True Then
+            adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Estado = 'Pagado'", conn)
+        ElseIf AdminMensualidades.CheckAtrasado.Checked = True Then
+            adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad WHERE Estado = 'Atrasado'", conn)
+        Else
+            adapter.SelectCommand = New MySqlCommand("SELECT alumno.RutAlumno, NombreCompleto, ApePaterno, Curso, Becado, PorcentajeBeca, NombreMes, Monto, TipoPago, Estado from Alumno inner join Mensualidad", conn)
+        End If
+
+        adapter.Fill(dataSet)
+        dgv.DataSource = dataSet.Tables(0)
+    End Function
 
     Public Function ingresarContactEmergencia(ByRef nombreContacto1 As String, ByRef numContacto1 As String, _
                                               ByRef nombreContacto2 As String, ByRef numContacto2 As String, _
@@ -141,8 +257,6 @@ Module ModuloContenedor
         Catch ex As Exception
             Return False
         End Try
-
-
     End Function
 
     Public Function insertarMadre(ByRef nombreMadre As String, ByRef rutMadre As String, ByRef edadMadre As String, _

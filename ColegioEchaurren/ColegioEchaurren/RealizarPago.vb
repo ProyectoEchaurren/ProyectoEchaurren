@@ -13,6 +13,16 @@
                 MsgBox("El Rut ingresado no es valido")
                 txtCampoRut.Focus()
             Else
+                If ModuloContenedor.FiltrarRut(txtCampoRut.Text) = True Then
+                    txtNombre.Text = "campo"
+                    txtNombre.Text = "campo"
+                    txtBeca.Text = "campo"
+                    txtTipoPago.Text = "campo"
+                    txtPorcentaje.Text = "campo"
+                    txtMontoMensual.Text = "campo"
+                Else
+                    Exit Sub
+                End If
                 My.Computer.Keyboard.SendKeys("{tab}", True)
             End If
         End If
@@ -28,5 +38,4 @@
         txtMontoTotal.Text = ""
         txtCampoRut.Focus()
     End Sub
-
 End Class

@@ -24,15 +24,16 @@ Partial Class AdminMensualidades
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminMensualidades))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.labelPorcentaje = New System.Windows.Forms.Label()
+        Me.cbPorcentaje = New System.Windows.Forms.ComboBox()
+        Me.CheckAtrasado = New System.Windows.Forms.CheckBox()
+        Me.CheckPagado = New System.Windows.Forms.CheckBox()
+        Me.CheckNoBecado = New System.Windows.Forms.CheckBox()
+        Me.CheckBecado = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbFiltroCurso = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -44,64 +45,65 @@ Partial Class AdminMensualidades
         Me.DataGridView1.Size = New System.Drawing.Size(616, 378)
         Me.DataGridView1.TabIndex = 0
         '
-        'Label3
+        'labelPorcentaje
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Enabled = False
-        Me.Label3.Location = New System.Drawing.Point(672, 147)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 13)
-        Me.Label3.TabIndex = 27
-        Me.Label3.Text = "Porcentaje de beca"
+        Me.labelPorcentaje.AutoSize = True
+        Me.labelPorcentaje.Enabled = False
+        Me.labelPorcentaje.Location = New System.Drawing.Point(672, 147)
+        Me.labelPorcentaje.Name = "labelPorcentaje"
+        Me.labelPorcentaje.Size = New System.Drawing.Size(100, 13)
+        Me.labelPorcentaje.TabIndex = 27
+        Me.labelPorcentaje.Text = "Porcentaje de beca"
         '
-        'ComboBox2
+        'cbPorcentaje
         '
-        Me.ComboBox2.Enabled = False
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(662, 163)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 26
+        Me.cbPorcentaje.Enabled = False
+        Me.cbPorcentaje.FormattingEnabled = True
+        Me.cbPorcentaje.Items.AddRange(New Object() {"", "25%", "50%", "75%", "100%"})
+        Me.cbPorcentaje.Location = New System.Drawing.Point(662, 163)
+        Me.cbPorcentaje.Name = "cbPorcentaje"
+        Me.cbPorcentaje.Size = New System.Drawing.Size(121, 21)
+        Me.cbPorcentaje.TabIndex = 26
         '
-        'CheckBox4
+        'CheckAtrasado
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(729, 204)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(73, 17)
-        Me.CheckBox4.TabIndex = 25
-        Me.CheckBox4.Text = "Atrasados"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.CheckAtrasado.AutoSize = True
+        Me.CheckAtrasado.Location = New System.Drawing.Point(729, 204)
+        Me.CheckAtrasado.Name = "CheckAtrasado"
+        Me.CheckAtrasado.Size = New System.Drawing.Size(73, 17)
+        Me.CheckAtrasado.TabIndex = 25
+        Me.CheckAtrasado.Text = "Atrasados"
+        Me.CheckAtrasado.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'CheckPagado
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(646, 204)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(68, 17)
-        Me.CheckBox3.TabIndex = 24
-        Me.CheckBox3.Text = "Pagados"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.CheckPagado.AutoSize = True
+        Me.CheckPagado.Location = New System.Drawing.Point(646, 204)
+        Me.CheckPagado.Name = "CheckPagado"
+        Me.CheckPagado.Size = New System.Drawing.Size(68, 17)
+        Me.CheckPagado.TabIndex = 24
+        Me.CheckPagado.Text = "Pagados"
+        Me.CheckPagado.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'CheckNoBecado
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(729, 121)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(85, 17)
-        Me.CheckBox2.TabIndex = 23
-        Me.CheckBox2.Text = "No Becados"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.CheckNoBecado.AutoSize = True
+        Me.CheckNoBecado.Location = New System.Drawing.Point(729, 121)
+        Me.CheckNoBecado.Name = "CheckNoBecado"
+        Me.CheckNoBecado.Size = New System.Drawing.Size(85, 17)
+        Me.CheckNoBecado.TabIndex = 23
+        Me.CheckNoBecado.Text = "No Becados"
+        Me.CheckNoBecado.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'CheckBecado
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(646, 121)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(68, 17)
-        Me.CheckBox1.TabIndex = 22
-        Me.CheckBox1.Text = "Becados"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.CheckBecado.AutoSize = True
+        Me.CheckBecado.Location = New System.Drawing.Point(646, 121)
+        Me.CheckBecado.Name = "CheckBecado"
+        Me.CheckBecado.Size = New System.Drawing.Size(68, 17)
+        Me.CheckBecado.TabIndex = 22
+        Me.CheckBecado.Text = "Becados"
+        Me.CheckBecado.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -121,28 +123,39 @@ Partial Class AdminMensualidades
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Filtrar por Curso"
         '
-        'ComboBox1
+        'cbFiltroCurso
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(661, 42)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 19
+        Me.cbFiltroCurso.FormattingEnabled = True
+        Me.cbFiltroCurso.Items.AddRange(New Object() {"", "4to", "5to"})
+        Me.cbFiltroCurso.Location = New System.Drawing.Point(661, 42)
+        Me.cbFiltroCurso.Name = "cbFiltroCurso"
+        Me.cbFiltroCurso.Size = New System.Drawing.Size(121, 21)
+        Me.cbFiltroCurso.TabIndex = 19
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(662, 261)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(121, 49)
+        Me.Button1.TabIndex = 28
+        Me.Button1.Text = "Ver Historial de Pagos"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'AdminMensualidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(825, 402)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.CheckBox4)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.labelPorcentaje)
+        Me.Controls.Add(Me.cbPorcentaje)
+        Me.Controls.Add(Me.CheckAtrasado)
+        Me.Controls.Add(Me.CheckPagado)
+        Me.Controls.Add(Me.CheckNoBecado)
+        Me.Controls.Add(Me.CheckBecado)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cbFiltroCurso)
         Me.Controls.Add(Me.DataGridView1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdminMensualidades"
@@ -153,13 +166,14 @@ Partial Class AdminMensualidades
 
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents labelPorcentaje As System.Windows.Forms.Label
+    Friend WithEvents cbPorcentaje As System.Windows.Forms.ComboBox
+    Friend WithEvents CheckAtrasado As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckPagado As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckNoBecado As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBecado As System.Windows.Forms.CheckBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbFiltroCurso As System.Windows.Forms.ComboBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
