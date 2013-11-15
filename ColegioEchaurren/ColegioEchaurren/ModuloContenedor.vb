@@ -55,9 +55,11 @@ Module ModuloContenedor
             Dim consultaIngresoAlumn As String = "INSERT INTO `bd_echaurren`.`alumno` (`RutAlumno`, `NombreCompleto`, `ApePaterno`, `ApeMaterno`, `Sexo`, `FechaNac`, `Edad`, `Domicilio(calle)`, `SectorVilla`, `Comuna`, `Telefono`, `ColegioPresedencia`, `Curso`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`, `NumMatricula`, `FechaMatricula`) VALUES ('" & RunAlumno & "', '" & nombresAlumno & "', '" & apellidoPatAlumno & "', '" & apellidoMatAlumno & "', '" & SexoAlumno & "', '" & fechaNacimientoAlumno.Value.ToString("dd/MM/yyyy") & "', '" & EdadAlumno & "', '" & domicilioCalleAlumn & "', '" & sectorAlumno & "', '" & comunaAlumno & "', '" & telefAlumno & "', '" & colegioPrese & "', '" & curso & "', '" & cursosRepet & "', '" & becado & "', '" & hermanosCurso & "', '" & AlumnViveCon & "', '" & numHijos & "', '" & lugarHijos & "', '" & grupoFami & "', '" & anteMedicos & "', '350', '" & fechaMatricula.Value.ToString("dd/MM/yyyy") & "');"
             Dim _comando As New MySqlCommand(consultaIngresoAlumn, FormularioMatricula.varConexion)
             _comando.ExecuteNonQuery()
+            MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Return True
 
         Catch ex As Exception
+            MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End Try
 
@@ -70,8 +72,10 @@ Module ModuloContenedor
             Dim consultaServSalud As String = "INSERT INTO `bd_echaurren`.`servicio_por_alumno` (`Alumno_RutAlumno`, `Servicio_salud_idServicio_salud`, `Seguros`, `OtrosServicios`) VALUES ('" & FormularioMatricula.txtRutAlumno.Text & "', '" & servicioSalud & "', '" & seguros & "', '" & otroServicio & "');"
             Dim _comando1 As New MySqlCommand(consultaServSalud, FormularioMatricula.varConexion)
             _comando1.ExecuteNonQuery()
+            MessageBox.Show("Servicio salud ingresado")
             Return True
         Catch ex As Exception
+            MessageBox.Show("Error al ingresar servicio de salud", "Error")
             Return False
         End Try
 
@@ -229,7 +233,7 @@ Module ModuloContenedor
                 Return True
             End If
         Catch ex As Exception
-
+            MessageBox.Show("Error al ingresar contactos de emergencia")
             Return False
         End Try
 

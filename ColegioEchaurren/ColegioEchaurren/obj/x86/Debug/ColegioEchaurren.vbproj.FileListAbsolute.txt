@@ -34,3 +34,4 @@ C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaur
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AdminMensualidades.resources
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.HistorialdePagos.resources
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.RealizarPago.resources
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\ColegioEchaurren.exe.config

@@ -417,9 +417,7 @@ Public Class FormularioMatricula
                                          txtSectorAlumno.Text, txtCurso.Text, txtComunaAlumno.Text, txtTelefonoAlumno.Text, _
                                              txtColegioPrese.Text, txtCursosRepetidos.Text, varHermano, varViveCon, txtNumHijos.Text, _
                                               txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
-            MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
@@ -451,16 +449,13 @@ Public Class FormularioMatricula
 
 
         If ModuloContenedor.ingresarServSalud(servSalud, otroServSalud, txtSeguros.Text) = True Then
-            MessageBox.Show("Servicio salud ingresado")
         Else
-            MessageBox.Show("Error al ingresar servicio de salud", "Error")
             Exit Sub
         End If
 
         If ModuloContenedor.ingresarContactEmergencia(txtNombreContacto.Text, txtNumContacto.Text, txtNombreContacto2.Text, _
                                                       txtNumContacto2.Text, txtNombreContacto3.Text, txtNumContacto3.Text) = True Then
         Else
-            MessageBox.Show("Error al ingresar contactos de emergencia")
             Exit Sub
         End If
 
