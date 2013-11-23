@@ -51,8 +51,7 @@ Module ModuloContenedor
 
 
         Try
-
-            Dim consultaIngresoAlumn As String = "INSERT INTO `bd_echaurren`.`alumno` (`RutAlumno`, `NombreCompleto`, `ApePaterno`, `ApeMaterno`, `Sexo`, `FechaNac`, `Edad`, `Domicilio(calle)`, `SectorVilla`, `Comuna`, `Telefono`, `ColegioPresedencia`, `Curso`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`, `NumMatricula`, `FechaMatricula`) VALUES ('" & RunAlumno & "', '" & nombresAlumno & "', '" & apellidoPatAlumno & "', '" & apellidoMatAlumno & "', '" & SexoAlumno & "', '" & fechaNacimientoAlumno.Value.ToString("dd/MM/yyyy") & "', '" & EdadAlumno & "', '" & domicilioCalleAlumn & "', '" & sectorAlumno & "', '" & comunaAlumno & "', '" & telefAlumno & "', '" & colegioPrese & "', '" & curso & "', '" & cursosRepet & "', '" & becado & "', '" & hermanosCurso & "', '" & AlumnViveCon & "', '" & numHijos & "', '" & lugarHijos & "', '" & grupoFami & "', '" & anteMedicos & "', '350', '" & fechaMatricula.Value.ToString("dd/MM/yyyy") & "');"
+            Dim consultaIngresoAlumn As String = "INSERT INTO `bd_echaurren`.`alumno` (`RutAlumno`, `NombreCompleto`, `ApePaterno`, `ApeMaterno`, `Sexo`, `FechaNac`, `Edad`, `Domicilio`, `SectorVilla`, `Comuna`, `Telefono`, `ColegioPresedencia`, `Curso`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`, `NumMatricula`, `FechaMatricula`) VALUES ('" & RunAlumno & "', '" & nombresAlumno & "', '" & apellidoPatAlumno & "', '" & apellidoMatAlumno & "', '" & SexoAlumno & "', '" & fechaNacimientoAlumno.Value.ToString("dd/MM/yyyy") & "', '" & EdadAlumno & "', '" & domicilioCalleAlumn & "', '" & sectorAlumno & "', '" & comunaAlumno & "', '" & telefAlumno & "', '" & colegioPrese & "', '" & curso & "', '" & cursosRepet & "', '" & becado & "', '" & hermanosCurso & "', '" & AlumnViveCon & "', '" & numHijos & "', '" & lugarHijos & "', '" & grupoFami & "', '" & anteMedicos & "', '009', '" & fechaMatricula.Value.ToString("dd/MM/yyyy") & "');"
             Dim _comando As New MySqlCommand(consultaIngresoAlumn, FormularioMatricula.varConexion)
             _comando.ExecuteNonQuery()
             Return True
@@ -196,11 +195,12 @@ Module ModuloContenedor
                                               ByRef nombreContacto3 As String, ByRef numContacto3 As String) As Boolean
 
 
-        Dim consultaContactEmer1 As String = "INSERT INTO `bd_echaurren`.`contacto_emergencia` (`NombreContacto`, `Numero`, `Alumno_RutAlumno`) VALUES ('" & nombreContacto1 & "', '" & numContacto1 & "', '" & FormularioMatricula.txtRutAlumno.Text & "');"
-        Dim consultaContactEmer2 As String = "INSERT INTO `bd_echaurren`.`contacto_emergencia` (`NombreContacto`, `Numero`, `Alumno_RutAlumno`) VALUES ('" & nombreContacto2 & "', '" & numContacto2 & "', '" & FormularioMatricula.txtRutAlumno.Text & "');"
-        Dim consultaContactEmer3 As String = "INSERT INTO `bd_echaurren`.`contacto_emergencia` (`NombreContacto`, `Numero`, `Alumno_RutAlumno`) VALUES ('" & nombreContacto3 & "', '" & numContacto3 & "', '" & FormularioMatricula.txtRutAlumno.Text & "');"
-
         Try
+
+            Dim consultaContactEmer1 As String = "INSERT INTO `bd_echaurren`.`contacto_emergencia` (`NombreContacto`, `Numero`, `Alumno_RutAlumno`) VALUES ('" & nombreContacto1 & "', '" & numContacto1 & "', '" & FormularioMatricula.txtRutAlumno.Text & "');"
+            Dim consultaContactEmer2 As String = "INSERT INTO `bd_echaurren`.`contacto_emergencia` (`NombreContacto`, `Numero`, `Alumno_RutAlumno`) VALUES ('" & nombreContacto2 & "', '" & numContacto2 & "', '" & FormularioMatricula.txtRutAlumno.Text & "');"
+            Dim consultaContactEmer3 As String = "INSERT INTO `bd_echaurren`.`contacto_emergencia` (`NombreContacto`, `Numero`, `Alumno_RutAlumno`) VALUES ('" & nombreContacto3 & "', '" & numContacto3 & "', '" & FormularioMatricula.txtRutAlumno.Text & "');"
+
             If FormularioMatricula.ComboBox1.Text = "1 Contacto" Then
 
                 Dim _comando2 As New MySqlCommand(consultaContactEmer1, FormularioMatricula.varConexion)
@@ -239,12 +239,14 @@ Module ModuloContenedor
                                    ByRef estudiosPadre As ComboBox, ByRef trabajaEnPadre As String, ByRef telefonoPadre As String, _
                                    ByRef CargoPadre As String, ByRef direccionPadre As String, ByRef correoPadre As String) As Boolean
 
-        Dim consultaPadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`) VALUES ('" & telefonoPadre & "');"
-        Dim consultaPadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Edad`, `EstudiosCompletados`, `Correo electronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutPadre & "', '" & nombrePadre & "', '" & edadPadre & "', '" & estudiosPadre.Text & "', '" & correoPadre & "', '" & trabajaEnPadre & "', '" & CargoPadre & "', last_insert_id());"
-        Dim consultaPadre3 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionTrabajo`) VALUES ('" & direccionPadre & "');"
-        Dim consultaPadre4 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutPadre & "';"
-
+        
         Try
+
+            Dim consultaPadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`) VALUES ('" & telefonoPadre & "');"
+            Dim consultaPadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Edad`, `EstudiosCompletados`, `Correo electronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutPadre & "', '" & nombrePadre & "', '" & edadPadre & "', '" & estudiosPadre.Text & "', '" & correoPadre & "', '" & trabajaEnPadre & "', '" & CargoPadre & "', last_insert_id());"
+            Dim consultaPadre3 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionTrabajo`) VALUES ('" & direccionPadre & "');"
+            Dim consultaPadre4 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutPadre & "';"
+
             Dim _comando8 As New MySqlCommand(consultaPadre, FormularioMatricula.varConexion)
             _comando8.ExecuteNonQuery()
             Dim _comando9 As New MySqlCommand(consultaPadre2, FormularioMatricula.varConexion)
@@ -253,8 +255,10 @@ Module ModuloContenedor
             _comando10.ExecuteNonQuery()
             Dim _comando11 As New MySqlCommand(consultaPadre4, FormularioMatricula.varConexion)
             _comando11.ExecuteNonQuery()
+            MessageBox.Show("padre agregado")
             Return True
         Catch ex As Exception
+            MessageBox.Show("Error al ingresar padreeeeeeeeeeeeeeeeeeeee")
             Return False
         End Try
     End Function
@@ -264,13 +268,12 @@ Module ModuloContenedor
                                    ByRef CargoMadre As String, ByRef direccionMadre As String, ByRef correoMadre As String) As Boolean
 
 
-        Dim consultaMadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`) VALUES ('" & telefonoMadre & "');"
-        Dim consultaMadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Edad`, `EstudiosCompletados`, `Correo electronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutMadre & "', '" & nombreMadre & "', '" & edadMadre & "', '" & estudiosMadre.Text & "', '" & correoMadre & "', '" & trabajaEnMadre & "', '" & CargoMadre & "', last_insert_id());"
-        Dim consultaMadre3 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionTrabajo`) VALUES ('" & direccionMadre & "');"
-        Dim consultaMadre4 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutMadre & "';"
-
-
         Try
+            Dim consultaMadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`) VALUES ('" & telefonoMadre & "');"
+            Dim consultaMadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Edad`, `EstudiosCompletados`, `Correo electronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutMadre & "', '" & nombreMadre & "', '" & edadMadre & "', '" & estudiosMadre.Text & "', '" & correoMadre & "', '" & trabajaEnMadre & "', '" & CargoMadre & "', last_insert_id());"
+            Dim consultaMadre3 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionTrabajo`) VALUES ('" & direccionMadre & "');"
+            Dim consultaMadre4 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutMadre & "';"
+
             Dim _comando12 As New MySqlCommand(consultaMadre, FormularioMatricula.varConexion)
             _comando12.ExecuteNonQuery()
             Dim _comando13 As New MySqlCommand(consultaMadre2, FormularioMatricula.varConexion)
@@ -279,10 +282,153 @@ Module ModuloContenedor
             _comando14.ExecuteNonQuery()
             Dim _comando15 As New MySqlCommand(consultaMadre4, FormularioMatricula.varConexion)
             _comando15.ExecuteNonQuery()
+            MessageBox.Show("Madre agregada")
             Return True
         Catch ex As Exception
+            MessageBox.Show("Error al ingresar Madreeeeeeeeeeeeeeeeeeeee")
             Return False
         End Try
 
     End Function
+
+    Public Function insertarTutorEconomico(ByRef nombreTutor As String, ByRef rutTutor As String, ByRef telefono1 As String, _
+                                           ByRef telefono2 As String, ByRef telefTrabajo As String, ByRef domicilio As String, _
+                                           ByRef lugarTrabajo As String, ByRef ocupaActual As String, ByRef profesion As String) As Boolean
+
+        Try
+            Dim consultaTutor As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`, `Num2`, `NumTrabajo`) VALUES ('" & telefono1 & "', '" & telefono2 & "', '" & telefTrabajo & "');"
+            Dim consultaTuror2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Profesion`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutTutor & "', '" & nombreTutor & "', '" & profesion & "', '" & lugarTrabajo & " ', '" & ocupaActual & "', last_insert_id());"
+            Dim consultatutor3 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionParticular`) VALUES ('" & domicilio & "');"
+            Dim consultaTutor4 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutTutor & "';"
+
+            Dim comando16 As New MySqlCommand(consultaTutor, FormularioMatricula.varConexion)
+            comando16.ExecuteNonQuery()
+            Dim comando17 As New MySqlCommand(consultaTuror2, FormularioMatricula.varConexion)
+            comando17.ExecuteNonQuery()
+            Dim comando18 As New MySqlCommand(consultatutor3, FormularioMatricula.varConexion)
+            comando18.ExecuteNonQuery()
+            Dim comando19 As New MySqlCommand(consultaTutor4, FormularioMatricula.varConexion)
+            comando19.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("Erroooooooooooooooor al ingresaaaaaaaaaaaaaaaaaaaaar")
+            Return False
+        End Try
+
+    End Function
+
+    Public Function insertarResponsableCompleto(ByRef rutResponsable As String, ByRef nombreComleto As String, ByRef telefono1 As String, _
+                                                ByRef telefono2 As String, ByRef telefonoTrabajo As String, ByRef direccionPart As String, _
+                                               ByRef direccionTrab As String, ByRef edad As String, ByRef estudiosCompl As ComboBox, _
+                                               ByRef Correo As String, ByRef profesion As String, ByRef trabajo As String, _
+                                               ByRef cargo As String) As Boolean
+
+        Try
+            Dim consulta As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`, `Num2`, `NumTrabajo`) VALUES ('" & telefono1 & "', '" & telefono2 & "', '" & telefonoTrabajo & "');"
+            Dim consulta1 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Edad`, `EstudiosCompletados`, `Correo electronico`, `Profesion`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutResponsable & "', '" & nombreComleto & "', '" & edad & "', '" & estudiosCompl.Text & "', '" & Correo & "', '" & profesion & "', '" & trabajo & "', '" & cargo & "', last_insert_id());"
+            Dim consulta2 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionParticular`, `DireccionTrabajo`) VALUES ('" & direccionPart & "', '" & direccionTrab & "');"
+            Dim consulta3 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutResponsable & "';"
+
+            Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+            comando.ExecuteNonQuery()
+            Dim comando1 As New MySqlCommand(consulta1, FormularioMatricula.varConexion)
+            comando1.ExecuteNonQuery()
+            Dim comando2 As New MySqlCommand(consulta2, FormularioMatricula.varConexion)
+            comando2.ExecuteNonQuery()
+            Dim comando3 As New MySqlCommand(consulta3, FormularioMatricula.varConexion)
+            comando3.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("Erroooooooooooooooor al ingresaaaaar responsable completo")
+            Return False
+        End Try
+
+    End Function
+
+    Public Function insertarAlumno_respons(ByRef rutResponsable As String, ByRef rutAlumno As String, ByRef tipoResp As String, _
+                                           ByRef apoderado As Integer, ByRef apodSuplente As Integer) As Boolean
+
+        Try
+            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "');"
+            Dim _comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+            _comando.ExecuteNonQuery()
+            MessageBox.Show("relacion responsable - alumno exitosa")
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("error al relacionar responsable - alumno")
+            Return False
+        End Try
+
+    End Function
+
+    Public Function insertarAlumno_respons_tutor(ByRef rutResponsable As String, ByRef rutAlumno As String, ByRef tipoResp As String, _
+                                           ByRef apoderado As Integer, ByRef apodSuplente As Integer, _
+                                           ByRef OtroTutor As String) As Boolean
+
+        Try
+            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Otro_tutor`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & OtroTutor & "');"
+            Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+            comando.ExecuteNonQuery()
+            MessageBox.Show("relacion responsable, tutor - alumno exitosa")
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("error al relacionar responsable, tutor - alumno")
+            Return False
+        End Try
+    End Function
+
+
+
+    Public Function insertarOtroApod(ByRef rutOtroApod As String, ByRef rutAlumno As String, ByRef apoderado As Integer, _
+                                     ByRef apodSuplente As Integer, ByRef nombreOtroResp As String) As Boolean
+
+        Try
+
+            Dim tipoResp As String = "tr4"
+            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`) VALUES ('" & rutOtroApod & "', '" & nombreOtroResp & "');"
+            Dim consulta1 As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`) VALUES ('" & rutOtroApod & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "');"
+
+            Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+            comando.ExecuteNonQuery()
+            Dim comando2 As New MySqlCommand(consulta1, FormularioMatricula.varConexion)
+            comando2.ExecuteNonQuery()
+            MessageBox.Show("SE INGRESO OTRO APOD SUPLENTE")
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("ERROR AL INGRESO OTRO APOD SUPLENTE")
+            Return False
+        End Try
+
+    End Function
+
+
+    Public Sub cambiarNombreColumnas()
+
+        FormAlumnosMatriculados.DataGridView1.Columns(0).HeaderText = "Rut alumno"
+        FormAlumnosMatriculados.DataGridView1.Columns(1).HeaderText = "Nombre completo"
+        FormAlumnosMatriculados.DataGridView1.Columns(2).HeaderText = "Apellido Paterno"
+        FormAlumnosMatriculados.DataGridView1.Columns(3).HeaderText = "Apellido Materno"
+        FormAlumnosMatriculados.DataGridView1.Columns(4).HeaderText = "Sexo"
+        FormAlumnosMatriculados.DataGridView1.Columns(5).HeaderText = "Fecha de Nacimiento"
+        FormAlumnosMatriculados.DataGridView1.Columns(6).HeaderText = "Edad"
+        FormAlumnosMatriculados.DataGridView1.Columns(7).HeaderText = "Domicilio"
+        FormAlumnosMatriculados.DataGridView1.Columns(8).HeaderText = "Sector o villa"
+        FormAlumnosMatriculados.DataGridView1.Columns(9).HeaderText = "Comuna"
+        FormAlumnosMatriculados.DataGridView1.Columns(10).HeaderText = "Telefono"
+        FormAlumnosMatriculados.DataGridView1.Columns(11).HeaderText = "Colegio de presedencia"
+        FormAlumnosMatriculados.DataGridView1.Columns(12).HeaderText = "Curso"
+        FormAlumnosMatriculados.DataGridView1.Columns(13).HeaderText = "Cursos repetidos"
+        FormAlumnosMatriculados.DataGridView1.Columns(14).HeaderText = "Becado"
+        FormAlumnosMatriculados.DataGridView1.Columns(15).HeaderText = "Porcentaje de beca"
+        FormAlumnosMatriculados.DataGridView1.Columns(16).HeaderText = "Hermanos en establecimiento"
+        FormAlumnosMatriculados.DataGridView1.Columns(17).HeaderText = "Convivencia de alumno"
+        FormAlumnosMatriculados.DataGridView1.Columns(18).HeaderText = "Numero de hermanos"
+        FormAlumnosMatriculados.DataGridView1.Columns(19).HeaderText = "Lugar que ocupa entre hermanos"
+        FormAlumnosMatriculados.DataGridView1.Columns(20).HeaderText = "Cantidad de grupo familiar"
+        FormAlumnosMatriculados.DataGridView1.Columns(21).HeaderText = "Antecentes Medicos"
+        FormAlumnosMatriculados.DataGridView1.Columns(22).HeaderText = "Numero de matricula"
+        FormAlumnosMatriculados.DataGridView1.Columns(23).HeaderText = "Fecha de matricula"
+
+
+    End Sub
 End Module

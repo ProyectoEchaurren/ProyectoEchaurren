@@ -250,6 +250,11 @@ Partial Class FormularioMatricula
         Me.Label106 = New System.Windows.Forms.Label()
         Me.Label105 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.txtRutOtroApodSuple = New System.Windows.Forms.TextBox()
+        Me.txtRutOtroApod = New System.Windows.Forms.TextBox()
+        Me.checkIguales = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -1133,6 +1138,11 @@ Partial Class FormularioMatricula
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TabPage1.Controls.Add(Me.checkIguales)
+        Me.TabPage1.Controls.Add(Me.txtRutOtroApod)
+        Me.TabPage1.Controls.Add(Me.txtRutOtroApodSuple)
+        Me.TabPage1.Controls.Add(Me.Label37)
+        Me.TabPage1.Controls.Add(Me.Label36)
         Me.TabPage1.Controls.Add(Me.checkmadre)
         Me.TabPage1.Controls.Add(Me.checkpadre)
         Me.TabPage1.Controls.Add(Me.Button4)
@@ -1292,7 +1302,7 @@ Partial Class FormularioMatricula
         Me.txtNombreApoderado.Enabled = False
         Me.txtNombreApoderado.Location = New System.Drawing.Point(234, 469)
         Me.txtNombreApoderado.Name = "txtNombreApoderado"
-        Me.txtNombreApoderado.Size = New System.Drawing.Size(413, 20)
+        Me.txtNombreApoderado.Size = New System.Drawing.Size(151, 20)
         Me.txtNombreApoderado.TabIndex = 255
         '
         'cbEstudiosMadre
@@ -1635,7 +1645,7 @@ Partial Class FormularioMatricula
         Me.txtNombreApodSuplent.Enabled = False
         Me.txtNombreApodSuplent.Location = New System.Drawing.Point(234, 536)
         Me.txtNombreApodSuplent.Name = "txtNombreApodSuplent"
-        Me.txtNombreApodSuplent.Size = New System.Drawing.Size(413, 20)
+        Me.txtNombreApodSuplent.Size = New System.Drawing.Size(151, 20)
         Me.txtNombreApodSuplent.TabIndex = 213
         '
         'Label69
@@ -2436,6 +2446,50 @@ Partial Class FormularioMatricula
         Me.Label103.TabIndex = 4
         Me.Label103.Text = "COMPROBANTE DE DOCUMENTOS EN CARTERA"
         '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(397, 472)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(30, 13)
+        Me.Label36.TabIndex = 264
+        Me.Label36.Text = "RUT"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(397, 539)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(30, 13)
+        Me.Label37.TabIndex = 265
+        Me.Label37.Text = "RUT"
+        '
+        'txtRutOtroApodSuple
+        '
+        Me.txtRutOtroApodSuple.Enabled = False
+        Me.txtRutOtroApodSuple.Location = New System.Drawing.Point(436, 536)
+        Me.txtRutOtroApodSuple.Name = "txtRutOtroApodSuple"
+        Me.txtRutOtroApodSuple.Size = New System.Drawing.Size(151, 20)
+        Me.txtRutOtroApodSuple.TabIndex = 266
+        '
+        'txtRutOtroApod
+        '
+        Me.txtRutOtroApod.Enabled = False
+        Me.txtRutOtroApod.Location = New System.Drawing.Point(436, 469)
+        Me.txtRutOtroApod.Name = "txtRutOtroApod"
+        Me.txtRutOtroApod.Size = New System.Drawing.Size(151, 20)
+        Me.txtRutOtroApod.TabIndex = 267
+        '
+        'checkIguales
+        '
+        Me.checkIguales.AutoSize = True
+        Me.checkIguales.Location = New System.Drawing.Point(400, 444)
+        Me.checkIguales.Name = "checkIguales"
+        Me.checkIguales.Size = New System.Drawing.Size(273, 17)
+        Me.checkIguales.TabIndex = 268
+        Me.checkIguales.Text = "Apoderado y suplente iguales (marcar solo si es otro)"
+        Me.checkIguales.UseVisualStyleBackColor = True
+        '
         'FormularioMatricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2702,4 +2756,9 @@ Partial Class FormularioMatricula
     Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
     Friend WithEvents checkmadre As System.Windows.Forms.CheckBox
     Friend WithEvents checkpadre As System.Windows.Forms.CheckBox
+    Friend WithEvents txtRutOtroApod As System.Windows.Forms.TextBox
+    Friend WithEvents txtRutOtroApodSuple As System.Windows.Forms.TextBox
+    Friend WithEvents Label37 As System.Windows.Forms.Label
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents checkIguales As System.Windows.Forms.CheckBox
 End Class

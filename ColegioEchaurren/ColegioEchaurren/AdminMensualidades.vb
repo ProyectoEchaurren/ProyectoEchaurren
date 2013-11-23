@@ -53,4 +53,5 @@
         ColumnaRutHistorico = (DataGridView1.Rows(e.RowIndex).Cells(0).Value)
         HistorialdePagos.Show()
     End Sub
+
 End Class

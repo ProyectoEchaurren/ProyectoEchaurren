@@ -277,18 +277,22 @@ Public Class FormularioMatricula
     Private Sub ComboBox12_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbApoderado.SelectedIndexChanged
         If cbApoderado.SelectedIndex = "3" Then
             txtNombreApoderado.Enabled = True
+            txtRutOtroApod.Enabled = True
             txtNombreApoderado.Focus()
         Else
             txtNombreApoderado.Enabled = False
+            txtRutOtroApod.Enabled = False
         End If
     End Sub
 
     Private Sub ComboBox13_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbApoSuplente.SelectedIndexChanged
         If cbApoSuplente.SelectedIndex = "3" Then
             txtNombreApodSuplent.Enabled = True
+            txtRutOtroApodSuple.Enabled = True
             txtNombreApodSuplent.Focus()
         Else
             txtNombreApodSuplent.Enabled = False
+            txtRutOtroApodSuple.Enabled = False
         End If
     End Sub
 
@@ -387,7 +391,19 @@ Public Class FormularioMatricula
         Dim becado As Integer
         Dim servSalud As String = ""
         Dim otroServSalud As String = ""
-        '
+        Dim varApoderadoPadre As Integer = 0
+        Dim varApoderadoSuplePadre As Integer = 0
+        Dim varApoderadoMadre As Integer = 0
+        Dim varApoderadoSupleMadre As Integer = 0
+        Dim varResponsablePadre As String = "tr1"
+        Dim varResponsableMadre As String = "tr2"
+        Dim varResponsableTutor As String = "tr3"
+        Dim varapoderadoOtro As Integer = 0
+        Dim varApoderadoSupleOtro As Integer = 0
+        Dim varTutor As Integer = 0
+        Dim varTutor2 As Integer = 0
+
+
         If CheckBox1.Checked = False Then
             becado = 0
         ElseIf CheckBox1.Checked = True Then
@@ -414,15 +430,14 @@ Public Class FormularioMatricula
 
         If ModuloContenedor.ingresarAlumno(DateTimePicker1, becado, txtApePatAlumno.Text, txtApeMatAlumno.Text, txtNombresAlumno.Text, _
                                       txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
-                                         txtSectorAlumno.Text, txtCurso.Text, txtComunaAlumno.Text, txtTelefonoAlumno.Text, _
-                                             txtColegioPrese.Text, txtCursosRepetidos.Text, varHermano, varViveCon, txtNumHijos.Text, _
-                                              txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
+                                               txtSectorAlumno.Text, txtCurso.Text, txtComunaAlumno.Text, txtTelefonoAlumno.Text, _
+                                                   txtColegioPrese.Text, txtCursosRepetidos.Text, varHermano, varViveCon, txtNumHijos.Text, _
+                                                      txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
             MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
-
 
         If comboServSalud.Text = "masvida" Then
             servSalud = "ss0"
@@ -464,22 +479,105 @@ Public Class FormularioMatricula
             Exit Sub
         End If
 
-        '   If ModuloContenedor.insertarPadre(txtNombrePadre.Text, txtRutPadre.Text, txtEdadPadre.Text, cbEstudiosPadre, _
-        '                                    txtTrabajaenPadre.Text, txtTelefonoPadre.Text, txtCargoPadre.Text, _
-        '                                      txtDireccionPadre.Text, txtCorreoPadre.Text) = True Then
-        'MessageBox.Show("padre agregado")
-        'Else
-        'Exit Sub
-        'End If
+        '==============================================================================================
+        '==============================================================================================0
+        '==============================================================================================0
 
-        ' If ModuloContenedor.insertarMadre(txtNombreMadre.Text, txtRutMadre.Text, txtEdadMadre.Text, cbEstudiosMadre, _
-        '                              txtTrabajaenMadre.Text, txtTelefonoMadre.Text, txtCargoMadre.Text, _
-        '                                      txtDireccionMadre.Text, txtCorreoMadre.Text) = True Then
-        'MessageBox.Show("Madre agregada")
-        'Else
-        'Exit Sub
-        'End If
+        If cbApoderado.Text = "Padre" Then
+            varApoderadoPadre = 1
+        ElseIf cbApoderado.Text = "Madre" Then
+            varApoderadoMadre = 1
+        ElseIf cbApoderado.Text = "Otro" Then
+        End If
 
+        If cbApoSuplente.Text = "Padre" Then
+            varApoderadoSuplePadre = 1
+        ElseIf cbApoSuplente.Text = "Madre" Then
+            varApoderadoSupleMadre = 1
+        ElseIf cbApoSuplente.Text = "Otro" Then
+        End If
+
+        If checkpadre.Checked = True And RadioButton9.Checked = True Then
+
+            ModuloContenedor.insertarResponsableCompleto(txtRut.Text, txtNombreTutor.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
+                                                         txtTelefonoTrabajo.Text, txtDomicilio.Text, txtDireccionPadre.Text, _
+                                                         txtEdadPadre.Text, cbEstudiosPadre, txtCorreoPadre.Text, txtProfesion.Text, _
+                                                         txtLugarDeTrabajo.Text, txtOcupacionAct.Text)
+            ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsablePadre, varApoderadoPadre, _
+                                                     varApoderadoSuplePadre)
+            ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoPadre, _
+                                                     varApoderadoSuplePadre)
+        End If
+
+        If checkmadre.Checked = True And RadioButton13.Checked = True Then
+
+            ModuloContenedor.insertarResponsableCompleto(txtRut.Text, txtNombreTutor.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
+                                                         txtTelefonoTrabajo.Text, txtDomicilio.Text, txtDireccionMadre.Text, _
+                                                         txtEdadMadre.Text, cbEstudiosMadre, txtCorreoMadre.Text, txtProfesion.Text, _
+                                                         txtLugarDeTrabajo.Text, txtOcupacionAct.Text)
+            ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
+                                                    varApoderadoSupleMadre)
+            ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoMadre, _
+                                                    varApoderadoSupleMadre)
+        End If
+
+        If checkpadre.Checked = True And RadioButton9.Checked = False Then
+
+            ModuloContenedor.insertarPadre(txtNombrePadre.Text, txtRutPadre.Text, txtEdadPadre.Text, cbEstudiosPadre, _
+                                             txtTrabajaenPadre.Text, txtTelefonoPadre.Text, txtCargoPadre.Text, _
+                                            txtDireccionPadre.Text, txtCorreoPadre.Text)
+            ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsablePadre, varApoderadoPadre, _
+                                                   varApoderadoSuplePadre)
+        End If
+
+        If checkmadre.Checked = True And RadioButton13.Checked = False Then
+
+            ModuloContenedor.insertarMadre(txtNombreMadre.Text, txtRutMadre.Text, txtEdadMadre.Text, cbEstudiosMadre, _
+                                            txtTrabajaenMadre.Text, txtTelefonoMadre.Text, txtCargoMadre.Text, _
+                                            txtDireccionMadre.Text, txtCorreoMadre.Text)
+            ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
+                                                    varApoderadoSupleMadre)
+
+        End If
+
+        If checkIguales.Checked = True Then
+            varapoderadoOtro = 1
+            varApoderadoSupleOtro = 1
+            ModuloContenedor.insertarOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                          txtNombreApodSuplent.Text)
+
+        ElseIf cbApoderado.Text = "Otro" And cbApoSuplente.Text = "Otro" Then
+            varapoderadoOtro = 1
+            varApoderadoSupleOtro = 0
+            ModuloContenedor.insertarOtroApod(txtRutOtroApod.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                          txtNombreApoderado.Text)
+            varapoderadoOtro = 0
+            varApoderadoSupleOtro = 1
+            ModuloContenedor.insertarOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                          txtNombreApodSuplent.Text)
+
+        ElseIf checkIguales.Checked = False And cbApoderado.Text = "Otro" Then
+            varapoderadoOtro = 1
+            varApoderadoSupleOtro = 0
+            ModuloContenedor.insertarOtroApod(txtRutOtroApod.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                          txtNombreApoderado.Text)
+
+        ElseIf checkIguales.Checked = False And cbApoSuplente.Text = "Otro" Then
+            varapoderadoOtro = 0
+            varApoderadoSupleOtro = 1
+            ModuloContenedor.insertarOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                          txtNombreApodSuplent.Text)
+        End If
+
+
+        If RadioButton14.Checked = True And RadioButton9.Checked = False And RadioButton13.Checked = False Then
+
+            ModuloContenedor.insertarTutorEconomico(txtNombreTutor.Text, txtRut.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
+                                                txtTelefonoTrabajo.Text, txtDomicilio.Text, txtLugarDeTrabajo.Text, _
+                                                    txtOcupacionAct.Text, txtProfesion.Text)
+            ModuloContenedor.insertarAlumno_respons_tutor(txtRut.Text, txtRutAlumno.Text, varResponsableTutor, varTutor, _
+                                                      varTutor2, txtOtro.Text)
+        End If
 
     End Sub
 
@@ -648,6 +746,23 @@ Public Class FormularioMatricula
             txtTelefonoTrabajo.Text = txtTelefonoMadre.Text
             txtLugarDeTrabajo.Text = txtTrabajaenMadre.Text
             txtOcupacionAct.Text = txtCargoMadre.Text
+            Exit While
+        End While
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkIguales.CheckedChanged
+
+        While checkIguales.Checked = True
+
+            txtNombreApodSuplent.Text = txtNombreApoderado.Text
+            txtRutOtroApodSuple.Text = txtRutOtroApod.Text
+            Exit While
+        End While
+
+        While checkIguales.Checked = False
+
+            txtNombreApodSuplent.Text = ""
+            txtRutOtroApodSuple.Text = ""
             Exit While
         End While
     End Sub
