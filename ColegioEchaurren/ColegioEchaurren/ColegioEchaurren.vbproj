@@ -57,6 +57,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -83,10 +84,22 @@
     <Compile Include="AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AdminBecas.Designer.vb">
+      <DependentUpon>AdminBecas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminBecas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AdminMensualidades.Designer.vb">
       <DependentUpon>AdminMensualidades.vb</DependentUpon>
     </Compile>
     <Compile Include="AdminMensualidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleInfoAlumno.Designer.vb">
+      <DependentUpon>DetalleInfoAlumno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleInfoAlumno.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -147,8 +160,14 @@
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminBecas.resx">
+      <DependentUpon>AdminBecas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminMensualidades.resx">
       <DependentUpon>AdminMensualidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleInfoAlumno.resx">
+      <DependentUpon>DetalleInfoAlumno.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

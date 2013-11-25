@@ -33,6 +33,7 @@ Partial Class Form1
         Me.TransferenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlumnosMatriculadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdministrarBecasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecursosHumanosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -98,7 +99,7 @@ Partial Class Form1
         '
         'AdministracionToolStripMenuItem
         '
-        Me.AdministracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlumnosMatriculadosToolStripMenuItem})
+        Me.AdministracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlumnosMatriculadosToolStripMenuItem, Me.AdministrarBecasToolStripMenuItem})
         Me.AdministracionToolStripMenuItem.Enabled = False
         Me.AdministracionToolStripMenuItem.Name = "AdministracionToolStripMenuItem"
         Me.AdministracionToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
@@ -109,6 +110,12 @@ Partial Class Form1
         Me.AlumnosMatriculadosToolStripMenuItem.Name = "AlumnosMatriculadosToolStripMenuItem"
         Me.AlumnosMatriculadosToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.AlumnosMatriculadosToolStripMenuItem.Text = "Alumnos matriculados"
+        '
+        'AdministrarBecasToolStripMenuItem
+        '
+        Me.AdministrarBecasToolStripMenuItem.Name = "AdministrarBecasToolStripMenuItem"
+        Me.AdministrarBecasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.AdministrarBecasToolStripMenuItem.Text = "Administrar Becas"
         '
         'RecursosHumanosToolStripMenuItem
         '
@@ -175,5 +182,6 @@ Partial Class Form1
     Friend WithEvents RecursosHumanosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AlumnosMatriculadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RealizarPagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AdministrarBecasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

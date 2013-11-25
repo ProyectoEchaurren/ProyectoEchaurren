@@ -1,4 +1,7 @@
-﻿Public Class RealizarPago
+﻿Imports MySql.Data.MySqlClient
+
+Public Class RealizarPago
+
     Private Sub txtCampoRut_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtCampoRut.KeyPress
         If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
@@ -7,22 +10,11 @@
         End If
         If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
             e.Handled = True
-
-            ComprobarRut(txtCampoRut.Text)
             If ComprobarRut(txtCampoRut.Text) = False Then
                 MsgBox("El Rut ingresado no es valido")
                 txtCampoRut.Focus()
             Else
-                If ModuloContenedor.FiltrarRut(txtCampoRut.Text) = True Then
-                    txtNombre.Text = "campo"
-                    txtNombre.Text = "campo"
-                    txtBeca.Text = "campo"
-                    txtTipoPago.Text = "campo"
-                    txtPorcentaje.Text = "campo"
-                    txtMontoMensual.Text = "campo"
-                Else
-                    Exit Sub
-                End If
+                BuscarRutRealizarPago(txtCampoRut.Text)
                 My.Computer.Keyboard.SendKeys("{tab}", True)
             End If
         End If
@@ -37,5 +29,9 @@
         txtMontoMensual.Text = ""
         txtMontoTotal.Text = ""
         txtCampoRut.Focus()
+    End Sub
+
+    Private Sub RealizarPago_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

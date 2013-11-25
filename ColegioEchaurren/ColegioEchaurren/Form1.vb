@@ -1,8 +1,7 @@
 ﻿Public Class Form1
 
-    Private Sub FinanzasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FinanzasToolStripMenuItem.Click
-
-    End Sub
+    Public ColumnaRutHistorico As String
+    Public FichaPersonalAlumno As String
 
     Private Sub LoginToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoginToolStripMenuItem.Click
         If LoginToolStripMenuItem.Text = "Iniciar Sesión" Then
@@ -49,5 +48,10 @@
     Private Sub RegistroDeMensualidadesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RegistroDeMensualidadesToolStripMenuItem.Click
         AdminMensualidades.MdiParent = Me
         AdminMensualidades.Show()
+    End Sub
+
+    Private Sub AdministrarBecasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AdministrarBecasToolStripMenuItem.Click
+        AdminBecas.MdiParent = Me
+        AdminBecas.Show()
     End Sub
 End Class

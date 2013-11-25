@@ -271,9 +271,9 @@ Partial Class RealizarPago
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(211, 72)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(71, 13)
+        Me.Label3.Size = New System.Drawing.Size(97, 13)
         Me.Label3.TabIndex = 42
-        Me.Label3.Text = "Estado Beca:"
+        Me.Label3.Text = "Estado de la Beca:"
         '
         'Label2
         '

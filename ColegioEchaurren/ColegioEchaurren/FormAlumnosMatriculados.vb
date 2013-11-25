@@ -29,6 +29,9 @@ Public Class FormAlumnosMatriculados
             cbBuscarServSalud.DataSource = _dataSet.Tables(0)
             cbBuscarServSalud.ValueMember = "idServicio_salud"
             cbBuscarServSalud.DisplayMember = "PlanSalud"
+            If cbBuscarServSalud.SelectedIndex = 0 Then
+                cbBuscarServSalud.Text = ""
+            End If
         Catch ex As Exception
             MessageBox.Show("Error al cargar servicios de salud", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -43,12 +46,99 @@ Public Class FormAlumnosMatriculados
         End Try
 
         ModuloContenedor.cambiarNombreColumnas()
-
-
+        
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
         Me.Close()
     End Sub
 
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        txtRutAlumno.Text = ""
+        txtNombre.Text = ""
+        txtApePaterno.Text = ""
+        txtEdad.Text = ""
+        cbbCurso.Text = ""
+        cbBuscarServSalud.Text = ""
+        cbBecados.Checked = False
+        cbNoBecados.Checked = False
+        cbbPorcentaje.Text = ""
+        txtRutAlumno.Focus()
+        ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+    End Sub
+
+    Private Sub txtRutAlumno_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutAlumno.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+            ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+        End If
+    End Sub
+
+    Private Sub txtNombre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtNombre.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+            ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+        End If
+    End Sub
+
+    Private Sub cbBecados_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles cbBecados.CheckedChanged
+        If cbBecados.Checked = True Then
+            cbNoBecados.Checked = False
+            cbbPorcentaje.Enabled = True
+            labelPorcentaje.Enabled = True
+        Else
+            cbbPorcentaje.SelectedIndex = 0
+            cbbPorcentaje.Enabled = False
+            labelPorcentaje.Enabled = False
+        End If
+        ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+    End Sub
+
+    Private Sub cbNoBecados_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles cbNoBecados.CheckedChanged
+        If cbNoBecados.Checked = True Then
+            cbBecados.Checked = False
+            cbbPorcentaje.SelectedIndex = 0
+            cbbPorcentaje.Enabled = False
+            labelPorcentaje.Enabled = False
+        End If
+        ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+    End Sub
+
+    Private Sub txtApePaterno_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtApePaterno.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+            ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+        End If
+    End Sub
+
+    Private Sub txtEdad_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdad.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+            ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+        End If
+    End Sub
+
+    Private Sub cbbCurso_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbbCurso.SelectedIndexChanged
+        ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+    End Sub
+
+    Private Sub cbBuscarServSalud_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbBuscarServSalud.SelectedIndexChanged
+        ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+    End Sub
+
+    Private Sub cbbPorcentaje_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbbPorcentaje.SelectedIndexChanged
+        ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+    End Sub
+
+    Private Sub btnFichaPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnFichaPersonal.Click
+        If Form1.FichaPersonalAlumno = "" Then
+            MsgBox("Primero debe selecionar un Alumno(a) para ver su ficha personal", MsgBoxStyle.Information, AcceptButton)
+        Else
+            DetalleInfoAlumno.Show()
+        End If
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Form1.FichaPersonalAlumno = (DataGridView1.Rows(e.RowIndex).Cells(0).Value)
+    End Sub
 End Class

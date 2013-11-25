@@ -50,7 +50,7 @@
     End Sub
 
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
-        ColumnaRutHistorico = (DataGridView1.Rows(e.RowIndex).Cells(0).Value)
+        Form1.ColumnaRutHistorico = (DataGridView1.Rows(e.RowIndex).Cells(0).Value)
         HistorialdePagos.Show()
     End Sub
 
