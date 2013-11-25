@@ -23,14 +23,14 @@ Partial Class DetalleInfoAlumno
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.txtTrabajoMadre = New System.Windows.Forms.TextBox()
+        Me.txtNombreMadre = New System.Windows.Forms.TextBox()
+        Me.txtRutMadre = New System.Windows.Forms.TextBox()
+        Me.txtEdadMadre = New System.Windows.Forms.TextBox()
+        Me.txtFonoMadre = New System.Windows.Forms.TextBox()
+        Me.txtDireccionMadre = New System.Windows.Forms.TextBox()
+        Me.txtCargoMadre = New System.Windows.Forms.TextBox()
+        Me.txtEstudiosMadre = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -40,14 +40,14 @@ Partial Class DetalleInfoAlumno
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.txtFonoPadre = New System.Windows.Forms.TextBox()
+        Me.txtRutPadre = New System.Windows.Forms.TextBox()
+        Me.txtTrabajoPadre = New System.Windows.Forms.TextBox()
+        Me.txtCargoPadre = New System.Windows.Forms.TextBox()
+        Me.txtEstudiosPadre = New System.Windows.Forms.TextBox()
+        Me.txtDireccionPadre = New System.Windows.Forms.TextBox()
+        Me.txtEdadPadre = New System.Windows.Forms.TextBox()
+        Me.txtNombrePadre = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -57,14 +57,14 @@ Partial Class DetalleInfoAlumno
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox32 = New System.Windows.Forms.TextBox()
-        Me.TextBox31 = New System.Windows.Forms.TextBox()
-        Me.TextBox30 = New System.Windows.Forms.TextBox()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
+        Me.txtNombreTutor = New System.Windows.Forms.TextBox()
+        Me.txtRutTutor = New System.Windows.Forms.TextBox()
+        Me.txtFonoTutor = New System.Windows.Forms.TextBox()
+        Me.txtOcupacionTutor = New System.Windows.Forms.TextBox()
+        Me.txtTrabajoTutor = New System.Windows.Forms.TextBox()
+        Me.txtFonoTrabTutor = New System.Windows.Forms.TextBox()
+        Me.txtProfesionTutor = New System.Windows.Forms.TextBox()
+        Me.txtDomicilioTutor = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -91,14 +91,14 @@ Partial Class DetalleInfoAlumno
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.TextBox17)
-        Me.GroupBox5.Controls.Add(Me.TextBox25)
-        Me.GroupBox5.Controls.Add(Me.TextBox24)
-        Me.GroupBox5.Controls.Add(Me.TextBox23)
-        Me.GroupBox5.Controls.Add(Me.TextBox22)
-        Me.GroupBox5.Controls.Add(Me.TextBox21)
-        Me.GroupBox5.Controls.Add(Me.TextBox20)
-        Me.GroupBox5.Controls.Add(Me.TextBox16)
+        Me.GroupBox5.Controls.Add(Me.txtTrabajoMadre)
+        Me.GroupBox5.Controls.Add(Me.txtNombreMadre)
+        Me.GroupBox5.Controls.Add(Me.txtRutMadre)
+        Me.GroupBox5.Controls.Add(Me.txtEdadMadre)
+        Me.GroupBox5.Controls.Add(Me.txtFonoMadre)
+        Me.GroupBox5.Controls.Add(Me.txtDireccionMadre)
+        Me.GroupBox5.Controls.Add(Me.txtCargoMadre)
+        Me.GroupBox5.Controls.Add(Me.txtEstudiosMadre)
         Me.GroupBox5.Controls.Add(Me.Label19)
         Me.GroupBox5.Controls.Add(Me.Label20)
         Me.GroupBox5.Controls.Add(Me.Label21)
@@ -114,61 +114,61 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Datos de la Madre"
         '
-        'TextBox17
+        'txtTrabajoMadre
         '
-        Me.TextBox17.Location = New System.Drawing.Point(76, 143)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox17.TabIndex = 26
+        Me.txtTrabajoMadre.Location = New System.Drawing.Point(76, 143)
+        Me.txtTrabajoMadre.Name = "txtTrabajoMadre"
+        Me.txtTrabajoMadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtTrabajoMadre.TabIndex = 26
         '
-        'TextBox25
+        'txtNombreMadre
         '
-        Me.TextBox25.Location = New System.Drawing.Point(76, 34)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox25.TabIndex = 25
+        Me.txtNombreMadre.Location = New System.Drawing.Point(76, 31)
+        Me.txtNombreMadre.Name = "txtNombreMadre"
+        Me.txtNombreMadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtNombreMadre.TabIndex = 25
         '
-        'TextBox24
+        'txtRutMadre
         '
-        Me.TextBox24.Location = New System.Drawing.Point(76, 57)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox24.TabIndex = 24
+        Me.txtRutMadre.Location = New System.Drawing.Point(76, 57)
+        Me.txtRutMadre.Name = "txtRutMadre"
+        Me.txtRutMadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtRutMadre.TabIndex = 24
         '
-        'TextBox23
+        'txtEdadMadre
         '
-        Me.TextBox23.Location = New System.Drawing.Point(76, 87)
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox23.TabIndex = 23
+        Me.txtEdadMadre.Location = New System.Drawing.Point(76, 87)
+        Me.txtEdadMadre.Name = "txtEdadMadre"
+        Me.txtEdadMadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtEdadMadre.TabIndex = 23
         '
-        'TextBox22
+        'txtFonoMadre
         '
-        Me.TextBox22.Location = New System.Drawing.Point(76, 227)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox22.TabIndex = 22
+        Me.txtFonoMadre.Location = New System.Drawing.Point(76, 227)
+        Me.txtFonoMadre.Name = "txtFonoMadre"
+        Me.txtFonoMadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtFonoMadre.TabIndex = 22
         '
-        'TextBox21
+        'txtDireccionMadre
         '
-        Me.TextBox21.Location = New System.Drawing.Point(76, 197)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox21.TabIndex = 21
+        Me.txtDireccionMadre.Location = New System.Drawing.Point(76, 197)
+        Me.txtDireccionMadre.Name = "txtDireccionMadre"
+        Me.txtDireccionMadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtDireccionMadre.TabIndex = 21
         '
-        'TextBox20
+        'txtCargoMadre
         '
-        Me.TextBox20.Location = New System.Drawing.Point(76, 169)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox20.TabIndex = 20
+        Me.txtCargoMadre.Location = New System.Drawing.Point(76, 169)
+        Me.txtCargoMadre.Name = "txtCargoMadre"
+        Me.txtCargoMadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtCargoMadre.TabIndex = 20
         '
-        'TextBox16
+        'txtEstudiosMadre
         '
-        Me.TextBox16.Location = New System.Drawing.Point(76, 117)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox16.TabIndex = 16
+        Me.txtEstudiosMadre.Location = New System.Drawing.Point(76, 117)
+        Me.txtEstudiosMadre.Name = "txtEstudiosMadre"
+        Me.txtEstudiosMadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtEstudiosMadre.TabIndex = 16
         '
         'Label19
         '
@@ -184,7 +184,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(6, 63)
+        Me.Label20.Location = New System.Drawing.Point(6, 60)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(27, 13)
         Me.Label20.TabIndex = 14
@@ -252,14 +252,14 @@ Partial Class DetalleInfoAlumno
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.TextBox15)
-        Me.GroupBox4.Controls.Add(Me.TextBox14)
-        Me.GroupBox4.Controls.Add(Me.TextBox13)
-        Me.GroupBox4.Controls.Add(Me.TextBox12)
-        Me.GroupBox4.Controls.Add(Me.TextBox11)
-        Me.GroupBox4.Controls.Add(Me.TextBox9)
-        Me.GroupBox4.Controls.Add(Me.TextBox10)
-        Me.GroupBox4.Controls.Add(Me.TextBox8)
+        Me.GroupBox4.Controls.Add(Me.txtFonoPadre)
+        Me.GroupBox4.Controls.Add(Me.txtRutPadre)
+        Me.GroupBox4.Controls.Add(Me.txtTrabajoPadre)
+        Me.GroupBox4.Controls.Add(Me.txtCargoPadre)
+        Me.GroupBox4.Controls.Add(Me.txtEstudiosPadre)
+        Me.GroupBox4.Controls.Add(Me.txtDireccionPadre)
+        Me.GroupBox4.Controls.Add(Me.txtEdadPadre)
+        Me.GroupBox4.Controls.Add(Me.txtNombrePadre)
         Me.GroupBox4.Controls.Add(Me.Label15)
         Me.GroupBox4.Controls.Add(Me.Label18)
         Me.GroupBox4.Controls.Add(Me.Label17)
@@ -275,61 +275,61 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Datos del Padre"
         '
-        'TextBox15
+        'txtFonoPadre
         '
-        Me.TextBox15.Location = New System.Drawing.Point(83, 227)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox15.TabIndex = 15
+        Me.txtFonoPadre.Location = New System.Drawing.Point(83, 227)
+        Me.txtFonoPadre.Name = "txtFonoPadre"
+        Me.txtFonoPadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtFonoPadre.TabIndex = 15
         '
-        'TextBox14
+        'txtRutPadre
         '
-        Me.TextBox14.Location = New System.Drawing.Point(83, 60)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox14.TabIndex = 14
+        Me.txtRutPadre.Location = New System.Drawing.Point(83, 60)
+        Me.txtRutPadre.Name = "txtRutPadre"
+        Me.txtRutPadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtRutPadre.TabIndex = 14
         '
-        'TextBox13
+        'txtTrabajoPadre
         '
-        Me.TextBox13.Location = New System.Drawing.Point(83, 143)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox13.TabIndex = 13
+        Me.txtTrabajoPadre.Location = New System.Drawing.Point(83, 143)
+        Me.txtTrabajoPadre.Name = "txtTrabajoPadre"
+        Me.txtTrabajoPadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtTrabajoPadre.TabIndex = 13
         '
-        'TextBox12
+        'txtCargoPadre
         '
-        Me.TextBox12.Location = New System.Drawing.Point(83, 169)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox12.TabIndex = 12
+        Me.txtCargoPadre.Location = New System.Drawing.Point(83, 169)
+        Me.txtCargoPadre.Name = "txtCargoPadre"
+        Me.txtCargoPadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtCargoPadre.TabIndex = 12
         '
-        'TextBox11
+        'txtEstudiosPadre
         '
-        Me.TextBox11.Location = New System.Drawing.Point(83, 117)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox11.TabIndex = 11
+        Me.txtEstudiosPadre.Location = New System.Drawing.Point(83, 117)
+        Me.txtEstudiosPadre.Name = "txtEstudiosPadre"
+        Me.txtEstudiosPadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtEstudiosPadre.TabIndex = 11
         '
-        'TextBox9
+        'txtDireccionPadre
         '
-        Me.TextBox9.Location = New System.Drawing.Point(83, 197)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox9.TabIndex = 9
+        Me.txtDireccionPadre.Location = New System.Drawing.Point(83, 197)
+        Me.txtDireccionPadre.Name = "txtDireccionPadre"
+        Me.txtDireccionPadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtDireccionPadre.TabIndex = 9
         '
-        'TextBox10
+        'txtEdadPadre
         '
-        Me.TextBox10.Location = New System.Drawing.Point(83, 87)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox10.TabIndex = 10
+        Me.txtEdadPadre.Location = New System.Drawing.Point(83, 87)
+        Me.txtEdadPadre.Name = "txtEdadPadre"
+        Me.txtEdadPadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtEdadPadre.TabIndex = 10
         '
-        'TextBox8
+        'txtNombrePadre
         '
-        Me.TextBox8.Location = New System.Drawing.Point(83, 34)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox8.TabIndex = 8
+        Me.txtNombrePadre.Location = New System.Drawing.Point(83, 34)
+        Me.txtNombrePadre.Name = "txtNombrePadre"
+        Me.txtNombrePadre.Size = New System.Drawing.Size(187, 20)
+        Me.txtNombrePadre.TabIndex = 8
         '
         'Label15
         '
@@ -345,7 +345,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(6, 63)
+        Me.Label18.Location = New System.Drawing.Point(6, 60)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(27, 13)
         Me.Label18.TabIndex = 6
@@ -413,19 +413,19 @@ Partial Class DetalleInfoAlumno
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.TextBox32)
-        Me.GroupBox3.Controls.Add(Me.TextBox31)
-        Me.GroupBox3.Controls.Add(Me.TextBox30)
-        Me.GroupBox3.Controls.Add(Me.TextBox29)
-        Me.GroupBox3.Controls.Add(Me.TextBox28)
-        Me.GroupBox3.Controls.Add(Me.TextBox27)
-        Me.GroupBox3.Controls.Add(Me.TextBox19)
-        Me.GroupBox3.Controls.Add(Me.TextBox18)
+        Me.GroupBox3.Controls.Add(Me.txtNombreTutor)
+        Me.GroupBox3.Controls.Add(Me.txtRutTutor)
+        Me.GroupBox3.Controls.Add(Me.txtFonoTutor)
+        Me.GroupBox3.Controls.Add(Me.txtOcupacionTutor)
+        Me.GroupBox3.Controls.Add(Me.txtTrabajoTutor)
+        Me.GroupBox3.Controls.Add(Me.Label30)
+        Me.GroupBox3.Controls.Add(Me.txtFonoTrabTutor)
+        Me.GroupBox3.Controls.Add(Me.txtProfesionTutor)
+        Me.GroupBox3.Controls.Add(Me.txtDomicilioTutor)
         Me.GroupBox3.Controls.Add(Me.Label34)
         Me.GroupBox3.Controls.Add(Me.Label33)
         Me.GroupBox3.Controls.Add(Me.Label32)
         Me.GroupBox3.Controls.Add(Me.Label31)
-        Me.GroupBox3.Controls.Add(Me.Label30)
         Me.GroupBox3.Controls.Add(Me.Label29)
         Me.GroupBox3.Controls.Add(Me.Label28)
         Me.GroupBox3.Controls.Add(Me.Label27)
@@ -436,61 +436,61 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Datos de tutor economico"
         '
-        'TextBox32
+        'txtNombreTutor
         '
-        Me.TextBox32.Location = New System.Drawing.Point(74, 31)
-        Me.TextBox32.Name = "TextBox32"
-        Me.TextBox32.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox32.TabIndex = 17
+        Me.txtNombreTutor.Location = New System.Drawing.Point(74, 31)
+        Me.txtNombreTutor.Name = "txtNombreTutor"
+        Me.txtNombreTutor.Size = New System.Drawing.Size(187, 20)
+        Me.txtNombreTutor.TabIndex = 17
         '
-        'TextBox31
+        'txtRutTutor
         '
-        Me.TextBox31.Location = New System.Drawing.Point(74, 57)
-        Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox31.TabIndex = 16
+        Me.txtRutTutor.Location = New System.Drawing.Point(74, 57)
+        Me.txtRutTutor.Name = "txtRutTutor"
+        Me.txtRutTutor.Size = New System.Drawing.Size(187, 20)
+        Me.txtRutTutor.TabIndex = 16
         '
-        'TextBox30
+        'txtFonoTutor
         '
-        Me.TextBox30.Location = New System.Drawing.Point(74, 84)
-        Me.TextBox30.Name = "TextBox30"
-        Me.TextBox30.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox30.TabIndex = 15
+        Me.txtFonoTutor.Location = New System.Drawing.Point(74, 87)
+        Me.txtFonoTutor.Name = "txtFonoTutor"
+        Me.txtFonoTutor.Size = New System.Drawing.Size(187, 20)
+        Me.txtFonoTutor.TabIndex = 15
         '
-        'TextBox29
+        'txtOcupacionTutor
         '
-        Me.TextBox29.Location = New System.Drawing.Point(74, 194)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox29.TabIndex = 14
+        Me.txtOcupacionTutor.Location = New System.Drawing.Point(74, 194)
+        Me.txtOcupacionTutor.Name = "txtOcupacionTutor"
+        Me.txtOcupacionTutor.Size = New System.Drawing.Size(187, 20)
+        Me.txtOcupacionTutor.TabIndex = 14
         '
-        'TextBox28
+        'txtTrabajoTutor
         '
-        Me.TextBox28.Location = New System.Drawing.Point(74, 114)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox28.TabIndex = 13
+        Me.txtTrabajoTutor.Location = New System.Drawing.Point(98, 143)
+        Me.txtTrabajoTutor.Name = "txtTrabajoTutor"
+        Me.txtTrabajoTutor.Size = New System.Drawing.Size(163, 20)
+        Me.txtTrabajoTutor.TabIndex = 13
         '
-        'TextBox27
+        'txtFonoTrabTutor
         '
-        Me.TextBox27.Location = New System.Drawing.Point(90, 143)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.Size = New System.Drawing.Size(171, 20)
-        Me.TextBox27.TabIndex = 12
+        Me.txtFonoTrabTutor.Location = New System.Drawing.Point(98, 169)
+        Me.txtFonoTrabTutor.Name = "txtFonoTrabTutor"
+        Me.txtFonoTrabTutor.Size = New System.Drawing.Size(163, 20)
+        Me.txtFonoTrabTutor.TabIndex = 12
         '
-        'TextBox19
+        'txtProfesionTutor
         '
-        Me.TextBox19.Location = New System.Drawing.Point(74, 224)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox19.TabIndex = 10
+        Me.txtProfesionTutor.Location = New System.Drawing.Point(74, 224)
+        Me.txtProfesionTutor.Name = "txtProfesionTutor"
+        Me.txtProfesionTutor.Size = New System.Drawing.Size(187, 20)
+        Me.txtProfesionTutor.TabIndex = 10
         '
-        'TextBox18
+        'txtDomicilioTutor
         '
-        Me.TextBox18.Location = New System.Drawing.Point(127, 166)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(134, 20)
-        Me.TextBox18.TabIndex = 9
+        Me.txtDomicilioTutor.Location = New System.Drawing.Point(74, 117)
+        Me.txtDomicilioTutor.Name = "txtDomicilioTutor"
+        Me.txtDomicilioTutor.Size = New System.Drawing.Size(187, 20)
+        Me.txtDomicilioTutor.TabIndex = 9
         '
         'Label34
         '
@@ -526,7 +526,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(6, 87)
+        Me.Label31.Location = New System.Drawing.Point(6, 90)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(57, 13)
         Me.Label31.TabIndex = 5
@@ -536,17 +536,17 @@ Partial Class DetalleInfoAlumno
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(6, 117)
+        Me.Label30.Location = New System.Drawing.Point(6, 146)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(50, 13)
+        Me.Label30.Size = New System.Drawing.Size(86, 13)
         Me.Label30.TabIndex = 4
-        Me.Label30.Text = "Nombre"
+        Me.Label30.Text = "Lugar Trabajo"
         '
         'Label29
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(6, 143)
+        Me.Label29.Location = New System.Drawing.Point(6, 169)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(78, 13)
         Me.Label29.TabIndex = 3
@@ -556,11 +556,11 @@ Partial Class DetalleInfoAlumno
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(6, 169)
+        Me.Label28.Location = New System.Drawing.Point(6, 120)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(115, 13)
+        Me.Label28.Size = New System.Drawing.Size(58, 13)
         Me.Label28.TabIndex = 2
-        Me.Label28.Text = "Domicilio particular"
+        Me.Label28.Text = "Domicilio"
         '
         'Label27
         '
@@ -568,9 +568,9 @@ Partial Class DetalleInfoAlumno
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.Location = New System.Drawing.Point(6, 197)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(50, 13)
+        Me.Label27.Size = New System.Drawing.Size(68, 13)
         Me.Label27.TabIndex = 1
-        Me.Label27.Text = "Trabajo"
+        Me.Label27.Text = "Ocupación"
         '
         'GroupBox2
         '
@@ -697,14 +697,14 @@ Partial Class DetalleInfoAlumno
 
     End Sub
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox24 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox23 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
+    Friend WithEvents txtTrabajoMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtRutMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtEdadMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtFonoMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtDireccionMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtCargoMadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtEstudiosMadre As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
@@ -714,14 +714,14 @@ Partial Class DetalleInfoAlumno
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents txtFonoPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtRutPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtTrabajoPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtCargoPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtEstudiosPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtDireccionPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtEdadPadre As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombrePadre As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
@@ -731,14 +731,14 @@ Partial Class DetalleInfoAlumno
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox32 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox31 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox30 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox28 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox27 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreTutor As System.Windows.Forms.TextBox
+    Friend WithEvents txtRutTutor As System.Windows.Forms.TextBox
+    Friend WithEvents txtFonoTutor As System.Windows.Forms.TextBox
+    Friend WithEvents txtOcupacionTutor As System.Windows.Forms.TextBox
+    Friend WithEvents txtTrabajoTutor As System.Windows.Forms.TextBox
+    Friend WithEvents txtFonoTrabTutor As System.Windows.Forms.TextBox
+    Friend WithEvents txtProfesionTutor As System.Windows.Forms.TextBox
+    Friend WithEvents txtDomicilioTutor As System.Windows.Forms.TextBox
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label32 As System.Windows.Forms.Label

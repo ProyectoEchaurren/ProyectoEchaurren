@@ -567,6 +567,45 @@ Module ModuloContenedor
         dgv.DataSource = dataSet.Tables(0)
     End Function
 
+    Public Function CargarFichaPersonal(ByRef rut As String)
+        Dim conn As New MySqlConnection("server=localhost;User Id=root;password=123456;database=bd_echaurren")
+        Dim adapter As New MySqlDataAdapter()
+        Dim dataSet As New DataSet
+        Dim total As Integer
+        Try
+            adapter.SelectCommand = New MySqlCommand("SELECT count(*) as total FROM responsable inner join responsable_alumno ON responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join tipo_responsable ON responsable_alumno.Tipo_responsable_idTipo_responsable = tipo_responsable.idTipo_responsable WHERE Alumno_RutAlumno = '" & rut & "'", conn)
+            For i = 0 To total
+                adapter.SelectCommand = New MySqlCommand("SELECT Tipo_responsable, RutResponsable, NombreCompleto, Edad, EstudiosCompletados, CorreoElectronico, Profesion, Trabajo, Cargo, Num1, DireccionParticular FROM responsable inner join responsable_alumno ON responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join tipo_responsable ON responsable_alumno.Tipo_responsable_idTipo_responsable = tipo_responsable.idTipo_responsable inner join direccion ON responsable.Direccion_idDireccion = direccion.idDireccion inner join telefono ON responsable.Telefono_idTelefono = telefono.idTelefono WHERE Alumno_RutAlumno = '" & rut & "'", conn)
+                adapter.Fill(dataSet)
+                If dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "tutor economico" Then
+                    DetalleInfoAlumno.txtNombreTutor.Text = dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                ElseIf dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "padre" Then
+                    DetalleInfoAlumno.txtRutPadre.Text = dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                    DetalleInfoAlumno.txtNombrePadre.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                    DetalleInfoAlumno.txtEdadPadre.Text = dataSet.Tables(0).Rows(i)("Edad").ToString
+                    DetalleInfoAlumno.txtEstudiosPadre.Text = dataSet.Tables(0).Rows(i)("EstudiosCompletados").ToString
+                    DetalleInfoAlumno.txtTrabajoPadre.Text = dataSet.Tables(0).Rows(i)("Trabajo").ToString
+                    DetalleInfoAlumno.txtCargoPadre.Text = dataSet.Tables(0).Rows(i)("Cargo").ToString
+                    DetalleInfoAlumno.txtDireccionPadre.Text = dataSet.Tables(0).Rows(i)("DireccionParticular").ToString
+                    DetalleInfoAlumno.txtFonoPadre.Text = dataSet.Tables(0).Rows(i)("Num1").ToString
+                ElseIf dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "madre" Then
+                    DetalleInfoAlumno.txtRutMadre.Text = dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                    DetalleInfoAlumno.txtNombreMadre.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                    DetalleInfoAlumno.txtEdadMadre.Text = dataSet.Tables(0).Rows(i)("Edad").ToString
+                    DetalleInfoAlumno.txtEstudiosMadre.Text = dataSet.Tables(0).Rows(i)("EstudiosCompletados").ToString
+                    DetalleInfoAlumno.txtTrabajoMadre.Text = dataSet.Tables(0).Rows(i)("Trabajo").ToString
+                    DetalleInfoAlumno.txtCargoMadre.Text = dataSet.Tables(0).Rows(i)("Cargo").ToString
+                    DetalleInfoAlumno.txtDireccionMadre.Text = dataSet.Tables(0).Rows(i)("DireccionParticular").ToString
+                    DetalleInfoAlumno.txtFonoMadre.Text = dataSet.Tables(0).Rows(i)("Num1").ToString
+                Else
+                    DetalleInfoAlumno.txtNombreTutor.Text = "Otro"
+                End If
+            Next i
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los datos, intente nuevamente", "Error")
+        End Try
+    End Function
+
     Public Function ingresarContactEmergencia(ByRef nombreContacto1 As String, ByRef numContacto1 As String, _
                                               ByRef nombreContacto2 As String, ByRef numContacto2 As String, _
                                               ByRef nombreContacto3 As String, ByRef numContacto3 As String) As Boolean
