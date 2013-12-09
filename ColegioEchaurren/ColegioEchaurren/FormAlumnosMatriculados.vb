@@ -46,10 +46,10 @@ Public Class FormAlumnosMatriculados
         End Try
 
         ModuloContenedor.cambiarNombreColumnas()
-        
     End Sub
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        Form1.varFichaPersonalAlumno = ""
         Me.Close()
     End Sub
 
@@ -131,14 +131,14 @@ Public Class FormAlumnosMatriculados
     End Sub
 
     Private Sub btnFichaPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnFichaPersonal.Click
-        If Form1.FichaPersonalAlumno = "" Then
+        If Form1.varFichaPersonalAlumno = "" Then
             MsgBox("Primero debe selecionar un Alumno(a) para ver su ficha personal", MsgBoxStyle.Information, AcceptButton)
         Else
             DetalleInfoAlumno.Show()
         End If
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        Form1.FichaPersonalAlumno = (DataGridView1.Rows(e.RowIndex).Cells(0).Value)
+    Private Sub DataGridView1_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Form1.varFichaPersonalAlumno = (DataGridView1.Rows(e.RowIndex).Cells(0).Value)
     End Sub
 End Class

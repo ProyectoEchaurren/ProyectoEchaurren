@@ -215,11 +215,18 @@ Partial Class FormAlumnosMatriculados
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(31, 286)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(837, 245)
+        Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 25
+        Me.DataGridView1.TabStop = False
         '
         'cbBecados
         '
@@ -317,7 +324,6 @@ Partial Class FormAlumnosMatriculados
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormAlumnosMatriculados"
-        Me.ShowIcon = False
         Me.Text = "Administracion de alumnos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -1,7 +1,7 @@
 ﻿Public Class Form1
 
-    Public ColumnaRutHistorico As String
-    Public FichaPersonalAlumno As String
+    Public varColumnaRutHistorico As String
+    Public varFichaPersonalAlumno As String
 
     Private Sub LoginToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoginToolStripMenuItem.Click
         If LoginToolStripMenuItem.Text = "Iniciar Sesión" Then
@@ -53,5 +53,9 @@
     Private Sub AdministrarBecasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AdministrarBecasToolStripMenuItem.Click
         AdminBecas.MdiParent = Me
         AdminBecas.Show()
+    End Sub
+
+    Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
