@@ -433,7 +433,7 @@ Public Class FormularioMatricula
                                                txtSectorAlumno.Text, txtCurso.Text, txtComunaAlumno.Text, txtTelefonoAlumno.Text, _
                                                    txtColegioPrese.Text, txtCursosRepetidos.Text, varHermano, varViveCon, txtNumHijos.Text, _
                                                       txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
-            MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            'MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -466,7 +466,7 @@ Public Class FormularioMatricula
 
 
         If ModuloContenedor.ingresarServSalud(servSalud, otroServSalud, txtSeguros.Text) = True Then
-            MessageBox.Show("Servicio salud ingresado")
+            'MessageBox.Show("Servicio salud ingresado")
         Else
             MessageBox.Show("Error al ingresar servicio de salud", "Error")
             Exit Sub
@@ -507,6 +507,7 @@ Public Class FormularioMatricula
                                                      varApoderadoSuplePadre)
             ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoPadre, _
                                                      varApoderadoSuplePadre)
+            MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
         If checkmadre.Checked = True And RadioButton13.Checked = True Then
@@ -519,6 +520,7 @@ Public Class FormularioMatricula
                                                     varApoderadoSupleMadre)
             ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoMadre, _
                                                     varApoderadoSupleMadre)
+            MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
         If checkpadre.Checked = True And RadioButton9.Checked = False Then
@@ -528,6 +530,7 @@ Public Class FormularioMatricula
                                             txtDireccionPadre.Text, txtCorreoPadre.Text)
             ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsablePadre, varApoderadoPadre, _
                                                    varApoderadoSuplePadre)
+            MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
         If checkmadre.Checked = True And RadioButton13.Checked = False Then
@@ -537,6 +540,7 @@ Public Class FormularioMatricula
                                             txtDireccionMadre.Text, txtCorreoMadre.Text)
             ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
                                                     varApoderadoSupleMadre)
+            MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         End If
 
@@ -577,6 +581,7 @@ Public Class FormularioMatricula
                                                     txtOcupacionAct.Text, txtProfesion.Text)
             ModuloContenedor.insertarAlumno_respons_tutor(txtRut.Text, txtRutAlumno.Text, varResponsableTutor, varTutor, _
                                                       varTutor2, txtOtro.Text)
+            MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
     End Sub

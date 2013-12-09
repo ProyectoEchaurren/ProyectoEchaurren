@@ -52,8 +52,8 @@ Module ModuloContenedor
             Dim consultaIngresoAlumn As String = "INSERT INTO `bd_echaurren`.`alumno` (`RutAlumno`, `NombreCompleto`, `ApePaterno`, `ApeMaterno`, `Sexo`, `FechaNac`, `Edad`, `Domicilio`, `SectorVilla`, `Comuna`, `Telefono`, `ColegioPresedencia`, `Curso`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`, `NumMatricula`, `FechaMatricula`) VALUES ('" & RunAlumno & "', '" & nombresAlumno & "', '" & apellidoPatAlumno & "', '" & apellidoMatAlumno & "', '" & SexoAlumno & "', '" & fechaNacimientoAlumno.Value.ToString("dd/MM/yyyy") & "', '" & EdadAlumno & "', '" & domicilioCalleAlumn & "', '" & sectorAlumno & "', '" & comunaAlumno & "', '" & telefAlumno & "', '" & colegioPrese & "', '" & curso & "', '" & cursosRepet & "', '" & becado & "', '" & hermanosCurso & "', '" & AlumnViveCon & "', '" & numHijos & "', '" & lugarHijos & "', '" & grupoFami & "', '" & anteMedicos & "', '009', '" & fechaMatricula.Value.ToString("dd/MM/yyyy") & "');"
             Dim _comando As New MySqlCommand(consultaIngresoAlumn, FormularioMatricula.varConexion)
             _comando.ExecuteNonQuery()
+            'MessageBox.Show("alumno ingresado")
             Return True
-
         Catch ex As Exception
             Return False
         End Try
@@ -621,7 +621,7 @@ Module ModuloContenedor
 
                 Dim _comando2 As New MySqlCommand(consultaContactEmer1, FormularioMatricula.varConexion)
                 _comando2.ExecuteNonQuery()
-                MessageBox.Show("Contacto de emergencia ingresado")
+                'MessageBox.Show("Contacto de emergencia ingresado")
                 Return True
 
             ElseIf FormularioMatricula.ComboBox1.Text = "2 Contactos" Then
@@ -630,7 +630,7 @@ Module ModuloContenedor
                 _comando3.ExecuteNonQuery()
                 Dim _comando4 As New MySqlCommand(consultaContactEmer2, FormularioMatricula.varConexion)
                 _comando4.ExecuteNonQuery()
-                MessageBox.Show("Contactos de emergencia ingresado")
+                'MessageBox.Show("Contactos de emergencia ingresado")
                 Return True
 
             ElseIf FormularioMatricula.ComboBox1.Text = "3 Contactos" Then
@@ -641,7 +641,7 @@ Module ModuloContenedor
                 _comando6.ExecuteNonQuery()
                 Dim _comando7 As New MySqlCommand(consultaContactEmer3, FormularioMatricula.varConexion)
                 _comando7.ExecuteNonQuery()
-                MessageBox.Show("Contactos de emergencia ingresados")
+                'MessageBox.Show("Contactos de emergencia ingresados")
                 Return True
             End If
         Catch ex As Exception
@@ -671,7 +671,7 @@ Module ModuloContenedor
             _comando10.ExecuteNonQuery()
             Dim _comando11 As New MySqlCommand(consultaPadre4, FormularioMatricula.varConexion)
             _comando11.ExecuteNonQuery()
-            MessageBox.Show("padre agregado")
+            'MessageBox.Show("padre agregado")
             Return True
         Catch ex As Exception
             MessageBox.Show("Error al ingresar padreeeeeeeeeeeeeeeeeeeee")
@@ -698,10 +698,10 @@ Module ModuloContenedor
             _comando14.ExecuteNonQuery()
             Dim _comando15 As New MySqlCommand(consultaMadre4, FormularioMatricula.varConexion)
             _comando15.ExecuteNonQuery()
-            MessageBox.Show("Madre agregada")
+            'MessageBox.Show("Madre agregada")
             Return True
         Catch ex As Exception
-            MessageBox.Show("Error al ingresar Madreeeeeeeeeeeeeeeeeeeee")
+            MessageBox.Show("Error al ingresar datos de la madre")
             Return False
         End Try
 
@@ -727,7 +727,7 @@ Module ModuloContenedor
             comando19.ExecuteNonQuery()
             Return True
         Catch ex As Exception
-            MessageBox.Show("Erroooooooooooooooor al ingresaaaaaaaaaaaaaaaaaaaaar")
+            MessageBox.Show("Error al ingresar datos de tutor economico")
             Return False
         End Try
 
@@ -755,7 +755,7 @@ Module ModuloContenedor
             comando3.ExecuteNonQuery()
             Return True
         Catch ex As Exception
-            MessageBox.Show("Erroooooooooooooooor al ingresaaaaar responsable completo")
+            MessageBox.Show("Error al ingresaaaaar datos de responsable completo")
             Return False
         End Try
 
@@ -768,7 +768,7 @@ Module ModuloContenedor
             Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "');"
             Dim _comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
             _comando.ExecuteNonQuery()
-            MessageBox.Show("relacion responsable - alumno exitosa")
+            'MessageBox.Show("relacion responsable - alumno exitosa")
             Return True
         Catch ex As Exception
             MessageBox.Show("error al relacionar responsable - alumno")
@@ -785,7 +785,7 @@ Module ModuloContenedor
             Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Otro_tutor`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & OtroTutor & "');"
             Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
             comando.ExecuteNonQuery()
-            MessageBox.Show("relacion responsable, tutor - alumno exitosa")
+            'MessageBox.Show("relacion responsable, tutor - alumno exitosa")
             Return True
         Catch ex As Exception
             MessageBox.Show("error al relacionar responsable, tutor - alumno")
@@ -808,7 +808,7 @@ Module ModuloContenedor
             comando.ExecuteNonQuery()
             Dim comando2 As New MySqlCommand(consulta1, FormularioMatricula.varConexion)
             comando2.ExecuteNonQuery()
-            MessageBox.Show("SE INGRESO OTRO APOD SUPLENTE")
+            'MessageBox.Show("SE INGRESO OTRO APOD SUPLENTE")
             Return True
         Catch ex As Exception
             MessageBox.Show("ERROR AL INGRESO OTRO APOD SUPLENTE")
