@@ -25,16 +25,13 @@ Partial Class FormularioMatricula
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormularioMatricula))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.comboComuna = New System.Windows.Forms.ComboBox()
+        Me.comboCurso = New System.Windows.Forms.ComboBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.txtCurso = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox65 = New System.Windows.Forms.TextBox()
-        Me.txtNumMatri = New System.Windows.Forms.TextBox()
-        Me.Label79 = New System.Windows.Forms.Label()
         Me.Label78 = New System.Windows.Forms.Label()
-        Me.Label77 = New System.Windows.Forms.Label()
         Me.txtSeguros = New System.Windows.Forms.TextBox()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.comboServSalud = New System.Windows.Forms.ComboBox()
@@ -72,7 +69,6 @@ Partial Class FormularioMatricula
         Me.txtCursosRepetidos = New System.Windows.Forms.TextBox()
         Me.txtColegioPrese = New System.Windows.Forms.TextBox()
         Me.txtTelefonoAlumno = New System.Windows.Forms.TextBox()
-        Me.txtComunaAlumno = New System.Windows.Forms.TextBox()
         Me.txtSectorAlumno = New System.Windows.Forms.TextBox()
         Me.txtCalleAlumno = New System.Windows.Forms.TextBox()
         Me.txtEdadAlumno = New System.Windows.Forms.TextBox()
@@ -114,6 +110,11 @@ Partial Class FormularioMatricula
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.checkIguales = New System.Windows.Forms.CheckBox()
+        Me.txtRutOtroApod = New System.Windows.Forms.TextBox()
+        Me.txtRutOtroApodSuple = New System.Windows.Forms.TextBox()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
         Me.checkmadre = New System.Windows.Forms.CheckBox()
         Me.checkpadre = New System.Windows.Forms.CheckBox()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -250,11 +251,6 @@ Partial Class FormularioMatricula
         Me.Label106 = New System.Windows.Forms.Label()
         Me.Label105 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.txtRutOtroApodSuple = New System.Windows.Forms.TextBox()
-        Me.txtRutOtroApod = New System.Windows.Forms.TextBox()
-        Me.checkIguales = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -286,8 +282,9 @@ Partial Class FormularioMatricula
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.comboComuna)
+        Me.TabPage2.Controls.Add(Me.comboCurso)
         Me.TabPage2.Controls.Add(Me.CheckBox1)
-        Me.TabPage2.Controls.Add(Me.txtCurso)
         Me.TabPage2.Controls.Add(Me.Label35)
         Me.TabPage2.Controls.Add(Me.GroupBox6)
         Me.TabPage2.Controls.Add(Me.txtSeguros)
@@ -323,7 +320,6 @@ Partial Class FormularioMatricula
         Me.TabPage2.Controls.Add(Me.txtCursosRepetidos)
         Me.TabPage2.Controls.Add(Me.txtColegioPrese)
         Me.TabPage2.Controls.Add(Me.txtTelefonoAlumno)
-        Me.TabPage2.Controls.Add(Me.txtComunaAlumno)
         Me.TabPage2.Controls.Add(Me.txtSectorAlumno)
         Me.TabPage2.Controls.Add(Me.txtCalleAlumno)
         Me.TabPage2.Controls.Add(Me.txtEdadAlumno)
@@ -349,6 +345,22 @@ Partial Class FormularioMatricula
         Me.TabPage2.Text = "Datos de Alumno(a)"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'comboComuna
+        '
+        Me.comboComuna.FormattingEnabled = True
+        Me.comboComuna.Location = New System.Drawing.Point(238, 369)
+        Me.comboComuna.Name = "comboComuna"
+        Me.comboComuna.Size = New System.Drawing.Size(121, 21)
+        Me.comboComuna.TabIndex = 228
+        '
+        'comboCurso
+        '
+        Me.comboCurso.FormattingEnabled = True
+        Me.comboCurso.Location = New System.Drawing.Point(550, 336)
+        Me.comboCurso.Name = "comboCurso"
+        Me.comboCurso.Size = New System.Drawing.Size(101, 21)
+        Me.comboCurso.TabIndex = 227
+        '
         'CheckBox1
         '
         Me.CheckBox1.Location = New System.Drawing.Point(238, 116)
@@ -358,13 +370,6 @@ Partial Class FormularioMatricula
         Me.CheckBox1.Text = "ALUMNO BECADO"
         Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'txtCurso
-        '
-        Me.txtCurso.Location = New System.Drawing.Point(550, 337)
-        Me.txtCurso.Name = "txtCurso"
-        Me.txtCurso.Size = New System.Drawing.Size(101, 20)
-        Me.txtCurso.TabIndex = 224
         '
         'Label35
         '
@@ -378,64 +383,28 @@ Partial Class FormularioMatricula
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox6.Controls.Add(Me.TextBox65)
-        Me.GroupBox6.Controls.Add(Me.txtNumMatri)
-        Me.GroupBox6.Controls.Add(Me.Label79)
         Me.GroupBox6.Controls.Add(Me.Label78)
-        Me.GroupBox6.Controls.Add(Me.Label77)
         Me.GroupBox6.Location = New System.Drawing.Point(338, 6)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(313, 100)
+        Me.GroupBox6.Size = New System.Drawing.Size(313, 42)
         Me.GroupBox6.TabIndex = 222
         Me.GroupBox6.TabStop = False
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(106, 40)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(107, 10)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 5
         '
-        'TextBox65
-        '
-        Me.TextBox65.Location = New System.Drawing.Point(106, 68)
-        Me.TextBox65.Name = "TextBox65"
-        Me.TextBox65.Size = New System.Drawing.Size(200, 20)
-        Me.TextBox65.TabIndex = 4
-        '
-        'txtNumMatri
-        '
-        Me.txtNumMatri.Location = New System.Drawing.Point(106, 13)
-        Me.txtNumMatri.Name = "txtNumMatri"
-        Me.txtNumMatri.Size = New System.Drawing.Size(201, 20)
-        Me.txtNumMatri.TabIndex = 3
-        '
-        'Label79
-        '
-        Me.Label79.AutoSize = True
-        Me.Label79.Location = New System.Drawing.Point(6, 71)
-        Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(97, 13)
-        Me.Label79.TabIndex = 2
-        Me.Label79.Text = "N° DE COMPROB."
-        '
         'Label78
         '
         Me.Label78.AutoSize = True
-        Me.Label78.Location = New System.Drawing.Point(6, 46)
+        Me.Label78.Location = New System.Drawing.Point(6, 16)
         Me.Label78.Name = "Label78"
         Me.Label78.Size = New System.Drawing.Size(42, 13)
         Me.Label78.TabIndex = 1
         Me.Label78.Text = "FECHA"
-        '
-        'Label77
-        '
-        Me.Label77.AutoSize = True
-        Me.Label77.Location = New System.Drawing.Point(6, 16)
-        Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(71, 13)
-        Me.Label77.TabIndex = 0
-        Me.Label77.Text = "N° DE FOLIO"
         '
         'txtSeguros
         '
@@ -751,13 +720,6 @@ Partial Class FormularioMatricula
         Me.txtTelefonoAlumno.Name = "txtTelefonoAlumno"
         Me.txtTelefonoAlumno.Size = New System.Drawing.Size(211, 20)
         Me.txtTelefonoAlumno.TabIndex = 21
-        '
-        'txtComunaAlumno
-        '
-        Me.txtComunaAlumno.Location = New System.Drawing.Point(238, 369)
-        Me.txtComunaAlumno.Name = "txtComunaAlumno"
-        Me.txtComunaAlumno.Size = New System.Drawing.Size(107, 20)
-        Me.txtComunaAlumno.TabIndex = 20
         '
         'txtSectorAlumno
         '
@@ -1222,6 +1184,50 @@ Partial Class FormularioMatricula
         Me.TabPage1.Size = New System.Drawing.Size(678, 1068)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Antecedentes Familiares"
+        '
+        'checkIguales
+        '
+        Me.checkIguales.AutoSize = True
+        Me.checkIguales.Location = New System.Drawing.Point(400, 444)
+        Me.checkIguales.Name = "checkIguales"
+        Me.checkIguales.Size = New System.Drawing.Size(273, 17)
+        Me.checkIguales.TabIndex = 268
+        Me.checkIguales.Text = "Apoderado y suplente iguales (marcar solo si es otro)"
+        Me.checkIguales.UseVisualStyleBackColor = True
+        '
+        'txtRutOtroApod
+        '
+        Me.txtRutOtroApod.Enabled = False
+        Me.txtRutOtroApod.Location = New System.Drawing.Point(436, 469)
+        Me.txtRutOtroApod.Name = "txtRutOtroApod"
+        Me.txtRutOtroApod.Size = New System.Drawing.Size(151, 20)
+        Me.txtRutOtroApod.TabIndex = 267
+        '
+        'txtRutOtroApodSuple
+        '
+        Me.txtRutOtroApodSuple.Enabled = False
+        Me.txtRutOtroApodSuple.Location = New System.Drawing.Point(436, 536)
+        Me.txtRutOtroApodSuple.Name = "txtRutOtroApodSuple"
+        Me.txtRutOtroApodSuple.Size = New System.Drawing.Size(151, 20)
+        Me.txtRutOtroApodSuple.TabIndex = 266
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(397, 539)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(30, 13)
+        Me.Label37.TabIndex = 265
+        Me.Label37.Text = "RUT"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(397, 472)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(30, 13)
+        Me.Label36.TabIndex = 264
+        Me.Label36.Text = "RUT"
         '
         'checkmadre
         '
@@ -2446,50 +2452,6 @@ Partial Class FormularioMatricula
         Me.Label103.TabIndex = 4
         Me.Label103.Text = "COMPROBANTE DE DOCUMENTOS EN CARTERA"
         '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(397, 472)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(30, 13)
-        Me.Label36.TabIndex = 264
-        Me.Label36.Text = "RUT"
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(397, 539)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(30, 13)
-        Me.Label37.TabIndex = 265
-        Me.Label37.Text = "RUT"
-        '
-        'txtRutOtroApodSuple
-        '
-        Me.txtRutOtroApodSuple.Enabled = False
-        Me.txtRutOtroApodSuple.Location = New System.Drawing.Point(436, 536)
-        Me.txtRutOtroApodSuple.Name = "txtRutOtroApodSuple"
-        Me.txtRutOtroApodSuple.Size = New System.Drawing.Size(151, 20)
-        Me.txtRutOtroApodSuple.TabIndex = 266
-        '
-        'txtRutOtroApod
-        '
-        Me.txtRutOtroApod.Enabled = False
-        Me.txtRutOtroApod.Location = New System.Drawing.Point(436, 469)
-        Me.txtRutOtroApod.Name = "txtRutOtroApod"
-        Me.txtRutOtroApod.Size = New System.Drawing.Size(151, 20)
-        Me.txtRutOtroApod.TabIndex = 267
-        '
-        'checkIguales
-        '
-        Me.checkIguales.AutoSize = True
-        Me.checkIguales.Location = New System.Drawing.Point(400, 444)
-        Me.checkIguales.Name = "checkIguales"
-        Me.checkIguales.Size = New System.Drawing.Size(273, 17)
-        Me.checkIguales.TabIndex = 268
-        Me.checkIguales.Text = "Apoderado y suplente iguales (marcar solo si es otro)"
-        Me.checkIguales.UseVisualStyleBackColor = True
-        '
         'FormularioMatricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2627,7 +2589,6 @@ Partial Class FormularioMatricula
     Friend WithEvents txtCursosRepetidos As System.Windows.Forms.TextBox
     Friend WithEvents txtColegioPrese As System.Windows.Forms.TextBox
     Friend WithEvents txtTelefonoAlumno As System.Windows.Forms.TextBox
-    Friend WithEvents txtComunaAlumno As System.Windows.Forms.TextBox
     Friend WithEvents txtSectorAlumno As System.Windows.Forms.TextBox
     Friend WithEvents txtCalleAlumno As System.Windows.Forms.TextBox
     Friend WithEvents txtEdadAlumno As System.Windows.Forms.TextBox
@@ -2738,15 +2699,7 @@ Partial Class FormularioMatricula
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents cbApoderado As System.Windows.Forms.ComboBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents txtCurso As System.Windows.Forms.TextBox
     Friend WithEvents Label35 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents TextBox65 As System.Windows.Forms.TextBox
-    Friend WithEvents txtNumMatri As System.Windows.Forms.TextBox
-    Friend WithEvents Label79 As System.Windows.Forms.Label
-    Friend WithEvents Label78 As System.Windows.Forms.Label
-    Friend WithEvents Label77 As System.Windows.Forms.Label
     Friend WithEvents cbApoSuplente As System.Windows.Forms.ComboBox
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
@@ -2761,4 +2714,9 @@ Partial Class FormularioMatricula
     Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents checkIguales As System.Windows.Forms.CheckBox
+    Friend WithEvents comboCurso As System.Windows.Forms.ComboBox
+    Friend WithEvents comboComuna As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label78 As System.Windows.Forms.Label
 End Class

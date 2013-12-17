@@ -39,22 +39,25 @@ Module ModuloContenedor
     End Function
 
 
-    Public Function ingresarAlumno(ByRef fechaMatricula As DateTimePicker, ByRef becado As Integer, ByRef apellidoPatAlumno As String, _
+    Public Function ingresarAlumno(ByRef fechaMatricula As DateTimePicker, ByRef apellidoPatAlumno As String, _
                               ByRef apellidoMatAlumno As String, ByRef nombresAlumno As String, ByRef RunAlumno As String, _
                               ByRef SexoAlumno As String, ByRef fechaNacimientoAlumno As DateTimePicker, ByRef EdadAlumno As String, _
                               ByRef domicilioCalleAlumn As String, ByRef sectorAlumno As String, ByRef curso As String, _
-                              ByRef comunaAlumno As String, ByRef telefAlumno As String, ByRef colegioPrese As String, _
-                              ByRef cursosRepet As String, ByRef hermanosCurso As String, ByRef AlumnViveCon As String, _
-                              ByRef numHijos As String, ByRef lugarHijos As String, ByRef grupoFami As String, _
-                              ByRef anteMedicos As String) As Boolean
+                              ByRef comunaAlumno As String, ByRef telefAlumno As String, ByRef colegioPresedencia As String, _
+                              ByRef cursosRepe As String, ByRef becado As String, _
+                              ByRef hermanosEstable As String, ByRef alumnoViveCon As String, ByRef numHijosFam As String, _
+                              ByRef lugarocupaHijos As String, ByRef grupoFamiliarCompo As String, _
+                              ByRef antecedentesMedicos As String) As Boolean
 
 
         Try
-            Dim consultaIngresoAlumn As String = "INSERT INTO `bd_echaurren`.`alumno` (`RutAlumno`, `NombreCompleto`, `ApePaterno`, `ApeMaterno`, `Sexo`, `FechaNac`, `Edad`, `Domicilio`, `SectorVilla`, `Comuna`, `Telefono`, `ColegioPresedencia`, `Curso`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`, `NumMatricula`, `FechaMatricula`) VALUES ('" & RunAlumno & "', '" & nombresAlumno & "', '" & apellidoPatAlumno & "', '" & apellidoMatAlumno & "', '" & SexoAlumno & "', '" & fechaNacimientoAlumno.Value.ToString("dd/MM/yyyy") & "', '" & EdadAlumno & "', '" & domicilioCalleAlumn & "', '" & sectorAlumno & "', '" & comunaAlumno & "', '" & telefAlumno & "', '" & colegioPrese & "', '" & curso & "', '" & cursosRepet & "', '" & becado & "', '" & hermanosCurso & "', '" & AlumnViveCon & "', '" & numHijos & "', '" & lugarHijos & "', '" & grupoFami & "', '" & anteMedicos & "', '009', '" & fechaMatricula.Value.ToString("dd/MM/yyyy") & "');"
+            Dim consultaFichaAlumno As String = "INSERT INTO `bd_echaurren`.`fichaalumno` (`ColegioPresedencia`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`) VALUES ('" & colegioPresedencia & "', '" & cursosRepe & "', '" & becado & "', '" & hermanosEstable & "', '" & alumnoViveCon & "', '" & numHijosFam & "', '" & lugarocupaHijos & "', '" & grupoFamiliarCompo & "', '" & antecedentesMedicos & "');"
+            Dim comando0 As New MySqlCommand(consultaFichaAlumno, FormularioMatricula.varConexion)
+            comando0.ExecuteNonQuery()
+            Dim consultaIngresoAlumn As String = "INSERT INTO `bd_echaurren`.`alumno` (`RutAlumno`, `NombreCompleto`, `ApePaterno`, `ApeMaterno`, `Sexo`, `FechaNac`, `Edad`, `Domicilio`, `SectorVilla`, `Telefono`, `Curso_idCurso`, `Comuna_idComuna`, `Fichaalumno_idFichaalumno`, `Matricula_NumMatricula`) VALUES ('" & RunAlumno & "', '" & nombresAlumno & "', '" & apellidoPatAlumno & "', '" & apellidoMatAlumno & "', '" & SexoAlumno & "', '" & fechaNacimientoAlumno.Value.ToString("dd/MM/yyyy") & "', '" & EdadAlumno & "', '" & domicilioCalleAlumn & "', '" & sectorAlumno & "', '" & telefAlumno & "', '" & curso & "', '" & comunaAlumno & "', last_insert_id(), '0121134');"
             Dim _comando As New MySqlCommand(consultaIngresoAlumn, FormularioMatricula.varConexion)
             _comando.ExecuteNonQuery()
             Return True
-
         Catch ex As Exception
             Return False
         End Try
@@ -775,7 +778,7 @@ Module ModuloContenedor
 
                 Dim _comando2 As New MySqlCommand(consultaContactEmer1, FormularioMatricula.varConexion)
                 _comando2.ExecuteNonQuery()
-                MessageBox.Show("Contacto de emergencia ingresado")
+                '   MessageBox.Show("Contacto de emergencia ingresado")
                 Return True
 
             ElseIf FormularioMatricula.ComboBox1.Text = "2 Contactos" Then
@@ -784,7 +787,7 @@ Module ModuloContenedor
                 _comando3.ExecuteNonQuery()
                 Dim _comando4 As New MySqlCommand(consultaContactEmer2, FormularioMatricula.varConexion)
                 _comando4.ExecuteNonQuery()
-                MessageBox.Show("Contactos de emergencia ingresado")
+                '    MessageBox.Show("Contactos de emergencia ingresado")
                 Return True
 
             ElseIf FormularioMatricula.ComboBox1.Text = "3 Contactos" Then
@@ -795,11 +798,10 @@ Module ModuloContenedor
                 _comando6.ExecuteNonQuery()
                 Dim _comando7 As New MySqlCommand(consultaContactEmer3, FormularioMatricula.varConexion)
                 _comando7.ExecuteNonQuery()
-                MessageBox.Show("Contactos de emergencia ingresados")
+                '   MessageBox.Show("Contactos de emergencia ingresados")
                 Return True
             End If
         Catch ex As Exception
-
             Return False
         End Try
 
@@ -825,10 +827,10 @@ Module ModuloContenedor
             _comando10.ExecuteNonQuery()
             Dim _comando11 As New MySqlCommand(consultaPadre4, FormularioMatricula.varConexion)
             _comando11.ExecuteNonQuery()
-            MessageBox.Show("padre agregado")
+            'MessageBox.Show("padre agregado")
             Return True
         Catch ex As Exception
-            MessageBox.Show("Error al ingresar padreeeeeeeeeeeeeeeeeeeee")
+            ' MessageBox.Show("Error al ingresar padre")
             Return False
         End Try
     End Function
@@ -852,10 +854,10 @@ Module ModuloContenedor
             _comando14.ExecuteNonQuery()
             Dim _comando15 As New MySqlCommand(consultaMadre4, FormularioMatricula.varConexion)
             _comando15.ExecuteNonQuery()
-            MessageBox.Show("Madre agregada")
+            ' MessageBox.Show("Madre agregada")
             Return True
         Catch ex As Exception
-            MessageBox.Show("Error al ingresar Madreeeeeeeeeeeeeeeeeeeee")
+            '   MessageBox.Show("Error al ingresar Madre")
             Return False
         End Try
 
@@ -881,7 +883,7 @@ Module ModuloContenedor
             comando19.ExecuteNonQuery()
             Return True
         Catch ex As Exception
-            MessageBox.Show("Erroooooooooooooooor al ingresaaaaaaaaaaaaaaaaaaaaar")
+            '  MessageBox.Show("Error al ingresar tutor economico")
             Return False
         End Try
 
@@ -909,7 +911,7 @@ Module ModuloContenedor
             comando3.ExecuteNonQuery()
             Return True
         Catch ex As Exception
-            MessageBox.Show("Erroooooooooooooooor al ingresaaaaar responsable completo")
+            ' MessageBox.Show("Error al ingresaaaaar responsable completo")
             Return False
         End Try
 
@@ -919,13 +921,13 @@ Module ModuloContenedor
                                            ByRef apoderado As Integer, ByRef apodSuplente As Integer) As Boolean
 
         Try
-            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "');"
+            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Matricula_NumMatricula`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '121134');"
             Dim _comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
             _comando.ExecuteNonQuery()
-            MessageBox.Show("relacion responsable - alumno exitosa")
+            '  MessageBox.Show("relacion responsable - alumno exitosa")
             Return True
         Catch ex As Exception
-            MessageBox.Show("error al relacionar responsable - alumno")
+            '   MessageBox.Show("error al relacionar responsable - alumno")
             Return False
         End Try
 
@@ -936,13 +938,13 @@ Module ModuloContenedor
                                            ByRef OtroTutor As String) As Boolean
 
         Try
-            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Otro_tutor`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & OtroTutor & "');"
+            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Otro_tutor`, `Matricula_NumMatricula`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & OtroTutor & "', '121134');"
             Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
             comando.ExecuteNonQuery()
-            MessageBox.Show("relacion responsable, tutor - alumno exitosa")
+            ' MessageBox.Show("relacion responsable, tutor - alumno exitosa")
             Return True
         Catch ex As Exception
-            MessageBox.Show("error al relacionar responsable, tutor - alumno")
+            '  MessageBox.Show("error al relacionar responsable, tutor - alumno")
             Return False
         End Try
     End Function
@@ -956,16 +958,16 @@ Module ModuloContenedor
 
             Dim tipoResp As String = "tr4"
             Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`) VALUES ('" & rutOtroApod & "', '" & nombreOtroResp & "');"
-            Dim consulta1 As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`) VALUES ('" & rutOtroApod & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "');"
+            Dim consulta1 As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Matricula_NumMatricula`) VALUES ('" & rutOtroApod & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '121134');"
 
             Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
             comando.ExecuteNonQuery()
             Dim comando2 As New MySqlCommand(consulta1, FormularioMatricula.varConexion)
             comando2.ExecuteNonQuery()
-            MessageBox.Show("SE INGRESO OTRO APOD SUPLENTE")
+            ' MessageBox.Show("SE INGRESO OTRO APOD SUPLENTE")
             Return True
         Catch ex As Exception
-            MessageBox.Show("ERROR AL INGRESO OTRO APOD SUPLENTE")
+            '   MessageBox.Show("ERROR AL INGRESO OTRO APOD SUPLENTE")
             Return False
         End Try
 
@@ -1001,4 +1003,54 @@ Module ModuloContenedor
 
 
     End Sub
+
+    Public Function cargarComboCurso(ByRef consultaCurso As String, ByRef conexion As MySqlConnection) As Boolean
+
+        Try
+            Dim _dataAdapter = New MySqlDataAdapter(consultaCurso, conexion)
+            Dim _dataSet = New DataSet
+            _dataAdapter.Fill(_dataSet)
+
+            FormularioMatricula.comboCurso.DataSource = _dataSet.Tables(0)
+            FormularioMatricula.comboCurso.ValueMember = "idCurso"
+            FormularioMatricula.comboCurso.DisplayMember = "Curso"
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function cargarComboComuna(ByRef consultaComuna As String, ByRef conexion As MySqlConnection) As Boolean
+
+        Try
+            Dim _dataAdapter = New MySqlDataAdapter(consultaComuna, conexion)
+            Dim _dataSet = New DataSet
+            _dataAdapter.Fill(_dataSet)
+
+            FormularioMatricula.comboComuna.DataSource = _dataSet.Tables(0)
+            FormularioMatricula.comboComuna.ValueMember = "idComuna"
+            FormularioMatricula.comboComuna.DisplayMember = "Comuna"
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function cargarComboServSalud(ByRef consultaServSalud As String, ByVal conexion As MySqlConnection)
+
+        Try
+            Dim _dataAdapter = New MySqlDataAdapter(consultaServSalud, conexion)
+            Dim _dataSet = New DataSet
+            _dataAdapter.Fill(_dataSet)
+
+            FormularioMatricula.comboServSalud.DataSource = _dataSet.Tables(0)
+            FormularioMatricula.comboServSalud.ValueMember = "idServicio_salud"
+            FormularioMatricula.comboServSalud.DisplayMember = "PlanSalud"
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+
 End Module

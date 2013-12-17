@@ -6,6 +6,8 @@ Public Class FormularioMatricula
     Public varConexion As MySqlConnection
     Public varConexionString As String = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
     Public consultaCargaCombo As String = "SELECT * FROM bd_echaurren.servicio_salud;"
+    Public consultaCargaComboCurso As String = "SELECT * FROM bd_echaurren.curso;"
+    Public consultaCargaComboComuna As String = "SELECT * FROM bd_echaurren.comuna;"
 
 
     Private Sub FormularioMatricula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -19,30 +21,28 @@ Public Class FormularioMatricula
         dateTimeFechaNac.MaxDate = Now()
 
         Try
-
             varConexion = New MySqlConnection
             varConexion.ConnectionString = varConexionString
             varConexion.Open()
-
         Catch ex As Exception
-
             MessageBox.Show("Error al conectar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
-
         End Try
 
+        If ModuloContenedor.cargarComboCurso(consultaCargaComboCurso, varConexion) = True Then
+        Else
+            MessageBox.Show("Error al cargar los cursos")
+        End If
 
-        Try
-            Dim _dataAdapter = New MySqlDataAdapter(consultaCargaCombo, varConexion)
-            Dim _dataSet = New DataSet
-            _dataAdapter.Fill(_dataSet)
+        If ModuloContenedor.cargarComboComuna(consultaCargaComboComuna, varConexion) = True Then
+        Else
+            MessageBox.Show("Error al cargar comunas")
+        End If
 
-            comboServSalud.DataSource = _dataSet.Tables(0)
-            comboServSalud.ValueMember = "idServicio_salud"
-            comboServSalud.DisplayMember = "PlanSalud"
-        Catch ex As Exception
+        If ModuloContenedor.cargarComboServSalud(consultaCargaCombo, varConexion) = True Then
+        Else
             MessageBox.Show("Error al cargar servicios de salud", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        End If
 
     End Sub
 
@@ -148,8 +148,7 @@ Public Class FormularioMatricula
     Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar2.Click
 
         If txtApePatAlumno.Text = "" Or txtApeMatAlumno.Text = "" And txtNombresAlumno.Text = "" And txtEdadAlumno.Text = "" _
-            And txtCalleAlumno.Text = "" And txtSectorAlumno.Text = "" Or txtCurso.Text = "" Or txtComunaAlumno.Text = "" _
-            Or txtTelefonoAlumno.Text = "" Or txtColegioPrese.Text = "" Or txtCursosRepetidos.Text = "" Then
+            And txtCalleAlumno.Text = "" And txtSectorAlumno.Text = "" Or txtTelefonoAlumno.Text = "" Or txtColegioPrese.Text = "" Or txtCursosRepetidos.Text = "" Then
 
             MessageBox.Show("Debe ingresar todos los datos del alumno", "Datos de alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -402,7 +401,8 @@ Public Class FormularioMatricula
         Dim varApoderadoSupleOtro As Integer = 0
         Dim varTutor As Integer = 0
         Dim varTutor2 As Integer = 0
-
+        Dim varCurso As String = ""
+        Dim varComuna As String = ""
 
         If CheckBox1.Checked = False Then
             becado = 0
@@ -428,45 +428,24 @@ Public Class FormularioMatricula
             varViveCon = cbViveCon.Text
         End If
 
-        If ModuloContenedor.ingresarAlumno(DateTimePicker1, becado, txtApePatAlumno.Text, txtApeMatAlumno.Text, txtNombresAlumno.Text, _
-                                      txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
-                                               txtSectorAlumno.Text, txtCurso.Text, txtComunaAlumno.Text, txtTelefonoAlumno.Text, _
-                                                   txtColegioPrese.Text, txtCursosRepetidos.Text, varHermano, varViveCon, txtNumHijos.Text, _
-                                                      txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
-            MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        varComuna = comboComuna.SelectedValue
+        varCurso = comboCurso.SelectedValue
+        servSalud = comboServSalud.SelectedValue
+
+        If ModuloContenedor.ingresarAlumno(DateTimePicker1, txtApePatAlumno.Text, txtApeMatAlumno.Text, txtNombresAlumno.Text, _
+                                           txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
+                                           txtSectorAlumno.Text, varCurso, varComuna, txtTelefonoAlumno.Text, _
+                                           txtColegioPrese.Text, txtCursosRepetidos.Text, becado, txtHermanosCursos.Text, _
+                                           varViveCon, txtNumHijos.Text, txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
+            'MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
-        If comboServSalud.Text = "masvida" Then
-            servSalud = "ss0"
-        ElseIf comboServSalud.Text = "colmena" Then
-            servSalud = "ss1"
-        ElseIf comboServSalud.Text = "banmedica" Then
-            servSalud = "ss2"
-        ElseIf comboServSalud.Text = "consalud" Then
-            servSalud = "ss3"
-        ElseIf comboServSalud.Text = "cruz blanca" Then
-            servSalud = "ss4"
-        ElseIf comboServSalud.Text = "vida tres" Then
-            servSalud = "ss5"
-        ElseIf comboServSalud.Text = "ferrosalud" Then
-            servSalud = "ss6"
-        ElseIf comboServSalud.Text = "fonasa a" Then
-            servSalud = "ss7"
-        ElseIf comboServSalud.Text = "fonasa b" Then
-            servSalud = "ss8"
-        ElseIf comboServSalud.Text = "fonasa c" Then
-            servSalud = "ss9"
-        ElseIf comboServSalud.Text = "otro" Then
-            servSalud = "ss99"
-            otroServSalud = txtOtrosServicios.Text
-        End If
-
 
         If ModuloContenedor.ingresarServSalud(servSalud, otroServSalud, txtSeguros.Text) = True Then
-            MessageBox.Show("Servicio salud ingresado")
+            ' MessageBox.Show("Servicio salud ingresado")
         Else
             MessageBox.Show("Error al ingresar servicio de salud", "Error")
             Exit Sub
@@ -479,9 +458,6 @@ Public Class FormularioMatricula
             Exit Sub
         End If
 
-        '==============================================================================================
-        '==============================================================================================0
-        '==============================================================================================0
 
         If cbApoderado.Text = "Padre" Then
             varApoderadoPadre = 1
@@ -537,7 +513,6 @@ Public Class FormularioMatricula
                                             txtDireccionMadre.Text, txtCorreoMadre.Text)
             ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
                                                     varApoderadoSupleMadre)
-
         End If
 
         If checkIguales.Checked = True Then
@@ -578,6 +553,8 @@ Public Class FormularioMatricula
             ModuloContenedor.insertarAlumno_respons_tutor(txtRut.Text, txtRutAlumno.Text, varResponsableTutor, varTutor, _
                                                       varTutor2, txtOtro.Text)
         End If
+
+        MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
     End Sub
 
