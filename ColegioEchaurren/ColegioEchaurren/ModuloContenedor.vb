@@ -1031,6 +1031,7 @@ Module ModuloContenedor
             FormularioMatricula.comboComuna.ValueMember = "idComuna"
             FormularioMatricula.comboComuna.DisplayMember = "Comuna"
             Return True
+
         Catch ex As Exception
             Return False
         End Try
@@ -1053,4 +1054,162 @@ Module ModuloContenedor
 
     End Function
 
+
+    Public Function AutollenarFormulario(ByRef RutAlumno As String, ByRef conexion As MySqlConnection) As Boolean
+
+        Try
+            Dim consulta1 As String = "select * from alumno where alumno.RutAlumno = '" & RutAlumno & "'"
+            Dim consulta2 As String = "select * from alumno inner join curso on alumno.Curso_idCurso = curso.idCurso where RutAlumno = '" & RutAlumno & "'"
+            Dim consulta3 As String = "select * from alumno inner join comuna on alumno.Comuna_idComuna = comuna.idComuna where RutAlumno='" & RutAlumno & "'"
+            Dim consulta4 As String = "select * from alumno inner join fichaalumno on alumno.fichaalumno_idFichaalumno = fichaalumno.idFichaalumno where alumno.RutAlumno = '" & RutAlumno & "'"
+            Dim consulta5 As String = "select * from servicio_salud inner join servicio_por_alumno on servicio_salud.idServicio_salud = servicio_por_alumno.Servicio_salud_idServicio_salud where alumno_RutAlumno = '" & RutAlumno & "'"
+            Dim consulta6 As String = "select * from contacto_emergencia where Alumno_RutAlumno = '" & RutAlumno & "'"
+            Dim consulta7 As String = "select * from responsable inner join responsable_alumno on responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join telefono on responsable.Telefono_idTelefono = telefono.idTelefono inner join direccion on responsable.Direccion_idDireccion = direccion.idDireccion where Alumno_RutAlumno = '" & RutAlumno & "'"
+            Dim consulta8 As String = "select * from responsable inner join responsable_alumno on responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join telefono on responsable.Telefono_idTelefono = telefono.idTelefono inner join direccion on responsable.Direccion_idDireccion = direccion.idDireccion where Alumno_RutAlumno = '" & RutAlumno & "' and Tipo_responsable_idTipo_responsable = 'tr2'"
+            Dim consulta9 As String = "select * from responsable inner join responsable_alumno on responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable where Alumno_RutAlumno = '" & RutAlumno & "'"
+
+            Dim _dataAdapter As New MySqlDataAdapter(consulta1, conexion)
+            Dim _dataAdapter2 As New MySqlDataAdapter(consulta2, conexion)
+            Dim _dataAdapter3 As New MySqlDataAdapter(consulta3, conexion)
+            Dim _dataAdapter4 As New MySqlDataAdapter(consulta4, conexion)
+            Dim _dataAdapter5 As New MySqlDataAdapter(consulta5, conexion)
+            Dim _dataAdapter6 As New MySqlDataAdapter(consulta6, conexion)
+            Dim _dataAdapter7 As New MySqlDataAdapter(consulta7, conexion)
+            Dim _dataAdapter8 As New MySqlDataAdapter(consulta8, conexion)
+            Dim _dataSet As New DataSet
+
+            _dataAdapter.Fill(_dataSet)
+            FormularioMatricula.txtApePatAlumno.Text = _dataSet.Tables(0).Rows("0")("ApePaterno").ToString
+            FormularioMatricula.txtApeMatAlumno.Text = _dataSet.Tables(0).Rows("0")("ApeMaterno").ToString
+            FormularioMatricula.txtNombresAlumno.Text = _dataSet.Tables(0).Rows("0")("NombreCompleto").ToString
+            If _dataSet.Tables(0).Rows("0")("Sexo") = "Masculino" Then
+                FormularioMatricula.radioMasc.Checked = True
+            Else
+                FormularioMatricula.radioFeme.Checked = True
+            End If
+            FormularioMatricula.dateTimeFechaNac.Value = _dataSet.Tables(0).Rows("0")("FechaNac")
+            FormularioMatricula.txtRutAlumno.Text = _dataSet.Tables(0).Rows("0")("RutAlumno").ToString
+            FormularioMatricula.txtEdadAlumno.Text = _dataSet.Tables(0).Rows("0")("Edad").ToString
+            FormularioMatricula.txtCalleAlumno.Text = _dataSet.Tables(0).Rows("0")("Domicilio").ToString
+            FormularioMatricula.txtSectorAlumno.Text = _dataSet.Tables(0).Rows("0")("SectorVilla").ToString
+            FormularioMatricula.txtTelefonoAlumno.Text = _dataSet.Tables(0).Rows("0")("Telefono").ToString
+            _dataSet.Clear()
+
+            _dataAdapter2.Fill(_dataSet)
+            FormularioMatricula.comboCurso.Text = _dataSet.Tables(0).Rows("0")("Curso").ToString
+            _dataSet.Clear()
+
+            _dataAdapter3.Fill(_dataSet)
+            FormularioMatricula.comboComuna.Text = _dataSet.Tables(0).Rows("0")("Comuna").ToString
+            _dataSet.Clear()
+
+            _dataAdapter4.Fill(_dataSet)
+            FormularioMatricula.txtColegioPrese.Text = _dataSet.Tables(0).Rows("0")("ColegioPresedencia").ToString
+            FormularioMatricula.txtCursosRepetidos.Text = _dataSet.Tables(0).Rows("0")("CursosRepetidos").ToString
+            If _dataSet.Tables(0).Rows("0")("HermanosEstablecimiento").ToString = "" Then
+                FormularioMatricula.radioHermanosNo.Checked = True
+            Else
+                FormularioMatricula.radioHermanosSi.Checked = True
+                FormularioMatricula.txtHermanosCursos.Text = _dataSet.Tables(0).Rows("0")("HermanosEstablecimiento").ToString
+            End If
+            If FormularioMatricula.cbViveCon.Text = "Otros (especificar)" Then
+                FormularioMatricula.cbViveCon.Text = "Otros (especificar)"
+                FormularioMatricula.txtViveConOtros.Text = _dataSet.Tables(0).Rows("0")("AlumnoViveCon").ToString
+            Else
+                FormularioMatricula.cbViveCon.Text = _dataSet.Tables(0).Rows("0")("AlumnoViveCon").ToString
+            End If
+            FormularioMatricula.txtNumHijos.Text = _dataSet.Tables(0).Rows("0")("NumHijosFamilia").ToString
+            FormularioMatricula.txtLugarHijos.Text = _dataSet.Tables(0).Rows("0")("LugarOcupacionHijos").ToString
+            FormularioMatricula.txtGrupoFamiliar.Text = _dataSet.Tables(0).Rows("0")("GrupoFamiliarComponen").ToString
+            FormularioMatricula.txtAntecedentesMed.Text = _dataSet.Tables(0).Rows("0")("AntecedentesMedicos").ToString
+            FormularioMatricula.CheckBox1.Checked = _dataSet.Tables(0).Rows("0")("Becado")
+            _dataSet.Clear()
+
+            _dataAdapter5.Fill(_dataSet)
+            If _dataSet.Tables(0).Rows("0")("PlanSalud") = "otro" Then
+                FormularioMatricula.comboServSalud.Text = "otro"
+                FormularioMatricula.txtOtrosServicios.Text = _dataSet.Tables(0).Rows("0")("OtrosServicios").ToString
+                FormularioMatricula.txtSeguros.Text = _dataSet.Tables(0).Rows("0")("Seguros").ToString
+            Else
+                FormularioMatricula.comboServSalud.Text = _dataSet.Tables(0).Rows("0")("PlanSalud").ToString
+                FormularioMatricula.txtSeguros.Text = _dataSet.Tables(0).Rows("0")("Seguros").ToString
+            End If
+            _dataSet.Clear()
+
+            _dataAdapter6.Fill(_dataSet)
+            If _dataSet.Tables(0).Rows.Count = 1 Then
+                FormularioMatricula.ComboBox1.Text = "1 Contacto"
+                FormularioMatricula.txtNombreContacto.Text = _dataSet.Tables(0).Rows("0")("NombreContacto").ToString
+                FormularioMatricula.txtNumContacto.Text = _dataSet.Tables(0).Rows("0")("Numero").ToString
+            ElseIf _dataSet.Tables(0).Rows.Count = 2 Then
+                FormularioMatricula.ComboBox1.Text = "2 Contactos"
+                FormularioMatricula.txtNombreContacto.Text = _dataSet.Tables(0).Rows("0")("NombreContacto").ToString
+                FormularioMatricula.txtNumContacto.Text = _dataSet.Tables(0).Rows("0")("Numero").ToString
+                FormularioMatricula.txtNombreContacto2.Text = _dataSet.Tables(0).Rows("1")("NombreContacto").ToString
+                FormularioMatricula.txtNumContacto2.Text = _dataSet.Tables(0).Rows("1")("Numero").ToString
+            Else
+                FormularioMatricula.ComboBox1.Text = "3 Contactos"
+                FormularioMatricula.txtNombreContacto.Text = _dataSet.Tables(0).Rows("0")("NombreContacto").ToString
+                FormularioMatricula.txtNumContacto.Text = _dataSet.Tables(0).Rows("0")("Numero").ToString
+                FormularioMatricula.txtNombreContacto2.Text = _dataSet.Tables(0).Rows("1")("NombreContacto").ToString
+                FormularioMatricula.txtNumContacto2.Text = _dataSet.Tables(0).Rows("1")("Numero").ToString
+                FormularioMatricula.txtNombreContacto3.Text = _dataSet.Tables(0).Rows("2")("NombreContacto").ToString
+                FormularioMatricula.txtNumContacto3.Text = _dataSet.Tables(0).Rows("2")("Numero").ToString
+            End If
+            _dataSet.Clear()
+          
+
+            _dataAdapter7.Fill(_dataSet)
+            While _dataSet.Tables(0).Rows("0")("Tipo_responsable_idTipo_responsable").ToString <> ""
+                While _dataSet.Tables(0).Rows("0")("Tipo_responsable_idTipo_responsable").ToString = "tr1"
+                    FormularioMatricula.txtNombrePadre.Text = _dataSet.Tables(0).Rows("0")("NombreCompleto").ToString
+                    FormularioMatricula.txtRutPadre.Text = _dataSet.Tables(0).Rows("0")("RutResponsable").ToString
+                    FormularioMatricula.txtEdadPadre.Text = _dataSet.Tables(0).Rows("0")("Edad").ToString
+                    FormularioMatricula.cbEstudiosPadre.Text = _dataSet.Tables(0).Rows("0")("EstudiosCompletados").ToString
+                    FormularioMatricula.txtTrabajaenPadre.Text = _dataSet.Tables(0).Rows("0")("Trabajo").ToString
+                    FormularioMatricula.txtCargoPadre.Text = _dataSet.Tables(0).Rows("0")("Cargo").ToString
+                    FormularioMatricula.txtTelefonoPadre.Text = _dataSet.Tables(0).Rows("0")("NumTrabajo").ToString
+                    FormularioMatricula.txtDireccionPadre.Text = _dataSet.Tables(0).Rows("0")("DireccionTrabajo").ToString
+                    FormularioMatricula.txtCorreoPadre.Text = _dataSet.Tables(0).Rows("0")("Correo electronico").ToString
+                    FormularioMatricula.checkpadre.Checked = True
+                    Exit While
+                End While
+
+                While _dataSet.Tables(0).Rows("0")("Tipo_responsable_idTipo_responsable").ToString = "tr2"
+                    _dataSet.Clear()
+                    _dataAdapter8.Fill(_dataSet)
+                    FormularioMatricula.txtNombreMadre.Text = _dataSet.Tables(0).Rows("0")("NombreCompleto").ToString
+                    FormularioMatricula.txtRutMadre.Text = _dataSet.Tables(0).Rows("0")("RutResponsable").ToString
+                    FormularioMatricula.txtEdadMadre.Text = _dataSet.Tables(0).Rows("0")("Edad").ToString
+                    FormularioMatricula.cbEstudiosMadre.Text = _dataSet.Tables(0).Rows("0")("EstudiosCompletados").ToString
+                    FormularioMatricula.txtTrabajaenMadre.Text = _dataSet.Tables(0).Rows("0")("Trabajo").ToString
+                    FormularioMatricula.txtCargoMadre.Text = _dataSet.Tables(0).Rows("0")("Cargo").ToString
+                    FormularioMatricula.txtTelefonoMadre.Text = _dataSet.Tables(0).Rows("0")("NumTrabajo").ToString
+                    FormularioMatricula.txtDireccionMadre.Text = _dataSet.Tables(0).Rows("0")("DireccionTrabajo").ToString
+                    FormularioMatricula.txtCorreoMadre.Text = _dataSet.Tables(0).Rows("0")("Correo electronico").ToString
+                    FormularioMatricula.checkmadre.Checked = True
+                    Exit While
+                End While
+              
+                Exit While
+            End While
+            '  _dataAdapter9.Fill(_dataSet)
+            '   FormularioMatricula.txtNombreTutor.Text = _dataSet.Tables(0).Rows("0")("NombreCompleto").ToString
+            '  FormularioMatricula.txtRut.Text = _dataSet.Tables(0).Rows("0")("RutResponsable").ToString
+            ' FormularioMatricula.txtTelefonoPart.Text = _dataSet.Tables(0).Rows("0")("Num1").ToString
+            'FormularioMatricula.txtTelefonoPart2.Text = _dataSet.Tables(0).Rows("0")("Num2").ToString
+            'FormularioMatricula.txtTelefonoTrabajo.Text = _dataSet.Tables(0).Rows("0")("Num2").ToString
+            'FormularioMatricula.txtDomicilio.Text = _dataSet.Tables(0).Rows("0")("DireccionParticular").ToString
+            'FormularioMatricula.txtLugarDeTrabajo.Text = _dataSet.Tables(0).Rows("0")("Trabajo").ToString
+            'FormularioMatricula.txtOcupacionAct.Text = _dataSet.Tables(0).Rows("0")("Cargo").ToString
+            'FormularioMatricula.txtProfesion.Text = _dataSet.Tables(0).Rows("0")("Profesion").ToString
+
+
+
+        Catch ex As Exception
+            MessageBox.Show("Alumno no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+
+    End Function
 End Module

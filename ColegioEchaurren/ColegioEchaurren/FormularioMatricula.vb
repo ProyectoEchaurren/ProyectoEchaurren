@@ -437,7 +437,6 @@ Public Class FormularioMatricula
                                            txtSectorAlumno.Text, varCurso, varComuna, txtTelefonoAlumno.Text, _
                                            txtColegioPrese.Text, txtCursosRepetidos.Text, becado, txtHermanosCursos.Text, _
                                            varViveCon, txtNumHijos.Text, txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
-            'MessageBox.Show("Alumno ingresado", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -445,7 +444,6 @@ Public Class FormularioMatricula
 
 
         If ModuloContenedor.ingresarServSalud(servSalud, otroServSalud, txtSeguros.Text) = True Then
-            ' MessageBox.Show("Servicio salud ingresado")
         Else
             MessageBox.Show("Error al ingresar servicio de salud", "Error")
             Exit Sub
@@ -457,7 +455,6 @@ Public Class FormularioMatricula
             MessageBox.Show("Error al ingresar contactos de emergencia")
             Exit Sub
         End If
-
 
         If cbApoderado.Text = "Padre" Then
             varApoderadoPadre = 1
@@ -742,5 +739,11 @@ Public Class FormularioMatricula
             txtRutOtroApodSuple.Text = ""
             Exit While
         End While
+    End Sub
+
+    Private Sub btnBuscarAlumAnt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscarAlumAnt.Click
+
+        ModuloContenedor.AutollenarFormulario(txtRutAntiguo.Text, varConexion)
+
     End Sub
 End Class
