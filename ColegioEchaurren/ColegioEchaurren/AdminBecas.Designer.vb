@@ -33,10 +33,10 @@ Partial Class AdminBecas
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtCampoRut = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbbNewPorcentaje = New System.Windows.Forms.ComboBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnDeshacer = New System.Windows.Forms.Button()
-        Me.txtNewPorcentaje = New System.Windows.Forms.TextBox()
         Me.cbbNewBeca = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -119,10 +119,10 @@ Partial Class AdminBecas
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbbNewPorcentaje)
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
         Me.GroupBox1.Controls.Add(Me.btnDeshacer)
-        Me.GroupBox1.Controls.Add(Me.txtNewPorcentaje)
         Me.GroupBox1.Controls.Add(Me.cbbNewBeca)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -132,6 +132,16 @@ Partial Class AdminBecas
         Me.GroupBox1.TabIndex = 59
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Control de Beca"
+        '
+        'cbbNewPorcentaje
+        '
+        Me.cbbNewPorcentaje.Enabled = False
+        Me.cbbNewPorcentaje.FormattingEnabled = True
+        Me.cbbNewPorcentaje.Items.AddRange(New Object() {"", "0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "95", "100"})
+        Me.cbbNewPorcentaje.Location = New System.Drawing.Point(173, 76)
+        Me.cbbNewPorcentaje.Name = "cbbNewPorcentaje"
+        Me.cbbNewPorcentaje.Size = New System.Drawing.Size(121, 21)
+        Me.cbbNewPorcentaje.TabIndex = 7
         '
         'btnCancelar
         '
@@ -144,6 +154,7 @@ Partial Class AdminBecas
         '
         'btnGuardar
         '
+        Me.btnGuardar.Enabled = False
         Me.btnGuardar.Location = New System.Drawing.Point(338, 62)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(113, 32)
@@ -153,20 +164,13 @@ Partial Class AdminBecas
         '
         'btnDeshacer
         '
+        Me.btnDeshacer.Enabled = False
         Me.btnDeshacer.Location = New System.Drawing.Point(338, 19)
         Me.btnDeshacer.Name = "btnDeshacer"
         Me.btnDeshacer.Size = New System.Drawing.Size(113, 32)
         Me.btnDeshacer.TabIndex = 4
         Me.btnDeshacer.Text = "Deshacer Cambios"
         Me.btnDeshacer.UseVisualStyleBackColor = True
-        '
-        'txtNewPorcentaje
-        '
-        Me.txtNewPorcentaje.Enabled = False
-        Me.txtNewPorcentaje.Location = New System.Drawing.Point(173, 76)
-        Me.txtNewPorcentaje.Name = "txtNewPorcentaje"
-        Me.txtNewPorcentaje.Size = New System.Drawing.Size(120, 20)
-        Me.txtNewPorcentaje.TabIndex = 3
         '
         'cbbNewBeca
         '
@@ -235,8 +239,8 @@ Partial Class AdminBecas
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnDeshacer As System.Windows.Forms.Button
-    Friend WithEvents txtNewPorcentaje As System.Windows.Forms.TextBox
     Friend WithEvents cbbNewBeca As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents cbbNewPorcentaje As System.Windows.Forms.ComboBox
 End Class

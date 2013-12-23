@@ -6,6 +6,7 @@ Public Class FormAlumnosMatriculados
     Public varConexionString1 As String = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
     Public consultaGrilla As String = "SELECT * FROM bd_echaurren.alumno;"
     Public consultaCargaCombo1 As String = "SELECT * FROM bd_echaurren.servicio_salud;"
+    Public consultaCargaComboCurso As String = "SELECT * FROM bd_echaurren.curso;"
     Public varDataSet As DataSet
     Public varDataAdapter As MySqlDataAdapter
 
@@ -34,6 +35,21 @@ Public Class FormAlumnosMatriculados
             End If
         Catch ex As Exception
             MessageBox.Show("Error al cargar servicios de salud", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        Try
+            Dim _dataAdapter = New MySqlDataAdapter(consultaCargaComboCurso, varConexion1)
+            Dim _dataSet = New DataSet
+            _dataAdapter.Fill(_dataSet)
+
+            cbbCurso.DataSource = _dataSet.Tables(0)
+            cbbCurso.ValueMember = "idCurso"
+            cbbCurso.DisplayMember = "Curso"
+            If cbbCurso.SelectedIndex = 0 Then
+                cbbCurso.Text = ""
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar cursos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
         Try

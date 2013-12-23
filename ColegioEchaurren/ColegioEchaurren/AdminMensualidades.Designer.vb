@@ -39,11 +39,17 @@ Partial Class AdminMensualidades
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(616, 378)
         Me.DataGridView1.TabIndex = 0
+        Me.DataGridView1.TabStop = False
         '
         'labelPorcentaje
         '
@@ -59,7 +65,7 @@ Partial Class AdminMensualidades
         '
         Me.cbPorcentaje.Enabled = False
         Me.cbPorcentaje.FormattingEnabled = True
-        Me.cbPorcentaje.Items.AddRange(New Object() {"", "25%", "50%", "75%", "100%"})
+        Me.cbPorcentaje.Items.AddRange(New Object() {"", "0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "95", "100"})
         Me.cbPorcentaje.Location = New System.Drawing.Point(662, 163)
         Me.cbPorcentaje.Name = "cbPorcentaje"
         Me.cbPorcentaje.Size = New System.Drawing.Size(121, 21)

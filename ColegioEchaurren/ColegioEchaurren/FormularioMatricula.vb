@@ -3,6 +3,7 @@
 Public Class FormularioMatricula
 
     Public indiceTab As Integer
+    Public varAñoActual As Integer
     Public varConexion As MySqlConnection
     Public varConexionString As String = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
     Public consultaCargaCombo As String = "SELECT * FROM bd_echaurren.servicio_salud;"
@@ -19,6 +20,8 @@ Public Class FormularioMatricula
         dateTimeFechaNac.Format = DateTimePickerFormat.Custom
         dateTimeFechaNac.CustomFormat = "dd/MM/yyyy"
         dateTimeFechaNac.MaxDate = Now()
+
+        varAñoActual = Year(Now)
 
         Try
             varConexion = New MySqlConnection
@@ -550,6 +553,71 @@ Public Class FormularioMatricula
             ModuloContenedor.insertarAlumno_respons_tutor(txtRut.Text, txtRutAlumno.Text, varResponsableTutor, varTutor, _
                                                       varTutor2, txtOtro.Text)
         End If
+
+        '---Inicio de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
+
+        If txtMontoMarzo.Text <> "" And cbbDiaMarzo.Text <> "Día" And txtDocMarzo.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblMarzo.Text, cbbTipoPago, txtMontoMarzo.Text, varAñoActual & "-03-" & cbbDiaMarzo.Text, txtDocMarzo.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Marzo", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        If txtMontoAbril.Text <> "" And cbbDiaAbril.Text <> "Día" And txtDocAbril.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblAbril.Text, cbbTipoPago, txtMontoAbril.Text, varAñoActual & "-04-" & cbbDiaAbril.Text, txtDocAbril.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Abril", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        If txtMontoMayo.Text <> "" And cbbDiaMayo.Text <> "Día" And txtDocMayo.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblMayo.Text, cbbTipoPago, txtMontoMayo.Text, varAñoActual & "-05-" & cbbDiaMayo.Text, txtDocMayo.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Mayo", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        If txtMontoJunio.Text <> "" And cbbDiaJunio.Text <> "Día" And txtDocJunio.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblJunio.Text, cbbTipoPago, txtMontoJunio.Text, varAñoActual & "-06-" & cbbDiaJunio.Text, txtDocJunio.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Junio", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        If txtMontoJulio.Text <> "" And cbbDiaJulio.Text <> "Día" And txtDocJulio.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblJulio.Text, cbbTipoPago, txtMontoJulio.Text, varAñoActual & "-07-" & cbbDiaJulio.Text, txtDocJulio.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Julio", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        If txtMontoAgosto.Text <> "" And cbbDiaAgosto.Text <> "Día" And txtDocAgosto.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblAgosto.Text, cbbTipoPago, txtMontoAgosto.Text, varAñoActual & "-08-" & cbbDiaAgosto.Text, txtDocAgosto.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Agosto", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        If txtMontoSept.Text <> "" And cbbDiaSept.Text <> "Día" And txtDocSept.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblSept.Text, cbbTipoPago, txtMontoSept.Text, varAñoActual & "-09-" & cbbDiaSept.Text, txtDocSept.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Septiembre", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        If txtMontoOctubre.Text <> "" And cbbDiaOctubre.Text <> "Día" And txtDocOctubre.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblOctubre.Text, cbbTipoPago, txtMontoOctubre.Text, varAñoActual & "-10-" & cbbDiaOctubre.Text, txtDocOctubre.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Octubre", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        If txtMontoNov.Text <> "" And cbbDiaNov.Text <> "Día" And txtDocNov.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblNov.Text, cbbTipoPago, txtMontoNov.Text, varAñoActual & "-11-" & cbbDiaNov.Text, txtDocNov.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Noviembre", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        If txtMontoDic.Text <> "" And cbbDiaDic.Text <> "Día" And txtDocDic.Text <> "" Then
+            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblDic.Text, cbbTipoPago, txtMontoDic.Text, varAñoActual & "-12-" & cbbDiaDic.Text, txtDocDic.Text)
+        Else
+            MsgBox("Asegurese de llenar los campos correspondientes al mes de Diciembre", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
+        '---Fin de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
 
         MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 

@@ -29,9 +29,12 @@ Partial Class HistorialdePagos
         '
         'DataGridViewHistorico
         '
+        Me.DataGridViewHistorico.AllowUserToAddRows = False
+        Me.DataGridViewHistorico.AllowUserToDeleteRows = False
         Me.DataGridViewHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewHistorico.Location = New System.Drawing.Point(12, 12)
         Me.DataGridViewHistorico.Name = "DataGridViewHistorico"
+        Me.DataGridViewHistorico.ReadOnly = True
         Me.DataGridViewHistorico.Size = New System.Drawing.Size(538, 312)
         Me.DataGridViewHistorico.TabIndex = 0
         '

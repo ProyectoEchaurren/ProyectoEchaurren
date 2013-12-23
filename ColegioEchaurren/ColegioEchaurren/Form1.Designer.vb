@@ -30,7 +30,6 @@ Partial Class Form1
         Me.FinanzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RealizarPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeMensualidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TransferenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlumnosMatriculadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarBecasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -73,7 +72,7 @@ Partial Class Form1
         '
         'FinanzasToolStripMenuItem
         '
-        Me.FinanzasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarPagoToolStripMenuItem, Me.RegistroDeMensualidadesToolStripMenuItem, Me.TransferenciasToolStripMenuItem})
+        Me.FinanzasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarPagoToolStripMenuItem, Me.RegistroDeMensualidadesToolStripMenuItem})
         Me.FinanzasToolStripMenuItem.Enabled = False
         Me.FinanzasToolStripMenuItem.Name = "FinanzasToolStripMenuItem"
         Me.FinanzasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
@@ -90,12 +89,6 @@ Partial Class Form1
         Me.RegistroDeMensualidadesToolStripMenuItem.Name = "RegistroDeMensualidadesToolStripMenuItem"
         Me.RegistroDeMensualidadesToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.RegistroDeMensualidadesToolStripMenuItem.Text = "Registro de Mensualidades"
-        '
-        'TransferenciasToolStripMenuItem
-        '
-        Me.TransferenciasToolStripMenuItem.Name = "TransferenciasToolStripMenuItem"
-        Me.TransferenciasToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
-        Me.TransferenciasToolStripMenuItem.Text = "Transferencias"
         '
         'AdministracionToolStripMenuItem
         '
@@ -176,7 +169,6 @@ Partial Class Form1
     Friend WithEvents CrearMatriculaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdministrarMatriculasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroDeMensualidadesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TransferenciasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RecursosHumanosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

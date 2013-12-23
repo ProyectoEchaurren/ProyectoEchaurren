@@ -26,6 +26,7 @@ Partial Class RealizarPago
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtMontoMensual = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.checkDic = New System.Windows.Forms.CheckBox()
         Me.checkNov = New System.Windows.Forms.CheckBox()
@@ -40,7 +41,7 @@ Partial Class RealizarPago
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtMontoTotal = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txtComprobante = New System.Windows.Forms.TextBox()
         Me.btnPagar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -76,11 +77,12 @@ Partial Class RealizarPago
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtMontoTotal)
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
+        Me.GroupBox1.Controls.Add(Me.txtComprobante)
         Me.GroupBox1.Controls.Add(Me.btnPagar)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 144)
         Me.GroupBox1.Name = "GroupBox1"
@@ -88,6 +90,15 @@ Partial Class RealizarPago
         Me.GroupBox1.TabIndex = 45
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Pago"
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(156, 129)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(109, 40)
+        Me.btnCancelar.TabIndex = 26
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -111,6 +122,7 @@ Partial Class RealizarPago
         'checkDic
         '
         Me.checkDic.AutoSize = True
+        Me.checkDic.Enabled = False
         Me.checkDic.Location = New System.Drawing.Point(130, 121)
         Me.checkDic.Name = "checkDic"
         Me.checkDic.Size = New System.Drawing.Size(73, 17)
@@ -121,6 +133,7 @@ Partial Class RealizarPago
         'checkNov
         '
         Me.checkNov.AutoSize = True
+        Me.checkNov.Enabled = False
         Me.checkNov.Location = New System.Drawing.Point(130, 98)
         Me.checkNov.Name = "checkNov"
         Me.checkNov.Size = New System.Drawing.Size(77, 17)
@@ -131,6 +144,7 @@ Partial Class RealizarPago
         'checkOctubre
         '
         Me.checkOctubre.AutoSize = True
+        Me.checkOctubre.Enabled = False
         Me.checkOctubre.Location = New System.Drawing.Point(130, 75)
         Me.checkOctubre.Name = "checkOctubre"
         Me.checkOctubre.Size = New System.Drawing.Size(64, 17)
@@ -141,6 +155,7 @@ Partial Class RealizarPago
         'checkSept
         '
         Me.checkSept.AutoSize = True
+        Me.checkSept.Enabled = False
         Me.checkSept.Location = New System.Drawing.Point(130, 52)
         Me.checkSept.Name = "checkSept"
         Me.checkSept.Size = New System.Drawing.Size(79, 17)
@@ -151,6 +166,7 @@ Partial Class RealizarPago
         'checkAgosto
         '
         Me.checkAgosto.AutoSize = True
+        Me.checkAgosto.Enabled = False
         Me.checkAgosto.Location = New System.Drawing.Point(130, 29)
         Me.checkAgosto.Name = "checkAgosto"
         Me.checkAgosto.Size = New System.Drawing.Size(59, 17)
@@ -161,6 +177,7 @@ Partial Class RealizarPago
         'checkJulio
         '
         Me.checkJulio.AutoSize = True
+        Me.checkJulio.Enabled = False
         Me.checkJulio.Location = New System.Drawing.Point(24, 121)
         Me.checkJulio.Name = "checkJulio"
         Me.checkJulio.Size = New System.Drawing.Size(47, 17)
@@ -171,6 +188,7 @@ Partial Class RealizarPago
         'checkJunio
         '
         Me.checkJunio.AutoSize = True
+        Me.checkJunio.Enabled = False
         Me.checkJunio.Location = New System.Drawing.Point(24, 98)
         Me.checkJunio.Name = "checkJunio"
         Me.checkJunio.Size = New System.Drawing.Size(51, 17)
@@ -181,6 +199,7 @@ Partial Class RealizarPago
         'checkMayo
         '
         Me.checkMayo.AutoSize = True
+        Me.checkMayo.Enabled = False
         Me.checkMayo.Location = New System.Drawing.Point(24, 75)
         Me.checkMayo.Name = "checkMayo"
         Me.checkMayo.Size = New System.Drawing.Size(52, 17)
@@ -191,6 +210,7 @@ Partial Class RealizarPago
         'checkAbril
         '
         Me.checkAbril.AutoSize = True
+        Me.checkAbril.Enabled = False
         Me.checkAbril.Location = New System.Drawing.Point(24, 52)
         Me.checkAbril.Name = "checkAbril"
         Me.checkAbril.Size = New System.Drawing.Size(46, 17)
@@ -201,6 +221,7 @@ Partial Class RealizarPago
         'checkMarzo
         '
         Me.checkMarzo.AutoSize = True
+        Me.checkMarzo.Enabled = False
         Me.checkMarzo.Location = New System.Drawing.Point(24, 29)
         Me.checkMarzo.Name = "checkMarzo"
         Me.checkMarzo.Size = New System.Drawing.Size(55, 17)
@@ -233,18 +254,18 @@ Partial Class RealizarPago
         Me.txtMontoTotal.Size = New System.Drawing.Size(165, 20)
         Me.txtMontoTotal.TabIndex = 7
         '
-        'TextBox6
+        'txtComprobante
         '
-        Me.TextBox6.Location = New System.Drawing.Point(19, 54)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox6.TabIndex = 6
+        Me.txtComprobante.Location = New System.Drawing.Point(19, 54)
+        Me.txtComprobante.Name = "txtComprobante"
+        Me.txtComprobante.Size = New System.Drawing.Size(180, 20)
+        Me.txtComprobante.TabIndex = 6
         '
         'btnPagar
         '
-        Me.btnPagar.Location = New System.Drawing.Point(19, 125)
+        Me.btnPagar.Location = New System.Drawing.Point(19, 129)
         Me.btnPagar.Name = "btnPagar"
-        Me.btnPagar.Size = New System.Drawing.Size(124, 44)
+        Me.btnPagar.Size = New System.Drawing.Size(109, 40)
         Me.btnPagar.TabIndex = 24
         Me.btnPagar.Text = "Efectuar Pago"
         Me.btnPagar.UseVisualStyleBackColor = True
@@ -397,7 +418,7 @@ Partial Class RealizarPago
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtMontoTotal As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents txtComprobante As System.Windows.Forms.TextBox
     Friend WithEvents btnPagar As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
@@ -411,4 +432,5 @@ Partial Class RealizarPago
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents txtCampoRut As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
 End Class

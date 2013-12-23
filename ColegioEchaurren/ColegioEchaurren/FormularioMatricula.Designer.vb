@@ -195,50 +195,50 @@ Partial Class FormularioMatricula
         Me.Label94 = New System.Windows.Forms.Label()
         Me.Label93 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
+        Me.cbbTipoPago = New System.Windows.Forms.ComboBox()
         Me.btnSalir3 = New System.Windows.Forms.Button()
         Me.btnTerminar = New System.Windows.Forms.Button()
         Me.btnVolver2 = New System.Windows.Forms.Button()
-        Me.Label124 = New System.Windows.Forms.Label()
-        Me.ComboBox11 = New System.Windows.Forms.ComboBox()
-        Me.TextBox107 = New System.Windows.Forms.TextBox()
-        Me.TextBox108 = New System.Windows.Forms.TextBox()
-        Me.Label123 = New System.Windows.Forms.Label()
-        Me.ComboBox10 = New System.Windows.Forms.ComboBox()
-        Me.TextBox105 = New System.Windows.Forms.TextBox()
-        Me.TextBox106 = New System.Windows.Forms.TextBox()
-        Me.Label122 = New System.Windows.Forms.Label()
-        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
-        Me.TextBox103 = New System.Windows.Forms.TextBox()
-        Me.TextBox104 = New System.Windows.Forms.TextBox()
-        Me.Label121 = New System.Windows.Forms.Label()
-        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
-        Me.TextBox101 = New System.Windows.Forms.TextBox()
-        Me.TextBox102 = New System.Windows.Forms.TextBox()
-        Me.Label120 = New System.Windows.Forms.Label()
-        Me.ComboBox7 = New System.Windows.Forms.ComboBox()
-        Me.TextBox99 = New System.Windows.Forms.TextBox()
-        Me.TextBox100 = New System.Windows.Forms.TextBox()
-        Me.Label119 = New System.Windows.Forms.Label()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
-        Me.TextBox97 = New System.Windows.Forms.TextBox()
-        Me.TextBox98 = New System.Windows.Forms.TextBox()
-        Me.Label118 = New System.Windows.Forms.Label()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.TextBox95 = New System.Windows.Forms.TextBox()
-        Me.TextBox96 = New System.Windows.Forms.TextBox()
-        Me.Label117 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.TextBox93 = New System.Windows.Forms.TextBox()
-        Me.TextBox94 = New System.Windows.Forms.TextBox()
-        Me.Label116 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.TextBox91 = New System.Windows.Forms.TextBox()
-        Me.TextBox92 = New System.Windows.Forms.TextBox()
-        Me.Label115 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.TextBox90 = New System.Windows.Forms.TextBox()
-        Me.TextBox89 = New System.Windows.Forms.TextBox()
+        Me.lblDic = New System.Windows.Forms.Label()
+        Me.cbbDiaDic = New System.Windows.Forms.ComboBox()
+        Me.txtMontoDic = New System.Windows.Forms.TextBox()
+        Me.txtDocDic = New System.Windows.Forms.TextBox()
+        Me.lblNov = New System.Windows.Forms.Label()
+        Me.cbbDiaNov = New System.Windows.Forms.ComboBox()
+        Me.txtMontoNov = New System.Windows.Forms.TextBox()
+        Me.txtDocNov = New System.Windows.Forms.TextBox()
+        Me.lblOctubre = New System.Windows.Forms.Label()
+        Me.cbbDiaOctubre = New System.Windows.Forms.ComboBox()
+        Me.txtMontoOctubre = New System.Windows.Forms.TextBox()
+        Me.txtDocOctubre = New System.Windows.Forms.TextBox()
+        Me.lblSept = New System.Windows.Forms.Label()
+        Me.cbbDiaSept = New System.Windows.Forms.ComboBox()
+        Me.txtMontoSept = New System.Windows.Forms.TextBox()
+        Me.txtDocSept = New System.Windows.Forms.TextBox()
+        Me.lblAgosto = New System.Windows.Forms.Label()
+        Me.cbbDiaAgosto = New System.Windows.Forms.ComboBox()
+        Me.txtMontoAgosto = New System.Windows.Forms.TextBox()
+        Me.txtDocAgosto = New System.Windows.Forms.TextBox()
+        Me.lblJulio = New System.Windows.Forms.Label()
+        Me.cbbDiaJulio = New System.Windows.Forms.ComboBox()
+        Me.txtMontoJulio = New System.Windows.Forms.TextBox()
+        Me.txtDocJulio = New System.Windows.Forms.TextBox()
+        Me.lblJunio = New System.Windows.Forms.Label()
+        Me.cbbDiaJunio = New System.Windows.Forms.ComboBox()
+        Me.txtMontoJunio = New System.Windows.Forms.TextBox()
+        Me.txtDocJunio = New System.Windows.Forms.TextBox()
+        Me.lblMayo = New System.Windows.Forms.Label()
+        Me.cbbDiaMayo = New System.Windows.Forms.ComboBox()
+        Me.txtMontoMayo = New System.Windows.Forms.TextBox()
+        Me.txtDocMayo = New System.Windows.Forms.TextBox()
+        Me.lblAbril = New System.Windows.Forms.Label()
+        Me.cbbDiaAbril = New System.Windows.Forms.ComboBox()
+        Me.txtMontoAbril = New System.Windows.Forms.TextBox()
+        Me.txtDocAbril = New System.Windows.Forms.TextBox()
+        Me.lblMarzo = New System.Windows.Forms.Label()
+        Me.cbbDiaMarzo = New System.Windows.Forms.ComboBox()
+        Me.txtMontoMarzo = New System.Windows.Forms.TextBox()
+        Me.txtDocMarzo = New System.Windows.Forms.TextBox()
         Me.Label114 = New System.Windows.Forms.Label()
         Me.Label113 = New System.Windows.Forms.Label()
         Me.Label112 = New System.Windows.Forms.Label()
@@ -280,7 +280,7 @@ Partial Class FormularioMatricula
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 3, 10, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(686, 1094)
+        Me.TabControl1.Size = New System.Drawing.Size(686, 989)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage2
@@ -344,7 +344,7 @@ Partial Class FormularioMatricula
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(678, 1068)
+        Me.TabPage2.Size = New System.Drawing.Size(678, 963)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Datos de Alumno(a)"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -935,7 +935,7 @@ Partial Class FormularioMatricula
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(678, 1068)
+        Me.TabPage4.Size = New System.Drawing.Size(678, 963)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Contactos de Emergencia"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -1243,7 +1243,7 @@ Partial Class FormularioMatricula
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(678, 1068)
+        Me.TabPage1.Size = New System.Drawing.Size(678, 963)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Antecedentes Familiares"
         '
@@ -1987,50 +1987,50 @@ Partial Class FormularioMatricula
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
-        Me.TabPage3.Controls.Add(Me.ComboBox12)
+        Me.TabPage3.Controls.Add(Me.cbbTipoPago)
         Me.TabPage3.Controls.Add(Me.btnSalir3)
         Me.TabPage3.Controls.Add(Me.btnTerminar)
         Me.TabPage3.Controls.Add(Me.btnVolver2)
-        Me.TabPage3.Controls.Add(Me.Label124)
-        Me.TabPage3.Controls.Add(Me.ComboBox11)
-        Me.TabPage3.Controls.Add(Me.TextBox107)
-        Me.TabPage3.Controls.Add(Me.TextBox108)
-        Me.TabPage3.Controls.Add(Me.Label123)
-        Me.TabPage3.Controls.Add(Me.ComboBox10)
-        Me.TabPage3.Controls.Add(Me.TextBox105)
-        Me.TabPage3.Controls.Add(Me.TextBox106)
-        Me.TabPage3.Controls.Add(Me.Label122)
-        Me.TabPage3.Controls.Add(Me.ComboBox9)
-        Me.TabPage3.Controls.Add(Me.TextBox103)
-        Me.TabPage3.Controls.Add(Me.TextBox104)
-        Me.TabPage3.Controls.Add(Me.Label121)
-        Me.TabPage3.Controls.Add(Me.ComboBox8)
-        Me.TabPage3.Controls.Add(Me.TextBox101)
-        Me.TabPage3.Controls.Add(Me.TextBox102)
-        Me.TabPage3.Controls.Add(Me.Label120)
-        Me.TabPage3.Controls.Add(Me.ComboBox7)
-        Me.TabPage3.Controls.Add(Me.TextBox99)
-        Me.TabPage3.Controls.Add(Me.TextBox100)
-        Me.TabPage3.Controls.Add(Me.Label119)
-        Me.TabPage3.Controls.Add(Me.ComboBox6)
-        Me.TabPage3.Controls.Add(Me.TextBox97)
-        Me.TabPage3.Controls.Add(Me.TextBox98)
-        Me.TabPage3.Controls.Add(Me.Label118)
-        Me.TabPage3.Controls.Add(Me.ComboBox5)
-        Me.TabPage3.Controls.Add(Me.TextBox95)
-        Me.TabPage3.Controls.Add(Me.TextBox96)
-        Me.TabPage3.Controls.Add(Me.Label117)
-        Me.TabPage3.Controls.Add(Me.ComboBox4)
-        Me.TabPage3.Controls.Add(Me.TextBox93)
-        Me.TabPage3.Controls.Add(Me.TextBox94)
-        Me.TabPage3.Controls.Add(Me.Label116)
-        Me.TabPage3.Controls.Add(Me.ComboBox3)
-        Me.TabPage3.Controls.Add(Me.TextBox91)
-        Me.TabPage3.Controls.Add(Me.TextBox92)
-        Me.TabPage3.Controls.Add(Me.Label115)
-        Me.TabPage3.Controls.Add(Me.ComboBox2)
-        Me.TabPage3.Controls.Add(Me.TextBox90)
-        Me.TabPage3.Controls.Add(Me.TextBox89)
+        Me.TabPage3.Controls.Add(Me.lblDic)
+        Me.TabPage3.Controls.Add(Me.cbbDiaDic)
+        Me.TabPage3.Controls.Add(Me.txtMontoDic)
+        Me.TabPage3.Controls.Add(Me.txtDocDic)
+        Me.TabPage3.Controls.Add(Me.lblNov)
+        Me.TabPage3.Controls.Add(Me.cbbDiaNov)
+        Me.TabPage3.Controls.Add(Me.txtMontoNov)
+        Me.TabPage3.Controls.Add(Me.txtDocNov)
+        Me.TabPage3.Controls.Add(Me.lblOctubre)
+        Me.TabPage3.Controls.Add(Me.cbbDiaOctubre)
+        Me.TabPage3.Controls.Add(Me.txtMontoOctubre)
+        Me.TabPage3.Controls.Add(Me.txtDocOctubre)
+        Me.TabPage3.Controls.Add(Me.lblSept)
+        Me.TabPage3.Controls.Add(Me.cbbDiaSept)
+        Me.TabPage3.Controls.Add(Me.txtMontoSept)
+        Me.TabPage3.Controls.Add(Me.txtDocSept)
+        Me.TabPage3.Controls.Add(Me.lblAgosto)
+        Me.TabPage3.Controls.Add(Me.cbbDiaAgosto)
+        Me.TabPage3.Controls.Add(Me.txtMontoAgosto)
+        Me.TabPage3.Controls.Add(Me.txtDocAgosto)
+        Me.TabPage3.Controls.Add(Me.lblJulio)
+        Me.TabPage3.Controls.Add(Me.cbbDiaJulio)
+        Me.TabPage3.Controls.Add(Me.txtMontoJulio)
+        Me.TabPage3.Controls.Add(Me.txtDocJulio)
+        Me.TabPage3.Controls.Add(Me.lblJunio)
+        Me.TabPage3.Controls.Add(Me.cbbDiaJunio)
+        Me.TabPage3.Controls.Add(Me.txtMontoJunio)
+        Me.TabPage3.Controls.Add(Me.txtDocJunio)
+        Me.TabPage3.Controls.Add(Me.lblMayo)
+        Me.TabPage3.Controls.Add(Me.cbbDiaMayo)
+        Me.TabPage3.Controls.Add(Me.txtMontoMayo)
+        Me.TabPage3.Controls.Add(Me.txtDocMayo)
+        Me.TabPage3.Controls.Add(Me.lblAbril)
+        Me.TabPage3.Controls.Add(Me.cbbDiaAbril)
+        Me.TabPage3.Controls.Add(Me.txtMontoAbril)
+        Me.TabPage3.Controls.Add(Me.txtDocAbril)
+        Me.TabPage3.Controls.Add(Me.lblMarzo)
+        Me.TabPage3.Controls.Add(Me.cbbDiaMarzo)
+        Me.TabPage3.Controls.Add(Me.txtMontoMarzo)
+        Me.TabPage3.Controls.Add(Me.txtDocMarzo)
         Me.TabPage3.Controls.Add(Me.Label114)
         Me.TabPage3.Controls.Add(Me.Label113)
         Me.TabPage3.Controls.Add(Me.Label112)
@@ -2049,19 +2049,19 @@ Partial Class FormularioMatricula
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(678, 1068)
+        Me.TabPage3.Size = New System.Drawing.Size(678, 963)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Documentos en Cartera"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'ComboBox12
+        'cbbTipoPago
         '
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Items.AddRange(New Object() {"", "Cheques", "Letras", "Contado"})
-        Me.ComboBox12.Location = New System.Drawing.Point(322, 124)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox12.TabIndex = 185
+        Me.cbbTipoPago.FormattingEnabled = True
+        Me.cbbTipoPago.Items.AddRange(New Object() {"", "Cheques", "Cuponera", "Contado"})
+        Me.cbbTipoPago.Location = New System.Drawing.Point(322, 124)
+        Me.cbbTipoPago.Name = "cbbTipoPago"
+        Me.cbbTipoPago.Size = New System.Drawing.Size(121, 21)
+        Me.cbbTipoPago.TabIndex = 185
         '
         'btnSalir3
         '
@@ -2090,335 +2090,335 @@ Partial Class FormularioMatricula
         Me.btnVolver2.Text = "Volver"
         Me.btnVolver2.UseVisualStyleBackColor = True
         '
-        'Label124
-        '
-        Me.Label124.AutoSize = True
-        Me.Label124.Location = New System.Drawing.Point(515, 644)
-        Me.Label124.Name = "Label124"
-        Me.Label124.Size = New System.Drawing.Size(66, 13)
-        Me.Label124.TabIndex = 62
-        Me.Label124.Text = "DICIEMBRE"
-        '
-        'ComboBox11
-        '
-        Me.ComboBox11.FormattingEnabled = True
-        Me.ComboBox11.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox11.Location = New System.Drawing.Point(444, 641)
-        Me.ComboBox11.Name = "ComboBox11"
-        Me.ComboBox11.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox11.TabIndex = 61
-        Me.ComboBox11.Text = "Día"
-        '
-        'TextBox107
-        '
-        Me.TextBox107.Location = New System.Drawing.Point(264, 641)
-        Me.TextBox107.Name = "TextBox107"
-        Me.TextBox107.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox107.TabIndex = 60
-        '
-        'TextBox108
-        '
-        Me.TextBox108.Location = New System.Drawing.Point(25, 641)
-        Me.TextBox108.Name = "TextBox108"
-        Me.TextBox108.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox108.TabIndex = 59
-        '
-        'Label123
-        '
-        Me.Label123.AutoSize = True
-        Me.Label123.Location = New System.Drawing.Point(515, 618)
-        Me.Label123.Name = "Label123"
-        Me.Label123.Size = New System.Drawing.Size(71, 13)
-        Me.Label123.TabIndex = 58
-        Me.Label123.Text = "NOVIEMBRE"
-        '
-        'ComboBox10
-        '
-        Me.ComboBox10.FormattingEnabled = True
-        Me.ComboBox10.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox10.Location = New System.Drawing.Point(444, 615)
-        Me.ComboBox10.Name = "ComboBox10"
-        Me.ComboBox10.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox10.TabIndex = 57
-        Me.ComboBox10.Text = "Día"
-        '
-        'TextBox105
-        '
-        Me.TextBox105.Location = New System.Drawing.Point(264, 615)
-        Me.TextBox105.Name = "TextBox105"
-        Me.TextBox105.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox105.TabIndex = 56
-        '
-        'TextBox106
-        '
-        Me.TextBox106.Location = New System.Drawing.Point(25, 615)
-        Me.TextBox106.Name = "TextBox106"
-        Me.TextBox106.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox106.TabIndex = 55
-        '
-        'Label122
-        '
-        Me.Label122.AutoSize = True
-        Me.Label122.Location = New System.Drawing.Point(515, 592)
-        Me.Label122.Name = "Label122"
-        Me.Label122.Size = New System.Drawing.Size(59, 13)
-        Me.Label122.TabIndex = 54
-        Me.Label122.Text = "OCTUBRE"
-        '
-        'ComboBox9
-        '
-        Me.ComboBox9.FormattingEnabled = True
-        Me.ComboBox9.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox9.Location = New System.Drawing.Point(444, 589)
-        Me.ComboBox9.Name = "ComboBox9"
-        Me.ComboBox9.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox9.TabIndex = 53
-        Me.ComboBox9.Text = "Día"
-        '
-        'TextBox103
-        '
-        Me.TextBox103.Location = New System.Drawing.Point(264, 589)
-        Me.TextBox103.Name = "TextBox103"
-        Me.TextBox103.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox103.TabIndex = 52
-        '
-        'TextBox104
-        '
-        Me.TextBox104.Location = New System.Drawing.Point(25, 589)
-        Me.TextBox104.Name = "TextBox104"
-        Me.TextBox104.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox104.TabIndex = 51
-        '
-        'Label121
-        '
-        Me.Label121.AutoSize = True
-        Me.Label121.Location = New System.Drawing.Point(517, 566)
-        Me.Label121.Name = "Label121"
-        Me.Label121.Size = New System.Drawing.Size(76, 13)
-        Me.Label121.TabIndex = 50
-        Me.Label121.Text = "SEPTIEMBRE"
-        '
-        'ComboBox8
-        '
-        Me.ComboBox8.FormattingEnabled = True
-        Me.ComboBox8.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox8.Location = New System.Drawing.Point(444, 563)
-        Me.ComboBox8.Name = "ComboBox8"
-        Me.ComboBox8.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox8.TabIndex = 49
-        Me.ComboBox8.Text = "Día"
-        '
-        'TextBox101
-        '
-        Me.TextBox101.Location = New System.Drawing.Point(264, 563)
-        Me.TextBox101.Name = "TextBox101"
-        Me.TextBox101.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox101.TabIndex = 48
-        '
-        'TextBox102
-        '
-        Me.TextBox102.Location = New System.Drawing.Point(25, 563)
-        Me.TextBox102.Name = "TextBox102"
-        Me.TextBox102.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox102.TabIndex = 47
-        '
-        'Label120
-        '
-        Me.Label120.AutoSize = True
-        Me.Label120.Location = New System.Drawing.Point(517, 539)
-        Me.Label120.Name = "Label120"
-        Me.Label120.Size = New System.Drawing.Size(52, 13)
-        Me.Label120.TabIndex = 46
-        Me.Label120.Text = "AGOSTO"
-        '
-        'ComboBox7
-        '
-        Me.ComboBox7.FormattingEnabled = True
-        Me.ComboBox7.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox7.Location = New System.Drawing.Point(444, 537)
-        Me.ComboBox7.Name = "ComboBox7"
-        Me.ComboBox7.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox7.TabIndex = 45
-        Me.ComboBox7.Text = "Día"
-        '
-        'TextBox99
-        '
-        Me.TextBox99.Location = New System.Drawing.Point(264, 537)
-        Me.TextBox99.Name = "TextBox99"
-        Me.TextBox99.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox99.TabIndex = 44
-        '
-        'TextBox100
-        '
-        Me.TextBox100.Location = New System.Drawing.Point(25, 537)
-        Me.TextBox100.Name = "TextBox100"
-        Me.TextBox100.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox100.TabIndex = 43
-        '
-        'Label119
-        '
-        Me.Label119.AutoSize = True
-        Me.Label119.Location = New System.Drawing.Point(517, 513)
-        Me.Label119.Name = "Label119"
-        Me.Label119.Size = New System.Drawing.Size(37, 13)
-        Me.Label119.TabIndex = 42
-        Me.Label119.Text = "JULIO"
-        '
-        'ComboBox6
-        '
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox6.Location = New System.Drawing.Point(444, 510)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox6.TabIndex = 41
-        Me.ComboBox6.Text = "Día"
-        '
-        'TextBox97
-        '
-        Me.TextBox97.Location = New System.Drawing.Point(264, 510)
-        Me.TextBox97.Name = "TextBox97"
-        Me.TextBox97.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox97.TabIndex = 40
-        '
-        'TextBox98
-        '
-        Me.TextBox98.Location = New System.Drawing.Point(25, 510)
-        Me.TextBox98.Name = "TextBox98"
-        Me.TextBox98.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox98.TabIndex = 39
-        '
-        'Label118
-        '
-        Me.Label118.AutoSize = True
-        Me.Label118.Location = New System.Drawing.Point(515, 487)
-        Me.Label118.Name = "Label118"
-        Me.Label118.Size = New System.Drawing.Size(39, 13)
-        Me.Label118.TabIndex = 38
-        Me.Label118.Text = "JUNIO"
-        '
-        'ComboBox5
-        '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox5.Location = New System.Drawing.Point(444, 484)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox5.TabIndex = 37
-        Me.ComboBox5.Text = "Día"
-        '
-        'TextBox95
-        '
-        Me.TextBox95.Location = New System.Drawing.Point(264, 484)
-        Me.TextBox95.Name = "TextBox95"
-        Me.TextBox95.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox95.TabIndex = 36
-        '
-        'TextBox96
-        '
-        Me.TextBox96.Location = New System.Drawing.Point(25, 484)
-        Me.TextBox96.Name = "TextBox96"
-        Me.TextBox96.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox96.TabIndex = 35
-        '
-        'Label117
-        '
-        Me.Label117.AutoSize = True
-        Me.Label117.Location = New System.Drawing.Point(515, 460)
-        Me.Label117.Name = "Label117"
-        Me.Label117.Size = New System.Drawing.Size(38, 13)
-        Me.Label117.TabIndex = 34
-        Me.Label117.Text = "MAYO"
-        '
-        'ComboBox4
-        '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox4.Location = New System.Drawing.Point(444, 457)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox4.TabIndex = 33
-        Me.ComboBox4.Text = "Día"
-        '
-        'TextBox93
-        '
-        Me.TextBox93.Location = New System.Drawing.Point(264, 457)
-        Me.TextBox93.Name = "TextBox93"
-        Me.TextBox93.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox93.TabIndex = 32
-        '
-        'TextBox94
-        '
-        Me.TextBox94.Location = New System.Drawing.Point(25, 457)
-        Me.TextBox94.Name = "TextBox94"
-        Me.TextBox94.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox94.TabIndex = 31
-        '
-        'Label116
-        '
-        Me.Label116.AutoSize = True
-        Me.Label116.Location = New System.Drawing.Point(515, 434)
-        Me.Label116.Name = "Label116"
-        Me.Label116.Size = New System.Drawing.Size(38, 13)
-        Me.Label116.TabIndex = 30
-        Me.Label116.Text = "ABRIL"
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox3.Location = New System.Drawing.Point(444, 431)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox3.TabIndex = 29
-        Me.ComboBox3.Text = "Día"
-        '
-        'TextBox91
-        '
-        Me.TextBox91.Location = New System.Drawing.Point(264, 431)
-        Me.TextBox91.Name = "TextBox91"
-        Me.TextBox91.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox91.TabIndex = 28
-        '
-        'TextBox92
-        '
-        Me.TextBox92.Location = New System.Drawing.Point(25, 431)
-        Me.TextBox92.Name = "TextBox92"
-        Me.TextBox92.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox92.TabIndex = 27
-        '
-        'Label115
-        '
-        Me.Label115.AutoSize = True
-        Me.Label115.Location = New System.Drawing.Point(515, 408)
-        Me.Label115.Name = "Label115"
-        Me.Label115.Size = New System.Drawing.Size(46, 13)
-        Me.Label115.TabIndex = 26
-        Me.Label115.Text = "MARZO"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.ComboBox2.Location = New System.Drawing.Point(444, 405)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(55, 21)
-        Me.ComboBox2.TabIndex = 25
-        Me.ComboBox2.Text = "Día"
-        '
-        'TextBox90
-        '
-        Me.TextBox90.Location = New System.Drawing.Point(264, 405)
-        Me.TextBox90.Name = "TextBox90"
-        Me.TextBox90.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox90.TabIndex = 24
-        '
-        'TextBox89
-        '
-        Me.TextBox89.Location = New System.Drawing.Point(25, 405)
-        Me.TextBox89.Name = "TextBox89"
-        Me.TextBox89.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox89.TabIndex = 23
+        'lblDic
+        '
+        Me.lblDic.AutoSize = True
+        Me.lblDic.Location = New System.Drawing.Point(515, 644)
+        Me.lblDic.Name = "lblDic"
+        Me.lblDic.Size = New System.Drawing.Size(66, 13)
+        Me.lblDic.TabIndex = 62
+        Me.lblDic.Text = "DICIEMBRE"
+        '
+        'cbbDiaDic
+        '
+        Me.cbbDiaDic.FormattingEnabled = True
+        Me.cbbDiaDic.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaDic.Location = New System.Drawing.Point(444, 641)
+        Me.cbbDiaDic.Name = "cbbDiaDic"
+        Me.cbbDiaDic.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaDic.TabIndex = 61
+        Me.cbbDiaDic.Text = "Día"
+        '
+        'txtMontoDic
+        '
+        Me.txtMontoDic.Location = New System.Drawing.Point(264, 641)
+        Me.txtMontoDic.Name = "txtMontoDic"
+        Me.txtMontoDic.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoDic.TabIndex = 60
+        '
+        'txtDocDic
+        '
+        Me.txtDocDic.Location = New System.Drawing.Point(25, 641)
+        Me.txtDocDic.Name = "txtDocDic"
+        Me.txtDocDic.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocDic.TabIndex = 59
+        '
+        'lblNov
+        '
+        Me.lblNov.AutoSize = True
+        Me.lblNov.Location = New System.Drawing.Point(515, 618)
+        Me.lblNov.Name = "lblNov"
+        Me.lblNov.Size = New System.Drawing.Size(71, 13)
+        Me.lblNov.TabIndex = 58
+        Me.lblNov.Text = "NOVIEMBRE"
+        '
+        'cbbDiaNov
+        '
+        Me.cbbDiaNov.FormattingEnabled = True
+        Me.cbbDiaNov.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaNov.Location = New System.Drawing.Point(444, 615)
+        Me.cbbDiaNov.Name = "cbbDiaNov"
+        Me.cbbDiaNov.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaNov.TabIndex = 57
+        Me.cbbDiaNov.Text = "Día"
+        '
+        'txtMontoNov
+        '
+        Me.txtMontoNov.Location = New System.Drawing.Point(264, 615)
+        Me.txtMontoNov.Name = "txtMontoNov"
+        Me.txtMontoNov.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoNov.TabIndex = 56
+        '
+        'txtDocNov
+        '
+        Me.txtDocNov.Location = New System.Drawing.Point(25, 615)
+        Me.txtDocNov.Name = "txtDocNov"
+        Me.txtDocNov.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocNov.TabIndex = 55
+        '
+        'lblOctubre
+        '
+        Me.lblOctubre.AutoSize = True
+        Me.lblOctubre.Location = New System.Drawing.Point(515, 592)
+        Me.lblOctubre.Name = "lblOctubre"
+        Me.lblOctubre.Size = New System.Drawing.Size(59, 13)
+        Me.lblOctubre.TabIndex = 54
+        Me.lblOctubre.Text = "OCTUBRE"
+        '
+        'cbbDiaOctubre
+        '
+        Me.cbbDiaOctubre.FormattingEnabled = True
+        Me.cbbDiaOctubre.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaOctubre.Location = New System.Drawing.Point(444, 589)
+        Me.cbbDiaOctubre.Name = "cbbDiaOctubre"
+        Me.cbbDiaOctubre.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaOctubre.TabIndex = 53
+        Me.cbbDiaOctubre.Text = "Día"
+        '
+        'txtMontoOctubre
+        '
+        Me.txtMontoOctubre.Location = New System.Drawing.Point(264, 589)
+        Me.txtMontoOctubre.Name = "txtMontoOctubre"
+        Me.txtMontoOctubre.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoOctubre.TabIndex = 52
+        '
+        'txtDocOctubre
+        '
+        Me.txtDocOctubre.Location = New System.Drawing.Point(25, 589)
+        Me.txtDocOctubre.Name = "txtDocOctubre"
+        Me.txtDocOctubre.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocOctubre.TabIndex = 51
+        '
+        'lblSept
+        '
+        Me.lblSept.AutoSize = True
+        Me.lblSept.Location = New System.Drawing.Point(517, 566)
+        Me.lblSept.Name = "lblSept"
+        Me.lblSept.Size = New System.Drawing.Size(76, 13)
+        Me.lblSept.TabIndex = 50
+        Me.lblSept.Text = "SEPTIEMBRE"
+        '
+        'cbbDiaSept
+        '
+        Me.cbbDiaSept.FormattingEnabled = True
+        Me.cbbDiaSept.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaSept.Location = New System.Drawing.Point(444, 563)
+        Me.cbbDiaSept.Name = "cbbDiaSept"
+        Me.cbbDiaSept.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaSept.TabIndex = 49
+        Me.cbbDiaSept.Text = "Día"
+        '
+        'txtMontoSept
+        '
+        Me.txtMontoSept.Location = New System.Drawing.Point(264, 563)
+        Me.txtMontoSept.Name = "txtMontoSept"
+        Me.txtMontoSept.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoSept.TabIndex = 48
+        '
+        'txtDocSept
+        '
+        Me.txtDocSept.Location = New System.Drawing.Point(25, 563)
+        Me.txtDocSept.Name = "txtDocSept"
+        Me.txtDocSept.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocSept.TabIndex = 47
+        '
+        'lblAgosto
+        '
+        Me.lblAgosto.AutoSize = True
+        Me.lblAgosto.Location = New System.Drawing.Point(517, 539)
+        Me.lblAgosto.Name = "lblAgosto"
+        Me.lblAgosto.Size = New System.Drawing.Size(52, 13)
+        Me.lblAgosto.TabIndex = 46
+        Me.lblAgosto.Text = "AGOSTO"
+        '
+        'cbbDiaAgosto
+        '
+        Me.cbbDiaAgosto.FormattingEnabled = True
+        Me.cbbDiaAgosto.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaAgosto.Location = New System.Drawing.Point(444, 537)
+        Me.cbbDiaAgosto.Name = "cbbDiaAgosto"
+        Me.cbbDiaAgosto.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaAgosto.TabIndex = 45
+        Me.cbbDiaAgosto.Text = "Día"
+        '
+        'txtMontoAgosto
+        '
+        Me.txtMontoAgosto.Location = New System.Drawing.Point(264, 537)
+        Me.txtMontoAgosto.Name = "txtMontoAgosto"
+        Me.txtMontoAgosto.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoAgosto.TabIndex = 44
+        '
+        'txtDocAgosto
+        '
+        Me.txtDocAgosto.Location = New System.Drawing.Point(25, 537)
+        Me.txtDocAgosto.Name = "txtDocAgosto"
+        Me.txtDocAgosto.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocAgosto.TabIndex = 43
+        '
+        'lblJulio
+        '
+        Me.lblJulio.AutoSize = True
+        Me.lblJulio.Location = New System.Drawing.Point(517, 513)
+        Me.lblJulio.Name = "lblJulio"
+        Me.lblJulio.Size = New System.Drawing.Size(37, 13)
+        Me.lblJulio.TabIndex = 42
+        Me.lblJulio.Text = "JULIO"
+        '
+        'cbbDiaJulio
+        '
+        Me.cbbDiaJulio.FormattingEnabled = True
+        Me.cbbDiaJulio.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaJulio.Location = New System.Drawing.Point(444, 510)
+        Me.cbbDiaJulio.Name = "cbbDiaJulio"
+        Me.cbbDiaJulio.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaJulio.TabIndex = 41
+        Me.cbbDiaJulio.Text = "Día"
+        '
+        'txtMontoJulio
+        '
+        Me.txtMontoJulio.Location = New System.Drawing.Point(264, 510)
+        Me.txtMontoJulio.Name = "txtMontoJulio"
+        Me.txtMontoJulio.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoJulio.TabIndex = 40
+        '
+        'txtDocJulio
+        '
+        Me.txtDocJulio.Location = New System.Drawing.Point(25, 510)
+        Me.txtDocJulio.Name = "txtDocJulio"
+        Me.txtDocJulio.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocJulio.TabIndex = 39
+        '
+        'lblJunio
+        '
+        Me.lblJunio.AutoSize = True
+        Me.lblJunio.Location = New System.Drawing.Point(515, 487)
+        Me.lblJunio.Name = "lblJunio"
+        Me.lblJunio.Size = New System.Drawing.Size(39, 13)
+        Me.lblJunio.TabIndex = 38
+        Me.lblJunio.Text = "JUNIO"
+        '
+        'cbbDiaJunio
+        '
+        Me.cbbDiaJunio.FormattingEnabled = True
+        Me.cbbDiaJunio.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaJunio.Location = New System.Drawing.Point(444, 484)
+        Me.cbbDiaJunio.Name = "cbbDiaJunio"
+        Me.cbbDiaJunio.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaJunio.TabIndex = 37
+        Me.cbbDiaJunio.Text = "Día"
+        '
+        'txtMontoJunio
+        '
+        Me.txtMontoJunio.Location = New System.Drawing.Point(264, 484)
+        Me.txtMontoJunio.Name = "txtMontoJunio"
+        Me.txtMontoJunio.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoJunio.TabIndex = 36
+        '
+        'txtDocJunio
+        '
+        Me.txtDocJunio.Location = New System.Drawing.Point(25, 484)
+        Me.txtDocJunio.Name = "txtDocJunio"
+        Me.txtDocJunio.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocJunio.TabIndex = 35
+        '
+        'lblMayo
+        '
+        Me.lblMayo.AutoSize = True
+        Me.lblMayo.Location = New System.Drawing.Point(515, 460)
+        Me.lblMayo.Name = "lblMayo"
+        Me.lblMayo.Size = New System.Drawing.Size(38, 13)
+        Me.lblMayo.TabIndex = 34
+        Me.lblMayo.Text = "MAYO"
+        '
+        'cbbDiaMayo
+        '
+        Me.cbbDiaMayo.FormattingEnabled = True
+        Me.cbbDiaMayo.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaMayo.Location = New System.Drawing.Point(444, 457)
+        Me.cbbDiaMayo.Name = "cbbDiaMayo"
+        Me.cbbDiaMayo.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaMayo.TabIndex = 33
+        Me.cbbDiaMayo.Text = "Día"
+        '
+        'txtMontoMayo
+        '
+        Me.txtMontoMayo.Location = New System.Drawing.Point(264, 457)
+        Me.txtMontoMayo.Name = "txtMontoMayo"
+        Me.txtMontoMayo.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoMayo.TabIndex = 32
+        '
+        'txtDocMayo
+        '
+        Me.txtDocMayo.Location = New System.Drawing.Point(25, 457)
+        Me.txtDocMayo.Name = "txtDocMayo"
+        Me.txtDocMayo.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocMayo.TabIndex = 31
+        '
+        'lblAbril
+        '
+        Me.lblAbril.AutoSize = True
+        Me.lblAbril.Location = New System.Drawing.Point(515, 434)
+        Me.lblAbril.Name = "lblAbril"
+        Me.lblAbril.Size = New System.Drawing.Size(38, 13)
+        Me.lblAbril.TabIndex = 30
+        Me.lblAbril.Text = "ABRIL"
+        '
+        'cbbDiaAbril
+        '
+        Me.cbbDiaAbril.FormattingEnabled = True
+        Me.cbbDiaAbril.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaAbril.Location = New System.Drawing.Point(444, 431)
+        Me.cbbDiaAbril.Name = "cbbDiaAbril"
+        Me.cbbDiaAbril.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaAbril.TabIndex = 29
+        Me.cbbDiaAbril.Text = "Día"
+        '
+        'txtMontoAbril
+        '
+        Me.txtMontoAbril.Location = New System.Drawing.Point(264, 431)
+        Me.txtMontoAbril.Name = "txtMontoAbril"
+        Me.txtMontoAbril.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoAbril.TabIndex = 28
+        '
+        'txtDocAbril
+        '
+        Me.txtDocAbril.Location = New System.Drawing.Point(25, 431)
+        Me.txtDocAbril.Name = "txtDocAbril"
+        Me.txtDocAbril.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocAbril.TabIndex = 27
+        '
+        'lblMarzo
+        '
+        Me.lblMarzo.AutoSize = True
+        Me.lblMarzo.Location = New System.Drawing.Point(515, 408)
+        Me.lblMarzo.Name = "lblMarzo"
+        Me.lblMarzo.Size = New System.Drawing.Size(46, 13)
+        Me.lblMarzo.TabIndex = 26
+        Me.lblMarzo.Text = "MARZO"
+        '
+        'cbbDiaMarzo
+        '
+        Me.cbbDiaMarzo.FormattingEnabled = True
+        Me.cbbDiaMarzo.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cbbDiaMarzo.Location = New System.Drawing.Point(444, 405)
+        Me.cbbDiaMarzo.Name = "cbbDiaMarzo"
+        Me.cbbDiaMarzo.Size = New System.Drawing.Size(55, 21)
+        Me.cbbDiaMarzo.TabIndex = 25
+        Me.cbbDiaMarzo.Text = "Día"
+        '
+        'txtMontoMarzo
+        '
+        Me.txtMontoMarzo.Location = New System.Drawing.Point(264, 405)
+        Me.txtMontoMarzo.Name = "txtMontoMarzo"
+        Me.txtMontoMarzo.Size = New System.Drawing.Size(138, 20)
+        Me.txtMontoMarzo.TabIndex = 24
+        '
+        'txtDocMarzo
+        '
+        Me.txtDocMarzo.Location = New System.Drawing.Point(25, 405)
+        Me.txtDocMarzo.Name = "txtDocMarzo"
+        Me.txtDocMarzo.Size = New System.Drawing.Size(176, 20)
+        Me.txtDocMarzo.TabIndex = 23
         '
         'Label114
         '
@@ -2555,7 +2555,7 @@ Partial Class FormularioMatricula
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(807, 742)
+        Me.ClientSize = New System.Drawing.Size(807, 629)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -2614,46 +2614,46 @@ Partial Class FormularioMatricula
     Friend WithEvents txtOtro As System.Windows.Forms.TextBox
     Friend WithEvents Label94 As System.Windows.Forms.Label
     Friend WithEvents Label93 As System.Windows.Forms.Label
-    Friend WithEvents Label124 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox11 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox107 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox108 As System.Windows.Forms.TextBox
-    Friend WithEvents Label123 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox10 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox105 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox106 As System.Windows.Forms.TextBox
-    Friend WithEvents Label122 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox9 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox103 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox104 As System.Windows.Forms.TextBox
-    Friend WithEvents Label121 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox8 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox101 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox102 As System.Windows.Forms.TextBox
-    Friend WithEvents Label120 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox7 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox99 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox100 As System.Windows.Forms.TextBox
-    Friend WithEvents Label119 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox97 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox98 As System.Windows.Forms.TextBox
-    Friend WithEvents Label118 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox5 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox95 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox96 As System.Windows.Forms.TextBox
-    Friend WithEvents Label117 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox93 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox94 As System.Windows.Forms.TextBox
-    Friend WithEvents Label116 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox91 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox92 As System.Windows.Forms.TextBox
-    Friend WithEvents Label115 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox90 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox89 As System.Windows.Forms.TextBox
+    Friend WithEvents lblDic As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaDic As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoDic As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocDic As System.Windows.Forms.TextBox
+    Friend WithEvents lblNov As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaNov As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoNov As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocNov As System.Windows.Forms.TextBox
+    Friend WithEvents lblOctubre As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaOctubre As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoOctubre As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocOctubre As System.Windows.Forms.TextBox
+    Friend WithEvents lblSept As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaSept As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoSept As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocSept As System.Windows.Forms.TextBox
+    Friend WithEvents lblAgosto As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaAgosto As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoAgosto As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocAgosto As System.Windows.Forms.TextBox
+    Friend WithEvents lblJulio As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaJulio As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoJulio As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocJulio As System.Windows.Forms.TextBox
+    Friend WithEvents lblJunio As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaJunio As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoJunio As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocJunio As System.Windows.Forms.TextBox
+    Friend WithEvents lblMayo As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaMayo As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoMayo As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocMayo As System.Windows.Forms.TextBox
+    Friend WithEvents lblAbril As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaAbril As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoAbril As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocAbril As System.Windows.Forms.TextBox
+    Friend WithEvents lblMarzo As System.Windows.Forms.Label
+    Friend WithEvents cbbDiaMarzo As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMontoMarzo As System.Windows.Forms.TextBox
+    Friend WithEvents txtDocMarzo As System.Windows.Forms.TextBox
     Friend WithEvents Label114 As System.Windows.Forms.Label
     Friend WithEvents Label113 As System.Windows.Forms.Label
     Friend WithEvents Label112 As System.Windows.Forms.Label
@@ -2805,7 +2805,7 @@ Partial Class FormularioMatricula
     Friend WithEvents radioHermanosNo As System.Windows.Forms.RadioButton
     Friend WithEvents radioHermanosSi As System.Windows.Forms.RadioButton
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbbTipoPago As System.Windows.Forms.ComboBox
     Friend WithEvents checkmadre As System.Windows.Forms.CheckBox
     Friend WithEvents checkpadre As System.Windows.Forms.CheckBox
     Friend WithEvents txtRutOtroApod As System.Windows.Forms.TextBox

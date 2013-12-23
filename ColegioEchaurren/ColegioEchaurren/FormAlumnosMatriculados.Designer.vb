@@ -162,6 +162,7 @@ Partial Class FormAlumnosMatriculados
         '
         Me.cbbCurso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbCurso.FormattingEnabled = True
+        Me.cbbCurso.Items.AddRange(New Object() {""})
         Me.cbbCurso.Location = New System.Drawing.Point(125, 146)
         Me.cbbCurso.Name = "cbbCurso"
         Me.cbbCurso.Size = New System.Drawing.Size(136, 21)
@@ -291,7 +292,7 @@ Partial Class FormAlumnosMatriculados
         Me.cbbPorcentaje.Enabled = False
         Me.cbbPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbPorcentaje.FormattingEnabled = True
-        Me.cbbPorcentaje.Items.AddRange(New Object() {"", "0%", "25%", "50%", "75%", "1000%"})
+        Me.cbbPorcentaje.Items.AddRange(New Object() {"", "0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "95", "100"})
         Me.cbbPorcentaje.Location = New System.Drawing.Point(144, 94)
         Me.cbbPorcentaje.Name = "cbbPorcentaje"
         Me.cbbPorcentaje.Size = New System.Drawing.Size(150, 21)
