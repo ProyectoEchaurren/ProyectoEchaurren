@@ -11,9 +11,11 @@ Public Class FormAlumnosMatriculados
     Public varDataAdapter As MySqlDataAdapter
 
     Private Sub FormAlumnosMatriculados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If Form1.varTipoUsuario = "Asistente" Then
+            btnCancelarMatri.Enabled = False
+        End If
 
         Try
-
             varConexion1 = New MySqlConnection
             varConexion1.ConnectionString = varConexionString1
             varConexion1.Open()
@@ -148,7 +150,7 @@ Public Class FormAlumnosMatriculados
 
     Private Sub btnFichaPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnFichaPersonal.Click
         If Form1.varFichaPersonalAlumno = "" Then
-            MsgBox("Primero debe selecionar un Alumno(a) para ver su ficha personal", MsgBoxStyle.Information, AcceptButton)
+            MsgBox("Primero debe selecionar un(a) Alumno(a) para ver su ficha personal", MsgBoxStyle.Information, AcceptButton)
         Else
             DetalleInfoAlumno.Show()
         End If
@@ -156,5 +158,20 @@ Public Class FormAlumnosMatriculados
 
     Private Sub DataGridView1_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         Form1.varFichaPersonalAlumno = (DataGridView1.Rows(e.RowIndex).Cells(0).Value)
+    End Sub
+
+    Private Sub btnCancelarMatri_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelarMatri.Click
+        If Form1.varFichaPersonalAlumno = "" Then
+            MsgBox("Primero debe selecionar un(a) Alumno(a) para cancelar su matrícula", MsgBoxStyle.Information, AcceptButton)
+        Else
+            If MessageBox.Show("Está a punto de eliminar al alumno " & Form1.varFichaPersonalAlumno & " de todos los registros. ¿Desea continuar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                If MessageBox.Show("¿Está seguro(a) de querer eliminar al alumno " & Form1.varFichaPersonalAlumno & "?" & vbCrLf & "Estos cambios no se pueden deshacer.", "¡Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                    If ModuloContenedor.CancelarMatri(Form1.varFichaPersonalAlumno) = True Then
+                        MsgBox("Alumno " & Form1.varFichaPersonalAlumno & " eliminado completamente de la Base de Datos.", MsgBoxStyle.Information, AcceptButton)
+                        ModuloContenedor.FiltrosAdminAlumnos(DataGridView1, txtRutAlumno.Text, txtNombre.Text, txtApePaterno.Text, txtEdad.Text, cbbCurso, cbBuscarServSalud, cbbPorcentaje)
+                    End If
+                End If
+            End If
+        End If
     End Sub
 End Class

@@ -2,7 +2,7 @@
 <doc>
 <assembly>
 <name>
-ColegioEchaurren
+ColegioEchaurren
 </name>
 </assembly>
 <members>
@@ -13,11 +13,19 @@ ColegioEchaurren
 </member><member name="P:ColegioEchaurren.My.Resources.Resources.Culture">
 	<summary>
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
-  búsquedas de recursos mediante esta clase de recurso con establecimiento inflexible de tipos.
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="P:ColegioEchaurren.My.Resources.Resources.azul_textura_papel_de_parede_fundo_texturas_foto_181184">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:ColegioEchaurren.My.Resources.Resources.intro_01">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member><member name="T:ColegioEchaurren.My.Resources.Resources">
 	<summary>
-  Clase de recurso con establecimiento inflexible de tipos, para buscar cadenas traducidas, etc.
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
 </summary>
 </member>
 </members>

@@ -24,6 +24,8 @@ Partial Class DetalleInfoAlumno
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DetalleInfoAlumno))
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.txtCorreoMadre = New System.Windows.Forms.TextBox()
+        Me.Label71 = New System.Windows.Forms.Label()
         Me.txtTrabajoMadre = New System.Windows.Forms.TextBox()
         Me.txtNombreMadre = New System.Windows.Forms.TextBox()
         Me.txtRutMadre = New System.Windows.Forms.TextBox()
@@ -41,6 +43,8 @@ Partial Class DetalleInfoAlumno
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.txtCorreoPadre = New System.Windows.Forms.TextBox()
+        Me.Label70 = New System.Windows.Forms.Label()
         Me.txtFonoPadre = New System.Windows.Forms.TextBox()
         Me.txtRutPadre = New System.Windows.Forms.TextBox()
         Me.txtTrabajoPadre = New System.Windows.Forms.TextBox()
@@ -58,11 +62,13 @@ Partial Class DetalleInfoAlumno
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txtFono2Tutor = New System.Windows.Forms.TextBox()
+        Me.Label69 = New System.Windows.Forms.Label()
         Me.txtNombreTutor = New System.Windows.Forms.TextBox()
         Me.txtRutTutor = New System.Windows.Forms.TextBox()
         Me.txtFonoTutor = New System.Windows.Forms.TextBox()
         Me.txtOcupacionTutor = New System.Windows.Forms.TextBox()
-        Me.txtTrabajoTutor = New System.Windows.Forms.TextBox()
+        Me.txtLugarTrabajoTutor = New System.Windows.Forms.TextBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.txtFonoTrabTutor = New System.Windows.Forms.TextBox()
         Me.txtProfesionTutor = New System.Windows.Forms.TextBox()
@@ -96,74 +102,81 @@ Partial Class DetalleInfoAlumno
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.Label47 = New System.Windows.Forms.Label()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.Label49 = New System.Windows.Forms.Label()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.txtEdadAlumno = New System.Windows.Forms.TextBox()
+        Me.lblEdad = New System.Windows.Forms.Label()
+        Me.txtSexo = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.Label52 = New System.Windows.Forms.Label()
-        Me.Label53 = New System.Windows.Forms.Label()
-        Me.Label54 = New System.Windows.Forms.Label()
+        Me.txtCursoHerm = New System.Windows.Forms.TextBox()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.txtPorcentaje = New System.Windows.Forms.TextBox()
+        Me.txtTipoPago = New System.Windows.Forms.TextBox()
+        Me.txtBeca = New System.Windows.Forms.TextBox()
+        Me.txtHermanos = New System.Windows.Forms.TextBox()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.txtDomicilio = New System.Windows.Forms.TextBox()
+        Me.txtRepetidos = New System.Windows.Forms.TextBox()
+        Me.txtColegioAnterior = New System.Windows.Forms.TextBox()
+        Me.txtFonoAlumno = New System.Windows.Forms.TextBox()
+        Me.txtComuna = New System.Windows.Forms.TextBox()
+        Me.txtVilla = New System.Windows.Forms.TextBox()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.txtCursoActual = New System.Windows.Forms.TextBox()
+        Me.txtFechaNac = New System.Windows.Forms.TextBox()
+        Me.txtApeMat = New System.Windows.Forms.TextBox()
+        Me.txtApePat = New System.Windows.Forms.TextBox()
+        Me.txtNombreAlumno = New System.Windows.Forms.TextBox()
+        Me.txtRutAlumno = New System.Windows.Forms.TextBox()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lblRutAlumno = New System.Windows.Forms.Label()
+        Me.lblApeMat = New System.Windows.Forms.Label()
+        Me.lblApePat = New System.Windows.Forms.Label()
+        Me.lblNombreAlumno = New System.Windows.Forms.Label()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.txtOtrosServ = New System.Windows.Forms.TextBox()
+        Me.txtSeguros = New System.Windows.Forms.TextBox()
+        Me.txtServSalud = New System.Windows.Forms.TextBox()
+        Me.txtAntecedentes = New System.Windows.Forms.TextBox()
         Me.Label55 = New System.Windows.Forms.Label()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.Label52 = New System.Windows.Forms.Label()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Label57 = New System.Windows.Forms.Label()
-        Me.Label58 = New System.Windows.Forms.Label()
+        Me.txtGrupoFam = New System.Windows.Forms.TextBox()
+        Me.txtLugarHijos = New System.Windows.Forms.TextBox()
+        Me.txtNumHijos = New System.Windows.Forms.TextBox()
+        Me.txtViveOtros = New System.Windows.Forms.TextBox()
+        Me.txtViveCon = New System.Windows.Forms.TextBox()
         Me.Label59 = New System.Windows.Forms.Label()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.Label58 = New System.Windows.Forms.Label()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.Label60 = New System.Windows.Forms.Label()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.Label62 = New System.Windows.Forms.Label()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
-        Me.Label63 = New System.Windows.Forms.Label()
-        Me.Label64 = New System.Windows.Forms.Label()
-        Me.Label65 = New System.Windows.Forms.Label()
-        Me.Label66 = New System.Windows.Forms.Label()
-        Me.Label67 = New System.Windows.Forms.Label()
         Me.Label68 = New System.Windows.Forms.Label()
+        Me.Label67 = New System.Windows.Forms.Label()
+        Me.Label66 = New System.Windows.Forms.Label()
+        Me.Label65 = New System.Windows.Forms.Label()
+        Me.Label64 = New System.Windows.Forms.Label()
+        Me.Label63 = New System.Windows.Forms.Label()
+        Me.txtTutorEco = New System.Windows.Forms.TextBox()
+        Me.txtApoSup = New System.Windows.Forms.TextBox()
+        Me.txtApoTitular = New System.Windows.Forms.TextBox()
+        Me.Label62 = New System.Windows.Forms.Label()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.txtNumMatri = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -177,6 +190,8 @@ Partial Class DetalleInfoAlumno
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.txtCorreoMadre)
+        Me.GroupBox5.Controls.Add(Me.Label71)
         Me.GroupBox5.Controls.Add(Me.txtTrabajoMadre)
         Me.GroupBox5.Controls.Add(Me.txtNombreMadre)
         Me.GroupBox5.Controls.Add(Me.txtRutMadre)
@@ -193,12 +208,30 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox5.Controls.Add(Me.Label24)
         Me.GroupBox5.Controls.Add(Me.Label25)
         Me.GroupBox5.Controls.Add(Me.Label26)
-        Me.GroupBox5.Location = New System.Drawing.Point(582, 209)
+        Me.GroupBox5.Location = New System.Drawing.Point(582, 244)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(271, 262)
+        Me.GroupBox5.Size = New System.Drawing.Size(271, 291)
         Me.GroupBox5.TabIndex = 24
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Datos de la Madre"
+        '
+        'txtCorreoMadre
+        '
+        Me.txtCorreoMadre.Location = New System.Drawing.Point(115, 253)
+        Me.txtCorreoMadre.Name = "txtCorreoMadre"
+        Me.txtCorreoMadre.ReadOnly = True
+        Me.txtCorreoMadre.Size = New System.Drawing.Size(148, 20)
+        Me.txtCorreoMadre.TabIndex = 19
+        '
+        'Label71
+        '
+        Me.Label71.AutoSize = True
+        Me.Label71.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label71.Location = New System.Drawing.Point(6, 256)
+        Me.Label71.Name = "Label71"
+        Me.Label71.Size = New System.Drawing.Size(112, 13)
+        Me.Label71.TabIndex = 25
+        Me.Label71.Text = "Correo Electrónico"
         '
         'txtTrabajoMadre
         '
@@ -362,6 +395,8 @@ Partial Class DetalleInfoAlumno
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.txtCorreoPadre)
+        Me.GroupBox4.Controls.Add(Me.Label70)
         Me.GroupBox4.Controls.Add(Me.txtFonoPadre)
         Me.GroupBox4.Controls.Add(Me.txtRutPadre)
         Me.GroupBox4.Controls.Add(Me.txtTrabajoPadre)
@@ -378,12 +413,30 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.Label12)
-        Me.GroupBox4.Location = New System.Drawing.Point(296, 209)
+        Me.GroupBox4.Location = New System.Drawing.Point(296, 244)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(280, 262)
+        Me.GroupBox4.Size = New System.Drawing.Size(280, 291)
         Me.GroupBox4.TabIndex = 23
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Datos del Padre"
+        '
+        'txtCorreoPadre
+        '
+        Me.txtCorreoPadre.Location = New System.Drawing.Point(118, 253)
+        Me.txtCorreoPadre.Name = "txtCorreoPadre"
+        Me.txtCorreoPadre.ReadOnly = True
+        Me.txtCorreoPadre.Size = New System.Drawing.Size(152, 20)
+        Me.txtCorreoPadre.TabIndex = 18
+        '
+        'Label70
+        '
+        Me.Label70.AutoSize = True
+        Me.Label70.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label70.Location = New System.Drawing.Point(6, 256)
+        Me.Label70.Name = "Label70"
+        Me.Label70.Size = New System.Drawing.Size(112, 13)
+        Me.Label70.TabIndex = 17
+        Me.Label70.Text = "Correo Electrónico"
         '
         'txtFonoPadre
         '
@@ -546,11 +599,13 @@ Partial Class DetalleInfoAlumno
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.txtFono2Tutor)
+        Me.GroupBox3.Controls.Add(Me.Label69)
         Me.GroupBox3.Controls.Add(Me.txtNombreTutor)
         Me.GroupBox3.Controls.Add(Me.txtRutTutor)
         Me.GroupBox3.Controls.Add(Me.txtFonoTutor)
         Me.GroupBox3.Controls.Add(Me.txtOcupacionTutor)
-        Me.GroupBox3.Controls.Add(Me.txtTrabajoTutor)
+        Me.GroupBox3.Controls.Add(Me.txtLugarTrabajoTutor)
         Me.GroupBox3.Controls.Add(Me.Label30)
         Me.GroupBox3.Controls.Add(Me.txtFonoTrabTutor)
         Me.GroupBox3.Controls.Add(Me.txtProfesionTutor)
@@ -562,12 +617,31 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox3.Controls.Add(Me.Label29)
         Me.GroupBox3.Controls.Add(Me.Label28)
         Me.GroupBox3.Controls.Add(Me.Label27)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 209)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 244)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(271, 262)
+        Me.GroupBox3.Size = New System.Drawing.Size(271, 291)
         Me.GroupBox3.TabIndex = 22
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Datos de tutor economico"
+        '
+        'txtFono2Tutor
+        '
+        Me.txtFono2Tutor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtFono2Tutor.Location = New System.Drawing.Point(75, 117)
+        Me.txtFono2Tutor.Name = "txtFono2Tutor"
+        Me.txtFono2Tutor.ReadOnly = True
+        Me.txtFono2Tutor.Size = New System.Drawing.Size(186, 20)
+        Me.txtFono2Tutor.TabIndex = 12
+        '
+        'Label69
+        '
+        Me.Label69.AutoSize = True
+        Me.Label69.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label69.Location = New System.Drawing.Point(6, 120)
+        Me.Label69.Name = "Label69"
+        Me.Label69.Size = New System.Drawing.Size(68, 13)
+        Me.Label69.TabIndex = 11
+        Me.Label69.Text = "Teléfono 2"
         '
         'txtNombreTutor
         '
@@ -603,27 +677,27 @@ Partial Class DetalleInfoAlumno
         '
         Me.txtOcupacionTutor.BackColor = System.Drawing.SystemColors.Control
         Me.txtOcupacionTutor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtOcupacionTutor.Location = New System.Drawing.Point(74, 194)
+        Me.txtOcupacionTutor.Location = New System.Drawing.Point(75, 223)
         Me.txtOcupacionTutor.Name = "txtOcupacionTutor"
         Me.txtOcupacionTutor.ReadOnly = True
         Me.txtOcupacionTutor.Size = New System.Drawing.Size(187, 20)
         Me.txtOcupacionTutor.TabIndex = 7
         '
-        'txtTrabajoTutor
+        'txtLugarTrabajoTutor
         '
-        Me.txtTrabajoTutor.BackColor = System.Drawing.SystemColors.Control
-        Me.txtTrabajoTutor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtTrabajoTutor.Location = New System.Drawing.Point(98, 143)
-        Me.txtTrabajoTutor.Name = "txtTrabajoTutor"
-        Me.txtTrabajoTutor.ReadOnly = True
-        Me.txtTrabajoTutor.Size = New System.Drawing.Size(163, 20)
-        Me.txtTrabajoTutor.TabIndex = 5
+        Me.txtLugarTrabajoTutor.BackColor = System.Drawing.SystemColors.Control
+        Me.txtLugarTrabajoTutor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtLugarTrabajoTutor.Location = New System.Drawing.Point(99, 172)
+        Me.txtLugarTrabajoTutor.Name = "txtLugarTrabajoTutor"
+        Me.txtLugarTrabajoTutor.ReadOnly = True
+        Me.txtLugarTrabajoTutor.Size = New System.Drawing.Size(163, 20)
+        Me.txtLugarTrabajoTutor.TabIndex = 5
         '
         'Label30
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(6, 146)
+        Me.Label30.Location = New System.Drawing.Point(7, 175)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(86, 13)
         Me.Label30.TabIndex = 4
@@ -633,7 +707,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.txtFonoTrabTutor.BackColor = System.Drawing.SystemColors.Control
         Me.txtFonoTrabTutor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtFonoTrabTutor.Location = New System.Drawing.Point(98, 169)
+        Me.txtFonoTrabTutor.Location = New System.Drawing.Point(99, 198)
         Me.txtFonoTrabTutor.Name = "txtFonoTrabTutor"
         Me.txtFonoTrabTutor.ReadOnly = True
         Me.txtFonoTrabTutor.Size = New System.Drawing.Size(163, 20)
@@ -643,7 +717,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.txtProfesionTutor.BackColor = System.Drawing.SystemColors.Control
         Me.txtProfesionTutor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtProfesionTutor.Location = New System.Drawing.Point(74, 224)
+        Me.txtProfesionTutor.Location = New System.Drawing.Point(75, 253)
         Me.txtProfesionTutor.Name = "txtProfesionTutor"
         Me.txtProfesionTutor.ReadOnly = True
         Me.txtProfesionTutor.Size = New System.Drawing.Size(187, 20)
@@ -653,7 +727,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.txtDomicilioTutor.BackColor = System.Drawing.SystemColors.Control
         Me.txtDomicilioTutor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtDomicilioTutor.Location = New System.Drawing.Point(74, 117)
+        Me.txtDomicilioTutor.Location = New System.Drawing.Point(75, 146)
         Me.txtDomicilioTutor.Name = "txtDomicilioTutor"
         Me.txtDomicilioTutor.ReadOnly = True
         Me.txtDomicilioTutor.Size = New System.Drawing.Size(187, 20)
@@ -663,7 +737,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(6, 227)
+        Me.Label34.Location = New System.Drawing.Point(7, 256)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(60, 13)
         Me.Label34.TabIndex = 8
@@ -703,7 +777,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(6, 169)
+        Me.Label29.Location = New System.Drawing.Point(7, 198)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(78, 13)
         Me.Label29.TabIndex = 3
@@ -713,7 +787,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(6, 120)
+        Me.Label28.Location = New System.Drawing.Point(7, 149)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(58, 13)
         Me.Label28.TabIndex = 2
@@ -723,7 +797,7 @@ Partial Class DetalleInfoAlumno
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(6, 197)
+        Me.Label27.Location = New System.Drawing.Point(7, 226)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(68, 13)
         Me.Label27.TabIndex = 1
@@ -742,7 +816,7 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox2.Controls.Add(Me.lblNombreContacto3)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 477)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 541)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(420, 137)
         Me.GroupBox2.TabIndex = 34
@@ -863,7 +937,7 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(442, 477)
+        Me.GroupBox1.Location = New System.Drawing.Point(442, 541)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(411, 137)
         Me.GroupBox1.TabIndex = 35
@@ -952,436 +1026,468 @@ Partial Class DetalleInfoAlumno
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.Label51)
+        Me.GroupBox6.Controls.Add(Me.txtEdadAlumno)
+        Me.GroupBox6.Controls.Add(Me.lblEdad)
+        Me.GroupBox6.Controls.Add(Me.txtSexo)
         Me.GroupBox6.Controls.Add(Me.Label50)
-        Me.GroupBox6.Controls.Add(Me.TextBox17)
+        Me.GroupBox6.Controls.Add(Me.txtCursoHerm)
         Me.GroupBox6.Controls.Add(Me.Label49)
-        Me.GroupBox6.Controls.Add(Me.TextBox16)
-        Me.GroupBox6.Controls.Add(Me.TextBox15)
-        Me.GroupBox6.Controls.Add(Me.TextBox14)
-        Me.GroupBox6.Controls.Add(Me.TextBox13)
+        Me.GroupBox6.Controls.Add(Me.txtPorcentaje)
+        Me.GroupBox6.Controls.Add(Me.txtTipoPago)
+        Me.GroupBox6.Controls.Add(Me.txtBeca)
+        Me.GroupBox6.Controls.Add(Me.txtHermanos)
         Me.GroupBox6.Controls.Add(Me.Label48)
         Me.GroupBox6.Controls.Add(Me.Label47)
         Me.GroupBox6.Controls.Add(Me.Label46)
         Me.GroupBox6.Controls.Add(Me.Label45)
-        Me.GroupBox6.Controls.Add(Me.TextBox7)
-        Me.GroupBox6.Controls.Add(Me.TextBox8)
-        Me.GroupBox6.Controls.Add(Me.TextBox9)
-        Me.GroupBox6.Controls.Add(Me.TextBox10)
-        Me.GroupBox6.Controls.Add(Me.TextBox11)
-        Me.GroupBox6.Controls.Add(Me.TextBox12)
+        Me.GroupBox6.Controls.Add(Me.txtDomicilio)
+        Me.GroupBox6.Controls.Add(Me.txtRepetidos)
+        Me.GroupBox6.Controls.Add(Me.txtColegioAnterior)
+        Me.GroupBox6.Controls.Add(Me.txtFonoAlumno)
+        Me.GroupBox6.Controls.Add(Me.txtComuna)
+        Me.GroupBox6.Controls.Add(Me.txtVilla)
         Me.GroupBox6.Controls.Add(Me.Label44)
         Me.GroupBox6.Controls.Add(Me.Label43)
         Me.GroupBox6.Controls.Add(Me.Label42)
         Me.GroupBox6.Controls.Add(Me.Label41)
         Me.GroupBox6.Controls.Add(Me.Label40)
-        Me.GroupBox6.Controls.Add(Me.TextBox6)
-        Me.GroupBox6.Controls.Add(Me.TextBox5)
-        Me.GroupBox6.Controls.Add(Me.TextBox4)
-        Me.GroupBox6.Controls.Add(Me.TextBox3)
-        Me.GroupBox6.Controls.Add(Me.TextBox2)
-        Me.GroupBox6.Controls.Add(Me.TextBox1)
+        Me.GroupBox6.Controls.Add(Me.txtCursoActual)
+        Me.GroupBox6.Controls.Add(Me.txtFechaNac)
+        Me.GroupBox6.Controls.Add(Me.txtApeMat)
+        Me.GroupBox6.Controls.Add(Me.txtApePat)
+        Me.GroupBox6.Controls.Add(Me.txtNombreAlumno)
+        Me.GroupBox6.Controls.Add(Me.txtRutAlumno)
         Me.GroupBox6.Controls.Add(Me.Label39)
         Me.GroupBox6.Controls.Add(Me.Label35)
         Me.GroupBox6.Controls.Add(Me.Label11)
-        Me.GroupBox6.Controls.Add(Me.Label10)
-        Me.GroupBox6.Controls.Add(Me.Label7)
-        Me.GroupBox6.Controls.Add(Me.Label6)
-        Me.GroupBox6.Controls.Add(Me.Label5)
-        Me.GroupBox6.Location = New System.Drawing.Point(16, 12)
+        Me.GroupBox6.Controls.Add(Me.lblRutAlumno)
+        Me.GroupBox6.Controls.Add(Me.lblApeMat)
+        Me.GroupBox6.Controls.Add(Me.lblApePat)
+        Me.GroupBox6.Controls.Add(Me.lblNombreAlumno)
+        Me.GroupBox6.Location = New System.Drawing.Point(16, 23)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(837, 191)
+        Me.GroupBox6.Size = New System.Drawing.Size(837, 215)
         Me.GroupBox6.TabIndex = 36
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Datos de Alumno"
         '
+        'txtEdadAlumno
+        '
+        Me.txtEdadAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtEdadAlumno.Location = New System.Drawing.Point(74, 183)
+        Me.txtEdadAlumno.Name = "txtEdadAlumno"
+        Me.txtEdadAlumno.ReadOnly = True
+        Me.txtEdadAlumno.Size = New System.Drawing.Size(188, 20)
+        Me.txtEdadAlumno.TabIndex = 37
+        '
+        'lblEdad
+        '
+        Me.lblEdad.AutoSize = True
+        Me.lblEdad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEdad.Location = New System.Drawing.Point(6, 186)
+        Me.lblEdad.Name = "lblEdad"
+        Me.lblEdad.Size = New System.Drawing.Size(36, 13)
+        Me.lblEdad.TabIndex = 36
+        Me.lblEdad.Text = "Edad"
+        '
+        'txtSexo
+        '
+        Me.txtSexo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtSexo.Location = New System.Drawing.Point(74, 131)
+        Me.txtSexo.Name = "txtSexo"
+        Me.txtSexo.ReadOnly = True
+        Me.txtSexo.Size = New System.Drawing.Size(188, 20)
+        Me.txtSexo.TabIndex = 35
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label50.Location = New System.Drawing.Point(6, 134)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(35, 13)
+        Me.Label50.TabIndex = 34
+        Me.Label50.Text = "Sexo"
+        '
+        'txtCursoHerm
+        '
+        Me.txtCursoHerm.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCursoHerm.Location = New System.Drawing.Point(679, 79)
+        Me.txtCursoHerm.Name = "txtCursoHerm"
+        Me.txtCursoHerm.ReadOnly = True
+        Me.txtCursoHerm.Size = New System.Drawing.Size(149, 20)
+        Me.txtCursoHerm.TabIndex = 33
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label49.Location = New System.Drawing.Point(571, 82)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(45, 13)
+        Me.Label49.TabIndex = 32
+        Me.Label49.Text = "Cursos"
+        '
+        'txtPorcentaje
+        '
+        Me.txtPorcentaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPorcentaje.Location = New System.Drawing.Point(679, 153)
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.ReadOnly = True
+        Me.txtPorcentaje.Size = New System.Drawing.Size(149, 20)
+        Me.txtPorcentaje.TabIndex = 31
+        '
+        'txtTipoPago
+        '
+        Me.txtTipoPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtTipoPago.Location = New System.Drawing.Point(679, 179)
+        Me.txtTipoPago.Name = "txtTipoPago"
+        Me.txtTipoPago.ReadOnly = True
+        Me.txtTipoPago.Size = New System.Drawing.Size(149, 20)
+        Me.txtTipoPago.TabIndex = 30
+        '
+        'txtBeca
+        '
+        Me.txtBeca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtBeca.Location = New System.Drawing.Point(679, 127)
+        Me.txtBeca.Name = "txtBeca"
+        Me.txtBeca.ReadOnly = True
+        Me.txtBeca.Size = New System.Drawing.Size(149, 20)
+        Me.txtBeca.TabIndex = 29
+        '
+        'txtHermanos
+        '
+        Me.txtHermanos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtHermanos.Location = New System.Drawing.Point(764, 53)
+        Me.txtHermanos.Name = "txtHermanos"
+        Me.txtHermanos.ReadOnly = True
+        Me.txtHermanos.Size = New System.Drawing.Size(64, 20)
+        Me.txtHermanos.TabIndex = 28
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label48.Location = New System.Drawing.Point(287, 134)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(39, 13)
+        Me.Label48.TabIndex = 27
+        Me.Label48.Text = "Curso"
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.Location = New System.Drawing.Point(571, 182)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(83, 13)
+        Me.Label47.TabIndex = 26
+        Me.Label47.Text = "Tipo de Pago"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Location = New System.Drawing.Point(571, 156)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(101, 13)
+        Me.Label46.TabIndex = 25
+        Me.Label46.Text = "Porcentaje Beca"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(571, 130)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(79, 13)
+        Me.Label45.TabIndex = 24
+        Me.Label45.Text = "Estado Beca"
+        '
+        'txtDomicilio
+        '
+        Me.txtDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDomicilio.Location = New System.Drawing.Point(375, 27)
+        Me.txtDomicilio.Name = "txtDomicilio"
+        Me.txtDomicilio.ReadOnly = True
+        Me.txtDomicilio.Size = New System.Drawing.Size(175, 20)
+        Me.txtDomicilio.TabIndex = 23
+        '
+        'txtRepetidos
+        '
+        Me.txtRepetidos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtRepetidos.Location = New System.Drawing.Point(398, 183)
+        Me.txtRepetidos.Name = "txtRepetidos"
+        Me.txtRepetidos.ReadOnly = True
+        Me.txtRepetidos.Size = New System.Drawing.Size(151, 20)
+        Me.txtRepetidos.TabIndex = 22
+        '
+        'txtColegioAnterior
+        '
+        Me.txtColegioAnterior.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtColegioAnterior.Location = New System.Drawing.Point(416, 157)
+        Me.txtColegioAnterior.Name = "txtColegioAnterior"
+        Me.txtColegioAnterior.ReadOnly = True
+        Me.txtColegioAnterior.Size = New System.Drawing.Size(134, 20)
+        Me.txtColegioAnterior.TabIndex = 21
+        '
+        'txtFonoAlumno
+        '
+        Me.txtFonoAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtFonoAlumno.Location = New System.Drawing.Point(375, 105)
+        Me.txtFonoAlumno.Name = "txtFonoAlumno"
+        Me.txtFonoAlumno.ReadOnly = True
+        Me.txtFonoAlumno.Size = New System.Drawing.Size(175, 20)
+        Me.txtFonoAlumno.TabIndex = 20
+        '
+        'txtComuna
+        '
+        Me.txtComuna.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtComuna.Location = New System.Drawing.Point(375, 79)
+        Me.txtComuna.Name = "txtComuna"
+        Me.txtComuna.ReadOnly = True
+        Me.txtComuna.Size = New System.Drawing.Size(174, 20)
+        Me.txtComuna.TabIndex = 19
+        '
+        'txtVilla
+        '
+        Me.txtVilla.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtVilla.Location = New System.Drawing.Point(375, 53)
+        Me.txtVilla.Name = "txtVilla"
+        Me.txtVilla.ReadOnly = True
+        Me.txtVilla.Size = New System.Drawing.Size(175, 20)
+        Me.txtVilla.TabIndex = 18
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(571, 56)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(187, 13)
+        Me.Label44.TabIndex = 17
+        Me.Label44.Text = "Hermanos en el establecimiento"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.Location = New System.Drawing.Point(286, 186)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(106, 13)
+        Me.Label43.TabIndex = 16
+        Me.Label43.Text = "Cursos Repetidos"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.Location = New System.Drawing.Point(286, 160)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(124, 13)
+        Me.Label42.TabIndex = 15
+        Me.Label42.Text = "Colegio Procedencia"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.Location = New System.Drawing.Point(286, 108)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(57, 13)
+        Me.Label41.TabIndex = 14
+        Me.Label41.Text = "Teléfono"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(286, 82)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(52, 13)
+        Me.Label40.TabIndex = 13
+        Me.Label40.Text = "Comuna"
+        '
+        'txtCursoActual
+        '
+        Me.txtCursoActual.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCursoActual.Location = New System.Drawing.Point(375, 131)
+        Me.txtCursoActual.Name = "txtCursoActual"
+        Me.txtCursoActual.ReadOnly = True
+        Me.txtCursoActual.Size = New System.Drawing.Size(175, 20)
+        Me.txtCursoActual.TabIndex = 12
+        '
+        'txtFechaNac
+        '
+        Me.txtFechaNac.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtFechaNac.Location = New System.Drawing.Point(98, 157)
+        Me.txtFechaNac.Name = "txtFechaNac"
+        Me.txtFechaNac.ReadOnly = True
+        Me.txtFechaNac.Size = New System.Drawing.Size(163, 20)
+        Me.txtFechaNac.TabIndex = 11
+        '
+        'txtApeMat
+        '
+        Me.txtApeMat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtApeMat.Location = New System.Drawing.Point(82, 105)
+        Me.txtApeMat.Name = "txtApeMat"
+        Me.txtApeMat.ReadOnly = True
+        Me.txtApeMat.Size = New System.Drawing.Size(180, 20)
+        Me.txtApeMat.TabIndex = 10
+        '
+        'txtApePat
+        '
+        Me.txtApePat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtApePat.Location = New System.Drawing.Point(80, 79)
+        Me.txtApePat.Name = "txtApePat"
+        Me.txtApePat.ReadOnly = True
+        Me.txtApePat.Size = New System.Drawing.Size(182, 20)
+        Me.txtApePat.TabIndex = 9
+        '
+        'txtNombreAlumno
+        '
+        Me.txtNombreAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNombreAlumno.Location = New System.Drawing.Point(74, 53)
+        Me.txtNombreAlumno.Name = "txtNombreAlumno"
+        Me.txtNombreAlumno.ReadOnly = True
+        Me.txtNombreAlumno.Size = New System.Drawing.Size(187, 20)
+        Me.txtNombreAlumno.TabIndex = 8
+        '
+        'txtRutAlumno
+        '
+        Me.txtRutAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtRutAlumno.Location = New System.Drawing.Point(74, 27)
+        Me.txtRutAlumno.Name = "txtRutAlumno"
+        Me.txtRutAlumno.ReadOnly = True
+        Me.txtRutAlumno.Size = New System.Drawing.Size(188, 20)
+        Me.txtRutAlumno.TabIndex = 7
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.Location = New System.Drawing.Point(286, 56)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(83, 13)
+        Me.Label39.TabIndex = 6
+        Me.Label39.Text = "Sector o Villa"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Location = New System.Drawing.Point(286, 30)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(58, 13)
+        Me.Label35.TabIndex = 5
+        Me.Label35.Text = "Domicilio"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(6, 160)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(91, 13)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "Fecha de Nac."
+        '
+        'lblRutAlumno
+        '
+        Me.lblRutAlumno.AutoSize = True
+        Me.lblRutAlumno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRutAlumno.Location = New System.Drawing.Point(6, 30)
+        Me.lblRutAlumno.Name = "lblRutAlumno"
+        Me.lblRutAlumno.Size = New System.Drawing.Size(46, 13)
+        Me.lblRutAlumno.TabIndex = 3
+        Me.lblRutAlumno.Text = "R.U.N."
+        '
+        'lblApeMat
+        '
+        Me.lblApeMat.AutoSize = True
+        Me.lblApeMat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApeMat.Location = New System.Drawing.Point(6, 108)
+        Me.lblApeMat.Name = "lblApeMat"
+        Me.lblApeMat.Size = New System.Drawing.Size(70, 13)
+        Me.lblApeMat.TabIndex = 2
+        Me.lblApeMat.Text = "Apellido M."
+        '
+        'lblApePat
+        '
+        Me.lblApePat.AutoSize = True
+        Me.lblApePat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApePat.Location = New System.Drawing.Point(6, 82)
+        Me.lblApePat.Name = "lblApePat"
+        Me.lblApePat.Size = New System.Drawing.Size(68, 13)
+        Me.lblApePat.TabIndex = 1
+        Me.lblApePat.Text = "Apellido P."
+        '
+        'lblNombreAlumno
+        '
+        Me.lblNombreAlumno.AutoSize = True
+        Me.lblNombreAlumno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreAlumno.Location = New System.Drawing.Point(6, 56)
+        Me.lblNombreAlumno.Name = "lblNombreAlumno"
+        Me.lblNombreAlumno.Size = New System.Drawing.Size(56, 13)
+        Me.lblNombreAlumno.TabIndex = 0
+        Me.lblNombreAlumno.Text = "Nombres"
+        '
         'GroupBox7
         '
-        Me.GroupBox7.Controls.Add(Me.TextBox26)
-        Me.GroupBox7.Controls.Add(Me.TextBox25)
-        Me.GroupBox7.Controls.Add(Me.TextBox24)
-        Me.GroupBox7.Controls.Add(Me.TextBox23)
+        Me.GroupBox7.Controls.Add(Me.txtOtrosServ)
+        Me.GroupBox7.Controls.Add(Me.txtSeguros)
+        Me.GroupBox7.Controls.Add(Me.txtServSalud)
+        Me.GroupBox7.Controls.Add(Me.txtAntecedentes)
         Me.GroupBox7.Controls.Add(Me.Label55)
         Me.GroupBox7.Controls.Add(Me.Label54)
         Me.GroupBox7.Controls.Add(Me.Label53)
         Me.GroupBox7.Controls.Add(Me.Label52)
-        Me.GroupBox7.Location = New System.Drawing.Point(16, 620)
+        Me.GroupBox7.Location = New System.Drawing.Point(16, 684)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(420, 142)
         Me.GroupBox7.TabIndex = 37
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Datos de Salud"
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 56)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(56, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Nombres"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(6, 82)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 13)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "Apellido P."
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 108)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(70, 13)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Apellido M."
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(6, 30)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(46, 13)
-        Me.Label10.TabIndex = 3
-        Me.Label10.Text = "R.U.N."
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(6, 134)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(91, 13)
-        Me.Label11.TabIndex = 4
-        Me.Label11.Text = "Fecha de Nac."
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(287, 30)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(58, 13)
-        Me.Label35.TabIndex = 5
-        Me.Label35.Text = "Domicilio"
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.Location = New System.Drawing.Point(287, 56)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(83, 13)
-        Me.Label39.TabIndex = 6
-        Me.Label39.Text = "Sector o Villa"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox1.Location = New System.Drawing.Point(74, 27)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(188, 20)
-        Me.TextBox1.TabIndex = 7
-        '
-        'TextBox2
-        '
-        Me.TextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox2.Location = New System.Drawing.Point(74, 53)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox2.TabIndex = 8
-        '
-        'TextBox3
-        '
-        Me.TextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox3.Location = New System.Drawing.Point(80, 79)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(182, 20)
-        Me.TextBox3.TabIndex = 9
-        '
-        'TextBox4
-        '
-        Me.TextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox4.Location = New System.Drawing.Point(82, 105)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox4.TabIndex = 10
-        '
-        'TextBox5
-        '
-        Me.TextBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox5.Location = New System.Drawing.Point(98, 131)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(163, 20)
-        Me.TextBox5.TabIndex = 11
-        '
-        'TextBox6
-        '
-        Me.TextBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox6.Location = New System.Drawing.Point(74, 157)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox6.TabIndex = 12
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(287, 82)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(52, 13)
-        Me.Label40.TabIndex = 13
-        Me.Label40.Text = "Comuna"
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.Location = New System.Drawing.Point(287, 108)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(57, 13)
-        Me.Label41.TabIndex = 14
-        Me.Label41.Text = "Teléfono"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(287, 134)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(124, 13)
-        Me.Label42.TabIndex = 15
-        Me.Label42.Text = "Colegio Procedencia"
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.Location = New System.Drawing.Point(287, 160)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(106, 13)
-        Me.Label43.TabIndex = 16
-        Me.Label43.Text = "Cursos Repetidos"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(572, 30)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(187, 13)
-        Me.Label44.TabIndex = 17
-        Me.Label44.Text = "Hermanos en el establecimiento"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox7.Location = New System.Drawing.Point(376, 27)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(175, 20)
-        Me.TextBox7.TabIndex = 23
-        '
-        'TextBox8
-        '
-        Me.TextBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox8.Location = New System.Drawing.Point(399, 157)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(151, 20)
-        Me.TextBox8.TabIndex = 22
-        '
-        'TextBox9
-        '
-        Me.TextBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox9.Location = New System.Drawing.Point(417, 131)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.ReadOnly = True
-        Me.TextBox9.Size = New System.Drawing.Size(134, 20)
-        Me.TextBox9.TabIndex = 21
-        '
-        'TextBox10
-        '
-        Me.TextBox10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox10.Location = New System.Drawing.Point(376, 105)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(175, 20)
-        Me.TextBox10.TabIndex = 20
-        '
-        'TextBox11
-        '
-        Me.TextBox11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox11.Location = New System.Drawing.Point(376, 79)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.ReadOnly = True
-        Me.TextBox11.Size = New System.Drawing.Size(174, 20)
-        Me.TextBox11.TabIndex = 19
-        '
-        'TextBox12
-        '
-        Me.TextBox12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox12.Location = New System.Drawing.Point(376, 53)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.ReadOnly = True
-        Me.TextBox12.Size = New System.Drawing.Size(175, 20)
-        Me.TextBox12.TabIndex = 18
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(572, 104)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(79, 13)
-        Me.Label45.TabIndex = 24
-        Me.Label45.Text = "Estado Beca"
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(572, 130)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(101, 13)
-        Me.Label46.TabIndex = 25
-        Me.Label46.Text = "Porcentaje Beca"
-        '
-        'Label47
-        '
-        Me.Label47.AutoSize = True
-        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.Location = New System.Drawing.Point(572, 156)
-        Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(83, 13)
-        Me.Label47.TabIndex = 26
-        Me.Label47.Text = "Tipo de Pago"
-        '
-        'Label48
-        '
-        Me.Label48.AutoSize = True
-        Me.Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(6, 160)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(39, 13)
-        Me.Label48.TabIndex = 27
-        Me.Label48.Text = "Curso"
-        '
-        'TextBox13
-        '
-        Me.TextBox13.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox13.Location = New System.Drawing.Point(765, 27)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.ReadOnly = True
-        Me.TextBox13.Size = New System.Drawing.Size(64, 20)
-        Me.TextBox13.TabIndex = 28
-        '
-        'TextBox14
-        '
-        Me.TextBox14.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox14.Location = New System.Drawing.Point(680, 101)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.ReadOnly = True
-        Me.TextBox14.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox14.TabIndex = 29
-        '
-        'TextBox15
-        '
-        Me.TextBox15.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox15.Location = New System.Drawing.Point(680, 153)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.ReadOnly = True
-        Me.TextBox15.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox15.TabIndex = 30
-        '
-        'TextBox16
-        '
-        Me.TextBox16.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox16.Location = New System.Drawing.Point(680, 127)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.ReadOnly = True
-        Me.TextBox16.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox16.TabIndex = 31
-        '
-        'Label49
-        '
-        Me.Label49.AutoSize = True
-        Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(572, 56)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(45, 13)
-        Me.Label49.TabIndex = 32
-        Me.Label49.Text = "Cursos"
-        '
-        'TextBox17
-        '
-        Me.TextBox17.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox17.Location = New System.Drawing.Point(680, 53)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.ReadOnly = True
-        Me.TextBox17.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox17.TabIndex = 33
-        '
-        'Label50
-        '
-        Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(572, 82)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(36, 13)
-        Me.Label50.TabIndex = 34
-        Me.Label50.Text = "SEXO"
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(628, 82)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(90, 13)
-        Me.Label51.TabIndex = 35
-        Me.Label51.Text = "Numero Matricula"
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(6, 29)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(206, 13)
-        Me.Label52.TabIndex = 0
-        Me.Label52.Text = "Antecedentes Medicos Importantes"
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.Location = New System.Drawing.Point(6, 55)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(107, 13)
-        Me.Label53.TabIndex = 1
-        Me.Label53.Text = "Servicio de Salud"
-        '
-        'Label54
-        '
-        Me.Label54.AutoSize = True
-        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.Location = New System.Drawing.Point(6, 81)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(53, 13)
-        Me.Label54.TabIndex = 2
-        Me.Label54.Text = "Seguros"
+        'txtOtrosServ
+        '
+        Me.txtOtrosServ.BackColor = System.Drawing.SystemColors.Control
+        Me.txtOtrosServ.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtOtrosServ.Location = New System.Drawing.Point(218, 104)
+        Me.txtOtrosServ.Name = "txtOtrosServ"
+        Me.txtOtrosServ.ReadOnly = True
+        Me.txtOtrosServ.Size = New System.Drawing.Size(193, 20)
+        Me.txtOtrosServ.TabIndex = 7
+        '
+        'txtSeguros
+        '
+        Me.txtSeguros.BackColor = System.Drawing.SystemColors.Control
+        Me.txtSeguros.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtSeguros.Location = New System.Drawing.Point(218, 78)
+        Me.txtSeguros.Name = "txtSeguros"
+        Me.txtSeguros.ReadOnly = True
+        Me.txtSeguros.Size = New System.Drawing.Size(193, 20)
+        Me.txtSeguros.TabIndex = 6
+        '
+        'txtServSalud
+        '
+        Me.txtServSalud.BackColor = System.Drawing.SystemColors.Control
+        Me.txtServSalud.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtServSalud.Location = New System.Drawing.Point(218, 52)
+        Me.txtServSalud.Name = "txtServSalud"
+        Me.txtServSalud.ReadOnly = True
+        Me.txtServSalud.Size = New System.Drawing.Size(193, 20)
+        Me.txtServSalud.TabIndex = 5
+        '
+        'txtAntecedentes
+        '
+        Me.txtAntecedentes.BackColor = System.Drawing.SystemColors.Control
+        Me.txtAntecedentes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtAntecedentes.Location = New System.Drawing.Point(218, 26)
+        Me.txtAntecedentes.Name = "txtAntecedentes"
+        Me.txtAntecedentes.ReadOnly = True
+        Me.txtAntecedentes.Size = New System.Drawing.Size(193, 20)
+        Me.txtAntecedentes.TabIndex = 4
         '
         'Label55
         '
@@ -1393,53 +1499,103 @@ Partial Class DetalleInfoAlumno
         Me.Label55.TabIndex = 3
         Me.Label55.Text = "Otros Servicios"
         '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label54.Location = New System.Drawing.Point(6, 81)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(53, 13)
+        Me.Label54.TabIndex = 2
+        Me.Label54.Text = "Seguros"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label53.Location = New System.Drawing.Point(6, 55)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(107, 13)
+        Me.Label53.TabIndex = 1
+        Me.Label53.Text = "Servicio de Salud"
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label52.Location = New System.Drawing.Point(6, 29)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(206, 13)
+        Me.Label52.TabIndex = 0
+        Me.Label52.Text = "Antecedentes Medicos Importantes"
+        '
         'GroupBox8
         '
-        Me.GroupBox8.Controls.Add(Me.TextBox22)
-        Me.GroupBox8.Controls.Add(Me.TextBox21)
-        Me.GroupBox8.Controls.Add(Me.TextBox20)
-        Me.GroupBox8.Controls.Add(Me.TextBox19)
-        Me.GroupBox8.Controls.Add(Me.TextBox18)
+        Me.GroupBox8.Controls.Add(Me.txtGrupoFam)
+        Me.GroupBox8.Controls.Add(Me.txtLugarHijos)
+        Me.GroupBox8.Controls.Add(Me.txtNumHijos)
+        Me.GroupBox8.Controls.Add(Me.txtViveOtros)
+        Me.GroupBox8.Controls.Add(Me.txtViveCon)
         Me.GroupBox8.Controls.Add(Me.Label59)
         Me.GroupBox8.Controls.Add(Me.Label58)
         Me.GroupBox8.Controls.Add(Me.Label57)
         Me.GroupBox8.Controls.Add(Me.Label56)
-        Me.GroupBox8.Location = New System.Drawing.Point(442, 620)
+        Me.GroupBox8.Location = New System.Drawing.Point(442, 684)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(411, 142)
         Me.GroupBox8.TabIndex = 38
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Información del Grupo Familiar"
         '
-        'Label56
+        'txtGrupoFam
         '
-        Me.Label56.AutoSize = True
-        Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.Location = New System.Drawing.Point(21, 29)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(101, 13)
-        Me.Label56.TabIndex = 0
-        Me.Label56.Text = "Alumno vive con"
+        Me.txtGrupoFam.BackColor = System.Drawing.SystemColors.Control
+        Me.txtGrupoFam.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtGrupoFam.Location = New System.Drawing.Point(216, 104)
+        Me.txtGrupoFam.Name = "txtGrupoFam"
+        Me.txtGrupoFam.ReadOnly = True
+        Me.txtGrupoFam.Size = New System.Drawing.Size(187, 20)
+        Me.txtGrupoFam.TabIndex = 8
         '
-        'Label57
+        'txtLugarHijos
         '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.Location = New System.Drawing.Point(21, 55)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(98, 13)
-        Me.Label57.TabIndex = 1
-        Me.Label57.Text = "Número de hijos"
+        Me.txtLugarHijos.BackColor = System.Drawing.SystemColors.Control
+        Me.txtLugarHijos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtLugarHijos.Location = New System.Drawing.Point(216, 78)
+        Me.txtLugarHijos.Name = "txtLugarHijos"
+        Me.txtLugarHijos.ReadOnly = True
+        Me.txtLugarHijos.Size = New System.Drawing.Size(187, 20)
+        Me.txtLugarHijos.TabIndex = 7
         '
-        'Label58
+        'txtNumHijos
         '
-        Me.Label58.AutoSize = True
-        Me.Label58.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label58.Location = New System.Drawing.Point(21, 81)
-        Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(186, 13)
-        Me.Label58.TabIndex = 2
-        Me.Label58.Text = "Lugar que ocupa entre los hijos"
+        Me.txtNumHijos.BackColor = System.Drawing.SystemColors.Control
+        Me.txtNumHijos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNumHijos.Location = New System.Drawing.Point(149, 52)
+        Me.txtNumHijos.Name = "txtNumHijos"
+        Me.txtNumHijos.ReadOnly = True
+        Me.txtNumHijos.Size = New System.Drawing.Size(254, 20)
+        Me.txtNumHijos.TabIndex = 6
+        '
+        'txtViveOtros
+        '
+        Me.txtViveOtros.BackColor = System.Drawing.SystemColors.Control
+        Me.txtViveOtros.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtViveOtros.Location = New System.Drawing.Point(255, 26)
+        Me.txtViveOtros.Name = "txtViveOtros"
+        Me.txtViveOtros.ReadOnly = True
+        Me.txtViveOtros.Size = New System.Drawing.Size(148, 20)
+        Me.txtViveOtros.TabIndex = 5
+        '
+        'txtViveCon
+        '
+        Me.txtViveCon.BackColor = System.Drawing.SystemColors.Control
+        Me.txtViveCon.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtViveCon.Location = New System.Drawing.Point(149, 26)
+        Me.txtViveCon.Name = "txtViveCon"
+        Me.txtViveCon.ReadOnly = True
+        Me.txtViveCon.Size = New System.Drawing.Size(100, 20)
+        Me.txtViveCon.TabIndex = 4
         '
         'Label59
         '
@@ -1451,95 +1607,35 @@ Partial Class DetalleInfoAlumno
         Me.Label59.TabIndex = 3
         Me.Label59.Text = "Grupo familiar que lo componen"
         '
-        'TextBox18
+        'Label58
         '
-        Me.TextBox18.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox18.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox18.Location = New System.Drawing.Point(149, 26)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.ReadOnly = True
-        Me.TextBox18.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox18.TabIndex = 4
+        Me.Label58.AutoSize = True
+        Me.Label58.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label58.Location = New System.Drawing.Point(21, 81)
+        Me.Label58.Name = "Label58"
+        Me.Label58.Size = New System.Drawing.Size(186, 13)
+        Me.Label58.TabIndex = 2
+        Me.Label58.Text = "Lugar que ocupa entre los hijos"
         '
-        'TextBox19
+        'Label57
         '
-        Me.TextBox19.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox19.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox19.Location = New System.Drawing.Point(255, 26)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.ReadOnly = True
-        Me.TextBox19.Size = New System.Drawing.Size(148, 20)
-        Me.TextBox19.TabIndex = 5
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label57.Location = New System.Drawing.Point(21, 55)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(98, 13)
+        Me.Label57.TabIndex = 1
+        Me.Label57.Text = "Número de hijos"
         '
-        'TextBox20
+        'Label56
         '
-        Me.TextBox20.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox20.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox20.Location = New System.Drawing.Point(149, 52)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.ReadOnly = True
-        Me.TextBox20.Size = New System.Drawing.Size(254, 20)
-        Me.TextBox20.TabIndex = 6
-        '
-        'TextBox21
-        '
-        Me.TextBox21.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox21.Location = New System.Drawing.Point(216, 78)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.ReadOnly = True
-        Me.TextBox21.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox21.TabIndex = 7
-        '
-        'TextBox22
-        '
-        Me.TextBox22.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox22.Location = New System.Drawing.Point(216, 104)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.ReadOnly = True
-        Me.TextBox22.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox22.TabIndex = 8
-        '
-        'TextBox23
-        '
-        Me.TextBox23.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox23.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox23.Location = New System.Drawing.Point(218, 26)
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.ReadOnly = True
-        Me.TextBox23.Size = New System.Drawing.Size(193, 20)
-        Me.TextBox23.TabIndex = 4
-        '
-        'TextBox24
-        '
-        Me.TextBox24.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox24.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox24.Location = New System.Drawing.Point(218, 52)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.ReadOnly = True
-        Me.TextBox24.Size = New System.Drawing.Size(193, 20)
-        Me.TextBox24.TabIndex = 5
-        '
-        'TextBox25
-        '
-        Me.TextBox25.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox25.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox25.Location = New System.Drawing.Point(218, 78)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(193, 20)
-        Me.TextBox25.TabIndex = 6
-        '
-        'TextBox26
-        '
-        Me.TextBox26.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox26.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox26.Location = New System.Drawing.Point(218, 104)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.ReadOnly = True
-        Me.TextBox26.Size = New System.Drawing.Size(193, 20)
-        Me.TextBox26.TabIndex = 7
+        Me.Label56.AutoSize = True
+        Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label56.Location = New System.Drawing.Point(21, 29)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(101, 13)
+        Me.Label56.TabIndex = 0
+        Me.Label56.Text = "Alumno vive con"
         '
         'GroupBox9
         '
@@ -1549,95 +1645,45 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox9.Controls.Add(Me.Label65)
         Me.GroupBox9.Controls.Add(Me.Label64)
         Me.GroupBox9.Controls.Add(Me.Label63)
-        Me.GroupBox9.Controls.Add(Me.TextBox29)
-        Me.GroupBox9.Controls.Add(Me.TextBox28)
-        Me.GroupBox9.Controls.Add(Me.TextBox27)
+        Me.GroupBox9.Controls.Add(Me.txtTutorEco)
+        Me.GroupBox9.Controls.Add(Me.txtApoSup)
+        Me.GroupBox9.Controls.Add(Me.txtApoTitular)
         Me.GroupBox9.Controls.Add(Me.Label62)
         Me.GroupBox9.Controls.Add(Me.Label61)
         Me.GroupBox9.Controls.Add(Me.Label60)
-        Me.GroupBox9.Location = New System.Drawing.Point(16, 768)
+        Me.GroupBox9.Location = New System.Drawing.Point(16, 832)
         Me.GroupBox9.Name = "GroupBox9"
         Me.GroupBox9.Size = New System.Drawing.Size(837, 142)
         Me.GroupBox9.TabIndex = 39
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Apoderados y Tutor"
         '
-        'Label60
+        'Label68
         '
-        Me.Label60.AutoSize = True
-        Me.Label60.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label60.Location = New System.Drawing.Point(6, 33)
-        Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(172, 13)
-        Me.Label60.TabIndex = 0
-        Me.Label60.Text = "Nombre del Apoderado titular"
+        Me.Label68.AutoSize = True
+        Me.Label68.Location = New System.Drawing.Point(677, 105)
+        Me.Label68.Name = "Label68"
+        Me.Label68.Size = New System.Drawing.Size(97, 13)
+        Me.Label68.TabIndex = 11
+        Me.Label68.Text = "------------------------------"
         '
-        'Label61
+        'Label67
         '
-        Me.Label61.AutoSize = True
-        Me.Label61.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label61.Location = New System.Drawing.Point(6, 67)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(190, 13)
-        Me.Label61.TabIndex = 1
-        Me.Label61.Text = "Nombre del Apoderado Suplente"
+        Me.Label67.AutoSize = True
+        Me.Label67.Location = New System.Drawing.Point(678, 71)
+        Me.Label67.Name = "Label67"
+        Me.Label67.Size = New System.Drawing.Size(97, 13)
+        Me.Label67.TabIndex = 10
+        Me.Label67.Text = "------------------------------"
         '
-        'Label62
+        'Label66
         '
-        Me.Label62.AutoSize = True
-        Me.Label62.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label62.Location = New System.Drawing.Point(6, 101)
-        Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(171, 13)
-        Me.Label62.TabIndex = 2
-        Me.Label62.Text = "Nombre del Tutor Económico"
-        '
-        'TextBox27
-        '
-        Me.TextBox27.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox27.Location = New System.Drawing.Point(218, 30)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.ReadOnly = True
-        Me.TextBox27.Size = New System.Drawing.Size(342, 20)
-        Me.TextBox27.TabIndex = 3
-        '
-        'TextBox28
-        '
-        Me.TextBox28.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox28.Location = New System.Drawing.Point(218, 64)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.ReadOnly = True
-        Me.TextBox28.Size = New System.Drawing.Size(342, 20)
-        Me.TextBox28.TabIndex = 4
-        '
-        'TextBox29
-        '
-        Me.TextBox29.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox29.Location = New System.Drawing.Point(218, 98)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.ReadOnly = True
-        Me.TextBox29.Size = New System.Drawing.Size(342, 20)
-        Me.TextBox29.TabIndex = 5
-        '
-        'Label63
-        '
-        Me.Label63.AutoSize = True
-        Me.Label63.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.Location = New System.Drawing.Point(600, 33)
-        Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(37, 13)
-        Me.Label63.TabIndex = 6
-        Me.Label63.Text = "Firma"
-        '
-        'Label64
-        '
-        Me.Label64.AutoSize = True
-        Me.Label64.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.Location = New System.Drawing.Point(600, 67)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(37, 13)
-        Me.Label64.TabIndex = 7
-        Me.Label64.Text = "Firma"
+        Me.Label66.AutoSize = True
+        Me.Label66.Location = New System.Drawing.Point(678, 37)
+        Me.Label66.Name = "Label66"
+        Me.Label66.Size = New System.Drawing.Size(97, 13)
+        Me.Label66.TabIndex = 9
+        Me.Label66.Text = "------------------------------"
         '
         'Label65
         '
@@ -1649,32 +1695,114 @@ Partial Class DetalleInfoAlumno
         Me.Label65.TabIndex = 8
         Me.Label65.Text = "Firma"
         '
-        'Label66
+        'Label64
         '
-        Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(678, 37)
-        Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(97, 13)
-        Me.Label66.TabIndex = 9
-        Me.Label66.Text = "------------------------------"
+        Me.Label64.AutoSize = True
+        Me.Label64.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label64.Location = New System.Drawing.Point(600, 67)
+        Me.Label64.Name = "Label64"
+        Me.Label64.Size = New System.Drawing.Size(37, 13)
+        Me.Label64.TabIndex = 7
+        Me.Label64.Text = "Firma"
         '
-        'Label67
+        'Label63
         '
-        Me.Label67.AutoSize = True
-        Me.Label67.Location = New System.Drawing.Point(678, 71)
-        Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(97, 13)
-        Me.Label67.TabIndex = 10
-        Me.Label67.Text = "------------------------------"
+        Me.Label63.AutoSize = True
+        Me.Label63.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label63.Location = New System.Drawing.Point(600, 33)
+        Me.Label63.Name = "Label63"
+        Me.Label63.Size = New System.Drawing.Size(37, 13)
+        Me.Label63.TabIndex = 6
+        Me.Label63.Text = "Firma"
         '
-        'Label68
+        'txtTutorEco
         '
-        Me.Label68.AutoSize = True
-        Me.Label68.Location = New System.Drawing.Point(677, 105)
-        Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(97, 13)
-        Me.Label68.TabIndex = 11
-        Me.Label68.Text = "------------------------------"
+        Me.txtTutorEco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtTutorEco.Location = New System.Drawing.Point(218, 98)
+        Me.txtTutorEco.Name = "txtTutorEco"
+        Me.txtTutorEco.ReadOnly = True
+        Me.txtTutorEco.Size = New System.Drawing.Size(342, 20)
+        Me.txtTutorEco.TabIndex = 5
+        '
+        'txtApoSup
+        '
+        Me.txtApoSup.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtApoSup.Location = New System.Drawing.Point(218, 64)
+        Me.txtApoSup.Name = "txtApoSup"
+        Me.txtApoSup.ReadOnly = True
+        Me.txtApoSup.Size = New System.Drawing.Size(342, 20)
+        Me.txtApoSup.TabIndex = 4
+        '
+        'txtApoTitular
+        '
+        Me.txtApoTitular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtApoTitular.Location = New System.Drawing.Point(218, 30)
+        Me.txtApoTitular.Name = "txtApoTitular"
+        Me.txtApoTitular.ReadOnly = True
+        Me.txtApoTitular.Size = New System.Drawing.Size(342, 20)
+        Me.txtApoTitular.TabIndex = 3
+        '
+        'Label62
+        '
+        Me.Label62.AutoSize = True
+        Me.Label62.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label62.Location = New System.Drawing.Point(6, 101)
+        Me.Label62.Name = "Label62"
+        Me.Label62.Size = New System.Drawing.Size(171, 13)
+        Me.Label62.TabIndex = 2
+        Me.Label62.Text = "Nombre del Tutor Económico"
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label61.Location = New System.Drawing.Point(6, 67)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(190, 13)
+        Me.Label61.TabIndex = 1
+        Me.Label61.Text = "Nombre del Apoderado Suplente"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label60.Location = New System.Drawing.Point(6, 33)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(172, 13)
+        Me.Label60.TabIndex = 0
+        Me.Label60.Text = "Nombre del Apoderado titular"
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label51.Location = New System.Drawing.Point(588, 9)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(122, 15)
+        Me.Label51.TabIndex = 40
+        Me.Label51.Text = "Numero Matricula"
+        '
+        'txtNumMatri
+        '
+        Me.txtNumMatri.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNumMatri.Location = New System.Drawing.Point(716, 8)
+        Me.txtNumMatri.Name = "txtNumMatri"
+        Me.txtNumMatri.ReadOnly = True
+        Me.txtNumMatri.Size = New System.Drawing.Size(137, 20)
+        Me.txtNumMatri.TabIndex = 41
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(744, 980)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(107, 46)
+        Me.Button1.TabIndex = 42
+        Me.Button1.Text = "Imprimir"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
         '
         'DetalleInfoAlumno
         '
@@ -1682,7 +1810,10 @@ Partial Class DetalleInfoAlumno
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoScrollMargin = New System.Drawing.Size(10, 10)
-        Me.ClientSize = New System.Drawing.Size(879, 637)
+        Me.ClientSize = New System.Drawing.Size(879, 557)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.txtNumMatri)
+        Me.Controls.Add(Me.Label51)
         Me.Controls.Add(Me.GroupBox9)
         Me.Controls.Add(Me.GroupBox8)
         Me.Controls.Add(Me.GroupBox7)
@@ -1714,6 +1845,7 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
@@ -1755,7 +1887,7 @@ Partial Class DetalleInfoAlumno
     Friend WithEvents txtRutTutor As System.Windows.Forms.TextBox
     Friend WithEvents txtFonoTutor As System.Windows.Forms.TextBox
     Friend WithEvents txtOcupacionTutor As System.Windows.Forms.TextBox
-    Friend WithEvents txtTrabajoTutor As System.Windows.Forms.TextBox
+    Friend WithEvents txtLugarTrabajoTutor As System.Windows.Forms.TextBox
     Friend WithEvents txtFonoTrabTutor As System.Windows.Forms.TextBox
     Friend WithEvents txtProfesionTutor As System.Windows.Forms.TextBox
     Friend WithEvents txtDomicilioTutor As System.Windows.Forms.TextBox
@@ -1789,57 +1921,56 @@ Partial Class DetalleInfoAlumno
     Friend WithEvents txtRutOtro As System.Windows.Forms.TextBox
     Friend WithEvents txtNombreOtro As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label51 As System.Windows.Forms.Label
     Friend WithEvents Label50 As System.Windows.Forms.Label
-    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCursoHerm As System.Windows.Forms.TextBox
     Friend WithEvents Label49 As System.Windows.Forms.Label
-    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
+    Friend WithEvents txtPorcentaje As System.Windows.Forms.TextBox
+    Friend WithEvents txtTipoPago As System.Windows.Forms.TextBox
+    Friend WithEvents txtBeca As System.Windows.Forms.TextBox
+    Friend WithEvents txtHermanos As System.Windows.Forms.TextBox
     Friend WithEvents Label48 As System.Windows.Forms.Label
     Friend WithEvents Label47 As System.Windows.Forms.Label
     Friend WithEvents Label46 As System.Windows.Forms.Label
     Friend WithEvents Label45 As System.Windows.Forms.Label
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents txtDomicilio As System.Windows.Forms.TextBox
+    Friend WithEvents txtRepetidos As System.Windows.Forms.TextBox
+    Friend WithEvents txtColegioAnterior As System.Windows.Forms.TextBox
+    Friend WithEvents txtFonoAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtComuna As System.Windows.Forms.TextBox
+    Friend WithEvents txtVilla As System.Windows.Forms.TextBox
     Friend WithEvents Label44 As System.Windows.Forms.Label
     Friend WithEvents Label43 As System.Windows.Forms.Label
     Friend WithEvents Label42 As System.Windows.Forms.Label
     Friend WithEvents Label41 As System.Windows.Forms.Label
     Friend WithEvents Label40 As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCursoActual As System.Windows.Forms.TextBox
+    Friend WithEvents txtFechaNac As System.Windows.Forms.TextBox
+    Friend WithEvents txtApeMat As System.Windows.Forms.TextBox
+    Friend WithEvents txtApePat As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtRutAlumno As System.Windows.Forms.TextBox
     Friend WithEvents Label39 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents lblRutAlumno As System.Windows.Forms.Label
+    Friend WithEvents lblApeMat As System.Windows.Forms.Label
+    Friend WithEvents lblApePat As System.Windows.Forms.Label
+    Friend WithEvents lblNombreAlumno As System.Windows.Forms.Label
     Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox24 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox23 As System.Windows.Forms.TextBox
+    Friend WithEvents txtOtrosServ As System.Windows.Forms.TextBox
+    Friend WithEvents txtSeguros As System.Windows.Forms.TextBox
+    Friend WithEvents txtServSalud As System.Windows.Forms.TextBox
+    Friend WithEvents txtAntecedentes As System.Windows.Forms.TextBox
     Friend WithEvents Label55 As System.Windows.Forms.Label
     Friend WithEvents Label54 As System.Windows.Forms.Label
     Friend WithEvents Label53 As System.Windows.Forms.Label
     Friend WithEvents Label52 As System.Windows.Forms.Label
     Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
+    Friend WithEvents txtGrupoFam As System.Windows.Forms.TextBox
+    Friend WithEvents txtLugarHijos As System.Windows.Forms.TextBox
+    Friend WithEvents txtNumHijos As System.Windows.Forms.TextBox
+    Friend WithEvents txtViveOtros As System.Windows.Forms.TextBox
+    Friend WithEvents txtViveCon As System.Windows.Forms.TextBox
     Friend WithEvents Label59 As System.Windows.Forms.Label
     Friend WithEvents Label58 As System.Windows.Forms.Label
     Friend WithEvents Label57 As System.Windows.Forms.Label
@@ -1851,10 +1982,24 @@ Partial Class DetalleInfoAlumno
     Friend WithEvents Label65 As System.Windows.Forms.Label
     Friend WithEvents Label64 As System.Windows.Forms.Label
     Friend WithEvents Label63 As System.Windows.Forms.Label
-    Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox28 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox27 As System.Windows.Forms.TextBox
+    Friend WithEvents txtTutorEco As System.Windows.Forms.TextBox
+    Friend WithEvents txtApoSup As System.Windows.Forms.TextBox
+    Friend WithEvents txtApoTitular As System.Windows.Forms.TextBox
     Friend WithEvents Label62 As System.Windows.Forms.Label
     Friend WithEvents Label61 As System.Windows.Forms.Label
     Friend WithEvents Label60 As System.Windows.Forms.Label
+    Friend WithEvents txtSexo As System.Windows.Forms.TextBox
+    Friend WithEvents Label51 As System.Windows.Forms.Label
+    Friend WithEvents txtNumMatri As System.Windows.Forms.TextBox
+    Friend WithEvents txtCorreoMadre As System.Windows.Forms.TextBox
+    Friend WithEvents Label71 As System.Windows.Forms.Label
+    Friend WithEvents txtCorreoPadre As System.Windows.Forms.TextBox
+    Friend WithEvents Label70 As System.Windows.Forms.Label
+    Friend WithEvents txtFono2Tutor As System.Windows.Forms.TextBox
+    Friend WithEvents Label69 As System.Windows.Forms.Label
+    Friend WithEvents txtEdadAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents lblEdad As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
+    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
 End Class

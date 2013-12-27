@@ -47,6 +47,7 @@ Partial Class FormAlumnosMatriculados
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cbbPorcentaje = New System.Windows.Forms.ComboBox()
         Me.labelPorcentaje = New System.Windows.Forms.Label()
+        Me.btnCancelarMatri = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -86,18 +87,18 @@ Partial Class FormAlumnosMatriculados
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(729, 201)
+        Me.Button2.Location = New System.Drawing.Point(729, 217)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(127, 54)
+        Me.Button2.Size = New System.Drawing.Size(117, 44)
         Me.Button2.TabIndex = 28
         Me.Button2.Text = "Salir"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(729, 77)
+        Me.Button1.Location = New System.Drawing.Point(729, 67)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(127, 54)
+        Me.Button1.Size = New System.Drawing.Size(117, 44)
         Me.Button1.TabIndex = 27
         Me.Button1.Text = "Limpiar"
         Me.Button1.UseVisualStyleBackColor = True
@@ -263,9 +264,9 @@ Partial Class FormAlumnosMatriculados
         '
         'btnFichaPersonal
         '
-        Me.btnFichaPersonal.Location = New System.Drawing.Point(729, 138)
+        Me.btnFichaPersonal.Location = New System.Drawing.Point(729, 117)
         Me.btnFichaPersonal.Name = "btnFichaPersonal"
-        Me.btnFichaPersonal.Size = New System.Drawing.Size(127, 54)
+        Me.btnFichaPersonal.Size = New System.Drawing.Size(117, 44)
         Me.btnFichaPersonal.TabIndex = 34
         Me.btnFichaPersonal.Text = "Ver Ficha Personal"
         Me.btnFichaPersonal.UseVisualStyleBackColor = True
@@ -309,6 +310,15 @@ Partial Class FormAlumnosMatriculados
         Me.labelPorcentaje.TabIndex = 34
         Me.labelPorcentaje.Text = "Porcentaje de beca"
         '
+        'btnCancelarMatri
+        '
+        Me.btnCancelarMatri.Location = New System.Drawing.Point(729, 167)
+        Me.btnCancelarMatri.Name = "btnCancelarMatri"
+        Me.btnCancelarMatri.Size = New System.Drawing.Size(117, 44)
+        Me.btnCancelarMatri.TabIndex = 36
+        Me.btnCancelarMatri.Text = "Cancelar Matrícula"
+        Me.btnCancelarMatri.UseVisualStyleBackColor = True
+        '
         'FormAlumnosMatriculados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -316,6 +326,7 @@ Partial Class FormAlumnosMatriculados
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(894, 554)
+        Me.Controls.Add(Me.btnCancelarMatri)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnFichaPersonal)
         Me.Controls.Add(Me.Button2)
@@ -359,4 +370,5 @@ Partial Class FormAlumnosMatriculados
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents labelPorcentaje As System.Windows.Forms.Label
     Friend WithEvents cbbPorcentaje As System.Windows.Forms.ComboBox
+    Friend WithEvents btnCancelarMatri As System.Windows.Forms.Button
 End Class

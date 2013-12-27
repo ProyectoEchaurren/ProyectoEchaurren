@@ -5,9 +5,15 @@ Public Class AdminMensualidades
     Public varConexionString1 As String = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
     Public consultaCargaComboCurso As String = "SELECT * FROM bd_echaurren.curso;"
     Public varDataSet As DataSet
+    Public varMesActual As Integer
+    Public varNombreMesActual As String
     Public varDataAdapter As MySqlDataAdapter
 
     Private Sub AdminMensualidades_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+        varMesActual = Month(Now)
+        varNombreMesActual = MonthName(varMesActual)
+
         Try
 
             varConexion1 = New MySqlConnection
@@ -33,7 +39,7 @@ Public Class AdminMensualidades
             MessageBox.Show("Error al cargar cursos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
-        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje)
+        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje, varNombreMesActual)
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CheckBecado.CheckedChanged
@@ -46,7 +52,7 @@ Public Class AdminMensualidades
             cbPorcentaje.Enabled = False
             labelPorcentaje.Enabled = False
         End If
-        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje)
+        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje, varNombreMesActual)
     End Sub
 
     Private Sub CheckNoBecado_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CheckNoBecado.CheckedChanged
@@ -56,29 +62,29 @@ Public Class AdminMensualidades
             cbPorcentaje.Enabled = False
             labelPorcentaje.Enabled = False
         End If
-        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje)
+        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje, varNombreMesActual)
     End Sub
 
     Private Sub CheckPagado_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CheckPagado.CheckedChanged
         If CheckPagado.Checked = True Then
             CheckAtrasado.Checked = False
         End If
-        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje)
+        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje, varNombreMesActual)
     End Sub
 
     Private Sub CheckAtrasado_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CheckAtrasado.CheckedChanged
         If CheckAtrasado.Checked = True Then
             CheckPagado.Checked = False
         End If
-        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje)
+        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje, varNombreMesActual)
     End Sub
 
     Private Sub cbFiltroCurso_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbFiltroCurso.SelectedIndexChanged
-        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje)
+        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje, varNombreMesActual)
     End Sub
 
     Private Sub cbPorcentaje_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbPorcentaje.SelectedIndexChanged
-        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje)
+        ModuloContenedor.ComprobarFiltros(DataGridView1, cbFiltroCurso, cbPorcentaje, varNombreMesActual)
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -88,5 +94,13 @@ Public Class AdminMensualidades
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         Form1.varColumnaRutHistorico = (DataGridView1.Rows(e.RowIndex).Cells(0).Value)
         HistorialdePagos.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        If Form1.varColumnaRutHistorico = "" Then
+            MsgBox("Primero debe selecionar un Alumno(a) para ver su historial de mensualidades.", MsgBoxStyle.Information, AcceptButton)
+        Else
+            HistorialdePagos.Show()
+        End If
     End Sub
 End Class

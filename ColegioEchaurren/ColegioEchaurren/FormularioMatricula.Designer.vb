@@ -25,6 +25,8 @@ Partial Class FormularioMatricula
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormularioMatricula))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.Label45 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnBuscarAlumAnt = New System.Windows.Forms.Button()
         Me.txtRutAntiguo = New System.Windows.Forms.TextBox()
@@ -90,6 +92,7 @@ Partial Class FormularioMatricula
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.btnLimpiar2 = New System.Windows.Forms.Button()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.GroupBoxContent = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -113,6 +116,7 @@ Partial Class FormularioMatricula
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnLimpiar3 = New System.Windows.Forms.Button()
         Me.checkIguales = New System.Windows.Forms.CheckBox()
         Me.txtRutOtroApod = New System.Windows.Forms.TextBox()
         Me.txtRutOtroApodSuple = New System.Windows.Forms.TextBox()
@@ -195,6 +199,7 @@ Partial Class FormularioMatricula
         Me.Label94 = New System.Windows.Forms.Label()
         Me.Label93 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btnLimpiar4 = New System.Windows.Forms.Button()
         Me.cbbTipoPago = New System.Windows.Forms.ComboBox()
         Me.btnSalir3 = New System.Windows.Forms.Button()
         Me.btnTerminar = New System.Windows.Forms.Button()
@@ -286,6 +291,8 @@ Partial Class FormularioMatricula
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.btnLimpiar)
+        Me.TabPage2.Controls.Add(Me.Label45)
         Me.TabPage2.Controls.Add(Me.Panel3)
         Me.TabPage2.Controls.Add(Me.comboComuna)
         Me.TabPage2.Controls.Add(Me.comboCurso)
@@ -348,6 +355,25 @@ Partial Class FormularioMatricula
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Datos de Alumno(a)"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.Location = New System.Drawing.Point(248, 727)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(122, 50)
+        Me.btnLimpiar.TabIndex = 231
+        Me.btnLimpiar.Text = "Limpiar Campos"
+        Me.btnLimpiar.UseVisualStyleBackColor = True
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(18, 549)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(95, 15)
+        Me.Label45.TabIndex = 230
+        Me.Label45.Text = "ESPECIFICAR"
         '
         'Panel3
         '
@@ -453,6 +479,7 @@ Partial Class FormularioMatricula
         '
         'txtSeguros
         '
+        Me.txtSeguros.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtSeguros.Location = New System.Drawing.Point(433, 677)
         Me.txtSeguros.Name = "txtSeguros"
         Me.txtSeguros.Size = New System.Drawing.Size(218, 20)
@@ -478,6 +505,7 @@ Partial Class FormularioMatricula
         '
         'txtOtrosServicios
         '
+        Me.txtOtrosServicios.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtOtrosServicios.Enabled = False
         Me.txtOtrosServicios.Location = New System.Drawing.Point(153, 677)
         Me.txtOtrosServicios.Name = "txtOtrosServicios"
@@ -506,6 +534,7 @@ Partial Class FormularioMatricula
         '
         'txtAntecedentesMed
         '
+        Me.txtAntecedentesMed.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtAntecedentesMed.Location = New System.Drawing.Point(283, 614)
         Me.txtAntecedentesMed.Name = "txtAntecedentesMed"
         Me.txtAntecedentesMed.Size = New System.Drawing.Size(368, 20)
@@ -524,7 +553,7 @@ Partial Class FormularioMatricula
         'cbViveCon
         '
         Me.cbViveCon.FormattingEnabled = True
-        Me.cbViveCon.Items.AddRange(New Object() {"", "Mamá y Papá", "Sólo Mamá", "Sólo Papá", "Otros (especificar)"})
+        Me.cbViveCon.Items.AddRange(New Object() {"", "Mamá y Papá", "Sólo Mamá", "Sólo Papá", "Otros"})
         Me.cbViveCon.Location = New System.Drawing.Point(139, 519)
         Me.cbViveCon.Name = "cbViveCon"
         Me.cbViveCon.Size = New System.Drawing.Size(111, 21)
@@ -644,6 +673,7 @@ Partial Class FormularioMatricula
         '
         'txtGrupoFamiliar
         '
+        Me.txtGrupoFamiliar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtGrupoFamiliar.Location = New System.Drawing.Point(451, 573)
         Me.txtGrupoFamiliar.Name = "txtGrupoFamiliar"
         Me.txtGrupoFamiliar.Size = New System.Drawing.Size(200, 20)
@@ -651,6 +681,7 @@ Partial Class FormularioMatricula
         '
         'txtLugarHijos
         '
+        Me.txtLugarHijos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtLugarHijos.Location = New System.Drawing.Point(451, 546)
         Me.txtLugarHijos.Name = "txtLugarHijos"
         Me.txtLugarHijos.Size = New System.Drawing.Size(200, 20)
@@ -658,6 +689,7 @@ Partial Class FormularioMatricula
         '
         'txtNumHijos
         '
+        Me.txtNumHijos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNumHijos.Location = New System.Drawing.Point(451, 519)
         Me.txtNumHijos.Name = "txtNumHijos"
         Me.txtNumHijos.Size = New System.Drawing.Size(200, 20)
@@ -685,10 +717,11 @@ Partial Class FormularioMatricula
         '
         'txtViveConOtros
         '
+        Me.txtViveConOtros.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtViveConOtros.Enabled = False
-        Me.txtViveConOtros.Location = New System.Drawing.Point(21, 547)
+        Me.txtViveConOtros.Location = New System.Drawing.Point(139, 547)
         Me.txtViveConOtros.Name = "txtViveConOtros"
-        Me.txtViveConOtros.Size = New System.Drawing.Size(229, 20)
+        Me.txtViveConOtros.Size = New System.Drawing.Size(111, 20)
         Me.txtViveConOtros.TabIndex = 90
         '
         'Label48
@@ -713,6 +746,7 @@ Partial Class FormularioMatricula
         '
         'txtHermanosCursos
         '
+        Me.txtHermanosCursos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtHermanosCursos.Enabled = False
         Me.txtHermanosCursos.Location = New System.Drawing.Point(451, 465)
         Me.txtHermanosCursos.Name = "txtHermanosCursos"
@@ -751,6 +785,7 @@ Partial Class FormularioMatricula
         '
         'txtCursosRepetidos
         '
+        Me.txtCursosRepetidos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCursosRepetidos.Location = New System.Drawing.Point(238, 434)
         Me.txtCursosRepetidos.Name = "txtCursosRepetidos"
         Me.txtCursosRepetidos.Size = New System.Drawing.Size(413, 20)
@@ -758,6 +793,7 @@ Partial Class FormularioMatricula
         '
         'txtColegioPrese
         '
+        Me.txtColegioPrese.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtColegioPrese.Location = New System.Drawing.Point(238, 401)
         Me.txtColegioPrese.Name = "txtColegioPrese"
         Me.txtColegioPrese.Size = New System.Drawing.Size(413, 20)
@@ -765,6 +801,7 @@ Partial Class FormularioMatricula
         '
         'txtTelefonoAlumno
         '
+        Me.txtTelefonoAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTelefonoAlumno.Location = New System.Drawing.Point(440, 369)
         Me.txtTelefonoAlumno.Name = "txtTelefonoAlumno"
         Me.txtTelefonoAlumno.Size = New System.Drawing.Size(211, 20)
@@ -772,6 +809,7 @@ Partial Class FormularioMatricula
         '
         'txtSectorAlumno
         '
+        Me.txtSectorAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtSectorAlumno.Location = New System.Drawing.Point(238, 337)
         Me.txtSectorAlumno.Name = "txtSectorAlumno"
         Me.txtSectorAlumno.Size = New System.Drawing.Size(245, 20)
@@ -779,6 +817,7 @@ Partial Class FormularioMatricula
         '
         'txtCalleAlumno
         '
+        Me.txtCalleAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCalleAlumno.Location = New System.Drawing.Point(238, 304)
         Me.txtCalleAlumno.Name = "txtCalleAlumno"
         Me.txtCalleAlumno.Size = New System.Drawing.Size(413, 20)
@@ -786,13 +825,16 @@ Partial Class FormularioMatricula
         '
         'txtEdadAlumno
         '
+        Me.txtEdadAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEdadAlumno.Location = New System.Drawing.Point(550, 275)
+        Me.txtEdadAlumno.MaxLength = 2
         Me.txtEdadAlumno.Name = "txtEdadAlumno"
         Me.txtEdadAlumno.Size = New System.Drawing.Size(101, 20)
         Me.txtEdadAlumno.TabIndex = 17
         '
         'txtNombresAlumno
         '
+        Me.txtNombresAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombresAlumno.Location = New System.Drawing.Point(238, 222)
         Me.txtNombresAlumno.Name = "txtNombresAlumno"
         Me.txtNombresAlumno.Size = New System.Drawing.Size(413, 20)
@@ -800,6 +842,7 @@ Partial Class FormularioMatricula
         '
         'txtApeMatAlumno
         '
+        Me.txtApeMatAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtApeMatAlumno.Location = New System.Drawing.Point(238, 193)
         Me.txtApeMatAlumno.Name = "txtApeMatAlumno"
         Me.txtApeMatAlumno.Size = New System.Drawing.Size(413, 20)
@@ -807,6 +850,7 @@ Partial Class FormularioMatricula
         '
         'txtApePatAlumno
         '
+        Me.txtApePatAlumno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtApePatAlumno.Location = New System.Drawing.Point(238, 163)
         Me.txtApePatAlumno.Name = "txtApePatAlumno"
         Me.txtApePatAlumno.Size = New System.Drawing.Size(413, 20)
@@ -925,6 +969,7 @@ Partial Class FormularioMatricula
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.btnLimpiar2)
         Me.TabPage4.Controls.Add(Me.Label20)
         Me.TabPage4.Controls.Add(Me.GroupBoxContent)
         Me.TabPage4.Controls.Add(Me.Label51)
@@ -939,6 +984,15 @@ Partial Class FormularioMatricula
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Contactos de Emergencia"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'btnLimpiar2
+        '
+        Me.btnLimpiar2.Location = New System.Drawing.Point(113, 547)
+        Me.btnLimpiar2.Name = "btnLimpiar2"
+        Me.btnLimpiar2.Size = New System.Drawing.Size(122, 50)
+        Me.btnLimpiar2.TabIndex = 271
+        Me.btnLimpiar2.Text = "Limpiar Campos"
+        Me.btnLimpiar2.UseVisualStyleBackColor = True
         '
         'Label20
         '
@@ -1001,6 +1055,7 @@ Partial Class FormularioMatricula
         '
         'txtNombreContacto3
         '
+        Me.txtNombreContacto3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombreContacto3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombreContacto3.Location = New System.Drawing.Point(157, 29)
         Me.txtNombreContacto3.Name = "txtNombreContacto3"
@@ -1050,6 +1105,7 @@ Partial Class FormularioMatricula
         '
         'txtNombreContacto2
         '
+        Me.txtNombreContacto2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombreContacto2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombreContacto2.Location = New System.Drawing.Point(157, 29)
         Me.txtNombreContacto2.Name = "txtNombreContacto2"
@@ -1098,6 +1154,7 @@ Partial Class FormularioMatricula
         '
         'txtNombreContacto
         '
+        Me.txtNombreContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombreContacto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombreContacto.Location = New System.Drawing.Point(157, 29)
         Me.txtNombreContacto.Name = "txtNombreContacto"
@@ -1162,6 +1219,7 @@ Partial Class FormularioMatricula
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TabPage1.Controls.Add(Me.btnLimpiar3)
         Me.TabPage1.Controls.Add(Me.checkIguales)
         Me.TabPage1.Controls.Add(Me.txtRutOtroApod)
         Me.TabPage1.Controls.Add(Me.txtRutOtroApodSuple)
@@ -1246,6 +1304,15 @@ Partial Class FormularioMatricula
         Me.TabPage1.Size = New System.Drawing.Size(678, 963)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Antecedentes Familiares"
+        '
+        'btnLimpiar3
+        '
+        Me.btnLimpiar3.Location = New System.Drawing.Point(115, 866)
+        Me.btnLimpiar3.Name = "btnLimpiar3"
+        Me.btnLimpiar3.Size = New System.Drawing.Size(122, 50)
+        Me.btnLimpiar3.TabIndex = 269
+        Me.btnLimpiar3.Text = "Limpiar Campos"
+        Me.btnLimpiar3.UseVisualStyleBackColor = True
         '
         'checkIguales
         '
@@ -1374,6 +1441,7 @@ Partial Class FormularioMatricula
         '
         'txtNombreApoderado
         '
+        Me.txtNombreApoderado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombreApoderado.Enabled = False
         Me.txtNombreApoderado.Location = New System.Drawing.Point(258, 469)
         Me.txtNombreApoderado.Name = "txtNombreApoderado"
@@ -1402,6 +1470,7 @@ Partial Class FormularioMatricula
         '
         'txtEstudiosMadre
         '
+        Me.txtEstudiosMadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEstudiosMadre.Enabled = False
         Me.txtEstudiosMadre.Location = New System.Drawing.Point(536, 309)
         Me.txtEstudiosMadre.Name = "txtEstudiosMadre"
@@ -1420,6 +1489,7 @@ Partial Class FormularioMatricula
         '
         'txtEstudiosPadre
         '
+        Me.txtEstudiosPadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEstudiosPadre.Enabled = False
         Me.txtEstudiosPadre.Location = New System.Drawing.Point(536, 123)
         Me.txtEstudiosPadre.Name = "txtEstudiosPadre"
@@ -1430,6 +1500,7 @@ Partial Class FormularioMatricula
         '
         Me.txtEdadMadre.Enabled = False
         Me.txtEdadMadre.Location = New System.Drawing.Point(436, 280)
+        Me.txtEdadMadre.MaxLength = 2
         Me.txtEdadMadre.Name = "txtEdadMadre"
         Me.txtEdadMadre.Size = New System.Drawing.Size(211, 20)
         Me.txtEdadMadre.TabIndex = 247
@@ -1454,6 +1525,7 @@ Partial Class FormularioMatricula
         '
         'txtDireccionMadre
         '
+        Me.txtDireccionMadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDireccionMadre.Enabled = False
         Me.txtDireccionMadre.Location = New System.Drawing.Point(436, 371)
         Me.txtDireccionMadre.Name = "txtDireccionMadre"
@@ -1462,6 +1534,7 @@ Partial Class FormularioMatricula
         '
         'txtCargoMadre
         '
+        Me.txtCargoMadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCargoMadre.Enabled = False
         Me.txtCargoMadre.Location = New System.Drawing.Point(436, 342)
         Me.txtCargoMadre.Name = "txtCargoMadre"
@@ -1478,6 +1551,7 @@ Partial Class FormularioMatricula
         '
         'txtTrabajaenMadre
         '
+        Me.txtTrabajaenMadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTrabajaenMadre.Enabled = False
         Me.txtTrabajaenMadre.Location = New System.Drawing.Point(84, 343)
         Me.txtTrabajaenMadre.Name = "txtTrabajaenMadre"
@@ -1494,6 +1568,7 @@ Partial Class FormularioMatricula
         '
         'txtNombreMadre
         '
+        Me.txtNombreMadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombreMadre.Enabled = False
         Me.txtNombreMadre.Location = New System.Drawing.Point(234, 252)
         Me.txtNombreMadre.Name = "txtNombreMadre"
@@ -1584,6 +1659,7 @@ Partial Class FormularioMatricula
         '
         Me.txtEdadPadre.Enabled = False
         Me.txtEdadPadre.Location = New System.Drawing.Point(436, 93)
+        Me.txtEdadPadre.MaxLength = 2
         Me.txtEdadPadre.Name = "txtEdadPadre"
         Me.txtEdadPadre.Size = New System.Drawing.Size(211, 20)
         Me.txtEdadPadre.TabIndex = 230
@@ -1608,6 +1684,7 @@ Partial Class FormularioMatricula
         '
         'txtDireccionPadre
         '
+        Me.txtDireccionPadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDireccionPadre.Enabled = False
         Me.txtDireccionPadre.Location = New System.Drawing.Point(435, 182)
         Me.txtDireccionPadre.Name = "txtDireccionPadre"
@@ -1616,6 +1693,7 @@ Partial Class FormularioMatricula
         '
         'txtCargoPadre
         '
+        Me.txtCargoPadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCargoPadre.Enabled = False
         Me.txtCargoPadre.Location = New System.Drawing.Point(435, 153)
         Me.txtCargoPadre.Name = "txtCargoPadre"
@@ -1632,6 +1710,7 @@ Partial Class FormularioMatricula
         '
         'txtTrabajaenPadre
         '
+        Me.txtTrabajaenPadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTrabajaenPadre.Enabled = False
         Me.txtTrabajaenPadre.Location = New System.Drawing.Point(84, 153)
         Me.txtTrabajaenPadre.Name = "txtTrabajaenPadre"
@@ -1648,6 +1727,7 @@ Partial Class FormularioMatricula
         '
         'txtNombrePadre
         '
+        Me.txtNombrePadre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombrePadre.Enabled = False
         Me.txtNombrePadre.Location = New System.Drawing.Point(234, 65)
         Me.txtNombrePadre.Name = "txtNombrePadre"
@@ -1736,6 +1816,7 @@ Partial Class FormularioMatricula
         '
         'txtNombreApodSuplent
         '
+        Me.txtNombreApodSuplent.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombreApodSuplent.Enabled = False
         Me.txtNombreApodSuplent.Location = New System.Drawing.Point(258, 536)
         Me.txtNombreApodSuplent.Name = "txtNombreApodSuplent"
@@ -1853,9 +1934,10 @@ Partial Class FormularioMatricula
         '
         'txtProfesion
         '
-        Me.txtProfesion.Location = New System.Drawing.Point(461, 800)
+        Me.txtProfesion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtProfesion.Location = New System.Drawing.Point(470, 800)
         Me.txtProfesion.Name = "txtProfesion"
-        Me.txtProfesion.Size = New System.Drawing.Size(186, 20)
+        Me.txtProfesion.Size = New System.Drawing.Size(177, 20)
         Me.txtProfesion.TabIndex = 44
         '
         'Label101
@@ -1870,6 +1952,7 @@ Partial Class FormularioMatricula
         '
         'txtOcupacionAct
         '
+        Me.txtOcupacionAct.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtOcupacionAct.Location = New System.Drawing.Point(168, 800)
         Me.txtOcupacionAct.Name = "txtOcupacionAct"
         Me.txtOcupacionAct.Size = New System.Drawing.Size(232, 20)
@@ -1877,6 +1960,7 @@ Partial Class FormularioMatricula
         '
         'txtLugarDeTrabajo
         '
+        Me.txtLugarDeTrabajo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtLugarDeTrabajo.Location = New System.Drawing.Point(168, 771)
         Me.txtLugarDeTrabajo.Name = "txtLugarDeTrabajo"
         Me.txtLugarDeTrabajo.Size = New System.Drawing.Size(479, 20)
@@ -1884,6 +1968,7 @@ Partial Class FormularioMatricula
         '
         'txtDomicilio
         '
+        Me.txtDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDomicilio.Location = New System.Drawing.Point(168, 741)
         Me.txtDomicilio.Name = "txtDomicilio"
         Me.txtDomicilio.Size = New System.Drawing.Size(479, 20)
@@ -1891,6 +1976,7 @@ Partial Class FormularioMatricula
         '
         'txtNombreTutor
         '
+        Me.txtNombreTutor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombreTutor.Location = New System.Drawing.Point(168, 652)
         Me.txtNombreTutor.Name = "txtNombreTutor"
         Me.txtNombreTutor.Size = New System.Drawing.Size(479, 20)
@@ -1958,6 +2044,7 @@ Partial Class FormularioMatricula
         '
         'txtOtro
         '
+        Me.txtOtro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtOtro.Enabled = False
         Me.txtOtro.Location = New System.Drawing.Point(461, 621)
         Me.txtOtro.Name = "txtOtro"
@@ -1987,6 +2074,7 @@ Partial Class FormularioMatricula
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.btnLimpiar4)
         Me.TabPage3.Controls.Add(Me.cbbTipoPago)
         Me.TabPage3.Controls.Add(Me.btnSalir3)
         Me.TabPage3.Controls.Add(Me.btnTerminar)
@@ -2054,10 +2142,19 @@ Partial Class FormularioMatricula
         Me.TabPage3.Text = "Documentos en Cartera"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'btnLimpiar4
+        '
+        Me.btnLimpiar4.Location = New System.Drawing.Point(39, 689)
+        Me.btnLimpiar4.Name = "btnLimpiar4"
+        Me.btnLimpiar4.Size = New System.Drawing.Size(122, 50)
+        Me.btnLimpiar4.TabIndex = 270
+        Me.btnLimpiar4.Text = "Limpiar Campos"
+        Me.btnLimpiar4.UseVisualStyleBackColor = True
+        '
         'cbbTipoPago
         '
         Me.cbbTipoPago.FormattingEnabled = True
-        Me.cbbTipoPago.Items.AddRange(New Object() {"", "Cheques", "Cuponera", "Contado"})
+        Me.cbbTipoPago.Items.AddRange(New Object() {"", "Cheques", "Letras", "Contado"})
         Me.cbbTipoPago.Location = New System.Drawing.Point(322, 124)
         Me.cbbTipoPago.Name = "cbbTipoPago"
         Me.cbbTipoPago.Size = New System.Drawing.Size(121, 21)
@@ -2118,6 +2215,7 @@ Partial Class FormularioMatricula
         '
         'txtDocDic
         '
+        Me.txtDocDic.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocDic.Location = New System.Drawing.Point(25, 641)
         Me.txtDocDic.Name = "txtDocDic"
         Me.txtDocDic.Size = New System.Drawing.Size(176, 20)
@@ -2151,6 +2249,7 @@ Partial Class FormularioMatricula
         '
         'txtDocNov
         '
+        Me.txtDocNov.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocNov.Location = New System.Drawing.Point(25, 615)
         Me.txtDocNov.Name = "txtDocNov"
         Me.txtDocNov.Size = New System.Drawing.Size(176, 20)
@@ -2184,6 +2283,7 @@ Partial Class FormularioMatricula
         '
         'txtDocOctubre
         '
+        Me.txtDocOctubre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocOctubre.Location = New System.Drawing.Point(25, 589)
         Me.txtDocOctubre.Name = "txtDocOctubre"
         Me.txtDocOctubre.Size = New System.Drawing.Size(176, 20)
@@ -2217,6 +2317,7 @@ Partial Class FormularioMatricula
         '
         'txtDocSept
         '
+        Me.txtDocSept.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocSept.Location = New System.Drawing.Point(25, 563)
         Me.txtDocSept.Name = "txtDocSept"
         Me.txtDocSept.Size = New System.Drawing.Size(176, 20)
@@ -2250,6 +2351,7 @@ Partial Class FormularioMatricula
         '
         'txtDocAgosto
         '
+        Me.txtDocAgosto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocAgosto.Location = New System.Drawing.Point(25, 537)
         Me.txtDocAgosto.Name = "txtDocAgosto"
         Me.txtDocAgosto.Size = New System.Drawing.Size(176, 20)
@@ -2283,6 +2385,7 @@ Partial Class FormularioMatricula
         '
         'txtDocJulio
         '
+        Me.txtDocJulio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocJulio.Location = New System.Drawing.Point(25, 510)
         Me.txtDocJulio.Name = "txtDocJulio"
         Me.txtDocJulio.Size = New System.Drawing.Size(176, 20)
@@ -2316,6 +2419,7 @@ Partial Class FormularioMatricula
         '
         'txtDocJunio
         '
+        Me.txtDocJunio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocJunio.Location = New System.Drawing.Point(25, 484)
         Me.txtDocJunio.Name = "txtDocJunio"
         Me.txtDocJunio.Size = New System.Drawing.Size(176, 20)
@@ -2349,6 +2453,7 @@ Partial Class FormularioMatricula
         '
         'txtDocMayo
         '
+        Me.txtDocMayo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocMayo.Location = New System.Drawing.Point(25, 457)
         Me.txtDocMayo.Name = "txtDocMayo"
         Me.txtDocMayo.Size = New System.Drawing.Size(176, 20)
@@ -2382,6 +2487,7 @@ Partial Class FormularioMatricula
         '
         'txtDocAbril
         '
+        Me.txtDocAbril.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocAbril.Location = New System.Drawing.Point(25, 431)
         Me.txtDocAbril.Name = "txtDocAbril"
         Me.txtDocAbril.Size = New System.Drawing.Size(176, 20)
@@ -2415,6 +2521,7 @@ Partial Class FormularioMatricula
         '
         'txtDocMarzo
         '
+        Me.txtDocMarzo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDocMarzo.Location = New System.Drawing.Point(25, 405)
         Me.txtDocMarzo.Name = "txtDocMarzo"
         Me.txtDocMarzo.Size = New System.Drawing.Size(176, 20)
@@ -2450,6 +2557,7 @@ Partial Class FormularioMatricula
         '
         'TextBox88
         '
+        Me.TextBox88.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBox88.Location = New System.Drawing.Point(431, 269)
         Me.TextBox88.Name = "TextBox88"
         Me.TextBox88.Size = New System.Drawing.Size(185, 20)
@@ -2473,6 +2581,7 @@ Partial Class FormularioMatricula
         '
         'TextBox86
         '
+        Me.TextBox86.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBox86.Location = New System.Drawing.Point(172, 231)
         Me.TextBox86.Name = "TextBox86"
         Me.TextBox86.Size = New System.Drawing.Size(444, 20)
@@ -2555,7 +2664,7 @@ Partial Class FormularioMatricula
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(807, 629)
+        Me.ClientSize = New System.Drawing.Size(1011, 629)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -2822,4 +2931,9 @@ Partial Class FormularioMatricula
     Friend WithEvents btnBuscarAlumAnt As System.Windows.Forms.Button
     Friend WithEvents txtRutAntiguo As System.Windows.Forms.TextBox
     Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiar2 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiar3 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiar4 As System.Windows.Forms.Button
 End Class

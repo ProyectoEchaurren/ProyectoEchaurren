@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Drawing.Printing
 
 Public Class FormularioMatricula
 
@@ -9,6 +10,8 @@ Public Class FormularioMatricula
     Public consultaCargaCombo As String = "SELECT * FROM bd_echaurren.servicio_salud;"
     Public consultaCargaComboCurso As String = "SELECT * FROM bd_echaurren.curso;"
     Public consultaCargaComboComuna As String = "SELECT * FROM bd_echaurren.comuna;"
+    Dim ContenidoDelTexto As PrintPageEventArgs
+    Dim WithEvents Reporte As New PrintDocument()
 
 
     Private Sub FormularioMatricula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -620,6 +623,18 @@ Public Class FormularioMatricula
         '---Fin de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
 
         MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        If MessageBox.Show("¿Desea imprimir una(s) copia(s) de los formularios creados?", "¡Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            Configurar()
+            'Mandando a imprimir 
+            Reporte.Print()
+            If MessageBox.Show("¿Desea generar una nueva matrícula para otro alumno?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                TabPage2.Show()
+            End If
+        Else
+            If MessageBox.Show("¿Desea generar una nueva matrícula para otro alumno?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                TabPage2.Show()
+            End If
+        End If
 
     End Sub
 
@@ -813,5 +828,200 @@ Public Class FormularioMatricula
 
         ModuloContenedor.AutollenarFormulario(txtRutAntiguo.Text, varConexion)
 
+    End Sub
+
+    Public Sub LimpiarTextBox(frm As TabPage)
+        ' recorre todos los controles que hay en el formulario
+        For Each Control In frm.Controls
+            ' verifica que el control es de tipo TextBox
+            If TypeOf Control Is TextBox Or TypeOf Control Is ComboBox Then
+                '... Si es un Textbox, entonces lo limpia
+                Control.Text = ""
+            ElseIf TypeOf Control Is CheckBox Or TypeOf Control Is RadioButton Then
+                Control.Checked = False
+            End If
+        Next
+    End Sub
+
+    Private Sub btnLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar.Click
+        Call LimpiarTextBox(TabPage2)
+    End Sub
+
+    Private Sub btnLimpiar2_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar2.Click
+        Call LimpiarTextBox(TabPage4)
+    End Sub
+
+    Private Sub btnLimpiar3_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar3.Click
+        Call LimpiarTextBox(TabPage1)
+    End Sub
+
+    Private Sub btnLimpiar4_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar4.Click
+        Call LimpiarTextBox(TabPage3)
+    End Sub
+
+    Private Sub txtTelefonoAlumno_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoAlumno.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtEdadAlumno_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdadAlumno.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtNumContacto_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumContacto.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtNumContacto2_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumContacto2.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtNumContacto3_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumContacto3.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtEdadPadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdadPadre.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtTelefonoPadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoPadre.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtEdadMadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdadMadre.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtTelefonoMadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoMadre.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtTelefonoPart_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoPart.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtTelefonoPart2_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoPart2.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub txtTelefonoTrabajo_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoTrabajo.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Ingrese sólo números.")
+        End If
+    End Sub
+
+    Private Sub Reporte_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles Reporte.PrintPage
+
+        'objeto PrintPageEventArgs, cuyas propiedades MarginBounds, Graphics, 
+        ' HasMorePage, etc.. no ayudarán a configurar el texto para la impresión 
+
+        ContenidoDelTexto = e
+
+        'Imprimir el contenido de textbox1.text = "Impresión de prueba" 
+
+        ContenidoDelTexto.Graphics.DrawString(Label5.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
+        ContenidoDelTexto.Graphics.DrawString(txtRutAlumno.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
+        ContenidoDelTexto.Graphics.DrawString(Label4.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
+        ContenidoDelTexto.Graphics.DrawString(txtNombresAlumno.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
+        ContenidoDelTexto.Graphics.DrawString(Label2.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
+        ContenidoDelTexto.Graphics.DrawString(txtApePatAlumno.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
+        ContenidoDelTexto.Graphics.DrawString(Label3.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
+        ContenidoDelTexto.Graphics.DrawString(txtApeMatAlumno.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
+
+        'Breve descripción de las propiedades de Contenidotexto, De abajo 
+        'hacia arriba 
+
+        'ContenidoDelTexto.MarginBounds.Left y 
+        'ContenidoDelTexto.MarginBoundsTop) 
+        'Indica la posición en la hoja, que es el área rectangular 
+        ' que representa el área de impresión de la misma 
+        'en este caso es el limite 
+        'hacia la izquierda, y el limite hacia arriba, que en 
+        'enteros sería 100, 100. BrushesBlack es el color de 
+        ' la letra y por útlimo la fuente de la letra. 
+
+        'otra propiedad del objeto PrintPageEventArgs es 
+        'PageBounds a través de esta se puede recuperar el 
+        'área rectangular que representa el área total de la página. 
+
+        'Indica que no hay más páginas a imprimir 
+        ContenidoDelTexto.HasMorePages = False
+
+        'Propiedad HasMorePages .- Obtiene o establece un valor que indica si 
+        'se debe imprimir una página adicional. Boolean 
+
+    End Sub
+
+    Dim impresora As New PrintDialog()
+
+    Sub Configurar()
+        Impresora.document = Reporte
+        Impresora.ShowDialog()
+        reporte.PrinterSettings = impresora.PrinterSettings
+    End Sub
+
+    Private Sub cbbTipoPago_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbbTipoPago.SelectedIndexChanged
+        If cbbTipoPago.SelectedItem = "Contado" Then
+            TextBox86.Enabled = False
+            TextBox87.Enabled = False
+            TextBox88.Enabled = False
+        End If
     End Sub
 End Class

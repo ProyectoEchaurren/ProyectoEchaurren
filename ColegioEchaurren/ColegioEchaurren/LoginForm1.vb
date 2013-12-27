@@ -9,23 +9,11 @@
     ' como el nombre de usuario, nombre para mostrar, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        If UsernameTextBox.Text = "admin" Then
-            Form1.MatriculasToolStripMenuItem.Enabled = True
-            Form1.FinanzasToolStripMenuItem.Enabled = True
-            Form1.AdministracionToolStripMenuItem.Enabled = True
-            Form1.RecursosHumanosToolStripMenuItem.Enabled = True
-            Form1.LoginToolStripMenuItem.Text = "Cerrar Sesión"
-            Me.Close()
-        ElseIf UsernameTextBox.Text = "asistente" Then
-            Form1.MatriculasToolStripMenuItem.Enabled = True
-            Form1.AdministracionToolStripMenuItem.Enabled = True
-            Form1.LoginToolStripMenuItem.Text = "Cerrar Sesión"
-            Me.Close()
-        Else
-            MessageBox.Show("Usuario y/o contraseña incorrecto(s)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            UsernameTextBox.Text = ""
-            PasswordTextBox.Text = ""
+        If ComprobarRut(UsernameTextBox.Text) = False Then
+            MsgBox("El Rut ingresado no es valido")
             UsernameTextBox.Focus()
+        Else
+            ModuloContenedor.IniciarSesion(UsernameTextBox.Text, PasswordTextBox.Text)
         End If
     End Sub
 

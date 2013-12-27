@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>ColegioEchaurren.My.MyApplication</StartupObject>
     <RootNamespace>ColegioEchaurren</RootNamespace>
-    <AssemblyName>ColegioEchaurren</AssemblyName>
+    <AssemblyName>Colegio Echaurren</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -23,7 +23,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ColegioEchaurren.xml</DocumentationFile>
+    <DocumentationFile>Colegio Echaurren.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
@@ -33,7 +33,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ColegioEchaurren.xml</DocumentationFile>
+    <DocumentationFile>Colegio Echaurren.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -48,7 +48,11 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -96,10 +100,28 @@
     <Compile Include="AdminMensualidades.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ayuda.Designer.vb">
+      <DependentUpon>Ayuda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ayuda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarPass.Designer.vb">
+      <DependentUpon>CambiarPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DetalleInfoAlumno.Designer.vb">
       <DependentUpon>DetalleInfoAlumno.vb</DependentUpon>
     </Compile>
     <Compile Include="DetalleInfoAlumno.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EscanearDocs.Designer.vb">
+      <DependentUpon>EscanearDocs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EscanearDocs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -121,10 +143,22 @@
     <Compile Include="FormularioMatricula.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GestordeUsuarios.Designer.vb">
+      <DependentUpon>GestordeUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestordeUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HistorialdePagos.Designer.vb">
       <DependentUpon>HistorialdePagos.vb</DependentUpon>
     </Compile>
     <Compile Include="HistorialdePagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirPlanillas.Designer.vb">
+      <DependentUpon>ImprimirPlanillas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirPlanillas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm1.Designer.vb">
@@ -149,6 +183,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Presentacion.Designer.vb">
+      <DependentUpon>Presentacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RealizarPago.Designer.vb">
       <DependentUpon>RealizarPago.vb</DependentUpon>
     </Compile>
@@ -166,8 +206,17 @@
     <EmbeddedResource Include="AdminMensualidades.resx">
       <DependentUpon>AdminMensualidades.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ayuda.resx">
+      <DependentUpon>Ayuda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambiarPass.resx">
+      <DependentUpon>CambiarPass.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetalleInfoAlumno.resx">
       <DependentUpon>DetalleInfoAlumno.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EscanearDocs.resx">
+      <DependentUpon>EscanearDocs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -178,8 +227,14 @@
     <EmbeddedResource Include="FormularioMatricula.resx">
       <DependentUpon>FormularioMatricula.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestordeUsuarios.resx">
+      <DependentUpon>GestordeUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HistorialdePagos.resx">
       <DependentUpon>HistorialdePagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirPlanillas.resx">
+      <DependentUpon>ImprimirPlanillas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.vb</DependentUpon>
@@ -190,11 +245,15 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion.resx">
+      <DependentUpon>Presentacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RealizarPago.resx">
       <DependentUpon>RealizarPago.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -204,6 +263,29 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\intro_01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADOR">
+      <Guid>{00000300-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WIA">
+      <Guid>{94A0E92D-43C0-494E-AC29-FD45948A5221}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

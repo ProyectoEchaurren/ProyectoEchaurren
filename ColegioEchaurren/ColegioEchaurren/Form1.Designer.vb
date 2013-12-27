@@ -26,14 +26,18 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MatriculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CrearMatriculaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdministrarMatriculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FinanzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RealizarPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeMensualidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlumnosMatriculadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarBecasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecursosHumanosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImprimirPlanillasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EscanearDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CambiarContraseñaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,16 +47,16 @@ Partial Class Form1
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatriculasToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.LoginToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatriculasToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.DocumentosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.LoginToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(605, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(628, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'MatriculasToolStripMenuItem
         '
-        Me.MatriculasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearMatriculaToolStripMenuItem, Me.AdministrarMatriculasToolStripMenuItem})
+        Me.MatriculasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearMatriculaToolStripMenuItem})
         Me.MatriculasToolStripMenuItem.Enabled = False
         Me.MatriculasToolStripMenuItem.Name = "MatriculasToolStripMenuItem"
         Me.MatriculasToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
@@ -61,14 +65,8 @@ Partial Class Form1
         'CrearMatriculaToolStripMenuItem
         '
         Me.CrearMatriculaToolStripMenuItem.Name = "CrearMatriculaToolStripMenuItem"
-        Me.CrearMatriculaToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.CrearMatriculaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.CrearMatriculaToolStripMenuItem.Text = "Crear Matricula"
-        '
-        'AdministrarMatriculasToolStripMenuItem
-        '
-        Me.AdministrarMatriculasToolStripMenuItem.Name = "AdministrarMatriculasToolStripMenuItem"
-        Me.AdministrarMatriculasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.AdministrarMatriculasToolStripMenuItem.Text = "Administrar Matriculas"
         '
         'FinanzasToolStripMenuItem
         '
@@ -110,12 +108,45 @@ Partial Class Form1
         Me.AdministrarBecasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.AdministrarBecasToolStripMenuItem.Text = "Administrar Becas"
         '
-        'RecursosHumanosToolStripMenuItem
+        'DocumentosToolStripMenuItem
         '
-        Me.RecursosHumanosToolStripMenuItem.Enabled = False
-        Me.RecursosHumanosToolStripMenuItem.Name = "RecursosHumanosToolStripMenuItem"
-        Me.RecursosHumanosToolStripMenuItem.Size = New System.Drawing.Size(119, 20)
-        Me.RecursosHumanosToolStripMenuItem.Text = "Recursos humanos"
+        Me.DocumentosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImprimirPlanillasToolStripMenuItem, Me.EscanearDocumentosToolStripMenuItem})
+        Me.DocumentosToolStripMenuItem.Enabled = False
+        Me.DocumentosToolStripMenuItem.Name = "DocumentosToolStripMenuItem"
+        Me.DocumentosToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
+        Me.DocumentosToolStripMenuItem.Text = "Documentos"
+        '
+        'ImprimirPlanillasToolStripMenuItem
+        '
+        Me.ImprimirPlanillasToolStripMenuItem.Name = "ImprimirPlanillasToolStripMenuItem"
+        Me.ImprimirPlanillasToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.ImprimirPlanillasToolStripMenuItem.Text = "Imprimir Planillas"
+        '
+        'EscanearDocumentosToolStripMenuItem
+        '
+        Me.EscanearDocumentosToolStripMenuItem.Name = "EscanearDocumentosToolStripMenuItem"
+        Me.EscanearDocumentosToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.EscanearDocumentosToolStripMenuItem.Text = "Escanear Documentos"
+        '
+        'UsuariosToolStripMenuItem
+        '
+        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionarUsuariosToolStripMenuItem, Me.CambiarContraseñaToolStripMenuItem})
+        Me.UsuariosToolStripMenuItem.Enabled = False
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        '
+        'GestionarUsuariosToolStripMenuItem
+        '
+        Me.GestionarUsuariosToolStripMenuItem.Name = "GestionarUsuariosToolStripMenuItem"
+        Me.GestionarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.GestionarUsuariosToolStripMenuItem.Text = "Gestionar Usuarios"
+        '
+        'CambiarContraseñaToolStripMenuItem
+        '
+        Me.CambiarContraseñaToolStripMenuItem.Name = "CambiarContraseñaToolStripMenuItem"
+        Me.CambiarContraseñaToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.CambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña"
         '
         'LoginToolStripMenuItem
         '
@@ -132,21 +163,24 @@ Partial Class Form1
         '
         'AcercaDeToolStripMenuItem1
         '
+        Me.AcercaDeToolStripMenuItem1.Enabled = False
         Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
-        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
+        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Ver ayuda"
         '
         'AcercaDeToolStripMenuItem2
         '
         Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
-        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
+        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(605, 319)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(628, 322)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
@@ -167,13 +201,17 @@ Partial Class Form1
     Friend WithEvents AdministracionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CrearMatriculaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AdministrarMatriculasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroDeMensualidadesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RecursosHumanosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AlumnosMatriculadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RealizarPagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdministrarBecasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ImprimirPlanillasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EscanearDocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GestionarUsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CambiarContraseñaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

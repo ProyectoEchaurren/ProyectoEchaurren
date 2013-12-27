@@ -1,4 +1,6 @@
-﻿Imports System
+﻿Imports System.Resources
+
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -8,14 +10,14 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("ColegioEchaurren")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Hewlett-Packard")> 
-<Assembly: AssemblyProduct("ColegioEchaurren")> 
-<Assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2013")> 
+<Assembly: AssemblyTitle("Sistema Administrativo Colegio Echaurren")> 
+<Assembly: AssemblyDescription("Sistema para la automatización  de ingreso y administración de la matrícula escolar.")> 
+<Assembly: AssemblyCompany("Creadores: David Cabas - Fabian Diaz")> 
+<Assembly: AssemblyProduct("Sistema Administrativo Colegio Echaurren")> 
+<Assembly: AssemblyCopyright("Copyright © 2013 Todos los Derechos Reservados.")> 
 <Assembly: AssemblyTrademark("")> 
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(False)> 
 
 'El siguiente GUID sirve como identificador de typelib si este proyecto se expone a COM
 <Assembly: Guid("0c44748d-6890-43cf-809e-9a8e6e724a0e")> 
@@ -33,3 +35,5 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyVersion("1.0.0.0")> 
 <Assembly: AssemblyFileVersion("1.0.0.0")> 
+
+<Assembly: NeutralResourcesLanguageAttribute("es-CL")> 

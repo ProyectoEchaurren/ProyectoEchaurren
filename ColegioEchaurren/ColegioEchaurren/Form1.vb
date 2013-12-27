@@ -2,6 +2,8 @@
 
     Public varColumnaRutHistorico As String
     Public varFichaPersonalAlumno As String
+    Public varUsuarioActual As String
+    Public varTipoUsuario As String
 
     Private Sub LoginToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoginToolStripMenuItem.Click
         If LoginToolStripMenuItem.Text = "Iniciar Sesión" Then
@@ -15,14 +17,11 @@
                 MatriculasToolStripMenuItem.Enabled = False
                 FinanzasToolStripMenuItem.Enabled = False
                 AdministracionToolStripMenuItem.Enabled = False
-                RecursosHumanosToolStripMenuItem.Enabled = False
+                DocumentosToolStripMenuItem.Enabled = False
+                UsuariosToolStripMenuItem.Enabled = False
                 LoginToolStripMenuItem.Text = "Iniciar Sesión"
             End If
         End If
-    End Sub
-
-    Private Sub AcercaDeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AdministracionToolStripMenuItem.Click
-
     End Sub
 
     Private Sub CrearMatriculaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CrearMatriculaToolStripMenuItem.Click
@@ -54,7 +53,32 @@
         AdminBecas.Show()
     End Sub
 
-    Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub CambiarContraseñaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CambiarContraseñaToolStripMenuItem.Click
+        CambiarPass.MdiParent = Me
+        CambiarPass.Show()
+    End Sub
 
+    Private Sub EscanearDocumentosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EscanearDocumentosToolStripMenuItem.Click
+        EscanearDocs.MdiParent = Me
+        EscanearDocs.Show()
+    End Sub
+
+    Private Sub ImprimirPlanillasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ImprimirPlanillasToolStripMenuItem.Click
+        ImprimirPlanillas.MdiParent = Me
+        ImprimirPlanillas.Show()
+    End Sub
+
+    Private Sub GestionarUsuariosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles GestionarUsuariosToolStripMenuItem.Click
+        GestordeUsuarios.MdiParent = Me
+        GestordeUsuarios.Show()
+    End Sub
+
+    Private Sub Form1_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        Presentacion.Close()
+    End Sub
+
+    Private Sub AcercaDeToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles AcercaDeToolStripMenuItem1.Click
+        Ayuda.MdiParent = Me
+        Ayuda.Show()
     End Sub
 End Class
