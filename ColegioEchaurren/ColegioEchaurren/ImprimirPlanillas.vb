@@ -1,12 +1,13 @@
-﻿Imports MySql.Data.MySqlClient
-Imports System.IO
+Imports MySql.Data.MySqlClient
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
+Imports System.IO
 
 
 Public Class ImprimirPlanillas
 
     Private Sub ImprimirPlanillas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         ModuloContenedor.CargarPlanilla(DataGridView1)
     End Sub
 
@@ -27,9 +28,12 @@ Public Class ImprimirPlanillas
         Dim count As Integer = 0
         Dim texto As String = ""
         Dim row As System.Windows.Forms.DataGridViewRow
+        Dim Orient As Orientation
 
         ' Calculamos el número de líneas que caben en cada página
         linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics)
+
+        Orient = Orientation.Horizontal
 
         ' Imprimimos las cabeceras
         Dim header As DataGridViewHeaderCell

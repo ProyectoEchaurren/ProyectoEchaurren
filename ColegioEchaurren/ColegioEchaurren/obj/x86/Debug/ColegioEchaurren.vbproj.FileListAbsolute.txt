@@ -60,3 +60,9 @@ C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaur
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.xtra.dll
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.dll
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.xml
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.vbprojResolveAssemblyReference.cache
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.dll
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.pdfa.dll
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.xtra.dll
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.dll
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.xml

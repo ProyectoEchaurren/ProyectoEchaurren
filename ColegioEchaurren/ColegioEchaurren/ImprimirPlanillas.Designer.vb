@@ -57,7 +57,7 @@ Partial Class ImprimirPlanillas
         '
         Me.checkRut.AutoSize = True
         Me.checkRut.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkRut.Location = New System.Drawing.Point(505, 62)
+        Me.checkRut.Location = New System.Drawing.Point(516, 59)
         Me.checkRut.Name = "checkRut"
         Me.checkRut.Size = New System.Drawing.Size(53, 17)
         Me.checkRut.TabIndex = 2
@@ -68,7 +68,7 @@ Partial Class ImprimirPlanillas
         '
         Me.checkNombre.AutoSize = True
         Me.checkNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkNombre.Location = New System.Drawing.Point(505, 85)
+        Me.checkNombre.Location = New System.Drawing.Point(516, 82)
         Me.checkNombre.Name = "checkNombre"
         Me.checkNombre.Size = New System.Drawing.Size(69, 17)
         Me.checkNombre.TabIndex = 3
@@ -79,7 +79,7 @@ Partial Class ImprimirPlanillas
         '
         Me.checkApellidos.AutoSize = True
         Me.checkApellidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkApellidos.Location = New System.Drawing.Point(505, 108)
+        Me.checkApellidos.Location = New System.Drawing.Point(516, 105)
         Me.checkApellidos.Name = "checkApellidos"
         Me.checkApellidos.Size = New System.Drawing.Size(77, 17)
         Me.checkApellidos.TabIndex = 4
@@ -90,7 +90,7 @@ Partial Class ImprimirPlanillas
         '
         Me.checkEdad.AutoSize = True
         Me.checkEdad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkEdad.Location = New System.Drawing.Point(505, 131)
+        Me.checkEdad.Location = New System.Drawing.Point(516, 128)
         Me.checkEdad.Name = "checkEdad"
         Me.checkEdad.Size = New System.Drawing.Size(55, 17)
         Me.checkEdad.TabIndex = 5
@@ -101,7 +101,7 @@ Partial Class ImprimirPlanillas
         '
         Me.checkSexo.AutoSize = True
         Me.checkSexo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkSexo.Location = New System.Drawing.Point(601, 62)
+        Me.checkSexo.Location = New System.Drawing.Point(612, 59)
         Me.checkSexo.Name = "checkSexo"
         Me.checkSexo.Size = New System.Drawing.Size(54, 17)
         Me.checkSexo.TabIndex = 6
@@ -112,7 +112,7 @@ Partial Class ImprimirPlanillas
         '
         Me.checkCurso.AutoSize = True
         Me.checkCurso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkCurso.Location = New System.Drawing.Point(601, 85)
+        Me.checkCurso.Location = New System.Drawing.Point(612, 82)
         Me.checkCurso.Name = "checkCurso"
         Me.checkCurso.Size = New System.Drawing.Size(58, 17)
         Me.checkCurso.TabIndex = 7
@@ -123,7 +123,7 @@ Partial Class ImprimirPlanillas
         '
         Me.checkBecas.AutoSize = True
         Me.checkBecas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkBecas.Location = New System.Drawing.Point(601, 108)
+        Me.checkBecas.Location = New System.Drawing.Point(612, 105)
         Me.checkBecas.Name = "checkBecas"
         Me.checkBecas.Size = New System.Drawing.Size(61, 17)
         Me.checkBecas.TabIndex = 8
@@ -134,7 +134,7 @@ Partial Class ImprimirPlanillas
         '
         Me.checkSalud.AutoSize = True
         Me.checkSalud.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkSalud.Location = New System.Drawing.Point(601, 131)
+        Me.checkSalud.Location = New System.Drawing.Point(612, 128)
         Me.checkSalud.Name = "checkSalud"
         Me.checkSalud.Size = New System.Drawing.Size(58, 17)
         Me.checkSalud.TabIndex = 9
@@ -145,7 +145,7 @@ Partial Class ImprimirPlanillas
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(492, 25)
+        Me.Label1.Location = New System.Drawing.Point(503, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(180, 13)
         Me.Label1.TabIndex = 10
@@ -194,7 +194,7 @@ Partial Class ImprimirPlanillas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(687, 326)
+        Me.ClientSize = New System.Drawing.Size(706, 335)
         Me.Controls.Add(Me.btnExportarExcel)
         Me.Controls.Add(Me.btnExportar)
         Me.Controls.Add(Me.Label1)

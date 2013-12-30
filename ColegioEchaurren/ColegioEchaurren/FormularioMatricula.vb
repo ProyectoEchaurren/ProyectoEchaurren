@@ -13,6 +13,17 @@ Public Class FormularioMatricula
     Dim ContenidoDelTexto As PrintPageEventArgs
     Dim WithEvents Reporte As New PrintDocument()
 
+    Public oldTutor As String
+    Public oldAlumno As String
+    Public oldPadre As String
+    Public oldMadre As String
+    Public oldApoderado As String
+    Public oldSuplente As String
+    Public varidCont1 As Integer
+    Public varidCont2 As Integer
+    Public varidCont3 As Integer
+
+
 
     Private Sub FormularioMatricula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -210,7 +221,7 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub btnSalir3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir3.Click
-        If MessageBox.Show("¿Está seguro(a) de salir sin guardar?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+        If MessageBox.Show("¿Está seguro(a) de querer salir?", "¡Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.Close()
         End If
     End Sub
@@ -280,7 +291,7 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub ComboBox12_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbApoderado.SelectedIndexChanged
-        If cbApoderado.SelectedIndex = "3" Then
+        If cbApoderado.SelectedIndex = "2" Then
             txtNombreApoderado.Enabled = True
             txtRutOtroApod.Enabled = True
             txtNombreApoderado.Focus()
@@ -291,7 +302,7 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub ComboBox13_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbApoSuplente.SelectedIndexChanged
-        If cbApoSuplente.SelectedIndex = "3" Then
+        If cbApoSuplente.SelectedIndex = "2" Then
             txtNombreApodSuplent.Enabled = True
             txtRutOtroApodSuple.Enabled = True
             txtNombreApodSuplent.Focus()
@@ -389,253 +400,465 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub btnTerminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTerminar.Click
+        If txtRutAntiguo.Text <> "" Or MessageBox.Show("El alumno a matricular, ¿Es alumno antiguo?", "¡Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
 
-        Dim valorSexo As String = ""
-        Dim varHermano As String = ""
-        Dim varViveCon As String = ""
-        Dim becado As Integer
-        Dim servSalud As String = ""
-        Dim otroServSalud As String = ""
-        Dim varApoderadoPadre As Integer = 0
-        Dim varApoderadoSuplePadre As Integer = 0
-        Dim varApoderadoMadre As Integer = 0
-        Dim varApoderadoSupleMadre As Integer = 0
-        Dim varResponsablePadre As String = "tr1"
-        Dim varResponsableMadre As String = "tr2"
-        Dim varResponsableTutor As String = "tr3"
-        Dim varapoderadoOtro As Integer = 0
-        Dim varApoderadoSupleOtro As Integer = 0
-        Dim varTutor As Integer = 0
-        Dim varTutor2 As Integer = 0
-        Dim varCurso As String = ""
-        Dim varComuna As String = ""
+            Dim valorSexo As String = ""
+            Dim varHermano As String = ""
+            Dim varViveCon As String = ""
+            Dim becado As Integer
+            Dim servSalud As String = ""
+            Dim otroServSalud As String = ""
+            Dim varApoderadoPadre As Integer = 0
+            Dim varApoderadoSuplePadre As Integer = 0
+            Dim varApoderadoMadre As Integer = 0
+            Dim varApoderadoSupleMadre As Integer = 0
+            Dim varResponsablePadre As String = "tr1"
+            Dim varResponsableMadre As String = "tr2"
+            Dim varResponsableTutor As String = "tr3"
+            Dim varapoderadoOtro As Integer = 0
+            Dim varApoderadoSupleOtro As Integer = 0
+            Dim varTutor As Integer = 0
+            Dim varTutor2 As Integer = 0
+            Dim varCurso As String = ""
+            Dim varComuna As String = ""
 
-        If CheckBox1.Checked = False Then
-            becado = 0
-        ElseIf CheckBox1.Checked = True Then
-            becado = 1
+            If CheckBox1.Checked = False Then
+                becado = 0
+            ElseIf CheckBox1.Checked = True Then
+                becado = 1
+            End If
+
+            If radioMasc.Checked = True Then
+                valorSexo = "Masculino"
+            ElseIf radioFeme.Checked = True Then
+                valorSexo = "Femenino"
+            End If
+
+            If radioHermanosNo.Checked = True Then
+                varHermano = "No"
+            Else
+                varHermano = "Si"
+            End If
+
+            If cbApoderado.Text = "Padre" Then
+                varApoderadoPadre = 1
+            ElseIf cbApoderado.Text = "Madre" Then
+                varApoderadoMadre = 1
+            ElseIf cbApoderado.Text = "Otro" Then
+            End If
+
+            If cbApoSuplente.Text = "Padre" Then
+                varApoderadoSuplePadre = 1
+            ElseIf cbApoSuplente.Text = "Madre" Then
+                varApoderadoSupleMadre = 1
+            ElseIf cbApoSuplente.Text = "Otro" Then
+            End If
+
+            varComuna = comboComuna.SelectedValue
+            varCurso = comboCurso.SelectedValue
+            servSalud = comboServSalud.SelectedValue
+
+            '-------------------------------------------------
+
+            If ModuloContenedor.ActualizarMatriculas(DateTimePicker1, txtApePatAlumno.Text, txtApeMatAlumno.Text, txtNombresAlumno.Text, _
+                                               txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
+                                               txtSectorAlumno.Text, varCurso, varComuna, txtTelefonoAlumno.Text, _
+                                               txtColegioPrese.Text, txtCursosRepetidos.Text, becado, varHermano, txtHermanosCursos.Text, _
+                                               varViveCon, txtNumHijos.Text, txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text, servSalud, _
+                                               otroServSalud, txtSeguros.Text, oldAlumno, txtNumMatri.Text, txtViveConOtros.Text) = True Then
+            Else
+                MessageBox.Show("Error al actualizar datos de alumno(a)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
+
+            ModuloContenedor.ActualizarContactos(txtNombreContacto.Text, txtNumContacto.Text, txtNombreContacto2.Text, txtNumContacto2.Text, txtNombreContacto3.Text, txtNumContacto3.Text, txtRutAlumno.Text, oldAlumno, varidCont1, varidCont2, varidCont3)
+
+            If checkIguales.Checked = True Then
+                varapoderadoOtro = 1
+                varApoderadoSupleOtro = 1
+                ModuloContenedor.updateOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApodSuplent.Text, txtNumMatri.Text, oldApoderado, oldAlumno)
+
+            ElseIf cbApoderado.Text = "Otro" And cbApoSuplente.Text = "Otro" Then
+                varapoderadoOtro = 1
+                varApoderadoSupleOtro = 0
+                ModuloContenedor.updateOtroApod(txtRutOtroApod.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApoderado.Text, txtNumMatri.Text, oldApoderado, oldAlumno)
+                varapoderadoOtro = 0
+                varApoderadoSupleOtro = 1
+                ModuloContenedor.updateOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApodSuplent.Text, txtNumMatri.Text, oldSuplente, oldAlumno)
+
+            ElseIf checkIguales.Checked = False And cbApoderado.Text = "Otro" Then
+                varapoderadoOtro = 1
+                varApoderadoSupleOtro = 0
+                ModuloContenedor.updateOtroApod(txtRutOtroApod.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApoderado.Text, txtNumMatri.Text, oldApoderado, oldAlumno)
+
+            ElseIf checkIguales.Checked = False And cbApoSuplente.Text = "Otro" Then
+                varapoderadoOtro = 0
+                varApoderadoSupleOtro = 1
+                ModuloContenedor.updateOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApodSuplent.Text, txtNumMatri.Text, oldSuplente, oldAlumno)
+            End If
+
+            '------------------------------------------------------------------------
+
+            If RadioButton14.Checked = True And RadioButton9.Checked = False And RadioButton13.Checked = False Then
+
+                ModuloContenedor.updateTutorEconomico(txtNombreTutor.Text, txtRut.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
+                                                    txtTelefonoTrabajo.Text, txtDomicilio.Text, txtLugarDeTrabajo.Text, _
+                                                        txtOcupacionAct.Text, txtProfesion.Text, oldTutor)
+                ModuloContenedor.updateAlumno_respons_tutor(txtRut.Text, txtRutAlumno.Text, varResponsableTutor, varTutor, _
+                                                          varTutor2, txtOtro.Text, txtNumMatri.Text, oldTutor, oldAlumno)
+            End If
+            
+
+            If checkpadre.Checked = True And RadioButton9.Checked = True Then
+
+                ModuloContenedor.updateResponsableCompleto(txtRut.Text, txtNombreTutor.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
+                                                             txtTelefonoTrabajo.Text, txtDomicilio.Text, txtDireccionPadre.Text, _
+                                                             txtEdadPadre.Text, cbEstudiosPadre, txtCorreoPadre.Text, txtProfesion.Text, _
+                                                             txtLugarDeTrabajo.Text, txtOcupacionAct.Text, oldPadre)
+                ModuloContenedor.updateAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsablePadre, varApoderadoPadre, _
+                                                         varApoderadoSuplePadre, txtNumMatri.Text, oldPadre, oldAlumno)
+                ModuloContenedor.updateAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoPadre, _
+                                                         varApoderadoSuplePadre, txtNumMatri.Text, oldPadre, oldAlumno)
+            End If
+
+            If checkmadre.Checked = True And RadioButton13.Checked = True Then
+
+                ModuloContenedor.updateResponsableCompleto(txtRut.Text, txtNombreTutor.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
+                                                             txtTelefonoTrabajo.Text, txtDomicilio.Text, txtDireccionMadre.Text, _
+                                                             txtEdadMadre.Text, cbEstudiosMadre, txtCorreoMadre.Text, txtProfesion.Text, _
+                                                             txtLugarDeTrabajo.Text, txtOcupacionAct.Text, oldMadre)
+                ModuloContenedor.updateAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
+                                                        varApoderadoSupleMadre, txtNumMatri.Text, oldMadre, oldAlumno)
+                ModuloContenedor.updateAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoMadre, _
+                                                        varApoderadoSupleMadre, txtNumMatri.Text, oldMadre, oldAlumno)
+            End If
+
+            If checkpadre.Checked = True And RadioButton9.Checked = False Then
+
+                ModuloContenedor.updateResp(txtNombrePadre.Text, txtRutPadre.Text, txtEdadPadre.Text, cbEstudiosPadre, _
+                                                 txtTrabajaenPadre.Text, txtTelefonoPadre.Text, txtCargoPadre.Text, _
+                                                txtDireccionPadre.Text, txtCorreoPadre.Text, oldPadre)
+                ModuloContenedor.updateAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsablePadre, varApoderadoPadre, _
+                                                       varApoderadoSuplePadre, txtNumMatri.Text, oldPadre, oldAlumno)
+            End If
+
+            If checkmadre.Checked = True And RadioButton13.Checked = False Then
+
+                ModuloContenedor.updateResp(txtNombreMadre.Text, txtRutMadre.Text, txtEdadMadre.Text, cbEstudiosMadre, _
+                                                txtTrabajaenMadre.Text, txtTelefonoMadre.Text, txtCargoMadre.Text, _
+                                                txtDireccionMadre.Text, txtCorreoMadre.Text, oldMadre)
+                ModuloContenedor.updateAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
+                                                        varApoderadoSupleMadre, txtNumMatri.Text, oldPadre, oldAlumno)
+            End If
+
+            If txtMontoMarzo.Text <> "" And cbbDiaMarzo.Text <> "Día" And txtDocMarzo.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblMarzo.Text, cbbTipoPago, txtMontoMarzo.Text, varAñoActual & "-03-" & cbbDiaMarzo.Text, txtDocMarzo.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Marzo", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoAbril.Text <> "" And cbbDiaAbril.Text <> "Día" And txtDocAbril.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblAbril.Text, cbbTipoPago, txtMontoAbril.Text, varAñoActual & "-04-" & cbbDiaAbril.Text, txtDocAbril.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Abril", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoMayo.Text <> "" And cbbDiaMayo.Text <> "Día" And txtDocMayo.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblMayo.Text, cbbTipoPago, txtMontoMayo.Text, varAñoActual & "-05-" & cbbDiaMayo.Text, txtDocMayo.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Mayo", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoJunio.Text <> "" And cbbDiaJunio.Text <> "Día" And txtDocJunio.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblJunio.Text, cbbTipoPago, txtMontoJunio.Text, varAñoActual & "-06-" & cbbDiaJunio.Text, txtDocJunio.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Junio", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoJulio.Text <> "" And cbbDiaJulio.Text <> "Día" And txtDocJulio.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblJulio.Text, cbbTipoPago, txtMontoJulio.Text, varAñoActual & "-07-" & cbbDiaJulio.Text, txtDocJulio.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Julio", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoAgosto.Text <> "" And cbbDiaAgosto.Text <> "Día" And txtDocAgosto.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblAgosto.Text, cbbTipoPago, txtMontoAgosto.Text, varAñoActual & "-08-" & cbbDiaAgosto.Text, txtDocAgosto.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Agosto", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoSept.Text <> "" And cbbDiaSept.Text <> "Día" And txtDocSept.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblSept.Text, cbbTipoPago, txtMontoSept.Text, varAñoActual & "-09-" & cbbDiaSept.Text, txtDocSept.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Septiembre", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoOctubre.Text <> "" And cbbDiaOctubre.Text <> "Día" And txtDocOctubre.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblOctubre.Text, cbbTipoPago, txtMontoOctubre.Text, varAñoActual & "-10-" & cbbDiaOctubre.Text, txtDocOctubre.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Octubre", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoNov.Text <> "" And cbbDiaNov.Text <> "Día" And txtDocNov.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblNov.Text, cbbTipoPago, txtMontoNov.Text, varAñoActual & "-11-" & cbbDiaNov.Text, txtDocNov.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Noviembre", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoDic.Text <> "" And cbbDiaDic.Text <> "Día" And txtDocDic.Text <> "" Then
+                ModuloContenedor.ActualizarMensualidades(txtRutAlumno.Text, lblDic.Text, cbbTipoPago, txtMontoDic.Text, varAñoActual & "-12-" & cbbDiaDic.Text, txtDocDic.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Diciembre", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+
+        ElseIf txtRutAntiguo.Text = "" Or MessageBox.Show("El alumno a matricular, ¿Es alumno nuevo?", "¡Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+
+            Dim valorSexo As String = ""
+            Dim varHermano As String = ""
+            Dim varViveCon As String = ""
+            Dim becado As Integer
+            Dim servSalud As String = ""
+            Dim otroServSalud As String = ""
+            Dim varApoderadoPadre As Integer = 0
+            Dim varApoderadoSuplePadre As Integer = 0
+            Dim varApoderadoMadre As Integer = 0
+            Dim varApoderadoSupleMadre As Integer = 0
+            Dim varResponsablePadre As String = "tr1"
+            Dim varResponsableMadre As String = "tr2"
+            Dim varResponsableTutor As String = "tr3"
+            Dim varapoderadoOtro As Integer = 0
+            Dim varApoderadoSupleOtro As Integer = 0
+            Dim varTutor As Integer = 0
+            Dim varTutor2 As Integer = 0
+            Dim varCurso As String = ""
+            Dim varComuna As String = ""
+
+            If CheckBox1.Checked = False Then
+                becado = 0
+            ElseIf CheckBox1.Checked = True Then
+                becado = 1
+            End If
+
+            If radioMasc.Checked = True Then
+                valorSexo = "Masculino"
+            ElseIf radioFeme.Checked = True Then
+                valorSexo = "Femenino"
+            End If
+
+            If radioHermanosNo.Checked = True Then
+                varHermano = "No"
+            Else
+                varHermano = "Si"
+            End If
+
+            varComuna = comboComuna.SelectedValue
+            varCurso = comboCurso.SelectedValue
+            servSalud = comboServSalud.SelectedValue
+
+            If ModuloContenedor.ingresarAlumno(DateTimePicker1, txtApePatAlumno.Text, txtApeMatAlumno.Text, txtNombresAlumno.Text, _
+                                               txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
+                                               txtSectorAlumno.Text, varCurso, varComuna, txtTelefonoAlumno.Text, _
+                                               txtColegioPrese.Text, txtCursosRepetidos.Text, becado, varHermano, _
+                                               cbViveCon.Text, txtNumHijos.Text, txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text, txtViveConOtros.Text, txtHermanosCursos.Text, txtNumMatri.Text, DateTimePicker1) = True Then
+            Else
+                MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
+
+
+            If ModuloContenedor.ingresarServSalud(servSalud, txtOtrosServicios.Text, txtSeguros.Text) = True Then
+            Else
+                MessageBox.Show("Error al ingresar servicio de salud", "Error")
+                Exit Sub
+            End If
+
+            If ModuloContenedor.ingresarContactEmergencia(txtNombreContacto.Text, txtNumContacto.Text, txtNombreContacto2.Text, _
+                                                          txtNumContacto2.Text, txtNombreContacto3.Text, txtNumContacto3.Text) = True Then
+            Else
+                MessageBox.Show("Error al ingresar contactos de emergencia")
+                Exit Sub
+            End If
+
+            If cbApoderado.Text = "Padre" Then
+                varApoderadoPadre = 1
+            ElseIf cbApoderado.Text = "Madre" Then
+                varApoderadoMadre = 1
+            ElseIf cbApoderado.Text = "Otro" Then
+            End If
+
+            If cbApoSuplente.Text = "Padre" Then
+                varApoderadoSuplePadre = 1
+            ElseIf cbApoSuplente.Text = "Madre" Then
+                varApoderadoSupleMadre = 1
+            ElseIf cbApoSuplente.Text = "Otro" Then
+            End If
+
+            If checkpadre.Checked = True And RadioButton9.Checked = True Then
+
+                ModuloContenedor.insertarResponsableCompleto(txtRut.Text, txtNombreTutor.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
+                                                             txtTelefonoTrabajo.Text, txtDomicilio.Text, txtDireccionPadre.Text, _
+                                                             txtEdadPadre.Text, cbEstudiosPadre, txtCorreoPadre.Text, txtProfesion.Text, _
+                                                             txtLugarDeTrabajo.Text, txtOcupacionAct.Text)
+                ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsablePadre, varApoderadoPadre, _
+                                                         varApoderadoSuplePadre, txtNumMatri.Text)
+                ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoPadre, _
+                                                         varApoderadoSuplePadre, txtNumMatri.Text)
+            End If
+
+            If checkmadre.Checked = True And RadioButton13.Checked = True Then
+
+                ModuloContenedor.insertarResponsableCompleto(txtRut.Text, txtNombreTutor.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
+                                                             txtTelefonoTrabajo.Text, txtDomicilio.Text, txtDireccionMadre.Text, _
+                                                             txtEdadMadre.Text, cbEstudiosMadre, txtCorreoMadre.Text, txtProfesion.Text, _
+                                                             txtLugarDeTrabajo.Text, txtOcupacionAct.Text)
+                ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
+                                                        varApoderadoSupleMadre, txtNumMatri.Text)
+                ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoMadre, _
+                                                        varApoderadoSupleMadre, txtNumMatri.Text)
+            End If
+
+            If checkpadre.Checked = True And RadioButton9.Checked = False Then
+
+                ModuloContenedor.insertarPadre(txtNombrePadre.Text, txtRutPadre.Text, txtEdadPadre.Text, cbEstudiosPadre, _
+                                                 txtTrabajaenPadre.Text, txtTelefonoPadre.Text, txtCargoPadre.Text, _
+                                                txtDireccionPadre.Text, txtCorreoPadre.Text, txtEstudiosPadre.Text)
+                ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsablePadre, varApoderadoPadre, _
+                                                       varApoderadoSuplePadre, txtNumMatri.Text)
+            End If
+
+            If checkmadre.Checked = True And RadioButton13.Checked = False Then
+
+                ModuloContenedor.insertarMadre(txtNombreMadre.Text, txtRutMadre.Text, txtEdadMadre.Text, cbEstudiosMadre, _
+                                                txtTrabajaenMadre.Text, txtTelefonoMadre.Text, txtCargoMadre.Text, _
+                                                txtDireccionMadre.Text, txtCorreoMadre.Text, txtEstudiosMadre.Text)
+                ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
+                                                        varApoderadoSupleMadre, txtNumMatri.Text)
+            End If
+
+            If checkIguales.Checked = True Then
+                varapoderadoOtro = 1
+                varApoderadoSupleOtro = 1
+                ModuloContenedor.insertarOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApodSuplent.Text, txtNumMatri.Text)
+
+            ElseIf cbApoderado.Text = "Otro" And cbApoSuplente.Text = "Otro" Then
+                varapoderadoOtro = 1
+                varApoderadoSupleOtro = 0
+                ModuloContenedor.insertarOtroApod(txtRutOtroApod.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApoderado.Text, txtNumMatri.Text)
+                varapoderadoOtro = 0
+                varApoderadoSupleOtro = 1
+                ModuloContenedor.insertarOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApodSuplent.Text, txtNumMatri.Text)
+
+            ElseIf checkIguales.Checked = False And cbApoderado.Text = "Otro" Then
+                varapoderadoOtro = 1
+                varApoderadoSupleOtro = 0
+                ModuloContenedor.insertarOtroApod(txtRutOtroApod.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApoderado.Text, txtNumMatri.Text)
+
+            ElseIf checkIguales.Checked = False And cbApoSuplente.Text = "Otro" Then
+                varapoderadoOtro = 0
+                varApoderadoSupleOtro = 1
+                ModuloContenedor.insertarOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
+                                              txtNombreApodSuplent.Text, txtNumMatri.Text)
+            End If
+
+
+            If RadioButton14.Checked = True And RadioButton9.Checked = False And RadioButton13.Checked = False Then
+
+                ModuloContenedor.insertarTutorEconomico(txtNombreTutor.Text, txtRut.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
+                                                    txtTelefonoTrabajo.Text, txtDomicilio.Text, txtLugarDeTrabajo.Text, _
+                                                        txtOcupacionAct.Text, txtProfesion.Text)
+                ModuloContenedor.insertarAlumno_respons_tutor(txtRut.Text, txtRutAlumno.Text, varResponsableTutor, varTutor, _
+                                                          varTutor2, txtOtro.Text, txtNumMatri.Text)
+            End If
+
+            '---Inicio de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
+
+            If txtMontoMarzo.Text <> "" And cbbDiaMarzo.Text <> "Día" And txtDocMarzo.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblMarzo.Text, cbbTipoPago, txtMontoMarzo.Text, varAñoActual & "-03-" & cbbDiaMarzo.Text, txtDocMarzo.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Marzo", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoAbril.Text <> "" And cbbDiaAbril.Text <> "Día" And txtDocAbril.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblAbril.Text, cbbTipoPago, txtMontoAbril.Text, varAñoActual & "-04-" & cbbDiaAbril.Text, txtDocAbril.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Abril", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoMayo.Text <> "" And cbbDiaMayo.Text <> "Día" And txtDocMayo.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblMayo.Text, cbbTipoPago, txtMontoMayo.Text, varAñoActual & "-05-" & cbbDiaMayo.Text, txtDocMayo.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Mayo", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoJunio.Text <> "" And cbbDiaJunio.Text <> "Día" And txtDocJunio.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblJunio.Text, cbbTipoPago, txtMontoJunio.Text, varAñoActual & "-06-" & cbbDiaJunio.Text, txtDocJunio.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Junio", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoJulio.Text <> "" And cbbDiaJulio.Text <> "Día" And txtDocJulio.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblJulio.Text, cbbTipoPago, txtMontoJulio.Text, varAñoActual & "-07-" & cbbDiaJulio.Text, txtDocJulio.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Julio", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoAgosto.Text <> "" And cbbDiaAgosto.Text <> "Día" And txtDocAgosto.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblAgosto.Text, cbbTipoPago, txtMontoAgosto.Text, varAñoActual & "-08-" & cbbDiaAgosto.Text, txtDocAgosto.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Agosto", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoSept.Text <> "" And cbbDiaSept.Text <> "Día" And txtDocSept.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblSept.Text, cbbTipoPago, txtMontoSept.Text, varAñoActual & "-09-" & cbbDiaSept.Text, txtDocSept.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Septiembre", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoOctubre.Text <> "" And cbbDiaOctubre.Text <> "Día" And txtDocOctubre.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblOctubre.Text, cbbTipoPago, txtMontoOctubre.Text, varAñoActual & "-10-" & cbbDiaOctubre.Text, txtDocOctubre.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Octubre", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoNov.Text <> "" And cbbDiaNov.Text <> "Día" And txtDocNov.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblNov.Text, cbbTipoPago, txtMontoNov.Text, varAñoActual & "-11-" & cbbDiaNov.Text, txtDocNov.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Noviembre", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+            If txtMontoDic.Text <> "" And cbbDiaDic.Text <> "Día" And txtDocDic.Text <> "" Then
+                ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblDic.Text, cbbTipoPago, txtMontoDic.Text, varAñoActual & "-12-" & cbbDiaDic.Text, txtDocDic.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
+            Else
+                MsgBox("Asegurese de llenar los campos correspondientes al mes de Diciembre", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+
+            '---Fin de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
         End If
 
-        If radioMasc.Checked = True Then
-            valorSexo = "Masculino"
-        ElseIf radioFeme.Checked = True Then
-            valorSexo = "Femenino"
-        End If
-
-        If radioHermanosNo.Checked = True Then
-            varHermano = "Sin hermanos"
-        Else
-            varHermano = txtHermanosCursos.Text
-        End If
-
-        If cbViveCon.Text = "Otros (especificar)" Then
-            varViveCon = txtViveConOtros.Text
-        Else
-            varViveCon = cbViveCon.Text
-        End If
-
-        varComuna = comboComuna.SelectedValue
-        varCurso = comboCurso.SelectedValue
-        servSalud = comboServSalud.SelectedValue
-
-        If ModuloContenedor.ingresarAlumno(DateTimePicker1, txtApePatAlumno.Text, txtApeMatAlumno.Text, txtNombresAlumno.Text, _
-                                           txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
-                                           txtSectorAlumno.Text, varCurso, varComuna, txtTelefonoAlumno.Text, _
-                                           txtColegioPrese.Text, txtCursosRepetidos.Text, becado, txtHermanosCursos.Text, _
-                                           varViveCon, txtNumHijos.Text, txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text) = True Then
-        Else
-            MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-
-
-        If ModuloContenedor.ingresarServSalud(servSalud, otroServSalud, txtSeguros.Text) = True Then
-        Else
-            MessageBox.Show("Error al ingresar servicio de salud", "Error")
-            Exit Sub
-        End If
-
-        If ModuloContenedor.ingresarContactEmergencia(txtNombreContacto.Text, txtNumContacto.Text, txtNombreContacto2.Text, _
-                                                      txtNumContacto2.Text, txtNombreContacto3.Text, txtNumContacto3.Text) = True Then
-        Else
-            MessageBox.Show("Error al ingresar contactos de emergencia")
-            Exit Sub
-        End If
-
-        If cbApoderado.Text = "Padre" Then
-            varApoderadoPadre = 1
-        ElseIf cbApoderado.Text = "Madre" Then
-            varApoderadoMadre = 1
-        ElseIf cbApoderado.Text = "Otro" Then
-        End If
-
-        If cbApoSuplente.Text = "Padre" Then
-            varApoderadoSuplePadre = 1
-        ElseIf cbApoSuplente.Text = "Madre" Then
-            varApoderadoSupleMadre = 1
-        ElseIf cbApoSuplente.Text = "Otro" Then
-        End If
-
-        If checkpadre.Checked = True And RadioButton9.Checked = True Then
-
-            ModuloContenedor.insertarResponsableCompleto(txtRut.Text, txtNombreTutor.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
-                                                         txtTelefonoTrabajo.Text, txtDomicilio.Text, txtDireccionPadre.Text, _
-                                                         txtEdadPadre.Text, cbEstudiosPadre, txtCorreoPadre.Text, txtProfesion.Text, _
-                                                         txtLugarDeTrabajo.Text, txtOcupacionAct.Text)
-            ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsablePadre, varApoderadoPadre, _
-                                                     varApoderadoSuplePadre)
-            ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoPadre, _
-                                                     varApoderadoSuplePadre)
-        End If
-
-        If checkmadre.Checked = True And RadioButton13.Checked = True Then
-
-            ModuloContenedor.insertarResponsableCompleto(txtRut.Text, txtNombreTutor.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
-                                                         txtTelefonoTrabajo.Text, txtDomicilio.Text, txtDireccionMadre.Text, _
-                                                         txtEdadMadre.Text, cbEstudiosMadre, txtCorreoMadre.Text, txtProfesion.Text, _
-                                                         txtLugarDeTrabajo.Text, txtOcupacionAct.Text)
-            ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
-                                                    varApoderadoSupleMadre)
-            ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableTutor, varApoderadoMadre, _
-                                                    varApoderadoSupleMadre)
-        End If
-
-        If checkpadre.Checked = True And RadioButton9.Checked = False Then
-
-            ModuloContenedor.insertarPadre(txtNombrePadre.Text, txtRutPadre.Text, txtEdadPadre.Text, cbEstudiosPadre, _
-                                             txtTrabajaenPadre.Text, txtTelefonoPadre.Text, txtCargoPadre.Text, _
-                                            txtDireccionPadre.Text, txtCorreoPadre.Text)
-            ModuloContenedor.insertarAlumno_respons(txtRutPadre.Text, txtRutAlumno.Text, varResponsablePadre, varApoderadoPadre, _
-                                                   varApoderadoSuplePadre)
-        End If
-
-        If checkmadre.Checked = True And RadioButton13.Checked = False Then
-
-            ModuloContenedor.insertarMadre(txtNombreMadre.Text, txtRutMadre.Text, txtEdadMadre.Text, cbEstudiosMadre, _
-                                            txtTrabajaenMadre.Text, txtTelefonoMadre.Text, txtCargoMadre.Text, _
-                                            txtDireccionMadre.Text, txtCorreoMadre.Text)
-            ModuloContenedor.insertarAlumno_respons(txtRutMadre.Text, txtRutAlumno.Text, varResponsableMadre, varApoderadoMadre, _
-                                                    varApoderadoSupleMadre)
-        End If
-
-        If checkIguales.Checked = True Then
-            varapoderadoOtro = 1
-            varApoderadoSupleOtro = 1
-            ModuloContenedor.insertarOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
-                                          txtNombreApodSuplent.Text)
-
-        ElseIf cbApoderado.Text = "Otro" And cbApoSuplente.Text = "Otro" Then
-            varapoderadoOtro = 1
-            varApoderadoSupleOtro = 0
-            ModuloContenedor.insertarOtroApod(txtRutOtroApod.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
-                                          txtNombreApoderado.Text)
-            varapoderadoOtro = 0
-            varApoderadoSupleOtro = 1
-            ModuloContenedor.insertarOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
-                                          txtNombreApodSuplent.Text)
-
-        ElseIf checkIguales.Checked = False And cbApoderado.Text = "Otro" Then
-            varapoderadoOtro = 1
-            varApoderadoSupleOtro = 0
-            ModuloContenedor.insertarOtroApod(txtRutOtroApod.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
-                                          txtNombreApoderado.Text)
-
-        ElseIf checkIguales.Checked = False And cbApoSuplente.Text = "Otro" Then
-            varapoderadoOtro = 0
-            varApoderadoSupleOtro = 1
-            ModuloContenedor.insertarOtroApod(txtRutOtroApodSuple.Text, txtRutAlumno.Text, varapoderadoOtro, varApoderadoSupleOtro, _
-                                          txtNombreApodSuplent.Text)
-        End If
-
-
-        If RadioButton14.Checked = True And RadioButton9.Checked = False And RadioButton13.Checked = False Then
-
-            ModuloContenedor.insertarTutorEconomico(txtNombreTutor.Text, txtRut.Text, txtTelefonoPart.Text, txtTelefonoPart2.Text, _
-                                                txtTelefonoTrabajo.Text, txtDomicilio.Text, txtLugarDeTrabajo.Text, _
-                                                    txtOcupacionAct.Text, txtProfesion.Text)
-            ModuloContenedor.insertarAlumno_respons_tutor(txtRut.Text, txtRutAlumno.Text, varResponsableTutor, varTutor, _
-                                                      varTutor2, txtOtro.Text)
-        End If
-
-        '---Inicio de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
-
-        If txtMontoMarzo.Text <> "" And cbbDiaMarzo.Text <> "Día" And txtDocMarzo.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblMarzo.Text, cbbTipoPago, txtMontoMarzo.Text, varAñoActual & "-03-" & cbbDiaMarzo.Text, txtDocMarzo.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Marzo", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-        If txtMontoAbril.Text <> "" And cbbDiaAbril.Text <> "Día" And txtDocAbril.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblAbril.Text, cbbTipoPago, txtMontoAbril.Text, varAñoActual & "-04-" & cbbDiaAbril.Text, txtDocAbril.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Abril", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-        If txtMontoMayo.Text <> "" And cbbDiaMayo.Text <> "Día" And txtDocMayo.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblMayo.Text, cbbTipoPago, txtMontoMayo.Text, varAñoActual & "-05-" & cbbDiaMayo.Text, txtDocMayo.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Mayo", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-        If txtMontoJunio.Text <> "" And cbbDiaJunio.Text <> "Día" And txtDocJunio.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblJunio.Text, cbbTipoPago, txtMontoJunio.Text, varAñoActual & "-06-" & cbbDiaJunio.Text, txtDocJunio.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Junio", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-        If txtMontoJulio.Text <> "" And cbbDiaJulio.Text <> "Día" And txtDocJulio.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblJulio.Text, cbbTipoPago, txtMontoJulio.Text, varAñoActual & "-07-" & cbbDiaJulio.Text, txtDocJulio.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Julio", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-        If txtMontoAgosto.Text <> "" And cbbDiaAgosto.Text <> "Día" And txtDocAgosto.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblAgosto.Text, cbbTipoPago, txtMontoAgosto.Text, varAñoActual & "-08-" & cbbDiaAgosto.Text, txtDocAgosto.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Agosto", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-        If txtMontoSept.Text <> "" And cbbDiaSept.Text <> "Día" And txtDocSept.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblSept.Text, cbbTipoPago, txtMontoSept.Text, varAñoActual & "-09-" & cbbDiaSept.Text, txtDocSept.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Septiembre", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-        If txtMontoOctubre.Text <> "" And cbbDiaOctubre.Text <> "Día" And txtDocOctubre.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblOctubre.Text, cbbTipoPago, txtMontoOctubre.Text, varAñoActual & "-10-" & cbbDiaOctubre.Text, txtDocOctubre.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Octubre", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-        If txtMontoNov.Text <> "" And cbbDiaNov.Text <> "Día" And txtDocNov.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblNov.Text, cbbTipoPago, txtMontoNov.Text, varAñoActual & "-11-" & cbbDiaNov.Text, txtDocNov.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Noviembre", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-        If txtMontoDic.Text <> "" And cbbDiaDic.Text <> "Día" And txtDocDic.Text <> "" Then
-            ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblDic.Text, cbbTipoPago, txtMontoDic.Text, varAñoActual & "-12-" & cbbDiaDic.Text, txtDocDic.Text)
-        Else
-            MsgBox("Asegurese de llenar los campos correspondientes al mes de Diciembre", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
-
-        '---Fin de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
-
-        MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Information)
         If MessageBox.Show("¿Desea imprimir una(s) copia(s) de los formularios creados?", "¡Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Configurar()
-            'Mandando a imprimir 
             Reporte.Print()
             If MessageBox.Show("¿Desea generar una nueva matrícula para otro alumno?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 TabPage2.Show()
             End If
         Else
+            'guardar copia archivos en computador
             If MessageBox.Show("¿Desea generar una nueva matrícula para otro alumno?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 TabPage2.Show()
             End If
         End If
-
     End Sub
 
     Private Sub comboServSalud_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles comboServSalud.SelectedIndexChanged
@@ -828,6 +1051,13 @@ Public Class FormularioMatricula
 
         ModuloContenedor.AutollenarFormulario(txtRutAntiguo.Text, varConexion)
 
+        oldTutor = txtRut.Text
+        oldAlumno = txtRutAlumno.Text
+        oldPadre = txtRutPadre.Text
+        oldMadre = txtRutMadre.Text
+        oldApoderado = txtRutOtroApod.Text
+        oldSuplente = txtRutOtroApodSuple.Text
+
     End Sub
 
     Public Sub LimpiarTextBox(frm As TabPage)
@@ -849,6 +1079,12 @@ Public Class FormularioMatricula
 
     Private Sub btnLimpiar2_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar2.Click
         Call LimpiarTextBox(TabPage4)
+        txtNombreContacto.Text = ""
+        txtNumContacto.Text = ""
+        txtNombreContacto2.Text = ""
+        txtNumContacto2.Text = ""
+        txtNombreContacto3.Text = ""
+        txtNumContacto3.Text = ""
     End Sub
 
     Private Sub btnLimpiar3_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar3.Click
@@ -1018,10 +1254,112 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub cbbTipoPago_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbbTipoPago.SelectedIndexChanged
-        If cbbTipoPago.SelectedItem = "Contado" Then
-            TextBox86.Enabled = False
-            TextBox87.Enabled = False
-            TextBox88.Enabled = False
+        If cbbTipoPago.SelectedItem = "Cheque" Then
+            cbbTipoSerie.Visible = True
+            lblSerieCheque.Visible = True
+        Else
+            cbbTipoSerie.Visible = False
+            lblSerieCheque.Visible = False
+        End If
+    End Sub
+
+    Private Sub txtDocMarzo_LostFocus(sender As Object, e As System.EventArgs) Handles txtDocMarzo.LostFocus
+        If cbbTipoSerie.SelectedItem = "Correlativo" Then
+            txtDocAbril.Text = txtDocMarzo.Text + 1
+            txtDocMayo.Text = txtDocMarzo.Text + 2
+            txtDocJunio.Text = txtDocMarzo.Text + 3
+            txtDocJulio.Text = txtDocMarzo.Text + 4
+            txtDocAgosto.Text = txtDocMarzo.Text + 5
+            txtDocSept.Text = txtDocMarzo.Text + 6
+            txtDocOctubre.Text = txtDocMarzo.Text + 7
+            txtDocNov.Text = txtDocMarzo.Text + 8
+            txtDocDic.Text = txtDocMarzo.Text + 9
+        ElseIf cbbTipoSerie.SelectedItem = "Único" Then
+            txtDocAbril.Text = txtDocMarzo.Text
+            txtDocMayo.Text = txtDocMarzo.Text
+            txtDocJunio.Text = txtDocMarzo.Text
+            txtDocJulio.Text = txtDocMarzo.Text
+            txtDocAgosto.Text = txtDocMarzo.Text
+            txtDocSept.Text = txtDocMarzo.Text
+            txtDocOctubre.Text = txtDocMarzo.Text
+            txtDocNov.Text = txtDocMarzo.Text
+            txtDocDic.Text = txtDocMarzo.Text
+        End If
+    End Sub
+
+    Private Sub txtMontoMarzo_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtMontoMarzo.TextChanged
+        If checkMontosIguales.Checked = True Then
+            txtMontoAbril.Text = txtMontoMarzo.Text
+            txtMontoMayo.Text = txtMontoMarzo.Text
+            txtMontoJunio.Text = txtMontoMarzo.Text
+            txtMontoJulio.Text = txtMontoMarzo.Text
+            txtMontoAgosto.Text = txtMontoMarzo.Text
+            txtMontoSept.Text = txtMontoMarzo.Text
+            txtMontoOctubre.Text = txtMontoMarzo.Text
+            txtMontoNov.Text = txtMontoMarzo.Text
+            txtMontoDic.Text = txtMontoMarzo.Text
+        End If
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged_1(sender As System.Object, e As System.EventArgs) Handles checkDiaFijo.CheckedChanged
+        If checkDiaFijo.Checked = True Then
+            cbbDiaAbril.Text = cbbDiaMarzo.Text
+            cbbDiaMayo.Text = cbbDiaMarzo.Text
+            cbbDiaJunio.Text = cbbDiaMarzo.Text
+            cbbDiaJulio.Text = cbbDiaMarzo.Text
+            cbbDiaAgosto.Text = cbbDiaMarzo.Text
+            cbbDiaSept.Text = cbbDiaMarzo.Text
+            cbbDiaOctubre.Text = cbbDiaMarzo.Text
+            cbbDiaNov.Text = cbbDiaMarzo.Text
+            cbbDiaDic.Text = cbbDiaMarzo.Text
+        Else
+            cbbDiaAbril.Text = ""
+            cbbDiaMayo.Text = ""
+            cbbDiaJunio.Text = ""
+            cbbDiaJulio.Text = ""
+            cbbDiaAgosto.Text = ""
+            cbbDiaSept.Text = ""
+            cbbDiaOctubre.Text = ""
+            cbbDiaNov.Text = ""
+            cbbDiaDic.Text = ""
+        End If
+    End Sub
+
+    Private Sub checkMontosIguales_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles checkMontosIguales.CheckedChanged
+        If checkMontosIguales.Checked = False Then
+            txtMontoAbril.Text = ""
+            txtMontoMayo.Text = ""
+            txtMontoJunio.Text = ""
+            txtMontoJulio.Text = ""
+            txtMontoAgosto.Text = ""
+            txtMontoSept.Text = ""
+            txtMontoOctubre.Text = ""
+            txtMontoNov.Text = ""
+            txtMontoDic.Text = ""
+        Else
+            txtMontoAbril.Text = txtMontoMarzo.Text
+            txtMontoMayo.Text = txtMontoMarzo.Text
+            txtMontoJunio.Text = txtMontoMarzo.Text
+            txtMontoJulio.Text = txtMontoMarzo.Text
+            txtMontoAgosto.Text = txtMontoMarzo.Text
+            txtMontoSept.Text = txtMontoMarzo.Text
+            txtMontoOctubre.Text = txtMontoMarzo.Text
+            txtMontoNov.Text = txtMontoMarzo.Text
+            txtMontoDic.Text = txtMontoMarzo.Text
+        End If
+    End Sub
+
+    Private Sub cbbDiaMarzo_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbbDiaMarzo.SelectedIndexChanged
+        If checkDiaFijo.Checked = True Then
+            cbbDiaAbril.Text = cbbDiaMarzo.Text
+            cbbDiaMayo.Text = cbbDiaMarzo.Text
+            cbbDiaJunio.Text = cbbDiaMarzo.Text
+            cbbDiaJulio.Text = cbbDiaMarzo.Text
+            cbbDiaAgosto.Text = cbbDiaMarzo.Text
+            cbbDiaSept.Text = cbbDiaMarzo.Text
+            cbbDiaOctubre.Text = cbbDiaMarzo.Text
+            cbbDiaNov.Text = cbbDiaMarzo.Text
+            cbbDiaDic.Text = cbbDiaMarzo.Text
         End If
     End Sub
 End Class

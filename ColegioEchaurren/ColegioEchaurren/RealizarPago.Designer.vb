@@ -55,6 +55,7 @@ Partial Class RealizarPago
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.txtCampoRut = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.btnDeshacerPago = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -77,6 +78,7 @@ Partial Class RealizarPago
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnDeshacerPago)
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -123,55 +125,55 @@ Partial Class RealizarPago
         '
         Me.checkDic.AutoSize = True
         Me.checkDic.Enabled = False
-        Me.checkDic.Location = New System.Drawing.Point(130, 121)
+        Me.checkDic.Location = New System.Drawing.Point(121, 121)
         Me.checkDic.Name = "checkDic"
-        Me.checkDic.Size = New System.Drawing.Size(73, 17)
+        Me.checkDic.Size = New System.Drawing.Size(85, 17)
         Me.checkDic.TabIndex = 17
-        Me.checkDic.Text = "Diciembre"
+        Me.checkDic.Text = "DICIEMBRE"
         Me.checkDic.UseVisualStyleBackColor = True
         '
         'checkNov
         '
         Me.checkNov.AutoSize = True
         Me.checkNov.Enabled = False
-        Me.checkNov.Location = New System.Drawing.Point(130, 98)
+        Me.checkNov.Location = New System.Drawing.Point(121, 98)
         Me.checkNov.Name = "checkNov"
-        Me.checkNov.Size = New System.Drawing.Size(77, 17)
+        Me.checkNov.Size = New System.Drawing.Size(90, 17)
         Me.checkNov.TabIndex = 16
-        Me.checkNov.Text = "Noviembre"
+        Me.checkNov.Text = "NOVIEMBRE"
         Me.checkNov.UseVisualStyleBackColor = True
         '
         'checkOctubre
         '
         Me.checkOctubre.AutoSize = True
         Me.checkOctubre.Enabled = False
-        Me.checkOctubre.Location = New System.Drawing.Point(130, 75)
+        Me.checkOctubre.Location = New System.Drawing.Point(121, 75)
         Me.checkOctubre.Name = "checkOctubre"
-        Me.checkOctubre.Size = New System.Drawing.Size(64, 17)
+        Me.checkOctubre.Size = New System.Drawing.Size(78, 17)
         Me.checkOctubre.TabIndex = 15
-        Me.checkOctubre.Text = "Octubre"
+        Me.checkOctubre.Text = "OCTUBRE"
         Me.checkOctubre.UseVisualStyleBackColor = True
         '
         'checkSept
         '
         Me.checkSept.AutoSize = True
         Me.checkSept.Enabled = False
-        Me.checkSept.Location = New System.Drawing.Point(130, 52)
+        Me.checkSept.Location = New System.Drawing.Point(121, 52)
         Me.checkSept.Name = "checkSept"
-        Me.checkSept.Size = New System.Drawing.Size(79, 17)
+        Me.checkSept.Size = New System.Drawing.Size(95, 17)
         Me.checkSept.TabIndex = 14
-        Me.checkSept.Text = "Septiembre"
+        Me.checkSept.Text = "SEPTIEMBRE"
         Me.checkSept.UseVisualStyleBackColor = True
         '
         'checkAgosto
         '
         Me.checkAgosto.AutoSize = True
         Me.checkAgosto.Enabled = False
-        Me.checkAgosto.Location = New System.Drawing.Point(130, 29)
+        Me.checkAgosto.Location = New System.Drawing.Point(121, 29)
         Me.checkAgosto.Name = "checkAgosto"
-        Me.checkAgosto.Size = New System.Drawing.Size(59, 17)
+        Me.checkAgosto.Size = New System.Drawing.Size(71, 17)
         Me.checkAgosto.TabIndex = 13
-        Me.checkAgosto.Text = "Agosto"
+        Me.checkAgosto.Text = "AGOSTO"
         Me.checkAgosto.UseVisualStyleBackColor = True
         '
         'checkJulio
@@ -180,9 +182,9 @@ Partial Class RealizarPago
         Me.checkJulio.Enabled = False
         Me.checkJulio.Location = New System.Drawing.Point(24, 121)
         Me.checkJulio.Name = "checkJulio"
-        Me.checkJulio.Size = New System.Drawing.Size(47, 17)
+        Me.checkJulio.Size = New System.Drawing.Size(56, 17)
         Me.checkJulio.TabIndex = 12
-        Me.checkJulio.Text = "Julio"
+        Me.checkJulio.Text = "JULIO"
         Me.checkJulio.UseVisualStyleBackColor = True
         '
         'checkJunio
@@ -191,9 +193,9 @@ Partial Class RealizarPago
         Me.checkJunio.Enabled = False
         Me.checkJunio.Location = New System.Drawing.Point(24, 98)
         Me.checkJunio.Name = "checkJunio"
-        Me.checkJunio.Size = New System.Drawing.Size(51, 17)
+        Me.checkJunio.Size = New System.Drawing.Size(58, 17)
         Me.checkJunio.TabIndex = 11
-        Me.checkJunio.Text = "Junio"
+        Me.checkJunio.Text = "JUNIO"
         Me.checkJunio.UseVisualStyleBackColor = True
         '
         'checkMayo
@@ -202,9 +204,9 @@ Partial Class RealizarPago
         Me.checkMayo.Enabled = False
         Me.checkMayo.Location = New System.Drawing.Point(24, 75)
         Me.checkMayo.Name = "checkMayo"
-        Me.checkMayo.Size = New System.Drawing.Size(52, 17)
+        Me.checkMayo.Size = New System.Drawing.Size(57, 17)
         Me.checkMayo.TabIndex = 10
-        Me.checkMayo.Text = "Mayo"
+        Me.checkMayo.Text = "MAYO"
         Me.checkMayo.UseVisualStyleBackColor = True
         '
         'checkAbril
@@ -213,9 +215,9 @@ Partial Class RealizarPago
         Me.checkAbril.Enabled = False
         Me.checkAbril.Location = New System.Drawing.Point(24, 52)
         Me.checkAbril.Name = "checkAbril"
-        Me.checkAbril.Size = New System.Drawing.Size(46, 17)
+        Me.checkAbril.Size = New System.Drawing.Size(57, 17)
         Me.checkAbril.TabIndex = 9
-        Me.checkAbril.Text = "Abril"
+        Me.checkAbril.Text = "ABRIL"
         Me.checkAbril.UseVisualStyleBackColor = True
         '
         'checkMarzo
@@ -224,9 +226,9 @@ Partial Class RealizarPago
         Me.checkMarzo.Enabled = False
         Me.checkMarzo.Location = New System.Drawing.Point(24, 29)
         Me.checkMarzo.Name = "checkMarzo"
-        Me.checkMarzo.Size = New System.Drawing.Size(55, 17)
+        Me.checkMarzo.Size = New System.Drawing.Size(65, 17)
         Me.checkMarzo.TabIndex = 8
-        Me.checkMarzo.Text = "Marzo"
+        Me.checkMarzo.Text = "MARZO"
         Me.checkMarzo.UseVisualStyleBackColor = True
         '
         'Label7
@@ -370,6 +372,15 @@ Partial Class RealizarPago
         Me.Label9.TabIndex = 48
         Me.Label9.Text = "%"
         '
+        'btnDeshacerPago
+        '
+        Me.btnDeshacerPago.Location = New System.Drawing.Point(286, 129)
+        Me.btnDeshacerPago.Name = "btnDeshacerPago"
+        Me.btnDeshacerPago.Size = New System.Drawing.Size(109, 40)
+        Me.btnDeshacerPago.TabIndex = 27
+        Me.btnDeshacerPago.Text = "Deshacer Pago"
+        Me.btnDeshacerPago.UseVisualStyleBackColor = True
+        '
         'RealizarPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -433,4 +444,5 @@ Partial Class RealizarPago
     Friend WithEvents txtCampoRut As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents btnDeshacerPago As System.Windows.Forms.Button
 End Class

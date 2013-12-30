@@ -36,7 +36,9 @@ Partial Class FormularioMatricula
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.txtNumMatri = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label46 = New System.Windows.Forms.Label()
         Me.Label78 = New System.Windows.Forms.Label()
         Me.txtSeguros = New System.Windows.Forms.TextBox()
         Me.Label64 = New System.Windows.Forms.Label()
@@ -199,6 +201,10 @@ Partial Class FormularioMatricula
         Me.Label94 = New System.Windows.Forms.Label()
         Me.Label93 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.checkDiaFijo = New System.Windows.Forms.CheckBox()
+        Me.lblSerieCheque = New System.Windows.Forms.Label()
+        Me.checkMontosIguales = New System.Windows.Forms.CheckBox()
+        Me.cbbTipoSerie = New System.Windows.Forms.ComboBox()
         Me.btnLimpiar4 = New System.Windows.Forms.Button()
         Me.cbbTipoPago = New System.Windows.Forms.ComboBox()
         Me.btnSalir3 = New System.Windows.Forms.Button()
@@ -247,14 +253,14 @@ Partial Class FormularioMatricula
         Me.Label114 = New System.Windows.Forms.Label()
         Me.Label113 = New System.Windows.Forms.Label()
         Me.Label112 = New System.Windows.Forms.Label()
-        Me.TextBox88 = New System.Windows.Forms.TextBox()
+        Me.txtNombreBanco = New System.Windows.Forms.TextBox()
         Me.Label111 = New System.Windows.Forms.Label()
-        Me.TextBox87 = New System.Windows.Forms.TextBox()
-        Me.TextBox86 = New System.Windows.Forms.TextBox()
+        Me.txtCtaCorriente = New System.Windows.Forms.TextBox()
+        Me.txtNombreTitular = New System.Windows.Forms.TextBox()
         Me.Label110 = New System.Windows.Forms.Label()
         Me.Label109 = New System.Windows.Forms.Label()
         Me.Label108 = New System.Windows.Forms.Label()
-        Me.TextBox85 = New System.Windows.Forms.TextBox()
+        Me.txtMontoAnual = New System.Windows.Forms.TextBox()
         Me.Label107 = New System.Windows.Forms.Label()
         Me.Label106 = New System.Windows.Forms.Label()
         Me.Label105 = New System.Windows.Forms.Label()
@@ -281,7 +287,7 @@ Partial Class FormularioMatricula
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 273)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 3, 10, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -455,13 +461,22 @@ Partial Class FormularioMatricula
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.txtNumMatri)
         Me.GroupBox6.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox6.Controls.Add(Me.Label46)
         Me.GroupBox6.Controls.Add(Me.Label78)
         Me.GroupBox6.Location = New System.Drawing.Point(408, 6)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(264, 42)
+        Me.GroupBox6.Size = New System.Drawing.Size(264, 70)
         Me.GroupBox6.TabIndex = 222
         Me.GroupBox6.TabStop = False
+        '
+        'txtNumMatri
+        '
+        Me.txtNumMatri.Location = New System.Drawing.Point(113, 40)
+        Me.txtNumMatri.Name = "txtNumMatri"
+        Me.txtNumMatri.Size = New System.Drawing.Size(141, 20)
+        Me.txtNumMatri.TabIndex = 233
         '
         'DateTimePicker1
         '
@@ -469,6 +484,16 @@ Partial Class FormularioMatricula
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 5
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Location = New System.Drawing.Point(6, 43)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(96, 13)
+        Me.Label46.TabIndex = 232
+        Me.Label46.Text = "N° MATRÍCULA"
         '
         'Label78
         '
@@ -709,9 +734,9 @@ Partial Class FormularioMatricula
         Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.Location = New System.Drawing.Point(262, 576)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(182, 13)
+        Me.Label44.Size = New System.Drawing.Size(186, 13)
         Me.Label44.TabIndex = 92
-        Me.Label44.Text = "Grupo familia que lo componen"
+        Me.Label44.Text = "Grupo familiar que lo componen"
         '
         'Label43
         '
@@ -1034,7 +1059,7 @@ Partial Class FormularioMatricula
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.Controls.Add(Me.Label54)
         Me.GroupBox3.Controls.Add(Me.txtNumContacto3)
         Me.GroupBox3.Controls.Add(Me.txtNombreContacto3)
@@ -1062,7 +1087,7 @@ Partial Class FormularioMatricula
         Me.txtNumContacto3.Location = New System.Drawing.Point(157, 70)
         Me.txtNumContacto3.Name = "txtNumContacto3"
         Me.txtNumContacto3.Size = New System.Drawing.Size(365, 20)
-        Me.txtNumContacto3.TabIndex = 104
+        Me.txtNumContacto3.TabIndex = 108
         '
         'txtNombreContacto3
         '
@@ -1071,7 +1096,7 @@ Partial Class FormularioMatricula
         Me.txtNombreContacto3.Location = New System.Drawing.Point(157, 29)
         Me.txtNombreContacto3.Name = "txtNombreContacto3"
         Me.txtNombreContacto3.Size = New System.Drawing.Size(365, 20)
-        Me.txtNombreContacto3.TabIndex = 103
+        Me.txtNombreContacto3.TabIndex = 107
         '
         'Label55
         '
@@ -1084,7 +1109,7 @@ Partial Class FormularioMatricula
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.Label52)
         Me.GroupBox2.Controls.Add(Me.txtNumContacto2)
         Me.GroupBox2.Controls.Add(Me.txtNombreContacto2)
@@ -1112,7 +1137,7 @@ Partial Class FormularioMatricula
         Me.txtNumContacto2.Location = New System.Drawing.Point(157, 70)
         Me.txtNumContacto2.Name = "txtNumContacto2"
         Me.txtNumContacto2.Size = New System.Drawing.Size(365, 20)
-        Me.txtNumContacto2.TabIndex = 104
+        Me.txtNumContacto2.TabIndex = 106
         '
         'txtNombreContacto2
         '
@@ -1121,7 +1146,7 @@ Partial Class FormularioMatricula
         Me.txtNombreContacto2.Location = New System.Drawing.Point(157, 29)
         Me.txtNombreContacto2.Name = "txtNombreContacto2"
         Me.txtNombreContacto2.Size = New System.Drawing.Size(365, 20)
-        Me.txtNombreContacto2.TabIndex = 103
+        Me.txtNombreContacto2.TabIndex = 105
         '
         'Label53
         '
@@ -1134,7 +1159,7 @@ Partial Class FormularioMatricula
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Label49)
         Me.GroupBox1.Controls.Add(Me.txtNumContacto)
         Me.GroupBox1.Controls.Add(Me.txtNombreContacto)
@@ -1341,9 +1366,9 @@ Partial Class FormularioMatricula
         Me.checkIguales.AutoSize = True
         Me.checkIguales.Location = New System.Drawing.Point(400, 444)
         Me.checkIguales.Name = "checkIguales"
-        Me.checkIguales.Size = New System.Drawing.Size(273, 17)
+        Me.checkIguales.Size = New System.Drawing.Size(223, 17)
         Me.checkIguales.TabIndex = 268
-        Me.checkIguales.Text = "Apoderado y suplente iguales (marcar solo si es otro)"
+        Me.checkIguales.Text = "Apoderado y Apoderado Suplente Iguales"
         Me.checkIguales.UseVisualStyleBackColor = True
         '
         'txtRutOtroApod
@@ -2105,6 +2130,10 @@ Partial Class FormularioMatricula
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.checkDiaFijo)
+        Me.TabPage3.Controls.Add(Me.lblSerieCheque)
+        Me.TabPage3.Controls.Add(Me.checkMontosIguales)
+        Me.TabPage3.Controls.Add(Me.cbbTipoSerie)
         Me.TabPage3.Controls.Add(Me.btnLimpiar4)
         Me.TabPage3.Controls.Add(Me.cbbTipoPago)
         Me.TabPage3.Controls.Add(Me.btnSalir3)
@@ -2153,14 +2182,14 @@ Partial Class FormularioMatricula
         Me.TabPage3.Controls.Add(Me.Label114)
         Me.TabPage3.Controls.Add(Me.Label113)
         Me.TabPage3.Controls.Add(Me.Label112)
-        Me.TabPage3.Controls.Add(Me.TextBox88)
+        Me.TabPage3.Controls.Add(Me.txtNombreBanco)
         Me.TabPage3.Controls.Add(Me.Label111)
-        Me.TabPage3.Controls.Add(Me.TextBox87)
-        Me.TabPage3.Controls.Add(Me.TextBox86)
+        Me.TabPage3.Controls.Add(Me.txtCtaCorriente)
+        Me.TabPage3.Controls.Add(Me.txtNombreTitular)
         Me.TabPage3.Controls.Add(Me.Label110)
         Me.TabPage3.Controls.Add(Me.Label109)
         Me.TabPage3.Controls.Add(Me.Label108)
-        Me.TabPage3.Controls.Add(Me.TextBox85)
+        Me.TabPage3.Controls.Add(Me.txtMontoAnual)
         Me.TabPage3.Controls.Add(Me.Label107)
         Me.TabPage3.Controls.Add(Me.Label106)
         Me.TabPage3.Controls.Add(Me.Label105)
@@ -2172,6 +2201,46 @@ Partial Class FormularioMatricula
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Documentos en Cartera"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'checkDiaFijo
+        '
+        Me.checkDiaFijo.AutoSize = True
+        Me.checkDiaFijo.Location = New System.Drawing.Point(459, 371)
+        Me.checkDiaFijo.Name = "checkDiaFijo"
+        Me.checkDiaFijo.Size = New System.Drawing.Size(106, 17)
+        Me.checkDiaFijo.TabIndex = 274
+        Me.checkDiaFijo.Text = "Día de Pago Fijo"
+        Me.checkDiaFijo.UseVisualStyleBackColor = True
+        '
+        'lblSerieCheque
+        '
+        Me.lblSerieCheque.AutoSize = True
+        Me.lblSerieCheque.Location = New System.Drawing.Point(440, 133)
+        Me.lblSerieCheque.Name = "lblSerieCheque"
+        Me.lblSerieCheque.Size = New System.Drawing.Size(86, 13)
+        Me.lblSerieCheque.TabIndex = 273
+        Me.lblSerieCheque.Text = "Número de Serie"
+        Me.lblSerieCheque.Visible = False
+        '
+        'checkMontosIguales
+        '
+        Me.checkMontosIguales.AutoSize = True
+        Me.checkMontosIguales.Location = New System.Drawing.Point(322, 371)
+        Me.checkMontosIguales.Name = "checkMontosIguales"
+        Me.checkMontosIguales.Size = New System.Drawing.Size(79, 17)
+        Me.checkMontosIguales.TabIndex = 272
+        Me.checkMontosIguales.Text = "Valor único"
+        Me.checkMontosIguales.UseVisualStyleBackColor = True
+        '
+        'cbbTipoSerie
+        '
+        Me.cbbTipoSerie.FormattingEnabled = True
+        Me.cbbTipoSerie.Items.AddRange(New Object() {"", "Único", "Correlativo", "No Correlativo"})
+        Me.cbbTipoSerie.Location = New System.Drawing.Point(532, 130)
+        Me.cbbTipoSerie.Name = "cbbTipoSerie"
+        Me.cbbTipoSerie.Size = New System.Drawing.Size(121, 21)
+        Me.cbbTipoSerie.TabIndex = 271
+        Me.cbbTipoSerie.Visible = False
         '
         'btnLimpiar4
         '
@@ -2188,8 +2257,8 @@ Partial Class FormularioMatricula
         'cbbTipoPago
         '
         Me.cbbTipoPago.FormattingEnabled = True
-        Me.cbbTipoPago.Items.AddRange(New Object() {"", "Cheques", "Letras", "Contado"})
-        Me.cbbTipoPago.Location = New System.Drawing.Point(322, 124)
+        Me.cbbTipoPago.Items.AddRange(New Object() {"", "Cheque", "Letra", "Contado"})
+        Me.cbbTipoPago.Location = New System.Drawing.Point(304, 130)
         Me.cbbTipoPago.Name = "cbbTipoPago"
         Me.cbbTipoPago.Size = New System.Drawing.Size(121, 21)
         Me.cbbTipoPago.TabIndex = 185
@@ -2232,7 +2301,7 @@ Partial Class FormularioMatricula
         'lblDic
         '
         Me.lblDic.AutoSize = True
-        Me.lblDic.Location = New System.Drawing.Point(515, 644)
+        Me.lblDic.Location = New System.Drawing.Point(530, 644)
         Me.lblDic.Name = "lblDic"
         Me.lblDic.Size = New System.Drawing.Size(66, 13)
         Me.lblDic.TabIndex = 62
@@ -2242,7 +2311,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaDic.FormattingEnabled = True
         Me.cbbDiaDic.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaDic.Location = New System.Drawing.Point(444, 641)
+        Me.cbbDiaDic.Location = New System.Drawing.Point(459, 641)
         Me.cbbDiaDic.Name = "cbbDiaDic"
         Me.cbbDiaDic.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaDic.TabIndex = 61
@@ -2250,6 +2319,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoDic
         '
+        Me.txtMontoDic.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoDic.Location = New System.Drawing.Point(264, 641)
         Me.txtMontoDic.Name = "txtMontoDic"
         Me.txtMontoDic.Size = New System.Drawing.Size(138, 20)
@@ -2266,7 +2336,7 @@ Partial Class FormularioMatricula
         'lblNov
         '
         Me.lblNov.AutoSize = True
-        Me.lblNov.Location = New System.Drawing.Point(515, 618)
+        Me.lblNov.Location = New System.Drawing.Point(530, 618)
         Me.lblNov.Name = "lblNov"
         Me.lblNov.Size = New System.Drawing.Size(71, 13)
         Me.lblNov.TabIndex = 58
@@ -2276,7 +2346,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaNov.FormattingEnabled = True
         Me.cbbDiaNov.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaNov.Location = New System.Drawing.Point(444, 615)
+        Me.cbbDiaNov.Location = New System.Drawing.Point(459, 615)
         Me.cbbDiaNov.Name = "cbbDiaNov"
         Me.cbbDiaNov.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaNov.TabIndex = 57
@@ -2284,6 +2354,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoNov
         '
+        Me.txtMontoNov.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoNov.Location = New System.Drawing.Point(264, 615)
         Me.txtMontoNov.Name = "txtMontoNov"
         Me.txtMontoNov.Size = New System.Drawing.Size(138, 20)
@@ -2300,7 +2371,7 @@ Partial Class FormularioMatricula
         'lblOctubre
         '
         Me.lblOctubre.AutoSize = True
-        Me.lblOctubre.Location = New System.Drawing.Point(515, 592)
+        Me.lblOctubre.Location = New System.Drawing.Point(530, 592)
         Me.lblOctubre.Name = "lblOctubre"
         Me.lblOctubre.Size = New System.Drawing.Size(59, 13)
         Me.lblOctubre.TabIndex = 54
@@ -2310,7 +2381,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaOctubre.FormattingEnabled = True
         Me.cbbDiaOctubre.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaOctubre.Location = New System.Drawing.Point(444, 589)
+        Me.cbbDiaOctubre.Location = New System.Drawing.Point(459, 589)
         Me.cbbDiaOctubre.Name = "cbbDiaOctubre"
         Me.cbbDiaOctubre.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaOctubre.TabIndex = 53
@@ -2318,6 +2389,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoOctubre
         '
+        Me.txtMontoOctubre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoOctubre.Location = New System.Drawing.Point(264, 589)
         Me.txtMontoOctubre.Name = "txtMontoOctubre"
         Me.txtMontoOctubre.Size = New System.Drawing.Size(138, 20)
@@ -2334,7 +2406,7 @@ Partial Class FormularioMatricula
         'lblSept
         '
         Me.lblSept.AutoSize = True
-        Me.lblSept.Location = New System.Drawing.Point(517, 566)
+        Me.lblSept.Location = New System.Drawing.Point(532, 566)
         Me.lblSept.Name = "lblSept"
         Me.lblSept.Size = New System.Drawing.Size(76, 13)
         Me.lblSept.TabIndex = 50
@@ -2344,7 +2416,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaSept.FormattingEnabled = True
         Me.cbbDiaSept.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaSept.Location = New System.Drawing.Point(444, 563)
+        Me.cbbDiaSept.Location = New System.Drawing.Point(459, 563)
         Me.cbbDiaSept.Name = "cbbDiaSept"
         Me.cbbDiaSept.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaSept.TabIndex = 49
@@ -2352,6 +2424,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoSept
         '
+        Me.txtMontoSept.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoSept.Location = New System.Drawing.Point(264, 563)
         Me.txtMontoSept.Name = "txtMontoSept"
         Me.txtMontoSept.Size = New System.Drawing.Size(138, 20)
@@ -2368,7 +2441,7 @@ Partial Class FormularioMatricula
         'lblAgosto
         '
         Me.lblAgosto.AutoSize = True
-        Me.lblAgosto.Location = New System.Drawing.Point(517, 539)
+        Me.lblAgosto.Location = New System.Drawing.Point(532, 539)
         Me.lblAgosto.Name = "lblAgosto"
         Me.lblAgosto.Size = New System.Drawing.Size(52, 13)
         Me.lblAgosto.TabIndex = 46
@@ -2378,7 +2451,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaAgosto.FormattingEnabled = True
         Me.cbbDiaAgosto.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaAgosto.Location = New System.Drawing.Point(444, 537)
+        Me.cbbDiaAgosto.Location = New System.Drawing.Point(459, 537)
         Me.cbbDiaAgosto.Name = "cbbDiaAgosto"
         Me.cbbDiaAgosto.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaAgosto.TabIndex = 45
@@ -2386,6 +2459,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoAgosto
         '
+        Me.txtMontoAgosto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoAgosto.Location = New System.Drawing.Point(264, 537)
         Me.txtMontoAgosto.Name = "txtMontoAgosto"
         Me.txtMontoAgosto.Size = New System.Drawing.Size(138, 20)
@@ -2402,7 +2476,7 @@ Partial Class FormularioMatricula
         'lblJulio
         '
         Me.lblJulio.AutoSize = True
-        Me.lblJulio.Location = New System.Drawing.Point(517, 513)
+        Me.lblJulio.Location = New System.Drawing.Point(532, 513)
         Me.lblJulio.Name = "lblJulio"
         Me.lblJulio.Size = New System.Drawing.Size(37, 13)
         Me.lblJulio.TabIndex = 42
@@ -2412,7 +2486,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaJulio.FormattingEnabled = True
         Me.cbbDiaJulio.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaJulio.Location = New System.Drawing.Point(444, 510)
+        Me.cbbDiaJulio.Location = New System.Drawing.Point(459, 510)
         Me.cbbDiaJulio.Name = "cbbDiaJulio"
         Me.cbbDiaJulio.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaJulio.TabIndex = 41
@@ -2420,6 +2494,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoJulio
         '
+        Me.txtMontoJulio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoJulio.Location = New System.Drawing.Point(264, 510)
         Me.txtMontoJulio.Name = "txtMontoJulio"
         Me.txtMontoJulio.Size = New System.Drawing.Size(138, 20)
@@ -2436,7 +2511,7 @@ Partial Class FormularioMatricula
         'lblJunio
         '
         Me.lblJunio.AutoSize = True
-        Me.lblJunio.Location = New System.Drawing.Point(515, 487)
+        Me.lblJunio.Location = New System.Drawing.Point(530, 487)
         Me.lblJunio.Name = "lblJunio"
         Me.lblJunio.Size = New System.Drawing.Size(39, 13)
         Me.lblJunio.TabIndex = 38
@@ -2446,7 +2521,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaJunio.FormattingEnabled = True
         Me.cbbDiaJunio.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaJunio.Location = New System.Drawing.Point(444, 484)
+        Me.cbbDiaJunio.Location = New System.Drawing.Point(459, 484)
         Me.cbbDiaJunio.Name = "cbbDiaJunio"
         Me.cbbDiaJunio.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaJunio.TabIndex = 37
@@ -2454,6 +2529,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoJunio
         '
+        Me.txtMontoJunio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoJunio.Location = New System.Drawing.Point(264, 484)
         Me.txtMontoJunio.Name = "txtMontoJunio"
         Me.txtMontoJunio.Size = New System.Drawing.Size(138, 20)
@@ -2470,7 +2546,7 @@ Partial Class FormularioMatricula
         'lblMayo
         '
         Me.lblMayo.AutoSize = True
-        Me.lblMayo.Location = New System.Drawing.Point(515, 460)
+        Me.lblMayo.Location = New System.Drawing.Point(530, 460)
         Me.lblMayo.Name = "lblMayo"
         Me.lblMayo.Size = New System.Drawing.Size(38, 13)
         Me.lblMayo.TabIndex = 34
@@ -2480,7 +2556,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaMayo.FormattingEnabled = True
         Me.cbbDiaMayo.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaMayo.Location = New System.Drawing.Point(444, 457)
+        Me.cbbDiaMayo.Location = New System.Drawing.Point(459, 457)
         Me.cbbDiaMayo.Name = "cbbDiaMayo"
         Me.cbbDiaMayo.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaMayo.TabIndex = 33
@@ -2488,6 +2564,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoMayo
         '
+        Me.txtMontoMayo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoMayo.Location = New System.Drawing.Point(264, 457)
         Me.txtMontoMayo.Name = "txtMontoMayo"
         Me.txtMontoMayo.Size = New System.Drawing.Size(138, 20)
@@ -2504,7 +2581,7 @@ Partial Class FormularioMatricula
         'lblAbril
         '
         Me.lblAbril.AutoSize = True
-        Me.lblAbril.Location = New System.Drawing.Point(515, 434)
+        Me.lblAbril.Location = New System.Drawing.Point(530, 434)
         Me.lblAbril.Name = "lblAbril"
         Me.lblAbril.Size = New System.Drawing.Size(38, 13)
         Me.lblAbril.TabIndex = 30
@@ -2514,7 +2591,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaAbril.FormattingEnabled = True
         Me.cbbDiaAbril.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaAbril.Location = New System.Drawing.Point(444, 431)
+        Me.cbbDiaAbril.Location = New System.Drawing.Point(459, 431)
         Me.cbbDiaAbril.Name = "cbbDiaAbril"
         Me.cbbDiaAbril.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaAbril.TabIndex = 29
@@ -2522,6 +2599,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoAbril
         '
+        Me.txtMontoAbril.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoAbril.Location = New System.Drawing.Point(264, 431)
         Me.txtMontoAbril.Name = "txtMontoAbril"
         Me.txtMontoAbril.Size = New System.Drawing.Size(138, 20)
@@ -2538,7 +2616,7 @@ Partial Class FormularioMatricula
         'lblMarzo
         '
         Me.lblMarzo.AutoSize = True
-        Me.lblMarzo.Location = New System.Drawing.Point(515, 408)
+        Me.lblMarzo.Location = New System.Drawing.Point(530, 408)
         Me.lblMarzo.Name = "lblMarzo"
         Me.lblMarzo.Size = New System.Drawing.Size(46, 13)
         Me.lblMarzo.TabIndex = 26
@@ -2548,7 +2626,7 @@ Partial Class FormularioMatricula
         '
         Me.cbbDiaMarzo.FormattingEnabled = True
         Me.cbbDiaMarzo.Items.AddRange(New Object() {"Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cbbDiaMarzo.Location = New System.Drawing.Point(444, 405)
+        Me.cbbDiaMarzo.Location = New System.Drawing.Point(459, 405)
         Me.cbbDiaMarzo.Name = "cbbDiaMarzo"
         Me.cbbDiaMarzo.Size = New System.Drawing.Size(55, 21)
         Me.cbbDiaMarzo.TabIndex = 25
@@ -2556,6 +2634,7 @@ Partial Class FormularioMatricula
         '
         'txtMontoMarzo
         '
+        Me.txtMontoMarzo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMontoMarzo.Location = New System.Drawing.Point(264, 405)
         Me.txtMontoMarzo.Name = "txtMontoMarzo"
         Me.txtMontoMarzo.Size = New System.Drawing.Size(138, 20)
@@ -2572,7 +2651,7 @@ Partial Class FormularioMatricula
         'Label114
         '
         Me.Label114.AutoSize = True
-        Me.Label114.Location = New System.Drawing.Point(299, 369)
+        Me.Label114.Location = New System.Drawing.Point(269, 372)
         Me.Label114.Name = "Label114"
         Me.Label114.Size = New System.Drawing.Size(47, 13)
         Me.Label114.TabIndex = 22
@@ -2581,7 +2660,7 @@ Partial Class FormularioMatricula
         'Label113
         '
         Me.Label113.AutoSize = True
-        Me.Label113.Location = New System.Drawing.Point(36, 369)
+        Me.Label113.Location = New System.Drawing.Point(39, 372)
         Me.Label113.Name = "Label113"
         Me.Label113.Size = New System.Drawing.Size(146, 13)
         Me.Label113.TabIndex = 21
@@ -2597,13 +2676,13 @@ Partial Class FormularioMatricula
         Me.Label112.TabIndex = 20
         Me.Label112.Text = "DETALLE DE DOCUMENTACIÓN ENTREGADA O ACEPTADA"
         '
-        'TextBox88
+        'txtNombreBanco
         '
-        Me.TextBox88.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox88.Location = New System.Drawing.Point(431, 269)
-        Me.TextBox88.Name = "TextBox88"
-        Me.TextBox88.Size = New System.Drawing.Size(185, 20)
-        Me.TextBox88.TabIndex = 19
+        Me.txtNombreBanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNombreBanco.Location = New System.Drawing.Point(431, 269)
+        Me.txtNombreBanco.Name = "txtNombreBanco"
+        Me.txtNombreBanco.Size = New System.Drawing.Size(185, 20)
+        Me.txtNombreBanco.TabIndex = 19
         '
         'Label111
         '
@@ -2614,20 +2693,21 @@ Partial Class FormularioMatricula
         Me.Label111.TabIndex = 18
         Me.Label111.Text = "Banco"
         '
-        'TextBox87
+        'txtCtaCorriente
         '
-        Me.TextBox87.Location = New System.Drawing.Point(172, 269)
-        Me.TextBox87.Name = "TextBox87"
-        Me.TextBox87.Size = New System.Drawing.Size(200, 20)
-        Me.TextBox87.TabIndex = 17
+        Me.txtCtaCorriente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCtaCorriente.Location = New System.Drawing.Point(172, 269)
+        Me.txtCtaCorriente.Name = "txtCtaCorriente"
+        Me.txtCtaCorriente.Size = New System.Drawing.Size(200, 20)
+        Me.txtCtaCorriente.TabIndex = 17
         '
-        'TextBox86
+        'txtNombreTitular
         '
-        Me.TextBox86.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox86.Location = New System.Drawing.Point(172, 231)
-        Me.TextBox86.Name = "TextBox86"
-        Me.TextBox86.Size = New System.Drawing.Size(444, 20)
-        Me.TextBox86.TabIndex = 16
+        Me.txtNombreTitular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNombreTitular.Location = New System.Drawing.Point(172, 231)
+        Me.txtNombreTitular.Name = "txtNombreTitular"
+        Me.txtNombreTitular.Size = New System.Drawing.Size(444, 20)
+        Me.txtNombreTitular.TabIndex = 16
         '
         'Label110
         '
@@ -2657,17 +2737,18 @@ Partial Class FormularioMatricula
         Me.Label108.TabIndex = 13
         Me.Label108.Text = "DATOS CUENTA CORRIENTE"
         '
-        'TextBox85
+        'txtMontoAnual
         '
-        Me.TextBox85.Location = New System.Drawing.Point(319, 157)
-        Me.TextBox85.Name = "TextBox85"
-        Me.TextBox85.Size = New System.Drawing.Size(124, 20)
-        Me.TextBox85.TabIndex = 12
+        Me.txtMontoAnual.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtMontoAnual.Location = New System.Drawing.Point(304, 157)
+        Me.txtMontoAnual.Name = "txtMontoAnual"
+        Me.txtMontoAnual.Size = New System.Drawing.Size(121, 20)
+        Me.txtMontoAnual.TabIndex = 12
         '
         'Label107
         '
         Me.Label107.AutoSize = True
-        Me.Label107.Location = New System.Drawing.Point(275, 160)
+        Me.Label107.Location = New System.Drawing.Point(285, 160)
         Me.Label107.Name = "Label107"
         Me.Label107.Size = New System.Drawing.Size(13, 13)
         Me.Label107.TabIndex = 11
@@ -2685,7 +2766,7 @@ Partial Class FormularioMatricula
         'Label105
         '
         Me.Label105.AutoSize = True
-        Me.Label105.Location = New System.Drawing.Point(22, 127)
+        Me.Label105.Location = New System.Drawing.Point(22, 133)
         Me.Label105.Name = "Label105"
         Me.Label105.Size = New System.Drawing.Size(266, 13)
         Me.Label105.TabIndex = 6
@@ -2695,7 +2776,7 @@ Partial Class FormularioMatricula
         '
         Me.Label103.AutoSize = True
         Me.Label103.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label103.Location = New System.Drawing.Point(192, 85)
+        Me.Label103.Location = New System.Drawing.Point(186, 74)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(296, 13)
         Me.Label103.TabIndex = 4
@@ -2706,7 +2787,7 @@ Partial Class FormularioMatricula
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(750, 629)
+        Me.ClientSize = New System.Drawing.Size(767, 629)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -2808,14 +2889,14 @@ Partial Class FormularioMatricula
     Friend WithEvents Label114 As System.Windows.Forms.Label
     Friend WithEvents Label113 As System.Windows.Forms.Label
     Friend WithEvents Label112 As System.Windows.Forms.Label
-    Friend WithEvents TextBox88 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreBanco As System.Windows.Forms.TextBox
     Friend WithEvents Label111 As System.Windows.Forms.Label
-    Friend WithEvents TextBox87 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox86 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCtaCorriente As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreTitular As System.Windows.Forms.TextBox
     Friend WithEvents Label110 As System.Windows.Forms.Label
     Friend WithEvents Label109 As System.Windows.Forms.Label
     Friend WithEvents Label108 As System.Windows.Forms.Label
-    Friend WithEvents TextBox85 As System.Windows.Forms.TextBox
+    Friend WithEvents txtMontoAnual As System.Windows.Forms.TextBox
     Friend WithEvents Label107 As System.Windows.Forms.Label
     Friend WithEvents Label106 As System.Windows.Forms.Label
     Friend WithEvents Label105 As System.Windows.Forms.Label
@@ -2978,4 +3059,10 @@ Partial Class FormularioMatricula
     Friend WithEvents btnLimpiar2 As System.Windows.Forms.Button
     Friend WithEvents btnLimpiar3 As System.Windows.Forms.Button
     Friend WithEvents btnLimpiar4 As System.Windows.Forms.Button
+    Friend WithEvents cbbTipoSerie As System.Windows.Forms.ComboBox
+    Friend WithEvents checkMontosIguales As System.Windows.Forms.CheckBox
+    Friend WithEvents lblSerieCheque As System.Windows.Forms.Label
+    Friend WithEvents txtNumMatri As System.Windows.Forms.TextBox
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents checkDiaFijo As System.Windows.Forms.CheckBox
 End Class

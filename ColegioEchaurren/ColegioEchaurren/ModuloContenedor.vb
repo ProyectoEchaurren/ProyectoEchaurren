@@ -51,14 +51,17 @@ Module ModuloContenedor
                               ByRef cursosRepe As String, ByRef becado As String, _
                               ByRef hermanosEstable As String, ByRef alumnoViveCon As String, ByRef numHijosFam As String, _
                               ByRef lugarocupaHijos As String, ByRef grupoFamiliarCompo As String, _
-                              ByRef antecedentesMedicos As String) As Boolean
+                              ByRef antecedentesMedicos As String, ByRef viveEspecifico As String, ByRef cursosHerm As String, ByRef NumMatri As Integer, ByRef fechamatri As DateTimePicker) As Boolean
 
 
         Try
-            Dim consultaFichaAlumno As String = "INSERT INTO `bd_echaurren`.`fichaalumno` (`ColegioPresedencia`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`) VALUES ('" & colegioPresedencia & "', '" & cursosRepe & "', '" & becado & "', '" & hermanosEstable & "', '" & alumnoViveCon & "', '" & numHijosFam & "', '" & lugarocupaHijos & "', '" & grupoFamiliarCompo & "', '" & antecedentesMedicos & "');"
+            Dim consultaFichaAlumno As String = "INSERT INTO `bd_echaurren`.`fichaalumno` (`ColegioPresedencia`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `CursosHermanos`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`, `ViveEspecifico`) VALUES ('" & colegioPresedencia & "', '" & cursosRepe & "', '" & becado & "', '" & hermanosEstable & "', '" & cursosHerm & "', '" & alumnoViveCon & "', '" & numHijosFam & "', '" & lugarocupaHijos & "', '" & grupoFamiliarCompo & "', '" & antecedentesMedicos & "', '" & viveEspecifico & "');"
             Dim comando0 As New MySqlCommand(consultaFichaAlumno, FormularioMatricula.varConexion)
             comando0.ExecuteNonQuery()
-            Dim consultaIngresoAlumn As String = "INSERT INTO `bd_echaurren`.`alumno` (`RutAlumno`, `NombreCompleto`, `ApePaterno`, `ApeMaterno`, `Sexo`, `FechaNac`, `Edad`, `Domicilio`, `SectorVilla`, `Telefono`, `Curso_idCurso`, `Comuna_idComuna`, `Fichaalumno_idFichaalumno`, `Matricula_NumMatricula`) VALUES ('" & RunAlumno & "', '" & nombresAlumno & "', '" & apellidoPatAlumno & "', '" & apellidoMatAlumno & "', '" & SexoAlumno & "', '" & fechaNacimientoAlumno.Value.ToString("dd/MM/yyyy") & "', '" & EdadAlumno & "', '" & domicilioCalleAlumn & "', '" & sectorAlumno & "', '" & telefAlumno & "', '" & curso & "', '" & comunaAlumno & "', last_insert_id(), '0121134');"
+            Dim consultaIngresoMatri As String = "INSERT INTO `bd_echaurren`.`matricula` (`NumMatricula`,`Fechamatricula`) VALUES('" & NumMatri & "', '" & fechamatri.Text & "');"
+            Dim _comando2 As New MySqlCommand(consultaIngresoMatri, FormularioMatricula.varConexion)
+            _comando2.ExecuteNonQuery()
+            Dim consultaIngresoAlumn As String = "INSERT INTO `bd_echaurren`.`alumno` (`RutAlumno`, `NombreCompleto`, `ApePaterno`, `ApeMaterno`, `Sexo`, `FechaNac`, `Edad`, `Domicilio`, `SectorVilla`, `Telefono`, `Curso_idCurso`, `Comuna_idComuna`, `Fichaalumno_idFichaalumno`, `Matricula_NumMatricula`) VALUES ('" & RunAlumno & "', '" & nombresAlumno & "', '" & apellidoPatAlumno & "', '" & apellidoMatAlumno & "', '" & SexoAlumno & "', '" & fechaNacimientoAlumno.Value.ToString("dd/MM/yyyy") & "', '" & EdadAlumno & "', '" & domicilioCalleAlumn & "', '" & sectorAlumno & "', '" & telefAlumno & "', '" & curso & "', '" & comunaAlumno & "', last_insert_id(), '" & NumMatri & "');"
             Dim _comando As New MySqlCommand(consultaIngresoAlumn, FormularioMatricula.varConexion)
             _comando.ExecuteNonQuery()
             Return True
@@ -82,7 +85,7 @@ Module ModuloContenedor
 
     End Function
 
-    Public Function RegistrarMensualidades(ByRef rut As String, ByRef mes As String, ByRef tipopago As ComboBox, ByRef monto As Integer, ByRef fechavenc As String, ByRef documento As String)
+    Public Function RegistrarMensualidades(ByRef rut As String, ByRef mes As String, ByRef tipopago As ComboBox, ByRef monto As Integer, ByRef fechavenc As String, ByRef documento As String, ByRef montoanual As Integer, ByRef titular As String, ByRef banco As String, ByRef ctacorriente As String)
         Dim varConn As MySqlConnection
         Dim varConnString = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
         Dim consulta As String = ""
@@ -97,9 +100,9 @@ Module ModuloContenedor
 
         Try
             If FormularioMatricula.cbbTipoPago.SelectedItem = "Contado" Then
-                consulta = "INSERT INTO `bd_echaurren`.`mensualidad` (`RutAlumno`, `NombreMes`, `TipoPago`, `Monto`, `FechaPago`, `Estado`, `NumDocumento`) VALUES ('" & rut & "', '" & mes & "', '" & tipopago.Text & "', '" & monto & "', '" & fechavenc & "', 'PAGADO', '" & documento & "');"
-            ElseIf FormularioMatricula.cbbTipoPago.SelectedItem = "Cheque" Or FormularioMatricula.cbbTipoPago.SelectedItem = "Cuponera" Then
-                consulta = "INSERT INTO `bd_echaurren`.`mensualidad` (`RutAlumno`, `NombreMes`, `TipoPago`, `Monto`, `FechaPago`, `Estado`, `NumDocumento`) VALUES ('" & rut & "', '" & mes & "', '" & tipopago.Text & "', '" & monto & "', '" & fechavenc & "', 'NO PAGADO', '" & documento & "');"
+                consulta = "INSERT INTO `bd_echaurren`.`mensualidad` (`RutAlumno`, `NombreMes`, `TipoPago`, `Monto`, `FechaPago`, `Estado`, `NumDocumento`, `MontoTotalAnual`, `NombreTitular`, `NumCtaCorriente`, `NombreBanco`) VALUES ('" & rut & "', '" & mes & "', '" & tipopago.Text & "', '" & monto & "', '" & fechavenc & "', 'PAGADO', '" & documento & "', '" & montoanual & "', '" & titular & "', '" & ctacorriente & "', '" & banco & "');"
+            ElseIf FormularioMatricula.cbbTipoPago.SelectedItem = "Cheque" Or FormularioMatricula.cbbTipoPago.SelectedItem = "Letra" Then
+                consulta = "INSERT INTO `bd_echaurren`.`mensualidad` (`RutAlumno`, `NombreMes`, `TipoPago`, `Monto`, `FechaPago`, `Estado`, `NumDocumento`, `MontoTotalAnual`, `NombreTitular`, `NumCtaCorriente`, `NombreBanco`) VALUES ('" & rut & "', '" & mes & "', '" & tipopago.Text & "', '" & monto & "', '" & fechavenc & "', 'NO PAGADO', '" & documento & "', '" & montoanual & "', '" & titular & "', '" & ctacorriente & "', '" & banco & "');"
             End If
 
             Dim comando As New MySqlCommand(consulta, varConn)
@@ -260,6 +263,32 @@ Module ModuloContenedor
 
         Try
             consulta = "UPDATE `bd_echaurren`.`mensualidad` SET `Estado`='PAGADO', `NumComprobante`='" & comprobante & "' WHERE `NombreMes`='" & mes & "' and RutAlumno = '" & rut & "';"
+            Dim comando As New MySqlCommand(consulta, varConn)
+            comando.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("Error al registrar el pago.")
+            Return False
+        End Try
+
+
+    End Function
+
+    Public Function DeshacerPago(ByRef comprobante As String, ByRef mes As String, ByRef rut As String) As Boolean
+        Dim varConn As MySqlConnection
+        Dim varConnString = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
+        Dim consulta As String = ""
+
+        Try
+            varConn = New MySqlConnection
+            varConn.ConnectionString = varConnString
+            varConn.Open()
+        Catch ex As Exception
+            MessageBox.Show("Error al conectar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        Try
+            consulta = "UPDATE `bd_echaurren`.`mensualidad` SET `Estado`='NO PAGADO', `NumComprobante`='" & comprobante & "' WHERE `NombreMes`='" & mes & "' and RutAlumno = '" & rut & "';"
             Dim comando As New MySqlCommand(consulta, varConn)
             comando.ExecuteNonQuery()
             Return True
@@ -960,15 +989,15 @@ Module ModuloContenedor
 
     End Function
 
-    Public Function insertarPadre(ByRef nombrePadre As String, ByRef rutPadre As String, ByRef edadPadre As String, _
+    Public Function insertarPadre(ByRef nombrePadre As String, ByRef rutPadre As String, ByRef edadPadre As Integer, _
                                    ByRef estudiosPadre As ComboBox, ByRef trabajaEnPadre As String, ByRef telefonoPadre As String, _
-                                   ByRef CargoPadre As String, ByRef direccionPadre As String, ByRef correoPadre As String) As Boolean
+                                   ByRef CargoPadre As String, ByRef direccionPadre As String, ByRef correoPadre As String, ByRef cursomax As String) As Boolean
 
 
         Try
 
-            Dim consultaPadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`) VALUES ('" & telefonoPadre & "');"
-            Dim consultaPadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `EdadResp`, `EstudiosCompletados`, `Correoelectronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutPadre & "', '" & nombrePadre & "', '" & edadPadre & "', '" & estudiosPadre.Text & "', '" & correoPadre & "', '" & trabajaEnPadre & "', '" & CargoPadre & "', last_insert_id());"
+            Dim consultaPadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`NumTrabajo`) VALUES ('" & telefonoPadre & "');"
+            Dim consultaPadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `EdadResp`, `EstudiosCompletados`, `CursoMax`, `Correoelectronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutPadre & "', '" & nombrePadre & "', '" & edadPadre & "', '" & estudiosPadre.Text & "', '" & cursomax & "', '" & correoPadre & "', '" & trabajaEnPadre & "', '" & CargoPadre & "', last_insert_id());"
             Dim consultaPadre3 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionTrabajo`) VALUES ('" & direccionPadre & "');"
             Dim consultaPadre4 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutPadre & "';"
 
@@ -988,14 +1017,14 @@ Module ModuloContenedor
         End Try
     End Function
 
-    Public Function insertarMadre(ByRef nombreMadre As String, ByRef rutMadre As String, ByRef edadMadre As String, _
+    Public Function insertarMadre(ByRef nombreMadre As String, ByRef rutMadre As String, ByRef edadMadre As Integer, _
                                    ByRef estudiosMadre As ComboBox, ByRef trabajaEnMadre As String, ByRef telefonoMadre As String, _
-                                   ByRef CargoMadre As String, ByRef direccionMadre As String, ByRef correoMadre As String) As Boolean
+                                   ByRef CargoMadre As String, ByRef direccionMadre As String, ByRef correoMadre As String, ByRef cursomax As String) As Boolean
 
 
         Try
-            Dim consultaMadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`) VALUES ('" & telefonoMadre & "');"
-            Dim consultaMadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `EdadResp`, `EstudiosCompletados`, `Correoelectronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutMadre & "', '" & nombreMadre & "', '" & edadMadre & "', '" & estudiosMadre.Text & "', '" & correoMadre & "', '" & trabajaEnMadre & "', '" & CargoMadre & "', last_insert_id());"
+            Dim consultaMadre As String = "INSERT INTO `bd_echaurren`.`telefono` (`NumTrabajo`) VALUES ('" & telefonoMadre & "');"
+            Dim consultaMadre2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `EdadResp`, `EstudiosCompletados`, `CursoMax`, `Correoelectronico`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutMadre & "', '" & nombreMadre & "', '" & edadMadre & "', '" & estudiosMadre.Text & "', '" & cursomax & "', '" & correoMadre & "', '" & trabajaEnMadre & "', '" & CargoMadre & "', last_insert_id());"
             Dim consultaMadre3 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionTrabajo`) VALUES ('" & direccionMadre & "');"
             Dim consultaMadre4 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutMadre & "';"
 
@@ -1044,7 +1073,7 @@ Module ModuloContenedor
 
     Public Function insertarResponsableCompleto(ByRef rutResponsable As String, ByRef nombreComleto As String, ByRef telefono1 As String, _
                                                 ByRef telefono2 As String, ByRef telefonoTrabajo As String, ByRef direccionPart As String, _
-                                               ByRef direccionTrab As String, ByRef edad As String, ByRef estudiosCompl As ComboBox, _
+                                               ByRef direccionTrab As String, ByRef edad As Integer, ByRef estudiosCompl As ComboBox, _
                                                ByRef Correo As String, ByRef profesion As String, ByRef trabajo As String, _
                                                ByRef cargo As String) As Boolean
 
@@ -1071,10 +1100,10 @@ Module ModuloContenedor
     End Function
 
     Public Function insertarAlumno_respons(ByRef rutResponsable As String, ByRef rutAlumno As String, ByRef tipoResp As String, _
-                                           ByRef apoderado As Integer, ByRef apodSuplente As Integer) As Boolean
+                                           ByRef apoderado As Integer, ByRef apodSuplente As Integer, ByRef numMatri As String) As Boolean
 
         Try
-            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Matricula_NumMatricula`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '121134');"
+            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Matricula_NumMatricula`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & numMatri & "');"
             Dim _comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
             _comando.ExecuteNonQuery()
             '  MessageBox.Show("relacion responsable - alumno exitosa")
@@ -1088,10 +1117,10 @@ Module ModuloContenedor
 
     Public Function insertarAlumno_respons_tutor(ByRef rutResponsable As String, ByRef rutAlumno As String, ByRef tipoResp As String, _
                                            ByRef apoderado As Integer, ByRef apodSuplente As Integer, _
-                                           ByRef OtroTutor As String) As Boolean
+                                           ByRef OtroTutor As String, ByRef numMatri As String) As Boolean
 
         Try
-            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Otro_tutor`, `Matricula_NumMatricula`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & OtroTutor & "', '121134');"
+            Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Otro_tutor`, `Matricula_NumMatricula`) VALUES ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & OtroTutor & "', '" & numMatri & "');"
             Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
             comando.ExecuteNonQuery()
             ' MessageBox.Show("relacion responsable, tutor - alumno exitosa")
@@ -1105,13 +1134,13 @@ Module ModuloContenedor
 
 
     Public Function insertarOtroApod(ByRef rutOtroApod As String, ByRef rutAlumno As String, ByRef apoderado As Integer, _
-                                     ByRef apodSuplente As Integer, ByRef nombreOtroResp As String) As Boolean
+                                     ByRef apodSuplente As Integer, ByRef nombreOtroResp As String, ByRef numMatri As String) As Boolean
 
         Try
 
             Dim tipoResp As String = "tr4"
             Dim consulta As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`) VALUES ('" & rutOtroApod & "', '" & nombreOtroResp & "');"
-            Dim consulta1 As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Matricula_NumMatricula`) VALUES ('" & rutOtroApod & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '121134');"
+            Dim consulta1 As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Matricula_NumMatricula`) VALUES ('" & rutOtroApod & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & numMatri & "');"
 
             Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
             comando.ExecuteNonQuery()
@@ -1209,12 +1238,14 @@ Module ModuloContenedor
 
 
     Public Function AutollenarFormulario(ByRef RutAlumno As String, ByRef conexion As MySqlConnection)
+        Dim varDia As Date
         Try
-            Dim consulta As String = "select * from alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join comuna on alumno.Comuna_idComuna = comuna.idComuna inner join fichaalumno on alumno.fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud inner join contacto_emergencia ON alumno.RutAlumno = contacto_emergencia.Alumno_RutAlumno inner join responsable inner join responsable_alumno on responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join telefono on responsable.Telefono_idTelefono = telefono.idTelefono inner join direccion on responsable.Direccion_idDireccion = direccion.idDireccion where alumno.RutAlumno = '" & RutAlumno & "'"
+            Dim consulta As String = "select * from alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join comuna on alumno.Comuna_idComuna = comuna.idComuna inner join fichaalumno on alumno.fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud inner join contacto_emergencia ON alumno.RutAlumno = contacto_emergencia.Alumno_RutAlumno inner join responsable inner join responsable_alumno on responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join telefono on responsable.Telefono_idTelefono = telefono.idTelefono inner join direccion on responsable.Direccion_idDireccion = direccion.idDireccion inner join mensualidad on alumno.RutAlumno = mensualidad.RutAlumno where alumno.RutAlumno = '" & RutAlumno & "'"
             Dim _dataAdapter As New MySqlDataAdapter(consulta, conexion)
             Dim _dataSet As New DataSet
 
             _dataAdapter.Fill(_dataSet)
+            FormularioMatricula.txtNumMatri.Text = _dataSet.Tables(0).Rows("0")("Matricula_NumMatricula").ToString
             FormularioMatricula.txtApePatAlumno.Text = _dataSet.Tables(0).Rows("0")("ApePaterno").ToString
             FormularioMatricula.txtApeMatAlumno.Text = _dataSet.Tables(0).Rows("0")("ApeMaterno").ToString
             FormularioMatricula.txtNombresAlumno.Text = _dataSet.Tables(0).Rows("0")("NombreCompleto").ToString
@@ -1233,15 +1264,15 @@ Module ModuloContenedor
             FormularioMatricula.comboComuna.Text = _dataSet.Tables(0).Rows("0")("Comuna").ToString
             FormularioMatricula.txtColegioPrese.Text = _dataSet.Tables(0).Rows("0")("ColegioPresedencia").ToString
             FormularioMatricula.txtCursosRepetidos.Text = _dataSet.Tables(0).Rows("0")("CursosRepetidos").ToString
-            If _dataSet.Tables(0).Rows("0")("HermanosEstablecimiento").ToString = "" Then
+            If _dataSet.Tables(0).Rows("0")("HermanosEstablecimiento").ToString = "NULL" Then
                 FormularioMatricula.radioHermanosNo.Checked = True
             Else
                 FormularioMatricula.radioHermanosSi.Checked = True
-                FormularioMatricula.txtHermanosCursos.Text = _dataSet.Tables(0).Rows("0")("HermanosEstablecimiento").ToString
+                FormularioMatricula.txtHermanosCursos.Text = _dataSet.Tables(0).Rows("0")("CursosHermanos").ToString
             End If
-            If FormularioMatricula.cbViveCon.Text = "Otros (especificar)" Then
-                FormularioMatricula.cbViveCon.Text = "Otros (especificar)"
-                FormularioMatricula.txtViveConOtros.Text = _dataSet.Tables(0).Rows("0")("AlumnoViveCon").ToString
+            If _dataSet.Tables(0).Rows("0")("AlumnoViveCon").ToString = "Otros" Then
+                FormularioMatricula.cbViveCon.Text = "Otros"
+                FormularioMatricula.txtViveConOtros.Text = _dataSet.Tables(0).Rows("0")("ViveEspecifico").ToString
             Else
                 FormularioMatricula.cbViveCon.Text = _dataSet.Tables(0).Rows("0")("AlumnoViveCon").ToString
             End If
@@ -1258,68 +1289,207 @@ Module ModuloContenedor
                 FormularioMatricula.comboServSalud.Text = _dataSet.Tables(0).Rows("0")("PlanSalud").ToString
                 FormularioMatricula.txtSeguros.Text = _dataSet.Tables(0).Rows("0")("Seguros").ToString
             End If
-            If _dataSet.Tables(0).Rows.Count = 1 Then
-                FormularioMatricula.ComboBox1.Text = "1 Contacto"
-                FormularioMatricula.txtNombreContacto.Text = _dataSet.Tables(0).Rows("0")("NombreContacto").ToString
-                FormularioMatricula.txtNumContacto.Text = _dataSet.Tables(0).Rows("0")("Numero").ToString
-            ElseIf _dataSet.Tables(0).Rows.Count = 2 Then
-                FormularioMatricula.ComboBox1.Text = "2 Contactos"
-                FormularioMatricula.txtNombreContacto.Text = _dataSet.Tables(0).Rows("0")("NombreContacto").ToString
-                FormularioMatricula.txtNumContacto.Text = _dataSet.Tables(0).Rows("0")("Numero").ToString
-                FormularioMatricula.txtNombreContacto2.Text = _dataSet.Tables(0).Rows("1")("NombreContacto").ToString
-                FormularioMatricula.txtNumContacto2.Text = _dataSet.Tables(0).Rows("1")("Numero").ToString
-            Else
-                FormularioMatricula.ComboBox1.Text = "3 Contactos"
-                FormularioMatricula.txtNombreContacto.Text = _dataSet.Tables(0).Rows("0")("NombreContacto").ToString
-                FormularioMatricula.txtNumContacto.Text = _dataSet.Tables(0).Rows("0")("Numero").ToString
-                FormularioMatricula.txtNombreContacto2.Text = _dataSet.Tables(0).Rows("1")("NombreContacto").ToString
-                FormularioMatricula.txtNumContacto2.Text = _dataSet.Tables(0).Rows("1")("Numero").ToString
-                FormularioMatricula.txtNombreContacto3.Text = _dataSet.Tables(0).Rows("2")("NombreContacto").ToString
-                FormularioMatricula.txtNumContacto3.Text = _dataSet.Tables(0).Rows("2")("Numero").ToString
+
+            _dataSet.Clear()
+            _dataAdapter.SelectCommand = New MySqlCommand("SELECT count(*) as total FROM contacto_emergencia WHERE Alumno_RutAlumno = '" & RutAlumno & "'", conexion)
+            _dataAdapter.Fill(_dataSet)
+            Dim total As Integer = _dataSet.Tables(0).Rows("0")("total").ToString()
+            If total <> 0 Then
+                For i = 1 To total
+                    _dataAdapter.SelectCommand = New MySqlCommand("SELECT idContacto_emergencia, NombreContacto, Numero FROM contacto_emergencia WHERE Alumno_RutAlumno = '" & RutAlumno & "'", conexion)
+                    _dataAdapter.Fill(_dataSet)
+
+                    If total = 1 Then
+                        FormularioMatricula.ComboBox1.Text = "1 Contacto"
+                        FormularioMatricula.txtNombreContacto.Text = _dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                        FormularioMatricula.txtNumContacto.Text = _dataSet.Tables(0).Rows(i)("Numero").ToString
+                        FormularioMatricula.varidCont1 = _dataSet.Tables(0).Rows(i)("idContacto_emergencia").ToString
+                    ElseIf total = 2 Then
+                        FormularioMatricula.ComboBox1.Text = "2 Contactos"
+                        If i = "1" Then
+                            FormularioMatricula.txtNombreContacto.Text = _dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                            FormularioMatricula.txtNumContacto.Text = _dataSet.Tables(0).Rows(i)("Numero").ToString
+                            FormularioMatricula.varidCont1 = _dataSet.Tables(0).Rows(i)("idContacto_emergencia").ToString
+                        ElseIf i = "2" Then
+                            FormularioMatricula.txtNombreContacto2.Text = _dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                            FormularioMatricula.txtNumContacto2.Text = _dataSet.Tables(0).Rows(i)("Numero").ToString
+                            FormularioMatricula.varidCont2 = _dataSet.Tables(0).Rows(i)("idContacto_emergencia").ToString
+                        End If
+                    ElseIf total = 3 Then
+                        FormularioMatricula.ComboBox1.Text = "3 Contactos"
+                        If i = "1" Then
+                            FormularioMatricula.txtNombreContacto.Text = _dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                            FormularioMatricula.txtNumContacto.Text = _dataSet.Tables(0).Rows(i)("Numero").ToString
+                            FormularioMatricula.varidCont1 = _dataSet.Tables(0).Rows(i)("idContacto_emergencia").ToString
+                        ElseIf i = "2" Then
+                            FormularioMatricula.txtNombreContacto2.Text = _dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                            FormularioMatricula.txtNumContacto2.Text = _dataSet.Tables(0).Rows(i)("Numero").ToString
+                            FormularioMatricula.varidCont2 = _dataSet.Tables(0).Rows(i)("idContacto_emergencia").ToString
+                        ElseIf i = "3" Then
+                            FormularioMatricula.txtNombreContacto3.Text = _dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                            FormularioMatricula.txtNumContacto3.Text = _dataSet.Tables(0).Rows(i)("Numero").ToString
+                            FormularioMatricula.varidCont3 = _dataSet.Tables(0).Rows(i)("idContacto_emergencia").ToString
+                        End If
+                    Else
+                        MsgBox("No se especificaron Contactos de Emergencia, trate de ingresar al menos uno.")
+                    End If
+
+                Next i
             End If
-            While _dataSet.Tables(0).Rows("0")("Tipo_responsable_idTipo_responsable").ToString <> ""
-                While _dataSet.Tables(0).Rows("0")("Tipo_responsable_idTipo_responsable").ToString = "tr1"
-                    FormularioMatricula.txtNombrePadre.Text = _dataSet.Tables(0).Rows("0")("NombreCompleto").ToString
-                    FormularioMatricula.txtRutPadre.Text = _dataSet.Tables(0).Rows("0")("RutResponsable").ToString
-                    FormularioMatricula.txtEdadPadre.Text = _dataSet.Tables(0).Rows("0")("EdadResp").ToString
-                    FormularioMatricula.cbEstudiosPadre.Text = _dataSet.Tables(0).Rows("0")("EstudiosCompletados").ToString
-                    FormularioMatricula.txtTrabajaenPadre.Text = _dataSet.Tables(0).Rows("0")("Trabajo").ToString
-                    FormularioMatricula.txtCargoPadre.Text = _dataSet.Tables(0).Rows("0")("Cargo").ToString
-                    FormularioMatricula.txtTelefonoPadre.Text = _dataSet.Tables(0).Rows("0")("NumTrabajo").ToString
-                    FormularioMatricula.txtDireccionPadre.Text = _dataSet.Tables(0).Rows("0")("DireccionTrabajo").ToString
-                    FormularioMatricula.txtCorreoPadre.Text = _dataSet.Tables(0).Rows("0")("Correoelectronico").ToString
-                    FormularioMatricula.checkpadre.Checked = True
-                    Exit While
-                End While
 
-                While _dataSet.Tables(0).Rows("0")("Tipo_responsable_idTipo_responsable").ToString = "tr2"
-                    FormularioMatricula.txtNombreMadre.Text = _dataSet.Tables(0).Rows("0")("NombreCompleto").ToString
-                    FormularioMatricula.txtRutMadre.Text = _dataSet.Tables(0).Rows("0")("RutResponsable").ToString
-                    FormularioMatricula.txtEdadMadre.Text = _dataSet.Tables(0).Rows("0")("EdadResp").ToString
-                    FormularioMatricula.cbEstudiosMadre.Text = _dataSet.Tables(0).Rows("0")("EstudiosCompletados").ToString
-                    FormularioMatricula.txtTrabajaenMadre.Text = _dataSet.Tables(0).Rows("0")("Trabajo").ToString
-                    FormularioMatricula.txtCargoMadre.Text = _dataSet.Tables(0).Rows("0")("Cargo").ToString
-                    FormularioMatricula.txtTelefonoMadre.Text = _dataSet.Tables(0).Rows("0")("NumTrabajo").ToString
-                    FormularioMatricula.txtDireccionMadre.Text = _dataSet.Tables(0).Rows("0")("DireccionTrabajo").ToString
-                    FormularioMatricula.txtCorreoMadre.Text = _dataSet.Tables(0).Rows("0")("Correo electronico").ToString
-                    FormularioMatricula.checkmadre.Checked = True
-                    Exit While
-                End While
+            _dataSet.Clear()
+            _dataAdapter.SelectCommand = New MySqlCommand("SELECT count(*) as total FROM responsable inner join responsable_alumno ON responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join tipo_responsable ON responsable_alumno.Tipo_responsable_idTipo_responsable = tipo_responsable.idTipo_responsable WHERE Alumno_RutAlumno = '" & RutAlumno & "'", conexion)
+            _dataAdapter.Fill(_dataSet)
+            total = _dataSet.Tables(0).Rows("0")("total").ToString()
+            If total <> 0 Then
+                For i = 1 To total
+                    _dataAdapter.SelectCommand = New MySqlCommand("SELECT * FROM responsable inner join responsable_alumno ON responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join tipo_responsable ON responsable_alumno.Tipo_responsable_idTipo_responsable = tipo_responsable.idTipo_responsable inner join direccion ON responsable.Direccion_idDireccion = direccion.idDireccion inner join telefono ON responsable.Telefono_idTelefono = telefono.idTelefono WHERE Alumno_RutAlumno = '" & RutAlumno & "'", conexion)
+                    _dataAdapter.Fill(_dataSet)
 
-                Exit While
-            End While
-            '  _dataAdapter9.Fill(_dataSet)
-            '   FormularioMatricula.txtNombreTutor.Text = _dataSet.Tables(0).Rows("0")("NombreCompleto").ToString
-            '  FormularioMatricula.txtRut.Text = _dataSet.Tables(0).Rows("0")("RutResponsable").ToString
-            ' FormularioMatricula.txtTelefonoPart.Text = _dataSet.Tables(0).Rows("0")("Num1").ToString
-            'FormularioMatricula.txtTelefonoPart2.Text = _dataSet.Tables(0).Rows("0")("Num2").ToString
-            'FormularioMatricula.txtTelefonoTrabajo.Text = _dataSet.Tables(0).Rows("0")("Num2").ToString
-            'FormularioMatricula.txtDomicilio.Text = _dataSet.Tables(0).Rows("0")("DireccionParticular").ToString
-            'FormularioMatricula.txtLugarDeTrabajo.Text = _dataSet.Tables(0).Rows("0")("Trabajo").ToString
-            'FormularioMatricula.txtOcupacionAct.Text = _dataSet.Tables(0).Rows("0")("Cargo").ToString
-            'FormularioMatricula.txtProfesion.Text = _dataSet.Tables(0).Rows("0")("Profesion").ToString
+                    If _dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "tutor economico" Then
+                        FormularioMatricula.txtRut.Text = _dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                        FormularioMatricula.txtNombreTutor.Text = _dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        FormularioMatricula.txtTelefonoTrabajo.Text = _dataSet.Tables(0).Rows(i)("NumTrabajo").ToString
+                        FormularioMatricula.txtLugarDeTrabajo.Text = _dataSet.Tables(0).Rows(i)("Trabajo").ToString
+                        FormularioMatricula.txtProfesion.Text = _dataSet.Tables(0).Rows(i)("Profesion").ToString
+                        FormularioMatricula.txtOcupacionAct.Text = _dataSet.Tables(0).Rows(i)("Cargo").ToString
+                        FormularioMatricula.txtDomicilio.Text = _dataSet.Tables(0).Rows(i)("DireccionParticular").ToString
+                        FormularioMatricula.txtTelefonoPart.Text = _dataSet.Tables(0).Rows(i)("Num1").ToString
+                        FormularioMatricula.txtTelefonoPart2.Text = _dataSet.Tables(0).Rows(i)("Num2").ToString
+                        FormularioMatricula.txtOtro.Text = _dataSet.Tables(0).Rows(i)("Otro_tutor").ToString
+                        If FormularioMatricula.txtOtro.Text <> "" Then
+                            FormularioMatricula.RadioButton14.Checked = True
+                        End If
+                        If FormularioMatricula.txtRut.Text = FormularioMatricula.txtRutPadre.Text Then
+                            FormularioMatricula.RadioButton9.Checked = True
+                        ElseIf FormularioMatricula.txtRut.Text = FormularioMatricula.txtRutMadre.Text Then
+                            FormularioMatricula.RadioButton13.Checked = True
+                        End If
+                    ElseIf _dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "padre" Then
+                        FormularioMatricula.txtNombrePadre.Text = _dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        FormularioMatricula.txtRutPadre.Text = _dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                        FormularioMatricula.txtEdadPadre.Text = _dataSet.Tables(0).Rows(i)("EdadResp").ToString
+                        FormularioMatricula.cbEstudiosPadre.Text = _dataSet.Tables(0).Rows(i)("EstudiosCompletados").ToString
+                        FormularioMatricula.txtEstudiosPadre.Text = _dataSet.Tables(0).Rows(i)("CursoMax").ToString
+                        FormularioMatricula.txtTrabajaenPadre.Text = _dataSet.Tables(0).Rows(i)("Trabajo").ToString
+                        FormularioMatricula.txtCargoPadre.Text = _dataSet.Tables(0).Rows(i)("Cargo").ToString
+                        FormularioMatricula.txtTelefonoPadre.Text = _dataSet.Tables(0).Rows(i)("NumTrabajo").ToString
+                        FormularioMatricula.txtDireccionPadre.Text = _dataSet.Tables(0).Rows(i)("DireccionTrabajo").ToString
+                        FormularioMatricula.txtCorreoPadre.Text = _dataSet.Tables(0).Rows(i)("Correoelectronico").ToString
+                        If _dataSet.Tables(0).Rows(i)("Apoderado").ToString = True Then
+                            FormularioMatricula.txtNombreApoderado.Text = _dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                            FormularioMatricula.txtRutOtroApod.Text = _dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                            FormularioMatricula.cbApoderado.Text = "Padre"
+                        ElseIf _dataSet.Tables(0).Rows(i)("ApoderadoSuplente").ToString = True Then
+                            FormularioMatricula.txtNombreApodSuplent.Text = _dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                            FormularioMatricula.txtRutOtroApodSuple.Text = _dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                            FormularioMatricula.cbApoSuplente.Text = "Padre"
+                        End If
+                        FormularioMatricula.checkpadre.Checked = True
+                    ElseIf _dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "madre" Then
+                        FormularioMatricula.txtNombreMadre.Text = _dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        FormularioMatricula.txtRutMadre.Text = _dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                        FormularioMatricula.txtEdadMadre.Text = _dataSet.Tables(0).Rows(i)("EdadResp").ToString
+                        FormularioMatricula.cbEstudiosMadre.Text = _dataSet.Tables(0).Rows(i)("EstudiosCompletados").ToString
+                        FormularioMatricula.txtEstudiosMadre.Text = _dataSet.Tables(0).Rows(i)("CursoMax").ToString
+                        FormularioMatricula.txtTrabajaenMadre.Text = _dataSet.Tables(0).Rows(i)("Trabajo").ToString
+                        FormularioMatricula.txtCargoMadre.Text = _dataSet.Tables(0).Rows(i)("Cargo").ToString
+                        FormularioMatricula.txtTelefonoMadre.Text = _dataSet.Tables(0).Rows(i)("NumTrabajo").ToString
+                        FormularioMatricula.txtDireccionMadre.Text = _dataSet.Tables(0).Rows(i)("DireccionTrabajo").ToString
+                        FormularioMatricula.txtCorreoMadre.Text = _dataSet.Tables(0).Rows(i)("Correoelectronico").ToString
+                        If _dataSet.Tables(0).Rows(i)("Apoderado").ToString = True Then
+                            FormularioMatricula.txtNombreApoderado.Text = _dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                            FormularioMatricula.txtRutOtroApod.Text = _dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                            FormularioMatricula.cbApoderado.Text = "Madre"
+                        ElseIf _dataSet.Tables(0).Rows(i)("ApoderadoSuplente").ToString = True Then
+                            FormularioMatricula.txtNombreApodSuplent.Text = _dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                            FormularioMatricula.txtRutOtroApodSuple.Text = _dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                            FormularioMatricula.cbApoSuplente.Text = "Madre"
+                        End If
+                        FormularioMatricula.checkmadre.Checked = True
+                    ElseIf _dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "otro" Then
+                        If _dataSet.Tables(0).Rows(i)("Apoderado").ToString = True Then
+                            FormularioMatricula.txtNombreApoderado.Text = _dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                            FormularioMatricula.txtRutOtroApod.Text = _dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                            FormularioMatricula.cbApoSuplente.Text = "Otro"
+                        ElseIf _dataSet.Tables(0).Rows(i)("ApoderadoSuplente").ToString = True Then
+                            FormularioMatricula.txtNombreApodSuplent.Text = _dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                            FormularioMatricula.txtRutOtroApodSuple.Text = _dataSet.Tables(0).Rows(i)("RutResponsable").ToString
+                            FormularioMatricula.cbApoSuplente.Text = "Otro"
+                        End If
+                    End If
 
+                Next i
+            End If
 
+                    _dataSet.Clear()
+                    _dataAdapter.SelectCommand = New MySqlCommand("SELECT count(*) as total FROM mensualidad WHERE RutAlumno = '" & RutAlumno & "'", conexion)
+                    _dataAdapter.Fill(_dataSet)
+                    total = _dataSet.Tables(0).Rows("0")("total").ToString()
+                    If total <> 0 Then
+                        For i = 1 To total
+                    _dataAdapter.SelectCommand = New MySqlCommand("SELECT * FROM mensualidad WHERE RutAlumno = '" & RutAlumno & "'", conexion)
+                            _dataAdapter.Fill(_dataSet)
+
+                    FormularioMatricula.cbbTipoPago.Text = _dataSet.Tables(0).Rows(i)("TipoPago").ToString
+                    FormularioMatricula.txtMontoAnual.Text = _dataSet.Tables(0).Rows(i)("MontoTotalAnual").ToString
+                    FormularioMatricula.txtNombreTitular.Text = _dataSet.Tables(0).Rows(i)("NombreTitular").ToString
+                    FormularioMatricula.txtNombreBanco.Text = _dataSet.Tables(0).Rows(i)("NombreBanco").ToString
+                    FormularioMatricula.txtCtaCorriente.Text = _dataSet.Tables(0).Rows(i)("NumCtaCorriente").ToString
+
+                            If _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "MARZO" Then
+                        FormularioMatricula.txtMontoMarzo.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocMarzo.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaMarzo.Text = varDia.Day
+                            ElseIf _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "ABRIL" Then
+                        FormularioMatricula.txtMontoAbril.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocAbril.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaAbril.Text = varDia.Day
+                            ElseIf _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "MAYO" Then
+                        FormularioMatricula.txtMontoMayo.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocMayo.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaMayo.Text = varDia.Day
+                            ElseIf _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "JUNIO" Then
+                        FormularioMatricula.txtMontoJunio.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocJunio.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaJunio.Text = varDia.Day
+                            ElseIf _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "JULIO" Then
+                        FormularioMatricula.txtMontoJulio.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocJulio.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaJulio.Text = varDia.Day
+                            ElseIf _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "AGOSTO" Then
+                        FormularioMatricula.txtMontoAgosto.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocAgosto.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaAgosto.Text = varDia.Day
+                            ElseIf _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "SEPTIEMBRE" Then
+                        FormularioMatricula.txtMontoSept.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocSept.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaSept.Text = varDia.Day
+                            ElseIf _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "OCTUBRE" Then
+                        FormularioMatricula.txtMontoOctubre.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocOctubre.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaOctubre.Text = varDia.Day
+                            ElseIf _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "NOVIEMBRE" Then
+                        FormularioMatricula.txtMontoNov.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocNov.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaNov.Text = varDia.Day
+                            ElseIf _dataSet.Tables(0).Rows(i)("NombreMes").ToString = "DICIEMBRE" Then
+                        FormularioMatricula.txtMontoDic.Text = _dataSet.Tables(0).Rows(i)("Monto").ToString
+                        FormularioMatricula.txtDocDic.Text = _dataSet.Tables(0).Rows(i)("NumDocumento").ToString
+                                varDia = _dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                                FormularioMatricula.cbbDiaDic.Text = varDia.Day
+                            End If
+                        Next i
+                    End If
 
         Catch ex As Exception
             MessageBox.Show("Alumno no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -1562,35 +1732,961 @@ Module ModuloContenedor
         If ImprimirPlanillas.checkRut.Checked = True Then
             If ImprimirPlanillas.checkNombre.Checked = True Then
                 If ImprimirPlanillas.checkApellidos.Checked = True Then
-                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno FROM alumno", conn)
+                    If ImprimirPlanillas.checkEdad.Checked = True Then
+                        If ImprimirPlanillas.checkSexo.Checked = True Then
+                            If ImprimirPlanillas.checkCurso.Checked = True Then
+                                If ImprimirPlanillas.checkBecas.Checked = True Then
+                                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                                    Else
+                                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                                    End If
+                                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                                Else
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                                End If
+                            ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                                If ImprimirPlanillas.checkSalud.Checked = True Then
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                                Else
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                                End If
+                            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo FROM alumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                            If ImprimirPlanillas.checkBecas.Checked = True Then
+                                If ImprimirPlanillas.checkSalud.Checked = True Then
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                                Else
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                                End If
+                            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad FROM alumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSexo.Checked = True Then
+                        If ImprimirPlanillas.checkCurso.Checked = True Then
+                            If ImprimirPlanillas.checkBecas.Checked = True Then
+                                If ImprimirPlanillas.checkSalud.Checked = True Then
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                                Else
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                                End If
+                            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Sexo FROM alumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkEdad.Checked = True Then
+                    If ImprimirPlanillas.checkSexo.Checked = True Then
+                        If ImprimirPlanillas.checkCurso.Checked = True Then
+                            If ImprimirPlanillas.checkBecas.Checked = True Then
+                                If ImprimirPlanillas.checkSalud.Checked = True Then
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                                Else
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                                End If
+                            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Sexo, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Sexo FROM alumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Edad FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSexo.Checked = True Then
+                    If ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Sexo FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
                 Else
                     adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto FROM alumno", conn)
                 End If
             ElseIf ImprimirPlanillas.checkApellidos.Checked = True Then
-                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno FROM alumno", conn)
+                If ImprimirPlanillas.checkEdad.Checked = True Then
+                    If ImprimirPlanillas.checkSexo.Checked = True Then
+                        If ImprimirPlanillas.checkCurso.Checked = True Then
+                            If ImprimirPlanillas.checkBecas.Checked = True Then
+                                If ImprimirPlanillas.checkSalud.Checked = True Then
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                                Else
+                                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                                End If
+                            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Sexo, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Sexo FROM alumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Edad FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSexo.Checked = True Then
+                    If ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Sexo FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, ApePaterno, ApeMaterno FROM alumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkEdad.Checked = True Then
+                If ImprimirPlanillas.checkSexo.Checked = True Then
+                    If ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Sexo, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Sexo FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Edad FROM alumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkSexo.Checked = True Then
+                If ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Sexo FROM alumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                If ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                If ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select RutAlumno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
             Else
                 adapter.SelectCommand = New MySqlCommand("Select RutAlumno FROM alumno", conn)
             End If
-            ElseIf ImprimirPlanillas.checkNombre.Checked = True Then
-                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto FROM alumno", conn)
-            ElseIf ImprimirPlanillas.checkApellidos.Checked = True Then
-                adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno FROM alumno", conn)
+        ElseIf ImprimirPlanillas.checkNombre.Checked = True Then
+            If ImprimirPlanillas.checkApellidos.Checked = True Then
+                If ImprimirPlanillas.checkEdad.Checked = True Then
+                    If ImprimirPlanillas.checkSexo.Checked = True Then
+                        If ImprimirPlanillas.checkCurso.Checked = True Then
+                            If ImprimirPlanillas.checkBecas.Checked = True Then
+                                If ImprimirPlanillas.checkSalud.Checked = True Then
+                                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                                Else
+                                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                                End If
+                            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo FROM alumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Edad FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSexo.Checked = True Then
+                    If ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Sexo FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, ApePaterno, ApeMaterno FROM alumno", conn)
+                End If
             ElseIf ImprimirPlanillas.checkEdad.Checked = True Then
-                adapter.SelectCommand = New MySqlCommand("Select Edad FROM alumno", conn)
+                If ImprimirPlanillas.checkSexo.Checked = True Then
+                    If ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Sexo, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Sexo FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Edad FROM alumno", conn)
+                End If
             ElseIf ImprimirPlanillas.checkSexo.Checked = True Then
-                adapter.SelectCommand = New MySqlCommand("Select Sexo FROM alumno", conn)
+                If ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Sexo FROM alumno", conn)
+                End If
             ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
-                adapter.SelectCommand = New MySqlCommand("Select Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                If ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                End If
             ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
-                adapter.SelectCommand = New MySqlCommand("Select Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                If ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                End If
             ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
-                adapter.SelectCommand = New MySqlCommand("Select PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
             Else
-                adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                adapter.SelectCommand = New MySqlCommand("Select NombreCompleto FROM alumno", conn)
+            End If
+        ElseIf ImprimirPlanillas.checkApellidos.Checked = True Then
+            If ImprimirPlanillas.checkEdad.Checked = True Then
+                If ImprimirPlanillas.checkSexo.Checked = True Then
+                    If ImprimirPlanillas.checkCurso.Checked = True Then
+                        If ImprimirPlanillas.checkBecas.Checked = True Then
+                            If ImprimirPlanillas.checkSalud.Checked = True Then
+                                adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                            Else
+                                adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                            End If
+                        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Sexo, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Sexo FROM alumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Edad FROM alumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkSexo.Checked = True Then
+                If ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Sexo FROM alumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                If ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                If ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+            Else
+                adapter.SelectCommand = New MySqlCommand("Select ApePaterno, ApeMaterno FROM alumno", conn)
+            End If
+        ElseIf ImprimirPlanillas.checkEdad.Checked = True Then
+            If ImprimirPlanillas.checkSexo.Checked = True Then
+                If ImprimirPlanillas.checkCurso.Checked = True Then
+                    If ImprimirPlanillas.checkBecas.Checked = True Then
+                        If ImprimirPlanillas.checkSalud.Checked = True Then
+                            adapter.SelectCommand = New MySqlCommand("Select Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                        Else
+                            adapter.SelectCommand = New MySqlCommand("Select Edad, Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                        End If
+                    ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select Edad, Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select Edad, Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select Edad, Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select Edad, Sexo, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select Edad, Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select Edad, Sexo FROM alumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+                If ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select Edad, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select Edad, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select Edad, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select Edad, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                If ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select Edad, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select Edad, Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("Select Edad, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+            Else
+                adapter.SelectCommand = New MySqlCommand("Select Edad FROM alumno", conn)
+            End If
+        ElseIf ImprimirPlanillas.checkSexo.Checked = True Then
+            If ImprimirPlanillas.checkCurso.Checked = True Then
+                If ImprimirPlanillas.checkBecas.Checked = True Then
+                    If ImprimirPlanillas.checkSalud.Checked = True Then
+                        adapter.SelectCommand = New MySqlCommand("Select Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                    Else
+                        adapter.SelectCommand = New MySqlCommand("Select Sexo, Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                    End If
+                ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select Sexo, Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select Sexo, Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+                If ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select Sexo, Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("Select Sexo, PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+            Else
+                adapter.SelectCommand = New MySqlCommand("Select Sexo FROM alumno", conn)
+            End If
+        ElseIf ImprimirPlanillas.checkCurso.Checked = True Then
+            If ImprimirPlanillas.checkBecas.Checked = True Then
+                If ImprimirPlanillas.checkSalud.Checked = True Then
+                    adapter.SelectCommand = New MySqlCommand("Select Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+                Else
+                    adapter.SelectCommand = New MySqlCommand("Select Curso, Becado FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+                End If
+            ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("Select Curso, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+            Else
+                adapter.SelectCommand = New MySqlCommand("Select Curso FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso", conn)
+            End If
+        ElseIf ImprimirPlanillas.checkBecas.Checked = True Then
+            If ImprimirPlanillas.checkSalud.Checked = True Then
+                adapter.SelectCommand = New MySqlCommand("Select Becado, PlanSalud FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+            Else
+                adapter.SelectCommand = New MySqlCommand("Select Becado FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno", conn)
+            End If
+        ElseIf ImprimirPlanillas.checkSalud.Checked = True Then
+            adapter.SelectCommand = New MySqlCommand("Select PlanSalud FROM alumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+        Else
+            adapter.SelectCommand = New MySqlCommand("Select RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Edad, Sexo, Curso, Becado, PlanSalud FROM alumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join servicio_por_alumno on alumno.RutAlumno = servicio_por_alumno.alumno_RutAlumno inner join servicio_salud on servicio_por_alumno.Servicio_salud_idServicio_salud = servicio_salud.idServicio_salud", conn)
+        End If
+
+        adapter.Fill(dataSet)
+        dgv.DataSource = dataSet.Tables(0)
+    End Function
+
+    Public Function ActualizarMatriculas(ByRef fechamatri As DateTimePicker, ByRef apePaterno As String, ByRef apeMaterno As String, ByRef nombreAlumno As String, ByRef rutAlumno As String, ByRef sexo As String, ByRef fechanac As DateTimePicker, ByRef edad As Integer, ByRef domicilio As String, ByRef villa As String, ByRef curso As String, ByRef comuna As String, ByRef telefono As String, ByRef colegio As String, ByRef repetidos As String, ByRef becado As String, ByRef hermanos As String, ByRef cursohermano As String, ByRef vivecon As String, ByRef hijos As Integer, ByRef lugarhijos As Integer, ByRef grupofamilia As String, ByRef antecedentes As String, ByRef servsalud As String, ByRef otroserv As String, ByRef seguros As String, ByRef oldAlumno As String, ByRef nummatri As Integer, ByRef viveespecifico As String)
+        Try
+            Dim consulta2 As String = "UPDATE `bd_echaurren`.`alumno`, `fichaalumno`, `servicio_salud`, `servicio_por_alumno`, `curso`, `comuna`, `matricula` SET `NombreCompleto` = '" & nombreAlumno & "', `ApePaterno` = '" & apePaterno & "', `ApeMaterno` = '" & apeMaterno & "', `Sexo` = '" & sexo & "', `FechaNac` = '" & fechanac.Text & "', `Edad` = '" & edad & "', `Domicilio` ='" & domicilio & "', `SectorVilla` = '" & villa & "', `Telefono` = '" & telefono & "', `idCurso` = '" & curso & "', `idComuna` = '" & comuna & "', `ColegioPresedencia` = '" & colegio & "', `CursosRepetidos` = '" & repetidos & "', `Becado` = '" & becado & "', `HermanosEstablecimiento` = '" & hermanos & "', `CursosHermanos` = '" & cursohermano & "', `AlumnoViveCon` = '" & vivecon & "', `NumHijosFamilia` = '" & hijos & "', `LugarOcupacionHijos` = '" & lugarhijos & "', `GrupoFamiliarComponen` = '" & grupofamilia & "', `AntecedentesMedicos` = '" & antecedentes & "', `ViveEspecifico` = '" & viveespecifico & "', `Seguros` = '" & seguros & "', `idServicio_salud` = '" & servsalud & "', `OtrosServicios` = '" & otroserv & "', `Fechamatricula` = '" & fechamatri.Text & "' WHERE `RutAlumno` = '" & oldAlumno & "' and `alumno`.`Fichaalumno_idFichaalumno` = `fichaalumno`.`idFichaalumno` and `alumno`.`RutAlumno` = `servicio_por_alumno`.`alumno_RutAlumno` and `servicio_por_alumno`.`Servicio_salud_idServicio_salud` = `servicio_salud`.`idServicio_salud` and `alumno`.`Comuna_idComuna` = `comuna`.`idComuna` and `alumno`.`Curso_idCurso` = `curso`.`idCurso` and `alumno`.`Matricula_NumMatricula` = `matricula`.`NumMatricula`;"
+            Dim _comando8 As New MySqlCommand(consulta2, FormularioMatricula.varConexion)
+            _comando8.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function ActualizarContactos(ByRef NomCont1 As String, ByRef NumCont1 As String, ByRef NomCont2 As String, ByRef NumCont2 As String, ByRef NomCont3 As String, ByRef NumCont3 As String, ByRef rutAlumno As String, ByRef oldAlumno As String, ByRef idCont1 As String, ByRef idCont2 As String, ByRef idCont3 As String)
+        Try
+            Dim consulta As String
+            Dim consulta2 As String
+            Dim consulta3 As String
+            If FormularioMatricula.ComboBox1.Text = "1 Contacto" Then
+                consulta = "UPDATE `bd_echaurren`.`contacto_emergencia` SET `NombreContacto` = '" & NomCont1 & "', `Numero` = '" & NumCont1 & "', `Alumno_RutAlumno` = '" & rutAlumno & "' WHERE `Alumno_RutAlumno` = '" & oldAlumno & "' and `idContacto_emergencia`='" & idCont1 & "';"
+                Dim _comando7 As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+                _comando7.ExecuteNonQuery()
+            ElseIf FormularioMatricula.ComboBox1.Text = "2 Contactos" Then
+                consulta = "UPDATE `bd_echaurren`.`contacto_emergencia` SET `NombreContacto` = '" & NomCont1 & "', `Numero` = '" & NumCont1 & "', `Alumno_RutAlumno` = '" & rutAlumno & "' WHERE `Alumno_RutAlumno` = '" & oldAlumno & "' and `idContacto_emergencia`='" & idCont1 & "';"
+                Dim _comando7 As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+                _comando7.ExecuteNonQuery()
+                consulta2 = "UPDATE `bd_echaurren`.`contacto_emergencia` SET `NombreContacto` = '" & NomCont2 & "', `Numero` = '" & NumCont2 & "', `Alumno_RutAlumno` = '" & rutAlumno & "' WHERE `Alumno_RutAlumno` = '" & oldAlumno & "' and `idContacto_emergencia`='" & idCont2 & "';"
+                Dim _comando8 As New MySqlCommand(consulta2, FormularioMatricula.varConexion)
+                _comando8.ExecuteNonQuery()
+            ElseIf FormularioMatricula.ComboBox1.Text = "3 Contactos" Then
+                consulta = "UPDATE `bd_echaurren`.`contacto_emergencia` SET `NombreContacto` = '" & NomCont1 & "', `Numero` = '" & NumCont1 & "', `Alumno_RutAlumno` = '" & rutAlumno & "' WHERE `Alumno_RutAlumno` = '" & oldAlumno & "' and `idContacto_emergencia`='" & idCont1 & "';"
+                Dim _comando7 As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+                _comando7.ExecuteNonQuery()
+                consulta2 = "UPDATE `bd_echaurren`.`contacto_emergencia` SET `NombreContacto` = '" & NomCont2 & "', `Numero` = '" & NumCont2 & "', `Alumno_RutAlumno` = '" & rutAlumno & "' WHERE `Alumno_RutAlumno` = '" & oldAlumno & " and `idContacto_emergencia`='" & idCont2 & "';"
+                Dim _comando8 As New MySqlCommand(consulta2, FormularioMatricula.varConexion)
+                _comando8.ExecuteNonQuery()
+                consulta3 = "UPDATE `bd_echaurren`.`contacto_emergencia` SET `NombreContacto` = '" & NomCont3 & "', `Numero` = '" & NumCont3 & "', `Alumno_RutAlumno` = '" & rutAlumno & "' WHERE `Alumno_RutAlumno` = '" & oldAlumno & " and `idContacto_emergencia`='" & idCont3 & "';"
+                Dim _comando9 As New MySqlCommand(consulta3, FormularioMatricula.varConexion)
+                _comando9.ExecuteNonQuery()
             End If
 
-            adapter.Fill(dataSet)
-            dgv.DataSource = dataSet.Tables(0)
+            Return True
+
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+
+    Public Function updateAlumno_respons(ByRef rutResponsable As String, ByRef rutAlumno As String, ByRef tipoResp As String, _
+                                           ByRef apoderado As Integer, ByRef apodSuplente As Integer, ByRef matricula As Integer, ByRef oldResp As String, ByRef oldAlumno As String) As Boolean
+
+        Try
+            Dim consulta As String = "UPDATE `bd_echaurren`.`responsable_alumno` SET `Responsable_RutResponsable`='" & rutResponsable & "', `Alumno_RutAlumno`='" & rutAlumno & "', `Tipo_responsable_idTipo_responsable`='" & tipoResp & "', `Apoderado`='" & apoderado & "', `ApoderadoSuplente`='" & apodSuplente & "', `Matricula_NumMatricula`='" & matricula & "' WHERE `Responsable_RutResponsable`='" & oldResp & "' and`Alumno_RutAlumno`='" & oldAlumno & "' and`Tipo_responsable_idTipo_responsable`='tr1';"
+
+            Dim _comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+            _comando.ExecuteNonQuery()
+            '  MessageBox.Show("relacion responsable - alumno exitosa")
+            Return True
+        Catch ex As Exception
+            '   MessageBox.Show("error al relacionar responsable - alumno")
+            Return False
+        End Try
+
+    End Function
+
+    Public Function updateOtroApod(ByRef rutOtroApod As String, ByRef rutAlumno As String, ByRef apoderado As Integer, _
+                                     ByRef apodSuplente As Integer, ByRef nombreOtroResp As String, ByRef matricula As Integer, ByRef oldResp As String, ByRef oldAlumno As String) As Boolean
+
+        Try
+
+            Dim tipoResp As String = "tr4"
+            Dim consulta As String = "UPDATE `bd_echaurren`.`responsable` SET `RutResponsable`='" & rutOtroApod & "', `NombreCompleto`='" & nombreOtroResp & "' WHERE `RutResponsable`='" & oldResp & "';"
+            Dim consulta1 As String = "UPDATE `bd_echaurren`.`responsable_alumno` SET `Responsable_RutResponsable`='" & rutOtroApod & "', `Alumno_RutAlumno`='" & rutAlumno & "', `Tipo_responsable_idTipo_responsable`='" & tipoResp & "', `Apoderado`='" & apoderado & "', `ApoderadoSuplente`='" & apodSuplente & "', `Matricula_NumMatricula`='" & matricula & "' WHERE `Responsable_RutResponsable`='" & oldResp & "' and`Alumno_RutAlumno`='" & oldAlumno & "' and`Tipo_responsable_idTipo_responsable`='tr4';"
+
+            Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+            comando.ExecuteNonQuery()
+            Dim comando2 As New MySqlCommand(consulta1, FormularioMatricula.varConexion)
+            comando2.ExecuteNonQuery()
+            ' MessageBox.Show("SE INGRESO OTRO APOD SUPLENTE")
+            Return True
+        Catch ex As Exception
+            '   MessageBox.Show("ERROR AL INGRESO OTRO APOD SUPLENTE")
+            Return False
+        End Try
+
+    End Function
+
+    Public Function updateResp(ByRef nombre As String, ByRef rut As String, ByRef edad As String, _
+                                   ByRef estudios As ComboBox, ByRef trabajaEn As String, ByRef telefono As String, _
+                                   ByRef Cargo As String, ByRef direccion As String, ByRef correo As String, ByRef oldRut As String) As Boolean
+
+
+        Try
+
+            Dim consulta As String = "UPDATE `bd_echaurren`.`responsable`, `telefono`, `direccion` SET `RutResponsable` = '" & rut & "', `NombreCompleto` = '" & nombre & "', `EdadResp` = '" & edad & "', `EstudiosCompletados` = '" & estudios.Text & "', `Correoelectronico` = '" & correo & "', `Trabajo` = '" & trabajaEn & "', `Cargo` = '" & Cargo & "', `Num1` = '" & telefono & "', `DireccionTrabajo` = '" & direccion & "' WHERE `RutResponsable` = '" & oldRut & "' and `responsable`.`Telefono_idTelefono` = `telefono`.`idTelefono` and `responsable`.`Direccion_idDireccion` = `direccion`.`idDireccion`;"
+
+            Dim _comando8 As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+            _comando8.ExecuteNonQuery()
+            'MessageBox.Show("padre agregado")
+            Return True
+        Catch ex As Exception
+            ' MessageBox.Show("Error al ingresar padre")
+            Return False
+        End Try
+    End Function
+
+    Public Function updateTutorEconomico(ByRef nombreTutor As String, ByRef rutTutor As String, ByRef telefono1 As String, _
+                                           ByRef telefono2 As String, ByRef telefTrabajo As String, ByRef domicilio As String, _
+                                           ByRef lugarTrabajo As String, ByRef ocupaActual As String, ByRef profesion As String, ByRef oldRut As String) As Boolean
+
+        Try
+            Dim consultaTutor As String = "DELETE FROM responsable_alumno USING responsable_alumno, responsable WHERE `responsable`.`RutResponsable` = `responsable_alumno`.`Responsable_RutResponsable` AND responsable.RutResponsable = '" & oldRut & "';"
+            Dim consultaTutor2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Profesion`, `Trabajo`, `Cargo`, `Num1`, `Num2`, `NumTrabajo`, `DireccionParticular`) VALUES ('" & rutTutor & "', '" & nombreTutor & "', '" & profesion & "', '" & lugarTrabajo & "', '" & ocupaActual & "', '" & telefono1 & "', '" & telefono2 & "', '" & telefTrabajo & "', '" & domicilio & "');"
+            Dim comando16 As New MySqlCommand(consultaTutor, FormularioMatricula.varConexion)
+            comando16.ExecuteNonQuery()
+            Dim comando17 As New MySqlCommand(consultaTutor2, FormularioMatricula.varConexion)
+            comando17.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            '  MessageBox.Show("Error al ingresar tutor economico")
+            Return False
+        End Try
+
+    End Function
+
+    Public Function updateResponsableCompleto(ByRef rutResponsable As String, ByRef nombreComleto As String, ByRef telefono1 As String, _
+                                                ByRef telefono2 As String, ByRef telefonoTrabajo As String, ByRef direccionPart As String, _
+                                               ByRef direccionTrab As String, ByRef edad As String, ByRef estudiosCompl As ComboBox, _
+                                               ByRef Correo As String, ByRef profesion As String, ByRef trabajo As String, _
+                                               ByRef cargo As String, ByRef oldRut As String) As Boolean
+
+        Try
+            Dim consulta As String = "UPDATE `bd_echaurren`.`responsable`, `telefono`, `direccion` SET `RutResponsable` = '" & rutResponsable & "', `NombreCompleto` = '" & nombreComleto & "', `EdadResp` = '" & edad & "', `EstudiosCompletados` = '" & estudiosCompl.Text & "', `Correoelectronico` = '" & Correo & "', `Profesion` = '" & profesion & "', `Trabajo` = '" & trabajo & "', `Cargo` = '" & cargo & "', `Num1` = '" & telefono1 & "', `Num2` = '" & telefono2 & "', `NumTrabajo` = '" & telefonoTrabajo & "', `DireccionParticular` = '" & direccionPart & "', `DireccionTrabajo` = '" & direccionTrab & "' WHERE `RutResponsable` = '" & oldRut & "' and `responsable`.`Telefono_idTelefono` = `telefono`.`idTelefono` and `responsable`.`Direccion_idDireccion` = `direccion`.`idDireccion`;"
+
+            Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+            comando.ExecuteNonQuery()
+        Catch ex As Exception
+            ' MessageBox.Show("Error al ingresaaaaar responsable completo")
+            Return False
+        End Try
+
+    End Function
+
+    Public Function updateAlumno_respons_tutor(ByRef rutResponsable As String, ByRef rutAlumno As String, ByRef tipoResp As String, _
+                                           ByRef apoderado As Integer, ByRef apodSuplente As Integer, _
+                                           ByRef OtroTutor As String, ByRef matricula As Integer, ByRef oldResp As String, ByRef oldAlumno As String) As Boolean
+
+        Try
+            Dim consulta As String = "DELETE FROM responsable Using responsable WHERE responsable.RutResponsable = '" & oldResp & "';"
+            Dim consulta2 As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Otro_tutor`, `Matricula_NumMatricula`) VALUES() ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & OtroTutor & "', '" & matricula & "'); "
+            Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
+            comando.ExecuteNonQuery()
+            Dim comando2 As New MySqlCommand(consulta2, FormularioMatricula.varConexion)
+            comando2.ExecuteNonQuery()
+            ' MessageBox.Show("relacion responsable, tutor - alumno exitosa")
+            Return True
+        Catch ex As Exception
+            '  MessageBox.Show("error al relacionar responsable, tutor - alumno")
+            Return False
+        End Try
+    End Function
+
+    Public Function ActualizarMensualidades(ByRef rut As String, ByRef mes As String, ByRef tipopago As ComboBox, ByRef monto As Integer, ByRef fechavenc As String, ByRef documento As String, ByRef montoanual As Integer, ByRef titular As String, ByRef banco As String, ByRef ctacorriente As String)
+        Dim varConn As MySqlConnection
+        Dim varConnString = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
+        Dim consulta As String = ""
+
+        Try
+            varConn = New MySqlConnection
+            varConn.ConnectionString = varConnString
+            varConn.Open()
+        Catch ex As Exception
+            MessageBox.Show("Error al conectar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        Try
+            If FormularioMatricula.cbbTipoPago.SelectedItem = "Contado" Then
+                consulta = "UPDATE `bd_echaurren`.`mensualidad` SET `RutAlumno`='" & rut & "', `NombreMes`='" & mes & "', `TipoPago`='" & tipopago.Text & "', `Monto`='" & monto & "', `FechaPago`='" & fechavenc & "', `Estado`='PAGADO', `NumDocumento`='" & documento & "', `MontoTotalAnual`='" & montoanual & "', `NombreTitular`='" & titular & "', `NombreBanco`='" & banco & "', `NumCtaCorriente`='" & ctacorriente & "' WHERE `RutAlumno`='" & rut & "';"
+            ElseIf FormularioMatricula.cbbTipoPago.SelectedItem = "Cheque" Or FormularioMatricula.cbbTipoPago.SelectedItem = "Letra" Then
+                consulta = "UPDATE `bd_echaurren`.`mensualidad` SET `RutAlumno`='" & rut & "', `NombreMes`='" & mes & "', `TipoPago`='" & tipopago.Text & "', `Monto`='" & monto & "', `FechaPago`='" & fechavenc & "', `Estado`='NO PAGADO', `NumDocumento`='" & documento & "', `MontoTotalAnual`='" & montoanual & "', `NombreTitular`='" & titular & "', `NombreBanco`='" & banco & "', `NumCtaCorriente`='" & ctacorriente & "' WHERE `RutAlumno`='" & rut & "';"
+            End If
+
+            Dim comando As New MySqlCommand(consulta, varConn)
+            comando.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show("Error al registrar mensualidades.")
+        End Try
     End Function
 End Module
 

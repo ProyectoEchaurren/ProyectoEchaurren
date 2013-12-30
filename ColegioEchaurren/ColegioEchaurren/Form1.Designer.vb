@@ -42,12 +42,13 @@ Partial Class Form1
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatriculasToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.DocumentosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.LoginToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatriculasToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.DocumentosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.LoginToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.ToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(628, 24)
@@ -64,6 +65,7 @@ Partial Class Form1
         '
         'CrearMatriculaToolStripMenuItem
         '
+        Me.CrearMatriculaToolStripMenuItem.Image = CType(resources.GetObject("CrearMatriculaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CrearMatriculaToolStripMenuItem.Name = "CrearMatriculaToolStripMenuItem"
         Me.CrearMatriculaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.CrearMatriculaToolStripMenuItem.Text = "Crear Matricula"
@@ -78,6 +80,7 @@ Partial Class Form1
         '
         'RealizarPagoToolStripMenuItem
         '
+        Me.RealizarPagoToolStripMenuItem.Image = CType(resources.GetObject("RealizarPagoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RealizarPagoToolStripMenuItem.Name = "RealizarPagoToolStripMenuItem"
         Me.RealizarPagoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.RealizarPagoToolStripMenuItem.Text = "Realizar Pago"
@@ -118,12 +121,14 @@ Partial Class Form1
         '
         'ImprimirPlanillasToolStripMenuItem
         '
+        Me.ImprimirPlanillasToolStripMenuItem.Image = CType(resources.GetObject("ImprimirPlanillasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ImprimirPlanillasToolStripMenuItem.Name = "ImprimirPlanillasToolStripMenuItem"
         Me.ImprimirPlanillasToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ImprimirPlanillasToolStripMenuItem.Text = "Imprimir Planillas"
         '
         'EscanearDocumentosToolStripMenuItem
         '
+        Me.EscanearDocumentosToolStripMenuItem.Image = CType(resources.GetObject("EscanearDocumentosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EscanearDocumentosToolStripMenuItem.Name = "EscanearDocumentosToolStripMenuItem"
         Me.EscanearDocumentosToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.EscanearDocumentosToolStripMenuItem.Text = "Escanear Documentos"
@@ -138,12 +143,14 @@ Partial Class Form1
         '
         'GestionarUsuariosToolStripMenuItem
         '
+        Me.GestionarUsuariosToolStripMenuItem.Image = CType(resources.GetObject("GestionarUsuariosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.GestionarUsuariosToolStripMenuItem.Name = "GestionarUsuariosToolStripMenuItem"
         Me.GestionarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.GestionarUsuariosToolStripMenuItem.Text = "Gestionar Usuarios"
         '
         'CambiarContraseñaToolStripMenuItem
         '
+        Me.CambiarContraseñaToolStripMenuItem.Image = CType(resources.GetObject("CambiarContraseñaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CambiarContraseñaToolStripMenuItem.Name = "CambiarContraseñaToolStripMenuItem"
         Me.CambiarContraseñaToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.CambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña"
@@ -163,16 +170,22 @@ Partial Class Form1
         '
         'AcercaDeToolStripMenuItem1
         '
-        Me.AcercaDeToolStripMenuItem1.Enabled = False
+        Me.AcercaDeToolStripMenuItem1.Image = CType(resources.GetObject("AcercaDeToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
         Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Ver ayuda"
         '
         'AcercaDeToolStripMenuItem2
         '
+        Me.AcercaDeToolStripMenuItem2.Image = CType(resources.GetObject("AcercaDeToolStripMenuItem2.Image"), System.Drawing.Image)
         Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
         Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(12, 20)
         '
         'Form1
         '
@@ -213,5 +226,6 @@ Partial Class Form1
     Friend WithEvents UsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GestionarUsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CambiarContraseñaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 
 End Class

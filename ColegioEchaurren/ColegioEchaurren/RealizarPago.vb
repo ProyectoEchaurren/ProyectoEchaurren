@@ -2,6 +2,18 @@
 Public Class RealizarPago
 
     Public varMesesCheck As Integer = 0
+    Public varCantDeshacer As Integer = 0
+    Public varMarzo As Boolean
+    Public varAbril As Boolean
+    Public varMayo As Boolean
+    Public varJunio As Boolean
+    Public varJulio As Boolean
+    Public varAgosto As Boolean
+    Public varSept As Boolean
+    Public varOctubre As Boolean
+    Public varNov As Boolean
+    Public varDic As Boolean
+    Public varVerificar As Boolean = False
 
     Private Sub txtCampoRut_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtCampoRut.KeyPress
         If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
@@ -62,17 +74,21 @@ Public Class RealizarPago
             If checkMarzo.Checked = True And checkMarzo.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varMarzo = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varMarzo = False
             End If
         Else
             If checkMarzo.Checked = True And checkMarzo.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varMarzo = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varMarzo = False
             End If
         End If
     End Sub
@@ -82,17 +98,21 @@ Public Class RealizarPago
             If checkAbril.Checked = True And checkAbril.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varAbril = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varAbril = False
             End If
         Else
             If checkAbril.Checked = True And checkAbril.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varAbril = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varAbril = False
             End If
         End If
     End Sub
@@ -102,17 +122,21 @@ Public Class RealizarPago
             If checkMayo.Checked = True And checkMayo.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varMayo = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varMayo = False
             End If
         Else
             If checkMayo.Checked = True And checkMayo.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varMayo = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varMayo = False
             End If
         End If
     End Sub
@@ -122,17 +146,21 @@ Public Class RealizarPago
             If checkJunio.Checked = True And checkJunio.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varJunio = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varJunio = False
             End If
         Else
             If checkJunio.Checked = True And checkJunio.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varJunio = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varJunio = False
             End If
         End If
     End Sub
@@ -142,17 +170,21 @@ Public Class RealizarPago
             If checkJulio.Checked = True And checkJulio.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varJulio = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varJulio = False
             End If
         Else
             If checkJulio.Checked = True And checkJulio.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varJulio = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varJulio = False
             End If
         End If
     End Sub
@@ -162,17 +194,21 @@ Public Class RealizarPago
             If checkAgosto.Checked = True And checkAgosto.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varAgosto = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varAgosto = False
             End If
         Else
             If checkAgosto.Checked = True And checkAgosto.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varAgosto = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varAgosto = False
             End If
         End If
     End Sub
@@ -182,17 +218,21 @@ Public Class RealizarPago
             If checkSept.Checked = True And checkSept.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varSept = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varSept = False
             End If
         Else
             If checkSept.Checked = True And checkSept.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varSept = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varSept = False
             End If
         End If
     End Sub
@@ -202,17 +242,21 @@ Public Class RealizarPago
             If checkOctubre.Checked = True And checkOctubre.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varOctubre = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varOctubre = False
             End If
         Else
             If checkOctubre.Checked = True And checkOctubre.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varOctubre = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varOctubre = False
             End If
         End If
     End Sub
@@ -222,17 +266,21 @@ Public Class RealizarPago
             If checkNov.Checked = True And checkNov.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varNov = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varNov = False
             End If
         Else
             If checkNov.Checked = True And checkNov.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varNov = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varNov = False
             End If
         End If
     End Sub
@@ -242,22 +290,102 @@ Public Class RealizarPago
             If checkDic.Checked = True And checkDic.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varDic = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck)
+                varDic = False
             End If
         Else
             If checkDic.Checked = True And checkDic.Enabled = True Then
                 varMesesCheck = varMesesCheck + 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varDic = True
             Else
                 varMesesCheck = varMesesCheck - 1
                 txtMontoTotal.Text = (txtMontoMensual.Text * varMesesCheck) * (txtPorcentaje.Text / 100)
+                varDic = False
             End If
         End If
     End Sub
 
+    Private Sub btnDeshacerPago_Click(sender As System.Object, e As System.EventArgs) Handles btnDeshacerPago.Click
+        For i = 1 To varCantDeshacer
+            If varMarzo = True And checkMarzo.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkMarzo.Text, txtCampoRut.Text)
+                checkMarzo.Enabled = True
+                checkMarzo.Checked = False
+                varMarzo = False
+                varVerificar = True
+            ElseIf varAbril = True And checkAbril.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkAbril.Text, txtCampoRut.Text)
+                checkAbril.Enabled = True
+                checkAbril.Checked = False
+                varAbril = False
+                varVerificar = True
+            ElseIf varMayo = True And checkMayo.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkMayo.Text, txtCampoRut.Text)
+                checkMayo.Enabled = True
+                checkMayo.Checked = False
+                varMayo = False
+                varVerificar = True
+            ElseIf varJunio = True And checkJunio.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkJunio.Text, txtCampoRut.Text)
+                checkJunio.Enabled = True
+                checkJunio.Checked = False
+                varJunio = False
+                varVerificar = True
+            ElseIf varJulio = True And checkJulio.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkJulio.Text, txtCampoRut.Text)
+                checkJulio.Enabled = True
+                checkJulio.Checked = False
+                varJulio = False
+                varVerificar = True
+            ElseIf varAgosto = True And checkAgosto.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkAgosto.Text, txtCampoRut.Text)
+                checkAgosto.Enabled = True
+                checkAgosto.Checked = False
+                varAgosto = False
+                varVerificar = True
+            ElseIf varSept = True And checkSept.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkSept.Text, txtCampoRut.Text)
+                checkSept.Enabled = True
+                checkSept.Checked = False
+                varSept = False
+                varVerificar = True
+            ElseIf varOctubre = True And checkOctubre.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkOctubre.Text, txtCampoRut.Text)
+                checkOctubre.Enabled = True
+                checkOctubre.Checked = False
+                varOctubre = False
+                varVerificar = True
+            ElseIf varNov = True And checkNov.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkNov.Text, txtCampoRut.Text)
+                checkNov.Enabled = True
+                checkNov.Checked = False
+                varNov = False
+                varVerificar = True
+            ElseIf varDic = True And checkDic.Enabled = False Then
+                ModuloContenedor.DeshacerPago("", checkDic.Text, txtCampoRut.Text)
+                checkDic.Enabled = True
+                checkDic.Checked = False
+                varDic = False
+                varVerificar = True
+            End If
+        Next i
+        If varVerificar = True Then
+            txtMontoTotal.Text = ""
+            MessageBox.Show("Pago Deshecho.")
+            varVerificar = False
+            varMesesCheck = 0
+            varCantDeshacer = 0
+        Else
+            MessageBox.Show("No hay pagos por deshacer.")
+        End If
+    End Sub
+
     Private Sub btnPagar_Click(sender As System.Object, e As System.EventArgs) Handles btnPagar.Click
+        varCantDeshacer = varMesesCheck
         If txtComprobante.Text <> "" And txtMontoTotal.Text <> "" Then
             For i = 1 To varMesesCheck
                 If checkMarzo.Checked = True And checkMarzo.Enabled = True Then
