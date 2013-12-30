@@ -24,7 +24,6 @@ Partial Class ImprimirPlanillas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ImprimirPlanillas))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnImprimirPlanilla = New System.Windows.Forms.Button()
         Me.checkRut = New System.Windows.Forms.CheckBox()
         Me.checkNombre = New System.Windows.Forms.CheckBox()
         Me.checkApellidos = New System.Windows.Forms.CheckBox()
@@ -35,27 +34,24 @@ Partial Class ImprimirPlanillas
         Me.checkSalud = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.btnExportarExcel = New System.Windows.Forms.Button()
+        Me.btnExportar = New System.Windows.Forms.Button()
+        Me.btnImprimirPlanilla = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowDrop = True
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(471, 292)
+        Me.DataGridView1.Size = New System.Drawing.Size(471, 299)
         Me.DataGridView1.TabIndex = 0
-        '
-        'btnImprimirPlanilla
-        '
-        Me.btnImprimirPlanilla.Location = New System.Drawing.Point(540, 261)
-        Me.btnImprimirPlanilla.Name = "btnImprimirPlanilla"
-        Me.btnImprimirPlanilla.Size = New System.Drawing.Size(102, 43)
-        Me.btnImprimirPlanilla.TabIndex = 1
-        Me.btnImprimirPlanilla.Text = "Imprimir Planilla"
-        Me.btnImprimirPlanilla.UseVisualStyleBackColor = True
         '
         'checkRut
         '
@@ -158,11 +154,49 @@ Partial Class ImprimirPlanillas
         'PrintDocument1
         '
         '
+        'btnExportarExcel
+        '
+        Me.btnExportarExcel.Image = Global.ColegioEchaurren.My.Resources.Resources.Excel_icon
+        Me.btnExportarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnExportarExcel.Location = New System.Drawing.Point(516, 217)
+        Me.btnExportarExcel.Name = "btnExportarExcel"
+        Me.btnExportarExcel.Size = New System.Drawing.Size(139, 43)
+        Me.btnExportarExcel.TabIndex = 12
+        Me.btnExportarExcel.Text = "Exportar Excel"
+        Me.btnExportarExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExportarExcel.UseVisualStyleBackColor = True
+        '
+        'btnExportar
+        '
+        Me.btnExportar.Image = Global.ColegioEchaurren.My.Resources.Resources.icono_pdf
+        Me.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnExportar.Location = New System.Drawing.Point(516, 167)
+        Me.btnExportar.Name = "btnExportar"
+        Me.btnExportar.Size = New System.Drawing.Size(139, 44)
+        Me.btnExportar.TabIndex = 11
+        Me.btnExportar.Text = "Exportar a pdf"
+        Me.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExportar.UseVisualStyleBackColor = True
+        '
+        'btnImprimirPlanilla
+        '
+        Me.btnImprimirPlanilla.Image = Global.ColegioEchaurren.My.Resources.Resources.icono_imprimir
+        Me.btnImprimirPlanilla.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnImprimirPlanilla.Location = New System.Drawing.Point(516, 266)
+        Me.btnImprimirPlanilla.Name = "btnImprimirPlanilla"
+        Me.btnImprimirPlanilla.Size = New System.Drawing.Size(139, 43)
+        Me.btnImprimirPlanilla.TabIndex = 1
+        Me.btnImprimirPlanilla.Text = "Imprimir Planilla"
+        Me.btnImprimirPlanilla.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnImprimirPlanilla.UseVisualStyleBackColor = True
+        '
         'ImprimirPlanillas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(687, 316)
+        Me.ClientSize = New System.Drawing.Size(687, 326)
+        Me.Controls.Add(Me.btnExportarExcel)
+        Me.Controls.Add(Me.btnExportar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.checkSalud)
         Me.Controls.Add(Me.checkBecas)
@@ -194,4 +228,6 @@ Partial Class ImprimirPlanillas
     Friend WithEvents checkSalud As System.Windows.Forms.CheckBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
+    Friend WithEvents btnExportar As System.Windows.Forms.Button
+    Friend WithEvents btnExportarExcel As System.Windows.Forms.Button
 End Class

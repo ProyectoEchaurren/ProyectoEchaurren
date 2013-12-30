@@ -26,8 +26,6 @@ Partial Class FormAlumnosMatriculados
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.cbBuscarServSalud = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtRutAlumno = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -43,11 +41,13 @@ Partial Class FormAlumnosMatriculados
         Me.cbBecados = New System.Windows.Forms.CheckBox()
         Me.cbNoBecados = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnFichaPersonal = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cbbPorcentaje = New System.Windows.Forms.ComboBox()
         Me.labelPorcentaje = New System.Windows.Forms.Label()
         Me.btnCancelarMatri = New System.Windows.Forms.Button()
+        Me.btnFichaPersonal = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -84,24 +84,6 @@ Partial Class FormAlumnosMatriculados
         Me.cbBuscarServSalud.Name = "cbBuscarServSalud"
         Me.cbBuscarServSalud.Size = New System.Drawing.Size(150, 21)
         Me.cbBuscarServSalud.TabIndex = 29
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(729, 217)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(117, 44)
-        Me.Button2.TabIndex = 28
-        Me.Button2.Text = "Salir"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(729, 67)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(117, 44)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "Limpiar"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -262,15 +244,6 @@ Partial Class FormAlumnosMatriculados
         Me.Label7.TabIndex = 33
         Me.Label7.Text = "Estado de Beca"
         '
-        'btnFichaPersonal
-        '
-        Me.btnFichaPersonal.Location = New System.Drawing.Point(729, 117)
-        Me.btnFichaPersonal.Name = "btnFichaPersonal"
-        Me.btnFichaPersonal.Size = New System.Drawing.Size(117, 44)
-        Me.btnFichaPersonal.TabIndex = 34
-        Me.btnFichaPersonal.Text = "Ver Ficha Personal"
-        Me.btnFichaPersonal.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.cbbPorcentaje)
@@ -312,12 +285,49 @@ Partial Class FormAlumnosMatriculados
         '
         'btnCancelarMatri
         '
-        Me.btnCancelarMatri.Location = New System.Drawing.Point(729, 167)
+        Me.btnCancelarMatri.Image = Global.ColegioEchaurren.My.Resources.Resources.close
+        Me.btnCancelarMatri.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelarMatri.Location = New System.Drawing.Point(714, 167)
         Me.btnCancelarMatri.Name = "btnCancelarMatri"
-        Me.btnCancelarMatri.Size = New System.Drawing.Size(117, 44)
+        Me.btnCancelarMatri.Size = New System.Drawing.Size(154, 44)
         Me.btnCancelarMatri.TabIndex = 36
         Me.btnCancelarMatri.Text = "Cancelar Matrícula"
+        Me.btnCancelarMatri.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCancelarMatri.UseVisualStyleBackColor = True
+        '
+        'btnFichaPersonal
+        '
+        Me.btnFichaPersonal.Image = Global.ColegioEchaurren.My.Resources.Resources.lupa
+        Me.btnFichaPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnFichaPersonal.Location = New System.Drawing.Point(714, 117)
+        Me.btnFichaPersonal.Name = "btnFichaPersonal"
+        Me.btnFichaPersonal.Size = New System.Drawing.Size(154, 44)
+        Me.btnFichaPersonal.TabIndex = 34
+        Me.btnFichaPersonal.Text = "Ver Ficha Personal"
+        Me.btnFichaPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnFichaPersonal.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.ColegioEchaurren.My.Resources.Resources.eqsl_exit
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.Location = New System.Drawing.Point(714, 217)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(154, 44)
+        Me.Button2.TabIndex = 28
+        Me.Button2.Text = "Salir"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.ColegioEchaurren.My.Resources.Resources.Icono_escoba
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(714, 67)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(154, 44)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Limpiar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'FormAlumnosMatriculados
         '

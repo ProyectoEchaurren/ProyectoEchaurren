@@ -34,6 +34,8 @@ Partial Class AdminMensualidades
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbFiltroCurso = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnExportarExcel = New System.Windows.Forms.Button()
+        Me.btnExportarPdf = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -47,7 +49,7 @@ Partial Class AdminMensualidades
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(616, 378)
+        Me.DataGridView1.Size = New System.Drawing.Size(616, 411)
         Me.DataGridView1.TabIndex = 0
         Me.DataGridView1.TabStop = False
         '
@@ -140,18 +142,44 @@ Partial Class AdminMensualidades
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(662, 261)
+        Me.Button1.Location = New System.Drawing.Point(661, 236)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(121, 49)
         Me.Button1.TabIndex = 28
         Me.Button1.Text = "Ver Historial de Pagos"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'btnExportarExcel
+        '
+        Me.btnExportarExcel.Image = Global.ColegioEchaurren.My.Resources.Resources.Excel_icon
+        Me.btnExportarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnExportarExcel.Location = New System.Drawing.Point(146, 429)
+        Me.btnExportarExcel.Name = "btnExportarExcel"
+        Me.btnExportarExcel.Size = New System.Drawing.Size(143, 48)
+        Me.btnExportarExcel.TabIndex = 30
+        Me.btnExportarExcel.Text = "Exportar a Excel"
+        Me.btnExportarExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExportarExcel.UseVisualStyleBackColor = True
+        '
+        'btnExportarPdf
+        '
+        Me.btnExportarPdf.Image = Global.ColegioEchaurren.My.Resources.Resources.icono_pdf
+        Me.btnExportarPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnExportarPdf.Location = New System.Drawing.Point(12, 429)
+        Me.btnExportarPdf.Name = "btnExportarPdf"
+        Me.btnExportarPdf.Size = New System.Drawing.Size(128, 48)
+        Me.btnExportarPdf.TabIndex = 29
+        Me.btnExportarPdf.Text = "Exportar a pdf"
+        Me.btnExportarPdf.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExportarPdf.UseVisualStyleBackColor = True
+        '
         'AdminMensualidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(825, 402)
+        Me.ClientSize = New System.Drawing.Size(825, 484)
+        Me.Controls.Add(Me.btnExportarExcel)
+        Me.Controls.Add(Me.btnExportarPdf)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.labelPorcentaje)
         Me.Controls.Add(Me.cbPorcentaje)
@@ -182,4 +210,6 @@ Partial Class AdminMensualidades
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cbFiltroCurso As System.Windows.Forms.ComboBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnExportarPdf As System.Windows.Forms.Button
+    Friend WithEvents btnExportarExcel As System.Windows.Forms.Button
 End Class

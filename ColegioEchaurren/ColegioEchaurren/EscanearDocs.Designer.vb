@@ -23,7 +23,6 @@ Partial Class EscanearDocs
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EscanearDocs))
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNombreArchivo = New System.Windows.Forms.TextBox()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
@@ -31,16 +30,8 @@ Partial Class EscanearDocs
         Me.txtRuta = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(101, 83)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(98, 39)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Escanear"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -95,6 +86,15 @@ Partial Class EscanearDocs
         Me.btnSalir.TabIndex = 7
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(101, 83)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 39)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Escanear"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'EscanearDocs
         '

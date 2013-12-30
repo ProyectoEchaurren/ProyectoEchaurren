@@ -2,13 +2,7 @@ C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEcha
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Form1.resources
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.LoginForm1.resources
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Resources.resources
-C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.exe
-C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.xml
-C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.pdb
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.FormularioMatricula.resources
-C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\ColegioEchaurren.exe
-C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\ColegioEchaurren.pdb
-C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\ColegioEchaurren.xml
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AboutBox1.resources
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Form1.resources
@@ -47,3 +41,22 @@ C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEcha
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Interop.ADOR.dll
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Presentacion.resources
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Ayuda.resources
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.exe
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.pdb
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.xml
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Interop.WIA.dll
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.vbproj.ResolveComReference.cache
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Ayuda.resources
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.CambiarPass.resources
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.EscanearDocs.resources
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.GestordeUsuarios.resources
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.ImprimirPlanillas.resources
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Presentacion.resources
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.exe
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.xml
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.pdb
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.dll
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.pdfa.dll
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.xtra.dll
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.dll
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.xml

@@ -281,7 +281,7 @@ Partial Class FormularioMatricula
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 273)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 3, 10, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -358,11 +358,14 @@ Partial Class FormularioMatricula
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(248, 727)
+        Me.btnLimpiar.Image = Global.ColegioEchaurren.My.Resources.Resources.Icono_escoba
+        Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiar.Location = New System.Drawing.Point(223, 726)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(122, 50)
         Me.btnLimpiar.TabIndex = 231
         Me.btnLimpiar.Text = "Limpiar Campos"
+        Me.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
         'Label45
@@ -621,20 +624,25 @@ Partial Class FormularioMatricula
         '
         'btnSalir2
         '
-        Me.btnSalir2.Location = New System.Drawing.Point(530, 727)
+        Me.btnSalir2.Image = Global.ColegioEchaurren.My.Resources.Resources.eqsl_exit
+        Me.btnSalir2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalir2.Location = New System.Drawing.Point(519, 727)
         Me.btnSalir2.Name = "btnSalir2"
-        Me.btnSalir2.Size = New System.Drawing.Size(122, 50)
+        Me.btnSalir2.Size = New System.Drawing.Size(133, 50)
         Me.btnSalir2.TabIndex = 185
         Me.btnSalir2.Text = "Salir"
         Me.btnSalir2.UseVisualStyleBackColor = True
         '
         'btnGuardar2
         '
-        Me.btnGuardar2.Location = New System.Drawing.Point(390, 727)
+        Me.btnGuardar2.Image = Global.ColegioEchaurren.My.Resources.Resources.Diskette_50x50
+        Me.btnGuardar2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar2.Location = New System.Drawing.Point(359, 727)
         Me.btnGuardar2.Name = "btnGuardar2"
-        Me.btnGuardar2.Size = New System.Drawing.Size(122, 50)
+        Me.btnGuardar2.Size = New System.Drawing.Size(152, 50)
         Me.btnGuardar2.TabIndex = 180
         Me.btnGuardar2.Text = "Guardar y Continuar"
+        Me.btnGuardar2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGuardar2.UseVisualStyleBackColor = True
         '
         'dateTimeFechaNac
@@ -987,11 +995,14 @@ Partial Class FormularioMatricula
         '
         'btnLimpiar2
         '
-        Me.btnLimpiar2.Location = New System.Drawing.Point(113, 547)
+        Me.btnLimpiar2.Image = Global.ColegioEchaurren.My.Resources.Resources.Icono_escoba
+        Me.btnLimpiar2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiar2.Location = New System.Drawing.Point(123, 547)
         Me.btnLimpiar2.Name = "btnLimpiar2"
         Me.btnLimpiar2.Size = New System.Drawing.Size(122, 50)
         Me.btnLimpiar2.TabIndex = 271
         Me.btnLimpiar2.Text = "Limpiar Campos"
+        Me.btnLimpiar2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLimpiar2.UseVisualStyleBackColor = True
         '
         'Label20
@@ -1191,15 +1202,20 @@ Partial Class FormularioMatricula
         '
         'Button1
         '
+        Me.Button1.Image = Global.ColegioEchaurren.My.Resources.Resources.icono_retroceso
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.Location = New System.Drawing.Point(251, 547)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(122, 50)
+        Me.Button1.Size = New System.Drawing.Size(110, 50)
         Me.Button1.TabIndex = 189
         Me.Button1.Text = "Volver"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
+        Me.Button2.Image = Global.ColegioEchaurren.My.Resources.Resources.eqsl_exit
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.Location = New System.Drawing.Point(525, 547)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(122, 50)
@@ -1209,11 +1225,14 @@ Partial Class FormularioMatricula
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(388, 547)
+        Me.Button3.Image = Global.ColegioEchaurren.My.Resources.Resources.Diskette_50x50
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.Location = New System.Drawing.Point(367, 547)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(122, 50)
+        Me.Button3.Size = New System.Drawing.Size(152, 50)
         Me.Button3.TabIndex = 187
         Me.Button3.Text = "Guardar y Continuar"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.UseVisualStyleBackColor = True
         '
         'TabPage1
@@ -1307,11 +1326,14 @@ Partial Class FormularioMatricula
         '
         'btnLimpiar3
         '
-        Me.btnLimpiar3.Location = New System.Drawing.Point(115, 866)
+        Me.btnLimpiar3.Image = Global.ColegioEchaurren.My.Resources.Resources.Icono_escoba
+        Me.btnLimpiar3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiar3.Location = New System.Drawing.Point(130, 864)
         Me.btnLimpiar3.Name = "btnLimpiar3"
         Me.btnLimpiar3.Size = New System.Drawing.Size(122, 50)
         Me.btnLimpiar3.TabIndex = 269
         Me.btnLimpiar3.Text = "Limpiar Campos"
+        Me.btnLimpiar3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLimpiar3.UseVisualStyleBackColor = True
         '
         'checkIguales
@@ -1384,11 +1406,14 @@ Partial Class FormularioMatricula
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(253, 866)
+        Me.Button4.Image = Global.ColegioEchaurren.My.Resources.Resources.icono_retroceso
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button4.Location = New System.Drawing.Point(258, 865)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(122, 50)
+        Me.Button4.Size = New System.Drawing.Size(117, 50)
         Me.Button4.TabIndex = 261
         Me.Button4.Text = "Volver"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.UseVisualStyleBackColor = True
         '
         'cbApoSuplente
@@ -1878,20 +1903,26 @@ Partial Class FormularioMatricula
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(387, 866)
+        Me.btnGuardar.Image = Global.ColegioEchaurren.My.Resources.Resources.Diskette_50x50
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.Location = New System.Drawing.Point(378, 865)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(122, 50)
+        Me.btnGuardar.Size = New System.Drawing.Size(158, 50)
         Me.btnGuardar.TabIndex = 55
         Me.btnGuardar.Text = "Guardar y Continuar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(523, 866)
+        Me.btnSalir.Image = Global.ColegioEchaurren.My.Resources.Resources.eqsl_exit
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalir.Location = New System.Drawing.Point(547, 865)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(122, 50)
+        Me.btnSalir.Size = New System.Drawing.Size(100, 50)
         Me.btnSalir.TabIndex = 54
         Me.btnSalir.Text = "Salir"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSalir.UseVisualStyleBackColor = True
         '
         'txtTelefonoTrabajo
@@ -2144,11 +2175,14 @@ Partial Class FormularioMatricula
         '
         'btnLimpiar4
         '
-        Me.btnLimpiar4.Location = New System.Drawing.Point(39, 689)
+        Me.btnLimpiar4.Image = Global.ColegioEchaurren.My.Resources.Resources.Icono_escoba
+        Me.btnLimpiar4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiar4.Location = New System.Drawing.Point(96, 689)
         Me.btnLimpiar4.Name = "btnLimpiar4"
         Me.btnLimpiar4.Size = New System.Drawing.Size(122, 50)
         Me.btnLimpiar4.TabIndex = 270
         Me.btnLimpiar4.Text = "Limpiar Campos"
+        Me.btnLimpiar4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLimpiar4.UseVisualStyleBackColor = True
         '
         'cbbTipoPago
@@ -2162,6 +2196,8 @@ Partial Class FormularioMatricula
         '
         'btnSalir3
         '
+        Me.btnSalir3.Image = Global.ColegioEchaurren.My.Resources.Resources.eqsl_exit
+        Me.btnSalir3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSalir3.Location = New System.Drawing.Point(494, 689)
         Me.btnSalir3.Name = "btnSalir3"
         Me.btnSalir3.Size = New System.Drawing.Size(122, 50)
@@ -2171,20 +2207,26 @@ Partial Class FormularioMatricula
         '
         'btnTerminar
         '
-        Me.btnTerminar.Location = New System.Drawing.Point(343, 689)
+        Me.btnTerminar.Image = Global.ColegioEchaurren.My.Resources.Resources.Diskette_50x50
+        Me.btnTerminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnTerminar.Location = New System.Drawing.Point(337, 689)
         Me.btnTerminar.Name = "btnTerminar"
-        Me.btnTerminar.Size = New System.Drawing.Size(122, 50)
+        Me.btnTerminar.Size = New System.Drawing.Size(151, 50)
         Me.btnTerminar.TabIndex = 183
         Me.btnTerminar.Text = "Guardar y Terminar"
+        Me.btnTerminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTerminar.UseVisualStyleBackColor = True
         '
         'btnVolver2
         '
-        Me.btnVolver2.Location = New System.Drawing.Point(190, 689)
+        Me.btnVolver2.Image = Global.ColegioEchaurren.My.Resources.Resources.icono_retroceso
+        Me.btnVolver2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnVolver2.Location = New System.Drawing.Point(225, 689)
         Me.btnVolver2.Name = "btnVolver2"
-        Me.btnVolver2.Size = New System.Drawing.Size(122, 50)
+        Me.btnVolver2.Size = New System.Drawing.Size(108, 50)
         Me.btnVolver2.TabIndex = 182
         Me.btnVolver2.Text = "Volver"
+        Me.btnVolver2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVolver2.UseVisualStyleBackColor = True
         '
         'lblDic
@@ -2664,7 +2706,7 @@ Partial Class FormularioMatricula
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1011, 629)
+        Me.ClientSize = New System.Drawing.Size(750, 629)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
