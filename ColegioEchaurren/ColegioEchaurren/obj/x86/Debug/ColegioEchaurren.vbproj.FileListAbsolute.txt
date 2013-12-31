@@ -1,8 +1,3 @@
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AboutBox1.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Form1.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.LoginForm1.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Resources.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.FormularioMatricula.resources
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AboutBox1.resources
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Form1.resources
@@ -13,34 +8,11 @@ C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaur
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\MySql.Data.dll
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.FormAlumnosMatriculados.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\MySql.Data.dll
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.FormAlumnosMatriculados.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.vbproj.GenerateResource.Cache
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AdminMensualidades.resources
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.HistorialdePagos.resources
 C:\Users\Davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.RealizarPago.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AdminMensualidades.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.HistorialdePagos.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.RealizarPago.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AdminBecas.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.DetalleInfoAlumno.resources
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AdminBecas.resources
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.DetalleInfoAlumno.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.CambiarPass.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.exe
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.pdb
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.xml
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.exe
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.xml
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.pdb
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.EscanearDocs.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Interop.WIA.dll
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.vbproj.ResolveComReference.cache
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.GestordeUsuarios.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.ImprimirPlanillas.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Interop.ADOR.dll
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Presentacion.resources
-C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Ayuda.resources
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.exe
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.pdb
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.xml
@@ -60,10 +32,40 @@ C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaur
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.xtra.dll
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.dll
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.xml
+C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Respaldo_de_datos_alumnos.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Interop.ADOR.dll
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Interop.WIA.dll
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.vbproj.ResolveComReference.cache
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.vbprojResolveAssemblyReference.cache
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AboutBox1.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AdminBecas.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.AdminMensualidades.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Ayuda.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.CambiarPass.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.ConfigurarDisp.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.DetalleInfoAlumno.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.EscanearDocs.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.FormAlumnosMatriculados.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.FormularioMatricula.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.GestordeUsuarios.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.HistorialdePagos.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.ImprimirPlanillas.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.LoginForm1.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Resources.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Presentacion.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.RealizarPago.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Respaldo_de_datos_alumnos.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.vbproj.GenerateResource.Cache
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.exe
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.pdb
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.xml
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.dll
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.pdfa.dll
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\itextsharp.xtra.dll
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.dll
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\MySql.Data.dll
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Microsoft.Office.Tools.Word.v4.0.Utilities.xml
-C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Respaldo_de_datos_alumnos.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.Form1.resources
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.exe
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.xml
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.pdb

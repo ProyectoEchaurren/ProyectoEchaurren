@@ -16,7 +16,7 @@ Public Class RealizarPago
     Public varVerificar As Boolean = False
 
     Private Sub txtCampoRut_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtCampoRut.KeyPress
-        If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+        If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
             MsgBox("Porfavor ingresar sólo dígitos y guión")

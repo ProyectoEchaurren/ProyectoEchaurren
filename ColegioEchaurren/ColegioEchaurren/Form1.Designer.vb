@@ -38,18 +38,19 @@ Partial Class Form1
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CambiarContraseñaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfigurarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RespaldarBaseDeDatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConfigurarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RespaldarBaseDeDatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatriculasToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.DocumentosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ToolStripMenuItem1, Me.LoginToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -67,6 +68,7 @@ Partial Class Form1
         '
         'CrearMatriculaToolStripMenuItem
         '
+        Me.CrearMatriculaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.CrearMatriculaToolStripMenuItem.Image = CType(resources.GetObject("CrearMatriculaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CrearMatriculaToolStripMenuItem.Name = "CrearMatriculaToolStripMenuItem"
         Me.CrearMatriculaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
@@ -82,6 +84,7 @@ Partial Class Form1
         '
         'RealizarPagoToolStripMenuItem
         '
+        Me.RealizarPagoToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.RealizarPagoToolStripMenuItem.Image = CType(resources.GetObject("RealizarPagoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RealizarPagoToolStripMenuItem.Name = "RealizarPagoToolStripMenuItem"
         Me.RealizarPagoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
@@ -89,6 +92,7 @@ Partial Class Form1
         '
         'RegistroDeMensualidadesToolStripMenuItem
         '
+        Me.RegistroDeMensualidadesToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.RegistroDeMensualidadesToolStripMenuItem.Name = "RegistroDeMensualidadesToolStripMenuItem"
         Me.RegistroDeMensualidadesToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.RegistroDeMensualidadesToolStripMenuItem.Text = "Registro de Mensualidades"
@@ -103,18 +107,21 @@ Partial Class Form1
         '
         'AlumnosMatriculadosToolStripMenuItem
         '
+        Me.AlumnosMatriculadosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.AlumnosMatriculadosToolStripMenuItem.Name = "AlumnosMatriculadosToolStripMenuItem"
         Me.AlumnosMatriculadosToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.AlumnosMatriculadosToolStripMenuItem.Text = "Alumnos matriculados"
         '
         'AdministrarBecasToolStripMenuItem
         '
+        Me.AdministrarBecasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.AdministrarBecasToolStripMenuItem.Name = "AdministrarBecasToolStripMenuItem"
         Me.AdministrarBecasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.AdministrarBecasToolStripMenuItem.Text = "Administrar Becas"
         '
         'DocumentosToolStripMenuItem
         '
+        Me.DocumentosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.DocumentosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImprimirPlanillasToolStripMenuItem, Me.EscanearDocumentosToolStripMenuItem})
         Me.DocumentosToolStripMenuItem.Enabled = False
         Me.DocumentosToolStripMenuItem.Name = "DocumentosToolStripMenuItem"
@@ -123,6 +130,7 @@ Partial Class Form1
         '
         'ImprimirPlanillasToolStripMenuItem
         '
+        Me.ImprimirPlanillasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ImprimirPlanillasToolStripMenuItem.Image = CType(resources.GetObject("ImprimirPlanillasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ImprimirPlanillasToolStripMenuItem.Name = "ImprimirPlanillasToolStripMenuItem"
         Me.ImprimirPlanillasToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
@@ -130,6 +138,7 @@ Partial Class Form1
         '
         'EscanearDocumentosToolStripMenuItem
         '
+        Me.EscanearDocumentosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.EscanearDocumentosToolStripMenuItem.Image = CType(resources.GetObject("EscanearDocumentosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EscanearDocumentosToolStripMenuItem.Name = "EscanearDocumentosToolStripMenuItem"
         Me.EscanearDocumentosToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
@@ -137,6 +146,7 @@ Partial Class Form1
         '
         'UsuariosToolStripMenuItem
         '
+        Me.UsuariosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionarUsuariosToolStripMenuItem, Me.CambiarContraseñaToolStripMenuItem})
         Me.UsuariosToolStripMenuItem.Enabled = False
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
@@ -145,6 +155,7 @@ Partial Class Form1
         '
         'GestionarUsuariosToolStripMenuItem
         '
+        Me.GestionarUsuariosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GestionarUsuariosToolStripMenuItem.Image = CType(resources.GetObject("GestionarUsuariosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.GestionarUsuariosToolStripMenuItem.Name = "GestionarUsuariosToolStripMenuItem"
         Me.GestionarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -152,10 +163,35 @@ Partial Class Form1
         '
         'CambiarContraseñaToolStripMenuItem
         '
+        Me.CambiarContraseñaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.CambiarContraseñaToolStripMenuItem.Image = CType(resources.GetObject("CambiarContraseñaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CambiarContraseñaToolStripMenuItem.Name = "CambiarContraseñaToolStripMenuItem"
         Me.CambiarContraseñaToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.CambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfigurarToolStripMenuItem, Me.RespaldarBaseDeDatosToolStripMenuItem})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(90, 20)
+        Me.ToolStripMenuItem1.Text = "Herramientas"
+        '
+        'ConfigurarToolStripMenuItem
+        '
+        Me.ConfigurarToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ConfigurarToolStripMenuItem.Image = CType(resources.GetObject("ConfigurarToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ConfigurarToolStripMenuItem.Name = "ConfigurarToolStripMenuItem"
+        Me.ConfigurarToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.ConfigurarToolStripMenuItem.Text = "Configurar Dispositivos"
+        '
+        'RespaldarBaseDeDatosToolStripMenuItem
+        '
+        Me.RespaldarBaseDeDatosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.RespaldarBaseDeDatosToolStripMenuItem.Image = CType(resources.GetObject("RespaldarBaseDeDatosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.RespaldarBaseDeDatosToolStripMenuItem.Name = "RespaldarBaseDeDatosToolStripMenuItem"
+        Me.RespaldarBaseDeDatosToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.RespaldarBaseDeDatosToolStripMenuItem.Text = "Respaldar Base de Datos"
         '
         'LoginToolStripMenuItem
         '
@@ -165,6 +201,7 @@ Partial Class Form1
         '
         'AyudaToolStripMenuItem
         '
+        Me.AyudaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeToolStripMenuItem1, Me.AcercaDeToolStripMenuItem2})
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
         Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
@@ -172,36 +209,19 @@ Partial Class Form1
         '
         'AcercaDeToolStripMenuItem1
         '
+        Me.AcercaDeToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.AcercaDeToolStripMenuItem1.Image = CType(resources.GetObject("AcercaDeToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
-        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
+        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Ver ayuda"
         '
         'AcercaDeToolStripMenuItem2
         '
+        Me.AcercaDeToolStripMenuItem2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.AcercaDeToolStripMenuItem2.Image = CType(resources.GetObject("AcercaDeToolStripMenuItem2.Image"), System.Drawing.Image)
         Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
-        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
+        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfigurarToolStripMenuItem, Me.RespaldarBaseDeDatosToolStripMenuItem})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(90, 20)
-        Me.ToolStripMenuItem1.Text = "Herramientas"
-        '
-        'ConfigurarToolStripMenuItem
-        '
-        Me.ConfigurarToolStripMenuItem.Name = "ConfigurarToolStripMenuItem"
-        Me.ConfigurarToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
-        Me.ConfigurarToolStripMenuItem.Text = "Configurar Dispositivos"
-        '
-        'RespaldarBaseDeDatosToolStripMenuItem
-        '
-        Me.RespaldarBaseDeDatosToolStripMenuItem.Name = "RespaldarBaseDeDatosToolStripMenuItem"
-        Me.RespaldarBaseDeDatosToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
-        Me.RespaldarBaseDeDatosToolStripMenuItem.Text = "Respaldar Base de Datos"
         '
         'Form1
         '

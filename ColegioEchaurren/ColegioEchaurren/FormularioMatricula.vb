@@ -27,6 +27,9 @@ Public Class FormularioMatricula
 
     Private Sub FormularioMatricula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        cbbAñoPago.Items.Add(Year(Now))
+        cbbAñoPago.Items.Add(Year(Now) + 1)
+
         DateTimePicker1.Format = DateTimePickerFormat.Custom
         DateTimePicker1.CustomFormat = "dd/MM/yyyy"
         DateTimePicker1.MaxDate = Now()
@@ -34,8 +37,6 @@ Public Class FormularioMatricula
         dateTimeFechaNac.Format = DateTimePickerFormat.Custom
         dateTimeFechaNac.CustomFormat = "dd/MM/yyyy"
         dateTimeFechaNac.MaxDate = Now()
-
-        varAñoActual = Year(Now)
 
         Try
             varConexion = New MySqlConnection
@@ -324,7 +325,7 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub txtRutAlumno_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutAlumno.KeyPress
-        If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+        If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
             MsgBox("Porfavor ingresar sólo dígitos y guión")
@@ -343,7 +344,7 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub txtRutPadre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutPadre.KeyPress
-        If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+        If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
             MsgBox("Porfavor ingresar sólo dígitos y guión")
@@ -362,7 +363,7 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub txtRutMadre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutMadre.KeyPress
-        If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+        If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
             MsgBox("Porfavor ingresar sólo dígitos y guión")
@@ -381,7 +382,7 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub txtRut_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRut.KeyPress
-        If InStr(1, "0123456789,-" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+        If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
             MsgBox("Porfavor ingresar sólo dígitos y guión")
@@ -400,14 +401,12 @@ Public Class FormularioMatricula
     End Sub
 
     Private Sub btnTerminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTerminar.Click
+
         If txtRutAntiguo.Text <> "" Or MessageBox.Show("El alumno a matricular, ¿Es alumno antiguo?", "¡Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
 
             Dim valorSexo As String = ""
             Dim varHermano As String = ""
-            Dim varViveCon As String = ""
             Dim becado As Integer
-            Dim servSalud As String = ""
-            Dim otroServSalud As String = ""
             Dim varApoderadoPadre As Integer = 0
             Dim varApoderadoSuplePadre As Integer = 0
             Dim varApoderadoMadre As Integer = 0
@@ -421,6 +420,13 @@ Public Class FormularioMatricula
             Dim varTutor2 As Integer = 0
             Dim varCurso As String = ""
             Dim varComuna As String = ""
+
+            If cbbAñoPago.Text <> "" Then
+                varAñoActual = cbbAñoPago.Text
+            Else
+                MsgBox("Seleccione el Año de vencimiento de Mensualidades.")
+                Exit Sub
+            End If
 
             If CheckBox1.Checked = False Then
                 becado = 0
@@ -456,7 +462,7 @@ Public Class FormularioMatricula
 
             varComuna = comboComuna.SelectedValue
             varCurso = comboCurso.SelectedValue
-            servSalud = comboServSalud.SelectedValue
+
 
             '-------------------------------------------------
 
@@ -464,8 +470,8 @@ Public Class FormularioMatricula
                                                txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
                                                txtSectorAlumno.Text, varCurso, varComuna, txtTelefonoAlumno.Text, _
                                                txtColegioPrese.Text, txtCursosRepetidos.Text, becado, varHermano, txtHermanosCursos.Text, _
-                                               varViveCon, txtNumHijos.Text, txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text, servSalud, _
-                                               otroServSalud, txtSeguros.Text, oldAlumno, txtNumMatri.Text, txtViveConOtros.Text) = True Then
+                                               cbViveCon.Text, txtNumHijos.Text, txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text, comboServSalud.SelectedValue, _
+                                               txtOtrosServicios.Text, txtSeguros.Text, oldAlumno, txtNumMatri.Text, txtViveConOtros.Text, cbbPorcentaje.Text) = True Then
             Else
                 MessageBox.Show("Error al actualizar datos de alumno(a)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
@@ -512,7 +518,7 @@ Public Class FormularioMatricula
                 ModuloContenedor.updateAlumno_respons_tutor(txtRut.Text, txtRutAlumno.Text, varResponsableTutor, varTutor, _
                                                           varTutor2, txtOtro.Text, txtNumMatri.Text, oldTutor, oldAlumno)
             End If
-            
+
 
             If checkpadre.Checked = True And RadioButton9.Checked = True Then
 
@@ -639,6 +645,13 @@ Public Class FormularioMatricula
             Dim varCurso As String = ""
             Dim varComuna As String = ""
 
+            If cbbAñoPago.Text <> "" Then
+                varAñoActual = cbbAñoPago.Text
+            Else
+                MsgBox("Seleccione el Año de vencimiento de Mensualidades.")
+                Exit Sub
+            End If
+
             If CheckBox1.Checked = False Then
                 becado = 0
             ElseIf CheckBox1.Checked = True Then
@@ -665,7 +678,7 @@ Public Class FormularioMatricula
                                                txtRutAlumno.Text, valorSexo, dateTimeFechaNac, txtEdadAlumno.Text, txtCalleAlumno.Text, _
                                                txtSectorAlumno.Text, varCurso, varComuna, txtTelefonoAlumno.Text, _
                                                txtColegioPrese.Text, txtCursosRepetidos.Text, becado, varHermano, _
-                                               cbViveCon.Text, txtNumHijos.Text, txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text, txtViveConOtros.Text, txtHermanosCursos.Text, txtNumMatri.Text, DateTimePicker1) = True Then
+                                               cbViveCon.Text, txtNumHijos.Text, txtLugarHijos.Text, txtGrupoFamiliar.Text, txtAntecedentesMed.Text, txtViveConOtros.Text, txtHermanosCursos.Text, txtNumMatri.Text, DateTimePicker1, cbbPorcentaje.Text) = True Then
             Else
                 MessageBox.Show("Error al ingresar alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
@@ -780,7 +793,7 @@ Public Class FormularioMatricula
                                                           varTutor2, txtOtro.Text, txtNumMatri.Text)
             End If
 
-            '---Inicio de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
+    '---Inicio de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
 
             If txtMontoMarzo.Text <> "" And cbbDiaMarzo.Text <> "Día" And txtDocMarzo.Text <> "" Then
                 ModuloContenedor.RegistrarMensualidades(txtRutAlumno.Text, lblMarzo.Text, cbbTipoPago, txtMontoMarzo.Text, varAñoActual & "-03-" & cbbDiaMarzo.Text, txtDocMarzo.Text, txtMontoAnual.Text, txtNombreTitular.Text, txtNombreBanco.Text, txtCtaCorriente.Text)
@@ -843,7 +856,7 @@ Public Class FormularioMatricula
                 Exit Sub
             End If
 
-            '---Fin de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
+    '---Fin de Ingreso de Mensualidades y Tipo de Pago a Base de Datos---'
         End If
 
         MessageBox.Show("Alumno matriculado con exito", "Matricula", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -854,7 +867,7 @@ Public Class FormularioMatricula
                 TabPage2.Show()
             End If
         Else
-            'guardar copia archivos en computador
+    'guardar copia archivos en computador
             If MessageBox.Show("¿Desea generar una nueva matrícula para otro alumno?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 TabPage2.Show()
             End If
@@ -884,7 +897,7 @@ Public Class FormularioMatricula
             End If
             Exit While
         End While
-        
+
         While ComboBox1.Text = "2 Contactos"
             If txtNombreContacto.Text = "" Or txtNumContacto.Text = "" Or txtNombreContacto2.Text = "" Or txtNumContacto2.Text = "" Then
                 MessageBox.Show("Debe ingresar los contactos de emergencia", "Datos de alumno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -1075,6 +1088,8 @@ Public Class FormularioMatricula
 
     Private Sub btnLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar.Click
         Call LimpiarTextBox(TabPage2)
+        txtRutAntiguo.Text = ""
+        txtNumMatri.Text = ""
     End Sub
 
     Private Sub btnLimpiar2_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar2.Click
@@ -1248,9 +1263,9 @@ Public Class FormularioMatricula
     Dim impresora As New PrintDialog()
 
     Sub Configurar()
-        Impresora.document = Reporte
-        Impresora.ShowDialog()
-        reporte.PrinterSettings = impresora.PrinterSettings
+        impresora.Document = Reporte
+        impresora.ShowDialog()
+        Reporte.PrinterSettings = impresora.PrinterSettings
     End Sub
 
     Private Sub cbbTipoPago_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbbTipoPago.SelectedIndexChanged
@@ -1274,7 +1289,7 @@ Public Class FormularioMatricula
             txtDocOctubre.Text = txtDocMarzo.Text + 7
             txtDocNov.Text = txtDocMarzo.Text + 8
             txtDocDic.Text = txtDocMarzo.Text + 9
-        ElseIf cbbTipoSerie.SelectedItem = "Único" Then
+        ElseIf cbbTipoSerie.SelectedItem = "Un Solo Cheque" Then
             txtDocAbril.Text = txtDocMarzo.Text
             txtDocMayo.Text = txtDocMarzo.Text
             txtDocJunio.Text = txtDocMarzo.Text
@@ -1360,6 +1375,63 @@ Public Class FormularioMatricula
             cbbDiaOctubre.Text = cbbDiaMarzo.Text
             cbbDiaNov.Text = cbbDiaMarzo.Text
             cbbDiaDic.Text = cbbDiaMarzo.Text
+        End If
+    End Sub
+
+    Private Sub txtRutAntiguo_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutAntiguo.KeyPress
+        If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+            e.Handled = True
+            MsgBox("Porfavor ingresar sólo dígitos y guión")
+        End If
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+
+            ComprobarRut(txtRutAntiguo.Text)
+            If ComprobarRut(txtRutAntiguo.Text) = False Then
+                MsgBox("El Rut ingresado no es valido")
+                txtRutAntiguo.Focus()
+            Else
+                My.Computer.Keyboard.SendKeys("{tab}", True)
+            End If
+        End If
+    End Sub
+
+    Private Sub txtRutOtroApod_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutOtroApod.KeyPress
+        If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+            e.Handled = True
+            MsgBox("Porfavor ingresar sólo dígitos y guión")
+        End If
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+
+            ComprobarRut(txtRutOtroApod.Text)
+            If ComprobarRut(txtRutOtroApod.Text) = False Then
+                MsgBox("El Rut ingresado no es valido")
+                txtRutOtroApod.Focus()
+            Else
+                My.Computer.Keyboard.SendKeys("{tab}", True)
+            End If
+        End If
+    End Sub
+
+    Private Sub txtRutOtroApodSuple_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutOtroApodSuple.KeyPress
+        If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+            e.Handled = True
+            MsgBox("Porfavor ingresar sólo dígitos y guión")
+        End If
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+
+            ComprobarRut(txtRutOtroApodSuple.Text)
+            If ComprobarRut(txtRutOtroApodSuple.Text) = False Then
+                MsgBox("El Rut ingresado no es valido")
+                txtRutOtroApodSuple.Focus()
+            Else
+                My.Computer.Keyboard.SendKeys("{tab}", True)
+            End If
         End If
     End Sub
 End Class

@@ -105,37 +105,37 @@ Partial Class DetalleInfoAlumno
         Me.txtEdadAlumno = New System.Windows.Forms.TextBox()
         Me.lblEdad = New System.Windows.Forms.Label()
         Me.txtSexo = New System.Windows.Forms.TextBox()
-        Me.Label50 = New System.Windows.Forms.Label()
+        Me.lblSexo = New System.Windows.Forms.Label()
         Me.txtCursoHerm = New System.Windows.Forms.TextBox()
-        Me.Label49 = New System.Windows.Forms.Label()
+        Me.lblCursoHerm = New System.Windows.Forms.Label()
         Me.txtPorcentaje = New System.Windows.Forms.TextBox()
         Me.txtTipoPago = New System.Windows.Forms.TextBox()
         Me.txtBeca = New System.Windows.Forms.TextBox()
         Me.txtHermanos = New System.Windows.Forms.TextBox()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.Label47 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
+        Me.lblCursoAlumno = New System.Windows.Forms.Label()
+        Me.lblTipoPago = New System.Windows.Forms.Label()
+        Me.lblPorcentaje = New System.Windows.Forms.Label()
+        Me.lblBeca = New System.Windows.Forms.Label()
         Me.txtDomicilio = New System.Windows.Forms.TextBox()
         Me.txtRepetidos = New System.Windows.Forms.TextBox()
         Me.txtColegioAnterior = New System.Windows.Forms.TextBox()
         Me.txtFonoAlumno = New System.Windows.Forms.TextBox()
         Me.txtComuna = New System.Windows.Forms.TextBox()
         Me.txtVilla = New System.Windows.Forms.TextBox()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
+        Me.lblHermanos = New System.Windows.Forms.Label()
+        Me.lblRepetido = New System.Windows.Forms.Label()
+        Me.lblColegio = New System.Windows.Forms.Label()
+        Me.lblFonoAlumno = New System.Windows.Forms.Label()
+        Me.lblComuna = New System.Windows.Forms.Label()
         Me.txtCursoActual = New System.Windows.Forms.TextBox()
         Me.txtFechaNac = New System.Windows.Forms.TextBox()
         Me.txtApeMat = New System.Windows.Forms.TextBox()
         Me.txtApePat = New System.Windows.Forms.TextBox()
         Me.txtNombreAlumno = New System.Windows.Forms.TextBox()
         Me.txtRutAlumno = New System.Windows.Forms.TextBox()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lblVilla = New System.Windows.Forms.Label()
+        Me.lblDomicilioAlumno = New System.Windows.Forms.Label()
+        Me.lblFechaNac = New System.Windows.Forms.Label()
         Me.lblRutAlumno = New System.Windows.Forms.Label()
         Me.lblApeMat = New System.Windows.Forms.Label()
         Me.lblApePat = New System.Windows.Forms.Label()
@@ -172,11 +172,13 @@ Partial Class DetalleInfoAlumno
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
         Me.Label60 = New System.Windows.Forms.Label()
-        Me.Label51 = New System.Windows.Forms.Label()
+        Me.lblNumMatri = New System.Windows.Forms.Label()
         Me.txtNumMatri = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -221,7 +223,7 @@ Partial Class DetalleInfoAlumno
         Me.txtCorreoMadre.Name = "txtCorreoMadre"
         Me.txtCorreoMadre.ReadOnly = True
         Me.txtCorreoMadre.Size = New System.Drawing.Size(148, 20)
-        Me.txtCorreoMadre.TabIndex = 19
+        Me.txtCorreoMadre.TabIndex = 47
         '
         'Label71
         '
@@ -241,7 +243,7 @@ Partial Class DetalleInfoAlumno
         Me.txtTrabajoMadre.Name = "txtTrabajoMadre"
         Me.txtTrabajoMadre.ReadOnly = True
         Me.txtTrabajoMadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtTrabajoMadre.TabIndex = 21
+        Me.txtTrabajoMadre.TabIndex = 43
         '
         'txtNombreMadre
         '
@@ -251,7 +253,7 @@ Partial Class DetalleInfoAlumno
         Me.txtNombreMadre.Name = "txtNombreMadre"
         Me.txtNombreMadre.ReadOnly = True
         Me.txtNombreMadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtNombreMadre.TabIndex = 17
+        Me.txtNombreMadre.TabIndex = 39
         '
         'txtRutMadre
         '
@@ -261,7 +263,7 @@ Partial Class DetalleInfoAlumno
         Me.txtRutMadre.Name = "txtRutMadre"
         Me.txtRutMadre.ReadOnly = True
         Me.txtRutMadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtRutMadre.TabIndex = 18
+        Me.txtRutMadre.TabIndex = 40
         '
         'txtEdadMadre
         '
@@ -271,7 +273,7 @@ Partial Class DetalleInfoAlumno
         Me.txtEdadMadre.Name = "txtEdadMadre"
         Me.txtEdadMadre.ReadOnly = True
         Me.txtEdadMadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtEdadMadre.TabIndex = 19
+        Me.txtEdadMadre.TabIndex = 41
         '
         'txtFonoMadre
         '
@@ -281,7 +283,7 @@ Partial Class DetalleInfoAlumno
         Me.txtFonoMadre.Name = "txtFonoMadre"
         Me.txtFonoMadre.ReadOnly = True
         Me.txtFonoMadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtFonoMadre.TabIndex = 24
+        Me.txtFonoMadre.TabIndex = 46
         '
         'txtDireccionMadre
         '
@@ -291,7 +293,7 @@ Partial Class DetalleInfoAlumno
         Me.txtDireccionMadre.Name = "txtDireccionMadre"
         Me.txtDireccionMadre.ReadOnly = True
         Me.txtDireccionMadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtDireccionMadre.TabIndex = 23
+        Me.txtDireccionMadre.TabIndex = 45
         '
         'txtCargoMadre
         '
@@ -301,7 +303,7 @@ Partial Class DetalleInfoAlumno
         Me.txtCargoMadre.Name = "txtCargoMadre"
         Me.txtCargoMadre.ReadOnly = True
         Me.txtCargoMadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtCargoMadre.TabIndex = 22
+        Me.txtCargoMadre.TabIndex = 44
         '
         'txtEstudiosMadre
         '
@@ -311,7 +313,7 @@ Partial Class DetalleInfoAlumno
         Me.txtEstudiosMadre.Name = "txtEstudiosMadre"
         Me.txtEstudiosMadre.ReadOnly = True
         Me.txtEstudiosMadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtEstudiosMadre.TabIndex = 20
+        Me.txtEstudiosMadre.TabIndex = 42
         '
         'Label19
         '
@@ -426,7 +428,7 @@ Partial Class DetalleInfoAlumno
         Me.txtCorreoPadre.Name = "txtCorreoPadre"
         Me.txtCorreoPadre.ReadOnly = True
         Me.txtCorreoPadre.Size = New System.Drawing.Size(152, 20)
-        Me.txtCorreoPadre.TabIndex = 18
+        Me.txtCorreoPadre.TabIndex = 38
         '
         'Label70
         '
@@ -446,7 +448,7 @@ Partial Class DetalleInfoAlumno
         Me.txtFonoPadre.Name = "txtFonoPadre"
         Me.txtFonoPadre.ReadOnly = True
         Me.txtFonoPadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtFonoPadre.TabIndex = 16
+        Me.txtFonoPadre.TabIndex = 37
         '
         'txtRutPadre
         '
@@ -455,7 +457,7 @@ Partial Class DetalleInfoAlumno
         Me.txtRutPadre.Name = "txtRutPadre"
         Me.txtRutPadre.ReadOnly = True
         Me.txtRutPadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtRutPadre.TabIndex = 10
+        Me.txtRutPadre.TabIndex = 31
         '
         'txtTrabajoPadre
         '
@@ -465,7 +467,7 @@ Partial Class DetalleInfoAlumno
         Me.txtTrabajoPadre.Name = "txtTrabajoPadre"
         Me.txtTrabajoPadre.ReadOnly = True
         Me.txtTrabajoPadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtTrabajoPadre.TabIndex = 13
+        Me.txtTrabajoPadre.TabIndex = 34
         '
         'txtCargoPadre
         '
@@ -475,7 +477,7 @@ Partial Class DetalleInfoAlumno
         Me.txtCargoPadre.Name = "txtCargoPadre"
         Me.txtCargoPadre.ReadOnly = True
         Me.txtCargoPadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtCargoPadre.TabIndex = 14
+        Me.txtCargoPadre.TabIndex = 35
         '
         'txtEstudiosPadre
         '
@@ -485,7 +487,7 @@ Partial Class DetalleInfoAlumno
         Me.txtEstudiosPadre.Name = "txtEstudiosPadre"
         Me.txtEstudiosPadre.ReadOnly = True
         Me.txtEstudiosPadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtEstudiosPadre.TabIndex = 12
+        Me.txtEstudiosPadre.TabIndex = 33
         '
         'txtDireccionPadre
         '
@@ -495,7 +497,7 @@ Partial Class DetalleInfoAlumno
         Me.txtDireccionPadre.Name = "txtDireccionPadre"
         Me.txtDireccionPadre.ReadOnly = True
         Me.txtDireccionPadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtDireccionPadre.TabIndex = 15
+        Me.txtDireccionPadre.TabIndex = 36
         '
         'txtEdadPadre
         '
@@ -505,7 +507,7 @@ Partial Class DetalleInfoAlumno
         Me.txtEdadPadre.Name = "txtEdadPadre"
         Me.txtEdadPadre.ReadOnly = True
         Me.txtEdadPadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtEdadPadre.TabIndex = 11
+        Me.txtEdadPadre.TabIndex = 32
         '
         'txtNombrePadre
         '
@@ -515,7 +517,7 @@ Partial Class DetalleInfoAlumno
         Me.txtNombrePadre.Name = "txtNombrePadre"
         Me.txtNombrePadre.ReadOnly = True
         Me.txtNombrePadre.Size = New System.Drawing.Size(187, 20)
-        Me.txtNombrePadre.TabIndex = 9
+        Me.txtNombrePadre.TabIndex = 30
         '
         'Label15
         '
@@ -631,7 +633,7 @@ Partial Class DetalleInfoAlumno
         Me.txtFono2Tutor.Name = "txtFono2Tutor"
         Me.txtFono2Tutor.ReadOnly = True
         Me.txtFono2Tutor.Size = New System.Drawing.Size(186, 20)
-        Me.txtFono2Tutor.TabIndex = 12
+        Me.txtFono2Tutor.TabIndex = 24
         '
         'Label69
         '
@@ -651,7 +653,7 @@ Partial Class DetalleInfoAlumno
         Me.txtNombreTutor.Name = "txtNombreTutor"
         Me.txtNombreTutor.ReadOnly = True
         Me.txtNombreTutor.Size = New System.Drawing.Size(187, 20)
-        Me.txtNombreTutor.TabIndex = 1
+        Me.txtNombreTutor.TabIndex = 21
         '
         'txtRutTutor
         '
@@ -661,7 +663,7 @@ Partial Class DetalleInfoAlumno
         Me.txtRutTutor.Name = "txtRutTutor"
         Me.txtRutTutor.ReadOnly = True
         Me.txtRutTutor.Size = New System.Drawing.Size(187, 20)
-        Me.txtRutTutor.TabIndex = 2
+        Me.txtRutTutor.TabIndex = 22
         '
         'txtFonoTutor
         '
@@ -671,7 +673,7 @@ Partial Class DetalleInfoAlumno
         Me.txtFonoTutor.Name = "txtFonoTutor"
         Me.txtFonoTutor.ReadOnly = True
         Me.txtFonoTutor.Size = New System.Drawing.Size(187, 20)
-        Me.txtFonoTutor.TabIndex = 3
+        Me.txtFonoTutor.TabIndex = 23
         '
         'txtOcupacionTutor
         '
@@ -681,7 +683,7 @@ Partial Class DetalleInfoAlumno
         Me.txtOcupacionTutor.Name = "txtOcupacionTutor"
         Me.txtOcupacionTutor.ReadOnly = True
         Me.txtOcupacionTutor.Size = New System.Drawing.Size(187, 20)
-        Me.txtOcupacionTutor.TabIndex = 7
+        Me.txtOcupacionTutor.TabIndex = 28
         '
         'txtLugarTrabajoTutor
         '
@@ -691,7 +693,7 @@ Partial Class DetalleInfoAlumno
         Me.txtLugarTrabajoTutor.Name = "txtLugarTrabajoTutor"
         Me.txtLugarTrabajoTutor.ReadOnly = True
         Me.txtLugarTrabajoTutor.Size = New System.Drawing.Size(163, 20)
-        Me.txtLugarTrabajoTutor.TabIndex = 5
+        Me.txtLugarTrabajoTutor.TabIndex = 26
         '
         'Label30
         '
@@ -711,7 +713,7 @@ Partial Class DetalleInfoAlumno
         Me.txtFonoTrabTutor.Name = "txtFonoTrabTutor"
         Me.txtFonoTrabTutor.ReadOnly = True
         Me.txtFonoTrabTutor.Size = New System.Drawing.Size(163, 20)
-        Me.txtFonoTrabTutor.TabIndex = 6
+        Me.txtFonoTrabTutor.TabIndex = 27
         '
         'txtProfesionTutor
         '
@@ -721,7 +723,7 @@ Partial Class DetalleInfoAlumno
         Me.txtProfesionTutor.Name = "txtProfesionTutor"
         Me.txtProfesionTutor.ReadOnly = True
         Me.txtProfesionTutor.Size = New System.Drawing.Size(187, 20)
-        Me.txtProfesionTutor.TabIndex = 8
+        Me.txtProfesionTutor.TabIndex = 29
         '
         'txtDomicilioTutor
         '
@@ -731,7 +733,7 @@ Partial Class DetalleInfoAlumno
         Me.txtDomicilioTutor.Name = "txtDomicilioTutor"
         Me.txtDomicilioTutor.ReadOnly = True
         Me.txtDomicilioTutor.Size = New System.Drawing.Size(187, 20)
-        Me.txtDomicilioTutor.TabIndex = 4
+        Me.txtDomicilioTutor.TabIndex = 25
         '
         'Label34
         '
@@ -829,7 +831,7 @@ Partial Class DetalleInfoAlumno
         Me.lblFonoContacto1.Location = New System.Drawing.Point(280, 50)
         Me.lblFonoContacto1.Name = "lblFonoContacto1"
         Me.lblFonoContacto1.Size = New System.Drawing.Size(25, 13)
-        Me.lblFonoContacto1.TabIndex = 11
+        Me.lblFonoContacto1.TabIndex = 51
         Me.lblFonoContacto1.Text = "- - - "
         '
         'lblNombreContacto1
@@ -838,7 +840,7 @@ Partial Class DetalleInfoAlumno
         Me.lblNombreContacto1.Location = New System.Drawing.Point(119, 50)
         Me.lblNombreContacto1.Name = "lblNombreContacto1"
         Me.lblNombreContacto1.Size = New System.Drawing.Size(25, 13)
-        Me.lblNombreContacto1.TabIndex = 10
+        Me.lblNombreContacto1.TabIndex = 48
         Me.lblNombreContacto1.Text = "- - - "
         '
         'lblFonoContacto2
@@ -847,7 +849,7 @@ Partial Class DetalleInfoAlumno
         Me.lblFonoContacto2.Location = New System.Drawing.Point(280, 76)
         Me.lblFonoContacto2.Name = "lblFonoContacto2"
         Me.lblFonoContacto2.Size = New System.Drawing.Size(25, 13)
-        Me.lblFonoContacto2.TabIndex = 9
+        Me.lblFonoContacto2.TabIndex = 52
         Me.lblFonoContacto2.Text = "- - - "
         '
         'lblFonoContacto3
@@ -856,7 +858,7 @@ Partial Class DetalleInfoAlumno
         Me.lblFonoContacto3.Location = New System.Drawing.Point(280, 102)
         Me.lblFonoContacto3.Name = "lblFonoContacto3"
         Me.lblFonoContacto3.Size = New System.Drawing.Size(25, 13)
-        Me.lblFonoContacto3.TabIndex = 8
+        Me.lblFonoContacto3.TabIndex = 53
         Me.lblFonoContacto3.Text = "- - - "
         '
         'Label38
@@ -895,7 +897,7 @@ Partial Class DetalleInfoAlumno
         Me.lblNombreContacto2.Location = New System.Drawing.Point(119, 76)
         Me.lblNombreContacto2.Name = "lblNombreContacto2"
         Me.lblNombreContacto2.Size = New System.Drawing.Size(25, 13)
-        Me.lblNombreContacto2.TabIndex = 3
+        Me.lblNombreContacto2.TabIndex = 49
         Me.lblNombreContacto2.Text = "- - - "
         '
         'lblNombreContacto3
@@ -904,7 +906,7 @@ Partial Class DetalleInfoAlumno
         Me.lblNombreContacto3.Location = New System.Drawing.Point(119, 102)
         Me.lblNombreContacto3.Name = "lblNombreContacto3"
         Me.lblNombreContacto3.Size = New System.Drawing.Size(25, 13)
-        Me.lblNombreContacto3.TabIndex = 2
+        Me.lblNombreContacto3.TabIndex = 50
         Me.lblNombreContacto3.Text = "- - - "
         '
         'Label9
@@ -952,7 +954,7 @@ Partial Class DetalleInfoAlumno
         Me.txtFonoOtro.Name = "txtFonoOtro"
         Me.txtFonoOtro.ReadOnly = True
         Me.txtFonoOtro.Size = New System.Drawing.Size(200, 20)
-        Me.txtFonoOtro.TabIndex = 28
+        Me.txtFonoOtro.TabIndex = 57
         '
         'txtDireccionOtro
         '
@@ -962,7 +964,7 @@ Partial Class DetalleInfoAlumno
         Me.txtDireccionOtro.Name = "txtDireccionOtro"
         Me.txtDireccionOtro.ReadOnly = True
         Me.txtDireccionOtro.Size = New System.Drawing.Size(200, 20)
-        Me.txtDireccionOtro.TabIndex = 27
+        Me.txtDireccionOtro.TabIndex = 56
         '
         'txtRutOtro
         '
@@ -972,7 +974,7 @@ Partial Class DetalleInfoAlumno
         Me.txtRutOtro.Name = "txtRutOtro"
         Me.txtRutOtro.ReadOnly = True
         Me.txtRutOtro.Size = New System.Drawing.Size(200, 20)
-        Me.txtRutOtro.TabIndex = 26
+        Me.txtRutOtro.TabIndex = 55
         '
         'txtNombreOtro
         '
@@ -982,7 +984,7 @@ Partial Class DetalleInfoAlumno
         Me.txtNombreOtro.Name = "txtNombreOtro"
         Me.txtNombreOtro.ReadOnly = True
         Me.txtNombreOtro.Size = New System.Drawing.Size(200, 20)
-        Me.txtNombreOtro.TabIndex = 25
+        Me.txtNombreOtro.TabIndex = 54
         '
         'Label4
         '
@@ -1029,37 +1031,37 @@ Partial Class DetalleInfoAlumno
         Me.GroupBox6.Controls.Add(Me.txtEdadAlumno)
         Me.GroupBox6.Controls.Add(Me.lblEdad)
         Me.GroupBox6.Controls.Add(Me.txtSexo)
-        Me.GroupBox6.Controls.Add(Me.Label50)
+        Me.GroupBox6.Controls.Add(Me.lblSexo)
         Me.GroupBox6.Controls.Add(Me.txtCursoHerm)
-        Me.GroupBox6.Controls.Add(Me.Label49)
+        Me.GroupBox6.Controls.Add(Me.lblCursoHerm)
         Me.GroupBox6.Controls.Add(Me.txtPorcentaje)
         Me.GroupBox6.Controls.Add(Me.txtTipoPago)
         Me.GroupBox6.Controls.Add(Me.txtBeca)
         Me.GroupBox6.Controls.Add(Me.txtHermanos)
-        Me.GroupBox6.Controls.Add(Me.Label48)
-        Me.GroupBox6.Controls.Add(Me.Label47)
-        Me.GroupBox6.Controls.Add(Me.Label46)
-        Me.GroupBox6.Controls.Add(Me.Label45)
+        Me.GroupBox6.Controls.Add(Me.lblCursoAlumno)
+        Me.GroupBox6.Controls.Add(Me.lblTipoPago)
+        Me.GroupBox6.Controls.Add(Me.lblPorcentaje)
+        Me.GroupBox6.Controls.Add(Me.lblBeca)
         Me.GroupBox6.Controls.Add(Me.txtDomicilio)
         Me.GroupBox6.Controls.Add(Me.txtRepetidos)
         Me.GroupBox6.Controls.Add(Me.txtColegioAnterior)
         Me.GroupBox6.Controls.Add(Me.txtFonoAlumno)
         Me.GroupBox6.Controls.Add(Me.txtComuna)
         Me.GroupBox6.Controls.Add(Me.txtVilla)
-        Me.GroupBox6.Controls.Add(Me.Label44)
-        Me.GroupBox6.Controls.Add(Me.Label43)
-        Me.GroupBox6.Controls.Add(Me.Label42)
-        Me.GroupBox6.Controls.Add(Me.Label41)
-        Me.GroupBox6.Controls.Add(Me.Label40)
+        Me.GroupBox6.Controls.Add(Me.lblHermanos)
+        Me.GroupBox6.Controls.Add(Me.lblRepetido)
+        Me.GroupBox6.Controls.Add(Me.lblColegio)
+        Me.GroupBox6.Controls.Add(Me.lblFonoAlumno)
+        Me.GroupBox6.Controls.Add(Me.lblComuna)
         Me.GroupBox6.Controls.Add(Me.txtCursoActual)
         Me.GroupBox6.Controls.Add(Me.txtFechaNac)
         Me.GroupBox6.Controls.Add(Me.txtApeMat)
         Me.GroupBox6.Controls.Add(Me.txtApePat)
         Me.GroupBox6.Controls.Add(Me.txtNombreAlumno)
         Me.GroupBox6.Controls.Add(Me.txtRutAlumno)
-        Me.GroupBox6.Controls.Add(Me.Label39)
-        Me.GroupBox6.Controls.Add(Me.Label35)
-        Me.GroupBox6.Controls.Add(Me.Label11)
+        Me.GroupBox6.Controls.Add(Me.lblVilla)
+        Me.GroupBox6.Controls.Add(Me.lblDomicilioAlumno)
+        Me.GroupBox6.Controls.Add(Me.lblFechaNac)
         Me.GroupBox6.Controls.Add(Me.lblRutAlumno)
         Me.GroupBox6.Controls.Add(Me.lblApeMat)
         Me.GroupBox6.Controls.Add(Me.lblApePat)
@@ -1078,7 +1080,7 @@ Partial Class DetalleInfoAlumno
         Me.txtEdadAlumno.Name = "txtEdadAlumno"
         Me.txtEdadAlumno.ReadOnly = True
         Me.txtEdadAlumno.Size = New System.Drawing.Size(188, 20)
-        Me.txtEdadAlumno.TabIndex = 37
+        Me.txtEdadAlumno.TabIndex = 8
         '
         'lblEdad
         '
@@ -1097,17 +1099,17 @@ Partial Class DetalleInfoAlumno
         Me.txtSexo.Name = "txtSexo"
         Me.txtSexo.ReadOnly = True
         Me.txtSexo.Size = New System.Drawing.Size(188, 20)
-        Me.txtSexo.TabIndex = 35
+        Me.txtSexo.TabIndex = 6
         '
-        'Label50
+        'lblSexo
         '
-        Me.Label50.AutoSize = True
-        Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(6, 134)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(35, 13)
-        Me.Label50.TabIndex = 34
-        Me.Label50.Text = "Sexo"
+        Me.lblSexo.AutoSize = True
+        Me.lblSexo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSexo.Location = New System.Drawing.Point(6, 134)
+        Me.lblSexo.Name = "lblSexo"
+        Me.lblSexo.Size = New System.Drawing.Size(35, 13)
+        Me.lblSexo.TabIndex = 34
+        Me.lblSexo.Text = "Sexo"
         '
         'txtCursoHerm
         '
@@ -1116,17 +1118,17 @@ Partial Class DetalleInfoAlumno
         Me.txtCursoHerm.Name = "txtCursoHerm"
         Me.txtCursoHerm.ReadOnly = True
         Me.txtCursoHerm.Size = New System.Drawing.Size(149, 20)
-        Me.txtCursoHerm.TabIndex = 33
+        Me.txtCursoHerm.TabIndex = 17
         '
-        'Label49
+        'lblCursoHerm
         '
-        Me.Label49.AutoSize = True
-        Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(571, 82)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(45, 13)
-        Me.Label49.TabIndex = 32
-        Me.Label49.Text = "Cursos"
+        Me.lblCursoHerm.AutoSize = True
+        Me.lblCursoHerm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCursoHerm.Location = New System.Drawing.Point(571, 82)
+        Me.lblCursoHerm.Name = "lblCursoHerm"
+        Me.lblCursoHerm.Size = New System.Drawing.Size(45, 13)
+        Me.lblCursoHerm.TabIndex = 32
+        Me.lblCursoHerm.Text = "Cursos"
         '
         'txtPorcentaje
         '
@@ -1135,7 +1137,7 @@ Partial Class DetalleInfoAlumno
         Me.txtPorcentaje.Name = "txtPorcentaje"
         Me.txtPorcentaje.ReadOnly = True
         Me.txtPorcentaje.Size = New System.Drawing.Size(149, 20)
-        Me.txtPorcentaje.TabIndex = 31
+        Me.txtPorcentaje.TabIndex = 19
         '
         'txtTipoPago
         '
@@ -1144,7 +1146,7 @@ Partial Class DetalleInfoAlumno
         Me.txtTipoPago.Name = "txtTipoPago"
         Me.txtTipoPago.ReadOnly = True
         Me.txtTipoPago.Size = New System.Drawing.Size(149, 20)
-        Me.txtTipoPago.TabIndex = 30
+        Me.txtTipoPago.TabIndex = 20
         '
         'txtBeca
         '
@@ -1153,7 +1155,7 @@ Partial Class DetalleInfoAlumno
         Me.txtBeca.Name = "txtBeca"
         Me.txtBeca.ReadOnly = True
         Me.txtBeca.Size = New System.Drawing.Size(149, 20)
-        Me.txtBeca.TabIndex = 29
+        Me.txtBeca.TabIndex = 18
         '
         'txtHermanos
         '
@@ -1162,47 +1164,47 @@ Partial Class DetalleInfoAlumno
         Me.txtHermanos.Name = "txtHermanos"
         Me.txtHermanos.ReadOnly = True
         Me.txtHermanos.Size = New System.Drawing.Size(64, 20)
-        Me.txtHermanos.TabIndex = 28
+        Me.txtHermanos.TabIndex = 16
         '
-        'Label48
+        'lblCursoAlumno
         '
-        Me.Label48.AutoSize = True
-        Me.Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(287, 134)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(39, 13)
-        Me.Label48.TabIndex = 27
-        Me.Label48.Text = "Curso"
+        Me.lblCursoAlumno.AutoSize = True
+        Me.lblCursoAlumno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCursoAlumno.Location = New System.Drawing.Point(287, 134)
+        Me.lblCursoAlumno.Name = "lblCursoAlumno"
+        Me.lblCursoAlumno.Size = New System.Drawing.Size(39, 13)
+        Me.lblCursoAlumno.TabIndex = 27
+        Me.lblCursoAlumno.Text = "Curso"
         '
-        'Label47
+        'lblTipoPago
         '
-        Me.Label47.AutoSize = True
-        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.Location = New System.Drawing.Point(571, 182)
-        Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(83, 13)
-        Me.Label47.TabIndex = 26
-        Me.Label47.Text = "Tipo de Pago"
+        Me.lblTipoPago.AutoSize = True
+        Me.lblTipoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTipoPago.Location = New System.Drawing.Point(571, 182)
+        Me.lblTipoPago.Name = "lblTipoPago"
+        Me.lblTipoPago.Size = New System.Drawing.Size(83, 13)
+        Me.lblTipoPago.TabIndex = 26
+        Me.lblTipoPago.Text = "Tipo de Pago"
         '
-        'Label46
+        'lblPorcentaje
         '
-        Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(571, 156)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(101, 13)
-        Me.Label46.TabIndex = 25
-        Me.Label46.Text = "Porcentaje Beca"
+        Me.lblPorcentaje.AutoSize = True
+        Me.lblPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPorcentaje.Location = New System.Drawing.Point(571, 156)
+        Me.lblPorcentaje.Name = "lblPorcentaje"
+        Me.lblPorcentaje.Size = New System.Drawing.Size(101, 13)
+        Me.lblPorcentaje.TabIndex = 25
+        Me.lblPorcentaje.Text = "Porcentaje Beca"
         '
-        'Label45
+        'lblBeca
         '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(571, 130)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(79, 13)
-        Me.Label45.TabIndex = 24
-        Me.Label45.Text = "Estado Beca"
+        Me.lblBeca.AutoSize = True
+        Me.lblBeca.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBeca.Location = New System.Drawing.Point(571, 130)
+        Me.lblBeca.Name = "lblBeca"
+        Me.lblBeca.Size = New System.Drawing.Size(79, 13)
+        Me.lblBeca.TabIndex = 24
+        Me.lblBeca.Text = "Estado Beca"
         '
         'txtDomicilio
         '
@@ -1211,7 +1213,7 @@ Partial Class DetalleInfoAlumno
         Me.txtDomicilio.Name = "txtDomicilio"
         Me.txtDomicilio.ReadOnly = True
         Me.txtDomicilio.Size = New System.Drawing.Size(175, 20)
-        Me.txtDomicilio.TabIndex = 23
+        Me.txtDomicilio.TabIndex = 9
         '
         'txtRepetidos
         '
@@ -1220,7 +1222,7 @@ Partial Class DetalleInfoAlumno
         Me.txtRepetidos.Name = "txtRepetidos"
         Me.txtRepetidos.ReadOnly = True
         Me.txtRepetidos.Size = New System.Drawing.Size(151, 20)
-        Me.txtRepetidos.TabIndex = 22
+        Me.txtRepetidos.TabIndex = 15
         '
         'txtColegioAnterior
         '
@@ -1229,7 +1231,7 @@ Partial Class DetalleInfoAlumno
         Me.txtColegioAnterior.Name = "txtColegioAnterior"
         Me.txtColegioAnterior.ReadOnly = True
         Me.txtColegioAnterior.Size = New System.Drawing.Size(134, 20)
-        Me.txtColegioAnterior.TabIndex = 21
+        Me.txtColegioAnterior.TabIndex = 14
         '
         'txtFonoAlumno
         '
@@ -1238,7 +1240,7 @@ Partial Class DetalleInfoAlumno
         Me.txtFonoAlumno.Name = "txtFonoAlumno"
         Me.txtFonoAlumno.ReadOnly = True
         Me.txtFonoAlumno.Size = New System.Drawing.Size(175, 20)
-        Me.txtFonoAlumno.TabIndex = 20
+        Me.txtFonoAlumno.TabIndex = 12
         '
         'txtComuna
         '
@@ -1247,7 +1249,7 @@ Partial Class DetalleInfoAlumno
         Me.txtComuna.Name = "txtComuna"
         Me.txtComuna.ReadOnly = True
         Me.txtComuna.Size = New System.Drawing.Size(174, 20)
-        Me.txtComuna.TabIndex = 19
+        Me.txtComuna.TabIndex = 11
         '
         'txtVilla
         '
@@ -1256,57 +1258,57 @@ Partial Class DetalleInfoAlumno
         Me.txtVilla.Name = "txtVilla"
         Me.txtVilla.ReadOnly = True
         Me.txtVilla.Size = New System.Drawing.Size(175, 20)
-        Me.txtVilla.TabIndex = 18
+        Me.txtVilla.TabIndex = 10
         '
-        'Label44
+        'lblHermanos
         '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(571, 56)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(187, 13)
-        Me.Label44.TabIndex = 17
-        Me.Label44.Text = "Hermanos en el establecimiento"
+        Me.lblHermanos.AutoSize = True
+        Me.lblHermanos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHermanos.Location = New System.Drawing.Point(571, 56)
+        Me.lblHermanos.Name = "lblHermanos"
+        Me.lblHermanos.Size = New System.Drawing.Size(187, 13)
+        Me.lblHermanos.TabIndex = 17
+        Me.lblHermanos.Text = "Hermanos en el establecimiento"
         '
-        'Label43
+        'lblRepetido
         '
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.Location = New System.Drawing.Point(286, 186)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(106, 13)
-        Me.Label43.TabIndex = 16
-        Me.Label43.Text = "Cursos Repetidos"
+        Me.lblRepetido.AutoSize = True
+        Me.lblRepetido.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRepetido.Location = New System.Drawing.Point(286, 186)
+        Me.lblRepetido.Name = "lblRepetido"
+        Me.lblRepetido.Size = New System.Drawing.Size(106, 13)
+        Me.lblRepetido.TabIndex = 16
+        Me.lblRepetido.Text = "Cursos Repetidos"
         '
-        'Label42
+        'lblColegio
         '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(286, 160)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(124, 13)
-        Me.Label42.TabIndex = 15
-        Me.Label42.Text = "Colegio Procedencia"
+        Me.lblColegio.AutoSize = True
+        Me.lblColegio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblColegio.Location = New System.Drawing.Point(286, 160)
+        Me.lblColegio.Name = "lblColegio"
+        Me.lblColegio.Size = New System.Drawing.Size(124, 13)
+        Me.lblColegio.TabIndex = 15
+        Me.lblColegio.Text = "Colegio Procedencia"
         '
-        'Label41
+        'lblFonoAlumno
         '
-        Me.Label41.AutoSize = True
-        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.Location = New System.Drawing.Point(286, 108)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(57, 13)
-        Me.Label41.TabIndex = 14
-        Me.Label41.Text = "Teléfono"
+        Me.lblFonoAlumno.AutoSize = True
+        Me.lblFonoAlumno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFonoAlumno.Location = New System.Drawing.Point(286, 108)
+        Me.lblFonoAlumno.Name = "lblFonoAlumno"
+        Me.lblFonoAlumno.Size = New System.Drawing.Size(57, 13)
+        Me.lblFonoAlumno.TabIndex = 14
+        Me.lblFonoAlumno.Text = "Teléfono"
         '
-        'Label40
+        'lblComuna
         '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(286, 82)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(52, 13)
-        Me.Label40.TabIndex = 13
-        Me.Label40.Text = "Comuna"
+        Me.lblComuna.AutoSize = True
+        Me.lblComuna.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblComuna.Location = New System.Drawing.Point(286, 82)
+        Me.lblComuna.Name = "lblComuna"
+        Me.lblComuna.Size = New System.Drawing.Size(52, 13)
+        Me.lblComuna.TabIndex = 13
+        Me.lblComuna.Text = "Comuna"
         '
         'txtCursoActual
         '
@@ -1315,7 +1317,7 @@ Partial Class DetalleInfoAlumno
         Me.txtCursoActual.Name = "txtCursoActual"
         Me.txtCursoActual.ReadOnly = True
         Me.txtCursoActual.Size = New System.Drawing.Size(175, 20)
-        Me.txtCursoActual.TabIndex = 12
+        Me.txtCursoActual.TabIndex = 13
         '
         'txtFechaNac
         '
@@ -1324,7 +1326,7 @@ Partial Class DetalleInfoAlumno
         Me.txtFechaNac.Name = "txtFechaNac"
         Me.txtFechaNac.ReadOnly = True
         Me.txtFechaNac.Size = New System.Drawing.Size(163, 20)
-        Me.txtFechaNac.TabIndex = 11
+        Me.txtFechaNac.TabIndex = 7
         '
         'txtApeMat
         '
@@ -1333,7 +1335,7 @@ Partial Class DetalleInfoAlumno
         Me.txtApeMat.Name = "txtApeMat"
         Me.txtApeMat.ReadOnly = True
         Me.txtApeMat.Size = New System.Drawing.Size(180, 20)
-        Me.txtApeMat.TabIndex = 10
+        Me.txtApeMat.TabIndex = 5
         '
         'txtApePat
         '
@@ -1342,7 +1344,7 @@ Partial Class DetalleInfoAlumno
         Me.txtApePat.Name = "txtApePat"
         Me.txtApePat.ReadOnly = True
         Me.txtApePat.Size = New System.Drawing.Size(182, 20)
-        Me.txtApePat.TabIndex = 9
+        Me.txtApePat.TabIndex = 4
         '
         'txtNombreAlumno
         '
@@ -1351,7 +1353,7 @@ Partial Class DetalleInfoAlumno
         Me.txtNombreAlumno.Name = "txtNombreAlumno"
         Me.txtNombreAlumno.ReadOnly = True
         Me.txtNombreAlumno.Size = New System.Drawing.Size(187, 20)
-        Me.txtNombreAlumno.TabIndex = 8
+        Me.txtNombreAlumno.TabIndex = 3
         '
         'txtRutAlumno
         '
@@ -1360,37 +1362,37 @@ Partial Class DetalleInfoAlumno
         Me.txtRutAlumno.Name = "txtRutAlumno"
         Me.txtRutAlumno.ReadOnly = True
         Me.txtRutAlumno.Size = New System.Drawing.Size(188, 20)
-        Me.txtRutAlumno.TabIndex = 7
+        Me.txtRutAlumno.TabIndex = 2
         '
-        'Label39
+        'lblVilla
         '
-        Me.Label39.AutoSize = True
-        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.Location = New System.Drawing.Point(286, 56)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(83, 13)
-        Me.Label39.TabIndex = 6
-        Me.Label39.Text = "Sector o Villa"
+        Me.lblVilla.AutoSize = True
+        Me.lblVilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVilla.Location = New System.Drawing.Point(286, 56)
+        Me.lblVilla.Name = "lblVilla"
+        Me.lblVilla.Size = New System.Drawing.Size(83, 13)
+        Me.lblVilla.TabIndex = 6
+        Me.lblVilla.Text = "Sector o Villa"
         '
-        'Label35
+        'lblDomicilioAlumno
         '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(286, 30)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(58, 13)
-        Me.Label35.TabIndex = 5
-        Me.Label35.Text = "Domicilio"
+        Me.lblDomicilioAlumno.AutoSize = True
+        Me.lblDomicilioAlumno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDomicilioAlumno.Location = New System.Drawing.Point(286, 30)
+        Me.lblDomicilioAlumno.Name = "lblDomicilioAlumno"
+        Me.lblDomicilioAlumno.Size = New System.Drawing.Size(58, 13)
+        Me.lblDomicilioAlumno.TabIndex = 5
+        Me.lblDomicilioAlumno.Text = "Domicilio"
         '
-        'Label11
+        'lblFechaNac
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(6, 160)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(91, 13)
-        Me.Label11.TabIndex = 4
-        Me.Label11.Text = "Fecha de Nac."
+        Me.lblFechaNac.AutoSize = True
+        Me.lblFechaNac.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaNac.Location = New System.Drawing.Point(6, 160)
+        Me.lblFechaNac.Name = "lblFechaNac"
+        Me.lblFechaNac.Size = New System.Drawing.Size(91, 13)
+        Me.lblFechaNac.TabIndex = 4
+        Me.lblFechaNac.Text = "Fecha de Nac."
         '
         'lblRutAlumno
         '
@@ -1457,7 +1459,7 @@ Partial Class DetalleInfoAlumno
         Me.txtOtrosServ.Name = "txtOtrosServ"
         Me.txtOtrosServ.ReadOnly = True
         Me.txtOtrosServ.Size = New System.Drawing.Size(193, 20)
-        Me.txtOtrosServ.TabIndex = 7
+        Me.txtOtrosServ.TabIndex = 61
         '
         'txtSeguros
         '
@@ -1467,7 +1469,7 @@ Partial Class DetalleInfoAlumno
         Me.txtSeguros.Name = "txtSeguros"
         Me.txtSeguros.ReadOnly = True
         Me.txtSeguros.Size = New System.Drawing.Size(193, 20)
-        Me.txtSeguros.TabIndex = 6
+        Me.txtSeguros.TabIndex = 60
         '
         'txtServSalud
         '
@@ -1477,7 +1479,7 @@ Partial Class DetalleInfoAlumno
         Me.txtServSalud.Name = "txtServSalud"
         Me.txtServSalud.ReadOnly = True
         Me.txtServSalud.Size = New System.Drawing.Size(193, 20)
-        Me.txtServSalud.TabIndex = 5
+        Me.txtServSalud.TabIndex = 59
         '
         'txtAntecedentes
         '
@@ -1487,7 +1489,7 @@ Partial Class DetalleInfoAlumno
         Me.txtAntecedentes.Name = "txtAntecedentes"
         Me.txtAntecedentes.ReadOnly = True
         Me.txtAntecedentes.Size = New System.Drawing.Size(193, 20)
-        Me.txtAntecedentes.TabIndex = 4
+        Me.txtAntecedentes.TabIndex = 58
         '
         'Label55
         '
@@ -1555,7 +1557,7 @@ Partial Class DetalleInfoAlumno
         Me.txtGrupoFam.Name = "txtGrupoFam"
         Me.txtGrupoFam.ReadOnly = True
         Me.txtGrupoFam.Size = New System.Drawing.Size(187, 20)
-        Me.txtGrupoFam.TabIndex = 8
+        Me.txtGrupoFam.TabIndex = 66
         '
         'txtLugarHijos
         '
@@ -1565,7 +1567,7 @@ Partial Class DetalleInfoAlumno
         Me.txtLugarHijos.Name = "txtLugarHijos"
         Me.txtLugarHijos.ReadOnly = True
         Me.txtLugarHijos.Size = New System.Drawing.Size(187, 20)
-        Me.txtLugarHijos.TabIndex = 7
+        Me.txtLugarHijos.TabIndex = 65
         '
         'txtNumHijos
         '
@@ -1575,7 +1577,7 @@ Partial Class DetalleInfoAlumno
         Me.txtNumHijos.Name = "txtNumHijos"
         Me.txtNumHijos.ReadOnly = True
         Me.txtNumHijos.Size = New System.Drawing.Size(254, 20)
-        Me.txtNumHijos.TabIndex = 6
+        Me.txtNumHijos.TabIndex = 64
         '
         'txtViveOtros
         '
@@ -1585,7 +1587,7 @@ Partial Class DetalleInfoAlumno
         Me.txtViveOtros.Name = "txtViveOtros"
         Me.txtViveOtros.ReadOnly = True
         Me.txtViveOtros.Size = New System.Drawing.Size(148, 20)
-        Me.txtViveOtros.TabIndex = 5
+        Me.txtViveOtros.TabIndex = 63
         '
         'txtViveCon
         '
@@ -1595,7 +1597,7 @@ Partial Class DetalleInfoAlumno
         Me.txtViveCon.Name = "txtViveCon"
         Me.txtViveCon.ReadOnly = True
         Me.txtViveCon.Size = New System.Drawing.Size(100, 20)
-        Me.txtViveCon.TabIndex = 4
+        Me.txtViveCon.TabIndex = 62
         '
         'Label59
         '
@@ -1722,7 +1724,7 @@ Partial Class DetalleInfoAlumno
         Me.txtTutorEco.Name = "txtTutorEco"
         Me.txtTutorEco.ReadOnly = True
         Me.txtTutorEco.Size = New System.Drawing.Size(342, 20)
-        Me.txtTutorEco.TabIndex = 5
+        Me.txtTutorEco.TabIndex = 69
         '
         'txtApoSup
         '
@@ -1731,7 +1733,7 @@ Partial Class DetalleInfoAlumno
         Me.txtApoSup.Name = "txtApoSup"
         Me.txtApoSup.ReadOnly = True
         Me.txtApoSup.Size = New System.Drawing.Size(342, 20)
-        Me.txtApoSup.TabIndex = 4
+        Me.txtApoSup.TabIndex = 68
         '
         'txtApoTitular
         '
@@ -1740,7 +1742,7 @@ Partial Class DetalleInfoAlumno
         Me.txtApoTitular.Name = "txtApoTitular"
         Me.txtApoTitular.ReadOnly = True
         Me.txtApoTitular.Size = New System.Drawing.Size(342, 20)
-        Me.txtApoTitular.TabIndex = 3
+        Me.txtApoTitular.TabIndex = 67
         '
         'Label62
         '
@@ -1772,15 +1774,15 @@ Partial Class DetalleInfoAlumno
         Me.Label60.TabIndex = 0
         Me.Label60.Text = "Nombre del Apoderado titular"
         '
-        'Label51
+        'lblNumMatri
         '
-        Me.Label51.AutoSize = True
-        Me.Label51.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.Location = New System.Drawing.Point(588, 9)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(122, 15)
-        Me.Label51.TabIndex = 40
-        Me.Label51.Text = "Numero Matricula"
+        Me.lblNumMatri.AutoSize = True
+        Me.lblNumMatri.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumMatri.Location = New System.Drawing.Point(588, 9)
+        Me.lblNumMatri.Name = "lblNumMatri"
+        Me.lblNumMatri.Size = New System.Drawing.Size(122, 15)
+        Me.lblNumMatri.TabIndex = 40
+        Me.lblNumMatri.Text = "Numero Matricula"
         '
         'txtNumMatri
         '
@@ -1789,20 +1791,42 @@ Partial Class DetalleInfoAlumno
         Me.txtNumMatri.Name = "txtNumMatri"
         Me.txtNumMatri.ReadOnly = True
         Me.txtNumMatri.Size = New System.Drawing.Size(137, 20)
-        Me.txtNumMatri.TabIndex = 41
+        Me.txtNumMatri.TabIndex = 1
         '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(744, 980)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(107, 46)
-        Me.Button1.TabIndex = 42
+        Me.Button1.TabIndex = 70
         Me.Button1.Text = "Imprimir"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'PrintDocument1
+        '
         '
         'PrintDialog1
         '
         Me.PrintDialog1.UseEXDialog = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(619, 980)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(107, 46)
+        Me.Button2.TabIndex = 71
+        Me.Button2.Text = "Vista Preliminar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
         '
         'DetalleInfoAlumno
         '
@@ -1811,9 +1835,10 @@ Partial Class DetalleInfoAlumno
         Me.AutoScroll = True
         Me.AutoScrollMargin = New System.Drawing.Size(10, 10)
         Me.ClientSize = New System.Drawing.Size(879, 557)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtNumMatri)
-        Me.Controls.Add(Me.Label51)
+        Me.Controls.Add(Me.lblNumMatri)
         Me.Controls.Add(Me.GroupBox9)
         Me.Controls.Add(Me.GroupBox8)
         Me.Controls.Add(Me.GroupBox7)
@@ -1921,37 +1946,37 @@ Partial Class DetalleInfoAlumno
     Friend WithEvents txtRutOtro As System.Windows.Forms.TextBox
     Friend WithEvents txtNombreOtro As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label50 As System.Windows.Forms.Label
+    Friend WithEvents lblSexo As System.Windows.Forms.Label
     Friend WithEvents txtCursoHerm As System.Windows.Forms.TextBox
-    Friend WithEvents Label49 As System.Windows.Forms.Label
+    Friend WithEvents lblCursoHerm As System.Windows.Forms.Label
     Friend WithEvents txtPorcentaje As System.Windows.Forms.TextBox
     Friend WithEvents txtTipoPago As System.Windows.Forms.TextBox
     Friend WithEvents txtBeca As System.Windows.Forms.TextBox
     Friend WithEvents txtHermanos As System.Windows.Forms.TextBox
-    Friend WithEvents Label48 As System.Windows.Forms.Label
-    Friend WithEvents Label47 As System.Windows.Forms.Label
-    Friend WithEvents Label46 As System.Windows.Forms.Label
-    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents lblCursoAlumno As System.Windows.Forms.Label
+    Friend WithEvents lblTipoPago As System.Windows.Forms.Label
+    Friend WithEvents lblPorcentaje As System.Windows.Forms.Label
+    Friend WithEvents lblBeca As System.Windows.Forms.Label
     Friend WithEvents txtDomicilio As System.Windows.Forms.TextBox
     Friend WithEvents txtRepetidos As System.Windows.Forms.TextBox
     Friend WithEvents txtColegioAnterior As System.Windows.Forms.TextBox
     Friend WithEvents txtFonoAlumno As System.Windows.Forms.TextBox
     Friend WithEvents txtComuna As System.Windows.Forms.TextBox
     Friend WithEvents txtVilla As System.Windows.Forms.TextBox
-    Friend WithEvents Label44 As System.Windows.Forms.Label
-    Friend WithEvents Label43 As System.Windows.Forms.Label
-    Friend WithEvents Label42 As System.Windows.Forms.Label
-    Friend WithEvents Label41 As System.Windows.Forms.Label
-    Friend WithEvents Label40 As System.Windows.Forms.Label
+    Friend WithEvents lblHermanos As System.Windows.Forms.Label
+    Friend WithEvents lblRepetido As System.Windows.Forms.Label
+    Friend WithEvents lblColegio As System.Windows.Forms.Label
+    Friend WithEvents lblFonoAlumno As System.Windows.Forms.Label
+    Friend WithEvents lblComuna As System.Windows.Forms.Label
     Friend WithEvents txtCursoActual As System.Windows.Forms.TextBox
     Friend WithEvents txtFechaNac As System.Windows.Forms.TextBox
     Friend WithEvents txtApeMat As System.Windows.Forms.TextBox
     Friend WithEvents txtApePat As System.Windows.Forms.TextBox
     Friend WithEvents txtNombreAlumno As System.Windows.Forms.TextBox
     Friend WithEvents txtRutAlumno As System.Windows.Forms.TextBox
-    Friend WithEvents Label39 As System.Windows.Forms.Label
-    Friend WithEvents Label35 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents lblVilla As System.Windows.Forms.Label
+    Friend WithEvents lblDomicilioAlumno As System.Windows.Forms.Label
+    Friend WithEvents lblFechaNac As System.Windows.Forms.Label
     Friend WithEvents lblRutAlumno As System.Windows.Forms.Label
     Friend WithEvents lblApeMat As System.Windows.Forms.Label
     Friend WithEvents lblApePat As System.Windows.Forms.Label
@@ -1989,7 +2014,7 @@ Partial Class DetalleInfoAlumno
     Friend WithEvents Label61 As System.Windows.Forms.Label
     Friend WithEvents Label60 As System.Windows.Forms.Label
     Friend WithEvents txtSexo As System.Windows.Forms.TextBox
-    Friend WithEvents Label51 As System.Windows.Forms.Label
+    Friend WithEvents lblNumMatri As System.Windows.Forms.Label
     Friend WithEvents txtNumMatri As System.Windows.Forms.TextBox
     Friend WithEvents txtCorreoMadre As System.Windows.Forms.TextBox
     Friend WithEvents Label71 As System.Windows.Forms.Label
@@ -2002,4 +2027,6 @@ Partial Class DetalleInfoAlumno
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
     Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents PrintPreviewDialog1 As System.Windows.Forms.PrintPreviewDialog
 End Class

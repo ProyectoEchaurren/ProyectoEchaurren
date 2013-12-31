@@ -26,6 +26,7 @@ Partial Class RealizarPago
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtMontoMensual = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnDeshacerPago = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.checkDic = New System.Windows.Forms.CheckBox()
@@ -55,7 +56,6 @@ Partial Class RealizarPago
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.txtCampoRut = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.btnDeshacerPago = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -92,6 +92,15 @@ Partial Class RealizarPago
         Me.GroupBox1.TabIndex = 45
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Pago"
+        '
+        'btnDeshacerPago
+        '
+        Me.btnDeshacerPago.Location = New System.Drawing.Point(286, 129)
+        Me.btnDeshacerPago.Name = "btnDeshacerPago"
+        Me.btnDeshacerPago.Size = New System.Drawing.Size(109, 40)
+        Me.btnDeshacerPago.TabIndex = 27
+        Me.btnDeshacerPago.Text = "Deshacer Pago"
+        Me.btnDeshacerPago.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
@@ -371,15 +380,6 @@ Partial Class RealizarPago
         Me.Label9.Size = New System.Drawing.Size(20, 16)
         Me.Label9.TabIndex = 48
         Me.Label9.Text = "%"
-        '
-        'btnDeshacerPago
-        '
-        Me.btnDeshacerPago.Location = New System.Drawing.Point(286, 129)
-        Me.btnDeshacerPago.Name = "btnDeshacerPago"
-        Me.btnDeshacerPago.Size = New System.Drawing.Size(109, 40)
-        Me.btnDeshacerPago.TabIndex = 27
-        Me.btnDeshacerPago.Text = "Deshacer Pago"
-        Me.btnDeshacerPago.UseVisualStyleBackColor = True
         '
         'RealizarPago
         '

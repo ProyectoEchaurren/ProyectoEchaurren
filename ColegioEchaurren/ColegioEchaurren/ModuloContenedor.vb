@@ -29,8 +29,11 @@ Module ModuloContenedor
 
             resultado = CStr(11 - (Suma Mod 11))
 
-            If resultado = "10" Then resultado = "K"
-            If resultado = "11" Then resultado = "0"
+            If resultado = "10" Then
+                resultado = "K"
+            ElseIf resultado = "11" Then
+                resultado = "0"
+            End If
             Final = Split(ElNumero, "-")
             If Final(1) = Right(resultado, 1) Then
                 ComprobarRut = True
@@ -51,11 +54,11 @@ Module ModuloContenedor
                               ByRef cursosRepe As String, ByRef becado As String, _
                               ByRef hermanosEstable As String, ByRef alumnoViveCon As String, ByRef numHijosFam As String, _
                               ByRef lugarocupaHijos As String, ByRef grupoFamiliarCompo As String, _
-                              ByRef antecedentesMedicos As String, ByRef viveEspecifico As String, ByRef cursosHerm As String, ByRef NumMatri As Integer, ByRef fechamatri As DateTimePicker) As Boolean
+                              ByRef antecedentesMedicos As String, ByRef viveEspecifico As String, ByRef cursosHerm As String, ByRef NumMatri As Integer, ByRef fechamatri As DateTimePicker, ByRef porcentaje As String) As Boolean
 
 
         Try
-            Dim consultaFichaAlumno As String = "INSERT INTO `bd_echaurren`.`fichaalumno` (`ColegioPresedencia`, `CursosRepetidos`, `Becado`, `HermanosEstablecimiento`, `CursosHermanos`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`, `ViveEspecifico`) VALUES ('" & colegioPresedencia & "', '" & cursosRepe & "', '" & becado & "', '" & hermanosEstable & "', '" & cursosHerm & "', '" & alumnoViveCon & "', '" & numHijosFam & "', '" & lugarocupaHijos & "', '" & grupoFamiliarCompo & "', '" & antecedentesMedicos & "', '" & viveEspecifico & "');"
+            Dim consultaFichaAlumno As String = "INSERT INTO `bd_echaurren`.`fichaalumno` (`ColegioPresedencia`, `CursosRepetidos`, `Becado`, `PorcentajeBeca`, `HermanosEstablecimiento`, `CursosHermanos`, `AlumnoViveCon`, `NumHijosFamilia`, `LugarOcupacionHijos`, `GrupoFamiliarComponen`, `AntecedentesMedicos`, `ViveEspecifico`) VALUES ('" & colegioPresedencia & "', '" & cursosRepe & "', '" & becado & "', '" & porcentaje & "', '" & hermanosEstable & "', '" & cursosHerm & "', '" & alumnoViveCon & "', '" & numHijosFam & "', '" & lugarocupaHijos & "', '" & grupoFamiliarCompo & "', '" & antecedentesMedicos & "', '" & viveEspecifico & "');"
             Dim comando0 As New MySqlCommand(consultaFichaAlumno, FormularioMatricula.varConexion)
             comando0.ExecuteNonQuery()
             Dim consultaIngresoMatri As String = "INSERT INTO `bd_echaurren`.`matricula` (`NumMatricula`,`Fechamatricula`) VALUES('" & NumMatri & "', '" & fechamatri.Text & "');"
@@ -860,8 +863,6 @@ Module ModuloContenedor
             DetalleInfoAlumno.txtServSalud.Text = dataSet.Tables(0).Rows("0")("PlanSalud").ToString()
             DetalleInfoAlumno.txtSeguros.Text = dataSet.Tables(0).Rows("0")("Seguros").ToString()
             DetalleInfoAlumno.txtOtrosServ.Text = dataSet.Tables(0).Rows("0")("OtrosServicios").ToString()
-            DetalleInfoAlumno.txtApoTitular.Text = dataSet.Tables(0).Rows("0")("Apoderado").ToString()
-            DetalleInfoAlumno.txtApoSup.Text = dataSet.Tables(0).Rows("0")("ApoderadoSuplente").ToString()
 
             dataSet.Clear()
             adapter.SelectCommand = New MySqlCommand("SELECT count(*) as total FROM responsable inner join responsable_alumno ON responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join tipo_responsable ON responsable_alumno.Tipo_responsable_idTipo_responsable = tipo_responsable.idTipo_responsable WHERE Alumno_RutAlumno = '" & rut & "'", conn)
@@ -869,7 +870,7 @@ Module ModuloContenedor
             total = dataSet.Tables(0).Rows("0")("total").ToString()
             If total <> 0 Then
                 For i = 1 To total
-                    adapter.SelectCommand = New MySqlCommand("SELECT Tipo_responsable, RutResponsable, NombreCompleto, EdadResp, EstudiosCompletados, Correoelectronico, Profesion, Trabajo, Cargo, Num1, NumTrabajo, Num2, DireccionParticular FROM responsable inner join responsable_alumno ON responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join tipo_responsable ON responsable_alumno.Tipo_responsable_idTipo_responsable = tipo_responsable.idTipo_responsable inner join direccion ON responsable.Direccion_idDireccion = direccion.idDireccion inner join telefono ON responsable.Telefono_idTelefono = telefono.idTelefono WHERE Alumno_RutAlumno = '" & rut & "'", conn)
+                    adapter.SelectCommand = New MySqlCommand("SELECT * FROM responsable inner join responsable_alumno ON responsable.RutResponsable = responsable_alumno.Responsable_RutResponsable inner join tipo_responsable ON responsable_alumno.Tipo_responsable_idTipo_responsable = tipo_responsable.idTipo_responsable inner join direccion ON responsable.Direccion_idDireccion = direccion.idDireccion inner join telefono ON responsable.Telefono_idTelefono = telefono.idTelefono WHERE Alumno_RutAlumno = '" & rut & "'", conn)
                     adapter.Fill(dataSet)
                     If dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "tutor economico" Then
                         DetalleInfoAlumno.txtRutTutor.Text = dataSet.Tables(0).Rows(i)("RutResponsable").ToString
@@ -882,6 +883,11 @@ Module ModuloContenedor
                         DetalleInfoAlumno.txtFonoTutor.Text = dataSet.Tables(0).Rows(i)("Num1").ToString
                         DetalleInfoAlumno.txtFono2Tutor.Text = dataSet.Tables(0).Rows(i)("Num2").ToString
                         DetalleInfoAlumno.txtTutorEco.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        If dataSet.Tables(0).Rows(i)("Apoderado").ToString() = True Then
+                            DetalleInfoAlumno.txtApoTitular.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        ElseIf dataSet.Tables(0).Rows(i)("ApoderadoSuplente").ToString() = True Then
+                            DetalleInfoAlumno.txtApoSup.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        End If
                     ElseIf dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "padre" Then
                         DetalleInfoAlumno.txtRutPadre.Text = dataSet.Tables(0).Rows(i)("RutResponsable").ToString
                         DetalleInfoAlumno.txtNombrePadre.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
@@ -889,9 +895,14 @@ Module ModuloContenedor
                         DetalleInfoAlumno.txtEstudiosPadre.Text = dataSet.Tables(0).Rows(i)("EstudiosCompletados").ToString
                         DetalleInfoAlumno.txtTrabajoPadre.Text = dataSet.Tables(0).Rows(i)("Trabajo").ToString
                         DetalleInfoAlumno.txtCargoPadre.Text = dataSet.Tables(0).Rows(i)("Cargo").ToString
-                        DetalleInfoAlumno.txtDireccionPadre.Text = dataSet.Tables(0).Rows(i)("DireccionParticular").ToString
+                        DetalleInfoAlumno.txtDireccionPadre.Text = dataSet.Tables(0).Rows(i)("DireccionTrabajo").ToString
                         DetalleInfoAlumno.txtFonoPadre.Text = dataSet.Tables(0).Rows(i)("Num1").ToString
                         DetalleInfoAlumno.txtCorreoPadre.Text = dataSet.Tables(0).Rows(i)("Correoelectronico").ToString
+                        If dataSet.Tables(0).Rows(i)("Apoderado").ToString() = True Then
+                            DetalleInfoAlumno.txtApoTitular.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        ElseIf dataSet.Tables(0).Rows(i)("ApoderadoSuplente").ToString() = True Then
+                            DetalleInfoAlumno.txtApoSup.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        End If
                     ElseIf dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "madre" Then
                         DetalleInfoAlumno.txtRutMadre.Text = dataSet.Tables(0).Rows(i)("RutResponsable").ToString
                         DetalleInfoAlumno.txtNombreMadre.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
@@ -899,14 +910,24 @@ Module ModuloContenedor
                         DetalleInfoAlumno.txtEstudiosMadre.Text = dataSet.Tables(0).Rows(i)("EstudiosCompletados").ToString
                         DetalleInfoAlumno.txtTrabajoMadre.Text = dataSet.Tables(0).Rows(i)("Trabajo").ToString
                         DetalleInfoAlumno.txtCargoMadre.Text = dataSet.Tables(0).Rows(i)("Cargo").ToString
-                        DetalleInfoAlumno.txtDireccionMadre.Text = dataSet.Tables(0).Rows(i)("DireccionParticular").ToString
+                        DetalleInfoAlumno.txtDireccionMadre.Text = dataSet.Tables(0).Rows(i)("DireccionTrabajo").ToString
                         DetalleInfoAlumno.txtFonoMadre.Text = dataSet.Tables(0).Rows(i)("Num1").ToString
                         DetalleInfoAlumno.txtCorreoMadre.Text = dataSet.Tables(0).Rows(i)("Correoelectronico").ToString
+                        If dataSet.Tables(0).Rows(i)("Apoderado").ToString() = True Then
+                            DetalleInfoAlumno.txtApoTitular.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        ElseIf dataSet.Tables(0).Rows(i)("ApoderadoSuplente").ToString() = True Then
+                            DetalleInfoAlumno.txtApoSup.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        End If
                     ElseIf dataSet.Tables(0).Rows(i)("Tipo_responsable").ToString = "otro" Then
                         DetalleInfoAlumno.txtRutOtro.Text = dataSet.Tables(0).Rows(i)("RutResponsable").ToString
                         DetalleInfoAlumno.txtNombreOtro.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToStrin
                         DetalleInfoAlumno.txtDireccionOtro.Text = dataSet.Tables(0).Rows(i)("DireccionParticular").ToString
                         DetalleInfoAlumno.txtFonoOtro.Text = dataSet.Tables(0).Rows(i)("Num1").ToString
+                        If dataSet.Tables(0).Rows(i)("Apoderado").ToString() = True Then
+                            DetalleInfoAlumno.txtApoTitular.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        ElseIf dataSet.Tables(0).Rows(i)("ApoderadoSuplente").ToString() = True Then
+                            DetalleInfoAlumno.txtApoSup.Text = dataSet.Tables(0).Rows(i)("NombreCompleto").ToString
+                        End If
                     End If
                 Next i
             Else
@@ -929,15 +950,28 @@ Module ModuloContenedor
             For i = 1 To total
                 adapter.SelectCommand = New MySqlCommand("SELECT idContacto_emergencia, NombreContacto, Numero FROM contacto_emergencia inner join alumno ON contacto_emergencia.Alumno_RutAlumno = alumno.RutAlumno WHERE Alumno_RutAlumno = '" & rut & "'", conn)
                 adapter.Fill(dataSet)
-                If dataSet.Tables(0).Rows(i)("idContacto_emergencia").ToString = "1" Then
+                If total = "1" Then
                     DetalleInfoAlumno.lblNombreContacto1.Text = dataSet.Tables(0).Rows(i)("NombreContacto").ToString
                     DetalleInfoAlumno.lblFonoContacto1.Text = dataSet.Tables(0).Rows(i)("Numero").ToString
-                ElseIf dataSet.Tables(0).Rows(i)("idContacto_emergencia").ToString = "2" Then
-                    DetalleInfoAlumno.lblNombreContacto2.Text = dataSet.Tables(0).Rows(i)("NombreContacto").ToString
-                    DetalleInfoAlumno.lblFonoContacto2.Text = dataSet.Tables(0).Rows(i)("Numero").ToString
-                ElseIf dataSet.Tables(0).Rows(i)("idContacto_emergencia").ToString = "3" Then
-                    DetalleInfoAlumno.lblNombreContacto3.Text = dataSet.Tables(0).Rows(i)("NombreContacto").ToString
-                    DetalleInfoAlumno.lblFonoContacto3.Text = dataSet.Tables(0).Rows(i)("Numero").ToString
+                ElseIf total = "2" Then
+                    If i = "1" Then
+                        DetalleInfoAlumno.lblNombreContacto1.Text = dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                        DetalleInfoAlumno.lblFonoContacto1.Text = dataSet.Tables(0).Rows(i)("Numero").ToString
+                    ElseIf i = "2" Then
+                        DetalleInfoAlumno.lblNombreContacto2.Text = dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                        DetalleInfoAlumno.lblFonoContacto2.Text = dataSet.Tables(0).Rows(i)("Numero").ToString
+                    End If
+                ElseIf total = "3" Then
+                    If i = "1" Then
+                        DetalleInfoAlumno.lblNombreContacto1.Text = dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                        DetalleInfoAlumno.lblFonoContacto1.Text = dataSet.Tables(0).Rows(i)("Numero").ToString
+                    ElseIf i = "2" Then
+                        DetalleInfoAlumno.lblNombreContacto2.Text = dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                        DetalleInfoAlumno.lblFonoContacto2.Text = dataSet.Tables(0).Rows(i)("Numero").ToString
+                    ElseIf i = "3" Then
+                        DetalleInfoAlumno.lblNombreContacto3.Text = dataSet.Tables(0).Rows(i)("NombreContacto").ToString
+                        DetalleInfoAlumno.lblFonoContacto3.Text = dataSet.Tables(0).Rows(i)("Numero").ToString
+                    End If
                 End If
             Next i
         Catch ex As Exception
@@ -1564,6 +1598,9 @@ Module ModuloContenedor
                 Form1.AdministracionToolStripMenuItem.Enabled = True
                 Form1.DocumentosToolStripMenuItem.Enabled = True
                 Form1.UsuariosToolStripMenuItem.Enabled = True
+                Form1.HerramientasToolStripMenuItem.Enabled = True
+                Form1.GestionarUsuariosToolStripMenuItem.Enabled = True
+                Form1.RespaldarBaseDeDatosToolStripMenuItem.Enabled = True
                 Form1.LoginToolStripMenuItem.Text = "Cerrar Sesión"
                 Form1.varUsuarioActual = LoginForm1.UsernameTextBox.Text
                 Form1.varTipoUsuario = dataSet.Tables(0).Rows("0")("TipoUsuario").ToString
@@ -1575,6 +1612,9 @@ Module ModuloContenedor
                 Form1.DocumentosToolStripMenuItem.Enabled = True
                 Form1.UsuariosToolStripMenuItem.Enabled = True
                 Form1.GestionarUsuariosToolStripMenuItem.Enabled = False
+                Form1.HerramientasToolStripMenuItem.Enabled = True
+                Form1.GestionarUsuariosToolStripMenuItem.Enabled = False
+                Form1.RespaldarBaseDeDatosToolStripMenuItem.Enabled = False
                 Form1.LoginToolStripMenuItem.Text = "Cerrar Sesión"
                 Form1.varUsuarioActual = LoginForm1.UsernameTextBox.Text
                 Form1.varTipoUsuario = dataSet.Tables(0).Rows("0")("TipoUsuario").ToString
@@ -2501,9 +2541,9 @@ Module ModuloContenedor
         dgv.DataSource = dataSet.Tables(0)
     End Function
 
-    Public Function ActualizarMatriculas(ByRef fechamatri As DateTimePicker, ByRef apePaterno As String, ByRef apeMaterno As String, ByRef nombreAlumno As String, ByRef rutAlumno As String, ByRef sexo As String, ByRef fechanac As DateTimePicker, ByRef edad As Integer, ByRef domicilio As String, ByRef villa As String, ByRef curso As String, ByRef comuna As String, ByRef telefono As String, ByRef colegio As String, ByRef repetidos As String, ByRef becado As String, ByRef hermanos As String, ByRef cursohermano As String, ByRef vivecon As String, ByRef hijos As Integer, ByRef lugarhijos As Integer, ByRef grupofamilia As String, ByRef antecedentes As String, ByRef servsalud As String, ByRef otroserv As String, ByRef seguros As String, ByRef oldAlumno As String, ByRef nummatri As Integer, ByRef viveespecifico As String)
+    Public Function ActualizarMatriculas(ByRef fechamatri As DateTimePicker, ByRef apePaterno As String, ByRef apeMaterno As String, ByRef nombreAlumno As String, ByRef rutAlumno As String, ByRef sexo As String, ByRef fechanac As DateTimePicker, ByRef edad As Integer, ByRef domicilio As String, ByRef villa As String, ByRef curso As String, ByRef comuna As String, ByRef telefono As String, ByRef colegio As String, ByRef repetidos As String, ByRef becado As String, ByRef hermanos As String, ByRef cursohermano As String, ByRef vivecon As String, ByRef hijos As Integer, ByRef lugarhijos As Integer, ByRef grupofamilia As String, ByRef antecedentes As String, ByRef servsalud As String, ByRef otroserv As String, ByRef seguros As String, ByRef oldAlumno As String, ByRef nummatri As Integer, ByRef viveespecifico As String, ByRef porcentaje As String)
         Try
-            Dim consulta2 As String = "UPDATE `bd_echaurren`.`alumno`, `fichaalumno`, `servicio_salud`, `servicio_por_alumno`, `curso`, `comuna`, `matricula` SET `NombreCompleto` = '" & nombreAlumno & "', `ApePaterno` = '" & apePaterno & "', `ApeMaterno` = '" & apeMaterno & "', `Sexo` = '" & sexo & "', `FechaNac` = '" & fechanac.Text & "', `Edad` = '" & edad & "', `Domicilio` ='" & domicilio & "', `SectorVilla` = '" & villa & "', `Telefono` = '" & telefono & "', `idCurso` = '" & curso & "', `idComuna` = '" & comuna & "', `ColegioPresedencia` = '" & colegio & "', `CursosRepetidos` = '" & repetidos & "', `Becado` = '" & becado & "', `HermanosEstablecimiento` = '" & hermanos & "', `CursosHermanos` = '" & cursohermano & "', `AlumnoViveCon` = '" & vivecon & "', `NumHijosFamilia` = '" & hijos & "', `LugarOcupacionHijos` = '" & lugarhijos & "', `GrupoFamiliarComponen` = '" & grupofamilia & "', `AntecedentesMedicos` = '" & antecedentes & "', `ViveEspecifico` = '" & viveespecifico & "', `Seguros` = '" & seguros & "', `idServicio_salud` = '" & servsalud & "', `OtrosServicios` = '" & otroserv & "', `Fechamatricula` = '" & fechamatri.Text & "' WHERE `RutAlumno` = '" & oldAlumno & "' and `alumno`.`Fichaalumno_idFichaalumno` = `fichaalumno`.`idFichaalumno` and `alumno`.`RutAlumno` = `servicio_por_alumno`.`alumno_RutAlumno` and `servicio_por_alumno`.`Servicio_salud_idServicio_salud` = `servicio_salud`.`idServicio_salud` and `alumno`.`Comuna_idComuna` = `comuna`.`idComuna` and `alumno`.`Curso_idCurso` = `curso`.`idCurso` and `alumno`.`Matricula_NumMatricula` = `matricula`.`NumMatricula`;"
+            Dim consulta2 As String = "UPDATE `bd_echaurren`.`alumno`, `fichaalumno`, `servicio_por_alumno`, `curso`, `comuna`, `matricula` SET `NombreCompleto` = '" & nombreAlumno & "', `ApePaterno` = '" & apePaterno & "', `ApeMaterno` = '" & apeMaterno & "', `Sexo` = '" & sexo & "', `FechaNac` = '" & fechanac.Text & "', `Edad` = '" & edad & "', `Domicilio` ='" & domicilio & "', `SectorVilla` = '" & villa & "', `Telefono` = '" & telefono & "', `idCurso` = '" & curso & "', `idComuna` = '" & comuna & "', `ColegioPresedencia` = '" & colegio & "', `CursosRepetidos` = '" & repetidos & "', `Becado` = '" & becado & "', `PorcentajeBeca` = '" & porcentaje & "', `HermanosEstablecimiento` = '" & hermanos & "', `CursosHermanos` = '" & cursohermano & "', `AlumnoViveCon` = '" & vivecon & "', `NumHijosFamilia` = '" & hijos & "', `LugarOcupacionHijos` = '" & lugarhijos & "', `GrupoFamiliarComponen` = '" & grupofamilia & "', `AntecedentesMedicos` = '" & antecedentes & "', `ViveEspecifico` = '" & viveespecifico & "', `Seguros` = '" & seguros & "', `Servicio_salud_idServicio_salud` = '" & servsalud & "', `OtrosServicios` = '" & otroserv & "', `Fechamatricula` = '" & fechamatri.Text & "' WHERE `RutAlumno` = '" & oldAlumno & "' and `alumno`.`Fichaalumno_idFichaalumno` = `fichaalumno`.`idFichaalumno` and `alumno`.`RutAlumno` = `servicio_por_alumno`.`alumno_RutAlumno` and `alumno`.`Comuna_idComuna` = `comuna`.`idComuna` and `alumno`.`Curso_idCurso` = `curso`.`idCurso` and `alumno`.`Matricula_NumMatricula` = `matricula`.`NumMatricula`;"
             Dim _comando8 As New MySqlCommand(consulta2, FormularioMatricula.varConexion)
             _comando8.ExecuteNonQuery()
             Return True
@@ -2606,25 +2646,6 @@ Module ModuloContenedor
         End Try
     End Function
 
-    Public Function updateTutorEconomico(ByRef nombreTutor As String, ByRef rutTutor As String, ByRef telefono1 As String, _
-                                           ByRef telefono2 As String, ByRef telefTrabajo As String, ByRef domicilio As String, _
-                                           ByRef lugarTrabajo As String, ByRef ocupaActual As String, ByRef profesion As String, ByRef oldRut As String) As Boolean
-
-        Try
-            Dim consultaTutor As String = "DELETE FROM responsable_alumno USING responsable_alumno, responsable WHERE `responsable`.`RutResponsable` = `responsable_alumno`.`Responsable_RutResponsable` AND responsable.RutResponsable = '" & oldRut & "';"
-            Dim consultaTutor2 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Profesion`, `Trabajo`, `Cargo`, `Num1`, `Num2`, `NumTrabajo`, `DireccionParticular`) VALUES ('" & rutTutor & "', '" & nombreTutor & "', '" & profesion & "', '" & lugarTrabajo & "', '" & ocupaActual & "', '" & telefono1 & "', '" & telefono2 & "', '" & telefTrabajo & "', '" & domicilio & "');"
-            Dim comando16 As New MySqlCommand(consultaTutor, FormularioMatricula.varConexion)
-            comando16.ExecuteNonQuery()
-            Dim comando17 As New MySqlCommand(consultaTutor2, FormularioMatricula.varConexion)
-            comando17.ExecuteNonQuery()
-            Return True
-        Catch ex As Exception
-            '  MessageBox.Show("Error al ingresar tutor economico")
-            Return False
-        End Try
-
-    End Function
-
     Public Function updateResponsableCompleto(ByRef rutResponsable As String, ByRef nombreComleto As String, ByRef telefono1 As String, _
                                                 ByRef telefono2 As String, ByRef telefonoTrabajo As String, ByRef direccionPart As String, _
                                                ByRef direccionTrab As String, ByRef edad As String, ByRef estudiosCompl As ComboBox, _
@@ -2643,13 +2664,41 @@ Module ModuloContenedor
 
     End Function
 
+    Public Function updateTutorEconomico(ByRef nombreTutor As String, ByRef rutTutor As String, ByRef telefono1 As String, _
+                                           ByRef telefono2 As String, ByRef telefTrabajo As String, ByRef domicilio As String, _
+                                           ByRef lugarTrabajo As String, ByRef ocupaActual As String, ByRef profesion As String, ByRef oldRut As String) As Boolean
+
+        Try
+            Dim consultaTutor As String = "DELETE FROM responsable Using responsable, telefono, direccion WHERE responsable.RutResponsable = '" & oldRut & "' and `responsable`.`Telefono_idTelefono` = `telefono`.`idTelefono` and `responsable`.`Direccion_idDireccion` = `direccion`.`idDireccion`;"
+            Dim consultaTutor2 As String = "INSERT INTO `bd_echaurren`.`telefono` (`Num1`, `Num2`, `NumTrabajo`) VALUES ('" & telefono1 & "', '" & telefono2 & "', '" & telefTrabajo & "');"
+            Dim consultaTutor3 As String = "INSERT INTO `bd_echaurren`.`responsable` (`RutResponsable`, `NombreCompleto`, `Profesion`, `Trabajo`, `Cargo`, `Telefono_idTelefono`) VALUES ('" & rutTutor & "', '" & nombreTutor & "', '" & profesion & "', '" & lugarTrabajo & " ', '" & ocupaActual & "', last_insert_id());"
+            Dim consultatutor4 As String = "INSERT INTO `bd_echaurren`.`direccion` (`DireccionParticular`) VALUES ('" & domicilio & "');"
+            Dim consultaTutor5 As String = "UPDATE `bd_echaurren`.`responsable` SET `Direccion_idDireccion`= last_insert_id() WHERE `RutResponsable`='" & rutTutor & "';"
+            Dim comando1 As New MySqlCommand(consultaTutor, FormularioMatricula.varConexion)
+            comando1.ExecuteNonQuery()
+            Dim comando2 As New MySqlCommand(consultaTutor2, FormularioMatricula.varConexion)
+            comando2.ExecuteNonQuery()
+            Dim comando3 As New MySqlCommand(consultaTutor3, FormularioMatricula.varConexion)
+            comando3.ExecuteNonQuery()
+            Dim comando4 As New MySqlCommand(consultatutor4, FormularioMatricula.varConexion)
+            comando4.ExecuteNonQuery()
+            Dim comando5 As New MySqlCommand(consultaTutor5, FormularioMatricula.varConexion)
+            comando5.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            '  MessageBox.Show("Error al ingresar tutor economico")
+            Return False
+        End Try
+
+    End Function
+
     Public Function updateAlumno_respons_tutor(ByRef rutResponsable As String, ByRef rutAlumno As String, ByRef tipoResp As String, _
                                            ByRef apoderado As Integer, ByRef apodSuplente As Integer, _
                                            ByRef OtroTutor As String, ByRef matricula As Integer, ByRef oldResp As String, ByRef oldAlumno As String) As Boolean
 
         Try
-            Dim consulta As String = "DELETE FROM responsable Using responsable WHERE responsable.RutResponsable = '" & oldResp & "';"
-            Dim consulta2 As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Otro_tutor`, `Matricula_NumMatricula`) VALUES() ('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & OtroTutor & "', '" & matricula & "'); "
+            Dim consulta As String = "DELETE FROM `bd_echaurren`.`responsable_alumno` WHERE `responsable_alumno`.`Responsable_RutResponsable` = '" & oldResp & "';"
+            Dim consulta2 As String = "INSERT INTO `bd_echaurren`.`responsable_alumno` (`Responsable_RutResponsable`, `Alumno_RutAlumno`, `Tipo_responsable_idTipo_responsable`, `Apoderado`, `ApoderadoSuplente`, `Otro_tutor`, `Matricula_NumMatricula`) VALUES('" & rutResponsable & "', '" & rutAlumno & "', '" & tipoResp & "', '" & apoderado & "', '" & apodSuplente & "', '" & OtroTutor & "', '" & matricula & "'); "
             Dim comando As New MySqlCommand(consulta, FormularioMatricula.varConexion)
             comando.ExecuteNonQuery()
             Dim comando2 As New MySqlCommand(consulta2, FormularioMatricula.varConexion)
@@ -2677,9 +2726,9 @@ Module ModuloContenedor
 
         Try
             If FormularioMatricula.cbbTipoPago.SelectedItem = "Contado" Then
-                consulta = "UPDATE `bd_echaurren`.`mensualidad` SET `RutAlumno`='" & rut & "', `NombreMes`='" & mes & "', `TipoPago`='" & tipopago.Text & "', `Monto`='" & monto & "', `FechaPago`='" & fechavenc & "', `Estado`='PAGADO', `NumDocumento`='" & documento & "', `MontoTotalAnual`='" & montoanual & "', `NombreTitular`='" & titular & "', `NombreBanco`='" & banco & "', `NumCtaCorriente`='" & ctacorriente & "' WHERE `RutAlumno`='" & rut & "';"
+                consulta = "UPDATE `bd_echaurren`.`mensualidad` SET `RutAlumno`='" & rut & "', `NombreMes`='" & mes & "', `TipoPago`='" & tipopago.Text & "', `Monto`='" & monto & "', `FechaPago`='" & fechavenc & "', `Estado`='PAGADO', `NumDocumento`='" & documento & "', `MontoTotalAnual`='" & montoanual & "', `NombreTitular`='" & titular & "', `NombreBanco`='" & banco & "', `NumCtaCorriente`='" & ctacorriente & "' WHERE `RutAlumno`='" & rut & "' and `NombreMes`='" & mes & "';"
             ElseIf FormularioMatricula.cbbTipoPago.SelectedItem = "Cheque" Or FormularioMatricula.cbbTipoPago.SelectedItem = "Letra" Then
-                consulta = "UPDATE `bd_echaurren`.`mensualidad` SET `RutAlumno`='" & rut & "', `NombreMes`='" & mes & "', `TipoPago`='" & tipopago.Text & "', `Monto`='" & monto & "', `FechaPago`='" & fechavenc & "', `Estado`='NO PAGADO', `NumDocumento`='" & documento & "', `MontoTotalAnual`='" & montoanual & "', `NombreTitular`='" & titular & "', `NombreBanco`='" & banco & "', `NumCtaCorriente`='" & ctacorriente & "' WHERE `RutAlumno`='" & rut & "';"
+                consulta = "UPDATE `bd_echaurren`.`mensualidad` SET `RutAlumno`='" & rut & "', `NombreMes`='" & mes & "', `TipoPago`='" & tipopago.Text & "', `Monto`='" & monto & "', `FechaPago`='" & fechavenc & "', `Estado`='NO PAGADO', `NumDocumento`='" & documento & "', `MontoTotalAnual`='" & montoanual & "', `NombreTitular`='" & titular & "', `NombreBanco`='" & banco & "', `NumCtaCorriente`='" & ctacorriente & "' WHERE `RutAlumno`='" & rut & "' and `NombreMes`='" & mes & "';"
             End If
 
             Dim comando As New MySqlCommand(consulta, varConn)
@@ -2687,6 +2736,49 @@ Module ModuloContenedor
         Catch ex As Exception
             MessageBox.Show("Error al registrar mensualidades.")
         End Try
+    End Function
+
+    Public Function VencMensualidad()
+        Dim conn As New MySqlConnection("server=localhost;User Id=root;password=123456;database=bd_echaurren")
+        Dim adapter As New MySqlDataAdapter()
+        Dim dataSet As New DataSet
+        Dim consulta As String = ""
+        Dim NombreMes As String
+        Dim FechaActual As Date = Today
+        Dim FechaVenc As Date
+        Dim RutAlumno As String
+        Dim total As Integer
+        Dim resultado As Integer
+
+        Try
+            conn.Open()
+        Catch ex As Exception
+            MessageBox.Show("Error al conectar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        adapter.SelectCommand = New MySqlCommand("SELECT count(*) as total FROM mensualidad WHERE Estado = 'NO PAGADO'", conn)
+        adapter.Fill(dataSet)
+        total = dataSet.Tables(0).Rows("0")("total").ToString()
+        If total <> 0 Then
+            For i = 1 To total
+                adapter.SelectCommand = New MySqlCommand("SELECT * FROM mensualidad WHERE Estado = 'NO PAGADO'", conn)
+                adapter.Fill(dataSet)
+
+                FechaVenc = dataSet.Tables(0).Rows(i)("FechaPago").ToString
+                NombreMes = dataSet.Tables(0).Rows(i)("NombreMes").ToString
+                RutAlumno = dataSet.Tables(0).Rows(i)("RutAlumno").ToString
+
+                resultado = Date.Compare(FechaVenc, FechaActual)
+
+                If resultado < 0 Then
+                    consulta = "UPDATE `bd_echaurren`.`mensualidad` SET `Estado`='ATRASADO' WHERE `NombreMes`='" & NombreMes & "' and RutAlumno = '" & RutAlumno & "' and Estado = 'NO PAGADO';"
+                    Dim comando As New MySqlCommand(consulta, conn)
+                    comando.ExecuteNonQuery()
+                End If
+            Next i
+        End If
+
+
     End Function
 End Module
 

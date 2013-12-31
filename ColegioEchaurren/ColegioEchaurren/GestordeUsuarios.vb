@@ -67,4 +67,27 @@
     Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
         ModuloContenedor.CargarUsuarios(DataGridView1)
     End Sub
+
+    Private Sub txtRutUser_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutUser.KeyPress
+        If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+            e.Handled = True
+            MsgBox("Porfavor ingresar sólo dígitos y guión")
+        End If
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            e.Handled = True
+
+            ComprobarRut(txtRutUser.Text)
+            If ComprobarRut(txtRutUser.Text) = False Then
+                MsgBox("El Rut ingresado no es valido")
+                txtRutUser.Focus()
+            Else
+                My.Computer.Keyboard.SendKeys("{tab}", True)
+            End If
+        End If
+    End Sub
+
+    Private Sub txtRutUser_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtRutUser.TextChanged
+
+    End Sub
 End Class
