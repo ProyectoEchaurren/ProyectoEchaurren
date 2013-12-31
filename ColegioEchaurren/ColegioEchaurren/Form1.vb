@@ -81,4 +81,8 @@
         Ayuda.MdiParent = Me
         Ayuda.Show()
     End Sub
+
+    Private Sub RespaldarBaseDeDatosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RespaldarBaseDeDatosToolStripMenuItem.Click
+        Respaldo_de_datos_alumnos.Show()
+    End Sub
 End Class

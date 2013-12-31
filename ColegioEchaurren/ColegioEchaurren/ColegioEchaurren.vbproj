@@ -224,7 +224,12 @@
     <Compile Include="RealizarPago.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Workbook.vb" />
+    <Compile Include="Respaldo de datos alumnos.Designer.vb">
+      <DependentUpon>Respaldo de datos alumnos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Respaldo de datos alumnos.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutBox1.resx">
@@ -281,6 +286,9 @@
     <EmbeddedResource Include="RealizarPago.resx">
       <DependentUpon>RealizarPago.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Respaldo de datos alumnos.resx">
+      <DependentUpon>Respaldo de datos alumnos.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\app.manifest" />
@@ -334,6 +342,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icono-retroceso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\988b71e986.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Backup_center_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

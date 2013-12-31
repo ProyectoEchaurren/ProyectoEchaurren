@@ -60,9 +60,23 @@ Namespace My.Resources
             End Set
         End Property
         
+        Friend ReadOnly Property _988b71e986() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("988b71e986", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property azul_textura_papel_de_parede_fundo_texturas_foto_181184() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("azul-textura-papel-de-parede-fundo-texturas-foto-181184", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property Backup_center_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Backup_center_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
