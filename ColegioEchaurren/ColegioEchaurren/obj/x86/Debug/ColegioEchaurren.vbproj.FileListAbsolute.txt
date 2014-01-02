@@ -71,3 +71,4 @@ C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEcha
 C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\Colegio Echaurren.pdb
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\obj\x86\Debug\ColegioEchaurren.ConfigurarDisp.resources
 C:\Users\davis\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.exe.config
+C:\Users\FabiQlo\Documents\GitHub\ProyectoEchaurren\ColegioEchaurren\ColegioEchaurren\bin\Debug\Colegio Echaurren.exe.config
