@@ -1203,19 +1203,14 @@ Module ModuloContenedor
         FormAlumnosMatriculados.DataGridView1.Columns(8).HeaderText = "Sector o villa"
         FormAlumnosMatriculados.DataGridView1.Columns(9).HeaderText = "Comuna"
         FormAlumnosMatriculados.DataGridView1.Columns(10).HeaderText = "Telefono"
-        FormAlumnosMatriculados.DataGridView1.Columns(11).HeaderText = "Colegio de presedencia"
-        FormAlumnosMatriculados.DataGridView1.Columns(12).HeaderText = "Curso"
-        FormAlumnosMatriculados.DataGridView1.Columns(13).HeaderText = "Cursos repetidos"
-        FormAlumnosMatriculados.DataGridView1.Columns(14).HeaderText = "Becado"
-        FormAlumnosMatriculados.DataGridView1.Columns(15).HeaderText = "Porcentaje de beca"
-        FormAlumnosMatriculados.DataGridView1.Columns(16).HeaderText = "Hermanos en establecimiento"
-        FormAlumnosMatriculados.DataGridView1.Columns(17).HeaderText = "Convivencia de alumno"
-        FormAlumnosMatriculados.DataGridView1.Columns(18).HeaderText = "Numero de hermanos"
-        FormAlumnosMatriculados.DataGridView1.Columns(19).HeaderText = "Lugar que ocupa entre hermanos"
-        FormAlumnosMatriculados.DataGridView1.Columns(20).HeaderText = "Cantidad de grupo familiar"
-        FormAlumnosMatriculados.DataGridView1.Columns(21).HeaderText = "Antecentes Medicos"
-        FormAlumnosMatriculados.DataGridView1.Columns(22).HeaderText = "Numero de matricula"
-        FormAlumnosMatriculados.DataGridView1.Columns(23).HeaderText = "Fecha de matricula"
+        FormAlumnosMatriculados.DataGridView1.Columns(11).HeaderText = "Curso"
+        FormAlumnosMatriculados.DataGridView1.Columns(12).HeaderText = "Becado"
+        FormAlumnosMatriculados.DataGridView1.Columns(13).HeaderText = "Porcentaje de beca"
+        FormAlumnosMatriculados.DataGridView1.Columns(14).HeaderText = "Hermanos en establecimiento"
+        FormAlumnosMatriculados.DataGridView1.Columns(15).HeaderText = "Convivencia de alumno"
+        FormAlumnosMatriculados.DataGridView1.Columns(16).HeaderText = "Antecentes Medicos"
+        FormAlumnosMatriculados.DataGridView1.Columns(17).HeaderText = "Numero de matricula"
+        FormAlumnosMatriculados.DataGridView1.Columns(18).HeaderText = "Fecha de matricula"
 
 
     End Sub
@@ -1526,7 +1521,7 @@ Module ModuloContenedor
                     End If
 
         Catch ex As Exception
-            MessageBox.Show("Alumno no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error al cargar datos, es posible que la información esté incompleta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
 
