@@ -45,6 +45,7 @@ Partial Class Form1
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -99,7 +100,7 @@ Partial Class Form1
         '
         'AdministracionToolStripMenuItem
         '
-        Me.AdministracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlumnosMatriculadosToolStripMenuItem, Me.AdministrarBecasToolStripMenuItem})
+        Me.AdministracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlumnosMatriculadosToolStripMenuItem, Me.AdministrarBecasToolStripMenuItem, Me.EstadisticasToolStripMenuItem})
         Me.AdministracionToolStripMenuItem.Enabled = False
         Me.AdministracionToolStripMenuItem.Name = "AdministracionToolStripMenuItem"
         Me.AdministracionToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
@@ -223,6 +224,13 @@ Partial Class Form1
         Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
         '
+        'EstadisticasToolStripMenuItem
+        '
+        Me.EstadisticasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.EstadisticasToolStripMenuItem.Name = "EstadisticasToolStripMenuItem"
+        Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.EstadisticasToolStripMenuItem.Text = "Estadisticas"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -265,5 +273,6 @@ Partial Class Form1
     Friend WithEvents HerramientasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConfigurarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RespaldarBaseDeDatosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EstadisticasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

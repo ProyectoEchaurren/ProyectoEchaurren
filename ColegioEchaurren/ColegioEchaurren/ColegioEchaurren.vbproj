@@ -178,6 +178,12 @@
     <Compile Include="FormAlumnosMatriculados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formReportes.Designer.vb">
+      <DependentUpon>formReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormularioMatricula.Designer.vb">
       <DependentUpon>FormularioMatricula.vb</DependentUpon>
     </Compile>
@@ -275,6 +281,9 @@
     <EmbeddedResource Include="FormAlumnosMatriculados.resx">
       <DependentUpon>FormAlumnosMatriculados.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formReportes.resx">
+      <DependentUpon>formReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioMatricula.resx">
       <DependentUpon>FormularioMatricula.vb</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +311,10 @@
     <EmbeddedResource Include="RealizarPago.resx">
       <DependentUpon>RealizarPago.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
     <EmbeddedResource Include="Respaldo de datos alumnos.resx">
       <DependentUpon>Respaldo de datos alumnos.vb</DependentUpon>
     </EmbeddedResource>
