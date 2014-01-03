@@ -32,6 +32,7 @@ Partial Class Form1
         Me.AdministracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlumnosMatriculadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarBecasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImprimirPlanillasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EscanearDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,7 +46,6 @@ Partial Class Form1
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -94,6 +94,7 @@ Partial Class Form1
         'RegistroDeMensualidadesToolStripMenuItem
         '
         Me.RegistroDeMensualidadesToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.RegistroDeMensualidadesToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources.pago
         Me.RegistroDeMensualidadesToolStripMenuItem.Name = "RegistroDeMensualidadesToolStripMenuItem"
         Me.RegistroDeMensualidadesToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.RegistroDeMensualidadesToolStripMenuItem.Text = "Registro de Mensualidades"
@@ -109,6 +110,7 @@ Partial Class Form1
         'AlumnosMatriculadosToolStripMenuItem
         '
         Me.AlumnosMatriculadosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.AlumnosMatriculadosToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources.usuario
         Me.AlumnosMatriculadosToolStripMenuItem.Name = "AlumnosMatriculadosToolStripMenuItem"
         Me.AlumnosMatriculadosToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.AlumnosMatriculadosToolStripMenuItem.Text = "Alumnos matriculados"
@@ -116,9 +118,18 @@ Partial Class Form1
         'AdministrarBecasToolStripMenuItem
         '
         Me.AdministrarBecasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.AdministrarBecasToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources.icono_maestria
         Me.AdministrarBecasToolStripMenuItem.Name = "AdministrarBecasToolStripMenuItem"
         Me.AdministrarBecasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.AdministrarBecasToolStripMenuItem.Text = "Administrar Becas"
+        '
+        'EstadisticasToolStripMenuItem
+        '
+        Me.EstadisticasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.EstadisticasToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources._1325237283
+        Me.EstadisticasToolStripMenuItem.Name = "EstadisticasToolStripMenuItem"
+        Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.EstadisticasToolStripMenuItem.Text = "Estadisticas"
         '
         'DocumentosToolStripMenuItem
         '
@@ -223,13 +234,6 @@ Partial Class Form1
         Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
         Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
         Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
-        '
-        'EstadisticasToolStripMenuItem
-        '
-        Me.EstadisticasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.EstadisticasToolStripMenuItem.Name = "EstadisticasToolStripMenuItem"
-        Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.EstadisticasToolStripMenuItem.Text = "Estadisticas"
         '
         'Form1
         '

@@ -1220,43 +1220,191 @@ Public Class FormularioMatricula
 
     Private Sub Reporte_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles Reporte.PrintPage
 
-        'objeto PrintPageEventArgs, cuyas propiedades MarginBounds, Graphics, 
-        ' HasMorePage, etc.. no ayudarán a configurar el texto para la impresión 
+        e.Graphics.DrawString("FICHA DE MATRÍCULA " & varAñoActual, New Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 300, 20)
+        e.Graphics.DrawString("N° Matrícula", New Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 630, 50)
+        e.Graphics.DrawString(txtNumMatri.Text, New Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 750, 50)
 
-        ContenidoDelTexto = e
+        e.Graphics.DrawString("Datos de Alumno", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 75)
+        e.Graphics.DrawString("Rut Alumno", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 100)
+        e.Graphics.DrawString(txtRutAlumno.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 100)
+        e.Graphics.DrawLine(Pens.Black, 270, 250, 270, 90)
+        e.Graphics.DrawString("Nombre Alumno", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 120)
+        e.Graphics.DrawString(txtNombresAlumno.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 120)
+        e.Graphics.DrawString("Apellido Paterno", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 140)
+        e.Graphics.DrawString(txtApePatAlumno.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 140)
+        e.Graphics.DrawString("Apellido Materno", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 160)
+        e.Graphics.DrawString(txtApeMatAlumno.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 160)
+        e.Graphics.DrawString("Sexo", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 180)
+        If radioMasc.Checked = True Then
+            e.Graphics.DrawString(radioMasc.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 180)
+        ElseIf radioFeme.Checked = True Then
+            e.Graphics.DrawString(radioFeme.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 180)
+        End If
+        e.Graphics.DrawString("Fecha de Nac.", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 200)
+        e.Graphics.DrawString(dateTimeFechaNac.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 200)
+        e.Graphics.DrawString("Edad", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 220)
+        e.Graphics.DrawString(txtEdadAlumno.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 220)
+        e.Graphics.DrawString("Domicilio", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 100)
+        e.Graphics.DrawString(txtCalleAlumno.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 430, 100)
+        e.Graphics.DrawLine(Pens.Black, 580, 250, 580, 90)
+        e.Graphics.DrawString("Sector o Villa", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 120)
+        e.Graphics.DrawString(txtSectorAlumno.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 430, 120)
+        e.Graphics.DrawString("Comuna", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 140)
+        e.Graphics.DrawString(comboComuna.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 430, 140)
+        e.Graphics.DrawString("Teléfono", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 160)
+        e.Graphics.DrawString(txtTelefonoAlumno.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 430, 160)
+        e.Graphics.DrawString("Curso", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 180)
+        e.Graphics.DrawString(comboCurso.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 430, 180)
+        e.Graphics.DrawString("Colegio Procedencia", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 200)
+        e.Graphics.DrawString(txtColegioPrese.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 430, 200)
+        e.Graphics.DrawString("Cursos Repetidos", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 220)
+        e.Graphics.DrawString(txtCursosRepetidos.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 430, 220)
+        e.Graphics.DrawString("Hermanos en el", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 100)
+        e.Graphics.DrawString("establecimiento", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 115)
+        If radioHermanosSi.Checked = True Then
+            e.Graphics.DrawString("Si", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 105)
+        Else
+            e.Graphics.DrawString("No", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 105)
+        End If
+        e.Graphics.DrawString("Curso de Hermanos", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 140)
+        e.Graphics.DrawString(txtHermanosCursos.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 140)
+        e.Graphics.DrawString("Estado Beca", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 180)
+        If CheckBox1.Checked = True Then
+            e.Graphics.DrawString("Becado", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 180)
+        Else
+            e.Graphics.DrawString("No Becado", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 180)
+        End If
+        e.Graphics.DrawString("Porcentaje", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 200)
+        e.Graphics.DrawString(cbbPorcentaje.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 200)
+        e.Graphics.DrawString("Tipo de Pago", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 220)
+        e.Graphics.DrawString(cbbTipoPago.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 220)
+        'segunda fila
+        e.Graphics.DrawLine(Pens.Black, 10, 255, 840, 255)
+        e.Graphics.DrawString("Datos Tutor Económico", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 265)
+        e.Graphics.DrawString("Nombre", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 290)
+        e.Graphics.DrawString(txtNombreTutor.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 290)
+        e.Graphics.DrawLine(Pens.Black, 270, 470, 270, 260)
+        e.Graphics.DrawString("Rut", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 310)
+        e.Graphics.DrawString(txtRut.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 310)
+        e.Graphics.DrawString("Teléfono", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 330)
+        e.Graphics.DrawString(txtTelefonoPart.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 330)
+        e.Graphics.DrawString("Teléfono 2", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 350)
+        e.Graphics.DrawString(txtTelefonoPart2.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 350)
+        e.Graphics.DrawString("Domicilio", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 370)
+        e.Graphics.DrawString(txtDomicilio.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 370)
+        e.Graphics.DrawString("Lugar Trabajo", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 390)
+        e.Graphics.DrawString(txtLugarDeTrabajo.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 390)
+        e.Graphics.DrawString("Fono Trabajo", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 410)
+        e.Graphics.DrawString(txtTelefonoTrabajo.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 410)
+        e.Graphics.DrawString("Ocupación", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 430)
+        e.Graphics.DrawString(txtOcupacionAct.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 430)
+        e.Graphics.DrawString("Profesión", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 450)
+        e.Graphics.DrawString(txtProfesion.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 450)
 
-        'Imprimir el contenido de textbox1.text = "Impresión de prueba" 
+        e.Graphics.DrawString("Datos del Padre", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 265)
+        e.Graphics.DrawString("Nombre", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 290)
+        e.Graphics.DrawString(txtNombrePadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 380, 290)
+        e.Graphics.DrawLine(Pens.Black, 580, 470, 580, 260)
+        e.Graphics.DrawString("Rut", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 310)
+        e.Graphics.DrawString(txtRutPadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 380, 310)
+        e.Graphics.DrawString("Edad", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 330)
+        e.Graphics.DrawString(txtEdadPadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 380, 330)
+        e.Graphics.DrawString("Estudios", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 350)
+        e.Graphics.DrawString(txtEstudiosPadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 380, 350)
+        e.Graphics.DrawString("Trabajo", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 370)
+        e.Graphics.DrawString(txtTrabajaenPadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 380, 370)
+        e.Graphics.DrawString("Cargo", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 390)
+        e.Graphics.DrawString(txtCargoPadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 380, 390)
+        e.Graphics.DrawString("Dirección", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 410)
+        e.Graphics.DrawString(txtDireccionPadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 380, 410)
+        e.Graphics.DrawString("Teléfono", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 430)
+        e.Graphics.DrawString(txtTelefonoPadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 380, 430)
+        e.Graphics.DrawString("Correo Electrónico", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 280, 450)
+        e.Graphics.DrawString(txtCorreoPadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 430, 450)
 
-        ContenidoDelTexto.Graphics.DrawString(Label5.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
-        ContenidoDelTexto.Graphics.DrawString(txtRutAlumno.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
-        ContenidoDelTexto.Graphics.DrawString(Label4.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
-        ContenidoDelTexto.Graphics.DrawString(txtNombresAlumno.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
-        ContenidoDelTexto.Graphics.DrawString(Label2.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
-        ContenidoDelTexto.Graphics.DrawString(txtApePatAlumno.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
-        ContenidoDelTexto.Graphics.DrawString(Label3.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
-        ContenidoDelTexto.Graphics.DrawString(txtApeMatAlumno.Text, New Font("Arial", 12), Brushes.Black, ContenidoDelTexto.MarginBounds.Left, ContenidoDelTexto.MarginBounds.Top)
+        e.Graphics.DrawString("Datos de la Madre", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 265)
+        e.Graphics.DrawString("Nombre", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 290)
+        e.Graphics.DrawString(txtNombreMadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 680, 290)
+        e.Graphics.DrawString("Rut", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 310)
+        e.Graphics.DrawString(txtRutMadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 680, 310)
+        e.Graphics.DrawString("Edad", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 330)
+        e.Graphics.DrawString(txtEdadMadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 680, 330)
+        e.Graphics.DrawString("Estudios", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 350)
+        e.Graphics.DrawString(txtEstudiosMadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 680, 350)
+        e.Graphics.DrawString("Trabajo", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 370)
+        e.Graphics.DrawString(txtTrabajaenMadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 680, 370)
+        e.Graphics.DrawString("Cargo", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 390)
+        e.Graphics.DrawString(txtCargoMadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 680, 390)
+        e.Graphics.DrawString("Dirección", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 410)
+        e.Graphics.DrawString(txtDireccionMadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 680, 410)
+        e.Graphics.DrawString("Teléfono", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 430)
+        e.Graphics.DrawString(txtTelefonoMadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 680, 430)
+        e.Graphics.DrawString("Correo Electrónico", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 590, 450)
+        e.Graphics.DrawString(txtCorreoMadre.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 450)
+        'tercera fila
+        e.Graphics.DrawLine(Pens.Black, 10, 470, 840, 470)
+        e.Graphics.DrawString("Contactos de emergencia", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 485)
+        e.Graphics.DrawString("Nombre", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 520)
+        e.Graphics.DrawString("Teléfono", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 270, 520)
+        e.Graphics.DrawString("Contacto 1", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 540)
+        e.Graphics.DrawString(txtNombreContacto.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 540)
+        e.Graphics.DrawString(txtNumContacto.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 270, 540)
+        e.Graphics.DrawString("Contacto 2", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 560)
+        e.Graphics.DrawString(txtNombreContacto2.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 560)
+        e.Graphics.DrawString(txtNumContacto2.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 270, 560)
+        e.Graphics.DrawString("Contacto 3", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 580)
+        e.Graphics.DrawString(txtNombreContacto3.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 120, 580)
+        e.Graphics.DrawString(txtNumContacto3.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 270, 580)
 
-        'Breve descripción de las propiedades de Contenidotexto, De abajo 
-        'hacia arriba 
+        'cuarta fila
+        e.Graphics.DrawLine(Pens.Black, 10, 605, 840, 605)
+        e.Graphics.DrawString("Datos de Salud", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 615)
+        e.Graphics.DrawString("Antecedentes Médicos Importantes", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 640)
+        e.Graphics.DrawString(txtAntecedentesMed.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 270, 640)
+        e.Graphics.DrawString("Servicio de Salud", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 660)
+        e.Graphics.DrawString(comboServSalud.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 270, 660)
+        e.Graphics.DrawString("Seguros", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 680)
+        e.Graphics.DrawString(txtSeguros.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 270, 680)
+        e.Graphics.DrawString("Otros Servicios", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 700)
+        e.Graphics.DrawString(txtOtrosServicios.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 270, 700)
 
-        'ContenidoDelTexto.MarginBounds.Left y 
-        'ContenidoDelTexto.MarginBoundsTop) 
-        'Indica la posición en la hoja, que es el área rectangular 
-        ' que representa el área de impresión de la misma 
-        'en este caso es el limite 
-        'hacia la izquierda, y el limite hacia arriba, que en 
-        'enteros sería 100, 100. BrushesBlack es el color de 
-        ' la letra y por útlimo la fuente de la letra. 
+        e.Graphics.DrawLine(Pens.Black, 430, 720, 430, 605)
+        e.Graphics.DrawString("Información del Grupo Familiar", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 460, 615)
+        e.Graphics.DrawString("Alumno vive con", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 460, 640)
+        e.Graphics.DrawString(cbViveCon.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 630, 640)
+        e.Graphics.DrawString(txtViveConOtros.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 640)
+        e.Graphics.DrawString("Número de hijos", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 460, 660)
+        e.Graphics.DrawString(txtNumHijos.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 660)
+        e.Graphics.DrawString("Lugar que ocupa entre los hijos", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 460, 680)
+        e.Graphics.DrawString(txtLugarHijos.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 680)
+        e.Graphics.DrawString("Grupo familiar que lo componen", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 460, 700)
+        e.Graphics.DrawString(txtGrupoFamiliar.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 730, 700)
+        'quinta fila
+        e.Graphics.DrawLine(Pens.Black, 10, 720, 840, 720)
+        e.Graphics.DrawString("Nombre del Apoderado Titular", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 760)
+        e.Graphics.DrawString(txtNombreApoderado.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 780)
+        e.Graphics.DrawString("FIRMA APODERADO TITULAR", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 580, 780)
+        e.Graphics.DrawString("Nombre del Apoderado Suplente", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 820)
+        e.Graphics.DrawString(txtNombreApodSuplent.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 840)
+        e.Graphics.DrawString("FIRMA APODERADO SUPLENTE", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 580, 840)
+        e.Graphics.DrawString("Nombre del Tutor Económico", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 880)
+        e.Graphics.DrawString(txtNombreTutor.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 900)
+        e.Graphics.DrawString("FIRMA TUTOR ECONÓMICO", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 580, 900)
 
-        'otra propiedad del objeto PrintPageEventArgs es 
-        'PageBounds a través de esta se puede recuperar el 
-        'área rectangular que representa el área total de la página. 
+        e.Graphics.DrawString("DOCUMENTOS EN CARTERA " & varAñoActual, New Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 300, 920)
+        e.Graphics.DrawString("N° Matrícula", New Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 630, 950)
+        e.Graphics.DrawString(txtNumMatri.Text, New Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 750, 950)
 
-        'Indica que no hay más páginas a imprimir 
-        ContenidoDelTexto.HasMorePages = False
-
-        'Propiedad HasMorePages .- Obtiene o establece un valor que indica si 
-        'se debe imprimir una página adicional. Boolean 
+        e.Graphics.DrawString("Se documenta el financiamiento compartido anual con:", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 1000)
+        e.Graphics.DrawString(cbbTipoPago.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 420, 1000)
+        e.Graphics.DrawString("Por un total de:", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 10020)
+        e.Graphics.DrawString(txtMontoAnual.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 420, 1020)
+        e.Graphics.DrawString("Nombre del Titular", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 1040)
+        e.Graphics.DrawString(txtNombreTitular.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 420, 1040)
+        e.Graphics.DrawString("N° Cuenta Corriente", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 1060)
+        e.Graphics.DrawString(txtCtaCorriente.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 420, 1060)
+        e.Graphics.DrawString("Banco", New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 10, 1080)
+        e.Graphics.DrawString(txtNombreBanco.Text, New Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 420, 1080)
 
     End Sub
 

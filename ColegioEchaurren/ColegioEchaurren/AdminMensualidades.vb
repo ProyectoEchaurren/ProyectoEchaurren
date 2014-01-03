@@ -26,6 +26,10 @@ Public Class AdminMensualidades
         varMesActual = Month(Now)
         varNombreMesActual = MonthName(varMesActual)
 
+        If varNombreMesActual = "enero" Or varNombreMesActual = "febrero" Then
+            varNombreMesActual = "diciembre"
+        End If
+
         Try
 
             varConexion1 = New MySqlConnection

@@ -25,6 +25,9 @@ Partial Class FormularioMatricula
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormularioMatricula))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.cbbPorcentaje = New System.Windows.Forms.ComboBox()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -267,9 +270,8 @@ Partial Class FormularioMatricula
         Me.Label106 = New System.Windows.Forms.Label()
         Me.Label105 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
-        Me.cbbPorcentaje = New System.Windows.Forms.ComboBox()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Label57 = New System.Windows.Forms.Label()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -369,6 +371,35 @@ Partial Class FormularioMatricula
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Datos de Alumno(a)"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label57.Location = New System.Drawing.Point(631, 120)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(21, 16)
+        Me.Label57.TabIndex = 233
+        Me.Label57.Text = "%"
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label56.Location = New System.Drawing.Point(437, 121)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(145, 13)
+        Me.Label56.TabIndex = 232
+        Me.Label56.Text = "PORCENTAJE DE BECA"
+        '
+        'cbbPorcentaje
+        '
+        Me.cbbPorcentaje.FormattingEnabled = True
+        Me.cbbPorcentaje.Items.AddRange(New Object() {"", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "95", "100"})
+        Me.cbbPorcentaje.Location = New System.Drawing.Point(589, 118)
+        Me.cbbPorcentaje.Name = "cbbPorcentaje"
+        Me.cbbPorcentaje.Size = New System.Drawing.Size(42, 21)
+        Me.cbbPorcentaje.TabIndex = 231
         '
         'btnLimpiar
         '
@@ -2816,34 +2847,15 @@ Partial Class FormularioMatricula
         Me.Label103.TabIndex = 4
         Me.Label103.Text = "COMPROBANTE DE DOCUMENTOS EN CARTERA"
         '
-        'cbbPorcentaje
+        'PrintPreviewDialog1
         '
-        Me.cbbPorcentaje.FormattingEnabled = True
-        Me.cbbPorcentaje.Items.AddRange(New Object() {"", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "95", "100"})
-        Me.cbbPorcentaje.Location = New System.Drawing.Point(589, 118)
-        Me.cbbPorcentaje.Name = "cbbPorcentaje"
-        Me.cbbPorcentaje.Size = New System.Drawing.Size(42, 21)
-        Me.cbbPorcentaje.TabIndex = 231
-        '
-        'Label56
-        '
-        Me.Label56.AutoSize = True
-        Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.Location = New System.Drawing.Point(437, 121)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(145, 13)
-        Me.Label56.TabIndex = 232
-        Me.Label56.Text = "PORCENTAJE DE BECA"
-        '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.Location = New System.Drawing.Point(631, 120)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(22, 16)
-        Me.Label57.TabIndex = 233
-        Me.Label57.Text = "%"
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
         '
         'FormularioMatricula
         '
@@ -3133,4 +3145,6 @@ Partial Class FormularioMatricula
     Friend WithEvents Label56 As System.Windows.Forms.Label
     Friend WithEvents cbbPorcentaje As System.Windows.Forms.ComboBox
     Friend WithEvents Label57 As System.Windows.Forms.Label
+    Friend WithEvents PrintPreviewDialog1 As System.Windows.Forms.PrintPreviewDialog
+    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
 End Class

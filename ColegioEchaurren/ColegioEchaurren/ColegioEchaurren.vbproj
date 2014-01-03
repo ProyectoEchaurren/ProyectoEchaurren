@@ -439,6 +439,18 @@
   <ItemGroup>
     <None Include="Resources\Backup_center_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-maestria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1325237283.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

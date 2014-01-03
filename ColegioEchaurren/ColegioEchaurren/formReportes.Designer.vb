@@ -27,9 +27,11 @@ Partial Class formReportes
         Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formReportes))
         Me.alumnoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.bd_echaurrenDataSet = New ColegioEchaurren.bd_echaurrenDataSet()
         Me.mensualidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.fichaalumnoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.alumnoTableAdapter = New ColegioEchaurren.bd_echaurrenDataSetTableAdapters.alumnoTableAdapter()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -38,19 +40,18 @@ Partial Class formReportes
         Me.ReportViewer2 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.ReportViewer3 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.mensualidadTableAdapter = New ColegioEchaurren.bd_echaurrenDataSetTableAdapters.mensualidadTableAdapter()
-        Me.fichaalumnoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.fichaalumnoTableAdapter = New ColegioEchaurren.bd_echaurrenDataSetTableAdapters.fichaalumnoTableAdapter()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.ReportViewer4 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.mensualidadTableAdapter = New ColegioEchaurren.bd_echaurrenDataSetTableAdapters.mensualidadTableAdapter()
+        Me.fichaalumnoTableAdapter = New ColegioEchaurren.bd_echaurrenDataSetTableAdapters.fichaalumnoTableAdapter()
         CType(Me.alumnoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bd_echaurrenDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mensualidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.fichaalumnoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        CType(Me.fichaalumnoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,6 +69,11 @@ Partial Class formReportes
         '
         Me.mensualidadBindingSource.DataMember = "mensualidad"
         Me.mensualidadBindingSource.DataSource = Me.bd_echaurrenDataSet
+        '
+        'fichaalumnoBindingSource
+        '
+        Me.fichaalumnoBindingSource.DataMember = "fichaalumno"
+        Me.fichaalumnoBindingSource.DataSource = Me.bd_echaurrenDataSet
         '
         'alumnoTableAdapter
         '
@@ -150,19 +156,6 @@ Partial Class formReportes
         Me.ReportViewer3.Size = New System.Drawing.Size(765, 370)
         Me.ReportViewer3.TabIndex = 0
         '
-        'mensualidadTableAdapter
-        '
-        Me.mensualidadTableAdapter.ClearBeforeFill = True
-        '
-        'fichaalumnoBindingSource
-        '
-        Me.fichaalumnoBindingSource.DataMember = "fichaalumno"
-        Me.fichaalumnoBindingSource.DataSource = Me.bd_echaurrenDataSet
-        '
-        'fichaalumnoTableAdapter
-        '
-        Me.fichaalumnoTableAdapter.ClearBeforeFill = True
-        '
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.ReportViewer4)
@@ -184,22 +177,31 @@ Partial Class formReportes
         Me.ReportViewer4.Size = New System.Drawing.Size(765, 370)
         Me.ReportViewer4.TabIndex = 0
         '
+        'mensualidadTableAdapter
+        '
+        Me.mensualidadTableAdapter.ClearBeforeFill = True
+        '
+        'fichaalumnoTableAdapter
+        '
+        Me.fichaalumnoTableAdapter.ClearBeforeFill = True
+        '
         'formReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(793, 416)
         Me.Controls.Add(Me.TabControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "formReportes"
         Me.Text = "formReportes"
         CType(Me.alumnoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bd_echaurrenDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mensualidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.fichaalumnoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
-        CType(Me.fichaalumnoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
