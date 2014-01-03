@@ -83,15 +83,10 @@
     End Sub
 
     Private Sub RespaldarBaseDeDatosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RespaldarBaseDeDatosToolStripMenuItem.Click
-        Respaldo_de_datos_alumnos.MdiParent = Me
         Respaldo_de_datos_alumnos.Show()
     End Sub
 
     Private Sub EstadisticasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EstadisticasToolStripMenuItem.Click
         formReportes.Show()
-    End Sub
-    Private Sub ConfigurarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConfigurarToolStripMenuItem.Click
-        ConfigurarDisp.MdiParent = Me
-        ConfigurarDisp.Show()
     End Sub
 End Class
