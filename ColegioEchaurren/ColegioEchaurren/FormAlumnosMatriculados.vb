@@ -4,7 +4,7 @@ Public Class FormAlumnosMatriculados
 
     Public varConexion1 As MySqlConnection
     Public varConexionString1 As String = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
-    Public consultaGrilla As String = "SELECT RutAlumno, NombreCompleto, ApePaterno, ApeMaterno, Sexo, FechaNac, Edad, Domicilio, SectorVilla, Comuna, Telefono, Curso, Becado, PorcentajeBeca, HermanosEstablecimiento, AlumnoViveCon, AntecedentesMedicos, NumMatricula, Fechamatricula FROM alumno inner join fichaalumno on alumno.Fichaalumno_idFichaalumno = fichaalumno.idFichaalumno inner join curso on alumno.Curso_idCurso = curso.idCurso inner join comuna on alumno.Comuna_idComuna = comuna.idComuna inner join matricula on alumno.Matricula_NumMatricula = matricula.NumMatricula"
+    Public consultaGrilla As String = "SELECT * FROM bd_echaurren.alumno;"
     Public consultaCargaCombo1 As String = "SELECT * FROM bd_echaurren.servicio_salud;"
     Public consultaCargaComboCurso As String = "SELECT * FROM bd_echaurren.curso;"
     Public varDataSet As DataSet

@@ -1,6 +1,4 @@
-﻿Imports System.Drawing.Printing
-
-Public Class ConfigurarDisp
+﻿Public Class ConfigurarDisp
 
     ' función que retorna verdadero si hay una impresora instalada  
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''  
@@ -37,27 +35,5 @@ Public Class ConfigurarDisp
 
     Private Sub btnSalir_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
         Me.Close()
-    End Sub
-
-    Private Sub ConfigurarDisp_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-        Dim pd As New PrintDocument
-        Dim Impresoras As String
-
-        ' Default printer      
-        Dim DefaultPrinter As String = pd.PrinterSettings.PrinterName
-
-        ' recorre las impresoras instaladas  
-        For Each Impresoras In PrinterSettings.InstalledPrinters
-            ListBox1.Items.Add(Impresoras.ToString)
-        Next
-        ' selecciona la impresora predeterminada  
-        ListBox1.Text = DefaultPrinter
-
-    End Sub
-
-    Private Sub btnAcutalizar_Click(sender As System.Object, e As System.EventArgs) Handles btnAcutalizar.Click
-        Me.ListBox1.Items.Clear()
-        ConfigurarDisp_Load(sender, e)
     End Sub
 End Class
