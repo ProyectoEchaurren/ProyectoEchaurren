@@ -94,7 +94,7 @@ Partial Class Form1
         'RegistroDeMensualidadesToolStripMenuItem
         '
         Me.RegistroDeMensualidadesToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.RegistroDeMensualidadesToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources.pago
+        Me.RegistroDeMensualidadesToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources.pago1
         Me.RegistroDeMensualidadesToolStripMenuItem.Name = "RegistroDeMensualidadesToolStripMenuItem"
         Me.RegistroDeMensualidadesToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.RegistroDeMensualidadesToolStripMenuItem.Text = "Registro de Mensualidades"
@@ -110,7 +110,7 @@ Partial Class Form1
         'AlumnosMatriculadosToolStripMenuItem
         '
         Me.AlumnosMatriculadosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.AlumnosMatriculadosToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources.usuario
+        Me.AlumnosMatriculadosToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources.usuario1
         Me.AlumnosMatriculadosToolStripMenuItem.Name = "AlumnosMatriculadosToolStripMenuItem"
         Me.AlumnosMatriculadosToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.AlumnosMatriculadosToolStripMenuItem.Text = "Alumnos matriculados"
@@ -118,7 +118,7 @@ Partial Class Form1
         'AdministrarBecasToolStripMenuItem
         '
         Me.AdministrarBecasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.AdministrarBecasToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources.icono_maestria
+        Me.AdministrarBecasToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources.icono_maestria1
         Me.AdministrarBecasToolStripMenuItem.Name = "AdministrarBecasToolStripMenuItem"
         Me.AdministrarBecasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.AdministrarBecasToolStripMenuItem.Text = "Administrar Becas"
@@ -126,7 +126,7 @@ Partial Class Form1
         'EstadisticasToolStripMenuItem
         '
         Me.EstadisticasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.EstadisticasToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources._1325237283
+        Me.EstadisticasToolStripMenuItem.Image = Global.ColegioEchaurren.My.Resources.Resources._13252372831
         Me.EstadisticasToolStripMenuItem.Name = "EstadisticasToolStripMenuItem"
         Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.EstadisticasToolStripMenuItem.Text = "Estadisticas"

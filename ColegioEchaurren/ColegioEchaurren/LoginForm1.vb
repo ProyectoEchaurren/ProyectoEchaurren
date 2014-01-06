@@ -9,12 +9,18 @@
     ' como el nombre de usuario, nombre para mostrar, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        If ComprobarRut(UsernameTextBox.Text) = False Then
-            MsgBox("El Rut ingresado no es valido")
-            UsernameTextBox.Focus()
+        If UsernameTextBox.Text = "" Or PasswordTextBox.Text = "" Then
+
+            MessageBox.Show("Debe completar campos de rut y contraseña", "Login Echaurren", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            ModuloContenedor.IniciarSesion(UsernameTextBox.Text, PasswordTextBox.Text)
+            If ComprobarRut(UsernameTextBox.Text) = False Then
+                MsgBox("El Rut ingresado no es valido")
+                UsernameTextBox.Focus()
+            Else
+                ModuloContenedor.IniciarSesion(UsernameTextBox.Text, PasswordTextBox.Text)
+            End If
         End If
+
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
