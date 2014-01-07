@@ -82,6 +82,15 @@ Public Class FormularioMatricula
         If RadioButton14.Checked = True Then
             txtOtro.Enabled = True
             txtOtro.Focus()
+            txtNombreTutor.Text = ""
+            txtRut.Text = ""
+            txtTelefonoPart.Text = ""
+            txtTelefonoPart2.Text = ""
+            txtTelefonoTrabajo.Text = ""
+            txtDomicilio.Text = ""
+            txtLugarDeTrabajo.Text = ""
+            txtOcupacionAct.Text = ""
+            txtProfesion.Text = ""
         Else
             txtOtro.Enabled = False
         End If
@@ -1049,6 +1058,8 @@ Public Class FormularioMatricula
 
             txtNombreApodSuplent.Text = txtNombreApoderado.Text
             txtRutOtroApodSuple.Text = txtRutOtroApod.Text
+            cbApoderado.Text = "Otro"
+            cbApoSuplente.Text = "Otro"
             Exit While
         End While
 
@@ -1056,6 +1067,13 @@ Public Class FormularioMatricula
 
             txtNombreApodSuplent.Text = ""
             txtRutOtroApodSuple.Text = ""
+            cbApoderado.Text = ""
+            cbApoSuplente.Text = ""
+
+            txtNombreApoderado.Enabled = False
+            txtRutOtroApod.Enabled = False
+            txtNombreApodSuplent.Enabled = False
+            txtRutOtroApodSuple.Enabled = False
             Exit While
         End While
     End Sub
@@ -1110,7 +1128,7 @@ Public Class FormularioMatricula
         Call LimpiarTextBox(TabPage3)
     End Sub
 
-    Private Sub txtTelefonoAlumno_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoAlumno.KeyPress
+    Private Sub txtTelefonoAlumno_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoAlumno.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1119,7 +1137,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtEdadAlumno_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdadAlumno.KeyPress
+    Private Sub txtEdadAlumno_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdadAlumno.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1128,7 +1146,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtNumContacto_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumContacto.KeyPress
+    Private Sub txtNumContacto_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumContacto.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1137,7 +1155,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtNumContacto2_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumContacto2.KeyPress
+    Private Sub txtNumContacto2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumContacto2.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1146,7 +1164,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtNumContacto3_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumContacto3.KeyPress
+    Private Sub txtNumContacto3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumContacto3.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1155,7 +1173,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtEdadPadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdadPadre.KeyPress
+    Private Sub txtEdadPadre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdadPadre.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1164,7 +1182,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtTelefonoPadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoPadre.KeyPress
+    Private Sub txtTelefonoPadre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoPadre.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1173,7 +1191,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtEdadMadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdadMadre.KeyPress
+    Private Sub txtEdadMadre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEdadMadre.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1182,7 +1200,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtTelefonoMadre_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoMadre.KeyPress
+    Private Sub txtTelefonoMadre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoMadre.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1191,7 +1209,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtTelefonoPart_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoPart.KeyPress
+    Private Sub txtTelefonoPart_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoPart.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1200,7 +1218,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtTelefonoPart2_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoPart2.KeyPress
+    Private Sub txtTelefonoPart2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoPart2.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1209,7 +1227,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtTelefonoTrabajo_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoTrabajo.KeyPress
+    Private Sub txtTelefonoTrabajo_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoTrabajo.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -1416,7 +1434,7 @@ Public Class FormularioMatricula
         Reporte.PrinterSettings = impresora.PrinterSettings
     End Sub
 
-    Private Sub cbbTipoPago_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbbTipoPago.SelectedIndexChanged
+    Private Sub cbbTipoPago_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbbTipoPago.SelectedIndexChanged
         If cbbTipoPago.SelectedItem = "Cheque" Then
             cbbTipoSerie.Visible = True
             lblSerieCheque.Visible = True
@@ -1426,7 +1444,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtDocMarzo_LostFocus(sender As Object, e As System.EventArgs) Handles txtDocMarzo.LostFocus
+    Private Sub txtDocMarzo_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDocMarzo.LostFocus
         If cbbTipoSerie.SelectedItem = "Correlativo" Then
             txtDocAbril.Text = txtDocMarzo.Text + 1
             txtDocMayo.Text = txtDocMarzo.Text + 2
@@ -1450,7 +1468,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtMontoMarzo_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtMontoMarzo.TextChanged
+    Private Sub txtMontoMarzo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtMontoMarzo.TextChanged
         If checkMontosIguales.Checked = True Then
             txtMontoAbril.Text = txtMontoMarzo.Text
             txtMontoMayo.Text = txtMontoMarzo.Text
@@ -1464,7 +1482,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub CheckBox2_CheckedChanged_1(sender As System.Object, e As System.EventArgs) Handles checkDiaFijo.CheckedChanged
+    Private Sub CheckBox2_CheckedChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkDiaFijo.CheckedChanged
         If checkDiaFijo.Checked = True Then
             cbbDiaAbril.Text = cbbDiaMarzo.Text
             cbbDiaMayo.Text = cbbDiaMarzo.Text
@@ -1488,7 +1506,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub checkMontosIguales_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles checkMontosIguales.CheckedChanged
+    Private Sub checkMontosIguales_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkMontosIguales.CheckedChanged
         If checkMontosIguales.Checked = False Then
             txtMontoAbril.Text = ""
             txtMontoMayo.Text = ""
@@ -1512,7 +1530,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub cbbDiaMarzo_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbbDiaMarzo.SelectedIndexChanged
+    Private Sub cbbDiaMarzo_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbbDiaMarzo.SelectedIndexChanged
         If checkDiaFijo.Checked = True Then
             cbbDiaAbril.Text = cbbDiaMarzo.Text
             cbbDiaMayo.Text = cbbDiaMarzo.Text
@@ -1526,7 +1544,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtRutAntiguo_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutAntiguo.KeyPress
+    Private Sub txtRutAntiguo_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutAntiguo.KeyPress
         If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
@@ -1545,7 +1563,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtRutOtroApod_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutOtroApod.KeyPress
+    Private Sub txtRutOtroApod_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutOtroApod.KeyPress
         If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
@@ -1564,7 +1582,7 @@ Public Class FormularioMatricula
         End If
     End Sub
 
-    Private Sub txtRutOtroApodSuple_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutOtroApodSuple.KeyPress
+    Private Sub txtRutOtroApodSuple_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRutOtroApodSuple.KeyPress
         If InStr(1, "0123456789,-,K,k" & Chr(8) & Chr(13), e.KeyChar) = 0 Then
             e.KeyChar = ""
             e.Handled = True
@@ -1581,5 +1599,18 @@ Public Class FormularioMatricula
                 My.Computer.Keyboard.SendKeys("{tab}", True)
             End If
         End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
+
+        While CheckBox1.Checked = True
+            cbbPorcentaje.Enabled = True
+            Exit While
+        End While
+
+        While CheckBox1.Checked = False
+            cbbPorcentaje.Enabled = False
+            Exit While
+        End While
     End Sub
 End Class

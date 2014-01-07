@@ -10,19 +10,19 @@
         txtNombreUser.Text = ""
         txtRutUser.Text = ""
         txtPassUser.Text = ""
-        txtTipoUser.Text = ""
+        comboTipoUser.Text = ""
         txtNombreUser.Focus()
     End Sub
 
     Private Sub btnCrear_Click(sender As System.Object, e As System.EventArgs) Handles btnCrear.Click
-        If txtNombreUser.Text = "" Or txtRutUser.Text = "" Or txtPassUser.Text = "" Or txtTipoUser.Text = "" Then
+        If txtNombreUser.Text = "" Or txtRutUser.Text = "" Or txtPassUser.Text = "" Or comboTipoUser.Text = "" Then
             MsgBox("Debe completar todos los campos para poder crear un nuevo usuario.")
         Else
             If ComprobarRut(txtRutUser.Text) = False Then
                 MsgBox("El Rut ingresado no es valido")
                 txtRutUser.Focus()
             Else
-                If ModuloContenedor.CrearUser(txtNombreUser.Text, txtRutUser.Text, txtPassUser.Text, txtTipoUser.Text) = True Then
+                If ModuloContenedor.CrearUser(txtNombreUser.Text, txtRutUser.Text, txtPassUser.Text, comboTipoUser) = True Then
                     MsgBox("Usuario Creado Exitosamente.")
                     ModuloContenedor.CargarUsuarios(DataGridView1)
                 End If
@@ -40,14 +40,14 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
-        If txtNombreUser.Text = "" Or txtRutUser.Text = "" Or txtPassUser.Text = "" Or txtTipoUser.Text = "" Then
+        If txtNombreUser.Text = "" Or txtRutUser.Text = "" Or txtPassUser.Text = "" Or comboTipoUser.Text = "" Then
             MsgBox("Debe completar todos los campos para poder guardar cambios en usuario.")
         Else
             If ComprobarRut(txtRutUser.Text) = False Then
                 MsgBox("El Rut ingresado no es valido")
                 txtRutUser.Focus()
             Else
-                If ModuloContenedor.ActualizarUser(txtNombreUser.Text, txtRutUser.Text, txtPassUser.Text, txtTipoUser.Text, varNombreUser, varRutUser) = True Then
+                If ModuloContenedor.ActualizarUser(txtNombreUser.Text, txtRutUser.Text, txtPassUser.Text, comboTipoUser.Text, varNombreUser, varRutUser) = True Then
                     MsgBox("Cambios Guardados Exitosamente.")
                     ModuloContenedor.CargarUsuarios(DataGridView1)
                 End If
@@ -61,7 +61,7 @@
         txtNombreUser.Text = (DataGridView1.Rows(e.RowIndex).Cells(1).Value)
         txtRutUser.Text = (DataGridView1.Rows(e.RowIndex).Cells(2).Value)
         txtPassUser.Text = (DataGridView1.Rows(e.RowIndex).Cells(3).Value)
-        txtTipoUser.Text = (DataGridView1.Rows(e.RowIndex).Cells(4).Value)
+        comboTipoUser.Text = (DataGridView1.Rows(e.RowIndex).Cells(4).Value)
     End Sub
 
     Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click

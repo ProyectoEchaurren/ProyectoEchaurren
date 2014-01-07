@@ -394,6 +394,7 @@ Partial Class FormularioMatricula
         '
         'cbbPorcentaje
         '
+        Me.cbbPorcentaje.Enabled = False
         Me.cbbPorcentaje.FormattingEnabled = True
         Me.cbbPorcentaje.Items.AddRange(New Object() {"", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "95", "100"})
         Me.cbbPorcentaje.Location = New System.Drawing.Point(589, 118)
@@ -1404,11 +1405,12 @@ Partial Class FormularioMatricula
         'checkIguales
         '
         Me.checkIguales.AutoSize = True
-        Me.checkIguales.Location = New System.Drawing.Point(400, 444)
+        Me.checkIguales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkIguales.Location = New System.Drawing.Point(400, 437)
         Me.checkIguales.Name = "checkIguales"
-        Me.checkIguales.Size = New System.Drawing.Size(223, 17)
+        Me.checkIguales.Size = New System.Drawing.Size(265, 30)
         Me.checkIguales.TabIndex = 78
-        Me.checkIguales.Text = "Apoderado y Apoderado Suplente Iguales"
+        Me.checkIguales.Text = "Apoderado y Apoderado Suplente Iguales " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(marcar solo si son ""otros"")"
         Me.checkIguales.UseVisualStyleBackColor = True
         '
         'txtRutOtroApod

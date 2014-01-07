@@ -1645,7 +1645,7 @@ Module ModuloContenedor
         dgv.DataSource = dataSet.Tables(0)
     End Function
 
-    Public Function CrearUser(ByRef nombre As String, ByRef rut As String, ByRef pass As String, ByRef tipo As String)
+    Public Function CrearUser(ByRef nombre As String, ByRef rut As String, ByRef pass As String, ByRef tipo As ComboBox)
         Dim varConn As MySqlConnection
         Dim varConnString = "server=localhost;User Id=root;password=123456;database=bd_echaurren"
         Dim consulta As String = ""
@@ -1659,7 +1659,7 @@ Module ModuloContenedor
         End Try
 
         Try
-            consulta = "INSERT INTO `bd_echaurren`.`usuario` (`NombreUsuario`, `RutUsuario`, `PassUsuario`, `TipoUsuario`) VALUES ('" & nombre & "', '" & rut & "', '" & pass & "', '" & tipo & "');"
+            consulta = "INSERT INTO `bd_echaurren`.`usuario` (`NombreUsuario`, `RutUsuario`, `PassUsuario`, `TipoUsuario`) VALUES ('" & nombre & "', '" & rut & "', '" & pass & "', '" & tipo.Text & "');"
 
             Dim comando As New MySqlCommand(consulta, varConn)
             comando.ExecuteNonQuery()

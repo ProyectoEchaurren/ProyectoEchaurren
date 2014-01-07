@@ -27,7 +27,6 @@ Partial Class GestordeUsuarios
         Me.txtNombreUser = New System.Windows.Forms.TextBox()
         Me.txtRutUser = New System.Windows.Forms.TextBox()
         Me.txtPassUser = New System.Windows.Forms.TextBox()
-        Me.txtTipoUser = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -37,6 +36,7 @@ Partial Class GestordeUsuarios
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.comboTipoUser = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -75,13 +75,6 @@ Partial Class GestordeUsuarios
         Me.txtPassUser.Size = New System.Drawing.Size(100, 20)
         Me.txtPassUser.TabIndex = 3
         Me.txtPassUser.UseSystemPasswordChar = True
-        '
-        'txtTipoUser
-        '
-        Me.txtTipoUser.Location = New System.Drawing.Point(456, 192)
-        Me.txtTipoUser.Name = "txtTipoUser"
-        Me.txtTipoUser.Size = New System.Drawing.Size(100, 20)
-        Me.txtTipoUser.TabIndex = 4
         '
         'Label1
         '
@@ -164,11 +157,21 @@ Partial Class GestordeUsuarios
         Me.btnActualizar.Text = "Actualizar Grilla"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
+        'comboTipoUser
+        '
+        Me.comboTipoUser.FormattingEnabled = True
+        Me.comboTipoUser.Items.AddRange(New Object() {"", "Administrador", "Asistente"})
+        Me.comboTipoUser.Location = New System.Drawing.Point(456, 192)
+        Me.comboTipoUser.Name = "comboTipoUser"
+        Me.comboTipoUser.Size = New System.Drawing.Size(100, 21)
+        Me.comboTipoUser.TabIndex = 14
+        '
         'GestordeUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(568, 279)
+        Me.Controls.Add(Me.comboTipoUser)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.btnEliminar)
@@ -178,7 +181,6 @@ Partial Class GestordeUsuarios
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtTipoUser)
         Me.Controls.Add(Me.txtPassUser)
         Me.Controls.Add(Me.txtRutUser)
         Me.Controls.Add(Me.txtNombreUser)
@@ -195,7 +197,6 @@ Partial Class GestordeUsuarios
     Friend WithEvents txtNombreUser As System.Windows.Forms.TextBox
     Friend WithEvents txtRutUser As System.Windows.Forms.TextBox
     Friend WithEvents txtPassUser As System.Windows.Forms.TextBox
-    Friend WithEvents txtTipoUser As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -205,4 +206,5 @@ Partial Class GestordeUsuarios
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
     Friend WithEvents btnCrear As System.Windows.Forms.Button
     Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents comboTipoUser As System.Windows.Forms.ComboBox
 End Class
