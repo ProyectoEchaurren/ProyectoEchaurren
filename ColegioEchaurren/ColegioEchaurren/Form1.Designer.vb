@@ -44,8 +44,6 @@ Partial Class Form1
         Me.RespaldarBaseDeDatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AcercaDeToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -214,26 +212,9 @@ Partial Class Form1
         'AyudaToolStripMenuItem
         '
         Me.AyudaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeToolStripMenuItem1, Me.AcercaDeToolStripMenuItem2})
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
-        Me.AyudaToolStripMenuItem.Text = "Ayuda"
-        '
-        'AcercaDeToolStripMenuItem1
-        '
-        Me.AcercaDeToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.AcercaDeToolStripMenuItem1.Image = CType(resources.GetObject("AcercaDeToolStripMenuItem1.Image"), System.Drawing.Image)
-        Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
-        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
-        Me.AcercaDeToolStripMenuItem1.Text = "Ver ayuda"
-        '
-        'AcercaDeToolStripMenuItem2
-        '
-        Me.AcercaDeToolStripMenuItem2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.AcercaDeToolStripMenuItem2.Image = CType(resources.GetObject("AcercaDeToolStripMenuItem2.Image"), System.Drawing.Image)
-        Me.AcercaDeToolStripMenuItem2.Name = "AcercaDeToolStripMenuItem2"
-        Me.AcercaDeToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
-        Me.AcercaDeToolStripMenuItem2.Text = "Acerca de"
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.AyudaToolStripMenuItem.Text = "Acerca de"
         '
         'Form1
         '
@@ -263,8 +244,6 @@ Partial Class Form1
     Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CrearMatriculaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroDeMensualidadesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AcercaDeToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AcercaDeToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AlumnosMatriculadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RealizarPagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdministrarBecasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

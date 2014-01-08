@@ -53,6 +53,11 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="itextsharp, Version=5.4.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\itextsharp.dll</HintPath>
@@ -92,6 +97,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -131,12 +137,6 @@
     <Compile Include="AdminMensualidades.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ayuda.Designer.vb">
-      <DependentUpon>Ayuda.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Ayuda.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="bd_echaurrenDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +153,12 @@
     </Compile>
     <Compile Include="ConfigurarDisp.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DetalleInfoAlumno.Designer.vb">
       <DependentUpon>DetalleInfoAlumno.vb</DependentUpon>
@@ -171,6 +177,12 @@
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAlumnosMatriculados.Designer.vb">
@@ -260,14 +272,15 @@
     <EmbeddedResource Include="AdminMensualidades.resx">
       <DependentUpon>AdminMensualidades.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ayuda.resx">
-      <DependentUpon>Ayuda.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CambiarPass.resx">
       <DependentUpon>CambiarPass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigurarDisp.resx">
       <DependentUpon>ConfigurarDisp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DetalleInfoAlumno.resx">
       <DependentUpon>DetalleInfoAlumno.vb</DependentUpon>
@@ -278,6 +291,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAlumnosMatriculados.resx">
       <DependentUpon>FormAlumnosMatriculados.vb</DependentUpon>
@@ -463,6 +479,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\13252372831.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

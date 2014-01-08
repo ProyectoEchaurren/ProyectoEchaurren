@@ -33,11 +33,6 @@
         FormAlumnosMatriculados.Show()
     End Sub
 
-    Private Sub AcercaDeToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AcercaDeToolStripMenuItem2.Click
-        AboutBox1.MdiParent = Me
-        AboutBox1.Show()
-    End Sub
-
     Private Sub RealizarPagoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RealizarPagoToolStripMenuItem.Click
         RealizarPago.MdiParent = Me
         RealizarPago.Show()
@@ -77,11 +72,6 @@
         Presentacion.Close()
     End Sub
 
-    Private Sub AcercaDeToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles AcercaDeToolStripMenuItem1.Click
-        Ayuda.MdiParent = Me
-        Ayuda.Show()
-    End Sub
-
     Private Sub RespaldarBaseDeDatosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RespaldarBaseDeDatosToolStripMenuItem.Click
         Respaldo_de_datos_alumnos.MdiParent = Me
         Respaldo_de_datos_alumnos.Show()
@@ -95,5 +85,10 @@
     Private Sub ConfigurarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConfigurarToolStripMenuItem.Click
         ConfigurarDisp.MdiParent = Me
         ConfigurarDisp.Show()
+    End Sub
+
+    Private Sub AyudaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AyudaToolStripMenuItem.Click
+        AboutBox1.MdiParent = Me
+        AboutBox1.Show()
     End Sub
 End Class

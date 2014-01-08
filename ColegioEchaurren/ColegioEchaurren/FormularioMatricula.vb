@@ -1613,4 +1613,8 @@ Public Class FormularioMatricula
             Exit While
         End While
     End Sub
+
+    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
+        Form2.Show()
+    End Sub
 End Class
